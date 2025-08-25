@@ -1,0 +1,67 @@
+[
+  {
+    "exam": "APICS CPIM",
+    "question": "A company forecasted demand of 1,000 units, but actual customer orders were 1,200. What is this difference called?",
+    "options": {
+      "a": "Demand variance",
+      "b": "Forecast error",
+      "c": "Safety stock",
+      "d": "Order lead time"
+    },
+    "correct_answer": "b",
+    "explanation": "Forecast error is the difference between actual demand and forecasted demand. Managing forecast error is critical for planning safety stock and improving forecast accuracy.",
+    "reference": "CPIM Part 1, Module 2 – Demand Management (Forecasting and Forecast Error)"
+  },
+  {
+    "exam": "APICS CPIM",
+    "question": "Which inventory is held to protect against uncertainty in demand or supply?",
+    "options": {
+      "a": "Cycle stock",
+      "b": "Safety stock",
+      "c": "Anticipation inventory",
+      "d": "Pipeline stock"
+    },
+    "correct_answer": "b",
+    "explanation": "Safety stock acts as a buffer against variations in demand or supply lead time. It reduces the risk of stockouts.",
+    "reference": "CPIM Part 1, Module 4 – Inventory (Types of Inventory – Safety Stock)"
+  },
+  {
+    "exam": "APICS CPIM",
+    "question": "The primary output of the Master Production Schedule (MPS) is:",
+    "options": {
+      "a": "Sales forecast",
+      "b": "Planned production quantities by period",
+      "c": "Rough-cut capacity plan",
+      "d": "Purchase orders"
+    },
+    "correct_answer": "b",
+    "explanation": "MPS translates the production plan into specific build schedules for end items, balancing demand with available resources.",
+    "reference": "CPIM Part 1, Module 3 – Master Planning (Purpose and Outputs of MPS)"
+  },
+  {
+    "exam": "APICS CPIM",
+    "question": "Which technique is used to validate the feasibility of the Master Production Schedule (MPS)?",
+    "options": {
+      "a": "Rough-Cut Capacity Planning (RCCP)",
+      "b": "Capacity Requirements Planning (CRP)",
+      "c": "Infinite loading",
+      "d": "Line balancing"
+    },
+    "correct_answer": "a",
+    "explanation": "RCCP checks whether critical resources (like bottleneck work centers, labor, and key machines) have enough capacity to support the MPS.",
+    "reference": "CPIM Part 2, Module 4 – Capacity Planning (Rough-Cut Capacity Planning)"
+  },
+  {
+    "exam": "APICS CPIM",
+    "question": "The main purpose of Sales and Operations Planning (S&OP) is to:",
+    "options": {
+      "a": "Forecast sales at the product level",
+      "b": "Reconcile supply and demand at an aggregate level",
+      "c": "Schedule shop floor work centers",
+      "d": "Authorize final assembly orders"
+    },
+    "correct_answer": "b",
+    "explanation": "S&OP aligns business strategy, sales forecasts, and operations planning to ensure a feasible, balanced plan that supports financial and operational goals.",
+    "reference": "CPIM Part 2, Module 2 – S&OP (Purpose and Benefits of S&OP)"
+  }
+]
