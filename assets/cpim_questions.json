@@ -1,67 +1,153 @@
-[
-  {
-    "exam": "APICS CPIM",
-    "question": "A company forecasted demand of 1,000 units, but actual customer orders were 1,200. What is this difference called?",
-    "options": {
-      "a": "Demand variance",
-      "b": "Forecast error",
-      "c": "Safety stock",
-      "d": "Order lead time"
+{
+  "exams": [
+    {
+      "exam_id": 0,
+      "exam_name": "APICS CPIM"
     },
-    "correct_answer": "b",
-    "explanation": "Forecast error is the difference between actual demand and forecasted demand. Managing forecast error is critical for planning safety stock and improving forecast accuracy.",
-    "reference": "CPIM Part 1, Module 2 – Demand Management (Forecasting and Forecast Error)"
-  },
-  {
-    "exam": "APICS CPIM",
-    "question": "Which inventory is held to protect against uncertainty in demand or supply?",
-    "options": {
-      "a": "Cycle stock",
-      "b": "Safety stock",
-      "c": "Anticipation inventory",
-      "d": "Pipeline stock"
+    {
+      "exam_id": 1,
+      "exam_name": "APICS CSCP"
     },
-    "correct_answer": "b",
-    "explanation": "Safety stock acts as a buffer against variations in demand or supply lead time. It reduces the risk of stockouts.",
-    "reference": "CPIM Part 1, Module 4 – Inventory (Types of Inventory – Safety Stock)"
-  },
-  {
-    "exam": "APICS CPIM",
-    "question": "The primary output of the Master Production Schedule (MPS) is:",
-    "options": {
-      "a": "Sales forecast",
-      "b": "Planned production quantities by period",
-      "c": "Rough-cut capacity plan",
-      "d": "Purchase orders"
+    {
+      "exam_id": 2,
+      "exam_name": "ASQ CSSBB"
     },
-    "correct_answer": "b",
-    "explanation": "MPS translates the production plan into specific build schedules for end items, balancing demand with available resources.",
-    "reference": "CPIM Part 1, Module 3 – Master Planning (Purpose and Outputs of MPS)"
-  },
-  {
-    "exam": "APICS CPIM",
-    "question": "Which technique is used to validate the feasibility of the Master Production Schedule (MPS)?",
-    "options": {
-      "a": "Rough-Cut Capacity Planning (RCCP)",
-      "b": "Capacity Requirements Planning (CRP)",
-      "c": "Infinite loading",
-      "d": "Line balancing"
+    {
+      "exam_id": 3,
+      "exam_name": "ASQ CSSSBB"
+    }
+  ],
+  "questions": [
+    {
+      "exam_id": 0,
+      "question": "A company forecasted demand of 1,000 units, but actual customer orders were 1,200. What is this difference called?",
+      "options": {
+        "a": "Demand variance",
+        "b": "Forecast error",
+        "c": "Safety stock",
+        "d": "Order lead time"
+      },
+      "correct_answer": "b",
+      "explanation": "Forecast error is the difference between actual demand and forecasted demand. Managing forecast error is critical for planning safety stock and improving forecast accuracy.",
+      "reference": "CPIM Part 1, Module 2 – Demand Management (Forecasting and Forecast Error)"
     },
-    "correct_answer": "a",
-    "explanation": "RCCP checks whether critical resources (like bottleneck work centers, labor, and key machines) have enough capacity to support the MPS.",
-    "reference": "CPIM Part 2, Module 4 – Capacity Planning (Rough-Cut Capacity Planning)"
-  },
-  {
-    "exam": "APICS CPIM",
-    "question": "The main purpose of Sales and Operations Planning (S&OP) is to:",
-    "options": {
-      "a": "Forecast sales at the product level",
-      "b": "Reconcile supply and demand at an aggregate level",
-      "c": "Schedule shop floor work centers",
-      "d": "Authorize final assembly orders"
+    {
+      "exam_id": 0,
+      "question": "Which inventory is held to protect against uncertainty in demand or supply?",
+      "options": {
+        "a": "Cycle stock",
+        "b": "Safety stock",
+        "c": "Anticipation inventory",
+        "d": "Pipeline stock"
+      },
+      "correct_answer": "b",
+      "explanation": "Safety stock acts as a buffer against variations in demand or supply lead time. It reduces the risk of stockouts.",
+      "reference": "CPIM Part 1, Module 4 – Inventory (Types of Inventory – Safety Stock)"
     },
-    "correct_answer": "b",
-    "explanation": "S&OP aligns business strategy, sales forecasts, and operations planning to ensure a feasible, balanced plan that supports financial and operational goals.",
-    "reference": "CPIM Part 2, Module 2 – S&OP (Purpose and Benefits of S&OP)"
-  }
-]
+    {
+      "exam_id": 0,
+      "question": "The primary output of the Master Production Schedule (MPS) is:",
+      "options": {
+        "a": "Sales forecast",
+        "b": "Planned production quantities by period",
+        "c": "Rough-cut capacity plan",
+        "d": "Purchase orders"
+      },
+      "correct_answer": "b",
+      "explanation": "MPS translates the production plan into specific build schedules for end items, balancing demand with available resources.",
+      "reference": "CPIM Part 1, Module 3 – Master Planning (Purpose and Outputs of MPS)"
+    },
+    {
+      "exam_id": 0,
+      "question": "Which technique is used to validate the feasibility of the Master Production Schedule (MPS)?",
+      "options": {
+        "a": "Rough-Cut Capacity Planning (RCCP)",
+        "b": "Capacity Requirements Planning (CRP)",
+        "c": "Infinite loading",
+        "d": "Line balancing"
+      },
+      "correct_answer": "a",
+      "explanation": "RCCP checks whether critical resources (like bottleneck work centers, labor, and key machines) have enough capacity to support the MPS.",
+      "reference": "CPIM Part 2, Module 4 – Capacity Planning (Rough-Cut Capacity Planning)"
+    },
+    {
+      "exam_id": 0,
+      "question": "The main purpose of Sales and Operations Planning (S&OP) is to:",
+      "options": {
+        "a": "Forecast sales at the product level",
+        "b": "Reconcile supply and demand at an aggregate level",
+        "c": "Schedule shop floor work centers",
+        "d": "Authorize final assembly orders"
+      },
+      "correct_answer": "b",
+      "explanation": "S&OP aligns business strategy, sales forecasts, and operations planning to ensure a feasible, balanced plan that supports financial and operational goals.",
+      "reference": "CPIM Part 2, Module 2 – S&OP (Purpose and Benefits of S&OP)"
+    },
+    {
+      "exam_id": 1,
+      "question": "Which of the following is a key objective of supply chain design?",
+      "options": {
+        "a": "Reducing customer churn",
+        "b": "Minimizing manufacturing cycle time",
+        "c": "Balancing cost, quality, and service across the supply chain",
+        "d": "Increasing safety stock levels"
+      },
+      "correct_answer": "c",
+      "explanation": "Supply chain design seeks to create a structure that delivers optimal service levels at the lowest total cost, while maintaining quality.",
+      "reference": "CSCP Module 2 – Supply Chain Design"
+    },
+    {
+      "exam_id": 1,
+      "question": "Which of the following best defines a supply chain strategy?",
+      "options": {
+        "a": "A set of software tools used to monitor logistics",
+        "b": "A plan for aligning supply chain activities with business goals",
+        "c": "A list of key suppliers",
+        "d": "An inventory optimization method"
+      },
+      "correct_answer": "b",
+      "explanation": "A supply chain strategy defines how a company will align its supply chain to support business objectives, such as cost leadership, responsiveness, or innovation.",
+      "reference": "CSCP Module 1 – Supply Chain Strategy"
+    },
+    {
+      "exam_id": 2,
+      "question": "In Six Sigma, what is the main purpose of the Control phase?",
+      "options": {
+        "a": "Identify root causes",
+        "b": "Maintain improvements over time",
+        "c": "Collect voice of the customer data",
+        "d": "Measure baseline performance"
+      },
+      "correct_answer": "b",
+      "explanation": "The Control phase ensures that process improvements are sustained through control plans, monitoring systems, and standard operating procedures.",
+      "reference": "ASQ CSSBB Body of Knowledge – DMAIC: Control Phase"
+    },
+    {
+      "exam_id": 2,
+      "question": "Which tool is used to identify and prioritize potential causes of problems in Six Sigma?",
+      "options": {
+        "a": "Pareto chart",
+        "b": "Ishikawa diagram",
+        "c": "Control chart",
+        "d": "Scatter plot"
+      },
+      "correct_answer": "b",
+      "explanation": "An Ishikawa (fishbone) diagram helps identify root causes of quality issues and is often used in the Analyze phase of DMAIC.",
+      "reference": "ASQ CSSBB Body of Knowledge – Root Cause Analysis Tools"
+    },
+    {
+      "exam_id": 3,
+      "question": "Which of the following best describes Design for Six Sigma (DFSS)?",
+      "options": {
+        "a": "Improving existing processes using DMAIC",
+        "b": "Redesigning processes that fail to meet customer expectations",
+        "c": "Developing new products or processes to meet Six Sigma quality levels",
+        "d": "Using Lean tools to reduce waste"
+      },
+      "correct_answer": "c",
+      "explanation": "DFSS is a proactive methodology for designing new products or services to meet Six Sigma quality levels from the start.",
+      "reference": "ASQ CSSSBB Body of Knowledge – DFSS Concepts"
+    }
+  ]
+}
+
