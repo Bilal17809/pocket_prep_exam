@@ -396,6 +396,267 @@
       "reference": "CPIM Part 2, Module 4 – Capacity Planning (Types of Capacity, pp. 4.8–4.12)"
     },
     {
+      "exam_id": 0,
+      "question": "Which measure indicates how quickly inventory is sold and replenished during a specific period?",
+      "options": {
+        "a": "Service level",
+        "b": "Inventory turnover ratio",
+        "c": "Fill rate",
+        "d": "Available-to-promise"
+      },
+      "correct_answer": "b",
+      "explanation": "The inventory turnover ratio measures how often inventory is sold and replaced over a given period, reflecting efficiency of stock management.",
+      "reference": "CPIM Part 1, Module 4 – Inventory (Performance Metrics, pp. 4.46–4.50)"
+    },
+    {
+      "exam_id": 0,
+      "question": "Which document specifies the materials, quantities, and sequence needed to produce an item?",
+      "options": {
+        "a": "Item master file",
+        "b": "Bill of material",
+        "c": "Routing file",
+        "d": "Work order"
+      },
+      "correct_answer": "b",
+      "explanation": "A Bill of Material (BOM) lists components, subassemblies, and their quantities required to make a finished product.",
+      "reference": "CPIM Part 2, Module 3 – Detailed Scheduling and Planning (Bills of Material, pp. 3.20–3.25)"
+    },
+    {
+      "exam_id": 0,
+      "question": "Which system balances supply and demand by using time-phased order releases?",
+      "options": {
+        "a": "Material Requirements Planning (MRP)",
+        "b": "Kanban",
+        "c": "Just-in-Time (JIT)",
+        "d": "Cycle counting"
+      },
+      "correct_answer": "a",
+      "explanation": "MRP plans time-phased order releases to meet dependent demand while considering lead times and inventory policies.",
+      "reference": "CPIM Part 2, Module 3 – Detailed Scheduling and Planning (MRP Logic, pp. 3.30–3.35)"
+    },
+    {
+      "exam_id": 0,
+      "question": "Which term describes the alignment of long-term business strategy with operations planning?",
+      "options": {
+        "a": "Tactical planning",
+        "b": "Strategic alignment",
+        "c": "Sales and Operations Planning (S&OP)",
+        "d": "Capacity planning"
+      },
+      "correct_answer": "c",
+      "explanation": "S&OP ensures alignment between long-term strategy, financial goals, and mid-range operations planning.",
+      "reference": "CPIM Part 2, Module 2 – S&OP (Strategic Alignment, pp. 2.10–2.15)"
+    },
+    {
+      "exam_id": 0,
+      "question": "Which scheduling method aims to synchronize production with the rate of customer demand?",
+      "options": {
+        "a": "Finite scheduling",
+        "b": "Takt time scheduling",
+        "c": "CRP scheduling",
+        "d": "Infinite loading"
+      },
+      "correct_answer": "b",
+      "explanation": "Takt time scheduling matches production pace to the rate of customer demand, minimizing overproduction.",
+      "reference": "CPIM Part 2, Module 3 – Detailed Scheduling and Planning (Lean Concepts, pp. 3.48–3.52)"
+    },
+    {
+      "exam_id": 0,
+      "question": "Which concept represents a planned order that has not yet been released?",
+      "options": {
+        "a": "Planned order release",
+        "b": "Scheduled receipt",
+        "c": "Open order",
+        "d": "Backorder"
+      },
+      "correct_answer": "a",
+      "explanation": "Planned order releases are future orders suggested by MRP but not yet released to production or suppliers.",
+      "reference": "CPIM Part 2, Module 3 – Detailed Scheduling and Planning (MRP Outputs, pp. 3.40–3.45)"
+    },
+    {
+      "exam_id": 0,
+      "question": "Which type of stock is in transit between locations in a supply chain?",
+      "options": {
+        "a": "Cycle stock",
+        "b": "Pipeline inventory",
+        "c": "Safety stock",
+        "d": "Anticipation inventory"
+      },
+      "correct_answer": "b",
+      "explanation": "Pipeline inventory represents goods in transit between facilities or supply chain nodes.",
+      "reference": "CPIM Part 1, Module 4 – Inventory (Types of Inventory, pp. 4.18–4.22)"
+    },
+    {
+      "exam_id": 0,
+      "question": "Which planning level focuses on long-term decisions such as facility location and capacity investment?",
+      "options": {
+        "a": "Strategic planning",
+        "b": "Tactical planning",
+        "c": "Operational planning",
+        "d": "S&OP"
+      },
+      "correct_answer": "a",
+      "explanation": "Strategic planning involves long-term capacity, facility, and investment decisions aligning with business goals.",
+      "reference": "CPIM Part 1, Module 1 – Basics of Supply Chain Management (Planning Hierarchy, pp. 1.15–1.20)"
+    },
+    {
+      "exam_id": 0,
+      "question": "Which lot-sizing method balances setup cost and carrying cost by ordering at an economic quantity?",
+      "options": {
+        "a": "Lot-for-lot",
+        "b": "Economic Order Quantity (EOQ)",
+        "c": "Fixed order quantity",
+        "d": "Period order quantity"
+      },
+      "correct_answer": "b",
+      "explanation": "EOQ minimizes total cost by balancing setup and holding costs.",
+      "reference": "CPIM Part 2, Module 3 – Detailed Scheduling and Planning (Lot Sizing, pp. 3.50–3.55)"
+    },
+    {
+      "exam_id": 0,
+      "question": "Which approach ensures production orders are only released when capacity is available?",
+      "options": {
+        "a": "Infinite loading",
+        "b": "Finite loading",
+        "c": "RCCP",
+        "d": "CRP"
+      },
+      "correct_answer": "b",
+      "explanation": "Finite loading schedules orders only when sufficient capacity is available, improving feasibility of plans.",
+      "reference": "CPIM Part 2, Module 4 – Capacity Planning (Finite and Infinite Loading, pp. 4.15–4.20)"
+    },
+    {
+      "exam_id": 0,
+      "question": "Which scheduling method focuses on completing jobs by their due dates while minimizing lateness?",
+      "options": {
+        "a": "Earliest due date (EDD)",
+        "b": "First-come-first-served",
+        "c": "Shortest processing time",
+        "d": "Critical ratio"
+      },
+      "correct_answer": "a",
+      "explanation": "The earliest due date rule prioritizes jobs with the earliest deadlines to minimize lateness.",
+      "reference": "CPIM Part 2, Module 3 – Detailed Scheduling and Planning (Scheduling Rules, pp. 3.55–3.60)"
+    },
+    {
+      "exam_id": 0,
+      "question": "Which manufacturing environment produces standardized products in large volumes with low flexibility?",
+      "options": {
+        "a": "Make-to-order (MTO)",
+        "b": "Engineer-to-order (ETO)",
+        "c": "Make-to-stock (MTS)",
+        "d": "Assemble-to-order (ATO)"
+      },
+      "correct_answer": "c",
+      "explanation": "MTS environments produce standardized products in anticipation of demand, with low customization.",
+      "reference": "CPIM Part 1, Module 1 – Basics of Supply Chain Management (Manufacturing Environments, pp. 1.20–1.25)"
+    },
+    {
+      "exam_id": 0,
+      "question": "Which Lean concept involves leveling production to reduce variability?",
+      "options": {
+        "a": "Jidoka",
+        "b": "Heijunka",
+        "c": "Kanban",
+        "d": "Pull system"
+      },
+      "correct_answer": "b",
+      "explanation": "Heijunka levels production to smooth demand variability and optimize flow.",
+      "reference": "CPIM Part 2, Module 3 – Detailed Scheduling and Planning (Lean Tools, pp. 3.45–3.50)"
+    },
+    {
+      "exam_id": 0,
+      "question": "Which capacity measure reflects actual demonstrated output over time?",
+      "options": {
+        "a": "Theoretical capacity",
+        "b": "Rated capacity",
+        "c": "Demonstrated capacity",
+        "d": "Effective capacity"
+      },
+      "correct_answer": "c",
+      "explanation": "Demonstrated capacity is based on actual historical output, reflecting realistic performance.",
+      "reference": "CPIM Part 2, Module 4 – Capacity Planning (Capacity Measures, pp. 4.12–4.16)"
+    },
+    {
+      "exam_id": 0,
+      "question": "Which order policy triggers replenishment only when inventory falls below a set level?",
+      "options": {
+        "a": "Fixed order quantity",
+        "b": "Lot-for-lot",
+        "c": "Two-bin system",
+        "d": "Reorder point system"
+      },
+      "correct_answer": "d",
+      "explanation": "The reorder point system initiates replenishment when inventory reaches a predetermined level.",
+      "reference": "CPIM Part 2, Module 3 – Detailed Scheduling and Planning (Reorder Point Planning, pp. 3.55–3.60)"
+    },
+    {
+      "exam_id": 0,
+      "question": "Which process focuses on short-term scheduling and execution on the shop floor?",
+      "options": {
+        "a": "S&OP",
+        "b": "Master Production Scheduling",
+        "c": "Detailed scheduling and planning",
+        "d": "Strategic planning"
+      },
+      "correct_answer": "c",
+      "explanation": "Detailed scheduling and planning focuses on shop-floor scheduling, order release, and execution.",
+      "reference": "CPIM Part 2, Module 3 – Detailed Scheduling and Planning (Short-term Scheduling, pp. 3.10–3.15)"
+    },
+    {
+      "exam_id": 0,
+      "question": "Which customer service measure calculates the portion of demand satisfied directly from stock?",
+      "options": {
+        "a": "On-time delivery",
+        "b": "Fill rate",
+        "c": "Service level",
+        "d": "ATP"
+      },
+      "correct_answer": "b",
+      "explanation": "Fill rate is the percentage of demand that can be met immediately from available inventory.",
+      "reference": "CPIM Part 1, Module 4 – Inventory (Customer Service Metrics, pp. 4.40–4.45)"
+    },
+    {
+      "exam_id": 0,
+      "question": "Which tool is used to analyze demand variability by categorizing items based on value and frequency of use?",
+      "options": {
+        "a": "Cycle counting",
+        "b": "Pareto analysis",
+        "c": "ABC classification",
+        "d": "Kanban"
+      },
+      "correct_answer": "c",
+      "explanation": "ABC classification segments inventory into A, B, and C categories based on value and frequency, guiding control efforts.",
+      "reference": "CPIM Part 1, Module 4 – Inventory (ABC Analysis, pp. 4.28–4.33)"
+    },
+    {
+      "exam_id": 0,
+      "question": "Which output of capacity requirements planning (CRP) shows the load versus available capacity at each work center?",
+      "options": {
+        "a": "Load profile",
+        "b": "Routing file",
+        "c": "Time fence",
+        "d": "Master schedule"
+      },
+      "correct_answer": "a",
+      "explanation": "CRP generates load profiles that compare planned workload against available capacity at each work center.",
+      "reference": "CPIM Part 2, Module 4 – Capacity Planning (CRP Outputs, pp. 4.22–4.28)"
+    },
+    {
+      "exam_id": 0,
+      "question": "Which lean practice empowers workers to stop production when a defect occurs?",
+      "options": {
+        "a": "Jidoka",
+        "b": "Heijunka",
+        "c": "Kanban",
+        "d": "Pull system"
+      },
+      "correct_answer": "a",
+      "explanation": "Jidoka enables workers to stop production when a problem arises, ensuring quality at the source.",
+      "reference": "CPIM Part 2, Module 3 – Detailed Scheduling and Planning (Lean Principles, pp. 3.42–3.48)"
+    },
+
+    {
       "exam_id": 1,
       "question": "Which of the following best describes the role of reverse logistics?",
       "options": {
@@ -785,6 +1046,254 @@
       "explanation": "Efficient supply chain operations improve asset utilization, which directly enhances return on assets (ROA).",
       "reference": "CSCP Module 2 – Supply Chain Design (Section C: Financial Metrics, pp. 150–153)"
     },
+    {
+      "exam_id": 1,
+      "question": "Which of the following best describes the purpose of Sales and Operations Execution (S&OE)?",
+      "options": {
+        "a": "Long-term capacity decisions",
+        "b": "Daily and weekly alignment of supply and demand",
+        "c": "Financial reporting",
+        "d": "Supplier qualification"
+      },
+      "correct_answer": "b",
+      "explanation": "S&OE focuses on short-term execution, ensuring daily and weekly alignment of demand and supply plans.",
+      "reference": "CSCP Module 3 – Supply Chain Planning and Execution (Section A: S&OP and S&OE, pp. 215–218)"
+    },
+    {
+      "exam_id": 1,
+      "question": "Which of the following best describes the role of supply chain segmentation?",
+      "options": {
+        "a": "Dividing suppliers into categories by geography",
+        "b": "Customizing supply chain strategies based on product and customer characteristics",
+        "c": "Segmenting demand into forecasted and actual categories",
+        "d": "Separating logistics into inbound and outbound flows"
+      },
+      "correct_answer": "b",
+      "explanation": "Supply chain segmentation allows organizations to apply different strategies for different products, markets, and customers.",
+      "reference": "CSCP Module 1 – Supply Chain Strategy (Section E: Segmentation, pp. 80–83)"
+    },
+    {
+      "exam_id": 1,
+      "question": "Which inventory management approach is designed to minimize waste and synchronize supply with demand?",
+      "options": {
+        "a": "Kanban",
+        "b": "ABC classification",
+        "c": "Cycle counting",
+        "d": "Economic Order Quantity (EOQ)"
+      },
+      "correct_answer": "a",
+      "explanation": "Kanban is a visual scheduling system that helps minimize waste and align production with actual demand.",
+      "reference": "CSCP Module 3 – Supply Chain Planning and Execution (Section F: Lean and JIT, pp. 280–283)"
+    },
+    {
+      "exam_id": 1,
+      "question": "Which type of outsourcing relationship involves a long-term, collaborative partnership between a buyer and a supplier?",
+      "options": {
+        "a": "Transactional outsourcing",
+        "b": "Tactical outsourcing",
+        "c": "Strategic outsourcing",
+        "d": "Spot buying"
+      },
+      "correct_answer": "c",
+      "explanation": "Strategic outsourcing establishes long-term, collaborative partnerships to achieve shared goals.",
+      "reference": "CSCP Module 2 – Supply Chain Design (Section D: Outsourcing and Supplier Management, pp. 170–175)"
+    },
+    {
+      "exam_id": 1,
+      "question": "Which of the following is a key benefit of blockchain in supply chain management?",
+      "options": {
+        "a": "Eliminating safety stock",
+        "b": "Enhancing transparency and traceability",
+        "c": "Increasing production lead times",
+        "d": "Simplifying product engineering"
+      },
+      "correct_answer": "b",
+      "explanation": "Blockchain provides secure, transparent, and immutable records, improving traceability and trust across the supply chain.",
+      "reference": "CSCP Module 4 – Supply Chain Improvements and Best Practices (Section C: Digital Supply Chains, pp. 345–348)"
+    },
+    {
+      "exam_id": 1,
+      "question": "Which forecasting technique uses past demand data to predict future demand patterns?",
+      "options": {
+        "a": "Qualitative forecasting",
+        "b": "Time series analysis",
+        "c": "Simulation modeling",
+        "d": "Judgmental forecasting"
+      },
+      "correct_answer": "b",
+      "explanation": "Time series analysis uses historical data trends and patterns to forecast future demand.",
+      "reference": "CSCP Module 3 – Supply Chain Planning and Execution (Section C: Forecasting Methods, pp. 235–238)"
+    },
+    {
+      "exam_id": 1,
+      "question": "Which of the following best describes a supply chain control tower?",
+      "options": {
+        "a": "A physical warehouse monitoring system",
+        "b": "A centralized hub for real-time visibility and analytics",
+        "c": "A transportation scheduling tool",
+        "d": "A supplier auditing process"
+      },
+      "correct_answer": "b",
+      "explanation": "A control tower provides centralized, real-time visibility and analytics to improve decision-making.",
+      "reference": "CSCP Module 4 – Supply Chain Improvements and Best Practices (Section C: Visibility and Analytics, pp. 341–345)"
+    },
+    {
+      "exam_id": 1,
+      "question": "Which type of supplier relationship emphasizes innovation and joint development?",
+      "options": {
+        "a": "Adversarial",
+        "b": "Collaborative",
+        "c": "Arms-length",
+        "d": "Spot market"
+      },
+      "correct_answer": "b",
+      "explanation": "Collaborative supplier relationships focus on innovation, shared goals, and long-term partnerships.",
+      "reference": "CSCP Module 2 – Supply Chain Design (Section D: Supplier Relationship Management, pp. 170–174)"
+    },
+    {
+      "exam_id": 1,
+      "question": "Which type of inventory is held to decouple operations and ensure smooth flow between processes?",
+      "options": {
+        "a": "Pipeline inventory",
+        "b": "Safety stock",
+        "c": "Decoupling inventory",
+        "d": "Obsolete inventory"
+      },
+      "correct_answer": "c",
+      "explanation": "Decoupling inventory ensures continuity of operations by buffering variability between processes.",
+      "reference": "CSCP Module 3 – Supply Chain Planning and Execution (Section B: Inventory Types, pp. 226–229)"
+    },
+    {
+      "exam_id": 1,
+      "question": "Which of the following is a key benefit of postponement strategies?",
+      "options": {
+        "a": "Increased customization flexibility",
+        "b": "Higher finished goods inventory",
+        "c": "Reduced supplier lead times",
+        "d": "Lower supply chain visibility"
+      },
+      "correct_answer": "a",
+      "explanation": "Postponement increases customization flexibility by delaying final product differentiation.",
+      "reference": "CSCP Module 2 – Supply Chain Design (Section F: Postponement Strategies, pp. 190–193)"
+    },
+    {
+      "exam_id": 1,
+      "question": "Which strategy focuses on maintaining low costs while serving stable and predictable markets?",
+      "options": {
+        "a": "Agile supply chain",
+        "b": "Efficient supply chain",
+        "c": "Responsive supply chain",
+        "d": "Flexible supply chain"
+      },
+      "correct_answer": "b",
+      "explanation": "Efficient supply chains focus on cost efficiency and are best suited for stable, predictable demand.",
+      "reference": "CSCP Module 1 – Supply Chain Strategy (Section C: Supply Chain Models, pp. 60–63)"
+    },
+    {
+      "exam_id": 1,
+      "question": "Which financial measure indicates the time it takes for a company to convert investments into cash flow?",
+      "options": {
+        "a": "Return on investment",
+        "b": "Cash-to-cash cycle time",
+        "c": "Gross margin",
+        "d": "Earnings before interest and taxes"
+      },
+      "correct_answer": "b",
+      "explanation": "Cash-to-cash cycle time measures how quickly investments in inventory are converted into customer cash receipts.",
+      "reference": "CSCP Module 2 – Supply Chain Design (Section C: Financial Metrics, pp. 150–153)"
+    },
+    {
+      "exam_id": 1,
+      "question": "Which type of logistics network is designed to minimize transportation cost by shipping in full truckloads?",
+      "options": {
+        "a": "Cross-docking",
+        "b": "Hub-and-spoke",
+        "c": "Milk run",
+        "d": "Direct shipment"
+      },
+      "correct_answer": "d",
+      "explanation": "Direct shipment moves goods from supplier to customer without intermediate handling, minimizing costs when full truckloads are feasible.",
+      "reference": "CSCP Module 2 – Supply Chain Design (Section E: Distribution Strategies, pp. 185–188)"
+    },
+    {
+      "exam_id": 1,
+      "question": "Which of the following best describes resilience in supply chains?",
+      "options": {
+        "a": "The ability to reduce production lead times",
+        "b": "The ability to anticipate, respond, and recover from disruptions",
+        "c": "The ability to eliminate all risks",
+        "d": "The ability to lower transportation costs"
+      },
+      "correct_answer": "b",
+      "explanation": "Resilience refers to a supply chain's ability to anticipate, absorb, and recover from disruptions effectively.",
+      "reference": "CSCP Module 4 – Supply Chain Improvements and Best Practices (Section B: Risk Management, pp. 326–329)"
+    },
+    {
+      "exam_id": 1,
+      "question": "Which of the following is a key enabler of supply chain collaboration?",
+      "options": {
+        "a": "Standardized data sharing",
+        "b": "Independent planning",
+        "c": "Excessive inventory buffers",
+        "d": "Limited supplier integration"
+      },
+      "correct_answer": "a",
+      "explanation": "Standardized data sharing across partners is a key enabler of collaboration and alignment in supply chains.",
+      "reference": "CSCP Module 3 – Supply Chain Planning and Execution (Section C: Collaboration, pp. 240–244)"
+    },
+    {
+      "exam_id": 1,
+      "question": "Which of the following best describes demand shaping?",
+      "options": {
+        "a": "Adjusting demand patterns through pricing and promotions",
+        "b": "Forecasting future demand using time series data",
+        "c": "Reducing forecast error using CPFR",
+        "d": "Eliminating demand variability"
+      },
+      "correct_answer": "a",
+      "explanation": "Demand shaping influences customer demand using pricing, promotions, and marketing campaigns.",
+      "reference": "CSCP Module 3 – Supply Chain Planning and Execution (Section D: Demand Management, pp. 258–262)"
+    },
+    {
+      "exam_id": 1,
+      "question": "Which technology provides predictive insights to optimize supply chain performance?",
+      "options": {
+        "a": "Artificial intelligence",
+        "b": "RFID",
+        "c": "Kanban",
+        "d": "SMED"
+      },
+      "correct_answer": "a",
+      "explanation": "Artificial intelligence enhances forecasting, planning, and optimization by providing predictive insights.",
+      "reference": "CSCP Module 4 – Supply Chain Improvements and Best Practices (Section C: Digital Supply Chains, pp. 345–348)"
+    },
+    {
+      "exam_id": 1,
+      "question": "Which type of inventory is built up in anticipation of seasonal peaks in demand?",
+      "options": {
+        "a": "Pipeline inventory",
+        "b": "Safety stock",
+        "c": "Anticipation inventory",
+        "d": "Cycle stock"
+      },
+      "correct_answer": "c",
+      "explanation": "Anticipation inventory is accumulated in advance of expected seasonal or promotional demand peaks.",
+      "reference": "CSCP Module 3 – Supply Chain Planning and Execution (Section B: Inventory Types, pp. 226–229)"
+    },
+    {
+      "exam_id": 1,
+      "question": "Which sourcing strategy spreads risk by using multiple suppliers for a single component?",
+      "options": {
+        "a": "Single sourcing",
+        "b": "Dual sourcing",
+        "c": "Global sourcing",
+        "d": "Vertical integration"
+      },
+      "correct_answer": "b",
+      "explanation": "Dual sourcing balances risk and flexibility by engaging multiple suppliers for the same component.",
+      "reference": "CSCP Module 2 – Supply Chain Design (Section D: Sourcing Strategies, pp. 170–174)"
+    },
+
     {
       "exam_id": 2,
       "question": "Which statistical tool is most appropriate for assessing normality of a data set?",
@@ -1176,6 +1685,267 @@
       "reference": "ASQ CSSBB Body of Knowledge – Measure Phase (pp. 90–94)"
     },
     {
+      "exam_id": 2,
+      "question": "Which Six Sigma tool is used to prioritize potential causes of variation based on their impact and frequency?",
+      "options": {
+        "a": "Pareto chart",
+        "b": "Scatter diagram",
+        "c": "Control chart",
+        "d": "Box plot"
+      },
+      "correct_answer": "a",
+      "explanation": "Pareto charts prioritize the most critical causes by showing their relative contribution to overall variation.",
+      "reference": "ASQ CSSBB Body of Knowledge – Quality Tools (pp. 150–153)"
+    },
+    {
+      "exam_id": 2,
+      "question": "In hypothesis testing, which term refers to the probability of rejecting the null hypothesis when it is false?",
+      "options": {
+        "a": "Power of the test",
+        "b": "Alpha risk",
+        "c": "Beta risk",
+        "d": "Confidence level"
+      },
+      "correct_answer": "a",
+      "explanation": "The power of a test is the probability of correctly rejecting a false null hypothesis.",
+      "reference": "ASQ CSSBB Body of Knowledge – Hypothesis Testing (pp. 186–188)"
+    },
+    {
+      "exam_id": 2,
+      "question": "Which Six Sigma role is primarily responsible for leading teams and delivering project results?",
+      "options": {
+        "a": "Champion",
+        "b": "Black Belt",
+        "c": "Master Black Belt",
+        "d": "Green Belt"
+      },
+      "correct_answer": "b",
+      "explanation": "Black Belts lead teams and apply Six Sigma tools to deliver measurable improvements.",
+      "reference": "ASQ CSSBB Body of Knowledge – Roles and Responsibilities (pp. 20–22)"
+    },
+    {
+      "exam_id": 2,
+      "question": "Which graphical method is most useful for checking the assumption of equal variances in ANOVA?",
+      "options": {
+        "a": "Residual plots",
+        "b": "Histogram",
+        "c": "Box plots",
+        "d": "Pareto chart"
+      },
+      "correct_answer": "c",
+      "explanation": "Box plots allow comparison of variances across groups visually, supporting ANOVA assumptions.",
+      "reference": "ASQ CSSBB Body of Knowledge – ANOVA (pp. 192–194)"
+    },
+    {
+      "exam_id": 2,
+      "question": "Which Lean tool is designed to prevent errors by making it impossible to create a defect?",
+      "options": {
+        "a": "Poka-yoke",
+        "b": "Kanban",
+        "c": "5S",
+        "d": "Standard work"
+      },
+      "correct_answer": "a",
+      "explanation": "Poka-yoke (error proofing) designs processes or devices to prevent mistakes or make them immediately detectable.",
+      "reference": "ASQ CSSBB Body of Knowledge – Lean Tools (pp. 285–287)"
+    },
+    {
+      "exam_id": 2,
+      "question": "Which design methodology focuses on creating robust products that perform consistently under varying conditions?",
+      "options": {
+        "a": "DOE",
+        "b": "Taguchi methods",
+        "c": "Regression analysis",
+        "d": "Kaizen"
+      },
+      "correct_answer": "b",
+      "explanation": "Taguchi methods emphasize robust design and reducing variation by controlling noise factors.",
+      "reference": "ASQ CSSBB Body of Knowledge – DOE: Robust Design (pp. 243–246)"
+    },
+    {
+      "exam_id": 2,
+      "question": "Which project selection criterion focuses on alignment with organizational strategy?",
+      "options": {
+        "a": "Financial return",
+        "b": "Strategic impact",
+        "c": "Cycle time reduction",
+        "d": "Defect rate improvement"
+      },
+      "correct_answer": "b",
+      "explanation": "Strategic impact ensures that Six Sigma projects align with long-term organizational goals.",
+      "reference": "ASQ CSSBB Body of Knowledge – Project Selection (pp. 28–31)"
+    },
+    {
+      "exam_id": 2,
+      "question": "Which graphical tool is best suited for analyzing the relationship among three variables simultaneously?",
+      "options": {
+        "a": "Scatter plot matrix",
+        "b": "Box plot",
+        "c": "Pareto chart",
+        "d": "Histogram"
+      },
+      "correct_answer": "a",
+      "explanation": "Scatter plot matrices display pairwise relationships among three or more variables at once.",
+      "reference": "ASQ CSSBB Body of Knowledge – Data Analysis Tools (pp. 146–148)"
+    },
+    {
+      "exam_id": 2,
+      "question": "Which Six Sigma phase uses hypothesis testing most extensively to validate root causes?",
+      "options": {
+        "a": "Define",
+        "b": "Measure",
+        "c": "Analyze",
+        "d": "Control"
+      },
+      "correct_answer": "c",
+      "explanation": "The Analyze phase employs statistical tools like hypothesis testing to confirm root causes.",
+      "reference": "ASQ CSSBB Body of Knowledge – DMAIC: Analyze Phase (pp. 180–185)"
+    },
+    {
+      "exam_id": 2,
+      "question": "Which improvement methodology is used to redesign processes for new products and services?",
+      "options": {
+        "a": "DMAIC",
+        "b": "DFSS",
+        "c": "Kaizen",
+        "d": "Lean"
+      },
+      "correct_answer": "b",
+      "explanation": "Design for Six Sigma (DFSS) applies Six Sigma principles to develop robust new processes and products.",
+      "reference": "ASQ CSSBB Body of Knowledge – DFSS (pp. 310–313)"
+    },
+    {
+      "exam_id": 2,
+      "question": "Which metric is used to measure how well a process is performing in terms of defects per million opportunities?",
+      "options": {
+        "a": "Cpk",
+        "b": "Sigma level",
+        "c": "Pp",
+        "d": "R-squared"
+      },
+      "correct_answer": "b",
+      "explanation": "Sigma level expresses process performance in terms of defects per million opportunities (DPMO).",
+      "reference": "ASQ CSSBB Body of Knowledge – Process Performance Metrics (pp. 205–207)"
+    },
+    {
+      "exam_id": 2,
+      "question": "Which type of hypothesis test is used for categorical data in contingency tables?",
+      "options": {
+        "a": "Chi-square test",
+        "b": "Two-sample t-test",
+        "c": "ANOVA",
+        "d": "Regression analysis"
+      },
+      "correct_answer": "a",
+      "explanation": "The Chi-square test evaluates independence or association between categorical variables in contingency tables.",
+      "reference": "ASQ CSSBB Body of Knowledge – Hypothesis Testing (pp. 189–191)"
+    },
+    {
+      "exam_id": 2,
+      "question": "Which risk management tool assigns scores for severity, occurrence, and detection?",
+      "options": {
+        "a": "Pareto chart",
+        "b": "FMEA",
+        "c": "Fishbone diagram",
+        "d": "Control plan"
+      },
+      "correct_answer": "b",
+      "explanation": "FMEA uses severity, occurrence, and detection ratings to prioritize potential failures.",
+      "reference": "ASQ CSSBB Body of Knowledge – Risk Management Tools (pp. 265–267)"
+    },
+    {
+      "exam_id": 2,
+      "question": "Which control chart is appropriate for monitoring the proportion of defective units?",
+      "options": {
+        "a": "X-bar chart",
+        "b": "p-chart",
+        "c": "c-chart",
+        "d": "u-chart"
+      },
+      "correct_answer": "b",
+      "explanation": "The p-chart monitors the proportion of defective units in a process over time.",
+      "reference": "ASQ CSSBB Body of Knowledge – Statistical Process Control (pp. 221–224)"
+    },
+    {
+      "exam_id": 2,
+      "question": "Which approach to process improvement is characterized by radical changes to achieve breakthrough results?",
+      "options": {
+        "a": "Kaizen",
+        "b": "Reengineering",
+        "c": "Lean",
+        "d": "Control"
+      },
+      "correct_answer": "b",
+      "explanation": "Reengineering focuses on radical process redesign for breakthrough improvements, unlike Kaizen’s incremental approach.",
+      "reference": "ASQ CSSBB Body of Knowledge – Improvement Methodologies (pp. 270–273)"
+    },
+    {
+      "exam_id": 2,
+      "question": "Which Lean concept emphasizes balancing workload to avoid bottlenecks and idle time?",
+      "options": {
+        "a": "Heijunka",
+        "b": "Kanban",
+        "c": "5S",
+        "d": "Poka-yoke"
+      },
+      "correct_answer": "a",
+      "explanation": "Heijunka (level loading) balances workloads across resources to reduce unevenness and bottlenecks.",
+      "reference": "ASQ CSSBB Body of Knowledge – Lean Tools (pp. 288–290)"
+    },
+    {
+      "exam_id": 2,
+      "question": "Which measurement system error occurs when two operators produce consistently different results?",
+      "options": {
+        "a": "Repeatability error",
+        "b": "Bias",
+        "c": "Reproducibility error",
+        "d": "Linearity"
+      },
+      "correct_answer": "c",
+      "explanation": "Reproducibility error occurs when variation arises between different operators using the same measurement system.",
+      "reference": "ASQ CSSBB Body of Knowledge – MSA (pp. 111–113)"
+    },
+    {
+      "exam_id": 2,
+      "question": "Which Six Sigma phase emphasizes implementing control plans and visual management systems?",
+      "options": {
+        "a": "Define",
+        "b": "Measure",
+        "c": "Analyze",
+        "d": "Control"
+      },
+      "correct_answer": "d",
+      "explanation": "The Control phase ensures sustained improvements with control plans, visual systems, and audits.",
+      "reference": "ASQ CSSBB Body of Knowledge – DMAIC: Control Phase (pp. 210–214)"
+    },
+    {
+      "exam_id": 2,
+      "question": "Which sampling method ensures every member of the population has an equal chance of selection?",
+      "options": {
+        "a": "Systematic sampling",
+        "b": "Random sampling",
+        "c": "Stratified sampling",
+        "d": "Cluster sampling"
+      },
+      "correct_answer": "b",
+      "explanation": "Random sampling gives every unit in the population an equal chance of selection, reducing bias.",
+      "reference": "ASQ CSSBB Body of Knowledge – Sampling (pp. 125–127)"
+    },
+    {
+      "exam_id": 2,
+      "question": "Which Six Sigma tool helps visualize the flow of materials and information through a process?",
+      "options": {
+        "a": "Value Stream Map",
+        "b": "Control chart",
+        "c": "Histogram",
+        "d": "Scatter plot"
+      },
+      "correct_answer": "a",
+      "explanation": "Value Stream Mapping shows the complete process flow, including materials and information, highlighting waste.",
+      "reference": "ASQ CSSBB Body of Knowledge – Lean Tools (pp. 291–293)"
+    },
+
+    {
       "exam_id": 3,
       "question": "Which tool is most effective for identifying potential causes of service-related defects?",
       "options": {
@@ -1564,7 +2334,268 @@
       "correct_answer": "a",
       "explanation": "The Measure phase establishes the current baseline performance by collecting and analyzing relevant process data.",
       "reference": "ASQ CSSSBB Handbook – DMAIC: Measure Phase (pp. 220–223)"
+    },
+    {
+      "exam_id": 3,
+      "question": "Which statistical method is commonly used to analyze categorical data in service industries?",
+      "options": {
+        "a": "Chi-square test",
+        "b": "ANOVA",
+        "c": "Regression",
+        "d": "t-test"
+      },
+      "correct_answer": "a",
+      "explanation": "Chi-square tests are often used in service industries to analyze relationships in categorical data such as survey responses.",
+      "reference": "ASQ CSSSBB Handbook – Statistical Methods (pp. 328–331)"
+    },
+    {
+      "exam_id": 3,
+      "question": "In Lean Six Sigma for services, what is the main benefit of process standardization?",
+      "options": {
+        "a": "Increases flexibility",
+        "b": "Ensures consistent service delivery",
+        "c": "Reduces customer demand",
+        "d": "Eliminates data collection needs"
+      },
+      "correct_answer": "b",
+      "explanation": "Process standardization reduces variation and ensures customers receive consistent service experiences.",
+      "reference": "ASQ CSSSBB Body of Knowledge – Process Management (pp. 178–181)"
+    },
+    {
+      "exam_id": 3,
+      "question": "Which Lean tool is most appropriate for workplace organization in service environments?",
+      "options": {
+        "a": "5S",
+        "b": "Kanban",
+        "c": "SMED",
+        "d": "Heijunka"
+      },
+      "correct_answer": "a",
+      "explanation": "5S provides structure and efficiency in service workspaces by organizing and sustaining order.",
+      "reference": "ASQ CSSSBB Handbook – Lean Tools (pp. 282–285)"
+    },
+    {
+      "exam_id": 3,
+      "question": "In a call center, which metric best measures customer satisfaction directly?",
+      "options": {
+        "a": "Average handle time",
+        "b": "Net Promoter Score (NPS)",
+        "c": "First-call resolution",
+        "d": "Queue time"
+      },
+      "correct_answer": "b",
+      "explanation": "Net Promoter Score (NPS) directly measures customer satisfaction and loyalty.",
+      "reference": "ASQ CSSSBB Handbook – Customer Metrics (pp. 88–91)"
+    },
+    {
+      "exam_id": 3,
+      "question": "Which statistical distribution is typically used for modeling service arrival times?",
+      "options": {
+        "a": "Normal distribution",
+        "b": "Poisson distribution",
+        "c": "Exponential distribution",
+        "d": "Binomial distribution"
+      },
+      "correct_answer": "c",
+      "explanation": "Exponential distributions are used to model service times and interarrival times in queuing systems.",
+      "reference": "ASQ CSSSBB Handbook – Probability Distributions (pp. 306–309)"
+    },
+    {
+      "exam_id": 3,
+      "question": "Which Six Sigma tool is most effective for mapping customer interaction points in a service process?",
+      "options": {
+        "a": "Value Stream Map",
+        "b": "Customer Journey Map",
+        "c": "Pareto Chart",
+        "d": "Fishbone Diagram"
+      },
+      "correct_answer": "b",
+      "explanation": "Customer journey mapping visualizes all customer interaction points and pain areas in service delivery.",
+      "reference": "ASQ CSSSBB Body of Knowledge – Service Process Tools (pp. 198–201)"
+    },
+    {
+      "exam_id": 3,
+      "question": "What is the main objective of benchmarking in Six Sigma services?",
+      "options": {
+        "a": "Copying competitor processes",
+        "b": "Identifying best practices for performance improvement",
+        "c": "Reducing employee headcount",
+        "d": "Automating all tasks"
+      },
+      "correct_answer": "b",
+      "explanation": "Benchmarking identifies best practices in similar industries and adapts them to improve service processes.",
+      "reference": "ASQ CSSSBB Handbook – Benchmarking (pp. 160–163)"
+    },
+    {
+      "exam_id": 3,
+      "question": "Which queueing model is commonly applied to analyze customer wait times in service operations?",
+      "options": {
+        "a": "M/M/1 model",
+        "b": "X-bar chart",
+        "c": "DOE model",
+        "d": "Factorial design"
+      },
+      "correct_answer": "a",
+      "explanation": "The M/M/1 model describes systems with a single server, exponential service times, and Poisson arrivals.",
+      "reference": "ASQ CSSSBB Handbook – Service Operations Analysis (pp. 410–412)"
+    },
+    {
+      "exam_id": 3,
+      "question": "Which Six Sigma tool is best for prioritizing service issues based on customer importance and performance?",
+      "options": {
+        "a": "House of Quality (QFD)",
+        "b": "Histogram",
+        "c": "Box Plot",
+        "d": "Control Chart"
+      },
+      "correct_answer": "a",
+      "explanation": "QFD (House of Quality) aligns customer requirements with service performance metrics.",
+      "reference": "ASQ CSSSBB Handbook – Quality Function Deployment (pp. 210–213)"
+    },
+    {
+      "exam_id": 3,
+      "question": "Which measurement scale is used when customer survey responses are recorded on a 1–5 rating scale?",
+      "options": {
+        "a": "Nominal",
+        "b": "Ordinal",
+        "c": "Interval",
+        "d": "Ratio"
+      },
+      "correct_answer": "b",
+      "explanation": "Survey rating scales are ordinal since responses reflect ordered preferences without equal intervals.",
+      "reference": "ASQ CSSSBB Body of Knowledge – Data Types (pp. 101–103)"
+    },
+    {
+      "exam_id": 3,
+      "question": "Which Lean concept focuses on reducing unevenness in service workloads?",
+      "options": {
+        "a": "Jidoka",
+        "b": "Heijunka",
+        "c": "Kanban",
+        "d": "Kaizen"
+      },
+      "correct_answer": "b",
+      "explanation": "Heijunka balances workload in service systems to prevent overburdening and bottlenecks.",
+      "reference": "ASQ CSSSBB Handbook – Lean Principles (pp. 288–291)"
+    },
+    {
+      "exam_id": 3,
+      "question": "What is the key benefit of applying Design of Experiments (DOE) in service improvement?",
+      "options": {
+        "a": "It eliminates the need for control charts",
+        "b": "It allows systematic evaluation of multiple service factors simultaneously",
+        "c": "It avoids customer feedback",
+        "d": "It focuses only on financial impact"
+      },
+      "correct_answer": "b",
+      "explanation": "DOE helps study multiple service factors and their interactions to identify optimal conditions.",
+      "reference": "ASQ CSSSBB Handbook – DOE Applications (pp. 412–415)"
+    },
+    {
+      "exam_id": 3,
+      "question": "Which graphical tool is used to show service demand patterns over time?",
+      "options": {
+        "a": "Run chart",
+        "b": "Fishbone diagram",
+        "c": "Pareto chart",
+        "d": "Box plot"
+      },
+      "correct_answer": "a",
+      "explanation": "Run charts show time-series data to visualize patterns, trends, and shifts in service demand.",
+      "reference": "ASQ CSSSBB Body of Knowledge – Time Series Analysis (pp. 272–274)"
+    },
+    {
+      "exam_id": 3,
+      "question": "Which Six Sigma financial metric measures annualized project benefits relative to investment?",
+      "options": {
+        "a": "Net Present Value (NPV)",
+        "b": "Return on Investment (ROI)",
+        "c": "Cost of Quality (CoQ)",
+        "d": "Payback period"
+      },
+      "correct_answer": "b",
+      "explanation": "ROI measures financial benefits compared to investment, helping prioritize service improvement projects.",
+      "reference": "ASQ CSSSBB Handbook – Financial Metrics (pp. 155–158)"
+    },
+    {
+      "exam_id": 3,
+      "question": "Which statistical test is best suited to compare paired before-and-after service times?",
+      "options": {
+        "a": "Paired t-test",
+        "b": "Chi-square",
+        "c": "ANOVA",
+        "d": "Regression"
+      },
+      "correct_answer": "a",
+      "explanation": "Paired t-tests compare matched observations, like service times before and after process improvement.",
+      "reference": "ASQ CSSSBB Handbook – Hypothesis Testing (pp. 324–326)"
+    },
+    {
+      "exam_id": 3,
+      "question": "What does a high R-squared value indicate in service regression models?",
+      "options": {
+        "a": "Model explains little variation",
+        "b": "Model explains a large proportion of variation",
+        "c": "Data is non-normal",
+        "d": "Errors are uncorrelated"
+      },
+      "correct_answer": "b",
+      "explanation": "A high R-squared indicates that the regression model explains a large portion of the variability in service outcomes.",
+      "reference": "ASQ CSSSBB Handbook – Regression Analysis (pp. 355–358)"
+    },
+    {
+      "exam_id": 3,
+      "question": "Which Six Sigma role provides technical mentoring and advanced statistical expertise?",
+      "options": {
+        "a": "Black Belt",
+        "b": "Green Belt",
+        "c": "Master Black Belt",
+        "d": "Champion"
+      },
+      "correct_answer": "c",
+      "explanation": "Master Black Belts mentor Black Belts and provide advanced Six Sigma technical expertise.",
+      "reference": "ASQ CSSSBB Body of Knowledge – Roles & Responsibilities (pp. 29–32)"
+    },
+    {
+      "exam_id": 3,
+      "question": "Which cost category in the Cost of Quality model includes training and preventive actions?",
+      "options": {
+        "a": "Appraisal costs",
+        "b": "Prevention costs",
+        "c": "Internal failure costs",
+        "d": "External failure costs"
+      },
+      "correct_answer": "b",
+      "explanation": "Prevention costs include training, quality planning, and error-proofing activities.",
+      "reference": "ASQ CSSSBB Handbook – Cost of Quality (pp. 150–153)"
+    },
+    {
+      "exam_id": 3,
+      "question": "Which Six Sigma tool helps identify bottlenecks and inefficiencies in a hospital admission process?",
+      "options": {
+        "a": "Value Stream Map",
+        "b": "Run chart",
+        "c": "Control chart",
+        "d": "Histogram"
+      },
+      "correct_answer": "a",
+      "explanation": "Value Stream Mapping identifies delays and bottlenecks in service processes like hospital admissions.",
+      "reference": "ASQ CSSSBB Body of Knowledge – Lean Tools (pp. 291–294)"
+    },
+    {
+      "exam_id": 3,
+      "question": "Which type of voice of the customer data comes from surveys and focus groups?",
+      "options": {
+        "a": "Reactive data",
+        "b": "Proactive data",
+        "c": "Quantitative data",
+        "d": "Benchmark data"
+      },
+      "correct_answer": "b",
+      "explanation": "Proactive VOC data includes information collected through planned activities like surveys and focus groups.",
+      "reference": "ASQ CSSSBB Handbook – VOC (pp. 86–88)"
     }
+
   ]
 }
 
