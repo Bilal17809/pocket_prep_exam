@@ -29,7 +29,7 @@
       },
       "correct_answer": "b",
       "explanation": "Forecast error is the difference between actual demand and forecasted demand. Managing forecast error is critical for planning safety stock and improving forecast accuracy.",
-      "reference": "CPIM Part 1, Module 2 – Demand Management (Forecasting and Forecast Error)"
+      "reference": "CPIM Part 1, Module 2 – Demand Management (Forecasting and Forecast Error, pp. 2.35–2.40)"
     },
     {
       "exam_id": 0,
@@ -42,7 +42,7 @@
       },
       "correct_answer": "b",
       "explanation": "Safety stock acts as a buffer against variations in demand or supply lead time. It reduces the risk of stockouts.",
-      "reference": "CPIM Part 1, Module 4 – Inventory (Types of Inventory – Safety Stock)"
+      "reference": "CPIM Part 1, Module 4 – Inventory (Types of Inventory – Safety Stock, pp. 4.15–4.20)"
     },
     {
       "exam_id": 0,
@@ -55,7 +55,7 @@
       },
       "correct_answer": "b",
       "explanation": "MPS translates the production plan into specific build schedules for end items, balancing demand with available resources.",
-      "reference": "CPIM Part 1, Module 3 – Master Planning (Purpose and Outputs of MPS)"
+      "reference": "CPIM Part 1, Module 3 – Master Planning (Purpose and Outputs of MPS, pp. 3.25–3.30)"
     },
     {
       "exam_id": 0,
@@ -68,7 +68,7 @@
       },
       "correct_answer": "a",
       "explanation": "RCCP checks whether critical resources (like bottleneck work centers, labor, and key machines) have enough capacity to support the MPS.",
-      "reference": "CPIM Part 2, Module 4 – Capacity Planning (Rough-Cut Capacity Planning)"
+      "reference": "CPIM Part 2, Module 4 – Capacity Planning (Rough-Cut Capacity Planning, pp. 4.10–4.15)"
     },
     {
       "exam_id": 0,
@@ -81,7 +81,124 @@
       },
       "correct_answer": "b",
       "explanation": "S&OP aligns business strategy, sales forecasts, and operations planning to ensure a feasible, balanced plan that supports financial and operational goals.",
-      "reference": "CPIM Part 2, Module 2 – S&OP (Purpose and Benefits of S&OP)"
+      "reference": "CPIM Part 2, Module 2 – S&OP (Purpose and Benefits, pp. 2.5–2.12)"
+    },
+    {
+      "exam_id": 0,
+      "question": "Which type of bill of material (BOM) is used to plan options and variations in a product family?",
+      "options": {
+        "a": "Modular BOM",
+        "b": "Phantom BOM",
+        "c": "Planning BOM",
+        "d": "Single-level BOM"
+      },
+      "correct_answer": "c",
+      "explanation": "A planning BOM is used in forecasting and MPS to plan for product families with many variations.",
+      "reference": "CPIM Part 2, Module 3 – Detailed Scheduling and Planning (Bills of Material, pp. 3.20–3.25)"
+    },
+    {
+      "exam_id": 0,
+      "question": "Which system uses actual consumption data to trigger replenishment signals?",
+      "options": {
+        "a": "Material Requirements Planning (MRP)",
+        "b": "Kanban",
+        "c": "Enterprise Resource Planning (ERP)",
+        "d": "Distribution Requirements Planning (DRP)"
+      },
+      "correct_answer": "b",
+      "explanation": "Kanban is a pull system where replenishment is triggered by actual consumption rather than forecast.",
+      "reference": "CPIM Part 2, Module 3 – Detailed Scheduling and Planning (Lean and JIT, pp. 3.45–3.50)"
+    },
+    {
+      "exam_id": 0,
+      "question": "Which measure reflects the percentage of time a machine is actually producing compared to available time?",
+      "options": {
+        "a": "Yield",
+        "b": "Utilization",
+        "c": "Productivity",
+        "d": "Efficiency"
+      },
+      "correct_answer": "b",
+      "explanation": "Utilization is the ratio of actual running time to total available time.",
+      "reference": "CPIM Part 2, Module 4 – Capacity Planning (Capacity Measurement, pp. 4.25–4.30)"
+    },
+    {
+      "exam_id": 0,
+      "question": "In MRP, which file contains information about lead times, lot sizes, and safety stock for each item?",
+      "options": {
+        "a": "Inventory status file",
+        "b": "Bill of material",
+        "c": "Routing file",
+        "d": "Item master file"
+      },
+      "correct_answer": "d",
+      "explanation": "The item master file includes planning data such as lot sizes, lead times, and safety stock requirements.",
+      "reference": "CPIM Part 2, Module 3 – Detailed Scheduling and Planning (MRP Inputs, pp. 3.35–3.40)"
+    },
+    {
+      "exam_id": 0,
+      "question": "What is the primary purpose of time fences in MPS?",
+      "options": {
+        "a": "To freeze near-term schedules and provide stability",
+        "b": "To forecast demand more accurately",
+        "c": "To reduce lead time",
+        "d": "To measure supplier performance"
+      },
+      "correct_answer": "a",
+      "explanation": "Time fences prevent unnecessary changes to production schedules close to execution, improving stability.",
+      "reference": "CPIM Part 1, Module 3 – Master Planning (Time Fences, pp. 3.40–3.45)"
+    },
+    {
+      "exam_id": 0,
+      "question": "Which distribution planning technique determines the timing and quantity of stock movements between facilities?",
+      "options": {
+        "a": "Rough-cut capacity planning",
+        "b": "Material Requirements Planning",
+        "c": "Distribution Requirements Planning",
+        "d": "Capacity Requirements Planning"
+      },
+      "correct_answer": "c",
+      "explanation": "DRP is the time-phased planning tool for distribution networks, determining when and how much inventory to replenish.",
+      "reference": "CPIM Part 2, Module 5 – Distribution (DRP, pp. 5.10–5.15)"
+    },
+    {
+      "exam_id": 0,
+      "question": "Which inventory management approach focuses on continuous counting rather than annual physical inventory?",
+      "options": {
+        "a": "Cycle counting",
+        "b": "ABC analysis",
+        "c": "Kanban",
+        "d": "Two-bin system"
+      },
+      "correct_answer": "a",
+      "explanation": "Cycle counting is a perpetual method to maintain inventory accuracy by checking selected items regularly.",
+      "reference": "CPIM Part 1, Module 4 – Inventory (Cycle Counting, pp. 4.35–4.40)"
+    },
+    {
+      "exam_id": 0,
+      "question": "Which lot-sizing technique always orders the exact net requirements for each period?",
+      "options": {
+        "a": "Economic Order Quantity (EOQ)",
+        "b": "Lot-for-lot",
+        "c": "Fixed order quantity",
+        "d": "Period order quantity"
+      },
+      "correct_answer": "b",
+      "explanation": "Lot-for-lot ordering matches order quantity to net requirements for each period, minimizing inventory but increasing order frequency.",
+      "reference": "CPIM Part 2, Module 3 – Detailed Scheduling and Planning (Lot Sizing Techniques, pp. 3.50–3.55)"
+    },
+    {
+      "exam_id": 0,
+      "question": "Which measure indicates how much demand can be met from current inventory without replenishment?",
+      "options": {
+        "a": "Service level",
+        "b": "Inventory turns",
+        "c": "Available-to-promise (ATP)",
+        "d": "Fill rate"
+      },
+      "correct_answer": "c",
+      "explanation": "ATP indicates the uncommitted portion of inventory and planned production available to support new customer orders.",
+      "reference": "CPIM Part 1, Module 3 – Master Planning (Available-to-Promise, pp. 3.18–3.22)"
     },
     {
       "exam_id": 1,
@@ -94,7 +211,7 @@
       },
       "correct_answer": "c",
       "explanation": "Supply chain design seeks to create a structure that delivers optimal service levels at the lowest total cost, while maintaining quality.",
-      "reference": "CSCP Module 2 – Supply Chain Design"
+      "reference": "CSCP Module 2 – Supply Chain Design (Section A: Supply Chain Design Fundamentals, pp. 120–123)"
     },
     {
       "exam_id": 1,
@@ -107,7 +224,176 @@
       },
       "correct_answer": "b",
       "explanation": "A supply chain strategy defines how a company will align its supply chain to support business objectives, such as cost leadership, responsiveness, or innovation.",
-      "reference": "CSCP Module 1 – Supply Chain Strategy"
+      "reference": "CSCP Module 1 – Supply Chain Strategy (Section B: Aligning Supply Chain with Business Strategy, pp. 45–49)"
+    },
+    {
+      "exam_id": 1,
+      "question": "Which of the following is the primary purpose of Sales and Operations Planning (S&OP)?",
+      "options": {
+        "a": "To optimize machine utilization",
+        "b": "To balance demand and supply at the aggregate level",
+        "c": "To schedule employees",
+        "d": "To measure supplier performance"
+      },
+      "correct_answer": "b",
+      "explanation": "S&OP ensures alignment between demand and supply by creating a consensus-based plan that balances resources with customer needs.",
+      "reference": "CSCP Module 3 – Supply Chain Planning and Execution (Section A: Sales and Operations Planning, pp. 210–214)"
+    },
+    {
+      "exam_id": 1,
+      "question": "Which of the following is a key benefit of global supply chains?",
+      "options": {
+        "a": "Shorter lead times",
+        "b": "Lower transportation costs",
+        "c": "Access to broader markets and resources",
+        "d": "Reduced complexity"
+      },
+      "correct_answer": "c",
+      "explanation": "Global supply chains allow organizations to access wider markets and tap into global resources, though often at the cost of increased complexity.",
+      "reference": "CSCP Module 1 – Supply Chain Strategy (Section D: Global Supply Chains, pp. 72–75)"
+    },
+    {
+      "exam_id": 1,
+      "question": "In lean supply chain management, which of the following is emphasized?",
+      "options": {
+        "a": "Reducing waste across processes",
+        "b": "Maintaining high levels of safety stock",
+        "c": "Maximizing customization",
+        "d": "Increasing batch sizes"
+      },
+      "correct_answer": "a",
+      "explanation": "Lean supply chain management focuses on identifying and eliminating waste in processes to improve efficiency and reduce cost.",
+      "reference": "CSCP Module 4 – Supply Chain Improvements and Best Practices (Section A: Lean Principles, pp. 315–318)"
+    },
+    {
+      "exam_id": 1,
+      "question": "Which of the following tools is most commonly used for demand forecasting?",
+      "options": {
+        "a": "CPFR (Collaborative Planning, Forecasting, and Replenishment)",
+        "b": "Poka-yoke",
+        "c": "Kanban",
+        "d": "SMED"
+      },
+      "correct_answer": "a",
+      "explanation": "CPFR is a collaborative forecasting process that enables partners to share data and create more accurate demand forecasts.",
+      "reference": "CSCP Module 3 – Supply Chain Planning and Execution (Section C: Demand Management, pp. 240–243)"
+    },
+    {
+      "exam_id": 1,
+      "question": "Which metric best measures supply chain responsiveness?",
+      "options": {
+        "a": "Cash-to-cash cycle time",
+        "b": "Order fulfillment lead time",
+        "c": "Inventory accuracy",
+        "d": "Forecast error"
+      },
+      "correct_answer": "b",
+      "explanation": "Order fulfillment lead time reflects how quickly a supply chain can respond to customer orders.",
+      "reference": "CSCP Module 2 – Supply Chain Design (Section C: Performance Metrics, pp. 160–163)"
+    },
+    {
+      "exam_id": 1,
+      "question": "Which of the following best describes the bullwhip effect?",
+      "options": {
+        "a": "Increased customer churn due to poor service",
+        "b": "Amplification of demand variability up the supply chain",
+        "c": "A strategy to minimize transportation cost",
+        "d": "Use of safety stock to protect against shortages"
+      },
+      "correct_answer": "b",
+      "explanation": "The bullwhip effect occurs when small fluctuations in customer demand cause larger swings in demand at upstream stages of the supply chain.",
+      "reference": "CSCP Module 3 – Supply Chain Planning and Execution (Section D: Demand Variability and Bullwhip Effect, pp. 260–262)"
+    },
+    {
+      "exam_id": 1,
+      "question": "Which of the following is a primary role of distribution centers?",
+      "options": {
+        "a": "Performing product engineering",
+        "b": "Providing local manufacturing",
+        "c": "Consolidating and dispersing inventory for efficient delivery",
+        "d": "Monitoring supplier quality"
+      },
+      "correct_answer": "c",
+      "explanation": "Distribution centers serve as hubs for consolidating inventory and dispersing it closer to customers for faster and cost-effective fulfillment.",
+      "reference": "CSCP Module 2 – Supply Chain Design (Section E: Distribution Network Design, pp. 185–188)"
+    },
+    {
+      "exam_id": 1,
+      "question": "Which of the following is a primary purpose of inventory in a supply chain?",
+      "options": {
+        "a": "To increase complexity",
+        "b": "To serve as a buffer against uncertainty",
+        "c": "To minimize product quality",
+        "d": "To reduce cycle times"
+      },
+      "correct_answer": "b",
+      "explanation": "Inventory is held in a supply chain primarily as a buffer against demand and supply uncertainty.",
+      "reference": "CSCP Module 3 – Supply Chain Planning and Execution (Section B: Inventory Management, pp. 225–227)"
+    },
+    {
+      "exam_id": 1,
+      "question": "Which technology enables real-time visibility in supply chain operations?",
+      "options": {
+        "a": "RFID",
+        "b": "Poka-yoke",
+        "c": "EOQ",
+        "d": "Kaizen"
+      },
+      "correct_answer": "a",
+      "explanation": "RFID technology allows for real-time tracking and visibility of goods throughout the supply chain.",
+      "reference": "CSCP Module 4 – Supply Chain Improvements and Best Practices (Section C: Supply Chain Visibility, pp. 340–343)"
+    },
+    {
+      "exam_id": 1,
+      "question": "Which of the following best describes postponement in supply chain design?",
+      "options": {
+        "a": "Delaying payment to suppliers",
+        "b": "Delaying product differentiation until closer to the customer",
+        "c": "Delaying transportation to reduce cost",
+        "d": "Delaying quality inspections until after production"
+      },
+      "correct_answer": "b",
+      "explanation": "Postponement delays final product differentiation or customization until demand is known, reducing inventory and increasing flexibility.",
+      "reference": "CSCP Module 2 – Supply Chain Design (Section F: Postponement Strategies, pp. 190–193)"
+    },
+    {
+      "exam_id": 1,
+      "question": "Which of the following is the primary purpose of supply chain risk management?",
+      "options": {
+        "a": "Eliminating all risks from the supply chain",
+        "b": "Identifying and mitigating potential disruptions",
+        "c": "Maximizing production output",
+        "d": "Reducing transportation cost only"
+      },
+      "correct_answer": "b",
+      "explanation": "Supply chain risk management involves identifying, assessing, and mitigating risks that could disrupt supply chain performance.",
+      "reference": "CSCP Module 4 – Supply Chain Improvements and Best Practices (Section B: Risk Management, pp. 325–329)"
+    },
+    {
+      "exam_id": 1,
+      "question": "Which type of supply chain strategy is most appropriate for innovative products with unpredictable demand?",
+      "options": {
+        "a": "Lean supply chain",
+        "b": "Agile supply chain",
+        "c": "Efficient supply chain",
+        "d": "Push-based supply chain"
+      },
+      "correct_answer": "b",
+      "explanation": "Agile supply chains are best suited for innovative products with uncertain demand, as they emphasize flexibility and responsiveness.",
+      "reference": "CSCP Module 1 – Supply Chain Strategy (Section C: Supply Chain Models, pp. 60–64)"
+    },
+    {
+      "exam_id": 1,
+      "question": "Which financial metric is most directly affected by supply chain efficiency?",
+      "options": {
+        "a": "Return on assets (ROA)",
+        "b": "Gross margin",
+        "c": "Debt-to-equity ratio",
+        "d": "Earnings per share"
+      },
+      "correct_answer": "a",
+      "explanation": "Efficient supply chain operations improve asset utilization, which directly enhances return on assets (ROA).",
+      "reference": "CSCP Module 2 – Supply Chain Design (Section C: Financial Metrics, pp. 150–153)"
     },
     {
       "exam_id": 2,
@@ -120,7 +406,7 @@
       },
       "correct_answer": "b",
       "explanation": "The Control phase ensures that process improvements are sustained through control plans, monitoring systems, and standard operating procedures.",
-      "reference": "ASQ CSSBB Body of Knowledge – DMAIC: Control Phase"
+      "reference": "ASQ CSSBB Body of Knowledge – DMAIC: Control Phase (pp. 210–213)"
     },
     {
       "exam_id": 2,
@@ -133,7 +419,176 @@
       },
       "correct_answer": "b",
       "explanation": "An Ishikawa (fishbone) diagram helps identify root causes of quality issues and is often used in the Analyze phase of DMAIC.",
-      "reference": "ASQ CSSBB Body of Knowledge – Root Cause Analysis Tools"
+      "reference": "ASQ CSSBB Body of Knowledge – Root Cause Analysis Tools (pp. 155–157)"
+    },
+    {
+      "exam_id": 2,
+      "question": "What is the primary objective of the Define phase in DMAIC?",
+      "options": {
+        "a": "Establish project goals and customer requirements",
+        "b": "Validate measurement systems",
+        "c": "Identify statistical relationships",
+        "d": "Develop process control charts"
+      },
+      "correct_answer": "a",
+      "explanation": "The Define phase clarifies project objectives, customer requirements, and the scope of improvement efforts.",
+      "reference": "ASQ CSSBB Body of Knowledge – Define Phase (pp. 35–38)"
+    },
+    {
+      "exam_id": 2,
+      "question": "Which statistical test is commonly used to compare the means of two independent samples?",
+      "options": {
+        "a": "Chi-square test",
+        "b": "ANOVA",
+        "c": "Two-sample t-test",
+        "d": "Regression analysis"
+      },
+      "correct_answer": "c",
+      "explanation": "The two-sample t-test is used to determine whether the means of two independent groups are significantly different.",
+      "reference": "ASQ CSSBB Body of Knowledge – Hypothesis Testing (pp. 188–190)"
+    },
+    {
+      "exam_id": 2,
+      "question": "Which Lean tool focuses on identifying and eliminating non-value-added steps in a process?",
+      "options": {
+        "a": "5 Whys",
+        "b": "Kaizen",
+        "c": "Value Stream Mapping",
+        "d": "Control Charts"
+      },
+      "correct_answer": "c",
+      "explanation": "Value Stream Mapping (VSM) helps visualize and identify waste across the entire process flow.",
+      "reference": "ASQ CSSBB Body of Knowledge – Lean Tools (pp. 290–293)"
+    },
+    {
+      "exam_id": 2,
+      "question": "In hypothesis testing, what does a p-value less than 0.05 typically indicate?",
+      "options": {
+        "a": "The null hypothesis is true",
+        "b": "Reject the null hypothesis",
+        "c": "Accept the null hypothesis",
+        "d": "The test is inconclusive"
+      },
+      "correct_answer": "b",
+      "explanation": "A p-value < 0.05 indicates strong evidence against the null hypothesis, leading to its rejection.",
+      "reference": "ASQ CSSBB Body of Knowledge – Statistical Inference (pp. 185–187)"
+    },
+    {
+      "exam_id": 2,
+      "question": "Which Six Sigma role is responsible for mentoring Green Belts and ensuring project alignment?",
+      "options": {
+        "a": "Champion",
+        "b": "Black Belt",
+        "c": "Yellow Belt",
+        "d": "Sponsor"
+      },
+      "correct_answer": "b",
+      "explanation": "Black Belts provide technical expertise and mentorship while ensuring projects align with organizational goals.",
+      "reference": "ASQ CSSBB Body of Knowledge – Roles and Responsibilities (pp. 20–22)"
+    },
+    {
+      "exam_id": 2,
+      "question": "What does Cp in process capability analysis measure?",
+      "options": {
+        "a": "Process variation relative to specification limits",
+        "b": "Process stability over time",
+        "c": "The center of process distribution",
+        "d": "Correlation between inputs and outputs"
+      },
+      "correct_answer": "a",
+      "explanation": "Cp measures potential process capability by comparing process spread to specification limits.",
+      "reference": "ASQ CSSBB Body of Knowledge – Process Capability (pp. 200–202)"
+    },
+    {
+      "exam_id": 2,
+      "question": "Which graphical tool is most effective for monitoring process stability over time?",
+      "options": {
+        "a": "Control chart",
+        "b": "Pareto chart",
+        "c": "Histogram",
+        "d": "Boxplot"
+      },
+      "correct_answer": "a",
+      "explanation": "Control charts track process performance over time to detect variation and identify instability.",
+      "reference": "ASQ CSSBB Body of Knowledge – Statistical Process Control (pp. 220–223)"
+    },
+    {
+      "exam_id": 2,
+      "question": "In Design of Experiments (DOE), what is the main benefit of factorial designs?",
+      "options": {
+        "a": "Analyzing one factor at a time",
+        "b": "Studying interaction effects between factors",
+        "c": "Reducing the need for hypothesis testing",
+        "d": "Eliminating random error completely"
+      },
+      "correct_answer": "b",
+      "explanation": "Factorial designs allow simultaneous evaluation of multiple factors and their interactions.",
+      "reference": "ASQ CSSBB Body of Knowledge – DOE (pp. 240–243)"
+    },
+    {
+      "exam_id": 2,
+      "question": "What is the primary use of FMEA in Six Sigma projects?",
+      "options": {
+        "a": "Measure process cycle time",
+        "b": "Identify and prioritize potential failures",
+        "c": "Optimize inventory levels",
+        "d": "Reduce supplier lead time"
+      },
+      "correct_answer": "b",
+      "explanation": "Failure Modes and Effects Analysis (FMEA) helps identify, assess, and prioritize potential process failures.",
+      "reference": "ASQ CSSBB Body of Knowledge – Risk Management Tools (pp. 265–268)"
+    },
+    {
+      "exam_id": 2,
+      "question": "What does the R-squared value in regression analysis represent?",
+      "options": {
+        "a": "The proportion of variation explained by the model",
+        "b": "The probability of a Type I error",
+        "c": "The process mean",
+        "d": "The residual standard deviation"
+      },
+      "correct_answer": "a",
+      "explanation": "R² indicates the percentage of the dependent variable’s variation explained by independent variables.",
+      "reference": "ASQ CSSBB Body of Knowledge – Regression (pp. 195–197)"
+    },
+    {
+      "exam_id": 2,
+      "question": "In Lean Six Sigma, what is the main purpose of 5S?",
+      "options": {
+        "a": "Reduce setup time",
+        "b": "Organize the workplace for efficiency",
+        "c": "Measure statistical variation",
+        "d": "Standardize process capability"
+      },
+      "correct_answer": "b",
+      "explanation": "5S (Sort, Set in order, Shine, Standardize, Sustain) organizes the workplace for efficiency and safety.",
+      "reference": "ASQ CSSBB Body of Knowledge – Lean Tools (pp. 280–282)"
+    },
+    {
+      "exam_id": 2,
+      "question": "Which type of error occurs when a true null hypothesis is incorrectly rejected?",
+      "options": {
+        "a": "Type I Error",
+        "b": "Type II Error",
+        "c": "Alpha risk",
+        "d": "Beta risk"
+      },
+      "correct_answer": "a",
+      "explanation": "Type I Error (α risk) occurs when the null hypothesis is true, but we reject it.",
+      "reference": "ASQ CSSBB Body of Knowledge – Hypothesis Testing (pp. 183–184)"
+    },
+    {
+      "exam_id": 2,
+      "question": "What is the main focus of the Measure phase in DMAIC?",
+      "options": {
+        "a": "Define project scope",
+        "b": "Collect reliable data and establish baseline",
+        "c": "Implement improvements",
+        "d": "Control process performance"
+      },
+      "correct_answer": "b",
+      "explanation": "The Measure phase focuses on data collection, measurement system analysis, and establishing baseline performance.",
+      "reference": "ASQ CSSBB Body of Knowledge – Measure Phase (pp. 90–94)"
     },
     {
       "exam_id": 3,
@@ -146,7 +601,189 @@
       },
       "correct_answer": "c",
       "explanation": "DFSS is a proactive methodology for designing new products or services to meet Six Sigma quality levels from the start.",
-      "reference": "ASQ CSSSBB Body of Knowledge – DFSS Concepts"
+      "reference": "ASQ CSSSBB Body of Knowledge – DFSS Concepts (pp. 210–213)"
+    },
+    {
+      "exam_id": 3,
+      "question": "In Six Sigma, which statistical test is commonly used to compare the means of two independent groups?",
+      "options": {
+        "a": "Chi-square test",
+        "b": "ANOVA",
+        "c": "Two-sample t-test",
+        "d": "Regression analysis"
+      },
+      "correct_answer": "c",
+      "explanation": "A two-sample t-test is used to determine if there is a statistically significant difference between the means of two independent groups.",
+      "reference": "ASQ CSSSBB Handbook – Hypothesis Testing (pp. 322–325)"
+    },
+    {
+      "exam_id": 3,
+      "question": "Which Lean tool is used to visually represent the flow of materials and information in a process?",
+      "options": {
+        "a": "Kaizen",
+        "b": "5S",
+        "c": "Value Stream Mapping",
+        "d": "Poka-Yoke"
+      },
+      "correct_answer": "c",
+      "explanation": "Value Stream Mapping (VSM) is a Lean tool used to analyze and improve the flow of materials and information.",
+      "reference": "ASQ CSSSBB Handbook – Lean Tools (pp. 285–288)"
+    },
+    {
+      "exam_id": 3,
+      "question": "What is the primary purpose of a control chart?",
+      "options": {
+        "a": "Measure central tendency",
+        "b": "Track financial performance",
+        "c": "Monitor process stability over time",
+        "d": "Perform hypothesis testing"
+      },
+      "correct_answer": "c",
+      "explanation": "Control charts are statistical tools used to monitor process behavior and determine whether a process is stable or has special cause variation.",
+      "reference": "ASQ CSSSBB Handbook – Statistical Process Control (pp. 340–344)"
+    },
+    {
+      "exam_id": 3,
+      "question": "In Six Sigma DMAIC, which phase focuses on identifying the root cause of defects?",
+      "options": {
+        "a": "Define",
+        "b": "Measure",
+        "c": "Analyze",
+        "d": "Control"
+      },
+      "correct_answer": "c",
+      "explanation": "The Analyze phase uses statistical and root cause analysis tools to identify the sources of variation and defects.",
+      "reference": "ASQ CSSSBB Body of Knowledge – DMAIC: Analyze Phase (pp. 250–253)"
+    },
+    {
+      "exam_id": 3,
+      "question": "What is the main goal of Failure Modes and Effects Analysis (FMEA)?",
+      "options": {
+        "a": "To design experiments",
+        "b": "To prioritize risks and improve reliability",
+        "c": "To compare process means",
+        "d": "To establish control limits"
+      },
+      "correct_answer": "b",
+      "explanation": "FMEA helps identify potential failure modes, their effects, and prioritize them based on risk to prevent issues before they occur.",
+      "reference": "ASQ CSSSBB Handbook – Risk Management Tools (pp. 370–373)"
+    },
+    {
+      "exam_id": 3,
+      "question": "Which type of data is best analyzed with a chi-square test?",
+      "options": {
+        "a": "Nominal or categorical data",
+        "b": "Interval data",
+        "c": "Ratio data",
+        "d": "Continuous normal data"
+      },
+      "correct_answer": "a",
+      "explanation": "Chi-square tests are designed for categorical (nominal) data to test relationships between variables.",
+      "reference": "ASQ CSSSBB Handbook – Statistical Methods (pp. 328–330)"
+    },
+    {
+      "exam_id": 3,
+      "question": "Which Six Sigma tool is most useful for determining the correlation between two continuous variables?",
+      "options": {
+        "a": "Pareto chart",
+        "b": "Regression analysis",
+        "c": "Histogram",
+        "d": "Box plot"
+      },
+      "correct_answer": "b",
+      "explanation": "Regression analysis examines relationships between continuous variables to predict outcomes and identify influence.",
+      "reference": "ASQ CSSSBB Body of Knowledge – Regression & Correlation (pp. 355–358)"
+    },
+    {
+      "exam_id": 3,
+      "question": "In project selection, which factor is most important when prioritizing Six Sigma projects?",
+      "options": {
+        "a": "Financial impact and alignment with business goals",
+        "b": "Team size",
+        "c": "Ease of implementation only",
+        "d": "Number of available tools"
+      },
+      "correct_answer": "a",
+      "explanation": "Projects should be prioritized based on potential financial impact and alignment with organizational strategic goals.",
+      "reference": "ASQ CSSSBB Handbook – Project Management & Leadership (pp. 145–148)"
+    },
+    {
+      "exam_id": 3,
+      "question": "Which of the following best defines process capability index (Cpk)?",
+      "options": {
+        "a": "A measure of process spread",
+        "b": "A measure of process stability",
+        "c": "A measure of how well a process meets specification limits",
+        "d": "A measure of sample variation"
+      },
+      "correct_answer": "c",
+      "explanation": "Cpk measures the ability of a process to produce output within specification limits relative to process variation.",
+      "reference": "ASQ CSSSBB Body of Knowledge – Process Capability (pp. 365–368)"
+    },
+    {
+      "exam_id": 3,
+      "question": "Which type of DOE (Design of Experiments) is most efficient for screening multiple factors?",
+      "options": {
+        "a": "Full factorial design",
+        "b": "Fractional factorial design",
+        "c": "Randomized block design",
+        "d": "One-way ANOVA"
+      },
+      "correct_answer": "b",
+      "explanation": "Fractional factorial designs allow screening of many factors with fewer experimental runs compared to full factorial designs.",
+      "reference": "ASQ CSSSBB Handbook – Design of Experiments (pp. 410–414)"
+    },
+    {
+      "exam_id": 3,
+      "question": "Which leadership style is most effective in motivating Six Sigma teams?",
+      "options": {
+        "a": "Authoritative",
+        "b": "Transformational",
+        "c": "Laissez-faire",
+        "d": "Transactional"
+      },
+      "correct_answer": "b",
+      "explanation": "Transformational leadership inspires and motivates teams to achieve higher performance and continuous improvement.",
+      "reference": "ASQ CSSSBB Body of Knowledge – Leadership & Team Management (pp. 130–134)"
+    },
+    {
+      "exam_id": 3,
+      "question": "In hypothesis testing, what does a p-value less than 0.05 generally indicate?",
+      "options": {
+        "a": "The null hypothesis is true",
+        "b": "There is strong evidence against the null hypothesis",
+        "c": "The test is inconclusive",
+        "d": "The sample size is too small"
+      },
+      "correct_answer": "b",
+      "explanation": "A p-value less than 0.05 indicates strong evidence against the null hypothesis, suggesting statistical significance.",
+      "reference": "ASQ CSSSBB Handbook – Statistical Inference (pp. 320–323)"
+    },
+    {
+      "exam_id": 3,
+      "question": "Which of the following tools is most effective for prioritizing improvement opportunities?",
+      "options": {
+        "a": "Pareto chart",
+        "b": "Control chart",
+        "c": "Scatter plot",
+        "d": "Box plot"
+      },
+      "correct_answer": "a",
+      "explanation": "Pareto charts help identify and prioritize the most significant issues by showing the relative frequency or impact of problems.",
+      "reference": "ASQ CSSSBB Body of Knowledge – Quality Tools (pp. 270–273)"
+    },
+    {
+      "exam_id": 3,
+      "question": "What is the primary focus of the Measure phase in DMAIC?",
+      "options": {
+        "a": "Collecting data to establish a baseline performance",
+        "b": "Identifying root causes",
+        "c": "Sustaining improvements",
+        "d": "Developing solutions"
+      },
+      "correct_answer": "a",
+      "explanation": "The Measure phase establishes the current baseline performance by collecting and analyzing relevant process data.",
+      "reference": "ASQ CSSSBB Handbook – DMAIC: Measure Phase (pp. 220–223)"
     }
   ]
 }
