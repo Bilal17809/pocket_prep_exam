@@ -201,6 +201,396 @@
       "reference": "CPIM Part 1, Module 3 – Master Planning (Available-to-Promise, pp. 3.18–3.22)"
     },
     {
+      "exam_id": 0,
+      "question": "Which document authorizes the release of materials to production?",
+      "options": {
+        "a": "Purchase order",
+        "b": "Work order",
+        "c": "Picking list",
+        "d": "Routing sheet"
+      },
+      "correct_answer": "b",
+      "explanation": "A work order authorizes production to start and allows materials to be issued from inventory to the shop floor.",
+      "reference": "CPIM Part 2, Module 3 – Detailed Scheduling and Planning (Work Orders, pp. 3.65–3.70)"
+    },
+    {
+      "exam_id": 0,
+      "question": "Which planning approach starts at the finished goods level and works backward to determine requirements?",
+      "options": {
+        "a": "Bottom-up replanning",
+        "b": "Top-down planning",
+        "c": "Material Requirements Planning",
+        "d": "Line-item budgeting"
+      },
+      "correct_answer": "c",
+      "explanation": "MRP is a backward-scheduling process that calculates requirements for components based on the MPS.",
+      "reference": "CPIM Part 2, Module 3 – Detailed Scheduling and Planning (MRP Logic, pp. 3.30–3.35)"
+    },
+    {
+      "exam_id": 0,
+      "question": "Which metric measures how many times inventory is sold and replaced during a given period?",
+      "options": {
+        "a": "Service level",
+        "b": "Inventory turnover",
+        "c": "Cycle count accuracy",
+        "d": "Fill rate"
+      },
+      "correct_answer": "b",
+      "explanation": "Inventory turnover is calculated as cost of goods sold divided by average inventory, showing how efficiently inventory is used.",
+      "reference": "CPIM Part 1, Module 4 – Inventory (Inventory Performance Metrics, pp. 4.45–4.50)"
+    },
+    {
+      "exam_id": 0,
+      "question": "What is the main purpose of a routing file?",
+      "options": {
+        "a": "To define order quantities",
+        "b": "To sequence operations and identify resources",
+        "c": "To authorize shipments",
+        "d": "To forecast demand"
+      },
+      "correct_answer": "b",
+      "explanation": "The routing file defines the operations sequence, work centers, and times needed to produce a product.",
+      "reference": "CPIM Part 2, Module 3 – Detailed Scheduling and Planning (Routing Data, pp. 3.60–3.65)"
+    },
+    {
+      "exam_id": 0,
+      "question": "Which system integrates financial, distribution, and manufacturing data into a single database?",
+      "options": {
+        "a": "MRP",
+        "b": "ERP",
+        "c": "DRP",
+        "d": "JIT"
+      },
+      "correct_answer": "b",
+      "explanation": "ERP integrates enterprise-wide processes across finance, manufacturing, and supply chain in a centralized system.",
+      "reference": "CPIM Part 1, Module 1 – Basics of Supply Chain Management (ERP, pp. 1.40–1.45)"
+    },
+    {
+      "exam_id": 0,
+      "question": "Which inventory type results from production faster than customer demand?",
+      "options": {
+        "a": "Anticipation inventory",
+        "b": "Cycle stock",
+        "c": "Pipeline stock",
+        "d": "Decoupling inventory"
+      },
+      "correct_answer": "a",
+      "explanation": "Anticipation inventory is built in advance of predictable demand increases or seasonal fluctuations.",
+      "reference": "CPIM Part 1, Module 4 – Inventory (Anticipation Inventory, pp. 4.12–4.15)"
+    },
+    {
+      "exam_id": 0,
+      "question": "What is the main purpose of capacity requirements planning (CRP)?",
+      "options": {
+        "a": "To validate MPS feasibility",
+        "b": "To ensure material availability",
+        "c": "To plan detailed work center loads",
+        "d": "To authorize supplier orders"
+      },
+      "correct_answer": "c",
+      "explanation": "CRP calculates the load at each work center to ensure capacity matches planned orders.",
+      "reference": "CPIM Part 2, Module 4 – Capacity Planning (Capacity Requirements Planning, pp. 4.20–4.25)"
+    },
+    {
+      "exam_id": 0,
+      "question": "Which approach uses ABC classification to determine inventory management effort?",
+      "options": {
+        "a": "Cycle counting",
+        "b": "Pareto analysis",
+        "c": "Kanban",
+        "d": "Safety stock planning"
+      },
+      "correct_answer": "a",
+      "explanation": "Cycle counting often uses ABC analysis so high-value (A) items are counted more frequently than low-value items.",
+      "reference": "CPIM Part 1, Module 4 – Inventory (Cycle Counting Approaches, pp. 4.35–4.40)"
+    },
+    {
+      "exam_id": 0,
+      "question": "Which measure evaluates the ability to deliver customer orders on the promised date?",
+      "options": {
+        "a": "On-time delivery",
+        "b": "Fill rate",
+        "c": "Inventory turns",
+        "d": "Backorder rate"
+      },
+      "correct_answer": "a",
+      "explanation": "On-time delivery measures the percentage of orders delivered as promised, reflecting reliability in scheduling.",
+      "reference": "CPIM Part 1, Module 1 – Basics of Supply Chain Management (Customer Service Metrics, pp. 1.25–1.30)"
+    },
+    {
+      "exam_id": 0,
+      "question": "What is the main output of material requirements planning (MRP)?",
+      "options": {
+        "a": "Purchase requisitions and planned orders",
+        "b": "Forecasts of customer demand",
+        "c": "Master Production Schedule",
+        "d": "Capacity load profiles"
+      },
+      "correct_answer": "a",
+      "explanation": "MRP produces time-phased planned orders for procurement and production to meet dependent demand.",
+      "reference": "CPIM Part 2, Module 3 – Detailed Scheduling and Planning (MRP Outputs, pp. 3.40–3.45)"
+    },
+    {
+      "exam_id": 0,
+      "question": "Which process translates the business plan into a mid-term operational plan?",
+      "options": {
+        "a": "Master Production Scheduling",
+        "b": "Sales and Operations Planning",
+        "c": "Demand Management",
+        "d": "Capacity Planning"
+      },
+      "correct_answer": "b",
+      "explanation": "S&OP is the cross-functional process for reconciling supply and demand at an aggregate level over the medium term.",
+      "reference": "CPIM Part 2, Module 2 – S&OP (Linking Business Plan and Operations, pp. 2.8–2.12)"
+    },
+    {
+      "exam_id": 0,
+      "question": "Which concept refers to the longest path through a project schedule?",
+      "options": {
+        "a": "Critical chain",
+        "b": "Critical path",
+        "c": "Lead time",
+        "d": "Slack time"
+      },
+      "correct_answer": "b",
+      "explanation": "Critical path is the sequence of dependent activities with zero slack that determines total project duration.",
+      "reference": "CPIM Part 2, Module 5 – Distribution and Logistics (Project Scheduling Concepts, pp. 5.25–5.30)"
+    },
+    {
+      "exam_id": 0,
+      "question": "Which lean concept focuses on producing only what is needed when it is needed?",
+      "options": {
+        "a": "Kanban",
+        "b": "Jidoka",
+        "c": "Pull system",
+        "d": "Heijunka"
+      },
+      "correct_answer": "c",
+      "explanation": "Pull systems authorize production based on actual consumption, minimizing excess WIP and inventory.",
+      "reference": "CPIM Part 2, Module 3 – Detailed Scheduling and Planning (Lean Principles, pp. 3.42–3.48)"
+    },
+    {
+      "exam_id": 0,
+      "question": "Which inventory performance measure is defined as the percentage of demand met without backorders?",
+      "options": {
+        "a": "Fill rate",
+        "b": "Inventory turns",
+        "c": "Service level",
+        "d": "ATP"
+      },
+      "correct_answer": "a",
+      "explanation": "Fill rate measures the proportion of demand filled directly from stock, showing customer service effectiveness.",
+      "reference": "CPIM Part 1, Module 4 – Inventory (Customer Service Metrics, pp. 4.42–4.45)"
+    },
+    {
+      "exam_id": 0,
+      "question": "Which type of capacity is based on the maximum output a system can produce under ideal conditions?",
+      "options": {
+        "a": "Rated capacity",
+        "b": "Demonstrated capacity",
+        "c": "Effective capacity",
+        "d": "Theoretical capacity"
+      },
+      "correct_answer": "d",
+      "explanation": "Theoretical capacity is based on maximum output with no downtime or inefficiencies; it is rarely attainable.",
+      "reference": "CPIM Part 2, Module 4 – Capacity Planning (Types of Capacity, pp. 4.8–4.12)"
+    },
+    {
+      "exam_id": 1,
+      "question": "Which of the following best describes the role of reverse logistics?",
+      "options": {
+        "a": "Managing the flow of goods from suppliers to manufacturers",
+        "b": "Coordinating the return of products, recycling, and disposal",
+        "c": "Monitoring supplier quality performance",
+        "d": "Scheduling final assembly orders"
+      },
+      "correct_answer": "b",
+      "explanation": "Reverse logistics focuses on managing returns, recycling, remanufacturing, and proper disposal of products in the supply chain.",
+      "reference": "CSCP Module 4 – Supply Chain Improvements and Best Practices (Section D: Reverse Logistics, pp. 355–359)"
+    },
+    {
+      "exam_id": 1,
+      "question": "Which of the following is a key characteristic of a push-based supply chain?",
+      "options": {
+        "a": "Driven by actual customer demand",
+        "b": "Relies on forecasts to drive production and distribution",
+        "c": "Focuses on rapid response to market changes",
+        "d": "Minimizes reliance on inventory"
+      },
+      "correct_answer": "b",
+      "explanation": "Push-based supply chains use forecasts to determine production and distribution, which can lead to excess inventory if forecasts are inaccurate.",
+      "reference": "CSCP Module 1 – Supply Chain Strategy (Section C: Push vs. Pull Strategies, pp. 65–68)"
+    },
+    {
+      "exam_id": 1,
+      "question": "Which of the following is a key advantage of vertical integration?",
+      "options": {
+        "a": "Reduced dependency on suppliers and greater control",
+        "b": "Increased supply chain flexibility",
+        "c": "Lower fixed investment requirements",
+        "d": "Improved outsourcing opportunities"
+      },
+      "correct_answer": "a",
+      "explanation": "Vertical integration provides more control over supply chain processes by reducing reliance on external suppliers.",
+      "reference": "CSCP Module 2 – Supply Chain Design (Section B: Make vs. Buy Decisions, pp. 135–138)"
+    },
+    {
+      "exam_id": 1,
+      "question": "Which of the following best defines supply chain visibility?",
+      "options": {
+        "a": "The ability to monitor supply chain processes in real time",
+        "b": "The number of warehouses in a network",
+        "c": "The ability to reduce safety stock",
+        "d": "The transparency of financial reporting"
+      },
+      "correct_answer": "a",
+      "explanation": "Supply chain visibility enables organizations to track goods, materials, and information in real time across the supply chain.",
+      "reference": "CSCP Module 4 – Supply Chain Improvements and Best Practices (Section C: Visibility and Transparency, pp. 340–343)"
+    },
+    {
+      "exam_id": 1,
+      "question": "Which type of trade-off is most commonly addressed in supply chain design?",
+      "options": {
+        "a": "Flexibility vs. outsourcing",
+        "b": "Cost vs. service level",
+        "c": "Quality vs. innovation",
+        "d": "Forecasting vs. inventory turns"
+      },
+      "correct_answer": "b",
+      "explanation": "Supply chain design often requires balancing cost efficiency with service level performance to meet customer expectations.",
+      "reference": "CSCP Module 2 – Supply Chain Design (Section A: Trade-offs in Design, pp. 125–128)"
+    },
+    {
+      "exam_id": 1,
+      "question": "Which process focuses on identifying suppliers, developing contracts, and maintaining supplier relationships?",
+      "options": {
+        "a": "Procurement",
+        "b": "Production planning",
+        "c": "Distribution management",
+        "d": "Demand planning"
+      },
+      "correct_answer": "a",
+      "explanation": "Procurement manages the sourcing process, supplier selection, contracting, and ongoing supplier relationship management.",
+      "reference": "CSCP Module 2 – Supply Chain Design (Section D: Procurement and Supplier Management, pp. 170–174)"
+    },
+    {
+      "exam_id": 1,
+      "question": "Which of the following best describes capacity planning?",
+      "options": {
+        "a": "Ensuring that supply chain resources match demand requirements",
+        "b": "Defining global distribution networks",
+        "c": "Minimizing inventory through JIT",
+        "d": "Managing supplier payment schedules"
+      },
+      "correct_answer": "a",
+      "explanation": "Capacity planning ensures that resources such as facilities, equipment, and labor are aligned with demand.",
+      "reference": "CSCP Module 3 – Supply Chain Planning and Execution (Section E: Capacity Management, pp. 270–273)"
+    },
+    {
+      "exam_id": 1,
+      "question": "Which of the following best describes vendor-managed inventory (VMI)?",
+      "options": {
+        "a": "Suppliers manage replenishment of inventory at the customer’s location",
+        "b": "Customers dictate supplier delivery schedules",
+        "c": "Third parties manage inbound logistics",
+        "d": "Inventory is tracked by financial auditors"
+      },
+      "correct_answer": "a",
+      "explanation": "In VMI, the supplier takes responsibility for maintaining inventory levels at the customer’s location.",
+      "reference": "CSCP Module 3 – Supply Chain Planning and Execution (Section B: Inventory Collaboration, pp. 230–233)"
+    },
+    {
+      "exam_id": 1,
+      "question": "Which of the following is a key driver of supply chain complexity?",
+      "options": {
+        "a": "Standardized product lines",
+        "b": "Global sourcing and distribution",
+        "c": "Single sourcing strategies",
+        "d": "Centralized decision-making"
+      },
+      "correct_answer": "b",
+      "explanation": "Global sourcing and distribution increase complexity due to longer lead times, cultural differences, and regulatory requirements.",
+      "reference": "CSCP Module 1 – Supply Chain Strategy (Section D: Global Supply Chains, pp. 72–75)"
+    },
+    {
+      "exam_id": 1,
+      "question": "Which of the following is a key characteristic of just-in-time (JIT) systems?",
+      "options": {
+        "a": "High inventory buffers",
+        "b": "Production triggered by actual demand",
+        "c": "Large batch production",
+        "d": "Forecast-driven production"
+      },
+      "correct_answer": "b",
+      "explanation": "JIT systems focus on reducing waste by producing goods only in response to actual customer demand.",
+      "reference": "CSCP Module 3 – Supply Chain Planning and Execution (Section F: Lean and JIT, pp. 280–283)"
+    },
+    {
+      "exam_id": 1,
+      "question": "Which of the following is a key role of third-party logistics (3PL) providers?",
+      "options": {
+        "a": "Owning all supply chain assets",
+        "b": "Providing specialized logistics services such as warehousing and transportation",
+        "c": "Replacing supplier procurement functions",
+        "d": "Setting global tax policies"
+      },
+      "correct_answer": "b",
+      "explanation": "3PL providers offer specialized logistics services, including transportation, warehousing, and sometimes value-added services.",
+      "reference": "CSCP Module 2 – Supply Chain Design (Section E: Outsourcing Logistics, pp. 180–183)"
+    },
+    {
+      "exam_id": 1,
+      "question": "Which of the following is a key benefit of collaborative planning, forecasting, and replenishment (CPFR)?",
+      "options": {
+        "a": "Higher safety stock",
+        "b": "Improved forecast accuracy through data sharing",
+        "c": "Eliminating supplier contracts",
+        "d": "Longer replenishment lead times"
+      },
+      "correct_answer": "b",
+      "explanation": "CPFR enhances forecast accuracy by enabling partners to share information and jointly plan demand and replenishment.",
+      "reference": "CSCP Module 3 – Supply Chain Planning and Execution (Section C: CPFR, pp. 240–243)"
+    },
+    {
+      "exam_id": 1,
+      "question": "Which of the following best describes a responsive supply chain?",
+      "options": {
+        "a": "Emphasizes low-cost operations",
+        "b": "Prioritizes speed and flexibility to meet customer needs",
+        "c": "Relies exclusively on forecasts",
+        "d": "Minimizes customization"
+      },
+      "correct_answer": "b",
+      "explanation": "Responsive supply chains prioritize speed, agility, and flexibility to adapt quickly to changes in customer demand.",
+      "reference": "CSCP Module 1 – Supply Chain Strategy (Section C: Responsive vs. Efficient Models, pp. 60–64)"
+    },
+    {
+      "exam_id": 1,
+      "question": "Which of the following is the primary purpose of performance metrics in supply chain management?",
+      "options": {
+        "a": "To replace financial reporting",
+        "b": "To align operational activities with strategic objectives",
+        "c": "To eliminate supplier contracts",
+        "d": "To forecast demand"
+      },
+      "correct_answer": "b",
+      "explanation": "Performance metrics ensure that supply chain operations are aligned with business strategy and customer service goals.",
+      "reference": "CSCP Module 2 – Supply Chain Design (Section C: Supply Chain Metrics, pp. 160–163)"
+    },
+    {
+      "exam_id": 1,
+      "question": "Which of the following best describes supply chain sustainability?",
+      "options": {
+        "a": "Focusing only on short-term profitability",
+        "b": "Balancing environmental, social, and economic goals in supply chain decisions",
+        "c": "Eliminating global suppliers",
+        "d": "Focusing only on transportation efficiency"
+      },
+      "correct_answer": "b",
+      "explanation": "Supply chain sustainability integrates environmental and social responsibility with economic performance.",
+      "reference": "CSCP Module 4 – Supply Chain Improvements and Best Practices (Section E: Sustainability, pp. 365–369)"
+    },
+    {
       "exam_id": 1,
       "question": "Which of the following is a key objective of supply chain design?",
       "options": {
@@ -397,6 +787,201 @@
     },
     {
       "exam_id": 2,
+      "question": "Which statistical tool is most appropriate for assessing normality of a data set?",
+      "options": {
+        "a": "Histogram",
+        "b": "Boxplot",
+        "c": "Normal probability plot",
+        "d": "Scatter plot"
+      },
+      "correct_answer": "c",
+      "explanation": "A normal probability plot compares observed data to a normal distribution and is used to visually assess normality.",
+      "reference": "ASQ CSSBB Body of Knowledge – Descriptive Statistics (pp. 140–143)"
+    },
+    {
+      "exam_id": 2,
+      "question": "What is the main advantage of using control charts over specification limits?",
+      "options": {
+        "a": "They show customer requirements directly",
+        "b": "They distinguish between common and special cause variation",
+        "c": "They eliminate the need for sampling",
+        "d": "They measure long-term capability"
+      },
+      "correct_answer": "b",
+      "explanation": "Control charts identify variation due to common vs. special causes, which specification limits cannot reveal.",
+      "reference": "ASQ CSSBB Body of Knowledge – Statistical Process Control (pp. 218–220)"
+    },
+    {
+      "exam_id": 2,
+      "question": "Which of the following tools is commonly used in the Define phase to map high-level processes?",
+      "options": {
+        "a": "SIPOC diagram",
+        "b": "ANOVA",
+        "c": "Scatter diagram",
+        "d": "FMEA"
+      },
+      "correct_answer": "a",
+      "explanation": "SIPOC diagrams provide a high-level view of suppliers, inputs, process, outputs, and customers in the Define phase.",
+      "reference": "ASQ CSSBB Body of Knowledge – Define Phase (pp. 42–45)"
+    },
+    {
+      "exam_id": 2,
+      "question": "What is the main purpose of a Gage R&R study?",
+      "options": {
+        "a": "To reduce setup time",
+        "b": "To evaluate measurement system variation",
+        "c": "To identify process bottlenecks",
+        "d": "To calculate process cycle efficiency"
+      },
+      "correct_answer": "b",
+      "explanation": "Gage Repeatability and Reproducibility (R&R) studies assess the variation in measurement systems due to equipment and operators.",
+      "reference": "ASQ CSSBB Body of Knowledge – Measurement System Analysis (pp. 110–113)"
+    },
+    {
+      "exam_id": 2,
+      "question": "In hypothesis testing, what does Beta (β) risk represent?",
+      "options": {
+        "a": "The risk of rejecting a true null hypothesis",
+        "b": "The probability of a Type II error",
+        "c": "The confidence level of the test",
+        "d": "The variation within a sample"
+      },
+      "correct_answer": "b",
+      "explanation": "Beta risk (Type II error) occurs when a false null hypothesis is not rejected.",
+      "reference": "ASQ CSSBB Body of Knowledge – Hypothesis Testing (pp. 184–186)"
+    },
+    {
+      "exam_id": 2,
+      "question": "Which of the following is a key benefit of Design of Experiments (DOE)?",
+      "options": {
+        "a": "It eliminates all variation",
+        "b": "It identifies cause-and-effect relationships efficiently",
+        "c": "It replaces regression analysis",
+        "d": "It avoids the need for control charts"
+      },
+      "correct_answer": "b",
+      "explanation": "DOE systematically studies input variables to determine their effect on outputs and interactions between factors.",
+      "reference": "ASQ CSSBB Body of Knowledge – DOE (pp. 238–240)"
+    },
+    {
+      "exam_id": 2,
+      "question": "Which Lean principle focuses on producing only what is needed, when it is needed?",
+      "options": {
+        "a": "Poka-yoke",
+        "b": "Kanban",
+        "c": "Just-in-time",
+        "d": "Kaizen"
+      },
+      "correct_answer": "c",
+      "explanation": "Just-in-time (JIT) aims to reduce waste by producing only what is needed, when it is needed, in the required quantity.",
+      "reference": "ASQ CSSBB Body of Knowledge – Lean Principles (pp. 275–278)"
+    },
+    {
+      "exam_id": 2,
+      "question": "Which type of regression is appropriate when the dependent variable is categorical?",
+      "options": {
+        "a": "Linear regression",
+        "b": "Logistic regression",
+        "c": "Multiple regression",
+        "d": "Correlation analysis"
+      },
+      "correct_answer": "b",
+      "explanation": "Logistic regression is used when the dependent variable is binary or categorical, such as pass/fail outcomes.",
+      "reference": "ASQ CSSBB Body of Knowledge – Regression (pp. 198–200)"
+    },
+    {
+      "exam_id": 2,
+      "question": "Which tool is most useful for identifying steps that do not add value in a process?",
+      "options": {
+        "a": "Scatter plot",
+        "b": "Value Stream Map",
+        "c": "Control chart",
+        "d": "Regression analysis"
+      },
+      "correct_answer": "b",
+      "explanation": "Value Stream Mapping highlights both value-added and non-value-added steps, making it useful for waste identification.",
+      "reference": "ASQ CSSBB Body of Knowledge – Lean Tools (pp. 290–293)"
+    },
+    {
+      "exam_id": 2,
+      "question": "What is the main difference between Cp and Cpk in process capability analysis?",
+      "options": {
+        "a": "Cp measures stability; Cpk measures variability",
+        "b": "Cp considers process centering; Cpk does not",
+        "c": "Cp ignores centering; Cpk accounts for it",
+        "d": "They are identical measures"
+      },
+      "correct_answer": "c",
+      "explanation": "Cp measures potential capability based on spread, while Cpk adjusts for process centering relative to specification limits.",
+      "reference": "ASQ CSSBB Body of Knowledge – Process Capability (pp. 202–204)"
+    },
+    {
+      "exam_id": 2,
+      "question": "Which improvement approach emphasizes rapid, small, continuous changes?",
+      "options": {
+        "a": "Kaizen",
+        "b": "Benchmarking",
+        "c": "DMAIC",
+        "d": "Reengineering"
+      },
+      "correct_answer": "a",
+      "explanation": "Kaizen focuses on continuous improvement through small, incremental changes involving all employees.",
+      "reference": "ASQ CSSBB Body of Knowledge – Continuous Improvement Methods (pp. 270–272)"
+    },
+    {
+      "exam_id": 2,
+      "question": "In project selection, which type of project typically delivers the fastest results?",
+      "options": {
+        "a": "Kaizen blitz",
+        "b": "DMAIC breakthrough project",
+        "c": "Design for Six Sigma project",
+        "d": "Benchmarking project"
+      },
+      "correct_answer": "a",
+      "explanation": "Kaizen blitz projects are short-term, intensive efforts designed to deliver rapid improvements.",
+      "reference": "ASQ CSSBB Body of Knowledge – Project Management (pp. 30–33)"
+    },
+    {
+      "exam_id": 2,
+      "question": "Which graphical tool is best for analyzing correlation between two variables?",
+      "options": {
+        "a": "Pareto chart",
+        "b": "Scatter plot",
+        "c": "Box plot",
+        "d": "Histogram"
+      },
+      "correct_answer": "b",
+      "explanation": "Scatter plots display the relationship between two variables, helping identify possible correlations.",
+      "reference": "ASQ CSSBB Body of Knowledge – Data Analysis Tools (pp. 145–147)"
+    },
+    {
+      "exam_id": 2,
+      "question": "Which Six Sigma role is responsible for removing organizational barriers and supporting project resources?",
+      "options": {
+        "a": "Champion",
+        "b": "Green Belt",
+        "c": "Sponsor",
+        "d": "Team member"
+      },
+      "correct_answer": "a",
+      "explanation": "Champions ensure Six Sigma projects have adequate support and resources by removing barriers and aligning with business goals.",
+      "reference": "ASQ CSSBB Body of Knowledge – Roles and Responsibilities (pp. 22–24)"
+    },
+    {
+      "exam_id": 2,
+      "question": "What is the main purpose of using ANOVA in Six Sigma analysis?",
+      "options": {
+        "a": "To compare means of three or more groups",
+        "b": "To test process normality",
+        "c": "To analyze regression coefficients",
+        "d": "To construct control limits"
+      },
+      "correct_answer": "a",
+      "explanation": "ANOVA (Analysis of Variance) is used to compare means across three or more groups to determine significant differences.",
+      "reference": "ASQ CSSBB Body of Knowledge – Hypothesis Testing (pp. 191–193)"
+    },
+    {
+      "exam_id": 2,
       "question": "In Six Sigma, what is the main purpose of the Control phase?",
       "options": {
         "a": "Identify root causes",
@@ -589,6 +1174,201 @@
       "correct_answer": "b",
       "explanation": "The Measure phase focuses on data collection, measurement system analysis, and establishing baseline performance.",
       "reference": "ASQ CSSBB Body of Knowledge – Measure Phase (pp. 90–94)"
+    },
+    {
+      "exam_id": 3,
+      "question": "Which tool is most effective for identifying potential causes of service-related defects?",
+      "options": {
+        "a": "Fishbone diagram",
+        "b": "Histogram",
+        "c": "Run chart",
+        "d": "Box plot"
+      },
+      "correct_answer": "a",
+      "explanation": "A Fishbone (Ishikawa) diagram is commonly used to explore and categorize possible causes of problems, especially in service processes.",
+      "reference": "ASQ CSSSBB Handbook – Root Cause Analysis Tools (pp. 265–268)"
+    },
+    {
+      "exam_id": 3,
+      "question": "What does the Voice of the Customer (VOC) primarily help determine in Six Sigma projects?",
+      "options": {
+        "a": "Financial benefits",
+        "b": "Critical-to-quality requirements",
+        "c": "Team roles and responsibilities",
+        "d": "Control chart limits"
+      },
+      "correct_answer": "b",
+      "explanation": "VOC analysis translates customer feedback into Critical-to-Quality (CTQ) characteristics for process improvement.",
+      "reference": "ASQ CSSSBB Body of Knowledge – Customer Requirements (pp. 85–88)"
+    },
+    {
+      "exam_id": 3,
+      "question": "In regression analysis, multicollinearity among independent variables leads to:",
+      "options": {
+        "a": "Reduced significance of coefficients",
+        "b": "Increased process capability",
+        "c": "Higher statistical power",
+        "d": "Lower R-squared values"
+      },
+      "correct_answer": "a",
+      "explanation": "Multicollinearity inflates standard errors, making coefficients appear less significant and difficult to interpret.",
+      "reference": "ASQ CSSSBB Handbook – Regression Analysis (pp. 356–359)"
+    },
+    {
+      "exam_id": 3,
+      "question": "Which type of control chart is best suited for monitoring defect counts in service transactions?",
+      "options": {
+        "a": "X-bar chart",
+        "b": "c-chart",
+        "c": "p-chart",
+        "d": "R-chart"
+      },
+      "correct_answer": "b",
+      "explanation": "The c-chart is used to monitor the number of defects per unit when the sample size is constant.",
+      "reference": "ASQ CSSSBB Handbook – Control Charts (pp. 345–348)"
+    },
+    {
+      "exam_id": 3,
+      "question": "Which Six Sigma role ensures alignment of projects with organizational strategy?",
+      "options": {
+        "a": "Master Black Belt",
+        "b": "Champion",
+        "c": "Green Belt",
+        "d": "Process Owner"
+      },
+      "correct_answer": "b",
+      "explanation": "Champions select projects, allocate resources, and ensure they align with strategic goals.",
+      "reference": "ASQ CSSSBB Body of Knowledge – Roles & Responsibilities (pp. 25–28)"
+    },
+    {
+      "exam_id": 3,
+      "question": "What is the primary purpose of Measurement System Analysis (MSA)?",
+      "options": {
+        "a": "Verify process capability",
+        "b": "Ensure data collection methods are reliable",
+        "c": "Determine project scope",
+        "d": "Establish control limits"
+      },
+      "correct_answer": "b",
+      "explanation": "MSA evaluates precision and accuracy of the measurement system to ensure reliable data.",
+      "reference": "ASQ CSSSBB Handbook – Measurement Systems (pp. 230–234)"
+    },
+    {
+      "exam_id": 3,
+      "question": "Which hypothesis test is appropriate for analyzing variance across three or more groups?",
+      "options": {
+        "a": "Chi-square",
+        "b": "Two-sample t-test",
+        "c": "ANOVA",
+        "d": "Regression"
+      },
+      "correct_answer": "c",
+      "explanation": "ANOVA tests differences in means across three or more groups.",
+      "reference": "ASQ CSSSBB Handbook – ANOVA (pp. 326–328)"
+    },
+    {
+      "exam_id": 3,
+      "question": "Which Lean principle focuses on producing only what is needed, when it is needed?",
+      "options": {
+        "a": "Just-in-Time",
+        "b": "Kaizen",
+        "c": "5S",
+        "d": "Poka-Yoke"
+      },
+      "correct_answer": "a",
+      "explanation": "Just-in-Time (JIT) reduces waste by synchronizing production with customer demand.",
+      "reference": "ASQ CSSSBB Handbook – Lean Principles (pp. 280–283)"
+    },
+    {
+      "exam_id": 3,
+      "question": "What is the primary advantage of using nonparametric tests?",
+      "options": {
+        "a": "They assume normality of data",
+        "b": "They require larger sample sizes",
+        "c": "They can be used when assumptions of parametric tests are violated",
+        "d": "They increase statistical power"
+      },
+      "correct_answer": "c",
+      "explanation": "Nonparametric tests are useful when data do not meet assumptions like normality or equal variances.",
+      "reference": "ASQ CSSSBB Handbook – Nonparametric Methods (pp. 332–334)"
+    },
+    {
+      "exam_id": 3,
+      "question": "Which DOE approach helps study both main effects and interaction effects?",
+      "options": {
+        "a": "One-factor-at-a-time",
+        "b": "Factorial design",
+        "c": "Randomized block design",
+        "d": "Response surface methodology"
+      },
+      "correct_answer": "b",
+      "explanation": "Factorial designs evaluate multiple factors and their interactions simultaneously.",
+      "reference": "ASQ CSSSBB Handbook – Design of Experiments (pp. 410–412)"
+    },
+    {
+      "exam_id": 3,
+      "question": "Which tool is used to display the distribution of service times in a call center?",
+      "options": {
+        "a": "Histogram",
+        "b": "Pareto chart",
+        "c": "Scatter plot",
+        "d": "Run chart"
+      },
+      "correct_answer": "a",
+      "explanation": "Histograms display the frequency distribution of continuous data, like call center service times.",
+      "reference": "ASQ CSSSBB Handbook – Data Analysis Tools (pp. 275–278)"
+    },
+    {
+      "exam_id": 3,
+      "question": "What is the main goal of Kaizen in Lean Six Sigma?",
+      "options": {
+        "a": "Radical redesign",
+        "b": "Continuous incremental improvement",
+        "c": "Defect elimination only",
+        "d": "Control chart development"
+      },
+      "correct_answer": "b",
+      "explanation": "Kaizen emphasizes continuous, incremental improvements by engaging employees at all levels.",
+      "reference": "ASQ CSSSBB Body of Knowledge – Lean Tools (pp. 286–289)"
+    },
+    {
+      "exam_id": 3,
+      "question": "Which distribution is most often assumed in Six Sigma for continuous process data?",
+      "options": {
+        "a": "Poisson distribution",
+        "b": "Normal distribution",
+        "c": "Binomial distribution",
+        "d": "Exponential distribution"
+      },
+      "correct_answer": "b",
+      "explanation": "The normal distribution is commonly assumed for continuous process data in Six Sigma analysis.",
+      "reference": "ASQ CSSSBB Handbook – Probability & Distributions (pp. 305–307)"
+    },
+    {
+      "exam_id": 3,
+      "question": "Which metric is commonly used to measure defects per million opportunities (DPMO)?",
+      "options": {
+        "a": "Cp",
+        "b": "Cpk",
+        "c": "Sigma level",
+        "d": "R-squared"
+      },
+      "correct_answer": "c",
+      "explanation": "The Sigma level directly relates to defects per million opportunities, serving as a capability metric.",
+      "reference": "ASQ CSSSBB Body of Knowledge – Six Sigma Metrics (pp. 95–98)"
+    },
+    {
+      "exam_id": 3,
+      "question": "In project management, what is the purpose of a SIPOC diagram?",
+      "options": {
+        "a": "To define suppliers, inputs, process, outputs, and customers",
+        "b": "To control project costs",
+        "c": "To calculate process variation",
+        "d": "To monitor team performance"
+      },
+      "correct_answer": "a",
+      "explanation": "A SIPOC diagram helps clarify process boundaries and the relationship between suppliers, inputs, process steps, outputs, and customers.",
+      "reference": "ASQ CSSSBB Handbook – Project Management Tools (pp. 110–113)"
     },
     {
       "exam_id": 3,
