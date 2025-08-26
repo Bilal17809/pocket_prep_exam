@@ -1,0 +1,86 @@
+[
+  {
+    "question_id": "FF-Q1",
+    "subject_id": 1,
+    "question_text": "What is the primary role of a fire prevention program in a community?",
+    "options": [
+      "A. To respond to all fire emergencies.",
+      "B. To enforce building codes and regulations.",
+      "C. To educate the public on fire safety and reduce fire incidents.",
+      "D. To conduct fire investigations after a fire has occurred."
+    ],
+    "correct_answer": "C",
+    "explanation": "Fire prevention programs are proactive measures focused on public education and risk reduction. Their main goal is to minimize the occurrence of fires and the resulting loss of life and property. This is achieved through educational campaigns, home safety checks, and the promotion of fire safety practices.",
+    "reference": "IFSTA, Essentials of Fire Fighting and Fire Department Operations, 7th Edition, Chapter 4."
+  },
+  {
+    "question_id": "FF-Q2",
+    "subject_id": 2,
+    "question_text": "Which type of construction is most susceptible to rapid fire spread and structural collapse due to a large, open interior space?",
+    "options": [
+      "A. Type I (Fire-Resistive)",
+      "B. Type III (Ordinary)",
+      "C. Type IV (Heavy Timber)",
+      "D. Type V (Wood Frame)"
+    ],
+    "correct_answer": "D",
+    "explanation": "Type V construction, or wood-frame, is the most common residential construction type. It is highly susceptible to fire because its structural components are made of combustible materials. The large, open spaces often found in these structures, such as attics and basements, can act as conduits for rapid fire spread, leading to a quick collapse.",
+    "reference": "NFPA 13, Standard for the Installation of Sprinkler Systems, 2022 Edition."
+  },
+  {
+    "question_id": "CCP-C-Q1",
+    "subject_id": 3,
+    "question_text": "A critical care transport paramedic is managing a patient with a tension pneumothorax. What is the definitive field treatment for this condition?",
+    "options": [
+      "A. Administering high-flow oxygen via a non-rebreather mask.",
+      "B. Performing a needle decompression of the affected side.",
+      "C. Providing positive pressure ventilation with a BVM.",
+      "D. Administering an immediate fluid bolus."
+    ],
+    "correct_answer": "B",
+    "explanation": "Needle decompression is the definitive pre-hospital treatment for a tension pneumothorax. This procedure releases the trapped air in the pleural space, allowing the collapsed lung to re-expand and relieving the pressure on the heart and great vessels. Without this intervention, the patient's condition will rapidly deteriorate.",
+    "reference": "NAEMT, Advanced Medical Life Support (AMLS), 3rd Edition."
+  },
+  {
+    "question_id": "CCP-C-Q2",
+    "subject_id": 4,
+    "question_text": "What is the primary purpose of Positive End-Expiratory Pressure (PEEP) in ventilator management?",
+    "options": [
+      "A. To decrease the patient's respiratory rate.",
+      "B. To reduce the need for sedation.",
+      "C. To prevent alveolar collapse and improve oxygenation.",
+      "D. To increase minute volume."
+    ],
+    "correct_answer": "C",
+    "explanation": "PEEP maintains a positive pressure in the lungs at the end of exhalation. This prevents the small air sacs (alveoli) from collapsing and allows for better gas exchange. It is a critical setting for improving oxygenation in patients with respiratory distress, such as those with ARDS or severe pneumonia.",
+    "reference": "AAOS, Critical Care Transport, 2nd Edition."
+  },
+  {
+    "question_id": "CP-C-Q1",
+    "subject_id": 5,
+    "question_text": "When conducting a home safety assessment for an elderly patient, which of the following is the most critical hazard to identify and address?",
+    "options": [
+      "A. Old electrical appliances.",
+      "B. Lack of a fire extinguisher.",
+      "C. Cluttered walkways and loose rugs.",
+      "D. Unused or expired medications in the cabinet."
+    ],
+    "correct_answer": "C",
+    "explanation": "For an elderly population, falls are a leading cause of injury, hospitalization, and death. Cluttered walkways and loose rugs are major tripping hazards that directly contribute to falls. Addressing these simple environmental risks has a significant impact on patient safety and quality of life.",
+    "reference": "IBSC CP-C Candidate Handbook, latest edition."
+  },
+  {
+    "question_id": "CP-C-Q2",
+    "subject_id": 6,
+    "question_text": "A community paramedic is working with a patient who has a history of non-compliance with their medication. What is the most effective approach to improve adherence?",
+    "options": [
+      "A. Providing a detailed list of all their medications and side effects.",
+      "B. Immediately notifying the patient's primary care physician of their non-compliance.",
+      "C. Using motivational interviewing to understand the patient's barriers and collaboratively create a solution.",
+      "D. Strictly enforcing a schedule and holding the patient accountable."
+    ],
+    "correct_answer": "C",
+    "explanation": "Motivational interviewing is a patient-centered counseling style that helps individuals explore and resolve ambivalence about behavior change. Instead of telling the patient what to do, this approach focuses on understanding their reasons for non-compliance (e.g., cost, side effects, confusion) and empowers them to find their own solutions, leading to better long-term adherence.",
+    "reference": "Miller, W. R., & Rollnick, S. (2013). Motivational Interviewing: Helping People Change. 3rd Edition."
+  }
+]

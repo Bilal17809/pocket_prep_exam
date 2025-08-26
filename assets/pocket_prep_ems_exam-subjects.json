@@ -1,0 +1,52 @@
+[
+  {
+    "exam_id": 1,
+    "exam_name": "Firefighter I & II",
+    "total_subjects": "7",
+    "total_questions": "1000",
+    "subjects": [
+      {
+        "subject_id": 1,
+        "subject_name": "Fire Safety Overview, Communications, Dynamics"
+      },
+      {
+        "subject_id": 2,
+        "subject_name": "Building Materials and Structure"
+      }
+    ]
+  },
+
+  {
+    "exam_id": 2,
+    "exam_name": "IBSC CCP-C",
+    "total_subjects": "12",
+    "total_questions": "400",
+    "subjects": [
+      {
+        "subject_id": 8,
+        "subject_name": "Critical Care Transport"
+      },
+      {
+        "subject_id": 9,
+        "subject_name": "Ventilator Management"
+      }
+    ]
+  },
+
+  {
+    "exam_id": 3,
+    "exam_name": "IBSC CP-C",
+    "total_subjects": "6",
+    "total_questions": "400",
+    "subjects": [
+      {
+        "subject_id": 20,
+        "subject_name": "Community Paramedic Wellness and Safety"
+      },
+      {
+        "subject_id": 21,
+        "subject_name": "Patient/Client Centric Care"
+      }
+    ]
+  }
+]
