@@ -140,6 +140,7 @@
     "explanation": "Rollover is the ignition of fire gases at the upper levels of a compartment. It often precedes flashover and is a warning sign of dangerous fire development.",
     "reference": "IFSTA, Essentials of Fire Fighting and Fire Department Operations, 7th Edition, Chapter 6, p. 265."
   },
+
   {
     "question_id": "FF-Q11",
     "subject_id": 2,
@@ -280,6 +281,7 @@
     "explanation": "I-joists provide open channels that allow flames to spread rapidly, increasing fire intensity.",
     "reference": "IFSTA, Essentials of Fire Fighting, 7th Edition, Chapter 3, p. 131."
   },
+
   {
     "question_id": "FF-Q21",
     "subject_id": 3,
@@ -420,6 +422,7 @@
     "explanation": "Smoke particles obscure vision and cause disorientation, making evacuation and firefighting more difficult.",
     "reference": "IFSTA, Essentials of Fire Fighting, 7th Edition, Chapter 5, p. 209."
   },
+
   {
     "question_id": "FF-Q31",
     "subject_id": 4,
@@ -560,6 +563,7 @@
     "explanation": "The Halligan and flat-head axe combination, known as 'the irons,' is standard for forcible entry.",
     "reference": "IFSTA, Essentials of Fire Fighting, 7th Edition, Chapter 9, p. 406."
   },
+
   {
     "question_id": "FF-Q41",
     "subject_id": 5,
@@ -700,6 +704,7 @@
     "explanation": "Hydraulic cutters are designed to shear through vehicle metal components like posts and frames.",
     "reference": "IFSTA, Essentials of Fire Fighting, 7th Edition, Chapter 38, p. 1087."
   },
+
   {
     "question_id": "FF-Q51",
     "subject_id": 6,
@@ -840,6 +845,7 @@
     "explanation": "Emergency decontamination is intended to rapidly reduce contamination and limit harmful exposure.",
     "reference": "IFSTA, Hazardous Materials Awareness and Operations, 4th Edition, Chapter 9, p. 245."
   },
+
   {
     "question_id": "FF-Q61",
     "subject_id": 7,
@@ -1121,6 +1127,7 @@
       "explanation": "Vasoactive medications like norepinephrine are commonly titrated during transport to maintain adequate blood pressure in septic shock patients.",
       "reference": "Surviving Sepsis Campaign, Transport Care Section, p. 147."
     },
+
     {
       "question_id": "CCP-C-Q11",
       "subject_id": 9,
@@ -1261,6 +1268,7 @@
       "explanation": "Low tidal volume ventilation with adequate PEEP minimizes alveolar overdistension and shear stress.",
       "reference": "Lung Protective Ventilation, p. 201."
     },
+
   {
     "question_id": "CCP-C-Q21",
     "subject_id": 10,
@@ -1401,6 +1409,7 @@
     "explanation": "Esophageal intubation is the most common and dangerous complication immediately following intubation attempts.",
     "reference": "Advanced Airway Complications, p. 233."
   },
+
   {
     "question_id": "CCP-C-Q31",
     "subject_id": 11,
@@ -1541,6 +1550,7 @@
     "explanation": "Reversible causes of arrest include the H's (hypovolemia, hypoxia, hydrogen ion, hyper/hypokalemia, hypothermia) and T's (tension pneumothorax, tamponade, toxins, thrombosis).",
     "reference": "AHA ACLS Guidelines, 2020, p. 209."
   },
+
   {
     "question_id": "CCP-C-Q41",
     "subject_id": 12,
@@ -1681,6 +1691,7 @@
     "explanation": "Mannitol is an osmotic diuretic that reduces cerebral edema and intracranial pressure.",
     "reference": "Neurocritical Care Transport Guidelines, p. 131."
   },
+
   {
     "question_id": "CCP-C-Q51",
     "subject_id": 13,
@@ -1821,6 +1832,7 @@
     "explanation": "Early administration of tranexamic acid within 3 hours of injury reduces mortality in bleeding trauma patients.",
     "reference": "CRASH-2 Trial, The Lancet, 2010."
   },
+
   {
     "question_id": "CCP-C-Q61",
     "subject_id": 14,
@@ -1961,6 +1973,7 @@
     "explanation": "Hypoglycemia is the most common stroke mimic and should always be ruled out with bedside glucose testing.",
     "reference": "AHA Prehospital Stroke Checklist, p. 74."
   },
+
   {
     "question_id": "CCP-C-Q71",
     "subject_id": 15,
@@ -2101,6 +2114,7 @@
     "explanation": "SVR is the primary measure of afterload, reflecting resistance the heart must overcome to eject blood.",
     "reference": "Marino, The ICU Book, 5th Ed., Hemodynamics Section, p. 128."
   },
+
   {
     "question_id": "CCP-C-Q81",
     "subject_id": 16,
@@ -2241,6 +2255,7 @@
     "explanation": "Oral chewable aspirin ensures rapid absorption and platelet inhibition in acute MI.",
     "reference": "ACC/AHA Guidelines for STEMI, 2021."
   },
+
   {
     "question_id": "CCP-C-Q91",
     "subject_id": 17,
@@ -2381,6 +2396,7 @@
     "explanation": "Failure to equalize pressure in the middle ear leads to barotitis media, causing pain and possible tympanic membrane rupture.",
     "reference": "Aviation Medicine Guide, p. 92."
   },
+
   {
     "question_id": "CCP-C-Q101",
     "subject_id": 18,
@@ -2521,6 +2537,7 @@
     "explanation": "Hazard reporting enables continuous safety improvement by identifying and mitigating risks before accidents occur.",
     "reference": "CAMTS Quality Management Standards, p. 201."
   },
+
   {
     "question_id": "CCP-C-Q111",
     "subject_id": 19,
@@ -2664,30 +2681,848 @@
 
   {
     "question_id": "CP-C-Q1",
-    "subject_id": 5,
-    "question_text": "When conducting a home safety assessment for an elderly patient, which of the following is the most critical hazard to identify and address?",
+    "subject_id": 20,
+    "question_text": "What is the primary purpose of a community paramedic practicing wellness and safety?",
     "options": [
-      "A. Old electrical appliances.",
-      "B. Lack of a fire extinguisher.",
-      "C. Cluttered walkways and loose rugs.",
-      "D. Unused or expired medications in the cabinet."
+      "A. To replace primary care physicians",
+      "B. To provide preventive care and reduce emergency department visits",
+      "C. To perform only emergency interventions",
+      "D. To manage hospital finances"
     ],
-    "correct_answer": "C",
-    "explanation": "For an elderly population, falls are a leading cause of injury, hospitalization, and death. Cluttered walkways and loose rugs are major tripping hazards that directly contribute to falls. Addressing these simple environmental risks has a significant impact on patient safety and quality of life.",
-    "reference": "IBSC CP-C Candidate Handbook, latest edition."
+    "correct_answer": "B",
+    "explanation": "Community paramedics focus on preventive care, education, and outreach to reduce unnecessary hospital admissions and ED visits.",
+    "reference": "Community Paramedicine Model of Care, NAEMT, p. 23."
   },
   {
     "question_id": "CP-C-Q2",
-    "subject_id": 6,
-    "question_text": "A community paramedic is working with a patient who has a history of non-compliance with their medication. What is the most effective approach to improve adherence?",
+    "subject_id": 20,
+    "question_text": "Which safety measure is most important when a community paramedic makes a home visit?",
     "options": [
-      "A. Providing a detailed list of all their medications and side effects.",
-      "B. Immediately notifying the patient's primary care physician of their non-compliance.",
-      "C. Using motivational interviewing to understand the patient's barriers and collaboratively create a solution.",
-      "D. Strictly enforcing a schedule and holding the patient accountable."
+      "A. Asking about the patient’s family income",
+      "B. Performing a rapid primary survey",
+      "C. Conducting an environmental risk assessment",
+      "D. Ensuring the patient signs a billing agreement"
     ],
     "correct_answer": "C",
-    "explanation": "Motivational interviewing is a patient-centered counseling style that helps individuals explore and resolve ambivalence about behavior change. Instead of telling the patient what to do, this approach focuses on understanding their reasons for non-compliance (e.g., cost, side effects, confusion) and empowers them to find their own solutions, leading to better long-term adherence.",
-    "reference": "Miller, W. R., & Rollnick, S. (2013). Motivational Interviewing: Helping People Change. 3rd Edition."
+    "explanation": "Assessing environmental risks such as fall hazards, fire risks, and medication storage ensures safety for both patient and provider.",
+    "reference": "Community Paramedicine Safety Guidelines, CDC, p. 55."
+  },
+  {
+    "question_id": "CP-C-Q3",
+    "subject_id": 20,
+    "question_text": "Which of the following best describes a wellness check by community paramedics?",
+    "options": [
+      "A. Acute trauma evaluation",
+      "B. Scheduled assessment of chronic conditions and overall well-being",
+      "C. Police-led safety survey",
+      "D. Legal documentation verification"
+    ],
+    "correct_answer": "B",
+    "explanation": "Wellness checks focus on chronic disease management, preventive care, and health promotion rather than acute emergencies.",
+    "reference": "Mobile Integrated Healthcare Guidebook, p. 41."
+  },
+  {
+    "question_id": "CP-C-Q4",
+    "subject_id": 20,
+    "question_text": "Which vaccination is commonly promoted by community paramedics to enhance community wellness?",
+    "options": [
+      "A. Tetanus booster",
+      "B. Influenza vaccine",
+      "C. Yellow fever vaccine",
+      "D. Rabies vaccine"
+    ],
+    "correct_answer": "B",
+    "explanation": "Annual influenza vaccines are encouraged by community paramedics to prevent seasonal outbreaks, especially in vulnerable populations.",
+    "reference": "CDC Immunization Guidelines, 2024, p. 12."
+  },
+  {
+    "question_id": "CP-C-Q5",
+    "subject_id": 20,
+    "question_text": "What is the role of community paramedics in addressing fall risks among elderly patients?",
+    "options": [
+      "A. Installing hospital beds in homes",
+      "B. Assessing home environment and educating patients on fall prevention",
+      "C. Replacing caregivers",
+      "D. Providing surgical treatment for injuries"
+    ],
+    "correct_answer": "B",
+    "explanation": "Fall prevention programs include home hazard assessments, patient education, and coordination with primary care teams.",
+    "reference": "NAEMT Community Paramedicine Manual, p. 78."
+  },
+  {
+    "question_id": "CP-C-Q6",
+    "subject_id": 20,
+    "question_text": "Which safety equipment should always be carried by a community paramedic during home visits?",
+    "options": [
+      "A. High-visibility vest, gloves, and basic PPE",
+      "B. Fire extinguisher",
+      "C. Hospital-grade ventilator",
+      "D. Legal consent forms only"
+    ],
+    "correct_answer": "A",
+    "explanation": "Basic PPE ensures provider safety against infectious diseases and environmental hazards during home visits.",
+    "reference": "OSHA Paramedic Safety Recommendations, 2023, p. 16."
+  },
+  {
+    "question_id": "CP-C-Q7",
+    "subject_id": 20,
+    "question_text": "Which communication strategy improves patient safety during community paramedic care?",
+    "options": [
+      "A. Using only medical jargon",
+      "B. Applying teach-back methods",
+      "C. Avoiding discussion of patient questions",
+      "D. Only providing written pamphlets"
+    ],
+    "correct_answer": "B",
+    "explanation": "Teach-back ensures patients understand instructions by asking them to repeat the information in their own words.",
+    "reference": "Patient-Centered Communication Strategies, AHRQ, p. 34."
+  },
+  {
+    "question_id": "CP-C-Q8",
+    "subject_id": 20,
+    "question_text": "What is a key component of a community paramedic’s wellness education program?",
+    "options": [
+      "A. Smoking cessation counseling",
+      "B. Selling medical insurance",
+      "C. Performing surgical wound closures",
+      "D. Enforcing medication costs"
+    ],
+    "correct_answer": "A",
+    "explanation": "Lifestyle modification programs, such as smoking cessation, are central to wellness promotion in community paramedicine.",
+    "reference": "WHO Community Health Interventions, p. 65."
+  },
+  {
+    "question_id": "CP-C-Q9",
+    "subject_id": 20,
+    "question_text": "During a wellness visit, a patient reports medication non-compliance. What should the community paramedic do first?",
+    "options": [
+      "A. Report directly to law enforcement",
+      "B. Assess reasons for non-compliance and provide education",
+      "C. Remove all medications from the home",
+      "D. Ignore since it is the patient’s choice"
+    ],
+    "correct_answer": "B",
+    "explanation": "Identifying barriers such as cost, side effects, or misunderstanding helps paramedics provide targeted education and resources.",
+    "reference": "Medication Adherence in Community Care, JEMS, p. 98."
+  },
+  {
+    "question_id": "CP-C-Q10",
+    "subject_id": 20,
+    "question_text": "Which of the following best reflects the preventive role of community paramedics?",
+    "options": [
+      "A. Providing only emergency trauma care",
+      "B. Coordinating follow-up visits for chronic disease management",
+      "C. Handling billing disputes",
+      "D. Training hospital administrators"
+    ],
+    "correct_answer": "B",
+    "explanation": "Community paramedics reduce readmissions by monitoring chronic conditions and ensuring proper follow-up care.",
+    "reference": "Mobile Integrated Healthcare and Community Paramedicine Report, 2024, p. 88."
+  },
+
+  {
+    "question_id": "CP-C-Q11",
+    "subject_id": 21,
+    "question_text": "Which of the following best demonstrates patient-centered care in the community paramedicine setting?",
+    "options": [
+      "A. Prioritizing the provider’s convenience over the patient’s schedule",
+      "B. Actively involving the patient in care decisions",
+      "C. Limiting patient choices to reduce confusion",
+      "D. Avoiding communication about treatment options"
+    ],
+    "correct_answer": "B",
+    "explanation": "Patient-centered care focuses on shared decision-making and respecting patient preferences.",
+    "reference": "IBSC CP-C Candidate Handbook, Patient-Centered Care Section, p. 63."
+  },
+  {
+    "question_id": "CP-C-Q12",
+    "subject_id": 21,
+    "question_text": "When developing a care plan for a patient with multiple chronic conditions, what is the most important first step?",
+    "options": [
+      "A. Reviewing local hospital admission rates",
+      "B. Identifying the patient’s personal goals and priorities",
+      "C. Selecting standardized treatment protocols",
+      "D. Coordinating only with the primary care physician"
+    ],
+    "correct_answer": "B",
+    "explanation": "Patient-centered care requires aligning the plan with the patient’s values and goals.",
+    "reference": "National Quality Forum: Person-Centered Care Framework, 2018."
+  },
+  {
+    "question_id": "CP-C-Q13",
+    "subject_id": 21,
+    "question_text": "Which communication approach is most effective in building trust with diverse patient populations?",
+    "options": [
+      "A. Using medical jargon for accuracy",
+      "B. Employing active listening and cultural sensitivity",
+      "C. Minimizing patient questions to save time",
+      "D. Encouraging reliance solely on written instructions"
+    ],
+    "correct_answer": "B",
+    "explanation": "Active listening and cultural sensitivity enhance rapport and patient understanding.",
+    "reference": "CDC: Cultural Competence in Patient Care, 2020."
+  },
+  {
+    "question_id": "CP-C-Q14",
+    "subject_id": 21,
+    "question_text": "In patient-centered care, which factor is most critical when addressing health literacy barriers?",
+    "options": [
+      "A. Providing all information in technical terminology",
+      "B. Assuming the patient understands instructions",
+      "C. Using plain language and teach-back methods",
+      "D. Giving written material without discussion"
+    ],
+    "correct_answer": "C",
+    "explanation": "Plain language and teach-back confirm understanding and support informed decision-making.",
+    "reference": "Agency for Healthcare Research and Quality (AHRQ), Health Literacy Toolkit."
+  },
+  {
+    "question_id": "CP-C-Q15",
+    "subject_id": 21,
+    "question_text": "Which patient scenario demonstrates shared decision-making in care planning?",
+    "options": [
+      "A. A provider selects a treatment without discussing alternatives",
+      "B. A patient and provider review treatment risks and benefits together",
+      "C. A family member decides the care plan without patient input",
+      "D. The provider avoids patient input to reduce conflict"
+    ],
+    "correct_answer": "B",
+    "explanation": "Shared decision-making involves collaborative discussion of risks, benefits, and patient preferences.",
+    "reference": "Institute for Healthcare Improvement: Patient-Centered Care Model, 2017."
+  },
+  {
+    "question_id": "CP-C-Q16",
+    "subject_id": 21,
+    "question_text": "Which action by a community paramedic best reflects patient advocacy?",
+    "options": [
+      "A. Ignoring patient concerns to maintain authority",
+      "B. Supporting the patient’s right to make informed choices",
+      "C. Recommending treatment solely based on cost",
+      "D. Discouraging family involvement in decision-making"
+    ],
+    "correct_answer": "B",
+    "explanation": "Patient advocacy involves respecting autonomy and ensuring informed choices.",
+    "reference": "American Nurses Association Code of Ethics, Patient Advocacy Section."
+  },
+  {
+    "question_id": "CP-C-Q17",
+    "subject_id": 21,
+    "question_text": "When coordinating care transitions, what practice ensures continuity and patient-centeredness?",
+    "options": [
+      "A. Providing only written discharge instructions",
+      "B. Engaging patients and caregivers in the transition plan",
+      "C. Focusing solely on hospital-based recommendations",
+      "D. Limiting communication to the receiving provider"
+    ],
+    "correct_answer": "B",
+    "explanation": "Including patients and caregivers in planning reduces errors and improves adherence.",
+    "reference": "Joint Commission: Transitions of Care Standards, 2021."
+  },
+  {
+    "question_id": "CP-C-Q18",
+    "subject_id": 21,
+    "question_text": "A patient expresses concern about affording medications. What is the most patient-centered response?",
+    "options": [
+      "A. Ignoring cost concerns and prescribing standard medications",
+      "B. Exploring affordable alternatives and connecting with resources",
+      "C. Advising the patient to borrow money from family",
+      "D. Avoiding the topic to maintain focus on medical treatment"
+    ],
+    "correct_answer": "B",
+    "explanation": "Addressing financial barriers supports adherence and reflects patient-centered care.",
+    "reference": "World Health Organization: Patient Engagement and Care Affordability, 2019."
+  },
+  {
+    "question_id": "CP-C-Q19",
+    "subject_id": 21,
+    "question_text": "What is the most appropriate way to respect patient autonomy in decision-making?",
+    "options": [
+      "A. Providing only one treatment option",
+      "B. Encouraging patients to participate in their care choices",
+      "C. Making all decisions without patient input",
+      "D. Prioritizing provider preference over patient preference"
+    ],
+    "correct_answer": "B",
+    "explanation": "Autonomy is supported by involving patients in decision-making regarding their own care.",
+    "reference": "Bioethics Principles: Autonomy and Informed Consent."
+  },
+  {
+    "question_id": "CP-C-Q20",
+    "subject_id": 21,
+    "question_text": "Which intervention best supports patient engagement in chronic disease self-management?",
+    "options": [
+      "A. Delivering one-time education only",
+      "B. Providing tools, coaching, and follow-up support",
+      "C. Discouraging patient questions to avoid confusion",
+      "D. Directing care decisions solely to specialists"
+    ],
+    "correct_answer": "B",
+    "explanation": "Self-management support involves tools, coaching, and ongoing follow-up.",
+    "reference": "Chronic Care Model, Wagner et al., Health Affairs, 2001."
+  },
+
+  {
+    "question_id": "CP-C-Q21",
+    "subject_id": 22,
+    "question_text": "Which of the following is considered a major social determinant of health influencing chronic disease outcomes?",
+    "options": [
+      "A. Genetic predisposition",
+      "B. Housing and living conditions",
+      "C. Hospital bed availability",
+      "D. Vaccination schedule"
+    ],
+    "correct_answer": "B",
+    "explanation": "Housing and living conditions are critical social determinants that influence long-term health outcomes.",
+    "reference": "WHO, Social Determinants of Health Framework, 2021."
+  },
+  {
+    "question_id": "CP-C-Q22",
+    "subject_id": 22,
+    "question_text": "Food deserts primarily affect health by limiting access to:",
+    "options": [
+      "A. Fresh fruits and vegetables",
+      "B. Packaged snacks",
+      "C. Bottled water",
+      "D. Processed meats"
+    ],
+    "correct_answer": "A",
+    "explanation": "Food deserts reduce access to fresh produce, increasing reliance on processed foods and raising chronic disease risk.",
+    "reference": "CDC, Nutrition and Food Access, 2020."
+  },
+  {
+    "question_id": "CP-C-Q23",
+    "subject_id": 22,
+    "question_text": "Which population group is most vulnerable to poor air quality in urban environments?",
+    "options": [
+      "A. Young adults",
+      "B. Elderly individuals and children",
+      "C. Middle-aged workers",
+      "D. Tourists"
+    ],
+    "correct_answer": "B",
+    "explanation": "Children and elderly are more vulnerable to respiratory illness from air pollution due to weaker immune systems.",
+    "reference": "EPA, Air Quality and Health, 2019."
+  },
+  {
+    "question_id": "CP-C-Q24",
+    "subject_id": 22,
+    "question_text": "Health disparities are best described as:",
+    "options": [
+      "A. Differences in health outcomes caused by random variation",
+      "B. Preventable differences linked to social and economic disadvantages",
+      "C. Equal distribution of healthcare resources",
+      "D. Genetic variation among populations"
+    ],
+    "correct_answer": "B",
+    "explanation": "Health disparities arise from preventable social and economic inequities, not chance.",
+    "reference": "Healthy People 2030, US Department of Health and Human Services."
+  },
+  {
+    "question_id": "CP-C-Q25",
+    "subject_id": 22,
+    "question_text": "Which factor is most strongly associated with increased rates of infectious disease in low-income communities?",
+    "options": [
+      "A. Poor sanitation and overcrowding",
+      "B. Lack of advanced surgical centers",
+      "C. Over-prescription of antibiotics",
+      "D. Genetic diversity"
+    ],
+    "correct_answer": "A",
+    "explanation": "Poor sanitation and crowded living conditions facilitate the spread of infectious diseases.",
+    "reference": "WHO, Public Health and Sanitation, 2020."
+  },
+  {
+    "question_id": "CP-C-Q26",
+    "subject_id": 22,
+    "question_text": "Which social determinant is most likely to influence adherence to prescribed medical treatments?",
+    "options": [
+      "A. Cultural beliefs and health literacy",
+      "B. Genetic history",
+      "C. Laboratory availability",
+      "D. Specialist training levels"
+    ],
+    "correct_answer": "A",
+    "explanation": "Health literacy and cultural beliefs strongly affect whether patients follow treatment plans.",
+    "reference": "Institute of Medicine, Health Literacy Report, 2018."
+  },
+  {
+    "question_id": "CP-C-Q27",
+    "subject_id": 22,
+    "question_text": "Public health interventions aimed at reducing smoking are most effective when they:",
+    "options": [
+      "A. Only focus on individual counseling",
+      "B. Combine education with policy changes like taxation and restrictions",
+      "C. Rely on genetic screening",
+      "D. Target only hospitalized patients"
+    ],
+    "correct_answer": "B",
+    "explanation": "Combining education, taxation, and smoking restrictions has proven most effective in reducing tobacco use.",
+    "reference": "WHO, MPOWER Tobacco Control Measures, 2021."
+  },
+  {
+    "question_id": "CP-C-Q28",
+    "subject_id": 22,
+    "question_text": "Which global public health measure has had the greatest impact on reducing child mortality in the past century?",
+    "options": [
+      "A. Widespread antibiotic use",
+      "B. Childhood immunization programs",
+      "C. Genetic testing",
+      "D. Advanced surgical techniques"
+    ],
+    "correct_answer": "B",
+    "explanation": "Immunization programs have drastically reduced child mortality by preventing common infectious diseases.",
+    "reference": "UNICEF, Child Health Report, 2020."
+  },
+  {
+    "question_id": "CP-C-Q29",
+    "subject_id": 22,
+    "question_text": "Which social determinant is most directly related to mental health outcomes?",
+    "options": [
+      "A. Access to clean drinking water",
+      "B. Employment and job security",
+      "C. Seasonal climate variations",
+      "D. Vaccination availability"
+    ],
+    "correct_answer": "B",
+    "explanation": "Employment and job stability reduce stress and contribute to better mental health outcomes.",
+    "reference": "WHO, Mental Health and Social Determinants, 2019."
+  },
+  {
+    "question_id": "CP-C-Q30",
+    "subject_id": 22,
+    "question_text": "Which approach best addresses health inequities across populations?",
+    "options": [
+      "A. Focusing only on advanced hospital technologies",
+      "B. Addressing upstream social determinants like education and income",
+      "C. Providing emergency-only care",
+      "D. Expanding genetic testing programs"
+    ],
+    "correct_answer": "B",
+    "explanation": "Addressing upstream determinants such as education, income, and housing leads to long-term health equity.",
+    "reference": "WHO Commission on Social Determinants of Health, 2008."
+  },
+
+  {
+    "question_id": "CP-C-Q31",
+    "subject_id": 23,
+    "question_text": "Which intervention is most appropriate for a patient presenting with acute asthma exacerbation in the field?",
+    "options": [
+      "A. Oral corticosteroids only",
+      "B. Immediate nebulized bronchodilator",
+      "C. Intravenous antibiotics",
+      "D. Oral antihypertensives"
+    ],
+    "correct_answer": "B",
+    "explanation": "Nebulized bronchodilators, such as albuterol, are first-line treatment for acute asthma exacerbations in emergency care.",
+    "reference": "Global Initiative for Asthma (GINA) Guidelines, Emergency Management, p. 94."
+  },
+  {
+    "question_id": "CP-C-Q32",
+    "subject_id": 23,
+    "question_text": "What is the recommended first action when encountering an unconscious patient with no pulse?",
+    "options": [
+      "A. Provide two rescue breaths",
+      "B. Initiate chest compressions",
+      "C. Administer epinephrine immediately",
+      "D. Check blood glucose"
+    ],
+    "correct_answer": "B",
+    "explanation": "Current CPR guidelines recommend starting chest compressions immediately after confirming pulselessness.",
+    "reference": "American Heart Association ACLS Guidelines, 2020, Basic Life Support Section."
+  },
+  {
+    "question_id": "CP-C-Q33",
+    "subject_id": 23,
+    "question_text": "Which screening is most appropriate for early detection of colorectal cancer in asymptomatic adults over 50?",
+    "options": [
+      "A. Chest X-ray",
+      "B. Fecal occult blood test (FOBT)",
+      "C. Spirometry",
+      "D. Echocardiogram"
+    ],
+    "correct_answer": "B",
+    "explanation": "FOBT and colonoscopy are recommended for early detection of colorectal cancer in adults over 50.",
+    "reference": "U.S. Preventive Services Task Force, Colorectal Cancer Screening, 2021."
+  },
+  {
+    "question_id": "CP-C-Q34",
+    "subject_id": 23,
+    "question_text": "In urgent care, which symptom most strongly suggests acute appendicitis?",
+    "options": [
+      "A. Left upper quadrant pain",
+      "B. Pain migrating to the right lower quadrant",
+      "C. Generalized headache",
+      "D. Burning sensation during urination"
+    ],
+    "correct_answer": "B",
+    "explanation": "Migratory pain to the right lower quadrant is a hallmark sign of appendicitis.",
+    "reference": "Tintinalli’s Emergency Medicine, 9th Edition, p. 611."
+  },
+  {
+    "question_id": "CP-C-Q35",
+    "subject_id": 23,
+    "question_text": "Which vaccine is most critical to administer as part of preventive care in adults over 65?",
+    "options": [
+      "A. Influenza vaccine",
+      "B. Varicella vaccine",
+      "C. Human papillomavirus (HPV) vaccine",
+      "D. Rotavirus vaccine"
+    ],
+    "correct_answer": "A",
+    "explanation": "Annual influenza vaccination is especially important in older adults due to higher morbidity and mortality risks.",
+    "reference": "CDC Adult Immunization Schedule, 2024."
+  },
+  {
+    "question_id": "CP-C-Q36",
+    "subject_id": 23,
+    "question_text": "Which immediate intervention is indicated for anaphylaxis in a primary care or urgent setting?",
+    "options": [
+      "A. Intravenous steroids first",
+      "B. Epinephrine intramuscular injection",
+      "C. Oral antihistamines only",
+      "D. Oxygen therapy alone"
+    ],
+    "correct_answer": "B",
+    "explanation": "Intramuscular epinephrine is the first-line treatment for anaphylaxis, with other supportive measures provided afterward.",
+    "reference": "World Allergy Organization Guidelines for Anaphylaxis, 2020."
+  },
+  {
+    "question_id": "CP-C-Q37",
+    "subject_id": 23,
+    "question_text": "Which lifestyle modification is most effective in reducing the risk of developing type 2 diabetes?",
+    "options": [
+      "A. Regular moderate physical activity",
+      "B. Avoiding dairy products",
+      "C. High-protein diet",
+      "D. Vitamin supplementation only"
+    ],
+    "correct_answer": "A",
+    "explanation": "Engaging in regular moderate exercise significantly reduces the risk of developing type 2 diabetes.",
+    "reference": "Diabetes Prevention Program Research Group, NEJM, 2002."
+  },
+  {
+    "question_id": "CP-C-Q38",
+    "subject_id": 23,
+    "question_text": "What is the preferred initial management for a patient with hypertensive urgency without symptoms of end-organ damage?",
+    "options": [
+      "A. Immediate IV antihypertensive medication",
+      "B. Gradual oral blood pressure reduction",
+      "C. Fluid resuscitation",
+      "D. High-dose aspirin therapy"
+    ],
+    "correct_answer": "B",
+    "explanation": "Hypertensive urgency should be managed with gradual blood pressure reduction using oral agents to prevent complications.",
+    "reference": "JNC 8 Hypertension Guidelines, 2014."
+  },
+  {
+    "question_id": "CP-C-Q39",
+    "subject_id": 23,
+    "question_text": "Which of the following best represents primary prevention?",
+    "options": [
+      "A. Administering chemotherapy for breast cancer",
+      "B. Mammography screening",
+      "C. Smoking cessation programs",
+      "D. Cardiac rehabilitation after myocardial infarction"
+    ],
+    "correct_answer": "C",
+    "explanation": "Primary prevention aims to prevent disease onset, such as smoking cessation to reduce lung cancer and cardiovascular risk.",
+    "reference": "Public Health Foundations, Oxford, 2020."
+  },
+  {
+    "question_id": "CP-C-Q40",
+    "subject_id": 23,
+    "question_text": "Which diagnostic test is most appropriate in urgent evaluation of a patient with chest pain suggestive of acute myocardial infarction?",
+    "options": [
+      "A. Echocardiogram",
+      "B. 12-lead ECG",
+      "C. Chest ultrasound",
+      "D. Spirometry"
+    ],
+    "correct_answer": "B",
+    "explanation": "A 12-lead ECG should be obtained immediately to evaluate for signs of myocardial infarction in chest pain patients.",
+    "reference": "American College of Cardiology/AHA Guidelines for STEMI, 2017."
+  },
+
+  {
+    "question_id": "CP-C-Q41",
+    "subject_id": 24,
+    "question_text": "When assessing a patient with chest pain, which factor most strongly suggests acute coronary syndrome rather than musculoskeletal pain?",
+    "options": [
+      "A. Pain reproducible by palpation",
+      "B. Pain worsened by inspiration",
+      "C. Pain radiating to the left arm or jaw",
+      "D. Pain lasting only a few seconds"
+    ],
+    "correct_answer": "C",
+    "explanation": "Radiation of chest pain to the arm or jaw is highly suggestive of cardiac ischemia, unlike pain from musculoskeletal or pleuritic causes.",
+    "reference": "AHA Chest Pain Guidelines, 2021, Section 3.2."
+  },
+  {
+    "question_id": "CP-C-Q42",
+    "subject_id": 24,
+    "question_text": "Which diagnostic step is most appropriate when a patient presents with altered mental status and hypoglycemia?",
+    "options": [
+      "A. Perform an immediate CT scan of the brain",
+      "B. Administer IV dextrose before further workup",
+      "C. Request an MRI for stroke evaluation",
+      "D. Start antiepileptic medication"
+    ],
+    "correct_answer": "B",
+    "explanation": "Hypoglycemia should be corrected immediately with IV dextrose as it is a reversible cause of altered mental status.",
+    "reference": "Tintinalli’s Emergency Medicine, 9th ed., Hypoglycemia Section."
+  },
+  {
+    "question_id": "CP-C-Q43",
+    "subject_id": 24,
+    "question_text": "In trauma decision-making, which clinical finding is most indicative of immediate surgical intervention?",
+    "options": [
+      "A. Hypotension unresponsive to fluids",
+      "B. Scalp laceration with mild bleeding",
+      "C. Closed fracture of the femur",
+      "D. Mild abdominal tenderness without guarding"
+    ],
+    "correct_answer": "A",
+    "explanation": "Persistent hypotension despite resuscitation suggests ongoing internal bleeding requiring surgical control.",
+    "reference": "ATLS 10th Edition, Shock Management Chapter."
+  },
+  {
+    "question_id": "CP-C-Q44",
+    "subject_id": 24,
+    "question_text": "When integrating lab results into medical decision-making, which of the following best supports the diagnosis of sepsis?",
+    "options": [
+      "A. Hematocrit 45%",
+      "B. Lactate > 4 mmol/L",
+      "C. Normal white blood cell count",
+      "D. Sodium 140 mmol/L"
+    ],
+    "correct_answer": "B",
+    "explanation": "Elevated lactate is a marker of tissue hypoperfusion and is a strong indicator of sepsis severity.",
+    "reference": "Surviving Sepsis Campaign Guidelines, 2021."
+  },
+  {
+    "question_id": "CP-C-Q45",
+    "subject_id": 24,
+    "question_text": "In evaluating a patient with dyspnea, which finding most strongly supports pulmonary embolism over heart failure?",
+    "options": [
+      "A. Bilateral basal crackles",
+      "B. Elevated D-dimer with pleuritic chest pain",
+      "C. Jugular venous distension",
+      "D. Orthopnea and pink frothy sputum"
+    ],
+    "correct_answer": "B",
+    "explanation": "A positive D-dimer with pleuritic chest pain points to pulmonary embolism, while orthopnea and frothy sputum suggest heart failure.",
+    "reference": "ACCP Pulmonary Embolism Guidelines, 2020."
+  },
+  {
+    "question_id": "CP-C-Q46",
+    "subject_id": 24,
+    "question_text": "Which decision-making tool is most widely used for risk stratification in chest pain patients suspected of acute coronary syndrome?",
+    "options": [
+      "A. SOFA score",
+      "B. Wells score",
+      "C. HEART score",
+      "D. APACHE II score"
+    ],
+    "correct_answer": "C",
+    "explanation": "The HEART score is commonly used in emergency settings to risk stratify chest pain patients for acute coronary syndrome.",
+    "reference": "Backus BE et al., HEART Score Validation, Int J Cardiol, 2013."
+  },
+  {
+    "question_id": "CP-C-Q47",
+    "subject_id": 24,
+    "question_text": "Which is the most critical step in decision-making for suspected stroke within the first hour of presentation?",
+    "options": [
+      "A. Obtain blood cultures",
+      "B. Perform an urgent CT head without contrast",
+      "C. Order an echocardiogram",
+      "D. Begin physical therapy evaluation"
+    ],
+    "correct_answer": "B",
+    "explanation": "Immediate CT brain imaging is essential to differentiate ischemic from hemorrhagic stroke and determine eligibility for thrombolysis.",
+    "reference": "AHA/ASA Stroke Guidelines, 2019."
+  },
+  {
+    "question_id": "CP-C-Q48",
+    "subject_id": 24,
+    "question_text": "When evaluating syncope, which finding most suggests a cardiac rather than vasovagal cause?",
+    "options": [
+      "A. Syncope occurring during prolonged standing",
+      "B. Syncope preceded by nausea and sweating",
+      "C. Syncope occurring during exertion",
+      "D. Syncope associated with emotional stress"
+    ],
+    "correct_answer": "C",
+    "explanation": "Exertional syncope is highly suspicious for a cardiac etiology, such as arrhythmia or outflow obstruction.",
+    "reference": "European Society of Cardiology Syncope Guidelines, 2018."
+  },
+  {
+    "question_id": "CP-C-Q49",
+    "subject_id": 24,
+    "question_text": "In decision-making for sepsis, what is the most time-sensitive intervention?",
+    "options": [
+      "A. Ordering a chest x-ray",
+      "B. Obtaining blood cultures",
+      "C. Administration of IV broad-spectrum antibiotics",
+      "D. Performing an abdominal ultrasound"
+    ],
+    "correct_answer": "C",
+    "explanation": "Early administration of IV antibiotics within the first hour of recognition is the most time-sensitive intervention in sepsis management.",
+    "reference": "Surviving Sepsis Campaign, Hour-1 Bundle."
+  },
+  {
+    "question_id": "CP-C-Q50",
+    "subject_id": 24,
+    "question_text": "When integrating history and physical findings in an elderly patient with confusion, which is the most likely reversible cause?",
+    "options": [
+      "A. Alzheimer’s disease",
+      "B. Urinary tract infection",
+      "C. Parkinson’s disease",
+      "D. Vascular dementia"
+    ],
+    "correct_answer": "B",
+    "explanation": "In elderly patients, acute confusion (delirium) is often due to infections such as urinary tract infections, which are reversible if treated.",
+    "reference": "Delirium in Older Adults, NEJM 2017."
+  },
+
+  {
+    "question_id": "CP-C-Q51",
+    "subject_id": 25,
+    "question_text": "Which leadership style is most effective for motivating a diverse paramedic team during high-stress operations?",
+    "options": [
+      "A. Autocratic leadership",
+      "B. Transformational leadership",
+      "C. Laissez-faire leadership",
+      "D. Transactional leadership"
+    ],
+    "correct_answer": "B",
+    "explanation": "Transformational leadership inspires and motivates team members by focusing on shared goals, making it especially effective in high-stress operational environments.",
+    "reference": "Northouse, Leadership Theory and Practice, p. 184."
+  },
+  {
+    "question_id": "CP-C-Q52",
+    "subject_id": 25,
+    "question_text": "In ethical decision-making, the principle of beneficence refers to:",
+    "options": [
+      "A. Avoiding harm to the patient",
+      "B. Acting in the best interest of the patient",
+      "C. Respecting the patient’s autonomy",
+      "D. Treating all patients fairly"
+    ],
+    "correct_answer": "B",
+    "explanation": "Beneficence requires healthcare professionals to act in ways that promote the well-being and best interest of patients.",
+    "reference": "Beauchamp & Childress, Principles of Biomedical Ethics, p. 202."
+  },
+  {
+    "question_id": "CP-C-Q53",
+    "subject_id": 25,
+    "question_text": "Which of the following best demonstrates situational awareness in operational leadership?",
+    "options": [
+      "A. Focusing only on the patient in front of you",
+      "B. Monitoring the environment, resources, and team dynamics",
+      "C. Delegating all decisions to subordinates",
+      "D. Ignoring distractions to stay focused solely on treatment"
+    ],
+    "correct_answer": "B",
+    "explanation": "Situational awareness means continuously assessing the operational environment, resources, and team interactions to make informed decisions.",
+    "reference": "Crew Resource Management in EMS, Chapter 3."
+  },
+  {
+    "question_id": "CP-C-Q54",
+    "subject_id": 25,
+    "question_text": "A paramedic leader notices a team member consistently arriving late to shift. The most ethical first response would be:",
+    "options": [
+      "A. Immediately file a disciplinary report",
+      "B. Publicly confront the team member",
+      "C. Privately discuss concerns and explore underlying reasons",
+      "D. Ignore it since the patient care is unaffected"
+    ],
+    "correct_answer": "C",
+    "explanation": "Addressing issues privately and constructively upholds professional ethics and respects the dignity of the team member.",
+    "reference": "EMS Leadership Guidelines, p. 76."
+  },
+  {
+    "question_id": "CP-C-Q55",
+    "subject_id": 25,
+    "question_text": "Which operational strategy reduces the risk of communication failure during multi-agency responses?",
+    "options": [
+      "A. Use of technical jargon unique to each agency",
+      "B. Reliance on hand signals only",
+      "C. Implementation of standardized communication protocols",
+      "D. Avoiding direct communication to prevent confusion"
+    ],
+    "correct_answer": "C",
+    "explanation": "Standardized communication protocols like SBAR or plain language reduce the chance of miscommunication in multi-agency operations.",
+    "reference": "FEMA NIMS Communication Protocols, p. 43."
+  },
+  {
+    "question_id": "CP-C-Q56",
+    "subject_id": 25,
+    "question_text": "A leader who ensures fairness in scheduling shifts and assigning resources is demonstrating which ethical principle?",
+    "options": [
+      "A. Autonomy",
+      "B. Justice",
+      "C. Fidelity",
+      "D. Nonmaleficence"
+    ],
+    "correct_answer": "B",
+    "explanation": "Justice refers to fairness in distribution of resources, responsibilities, and opportunities.",
+    "reference": "Beauchamp & Childress, Principles of Biomedical Ethics, p. 228."
+  },
+  {
+    "question_id": "CP-C-Q57",
+    "subject_id": 25,
+    "question_text": "During a disaster response, which leadership action best promotes operational effectiveness?",
+    "options": [
+      "A. Limiting delegation to avoid confusion",
+      "B. Centralizing all decisions to one leader",
+      "C. Empowering team members with clear roles and authority",
+      "D. Waiting until the situation stabilizes before assigning roles"
+    ],
+    "correct_answer": "C",
+    "explanation": "Delegating responsibilities with clear roles ensures rapid and coordinated response in disaster situations.",
+    "reference": "Disaster Leadership and Coordination Handbook, p. 59."
+  },
+  {
+    "question_id": "CP-C-Q58",
+    "subject_id": 25,
+    "question_text": "In leadership ethics, fidelity primarily refers to:",
+    "options": [
+      "A. Keeping promises and commitments",
+      "B. Ensuring fair distribution of resources",
+      "C. Acting in the patient’s best interest",
+      "D. Avoiding intentional harm"
+    ],
+    "correct_answer": "A",
+    "explanation": "Fidelity emphasizes loyalty, truthfulness, and honoring commitments to patients and colleagues.",
+    "reference": "Ethics in Health Care, Chapter 4."
+  },
+  {
+    "question_id": "CP-C-Q59",
+    "subject_id": 25,
+    "question_text": "Which of the following best describes servant leadership in EMS operations?",
+    "options": [
+      "A. Prioritizing team members’ growth and well-being",
+      "B. Focusing solely on efficiency and productivity",
+      "C. Maintaining strict authority at all times",
+      "D. Avoiding involvement in team development"
+    ],
+    "correct_answer": "A",
+    "explanation": "Servant leadership focuses on serving team members’ needs, enabling them to thrive and perform effectively.",
+    "reference": "Greenleaf, Servant Leadership, p. 27."
+  },
+  {
+    "question_id": "CP-C-Q60",
+    "subject_id": 25,
+    "question_text": "A paramedic leader who demonstrates integrity in operations will most likely:",
+    "options": [
+      "A. Hide mistakes to protect the team’s reputation",
+      "B. Take responsibility for errors and seek solutions",
+      "C. Delegate accountability to subordinates",
+      "D. Prioritize speed over accuracy"
+    ],
+    "correct_answer": "B",
+    "explanation": "Integrity in leadership requires honesty, accountability, and a commitment to ethical behavior, even when errors occur.",
+    "reference": "Leadership in EMS Practice, p. 134."
   }
+
 ]
