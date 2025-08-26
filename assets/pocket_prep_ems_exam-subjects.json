@@ -98,7 +98,7 @@
     "exam_id": 3,
     "exam_name": "IBSC CP-C",
     "total_subjects": "6",
-    "total_questions": "400",
+    "total_questions": "60",
     "subjects": [
       {
         "subject_id": 20,
