@@ -1,4 +1,5 @@
 [
+
   {
     "question_id": "FF-Q1",
     "subject_id": 1,
@@ -11,50 +12,2656 @@
     ],
     "correct_answer": "C",
     "explanation": "Fire prevention programs are proactive measures focused on public education and risk reduction. Their main goal is to minimize the occurrence of fires and the resulting loss of life and property. This is achieved through educational campaigns, home safety checks, and the promotion of fire safety practices.",
-    "reference": "IFSTA, Essentials of Fire Fighting and Fire Department Operations, 7th Edition, Chapter 4."
+    "reference": "IFSTA, Essentials of Fire Fighting and Fire Department Operations, 7th Edition, Chapter 4, p. 145."
   },
   {
     "question_id": "FF-Q2",
-    "subject_id": 2,
-    "question_text": "Which type of construction is most susceptible to rapid fire spread and structural collapse due to a large, open interior space?",
+    "subject_id": 1,
+    "question_text": "Which of the following is the most effective way to alert building occupants of a fire emergency?",
     "options": [
-      "A. Type I (Fire-Resistive)",
-      "B. Type III (Ordinary)",
-      "C. Type IV (Heavy Timber)",
-      "D. Type V (Wood Frame)"
-    ],
-    "correct_answer": "D",
-    "explanation": "Type V construction, or wood-frame, is the most common residential construction type. It is highly susceptible to fire because its structural components are made of combustible materials. The large, open spaces often found in these structures, such as attics and basements, can act as conduits for rapid fire spread, leading to a quick collapse.",
-    "reference": "NFPA 13, Standard for the Installation of Sprinkler Systems, 2022 Edition."
-  },
-  {
-    "question_id": "CCP-C-Q1",
-    "subject_id": 3,
-    "question_text": "A critical care transport paramedic is managing a patient with a tension pneumothorax. What is the definitive field treatment for this condition?",
-    "options": [
-      "A. Administering high-flow oxygen via a non-rebreather mask.",
-      "B. Performing a needle decompression of the affected side.",
-      "C. Providing positive pressure ventilation with a BVM.",
-      "D. Administering an immediate fluid bolus."
+      "A. Manual handbells",
+      "B. Automatic fire alarm systems with audible and visual signals",
+      "C. Door-to-door notification by security staff",
+      "D. Posting evacuation notices on bulletin boards"
     ],
     "correct_answer": "B",
-    "explanation": "Needle decompression is the definitive pre-hospital treatment for a tension pneumothorax. This procedure releases the trapped air in the pleural space, allowing the collapsed lung to re-expand and relieving the pressure on the heart and great vessels. Without this intervention, the patient's condition will rapidly deteriorate.",
-    "reference": "NAEMT, Advanced Medical Life Support (AMLS), 3rd Edition."
+    "explanation": "Automatic fire alarm systems with both audible and visual signals ensure rapid, effective notification for all occupants, including those with hearing impairments.",
+    "reference": "IFSTA, Essentials of Fire Fighting and Fire Department Operations, 7th Edition, Chapter 4, p. 150."
   },
   {
-    "question_id": "CCP-C-Q2",
-    "subject_id": 4,
-    "question_text": "What is the primary purpose of Positive End-Expiratory Pressure (PEEP) in ventilator management?",
+    "question_id": "FF-Q3",
+    "subject_id": 1,
+    "question_text": "What is the most critical factor in successful fireground communication?",
     "options": [
-      "A. To decrease the patient's respiratory rate.",
-      "B. To reduce the need for sedation.",
-      "C. To prevent alveolar collapse and improve oxygenation.",
-      "D. To increase minute volume."
+      "A. Use of long, detailed messages",
+      "B. Clear, concise, and standardized terminology",
+      "C. Frequent changes of radio channels",
+      "D. Allowing multiple firefighters to talk at once"
+    ],
+    "correct_answer": "B",
+    "explanation": "Clear, concise communication using standardized terminology reduces confusion and ensures that critical information is accurately conveyed under stressful conditions.",
+    "reference": "IFSTA, Essentials of Fire Fighting and Fire Department Operations, 7th Edition, Chapter 3, p. 95."
+  },
+  {
+    "question_id": "FF-Q4",
+    "subject_id": 1,
+    "question_text": "In fire dynamics, what is the term used to describe the rapid transition from the growth stage to full-room involvement?",
+    "options": [
+      "A. Flashover",
+      "B. Backdraft",
+      "C. Rollover",
+      "D. Thermal layering"
+    ],
+    "correct_answer": "A",
+    "explanation": "Flashover occurs when all combustible materials in a room ignite almost simultaneously, transitioning the fire to a fully developed stage.",
+    "reference": "IFSTA, Essentials of Fire Fighting and Fire Department Operations, 7th Edition, Chapter 6, p. 263."
+  },
+  {
+    "question_id": "FF-Q5",
+    "subject_id": 1,
+    "question_text": "What is the primary purpose of a pre-incident plan?",
+    "options": [
+      "A. To record the history of previous fires in a building",
+      "B. To provide detailed information that assists in emergency response",
+      "C. To serve as a training tool for new recruits only",
+      "D. To replace standard operating procedures"
+    ],
+    "correct_answer": "B",
+    "explanation": "Pre-incident plans supply responders with critical building information, such as layout, hazards, and fire protection systems, improving safety and efficiency during emergencies.",
+    "reference": "IFSTA, Essentials of Fire Fighting and Fire Department Operations, 7th Edition, Chapter 8, p. 350."
+  },
+  {
+    "question_id": "FF-Q6",
+    "subject_id": 1,
+    "question_text": "Which fire gas is colorless, odorless, and the leading cause of fire-related fatalities?",
+    "options": [
+      "A. Carbon monoxide",
+      "B. Carbon dioxide",
+      "C. Hydrogen cyanide",
+      "D. Nitrogen dioxide"
+    ],
+    "correct_answer": "A",
+    "explanation": "Carbon monoxide (CO) is a byproduct of incomplete combustion. It is colorless and odorless, making it especially dangerous, and it is the leading cause of fire-related deaths.",
+    "reference": "IFSTA, Essentials of Fire Fighting and Fire Department Operations, 7th Edition, Chapter 6, p. 270."
+  },
+  {
+    "question_id": "FF-Q7",
+    "subject_id": 1,
+    "question_text": "Which type of fire detector responds fastest to smoldering fires?",
+    "options": [
+      "A. Heat detector",
+      "B. Ionization smoke detector",
+      "C. Photoelectric smoke detector",
+      "D. Flame detector"
     ],
     "correct_answer": "C",
-    "explanation": "PEEP maintains a positive pressure in the lungs at the end of exhalation. This prevents the small air sacs (alveoli) from collapsing and allows for better gas exchange. It is a critical setting for improving oxygenation in patients with respiratory distress, such as those with ARDS or severe pneumonia.",
-    "reference": "AAOS, Critical Care Transport, 2nd Edition."
+    "explanation": "Photoelectric smoke detectors are more sensitive to the larger smoke particles produced by smoldering fires, providing faster detection compared to ionization detectors.",
+    "reference": "IFSTA, Essentials of Fire Fighting and Fire Department Operations, 7th Edition, Chapter 4, p. 153."
   },
+  {
+    "question_id": "FF-Q8",
+    "subject_id": 1,
+    "question_text": "What is the primary benefit of conducting fire safety education programs in schools?",
+    "options": [
+      "A. Reducing the need for building inspections",
+      "B. Teaching children evacuation procedures and safe behaviors",
+      "C. Training children to use fire extinguishers",
+      "D. Replacing the role of professional firefighters"
+    ],
+    "correct_answer": "B",
+    "explanation": "School fire safety programs focus on educating children about safe behavior during fires, such as evacuation drills and recognizing hazards, which reduces risks in both schools and homes.",
+    "reference": "IFSTA, Essentials of Fire Fighting and Fire Department Operations, 7th Edition, Chapter 4, p. 147."
+  },
+  {
+    "question_id": "FF-Q9",
+    "subject_id": 1,
+    "question_text": "What communication practice is recommended when using portable radios at an incident scene?",
+    "options": [
+      "A. Speak quickly to save radio time",
+      "B. Hold the microphone close and speak clearly",
+      "C. Use personal codes for faster communication",
+      "D. Wait until multiple users are talking before transmitting"
+    ],
+    "correct_answer": "B",
+    "explanation": "Holding the microphone close and speaking slowly and clearly ensures that radio transmissions are understandable, especially in noisy environments.",
+    "reference": "IFSTA, Essentials of Fire Fighting and Fire Department Operations, 7th Edition, Chapter 3, p. 98."
+  },
+  {
+    "question_id": "FF-Q10",
+    "subject_id": 1,
+    "question_text": "Which fire behavior phenomenon occurs when unburned gases at the upper level of a compartment ignite suddenly?",
+    "options": [
+      "A. Backdraft",
+      "B. Rollover",
+      "C. Flashover",
+      "D. Thermal layering"
+    ],
+    "correct_answer": "B",
+    "explanation": "Rollover is the ignition of fire gases at the upper levels of a compartment. It often precedes flashover and is a warning sign of dangerous fire development.",
+    "reference": "IFSTA, Essentials of Fire Fighting and Fire Department Operations, 7th Edition, Chapter 6, p. 265."
+  },
+  {
+    "question_id": "FF-Q11",
+    "subject_id": 2,
+    "question_text": "Which building material loses strength rapidly when exposed to high heat, leading to potential structural collapse?",
+    "options": [
+      "A. Concrete",
+      "B. Steel",
+      "C. Brick",
+      "D. Gypsum board"
+    ],
+    "correct_answer": "B",
+    "explanation": "Steel expands and loses strength at high temperatures, which can cause buckling or collapse during a fire.",
+    "reference": "IFSTA, Essentials of Fire Fighting, 7th Edition, Chapter 3, p. 121."
+  },
+  {
+    "question_id": "FF-Q12",
+    "subject_id": 2,
+    "question_text": "What is the primary fire-resistive property of gypsum board in building construction?",
+    "options": [
+      "A. It melts and absorbs heat",
+      "B. It contains water that slows heat transfer",
+      "C. It hardens under heat exposure",
+      "D. It expands and seals gaps"
+    ],
+    "correct_answer": "B",
+    "explanation": "Gypsum contains chemically bound water, which is released as steam when heated, slowing heat transfer.",
+    "reference": "IFSTA, Essentials of Fire Fighting, 7th Edition, Chapter 3, p. 123."
+  },
+  {
+    "question_id": "FF-Q13",
+    "subject_id": 2,
+    "question_text": "Which type of building construction is most vulnerable to collapse when exposed to fire due to lightweight truss systems?",
+    "options": [
+      "A. Type I – Fire-Resistive",
+      "B. Type II – Noncombustible",
+      "C. Type III – Ordinary",
+      "D. Type V – Wood Frame"
+    ],
+    "correct_answer": "D",
+    "explanation": "Lightweight wood trusses in Type V construction fail quickly in fire, often within minutes.",
+    "reference": "IFSTA, Essentials of Fire Fighting, 7th Edition, Chapter 3, p. 130."
+  },
+  {
+    "question_id": "FF-Q14",
+    "subject_id": 2,
+    "question_text": "What is a common hazard of using laminated wood beams in modern construction?",
+    "options": [
+      "A. They contain metal connectors that fail early",
+      "B. They may delaminate under fire conditions",
+      "C. They are more brittle than solid wood",
+      "D. They absorb water and expand rapidly"
+    ],
+    "correct_answer": "B",
+    "explanation": "Under fire exposure, the glue in laminated beams can fail, leading to separation and loss of strength.",
+    "reference": "IFSTA, Essentials of Fire Fighting, 7th Edition, Chapter 3, p. 128."
+  },
+  {
+    "question_id": "FF-Q15",
+    "subject_id": 2,
+    "question_text": "Which building material is most likely to spall or break apart explosively when exposed to fire?",
+    "options": [
+      "A. Brick",
+      "B. Concrete",
+      "C. Steel",
+      "D. Glass"
+    ],
+    "correct_answer": "B",
+    "explanation": "Concrete may spall under high heat due to trapped moisture expanding as steam.",
+    "reference": "IFSTA, Essentials of Fire Fighting, 7th Edition, Chapter 3, p. 124."
+  },
+  {
+    "question_id": "FF-Q16",
+    "subject_id": 2,
+    "question_text": "Which type of construction typically has noncombustible walls but a combustible roof structure?",
+    "options": [
+      "A. Type I – Fire-Resistive",
+      "B. Type II – Noncombustible",
+      "C. Type III – Ordinary",
+      "D. Type IV – Heavy Timber"
+    ],
+    "correct_answer": "C",
+    "explanation": "Type III construction uses noncombustible exterior walls with combustible interior components such as roofs.",
+    "reference": "IFSTA, Essentials of Fire Fighting, 7th Edition, Chapter 3, p. 126."
+  },
+  {
+    "question_id": "FF-Q17",
+    "subject_id": 2,
+    "question_text": "What is the greatest fire hazard associated with modern lightweight steel bar joist construction?",
+    "options": [
+      "A. Early collapse due to heat weakening",
+      "B. Expansion of wood components",
+      "C. Rapid water absorption",
+      "D. Slow fire spread"
+    ],
+    "correct_answer": "A",
+    "explanation": "Steel bar joists lose strength quickly in high heat, leading to early collapse.",
+    "reference": "IFSTA, Essentials of Fire Fighting, 7th Edition, Chapter 3, p. 133."
+  },
+  {
+    "question_id": "FF-Q18",
+    "subject_id": 2,
+    "question_text": "Which type of glass is most likely to fail quickly when exposed to fire?",
+    "options": [
+      "A. Tempered glass",
+      "B. Wired glass",
+      "C. Laminated glass",
+      "D. Plate glass"
+    ],
+    "correct_answer": "D",
+    "explanation": "Plate glass is not heat-resistant and will fracture quickly when exposed to heat.",
+    "reference": "IFSTA, Essentials of Fire Fighting, 7th Edition, Chapter 3, p. 125."
+  },
+  {
+    "question_id": "FF-Q19",
+    "subject_id": 2,
+    "question_text": "Heavy timber construction (Type IV) provides better fire resistance than lightweight wood because:",
+    "options": [
+      "A. Timber is treated with chemicals",
+      "B. Large wood members char slowly, maintaining strength",
+      "C. Fireproof coatings are always applied",
+      "D. It has steel reinforcement"
+    ],
+    "correct_answer": "B",
+    "explanation": "Large wood members char on the outside, which insulates and helps preserve structural integrity longer.",
+    "reference": "IFSTA, Essentials of Fire Fighting, 7th Edition, Chapter 3, p. 129."
+  },
+  {
+    "question_id": "FF-Q20",
+    "subject_id": 2,
+    "question_text": "Which hazard is common when lightweight wood I-joists are exposed to fire?",
+    "options": [
+      "A. Rapid flame spread through open channels",
+      "B. Water absorption leading to cracking",
+      "C. Steel reinforcement failure",
+      "D. Slow ignition time"
+    ],
+    "correct_answer": "A",
+    "explanation": "I-joists provide open channels that allow flames to spread rapidly, increasing fire intensity.",
+    "reference": "IFSTA, Essentials of Fire Fighting, 7th Edition, Chapter 3, p. 131."
+  },
+  {
+    "question_id": "FF-Q21",
+    "subject_id": 3,
+    "question_text": "What is the primary factor that influences the speed of pyrolysis in solid fuels?",
+    "options": [
+      "A. Ambient light intensity",
+      "B. Fuel moisture content",
+      "C. Air pressure changes",
+      "D. Sound vibration levels"
+    ],
+    "correct_answer": "B",
+    "explanation": "Moisture content delays pyrolysis by requiring additional energy to evaporate water before ignition.",
+    "reference": "IFSTA, Essentials of Fire Fighting, 7th Edition, Chapter 5, p. 196."
+  },
+  {
+    "question_id": "FF-Q22",
+    "subject_id": 3,
+    "question_text": "Which stage of fire is characterized by the transition to flashover?",
+    "options": [
+      "A. Incipient stage",
+      "B. Growth stage",
+      "C. Fully developed stage",
+      "D. Decay stage"
+    ],
+    "correct_answer": "B",
+    "explanation": "The growth stage features increasing heat release and the potential for flashover as thermal conditions intensify.",
+    "reference": "IFSTA, Essentials of Fire Fighting, 7th Edition, Chapter 5, p. 200."
+  },
+  {
+    "question_id": "FF-Q23",
+    "subject_id": 3,
+    "question_text": "What does the fire tetrahedron add to the traditional fire triangle?",
+    "options": [
+      "A. Oxygen",
+      "B. Heat",
+      "C. Chemical chain reaction",
+      "D. Fuel vaporization"
+    ],
+    "correct_answer": "C",
+    "explanation": "The fire tetrahedron includes the chemical chain reaction as the fourth essential element for sustained combustion.",
+    "reference": "IFSTA, Essentials of Fire Fighting, 7th Edition, Chapter 5, p. 191."
+  },
+  {
+    "question_id": "FF-Q24",
+    "subject_id": 3,
+    "question_text": "Which gas is the most common product of incomplete combustion?",
+    "options": [
+      "A. Carbon dioxide",
+      "B. Carbon monoxide",
+      "C. Hydrogen cyanide",
+      "D. Nitrogen oxides"
+    ],
+    "correct_answer": "B",
+    "explanation": "Carbon monoxide is the most common toxic product released when combustion is incomplete.",
+    "reference": "IFSTA, Essentials of Fire Fighting, 7th Edition, Chapter 5, p. 207."
+  },
+  {
+    "question_id": "FF-Q25",
+    "subject_id": 3,
+    "question_text": "What fire behavior phenomenon is most likely when unburned gases accumulate in a confined space and ignite suddenly?",
+    "options": [
+      "A. Flashover",
+      "B. Backdraft",
+      "C. Rollover",
+      "D. Thermal layering"
+    ],
+    "correct_answer": "B",
+    "explanation": "Backdraft occurs when oxygen is introduced into a confined space filled with hot, unburned gases.",
+    "reference": "IFSTA, Essentials of Fire Fighting, 7th Edition, Chapter 5, p. 211."
+  },
+  {
+    "question_id": "FF-Q26",
+    "subject_id": 3,
+    "question_text": "What term describes the tendency of gases to form layers based on temperature inside a compartment fire?",
+    "options": [
+      "A. Thermal layering",
+      "B. Flameover",
+      "C. Stratification",
+      "D. Conduction"
+    ],
+    "correct_answer": "A",
+    "explanation": "Thermal layering occurs when hot gases rise and cooler gases stay lower, creating temperature layers.",
+    "reference": "IFSTA, Essentials of Fire Fighting, 7th Edition, Chapter 5, p. 204."
+  },
+  {
+    "question_id": "FF-Q27",
+    "subject_id": 3,
+    "question_text": "What is the primary mechanism of heat transfer in flashover conditions?",
+    "options": [
+      "A. Conduction",
+      "B. Convection",
+      "C. Radiation",
+      "D. Absorption"
+    ],
+    "correct_answer": "C",
+    "explanation": "Radiant heat transfer is the dominant mechanism in flashover, rapidly heating all fuels in a compartment.",
+    "reference": "IFSTA, Essentials of Fire Fighting, 7th Edition, Chapter 5, p. 202."
+  },
+  {
+    "question_id": "FF-Q28",
+    "subject_id": 3,
+    "question_text": "Which material has the highest heat of combustion per unit mass?",
+    "options": [
+      "A. Plastics",
+      "B. Wood",
+      "C. Paper",
+      "D. Glass"
+    ],
+    "correct_answer": "A",
+    "explanation": "Plastics release significantly more energy per unit mass compared to natural fuels like wood or paper.",
+    "reference": "IFSTA, Essentials of Fire Fighting, 7th Edition, Chapter 5, p. 194."
+  },
+  {
+    "question_id": "FF-Q29",
+    "subject_id": 3,
+    "question_text": "What is the typical oxygen concentration required in air to sustain normal combustion?",
+    "options": [
+      "A. 5%",
+      "B. 10%",
+      "C. 16%",
+      "D. 21%"
+    ],
+    "correct_answer": "D",
+    "explanation": "Atmospheric air contains about 21% oxygen, which is sufficient to support combustion.",
+    "reference": "IFSTA, Essentials of Fire Fighting, 7th Edition, Chapter 5, p. 190."
+  },
+  {
+    "question_id": "FF-Q30",
+    "subject_id": 3,
+    "question_text": "Which fire gas is most responsible for disorientation and reduced visibility in a burning structure?",
+    "options": [
+      "A. Hydrogen cyanide",
+      "B. Carbon dioxide",
+      "C. Smoke particles",
+      "D. Water vapor"
+    ],
+    "correct_answer": "C",
+    "explanation": "Smoke particles obscure vision and cause disorientation, making evacuation and firefighting more difficult.",
+    "reference": "IFSTA, Essentials of Fire Fighting, 7th Edition, Chapter 5, p. 209."
+  },
+  {
+    "question_id": "FF-Q31",
+    "subject_id": 4,
+    "question_text": "Which type of axe is most commonly used by firefighters for forcible entry?",
+    "options": [
+      "A. Pick-head axe",
+      "B. Broad axe",
+      "C. Double-bit axe",
+      "D. Hatchet"
+    ],
+    "correct_answer": "A",
+    "explanation": "The pick-head axe is standard in firefighting for chopping through doors, walls, and roofs.",
+    "reference": "IFSTA, Essentials of Fire Fighting, 7th Edition, Chapter 9, p. 403."
+  },
+  {
+    "question_id": "FF-Q32",
+    "subject_id": 4,
+    "question_text": "What is the primary purpose of a Halligan tool?",
+    "options": [
+      "A. Ventilation support",
+      "B. Forcible entry",
+      "C. Fire suppression",
+      "D. Rescue lifting"
+    ],
+    "correct_answer": "B",
+    "explanation": "The Halligan is designed for prying, twisting, punching, and striking to aid in forcible entry.",
+    "reference": "IFSTA, Essentials of Fire Fighting, 7th Edition, Chapter 9, p. 410."
+  },
+  {
+    "question_id": "FF-Q33",
+    "subject_id": 4,
+    "question_text": "Which type of saw is best suited for cutting metal during firefighting operations?",
+    "options": [
+      "A. Chainsaw",
+      "B. Rotary saw",
+      "C. Crosscut saw",
+      "D. Reciprocating saw"
+    ],
+    "correct_answer": "B",
+    "explanation": "The rotary saw, often with metal-cutting blades, is ideal for cutting locks, bars, and sheet metal.",
+    "reference": "IFSTA, Essentials of Fire Fighting, 7th Edition, Chapter 9, p. 418."
+  },
+  {
+    "question_id": "FF-Q34",
+    "subject_id": 4,
+    "question_text": "What is the advantage of using a flat-head axe in firefighting?",
+    "options": [
+      "A. Can break concrete",
+      "B. Easier to carry than other axes",
+      "C. Useful for striking and prying with another tool",
+      "D. Designed for roof ventilation"
+    ],
+    "correct_answer": "C",
+    "explanation": "The flat-head axe is commonly paired with a Halligan, forming the 'irons' for forcible entry.",
+    "reference": "IFSTA, Essentials of Fire Fighting, 7th Edition, Chapter 9, p. 404."
+  },
+  {
+    "question_id": "FF-Q35",
+    "subject_id": 4,
+    "question_text": "Which tool is commonly used to pull down ceilings during overhaul operations?",
+    "options": [
+      "A. Pike pole",
+      "B. Flat-head axe",
+      "C. Sledgehammer",
+      "D. Kelly tool"
+    ],
+    "correct_answer": "A",
+    "explanation": "The pike pole is designed for reaching and pulling down ceilings and walls to expose hidden fire.",
+    "reference": "IFSTA, Essentials of Fire Fighting, 7th Edition, Chapter 9, p. 415."
+  },
+  {
+    "question_id": "FF-Q36",
+    "subject_id": 4,
+    "question_text": "Which type of portable fire extinguisher is best for electrical fires?",
+    "options": [
+      "A. Class A water extinguisher",
+      "B. Class B foam extinguisher",
+      "C. Class C carbon dioxide extinguisher",
+      "D. Class D dry powder extinguisher"
+    ],
+    "correct_answer": "C",
+    "explanation": "CO₂ extinguishers are non-conductive and effective for energized electrical equipment.",
+    "reference": "IFSTA, Essentials of Fire Fighting, 7th Edition, Chapter 7, p. 321."
+  },
+  {
+    "question_id": "FF-Q37",
+    "subject_id": 4,
+    "question_text": "What feature makes the K-tool effective in forcible entry?",
+    "options": [
+      "A. Its sharp hook to grip lock cylinders",
+      "B. Its long handle for leverage",
+      "C. Its ability to cut metal quickly",
+      "D. Its lightweight design"
+    ],
+    "correct_answer": "A",
+    "explanation": "The K-tool is designed to pull lock cylinders out of doors, allowing access to internal locking mechanisms.",
+    "reference": "IFSTA, Essentials of Fire Fighting, 7th Edition, Chapter 9, p. 412."
+  },
+  {
+    "question_id": "FF-Q38",
+    "subject_id": 4,
+    "question_text": "Which firefighting tool is most commonly paired with a roof ladder for ventilation?",
+    "options": [
+      "A. Pike pole",
+      "B. Chain saw",
+      "C. Rotary saw",
+      "D. Flat-head axe"
+    ],
+    "correct_answer": "B",
+    "explanation": "Chain saws are often used with roof ladders to cut ventilation openings safely.",
+    "reference": "IFSTA, Essentials of Fire Fighting, 7th Edition, Chapter 9, p. 419."
+  },
+  {
+    "question_id": "FF-Q39",
+    "subject_id": 4,
+    "question_text": "Which type of extinguisher is specifically designed for combustible metals such as magnesium or titanium?",
+    "options": [
+      "A. Class A extinguisher",
+      "B. Class B extinguisher",
+      "C. Class C extinguisher",
+      "D. Class D extinguisher"
+    ],
+    "correct_answer": "D",
+    "explanation": "Class D extinguishers use special dry powders that absorb heat and smother combustible metal fires.",
+    "reference": "IFSTA, Essentials of Fire Fighting, 7th Edition, Chapter 7, p. 325."
+  },
+  {
+    "question_id": "FF-Q40",
+    "subject_id": 4,
+    "question_text": "Which tool is part of the traditional 'irons' set carried by firefighters?",
+    "options": [
+      "A. Halligan and flat-head axe",
+      "B. Pike pole and sledgehammer",
+      "C. Rotary saw and chainsaw",
+      "D. Kelly tool and bolt cutters"
+    ],
+    "correct_answer": "A",
+    "explanation": "The Halligan and flat-head axe combination, known as 'the irons,' is standard for forcible entry.",
+    "reference": "IFSTA, Essentials of Fire Fighting, 7th Edition, Chapter 9, p. 406."
+  },
+  {
+    "question_id": "FF-Q41",
+    "subject_id": 5,
+    "question_text": "What is the primary consideration before beginning vehicle extrication operations?",
+    "options": [
+      "A. Stabilizing the vehicle",
+      "B. Removing the windshield",
+      "C. Cutting the battery cables",
+      "D. Deploying airbags"
+    ],
+    "correct_answer": "A",
+    "explanation": "Vehicle stabilization ensures firefighter and victim safety before any cutting or disentanglement begins.",
+    "reference": "IFSTA, Essentials of Fire Fighting, 7th Edition, Chapter 38, p. 1082."
+  },
+  {
+    "question_id": "FF-Q42",
+    "subject_id": 5,
+    "question_text": "Which type of glass is most commonly found in vehicle side and rear windows?",
+    "options": [
+      "A. Tempered glass",
+      "B. Laminated glass",
+      "C. Polycarbonate",
+      "D. Plexiglass"
+    ],
+    "correct_answer": "A",
+    "explanation": "Side and rear windows are typically tempered glass, which breaks into small, less dangerous fragments.",
+    "reference": "IFSTA, Essentials of Fire Fighting, 7th Edition, Chapter 38, p. 1090."
+  },
+  {
+    "question_id": "FF-Q43",
+    "subject_id": 5,
+    "question_text": "What should rescuers do if airbags have not deployed during a collision?",
+    "options": [
+      "A. Assume they are disabled",
+      "B. Treat them as a potential hazard",
+      "C. Disconnect the horn relay only",
+      "D. Cut through the steering column"
+    ],
+    "correct_answer": "B",
+    "explanation": "Undeployed airbags pose a risk of sudden deployment and must be treated as hazardous.",
+    "reference": "IFSTA, Essentials of Fire Fighting, 7th Edition, Chapter 38, p. 1093."
+  },
+  {
+    "question_id": "FF-Q44",
+    "subject_id": 5,
+    "question_text": "Which tool is best suited for spreading metal in vehicle extrication?",
+    "options": [
+      "A. Hydraulic spreader",
+      "B. Flat-head axe",
+      "C. Pry bar",
+      "D. Reciprocating saw"
+    ],
+    "correct_answer": "A",
+    "explanation": "Hydraulic spreaders provide powerful leverage to open and displace vehicle metal during rescue operations.",
+    "reference": "IFSTA, Essentials of Fire Fighting, 7th Edition, Chapter 38, p. 1086."
+  },
+  {
+    "question_id": "FF-Q45",
+    "subject_id": 5,
+    "question_text": "What is the primary danger of hybrid or electric vehicles during extrication?",
+    "options": [
+      "A. Engine oil ignition",
+      "B. High-voltage electrical systems",
+      "C. Weak door structures",
+      "D. Fuel tank rupture"
+    ],
+    "correct_answer": "B",
+    "explanation": "Hybrid and electric vehicles contain high-voltage batteries that pose shock and fire hazards.",
+    "reference": "IFSTA, Essentials of Fire Fighting, 7th Edition, Chapter 38, p. 1095."
+  },
+  {
+    "question_id": "FF-Q46",
+    "subject_id": 5,
+    "question_text": "What is the primary purpose of cribbing during rescue operations?",
+    "options": [
+      "A. To cut through reinforced metal",
+      "B. To stabilize vehicles and objects",
+      "C. To gain access to battery cables",
+      "D. To remove glass safely"
+    ],
+    "correct_answer": "B",
+    "explanation": "Cribbing is used to stabilize vehicles and prevent shifting during rescue operations.",
+    "reference": "IFSTA, Essentials of Fire Fighting, 7th Edition, Chapter 38, p. 1083."
+  },
+  {
+    "question_id": "FF-Q47",
+    "subject_id": 5,
+    "question_text": "What type of rescue situation involves removing a trapped victim from machinery?",
+    "options": [
+      "A. Technical rescue",
+      "B. Confined space rescue",
+      "C. Machinery extrication",
+      "D. Rope rescue"
+    ],
+    "correct_answer": "C",
+    "explanation": "Machinery extrication is the process of disentangling victims caught in industrial or mechanical equipment.",
+    "reference": "IFSTA, Essentials of Fire Fighting, 7th Edition, Chapter 39, p. 1112."
+  },
+  {
+    "question_id": "FF-Q48",
+    "subject_id": 5,
+    "question_text": "What should firefighters do first when approaching an overturned vehicle?",
+    "options": [
+      "A. Gain immediate access to victims",
+      "B. Stabilize the vehicle to prevent rolling",
+      "C. Break glass to provide ventilation",
+      "D. Cut battery cables"
+    ],
+    "correct_answer": "B",
+    "explanation": "Stabilization of the overturned vehicle prevents further injury to victims and firefighters.",
+    "reference": "IFSTA, Essentials of Fire Fighting, 7th Edition, Chapter 38, p. 1082."
+  },
+  {
+    "question_id": "FF-Q49",
+    "subject_id": 5,
+    "question_text": "Which type of glass is most dangerous to cut due to its multiple layers?",
+    "options": [
+      "A. Tempered glass",
+      "B. Laminated glass",
+      "C. Safety glass",
+      "D. Frosted glass"
+    ],
+    "correct_answer": "B",
+    "explanation": "Laminated glass consists of multiple layers that resist breaking, making it more difficult and dangerous to cut.",
+    "reference": "IFSTA, Essentials of Fire Fighting, 7th Edition, Chapter 38, p. 1091."
+  },
+  {
+    "question_id": "FF-Q50",
+    "subject_id": 5,
+    "question_text": "What is the main function of hydraulic cutters in vehicle extrication?",
+    "options": [
+      "A. Removing windshields",
+      "B. Cutting through metal structural components",
+      "C. Stabilizing a vehicle",
+      "D. Ventilating compartments"
+    ],
+    "correct_answer": "B",
+    "explanation": "Hydraulic cutters are designed to shear through vehicle metal components like posts and frames.",
+    "reference": "IFSTA, Essentials of Fire Fighting, 7th Edition, Chapter 38, p. 1087."
+  },
+  {
+    "question_id": "FF-Q51",
+    "subject_id": 6,
+    "question_text": "Which agency is primarily responsible for regulating hazardous materials transportation in the United States?",
+    "options": [
+      "A. FEMA",
+      "B. DOT",
+      "C. EPA",
+      "D. OSHA"
+    ],
+    "correct_answer": "B",
+    "explanation": "The U.S. Department of Transportation (DOT) regulates the safe transportation of hazardous materials.",
+    "reference": "IFSTA, Hazardous Materials Awareness and Operations, 4th Edition, Chapter 2, p. 41."
+  },
+  {
+    "question_id": "FF-Q52",
+    "subject_id": 6,
+    "question_text": "What is the purpose of the Emergency Response Guidebook (ERG)?",
+    "options": [
+      "A. To classify chemicals for storage",
+      "B. To guide initial actions at hazardous materials incidents",
+      "C. To establish building codes",
+      "D. To certify firefighters for HazMat technician level"
+    ],
+    "correct_answer": "B",
+    "explanation": "The ERG provides first responders with immediate guidance on protective actions during hazardous materials incidents.",
+    "reference": "IFSTA, Hazardous Materials Awareness and Operations, 4th Edition, Chapter 3, p. 73."
+  },
+  {
+    "question_id": "FF-Q53",
+    "subject_id": 6,
+    "question_text": "What is the first operational priority at a hazardous materials incident?",
+    "options": [
+      "A. Identify the material",
+      "B. Rescue victims",
+      "C. Isolate the area",
+      "D. Establish decontamination"
+    ],
+    "correct_answer": "C",
+    "explanation": "The first priority is to isolate and deny entry to the hazard area to protect responders and the public.",
+    "reference": "IFSTA, Hazardous Materials Awareness and Operations, 4th Edition, Chapter 5, p. 128."
+  },
+  {
+    "question_id": "FF-Q54",
+    "subject_id": 6,
+    "question_text": "Which of the following best describes the term 'hot zone' at a hazardous materials incident?",
+    "options": [
+      "A. Area for decontamination",
+      "B. Area where support operations take place",
+      "C. Area of direct contamination and highest hazard",
+      "D. Area designated for staging equipment"
+    ],
+    "correct_answer": "C",
+    "explanation": "The hot zone is the area of contamination and greatest hazard where entry requires full protective equipment.",
+    "reference": "IFSTA, Hazardous Materials Awareness and Operations, 4th Edition, Chapter 6, p. 152."
+  },
+  {
+    "question_id": "FF-Q55",
+    "subject_id": 6,
+    "question_text": "Which type of container is typically used to transport gasoline on highways?",
+    "options": [
+      "A. MC-306/DOT 406 cargo tank",
+      "B. MC-331 pressure tank",
+      "C. Cryogenic liquid tank",
+      "D. Rail tank car"
+    ],
+    "correct_answer": "A",
+    "explanation": "MC-306/DOT 406 cargo tanks are commonly used for flammable liquids such as gasoline.",
+    "reference": "IFSTA, Hazardous Materials Awareness and Operations, 4th Edition, Chapter 7, p. 181."
+  },
+  {
+    "question_id": "FF-Q56",
+    "subject_id": 6,
+    "question_text": "What type of chemical hazard is chlorine most commonly associated with?",
+    "options": [
+      "A. Flammable liquid",
+      "B. Oxidizer",
+      "C. Toxic inhalation hazard",
+      "D. Explosive solid"
+    ],
+    "correct_answer": "C",
+    "explanation": "Chlorine is a highly toxic inhalation hazard that can cause severe respiratory damage.",
+    "reference": "IFSTA, Hazardous Materials Awareness and Operations, 4th Edition, Chapter 4, p. 101."
+  },
+  {
+    "question_id": "FF-Q57",
+    "subject_id": 6,
+    "question_text": "What does the color red on an NFPA 704 placard represent?",
+    "options": [
+      "A. Health hazard",
+      "B. Instability/reactivity hazard",
+      "C. Flammability hazard",
+      "D. Special hazard information"
+    ],
+    "correct_answer": "C",
+    "explanation": "In the NFPA 704 system, red represents the flammability hazard of a material.",
+    "reference": "IFSTA, Hazardous Materials Awareness and Operations, 4th Edition, Chapter 3, p. 87."
+  },
+  {
+    "question_id": "FF-Q58",
+    "subject_id": 6,
+    "question_text": "When approaching a hazardous materials scene, responders should position apparatus:",
+    "options": [
+      "A. Uphill and upwind",
+      "B. Downhill and downwind",
+      "C. At the lowest elevation",
+      "D. Close to the spill source"
+    ],
+    "correct_answer": "A",
+    "explanation": "Responders should always stage uphill and upwind to minimize exposure to vapors or runoff.",
+    "reference": "IFSTA, Hazardous Materials Awareness and Operations, 4th Edition, Chapter 5, p. 133."
+  },
+  {
+    "question_id": "FF-Q59",
+    "subject_id": 6,
+    "question_text": "Which type of protective clothing provides the highest level of protection against vapors, gases, and liquids?",
+    "options": [
+      "A. Level D",
+      "B. Level C",
+      "C. Level B",
+      "D. Level A"
+    ],
+    "correct_answer": "D",
+    "explanation": "Level A protection provides a fully encapsulated suit with SCBA, offering the highest level of protection.",
+    "reference": "IFSTA, Hazardous Materials Awareness and Operations, 4th Edition, Chapter 8, p. 209."
+  },
+  {
+    "question_id": "FF-Q60",
+    "subject_id": 6,
+    "question_text": "What is the primary purpose of emergency decontamination at a HazMat incident?",
+    "options": [
+      "A. To fully neutralize hazardous materials",
+      "B. To quickly remove contaminants and reduce exposure",
+      "C. To prepare responders for entry operations",
+      "D. To identify unknown chemicals"
+    ],
+    "correct_answer": "B",
+    "explanation": "Emergency decontamination is intended to rapidly reduce contamination and limit harmful exposure.",
+    "reference": "IFSTA, Hazardous Materials Awareness and Operations, 4th Edition, Chapter 9, p. 245."
+  },
+  {
+    "question_id": "FF-Q61",
+    "subject_id": 7,
+    "question_text": "What is the primary responsibility of the Incident Commander during fireground operations?",
+    "options": [
+      "A. Directing suppression tactics only",
+      "B. Ensuring firefighter safety and overall incident management",
+      "C. Maintaining communication with dispatch only",
+      "D. Overseeing equipment maintenance"
+    ],
+    "correct_answer": "B",
+    "explanation": "The Incident Commander is responsible for overall scene management, prioritizing life safety, incident stabilization, and property conservation.",
+    "reference": "IFSTA, Essentials of Fire Fighting, 7th Edition, Chapter 21, p. 1014."
+  },
+  {
+    "question_id": "FF-Q62",
+    "subject_id": 7,
+    "question_text": "Which section of the Incident Command System is responsible for providing resources and services to support incident operations?",
+    "options": [
+      "A. Operations Section",
+      "B. Planning Section",
+      "C. Logistics Section",
+      "D. Finance/Administration Section"
+    ],
+    "correct_answer": "C",
+    "explanation": "The Logistics Section supplies equipment, facilities, and services needed to support operational objectives.",
+    "reference": "IFSTA, Essentials of Fire Fighting, 7th Edition, Chapter 21, p. 1019."
+  },
+  {
+    "question_id": "FF-Q63",
+    "subject_id": 7,
+    "question_text": "During a multi-agency incident, which ICS feature ensures that multiple jurisdictions work together effectively?",
+    "options": [
+      "A. Unified Command",
+      "B. Single Command",
+      "C. Branch Organization",
+      "D. Staging Area"
+    ],
+    "correct_answer": "A",
+    "explanation": "Unified Command allows agencies with different legal and functional responsibilities to coordinate decisions and resources effectively.",
+    "reference": "IFSTA, Essentials of Fire Fighting, 7th Edition, Chapter 21, p. 1021."
+  },
+  {
+    "question_id": "FF-Q64",
+    "subject_id": 7,
+    "question_text": "What is the purpose of a staging area in fireground operations?",
+    "options": [
+      "A. To serve as the Incident Command Post",
+      "B. To temporarily position resources awaiting assignment",
+      "C. To house the rehabilitation unit",
+      "D. To track financial costs"
+    ],
+    "correct_answer": "B",
+    "explanation": "Staging areas hold personnel and equipment in readiness until they are assigned to tactical operations.",
+    "reference": "IFSTA, Essentials of Fire Fighting, 7th Edition, Chapter 21, p. 1022."
+  },
+  {
+    "question_id": "FF-Q65",
+    "subject_id": 7,
+    "question_text": "Which ICS position is responsible for developing the Incident Action Plan (IAP)?",
+    "options": [
+      "A. Operations Section Chief",
+      "B. Planning Section Chief",
+      "C. Logistics Section Chief",
+      "D. Incident Commander"
+    ],
+    "correct_answer": "B",
+    "explanation": "The Planning Section Chief develops the Incident Action Plan based on the objectives set by the Incident Commander.",
+    "reference": "IFSTA, Essentials of Fire Fighting, 7th Edition, Chapter 21, p. 1020."
+  },
+  {
+    "question_id": "FF-Q66",
+    "subject_id": 7,
+    "question_text": "Which principle of ICS emphasizes that each individual reports to only one supervisor?",
+    "options": [
+      "A. Span of Control",
+      "B. Chain of Command",
+      "C. Unity of Command",
+      "D. Division of Labor"
+    ],
+    "correct_answer": "C",
+    "explanation": "Unity of Command ensures personnel receive orders from only one supervisor, reducing confusion.",
+    "reference": "IFSTA, Essentials of Fire Fighting, 7th Edition, Chapter 21, p. 1015."
+  },
+  {
+    "question_id": "FF-Q67",
+    "subject_id": 7,
+    "question_text": "In ICS, what is the recommended span of control for effective supervision?",
+    "options": [
+      "A. 2 to 5 subordinates",
+      "B. 3 to 7 subordinates",
+      "C. 5 to 10 subordinates",
+      "D. 6 to 12 subordinates"
+    ],
+    "correct_answer": "B",
+    "explanation": "The optimal span of control in ICS is 3 to 7 individuals, with 5 being ideal for effective supervision.",
+    "reference": "IFSTA, Essentials of Fire Fighting, 7th Edition, Chapter 21, p. 1016."
+  },
+  {
+    "question_id": "FF-Q68",
+    "subject_id": 7,
+    "question_text": "Which ICS section is responsible for monitoring incident costs and financial accountability?",
+    "options": [
+      "A. Planning Section",
+      "B. Logistics Section",
+      "C. Operations Section",
+      "D. Finance/Administration Section"
+    ],
+    "correct_answer": "D",
+    "explanation": "The Finance/Administration Section manages contracts, compensation, and tracking of incident-related expenses.",
+    "reference": "IFSTA, Essentials of Fire Fighting, 7th Edition, Chapter 21, p. 1023."
+  },
+  {
+    "question_id": "FF-Q69",
+    "subject_id": 7,
+    "question_text": "Which fireground operational mode prioritizes rapid search and rescue operations?",
+    "options": [
+      "A. Offensive mode",
+      "B. Defensive mode",
+      "C. Transitional mode",
+      "D. Recovery mode"
+    ],
+    "correct_answer": "A",
+    "explanation": "Offensive mode focuses on interior attacks and rapid rescue efforts when conditions permit entry.",
+    "reference": "IFSTA, Essentials of Fire Fighting, 7th Edition, Chapter 21, p. 1030."
+  },
+  {
+    "question_id": "FF-Q70",
+    "subject_id": 7,
+    "question_text": "When fire conditions are too dangerous for interior operations, which strategy is implemented?",
+    "options": [
+      "A. Offensive attack",
+      "B. Defensive attack",
+      "C. Transitional attack",
+      "D. Indirect attack"
+    ],
+    "correct_answer": "B",
+    "explanation": "Defensive attack strategies are used when interior conditions are unsafe, focusing on containment from the exterior.",
+    "reference": "IFSTA, Essentials of Fire Fighting, 7th Edition, Chapter 21, p. 1031."
+  },
+
+    {
+      "question_id": "CCP-C-Q1",
+      "subject_id": 8,
+      "question_text": "What is the primary goal of critical care transport?",
+      "options": [
+        "A. To provide rapid evacuation only",
+        "B. To deliver definitive treatment at the scene",
+        "C. To maintain continuity of advanced care during transfer",
+        "D. To minimize fuel and travel costs"
+      ],
+      "correct_answer": "C",
+      "explanation": "Critical care transport ensures continuity of advanced medical care while moving critically ill or injured patients between facilities.",
+      "reference": "IBSC CCP-C Candidate Handbook, Critical Care Transport Principles, p. 42."
+    },
+    {
+      "question_id": "CCP-C-Q2",
+      "subject_id": 8,
+      "question_text": "During fixed-wing critical care transport, which factor most influences oxygen delivery?",
+      "options": [
+        "A. Cabin altitude",
+        "B. Aircraft speed",
+        "C. Fuel efficiency",
+        "D. Runway length"
+      ],
+      "correct_answer": "A",
+      "explanation": "At higher cabin altitudes, oxygen partial pressure decreases, requiring adjustments in oxygen delivery for patients.",
+      "reference": "AAFP Aeromedical Transport Guidelines, Chapter 3, p. 67."
+    },
+    {
+      "question_id": "CCP-C-Q3",
+      "subject_id": 8,
+      "question_text": "What is the most important pre-transport consideration for a patient on mechanical ventilation?",
+      "options": [
+        "A. Checking patient’s insurance coverage",
+        "B. Ensuring ventilator settings are stable and portable",
+        "C. Replacing IV lines with new ones",
+        "D. Recording a new ECG strip"
+      ],
+      "correct_answer": "B",
+      "explanation": "Ventilator-dependent patients must have stable and portable ventilator settings before transport to prevent complications.",
+      "reference": "ACEP Critical Care Transport Standards, Ventilation Section, p. 119."
+    },
+    {
+      "question_id": "CCP-C-Q4",
+      "subject_id": 8,
+      "question_text": "Which monitoring device is most essential during critical care transport?",
+      "options": [
+        "A. Pulse oximetry",
+        "B. Capnography",
+        "C. Cardiac monitor",
+        "D. All of the above"
+      ],
+      "correct_answer": "D",
+      "explanation": "Comprehensive monitoring with oximetry, capnography, and cardiac monitoring ensures safe patient management during transport.",
+      "reference": "IBSC CCP-C Content Outline, Monitoring Section, p. 205."
+    },
+    {
+      "question_id": "CCP-C-Q5",
+      "subject_id": 8,
+      "question_text": "What is the main risk of transporting a patient with an untreated pneumothorax in a helicopter?",
+      "options": [
+        "A. Hypothermia",
+        "B. Decreased visual acuity",
+        "C. Expansion of the pneumothorax due to altitude changes",
+        "D. Increased blood clotting"
+      ],
+      "correct_answer": "C",
+      "explanation": "Changes in atmospheric pressure at altitude can cause an untreated pneumothorax to expand rapidly, leading to life-threatening complications.",
+      "reference": "CAMTS Accreditation Standards, Airway and Ventilation Section, p. 88."
+    },
+    {
+      "question_id": "CCP-C-Q6",
+      "subject_id": 8,
+      "question_text": "Which of the following best describes the scope of practice of a critical care transport provider?",
+      "options": [
+        "A. Basic life support only",
+        "B. Advanced procedures beyond paramedic level including ventilator and vasoactive drug management",
+        "C. Driving the ambulance safely",
+        "D. Providing care limited to scene trauma management"
+      ],
+      "correct_answer": "B",
+      "explanation": "Critical care transport providers often perform advanced interventions such as ventilator management and titration of vasoactive medications.",
+      "reference": "IBSC CCP-C Candidate Handbook, Scope of Practice, p. 57."
+    },
+    {
+      "question_id": "CCP-C-Q7",
+      "subject_id": 8,
+      "question_text": "When transferring a patient with an intra-aortic balloon pump (IABP), what is the primary concern?",
+      "options": [
+        "A. Battery life of the pump console",
+        "B. Patient’s body temperature",
+        "C. Blood glucose monitoring",
+        "D. Patient’s oral intake"
+      ],
+      "correct_answer": "A",
+      "explanation": "The IABP requires reliable power; ensuring adequate battery life during transport is critical to maintain hemodynamic support.",
+      "reference": "AHA Transport of Cardiac Patients Guidelines, p. 314."
+    },
+    {
+      "question_id": "CCP-C-Q8",
+      "subject_id": 8,
+      "question_text": "Which of the following conditions is most impacted by altitude changes during aeromedical transport?",
+      "options": [
+        "A. Hypertension",
+        "B. Pneumothorax",
+        "C. Diabetes mellitus",
+        "D. Anemia"
+      ],
+      "correct_answer": "B",
+      "explanation": "Air pressure decreases at altitude, causing trapped gases like pneumothoraces to expand and worsen.",
+      "reference": "Aeromedical Crew Critical Care Textbook, Altitude Physiology, p. 163."
+    },
+    {
+      "question_id": "CCP-C-Q9",
+      "subject_id": 8,
+      "question_text": "What is the preferred vascular access for critically ill patients during transport?",
+      "options": [
+        "A. Peripheral IV line",
+        "B. Central venous access",
+        "C. Intraosseous access only",
+        "D. Oral hydration"
+      ],
+      "correct_answer": "B",
+      "explanation": "Central venous access provides reliable administration of fluids, medications, and monitoring of hemodynamics in critically ill patients.",
+      "reference": "Society of Critical Care Medicine Transport Guidelines, Vascular Access Section, p. 221."
+    },
+    {
+      "question_id": "CCP-C-Q10",
+      "subject_id": 8,
+      "question_text": "Which medication is most commonly required during transport of patients with septic shock?",
+      "options": [
+        "A. Vasoactive drugs like norepinephrine",
+        "B. Analgesics only",
+        "C. Oral antibiotics",
+        "D. Antihistamines"
+      ],
+      "correct_answer": "A",
+      "explanation": "Vasoactive medications like norepinephrine are commonly titrated during transport to maintain adequate blood pressure in septic shock patients.",
+      "reference": "Surviving Sepsis Campaign, Transport Care Section, p. 147."
+    },
+    {
+      "question_id": "CCP-C-Q11",
+      "subject_id": 9,
+      "question_text": "What is the primary goal of adjusting the ventilator’s tidal volume in an ARDS patient?",
+      "options": [
+        "A. To improve oxygen delivery",
+        "B. To prevent volutrauma",
+        "C. To decrease FiO2 requirements",
+        "D. To increase mean airway pressure"
+      ],
+      "correct_answer": "B",
+      "explanation": "In ARDS patients, using low tidal volumes prevents overdistension of alveoli and reduces volutrauma.",
+      "reference": "ARDSNet Ventilation Strategy, p. 212."
+    },
+    {
+      "question_id": "CCP-C-Q12",
+      "subject_id": 9,
+      "question_text": "What is the recommended plateau pressure limit in mechanically ventilated patients with ARDS?",
+      "options": [
+        "A. < 20 cmH2O",
+        "B. < 25 cmH2O",
+        "C. < 30 cmH2O",
+        "D. < 35 cmH2O"
+      ],
+      "correct_answer": "C",
+      "explanation": "Keeping plateau pressure below 30 cmH2O minimizes barotrauma and lung injury.",
+      "reference": "Critical Care Ventilation Guidelines, p. 198."
+    },
+    {
+      "question_id": "CCP-C-Q13",
+      "subject_id": 9,
+      "question_text": "Which ventilator mode provides a set tidal volume but allows the patient to initiate breaths?",
+      "options": [
+        "A. SIMV",
+        "B. CPAP",
+        "C. PSV",
+        "D. APRV"
+      ],
+      "correct_answer": "A",
+      "explanation": "SIMV provides mandatory breaths with a set tidal volume but allows spontaneous breathing between ventilator cycles.",
+      "reference": "Ventilator Modes Overview, p. 121."
+    },
+    {
+      "question_id": "CCP-C-Q14",
+      "subject_id": 9,
+      "question_text": "High PEEP levels are used in ARDS primarily to:",
+      "options": [
+        "A. Improve cardiac output",
+        "B. Prevent alveolar collapse",
+        "C. Reduce CO2 production",
+        "D. Increase sedation requirements"
+      ],
+      "correct_answer": "B",
+      "explanation": "PEEP maintains alveolar recruitment, preventing collapse and improving oxygenation.",
+      "reference": "ARDS Management Protocol, p. 230."
+    },
+    {
+      "question_id": "CCP-C-Q15",
+      "subject_id": 9,
+      "question_text": "What is the effect of increasing inspiratory time in mechanical ventilation?",
+      "options": [
+        "A. Increases mean airway pressure",
+        "B. Decreases tidal volume",
+        "C. Improves renal perfusion",
+        "D. Increases FiO2 delivery"
+      ],
+      "correct_answer": "A",
+      "explanation": "Prolonging inspiratory time increases mean airway pressure, which may improve oxygenation but risk air trapping.",
+      "reference": "Mechanical Ventilation Concepts, p. 145."
+    },
+    {
+      "question_id": "CCP-C-Q16",
+      "subject_id": 9,
+      "question_text": "Permissive hypercapnia in ventilated patients is primarily used to:",
+      "options": [
+        "A. Reduce ventilator-induced lung injury",
+        "B. Increase cardiac output",
+        "C. Improve renal function",
+        "D. Prevent atelectasis"
+      ],
+      "correct_answer": "A",
+      "explanation": "Allowing higher CO2 levels reduces the need for aggressive ventilation, decreasing lung injury risk.",
+      "reference": "Critical Care Ventilation Principles, p. 178."
+    },
+    {
+      "question_id": "CCP-C-Q17",
+      "subject_id": 9,
+      "question_text": "What is the most common complication of prolonged mechanical ventilation?",
+      "options": [
+        "A. Pneumothorax",
+        "B. Ventilator-associated pneumonia",
+        "C. Pulmonary embolism",
+        "D. ARDS"
+      ],
+      "correct_answer": "B",
+      "explanation": "Ventilator-associated pneumonia is the most frequent complication of long-term mechanical ventilation.",
+      "reference": "Infectious Complications in Ventilation, p. 265."
+    },
+    {
+      "question_id": "CCP-C-Q18",
+      "subject_id": 9,
+      "question_text": "Which parameter is adjusted to directly control PaCO2 in mechanical ventilation?",
+      "options": [
+        "A. FiO2",
+        "B. Tidal Volume",
+        "C. PEEP",
+        "D. Respiratory Rate"
+      ],
+      "correct_answer": "D",
+      "explanation": "Increasing respiratory rate enhances CO2 elimination, directly controlling PaCO2.",
+      "reference": "Blood Gas Management in Ventilation, p. 156."
+    },
+    {
+      "question_id": "CCP-C-Q19",
+      "subject_id": 9,
+      "question_text": "Which mode of ventilation is most appropriate for a patient requiring full ventilatory support with no spontaneous effort?",
+      "options": [
+        "A. CPAP",
+        "B. Pressure Support Ventilation",
+        "C. Assist-Control Ventilation",
+        "D. SIMV"
+      ],
+      "correct_answer": "C",
+      "explanation": "Assist-Control delivers full support for every breath, ideal for patients with no spontaneous effort.",
+      "reference": "Ventilation Mode Selection, p. 134."
+    },
+    {
+      "question_id": "CCP-C-Q20",
+      "subject_id": 9,
+      "question_text": "Which strategy is recommended to reduce ventilator-induced lung injury?",
+      "options": [
+        "A. High tidal volume ventilation",
+        "B. Low tidal volume with adequate PEEP",
+        "C. Hyperventilation strategy",
+        "D. Zero PEEP approach"
+      ],
+      "correct_answer": "B",
+      "explanation": "Low tidal volume ventilation with adequate PEEP minimizes alveolar overdistension and shear stress.",
+      "reference": "Lung Protective Ventilation, p. 201."
+    },
+  {
+    "question_id": "CCP-C-Q21",
+    "subject_id": 10,
+    "question_text": "Which is the most reliable method to confirm correct endotracheal tube placement during prehospital care?",
+    "options": [
+      "A. Chest rise observation",
+      "B. Colorimetric CO2 detector",
+      "C. Continuous waveform capnography",
+      "D. Auscultation of breath sounds"
+    ],
+    "correct_answer": "C",
+    "explanation": "Continuous waveform capnography is considered the gold standard for confirming endotracheal tube placement in the field.",
+    "reference": "NAEMSP Airway Management Guidelines, p. 212."
+  },
+  {
+    "question_id": "CCP-C-Q22",
+    "subject_id": 10,
+    "question_text": "Which airway maneuver is most appropriate for a trauma patient with suspected cervical spine injury?",
+    "options": [
+      "A. Head tilt–chin lift",
+      "B. Jaw thrust",
+      "C. Cricoid pressure",
+      "D. Triple airway maneuver"
+    ],
+    "correct_answer": "B",
+    "explanation": "The jaw thrust maneuver opens the airway without manipulating the cervical spine.",
+    "reference": "ATLS Manual, Airway Chapter, p. 65."
+  },
+  {
+    "question_id": "CCP-C-Q23",
+    "subject_id": 10,
+    "question_text": "What is the primary indication for using a supraglottic airway device during transport?",
+    "options": [
+      "A. Patient in cardiac arrest",
+      "B. Failure of bag-mask ventilation and intubation",
+      "C. Mild airway obstruction",
+      "D. Routine airway management in stable patients"
+    ],
+    "correct_answer": "B",
+    "explanation": "Supraglottic devices are used as rescue airways when intubation and ventilation attempts fail.",
+    "reference": "Difficult Airway Society Guidelines, p. 118."
+  },
+  {
+    "question_id": "CCP-C-Q24",
+    "subject_id": 10,
+    "question_text": "Which factor increases the difficulty of endotracheal intubation most significantly?",
+    "options": [
+      "A. Mallampati class III-IV",
+      "B. History of hypertension",
+      "C. Presence of tachycardia",
+      "D. Elevated blood glucose"
+    ],
+    "correct_answer": "A",
+    "explanation": "Higher Mallampati scores correlate with difficult visualization of the glottis and intubation.",
+    "reference": "Airway Assessment Guidelines, p. 89."
+  },
+  {
+    "question_id": "CCP-C-Q25",
+    "subject_id": 10,
+    "question_text": "Which device provides the best oxygen delivery in a spontaneously breathing patient with severe hypoxemia?",
+    "options": [
+      "A. Nasal cannula at 4 L/min",
+      "B. Simple face mask at 6 L/min",
+      "C. Non-rebreather mask at 15 L/min",
+      "D. Venturi mask at 28% FiO2"
+    ],
+    "correct_answer": "C",
+    "explanation": "A non-rebreather mask delivers the highest FiO2 (close to 100%) for spontaneously breathing patients.",
+    "reference": "Emergency Airway Oxygen Therapy, p. 54."
+  },
+  {
+    "question_id": "CCP-C-Q26",
+    "subject_id": 10,
+    "question_text": "During RSI, which paralytic agent is preferred when rapid onset and short duration are needed?",
+    "options": [
+      "A. Succinylcholine",
+      "B. Rocuronium",
+      "C. Vecuronium",
+      "D. Cisatracurium"
+    ],
+    "correct_answer": "A",
+    "explanation": "Succinylcholine has a rapid onset and short duration, making it the preferred paralytic for RSI in most cases.",
+    "reference": "Rapid Sequence Intubation Protocols, p. 101."
+  },
+  {
+    "question_id": "CCP-C-Q27",
+    "subject_id": 10,
+    "question_text": "Which airway adjunct is contraindicated in a patient with an intact gag reflex?",
+    "options": [
+      "A. Oropharyngeal airway",
+      "B. Nasopharyngeal airway",
+      "C. Bag-mask ventilation",
+      "D. Non-rebreather mask"
+    ],
+    "correct_answer": "A",
+    "explanation": "Oropharyngeal airways can stimulate vomiting and aspiration if a gag reflex is present.",
+    "reference": "Airway Adjunct Use in Prehospital Care, p. 77."
+  },
+  {
+    "question_id": "CCP-C-Q28",
+    "subject_id": 10,
+    "question_text": "In which situation is cricothyrotomy most appropriate?",
+    "options": [
+      "A. Mild upper airway obstruction",
+      "B. Failed airway with inability to ventilate or oxygenate",
+      "C. Intubation for elective surgery",
+      "D. Routine pediatric airway management"
+    ],
+    "correct_answer": "B",
+    "explanation": "Cricothyrotomy is indicated as a last-resort surgical airway when all other airway maneuvers fail.",
+    "reference": "Difficult Airway Society Guidelines, p. 134."
+  },
+  {
+    "question_id": "CCP-C-Q29",
+    "subject_id": 10,
+    "question_text": "Which airway intervention is most effective for preventing aspiration in an unconscious patient?",
+    "options": [
+      "A. Recovery position",
+      "B. Oropharyngeal airway",
+      "C. Endotracheal intubation",
+      "D. Nasopharyngeal airway"
+    ],
+    "correct_answer": "C",
+    "explanation": "Endotracheal intubation with a cuffed tube provides the best protection against aspiration.",
+    "reference": "Airway Protection in Critical Care, p. 201."
+  },
+  {
+    "question_id": "CCP-C-Q30",
+    "subject_id": 10,
+    "question_text": "Which complication is most common after endotracheal intubation?",
+    "options": [
+      "A. Esophageal intubation",
+      "B. Pneumothorax",
+      "C. Vocal cord paralysis",
+      "D. Subglottic stenosis"
+    ],
+    "correct_answer": "A",
+    "explanation": "Esophageal intubation is the most common and dangerous complication immediately following intubation attempts.",
+    "reference": "Advanced Airway Complications, p. 233."
+  },
+  {
+    "question_id": "CCP-C-Q31",
+    "subject_id": 11,
+    "question_text": "Which initial rhythm is most commonly observed in sudden cardiac arrest outside of the hospital?",
+    "options": [
+      "A. Ventricular fibrillation",
+      "B. Asystole",
+      "C. Pulseless electrical activity",
+      "D. Sinus tachycardia"
+    ],
+    "correct_answer": "A",
+    "explanation": "Ventricular fibrillation is the most frequent initial rhythm in out-of-hospital cardiac arrests, especially in adults.",
+    "reference": "AHA Guidelines for CPR and ECC, 2020, p. 189."
+  },
+  {
+    "question_id": "CCP-C-Q32",
+    "subject_id": 11,
+    "question_text": "What is the recommended first drug for treating pulseless ventricular tachycardia during resuscitation?",
+    "options": [
+      "A. Amiodarone",
+      "B. Epinephrine",
+      "C. Atropine",
+      "D. Lidocaine"
+    ],
+    "correct_answer": "B",
+    "explanation": "Epinephrine is given every 3–5 minutes in cardiac arrest regardless of rhythm. Antiarrhythmics like amiodarone are considered after epinephrine.",
+    "reference": "AHA ACLS Provider Manual, 2020, p. 214."
+  },
+  {
+    "question_id": "CCP-C-Q33",
+    "subject_id": 11,
+    "question_text": "During resuscitation, high-quality chest compressions should be performed at what depth for an average adult?",
+    "options": [
+      "A. 1 inch (2.5 cm)",
+      "B. 2–2.4 inches (5–6 cm)",
+      "C. 3 inches (7.5 cm)",
+      "D. 4 inches (10 cm)"
+    ],
+    "correct_answer": "B",
+    "explanation": "For adults, compressions should be at least 2 inches but not more than 2.4 inches deep, ensuring effective perfusion without excessive injury.",
+    "reference": "AHA CPR Guidelines, 2020, p. 81."
+  },
+  {
+    "question_id": "CCP-C-Q34",
+    "subject_id": 11,
+    "question_text": "Which of the following best defines 'Return of Spontaneous Circulation' (ROSC)?",
+    "options": [
+      "A. The patient regains consciousness",
+      "B. Palpable pulse with organized rhythm",
+      "C. Spontaneous breathing only",
+      "D. Blood pressure returns above 100 systolic"
+    ],
+    "correct_answer": "B",
+    "explanation": "ROSC is defined as the return of an organized rhythm with a palpable pulse, indicating effective perfusion.",
+    "reference": "ERC Guidelines on Post-Resuscitation Care, 2021, p. 56."
+  },
+  {
+    "question_id": "CCP-C-Q35",
+    "subject_id": 11,
+    "question_text": "What is the recommended energy dose for the first biphasic defibrillation attempt in adults with VF or pulseless VT?",
+    "options": [
+      "A. 50 joules",
+      "B. 100 joules",
+      "C. 120–200 joules",
+      "D. 360 joules"
+    ],
+    "correct_answer": "C",
+    "explanation": "Biphasic defibrillators recommend an initial dose of 120–200 joules, depending on the device used.",
+    "reference": "AHA ACLS Guidelines, 2020, p. 202."
+  },
+  {
+    "question_id": "CCP-C-Q36",
+    "subject_id": 11,
+    "question_text": "Which electrolyte disturbance is most commonly associated with torsades de pointes?",
+    "options": [
+      "A. Hyperkalemia",
+      "B. Hypocalcemia",
+      "C. Hypomagnesemia",
+      "D. Hypernatremia"
+    ],
+    "correct_answer": "C",
+    "explanation": "Hypomagnesemia is a key factor in the development of torsades de pointes, and magnesium sulfate is the treatment of choice.",
+    "reference": "Tintinalli’s Emergency Medicine, 9th ed., p. 449."
+  },
+  {
+    "question_id": "CCP-C-Q37",
+    "subject_id": 11,
+    "question_text": "Which intervention is indicated immediately after defibrillation if the patient remains pulseless?",
+    "options": [
+      "A. Check the pulse for 30 seconds",
+      "B. Resume CPR immediately",
+      "C. Administer atropine",
+      "D. Deliver another shock immediately"
+    ],
+    "correct_answer": "B",
+    "explanation": "After a defibrillation attempt, CPR should be resumed immediately for 2 minutes before rechecking the rhythm and pulse.",
+    "reference": "AHA ACLS Provider Manual, 2020, p. 217."
+  },
+  {
+    "question_id": "CCP-C-Q38",
+    "subject_id": 11,
+    "question_text": "In pediatric cardiac arrest, which rhythm is most common?",
+    "options": [
+      "A. Ventricular fibrillation",
+      "B. Asystole or pulseless electrical activity",
+      "C. Supraventricular tachycardia",
+      "D. Atrial fibrillation"
+    ],
+    "correct_answer": "B",
+    "explanation": "Children typically arrest due to hypoxia or shock, leading to asystole or PEA, unlike adults where VF is more common.",
+    "reference": "PALS Provider Manual, 2020, p. 132."
+  },
+  {
+    "question_id": "CCP-C-Q39",
+    "subject_id": 11,
+    "question_text": "Which post-resuscitation intervention has been shown to improve neurological outcomes in cardiac arrest survivors?",
+    "options": [
+      "A. Prolonged hyperventilation",
+      "B. Therapeutic hypothermia (targeted temperature management)",
+      "C. Immediate use of high-dose steroids",
+      "D. Routine use of sodium bicarbonate"
+    ],
+    "correct_answer": "B",
+    "explanation": "Targeted temperature management helps reduce brain injury and improves neurological recovery after ROSC.",
+    "reference": "NEJM, Targeted Temperature Management Trial, 2013, p. 1312."
+  },
+  {
+    "question_id": "CCP-C-Q40",
+    "subject_id": 11,
+    "question_text": "Which of the following is a reversible cause of cardiac arrest remembered by the 'H's and T's' mnemonic?",
+    "options": [
+      "A. Hypovolemia",
+      "B. Hypertension",
+      "C. Hyperthermia",
+      "D. Hypoglycemia"
+    ],
+    "correct_answer": "A",
+    "explanation": "Reversible causes of arrest include the H's (hypovolemia, hypoxia, hydrogen ion, hyper/hypokalemia, hypothermia) and T's (tension pneumothorax, tamponade, toxins, thrombosis).",
+    "reference": "AHA ACLS Guidelines, 2020, p. 209."
+  },
+  {
+    "question_id": "CCP-C-Q41",
+    "subject_id": 12,
+    "question_text": "Which sedative is most commonly used in critical care transport due to its rapid onset and short duration?",
+    "options": [
+      "A. Midazolam",
+      "B. Lorazepam",
+      "C. Diazepam",
+      "D. Haloperidol"
+    ],
+    "correct_answer": "A",
+    "explanation": "Midazolam is preferred in transport settings due to its rapid onset, short half-life, and titratable dosing.",
+    "reference": "Critical Care Transport Pharmacology Handbook, p. 92."
+  },
+  {
+    "question_id": "CCP-C-Q42",
+    "subject_id": 12,
+    "question_text": "What is the primary mechanism of action of norepinephrine in shock management?",
+    "options": [
+      "A. Beta-1 receptor antagonism",
+      "B. Alpha-1 receptor stimulation",
+      "C. Dopamine receptor blockade",
+      "D. Calcium channel inhibition"
+    ],
+    "correct_answer": "B",
+    "explanation": "Norepinephrine primarily acts as an alpha-1 adrenergic agonist, causing vasoconstriction and improved blood pressure.",
+    "reference": "Surviving Sepsis Campaign Guidelines, 2021, p. 153."
+  },
+  {
+    "question_id": "CCP-C-Q43",
+    "subject_id": 12,
+    "question_text": "Which medication is considered the first-line treatment for torsades de pointes during transport?",
+    "options": [
+      "A. Magnesium sulfate",
+      "B. Amiodarone",
+      "C. Lidocaine",
+      "D. Epinephrine"
+    ],
+    "correct_answer": "A",
+    "explanation": "Magnesium sulfate stabilizes cardiac myocytes and is the drug of choice for torsades de pointes.",
+    "reference": "AHA ACLS Guidelines, 2020, Arrhythmias Section, p. 88."
+  },
+  {
+    "question_id": "CCP-C-Q44",
+    "subject_id": 12,
+    "question_text": "Which drug is most appropriate for rapid sequence induction in a hypotensive trauma patient?",
+    "options": [
+      "A. Etomidate",
+      "B. Propofol",
+      "C. Midazolam",
+      "D. Ketamine"
+    ],
+    "correct_answer": "D",
+    "explanation": "Ketamine is often chosen in hypotensive patients due to its sympathomimetic effects, which help maintain blood pressure.",
+    "reference": "Emergency Airway Pharmacology Review, p. 72."
+  },
+  {
+    "question_id": "CCP-C-Q45",
+    "subject_id": 12,
+    "question_text": "Which anticoagulant is most commonly monitored using activated partial thromboplastin time (aPTT)?",
+    "options": [
+      "A. Warfarin",
+      "B. Heparin",
+      "C. Rivaroxaban",
+      "D. Dabigatran"
+    ],
+    "correct_answer": "B",
+    "explanation": "Unfractionated heparin therapy requires close monitoring with aPTT to ensure therapeutic anticoagulation.",
+    "reference": "Pharmacology of Anticoagulants, Critical Care Transport Edition, p. 109."
+  },
+  {
+    "question_id": "CCP-C-Q46",
+    "subject_id": 12,
+    "question_text": "Which medication is considered the reversal agent for benzodiazepine overdose?",
+    "options": [
+      "A. Atropine",
+      "B. Naloxone",
+      "C. Flumazenil",
+      "D. Protamine sulfate"
+    ],
+    "correct_answer": "C",
+    "explanation": "Flumazenil competitively inhibits benzodiazepine binding at GABA receptors, reversing sedation and respiratory depression.",
+    "reference": "Emergency Pharmacology Guide, p. 64."
+  },
+  {
+    "question_id": "CCP-C-Q47",
+    "subject_id": 12,
+    "question_text": "Which analgesic is preferred for critically ill patients requiring hemodynamic stability during transport?",
+    "options": [
+      "A. Morphine",
+      "B. Fentanyl",
+      "C. Codeine",
+      "D. Tramadol"
+    ],
+    "correct_answer": "B",
+    "explanation": "Fentanyl is preferred due to its rapid onset, short duration, and minimal histamine release compared to morphine.",
+    "reference": "Critical Care Analgesia Review, p. 98."
+  },
+  {
+    "question_id": "CCP-C-Q48",
+    "subject_id": 12,
+    "question_text": "Which vasodilator is commonly used to treat hypertensive emergencies during transport?",
+    "options": [
+      "A. Sodium nitroprusside",
+      "B. Norepinephrine",
+      "C. Epinephrine",
+      "D. Dobutamine"
+    ],
+    "correct_answer": "A",
+    "explanation": "Sodium nitroprusside is a potent arterial and venous vasodilator used in hypertensive crisis management.",
+    "reference": "Transport Pharmacology Protocols, p. 145."
+  },
+  {
+    "question_id": "CCP-C-Q49",
+    "subject_id": 12,
+    "question_text": "Which drug is used to reverse opioid-induced respiratory depression?",
+    "options": [
+      "A. Flumazenil",
+      "B. Atropine",
+      "C. Naloxone",
+      "D. Amiodarone"
+    ],
+    "correct_answer": "C",
+    "explanation": "Naloxone is an opioid antagonist that rapidly reverses respiratory depression caused by opioid overdose.",
+    "reference": "AHA Emergency Care Manual, 2020, p. 112."
+  },
+  {
+    "question_id": "CCP-C-Q50",
+    "subject_id": 12,
+    "question_text": "Which medication is most effective for reducing intracranial pressure in traumatic brain injury during transport?",
+    "options": [
+      "A. Furosemide",
+      "B. Mannitol",
+      "C. Spironolactone",
+      "D. Dopamine"
+    ],
+    "correct_answer": "B",
+    "explanation": "Mannitol is an osmotic diuretic that reduces cerebral edema and intracranial pressure.",
+    "reference": "Neurocritical Care Transport Guidelines, p. 131."
+  },
+  {
+    "question_id": "CCP-C-Q51",
+    "subject_id": 13,
+    "question_text": "What is the most immediate priority in the management of a patient with uncontrolled external hemorrhage?",
+    "options": [
+      "A. Establish IV access",
+      "B. Apply direct pressure",
+      "C. Provide supplemental oxygen",
+      "D. Administer tranexamic acid"
+    ],
+    "correct_answer": "B",
+    "explanation": "Direct pressure is the first and most effective method for controlling external hemorrhage before advanced interventions.",
+    "reference": "ATLS 10th Edition, Hemorrhage Control, p. 47."
+  },
+  {
+    "question_id": "CCP-C-Q52",
+    "subject_id": 13,
+    "question_text": "Which type of shock is most commonly associated with severe trauma and blood loss?",
+    "options": [
+      "A. Obstructive shock",
+      "B. Neurogenic shock",
+      "C. Hypovolemic shock",
+      "D. Cardiogenic shock"
+    ],
+    "correct_answer": "C",
+    "explanation": "Hypovolemic shock from hemorrhage is the most common type of shock encountered in trauma patients.",
+    "reference": "Tintinalli’s Emergency Medicine, Trauma Management, p. 291."
+  },
+  {
+    "question_id": "CCP-C-Q53",
+    "subject_id": 13,
+    "question_text": "In the prehospital setting, which airway intervention is most appropriate for a trauma patient with a Glasgow Coma Scale (GCS) of 6?",
+    "options": [
+      "A. Jaw-thrust maneuver only",
+      "B. Oropharyngeal airway",
+      "C. Endotracheal intubation",
+      "D. Nasopharyngeal airway"
+    ],
+    "correct_answer": "C",
+    "explanation": "Patients with GCS ≤ 8 are at high risk of airway compromise and should undergo definitive airway management such as endotracheal intubation.",
+    "reference": "ATLS 10th Edition, Airway Management, p. 64."
+  },
+  {
+    "question_id": "CCP-C-Q54",
+    "subject_id": 13,
+    "question_text": "Which fracture type is most strongly associated with significant pelvic hemorrhage?",
+    "options": [
+      "A. Simple acetabular fracture",
+      "B. Open book pelvic fracture",
+      "C. Isolated sacral fracture",
+      "D. Femoral neck fracture"
+    ],
+    "correct_answer": "B",
+    "explanation": "Open book pelvic fractures disrupt pelvic venous and arterial structures, leading to severe hemorrhage.",
+    "reference": "Rosen’s Emergency Medicine, Pelvic Trauma, p. 1834."
+  },
+  {
+    "question_id": "CCP-C-Q55",
+    "subject_id": 13,
+    "question_text": "Which diagnostic tool is most useful in the field for rapid detection of internal bleeding in blunt abdominal trauma?",
+    "options": [
+      "A. CT scan",
+      "B. Focused Assessment with Sonography for Trauma (FAST)",
+      "C. Diagnostic peritoneal lavage",
+      "D. Plain abdominal X-ray"
+    ],
+    "correct_answer": "B",
+    "explanation": "FAST ultrasound is rapid, non-invasive, and effective for detecting free fluid suggestive of internal bleeding.",
+    "reference": "ATLS 10th Edition, Abdominal Trauma, p. 175."
+  },
+  {
+    "question_id": "CCP-C-Q56",
+    "subject_id": 13,
+    "question_text": "In traumatic brain injury, maintaining which physiologic parameter is most important to prevent secondary injury?",
+    "options": [
+      "A. SpO2 > 90%",
+      "B. Blood glucose < 150 mg/dL",
+      "C. Systolic blood pressure > 90 mmHg",
+      "D. PaCO2 < 30 mmHg"
+    ],
+    "correct_answer": "C",
+    "explanation": "Avoiding hypotension (SBP < 90 mmHg) is critical to reduce secondary ischemic injury in traumatic brain injury patients.",
+    "reference": "Brain Trauma Foundation Guidelines, p. 93."
+  },
+  {
+    "question_id": "CCP-C-Q57",
+    "subject_id": 13,
+    "question_text": "What is the recommended first-line intervention for tension pneumothorax in the field?",
+    "options": [
+      "A. Chest tube thoracostomy",
+      "B. Needle decompression",
+      "C. Non-rebreather oxygen mask",
+      "D. Bilateral chest X-ray"
+    ],
+    "correct_answer": "B",
+    "explanation": "Immediate needle decompression is the life-saving intervention for suspected tension pneumothorax in the prehospital setting.",
+    "reference": "ATLS 10th Edition, Thoracic Trauma, p. 89."
+  },
+  {
+    "question_id": "CCP-C-Q58",
+    "subject_id": 13,
+    "question_text": "In trauma resuscitation, what ratio of plasma to packed red blood cells is recommended for balanced transfusion?",
+    "options": [
+      "A. 1:4",
+      "B. 1:3",
+      "C. 1:1",
+      "D. 2:1"
+    ],
+    "correct_answer": "C",
+    "explanation": "A balanced transfusion strategy of 1:1 plasma to PRBC ratio reduces mortality in massive transfusion protocols.",
+    "reference": "Journal of Trauma, PROMMTT Study, 2013."
+  },
+  {
+    "question_id": "CCP-C-Q59",
+    "subject_id": 13,
+    "question_text": "Which sign is most suggestive of impending airway compromise in facial trauma?",
+    "options": [
+      "A. Epistaxis",
+      "B. Hoarseness",
+      "C. Nasal bone deformity",
+      "D. Hematoma of the eyelid"
+    ],
+    "correct_answer": "B",
+    "explanation": "Hoarseness indicates laryngeal injury or swelling, suggesting an impending airway compromise.",
+    "reference": "Rosen’s Emergency Medicine, Airway Trauma, p. 546."
+  },
+  {
+    "question_id": "CCP-C-Q60",
+    "subject_id": 13,
+    "question_text": "Which medication is recommended early in trauma patients with suspected significant hemorrhage to reduce mortality?",
+    "options": [
+      "A. Tranexamic acid (TXA)",
+      "B. Recombinant factor VII",
+      "C. Fresh frozen plasma only",
+      "D. Protamine sulfate"
+    ],
+    "correct_answer": "A",
+    "explanation": "Early administration of tranexamic acid within 3 hours of injury reduces mortality in bleeding trauma patients.",
+    "reference": "CRASH-2 Trial, The Lancet, 2010."
+  },
+  {
+    "question_id": "CCP-C-Q61",
+    "subject_id": 14,
+    "question_text": "What is the most common cause of non-traumatic intracerebral hemorrhage during transport?",
+    "options": [
+      "A. Hypertension",
+      "B. Hypoglycemia",
+      "C. Seizure disorder",
+      "D. Hypothermia"
+    ],
+    "correct_answer": "A",
+    "explanation": "Uncontrolled hypertension is the leading cause of non-traumatic intracerebral hemorrhage and requires close monitoring during transport.",
+    "reference": "American Heart Association Stroke Guidelines, p. 223."
+  },
+  {
+    "question_id": "CCP-C-Q62",
+    "subject_id": 14,
+    "question_text": "Which airway intervention is most appropriate for a patient with severe traumatic brain injury and a GCS of 6?",
+    "options": [
+      "A. Bag-valve-mask only",
+      "B. Endotracheal intubation",
+      "C. Nasopharyngeal airway",
+      "D. Oropharyngeal airway only"
+    ],
+    "correct_answer": "B",
+    "explanation": "Patients with GCS ≤ 8 should be intubated to protect the airway and optimize oxygenation during transport.",
+    "reference": "Brain Trauma Foundation Guidelines, p. 45."
+  },
+  {
+    "question_id": "CCP-C-Q63",
+    "subject_id": 14,
+    "question_text": "What is the first-line medication for terminating an active seizure in transport?",
+    "options": [
+      "A. Diazepam",
+      "B. Lorazepam",
+      "C. Midazolam",
+      "D. Phenytoin"
+    ],
+    "correct_answer": "C",
+    "explanation": "Intranasal or IV midazolam is the preferred first-line treatment for status epilepticus due to rapid onset and ease of administration.",
+    "reference": "Neurocritical Care Society Guidelines, p. 119."
+  },
+  {
+    "question_id": "CCP-C-Q64",
+    "subject_id": 14,
+    "question_text": "During suspected stroke transport, what is the most critical parameter to monitor continuously?",
+    "options": [
+      "A. Heart rate",
+      "B. Blood glucose",
+      "C. End-tidal CO₂",
+      "D. Blood pressure"
+    ],
+    "correct_answer": "D",
+    "explanation": "Maintaining stable blood pressure is essential to preserve cerebral perfusion in acute stroke patients.",
+    "reference": "AHA Stroke Transport Recommendations, p. 67."
+  },
+  {
+    "question_id": "CCP-C-Q65",
+    "subject_id": 14,
+    "question_text": "Which transport positioning is recommended for a patient with increased intracranial pressure (ICP)?",
+    "options": [
+      "A. Trendelenburg position",
+      "B. Supine with head elevated 30 degrees",
+      "C. Prone position",
+      "D. Flat supine without support"
+    ],
+    "correct_answer": "B",
+    "explanation": "Head elevation at 30 degrees promotes venous drainage and helps reduce intracranial pressure.",
+    "reference": "Brain Trauma Foundation ICP Guidelines, p. 102."
+  },
+  {
+    "question_id": "CCP-C-Q66",
+    "subject_id": 14,
+    "question_text": "What is the primary goal of prehospital stroke scales such as FAST or Cincinnati?",
+    "options": [
+      "A. To guide airway intervention",
+      "B. To rapidly identify potential stroke patients",
+      "C. To determine need for seizure prophylaxis",
+      "D. To calculate intracranial pressure"
+    ],
+    "correct_answer": "B",
+    "explanation": "Stroke scales help identify patients likely experiencing a stroke to expedite transport to stroke-capable centers.",
+    "reference": "National Stroke Association, Prehospital Stroke Assessment, p. 36."
+  },
+  {
+    "question_id": "CCP-C-Q67",
+    "subject_id": 14,
+    "question_text": "Which medication is contraindicated in suspected hemorrhagic stroke during transport?",
+    "options": [
+      "A. Aspirin",
+      "B. Oxygen",
+      "C. Labetalol",
+      "D. IV fluids"
+    ],
+    "correct_answer": "A",
+    "explanation": "Aspirin is contraindicated in hemorrhagic stroke as it worsens bleeding risk.",
+    "reference": "AHA Stroke Guidelines, Hemorrhagic Section, p. 201."
+  },
+  {
+    "question_id": "CCP-C-Q68",
+    "subject_id": 14,
+    "question_text": "What is the most reliable early indicator of worsening intracranial pressure during transport?",
+    "options": [
+      "A. Hypertension and bradycardia",
+      "B. Fever and diaphoresis",
+      "C. Nausea and vomiting",
+      "D. Dilated pupils only"
+    ],
+    "correct_answer": "A",
+    "explanation": "Cushing’s triad—hypertension, bradycardia, and irregular respirations—is a hallmark of increased ICP.",
+    "reference": "Neuroscience Critical Care Manual, p. 89."
+  },
+  {
+    "question_id": "CCP-C-Q69",
+    "subject_id": 14,
+    "question_text": "Which diagnostic tool is most time-sensitive in acute stroke management?",
+    "options": [
+      "A. EEG",
+      "B. CT scan",
+      "C. MRI",
+      "D. Lumbar puncture"
+    ],
+    "correct_answer": "B",
+    "explanation": "CT scan is the fastest and most accessible tool to differentiate ischemic from hemorrhagic stroke.",
+    "reference": "Stroke Imaging Protocols, p. 52."
+  },
+  {
+    "question_id": "CCP-C-Q70",
+    "subject_id": 14,
+    "question_text": "Which condition is most likely to mimic stroke symptoms during prehospital assessment?",
+    "options": [
+      "A. Myocardial infarction",
+      "B. Hypoglycemia",
+      "C. Pulmonary embolism",
+      "D. Hyponatremia"
+    ],
+    "correct_answer": "B",
+    "explanation": "Hypoglycemia is the most common stroke mimic and should always be ruled out with bedside glucose testing.",
+    "reference": "AHA Prehospital Stroke Checklist, p. 74."
+  },
+  {
+    "question_id": "CCP-C-Q71",
+    "subject_id": 15,
+    "question_text": "Which clinical sign is most reliable in assessing tissue perfusion in shock patients during transport?",
+    "options": [
+      "A. Skin temperature and capillary refill",
+      "B. Blood pressure alone",
+      "C. Respiratory rate",
+      "D. Oxygen saturation"
+    ],
+    "correct_answer": "A",
+    "explanation": "Skin temperature and capillary refill provide rapid bedside assessment of tissue perfusion, while blood pressure alone may be misleading.",
+    "reference": "Tintinalli’s Emergency Medicine, 9th Ed., Chapter 24, p. 612."
+  },
+  {
+    "question_id": "CCP-C-Q72",
+    "subject_id": 15,
+    "question_text": "In hypovolemic shock, the most immediate and effective intervention during prehospital care is:",
+    "options": [
+      "A. Rapid infusion of isotonic crystalloids",
+      "B. Administration of oral fluids",
+      "C. Use of vasodilators",
+      "D. Immediate intubation"
+    ],
+    "correct_answer": "A",
+    "explanation": "Hypovolemic shock is caused by fluid loss, so rapid isotonic crystalloid infusion is the priority.",
+    "reference": "ATLS, 10th Edition, Shock Management, p. 78."
+  },
+  {
+    "question_id": "CCP-C-Q73",
+    "subject_id": 15,
+    "question_text": "Which hemodynamic parameter is most directly indicative of preload in shock assessment?",
+    "options": [
+      "A. Central venous pressure (CVP)",
+      "B. Mean arterial pressure (MAP)",
+      "C. Heart rate",
+      "D. Pulse oximetry"
+    ],
+    "correct_answer": "A",
+    "explanation": "CVP reflects right atrial pressure and is commonly used as an indicator of preload in critically ill patients.",
+    "reference": "Marino, The ICU Book, 5th Ed., Hemodynamics Section, p. 123."
+  },
+  {
+    "question_id": "CCP-C-Q74",
+    "subject_id": 15,
+    "question_text": "Which type of shock is primarily associated with decreased systemic vascular resistance?",
+    "options": [
+      "A. Septic shock",
+      "B. Hypovolemic shock",
+      "C. Cardiogenic shock",
+      "D. Obstructive shock"
+    ],
+    "correct_answer": "A",
+    "explanation": "Septic shock causes profound vasodilation, leading to decreased systemic vascular resistance.",
+    "reference": "Surviving Sepsis Campaign, 2021 Guidelines, p. 142."
+  },
+  {
+    "question_id": "CCP-C-Q75",
+    "subject_id": 15,
+    "question_text": "What is the minimum mean arterial pressure (MAP) target recommended in most shock states to maintain organ perfusion?",
+    "options": [
+      "A. 50 mmHg",
+      "B. 60 mmHg",
+      "C. 65 mmHg",
+      "D. 75 mmHg"
+    ],
+    "correct_answer": "C",
+    "explanation": "A MAP ≥ 65 mmHg is generally recommended to ensure adequate organ perfusion in shock patients.",
+    "reference": "Surviving Sepsis Campaign, 2021 Guidelines, p. 149."
+  },
+  {
+    "question_id": "CCP-C-Q76",
+    "subject_id": 15,
+    "question_text": "Which diagnostic tool provides the most immediate non-invasive assessment of cardiac function in shock?",
+    "options": [
+      "A. Bedside echocardiography",
+      "B. Cardiac catheterization",
+      "C. CT scan",
+      "D. MRI"
+    ],
+    "correct_answer": "A",
+    "explanation": "Bedside echocardiography is rapid, non-invasive, and effective for evaluating cardiac function and causes of shock.",
+    "reference": "Tintinalli’s Emergency Medicine, 9th Ed., Chapter 24, p. 620."
+  },
+  {
+    "question_id": "CCP-C-Q77",
+    "subject_id": 15,
+    "question_text": "Which vasoactive drug is considered first-line for cardiogenic shock with hypotension?",
+    "options": [
+      "A. Dopamine",
+      "B. Norepinephrine",
+      "C. Dobutamine",
+      "D. Epinephrine"
+    ],
+    "correct_answer": "B",
+    "explanation": "Norepinephrine is the preferred first-line vasopressor for cardiogenic shock with persistent hypotension.",
+    "reference": "European Society of Cardiology Guidelines, 2021, p. 314."
+  },
+  {
+    "question_id": "CCP-C-Q78",
+    "subject_id": 15,
+    "question_text": "What is the key distinguishing feature of obstructive shock compared to other shock types?",
+    "options": [
+      "A. Mechanical impedance to blood flow",
+      "B. Loss of circulating blood volume",
+      "C. Failure of myocardial contractility",
+      "D. Systemic vasodilation"
+    ],
+    "correct_answer": "A",
+    "explanation": "Obstructive shock is due to physical obstruction to blood flow, as seen in cardiac tamponade or massive PE.",
+    "reference": "Marino, The ICU Book, 5th Ed., Shock Physiology, p. 131."
+  },
+  {
+    "question_id": "CCP-C-Q79",
+    "subject_id": 15,
+    "question_text": "Which blood test is most useful to identify tissue hypoperfusion in shock?",
+    "options": [
+      "A. Serum lactate",
+      "B. Hemoglobin level",
+      "C. Electrolyte panel",
+      "D. White blood cell count"
+    ],
+    "correct_answer": "A",
+    "explanation": "Serum lactate is a sensitive marker for tissue hypoxia and hypoperfusion in shock.",
+    "reference": "Surviving Sepsis Campaign, 2021 Guidelines, p. 146."
+  },
+  {
+    "question_id": "CCP-C-Q80",
+    "subject_id": 15,
+    "question_text": "Which hemodynamic monitoring value best represents afterload in shock assessment?",
+    "options": [
+      "A. Systemic vascular resistance (SVR)",
+      "B. Central venous pressure (CVP)",
+      "C. Stroke volume",
+      "D. Pulmonary artery pressure"
+    ],
+    "correct_answer": "A",
+    "explanation": "SVR is the primary measure of afterload, reflecting resistance the heart must overcome to eject blood.",
+    "reference": "Marino, The ICU Book, 5th Ed., Hemodynamics Section, p. 128."
+  },
+  {
+    "question_id": "CCP-C-Q81",
+    "subject_id": 16,
+    "question_text": "What is the first-line treatment for anaphylaxis in the prehospital setting?",
+    "options": [
+      "A. Intravenous corticosteroids",
+      "B. Intramuscular epinephrine",
+      "C. Oral antihistamines",
+      "D. Oxygen only"
+    ],
+    "correct_answer": "B",
+    "explanation": "Intramuscular epinephrine is the immediate life-saving intervention for anaphylaxis and should be administered without delay.",
+    "reference": "Tintinalli’s Emergency Medicine, 9th Edition, p. 557."
+  },
+  {
+    "question_id": "CCP-C-Q82",
+    "subject_id": 16,
+    "question_text": "Which electrolyte abnormality is most commonly associated with cardiac arrest in renal failure patients?",
+    "options": [
+      "A. Hypocalcemia",
+      "B. Hyperkalemia",
+      "C. Hyponatremia",
+      "D. Hypomagnesemia"
+    ],
+    "correct_answer": "B",
+    "explanation": "Hyperkalemia is a life-threatening complication in renal failure and a common cause of cardiac arrest.",
+    "reference": "Critical Care Nephrology, 3rd Edition, p. 732."
+  },
+  {
+    "question_id": "CCP-C-Q83",
+    "subject_id": 16,
+    "question_text": "In a patient with hypoglycemia and altered mental status, what is the most appropriate initial treatment?",
+    "options": [
+      "A. Administer intravenous dextrose",
+      "B. Administer insulin",
+      "C. Provide oral glucose tablets",
+      "D. Administer naloxone"
+    ],
+    "correct_answer": "A",
+    "explanation": "IV dextrose provides rapid correction of hypoglycemia in patients unable to take oral glucose.",
+    "reference": "Rosen’s Emergency Medicine, 9th Edition, p. 1575."
+  },
+  {
+    "question_id": "CCP-C-Q84",
+    "subject_id": 16,
+    "question_text": "What is the recommended oxygen saturation target for patients with acute COPD exacerbation?",
+    "options": [
+      "A. 100%",
+      "B. 94–98%",
+      "C. 88–92%",
+      "D. Below 85%"
+    ],
+    "correct_answer": "C",
+    "explanation": "Patients with COPD should be maintained at 88–92% to avoid CO2 retention and respiratory acidosis.",
+    "reference": "GOLD COPD Guidelines, 2023, Section 4.2."
+  },
+  {
+    "question_id": "CCP-C-Q85",
+    "subject_id": 16,
+    "question_text": "Which arrhythmia is most commonly associated with hypothermia?",
+    "options": [
+      "A. Atrial fibrillation",
+      "B. Ventricular fibrillation",
+      "C. Supraventricular tachycardia",
+      "D. Junctional rhythm"
+    ],
+    "correct_answer": "A",
+    "explanation": "Atrial fibrillation is the most frequent arrhythmia seen in hypothermic patients, although ventricular arrhythmias may occur at lower core temperatures.",
+    "reference": "Wilderness Medicine, 7th Edition, p. 168."
+  },
+  {
+    "question_id": "CCP-C-Q86",
+    "subject_id": 16,
+    "question_text": "Which antidote is indicated for opioid overdose with respiratory depression?",
+    "options": [
+      "A. Atropine",
+      "B. Naloxone",
+      "C. Flumazenil",
+      "D. N-acetylcysteine"
+    ],
+    "correct_answer": "B",
+    "explanation": "Naloxone is a specific opioid antagonist used to reverse opioid-induced respiratory depression.",
+    "reference": "Tintinalli’s Emergency Medicine, 9th Edition, p. 1442."
+  },
+  {
+    "question_id": "CCP-C-Q87",
+    "subject_id": 16,
+    "question_text": "What is the initial treatment for status epilepticus in the prehospital setting?",
+    "options": [
+      "A. IV phenobarbital",
+      "B. IV lorazepam or midazolam",
+      "C. Oral phenytoin",
+      "D. IV valproate"
+    ],
+    "correct_answer": "B",
+    "explanation": "Benzodiazepines such as lorazepam or midazolam are the first-line treatment for status epilepticus.",
+    "reference": "Neurocritical Care Guidelines, 2016."
+  },
+  {
+    "question_id": "CCP-C-Q88",
+    "subject_id": 16,
+    "question_text": "Which of the following is the most common cause of chest pain in prehospital emergency care?",
+    "options": [
+      "A. Acute coronary syndrome",
+      "B. Pulmonary embolism",
+      "C. Gastroesophageal reflux",
+      "D. Musculoskeletal pain"
+    ],
+    "correct_answer": "A",
+    "explanation": "While chest pain has many causes, acute coronary syndrome is the most critical and common etiology requiring urgent care.",
+    "reference": "Braunwald’s Heart Disease, 12th Edition, p. 1012."
+  },
+  {
+    "question_id": "CCP-C-Q89",
+    "subject_id": 16,
+    "question_text": "Which clinical finding is most suggestive of stroke in the emergency setting?",
+    "options": [
+      "A. Sudden unilateral weakness",
+      "B. Gradual onset of headache",
+      "C. Fever with confusion",
+      "D. Chest discomfort"
+    ],
+    "correct_answer": "A",
+    "explanation": "Sudden-onset neurological deficits such as unilateral weakness are highly indicative of acute stroke.",
+    "reference": "AHA/ASA Stroke Guidelines, 2019."
+  },
+  {
+    "question_id": "CCP-C-Q90",
+    "subject_id": 16,
+    "question_text": "What is the preferred route for administering aspirin in acute myocardial infarction?",
+    "options": [
+      "A. Intravenous",
+      "B. Rectal",
+      "C. Oral chewable",
+      "D. Subcutaneous"
+    ],
+    "correct_answer": "C",
+    "explanation": "Oral chewable aspirin ensures rapid absorption and platelet inhibition in acute MI.",
+    "reference": "ACC/AHA Guidelines for STEMI, 2021."
+  },
+  {
+    "question_id": "CCP-C-Q91",
+    "subject_id": 17,
+    "question_text": "Which gas law best explains the expansion of trapped gases in body cavities during ascent in flight?",
+    "options": [
+      "A. Dalton’s Law",
+      "B. Boyle’s Law",
+      "C. Henry’s Law",
+      "D. Graham’s Law"
+    ],
+    "correct_answer": "B",
+    "explanation": "Boyle’s Law states that pressure and volume are inversely proportional, which explains expansion of trapped gases with altitude.",
+    "reference": "IBSC Flight Physiology Guide, p. 52."
+  },
+  {
+    "question_id": "CCP-C-Q92",
+    "subject_id": 17,
+    "question_text": "At what cabin altitude does hypoxic hypoxia typically begin to significantly impair judgment?",
+    "options": [
+      "A. 5,000 feet",
+      "B. 8,000 feet",
+      "C. 12,000 feet",
+      "D. 20,000 feet"
+    ],
+    "correct_answer": "C",
+    "explanation": "Judgment and cognitive impairment usually become clinically significant at altitudes above 12,000 feet.",
+    "reference": "FAA Aeromedical Factors, Hypoxia Section, p. 34."
+  },
+  {
+    "question_id": "CCP-C-Q93",
+    "subject_id": 17,
+    "question_text": "Which type of hypoxia occurs due to carbon monoxide exposure inside the aircraft cabin?",
+    "options": [
+      "A. Hypoxic hypoxia",
+      "B. Hypemic hypoxia",
+      "C. Histotoxic hypoxia",
+      "D. Stagnant hypoxia"
+    ],
+    "correct_answer": "B",
+    "explanation": "Carbon monoxide binds to hemoglobin, reducing oxygen-carrying capacity, leading to hypemic hypoxia.",
+    "reference": "Flight Physiology Manual, Hypoxia Types, p. 41."
+  },
+  {
+    "question_id": "CCP-C-Q94",
+    "subject_id": 17,
+    "question_text": "What is the primary physiological concern with rapid decompression at high altitude?",
+    "options": [
+      "A. Increased G-forces",
+      "B. Alveolar collapse",
+      "C. Hypoxia and barotrauma",
+      "D. Improved oxygenation"
+    ],
+    "correct_answer": "C",
+    "explanation": "Rapid decompression can lead to sudden hypoxia and barotrauma from expanding gases.",
+    "reference": "USAF Flight Medicine Handbook, p. 89."
+  },
+  {
+    "question_id": "CCP-C-Q95",
+    "subject_id": 17,
+    "question_text": "Which condition is most associated with bubble formation in tissues after altitude exposure?",
+    "options": [
+      "A. Barotitis media",
+      "B. Decompression sickness",
+      "C. Pulmonary edema",
+      "D. Sinus barotrauma"
+    ],
+    "correct_answer": "B",
+    "explanation": "Decompression sickness occurs when dissolved nitrogen forms bubbles in tissues during rapid ascent.",
+    "reference": "Dive & Flight Physiology Crossover Guide, p. 103."
+  },
+  {
+    "question_id": "CCP-C-Q96",
+    "subject_id": 17,
+    "question_text": "Which oxygen delivery system is preferred for patients at altitude requiring high FiO2 during aeromedical transport?",
+    "options": [
+      "A. Simple face mask",
+      "B. Non-rebreather mask",
+      "C. Nasal cannula",
+      "D. Venturi mask"
+    ],
+    "correct_answer": "B",
+    "explanation": "Non-rebreather masks provide high FiO2, which is critical in hypoxic conditions at altitude.",
+    "reference": "CCP-C Transport Medicine, Oxygen Delivery Systems, p. 77."
+  },
+  {
+    "question_id": "CCP-C-Q97",
+    "subject_id": 17,
+    "question_text": "Which factor contributes most to hypoxia at altitude in non-pressurized aircraft?",
+    "options": [
+      "A. Lower FiO2",
+      "B. Reduced barometric pressure",
+      "C. Increased respiratory rate",
+      "D. Higher air temperature"
+    ],
+    "correct_answer": "B",
+    "explanation": "The fraction of inspired oxygen (FiO2) remains constant, but barometric pressure decreases, lowering partial pressure of oxygen.",
+    "reference": "Flight Physiology Principles, p. 29."
+  },
+  {
+    "question_id": "CCP-C-Q98",
+    "subject_id": 17,
+    "question_text": "Which physiological response occurs first when a patient develops hypoxia during flight?",
+    "options": [
+      "A. Bradycardia",
+      "B. Tachycardia and hyperventilation",
+      "C. Seizures",
+      "D. Loss of consciousness"
+    ],
+    "correct_answer": "B",
+    "explanation": "The body initially compensates for hypoxia with tachycardia and increased respiratory rate.",
+    "reference": "Aeromedical Physiology Review, p. 64."
+  },
+  {
+    "question_id": "CCP-C-Q99",
+    "subject_id": 17,
+    "question_text": "What does Henry’s Law explain in relation to flight physiology?",
+    "options": [
+      "A. Expansion of gases with pressure changes",
+      "B. Diffusion of gases through membranes",
+      "C. Gas solubility in liquid decreases as pressure decreases",
+      "D. Partial pressure contributions of gases"
+    ],
+    "correct_answer": "C",
+    "explanation": "Henry’s Law explains how decreased pressure at altitude reduces gas solubility in blood, contributing to decompression sickness.",
+    "reference": "Gas Laws in Aviation Medicine, p. 58."
+  },
+  {
+    "question_id": "CCP-C-Q100",
+    "subject_id": 17,
+    "question_text": "Which condition results from failure to equalize middle ear pressure during ascent or descent?",
+    "options": [
+      "A. Barotitis media",
+      "B. Pulmonary barotrauma",
+      "C. Decompression sickness",
+      "D. Altitude-induced cerebral edema"
+    ],
+    "correct_answer": "A",
+    "explanation": "Failure to equalize pressure in the middle ear leads to barotitis media, causing pain and possible tympanic membrane rupture.",
+    "reference": "Aviation Medicine Guide, p. 92."
+  },
+  {
+    "question_id": "CCP-C-Q101",
+    "subject_id": 18,
+    "question_text": "What is the primary purpose of a pre-flight safety briefing for critical care transport?",
+    "options": [
+      "A. To review patient care protocols",
+      "B. To ensure crew and passenger awareness of safety procedures",
+      "C. To explain medication administration routes",
+      "D. To outline weather conditions only"
+    ],
+    "correct_answer": "B",
+    "explanation": "Pre-flight safety briefings ensure all crew and passengers are familiar with emergency exits, safety equipment, and evacuation procedures.",
+    "reference": "CAMTS Standards, Safety Management Section, p. 89."
+  },
+  {
+    "question_id": "CCP-C-Q102",
+    "subject_id": 18,
+    "question_text": "Which factor is most critical in preventing crew fatigue during long operations?",
+    "options": [
+      "A. Adequate hydration",
+      "B. Mandatory rest periods",
+      "C. Caffeine intake",
+      "D. Crew resource management training"
+    ],
+    "correct_answer": "B",
+    "explanation": "Mandatory rest periods are a cornerstone of fatigue risk management to maintain safe operations.",
+    "reference": "FAA Crew Rest and Duty Regulations, Part 135."
+  },
+  {
+    "question_id": "CCP-C-Q103",
+    "subject_id": 18,
+    "question_text": "During night helicopter operations, the use of NVGs (night vision goggles) primarily enhances:",
+    "options": [
+      "A. Patient monitoring capabilities",
+      "B. Crew situational awareness",
+      "C. Radio communication clarity",
+      "D. Oxygen monitoring accuracy"
+    ],
+    "correct_answer": "B",
+    "explanation": "NVGs improve the pilot’s and crew’s ability to see terrain and hazards at night, reducing risk during operations.",
+    "reference": "CAMTS Standards, Aviation Safety Section, p. 162."
+  },
+  {
+    "question_id": "CCP-C-Q104",
+    "subject_id": 18,
+    "question_text": "In rotor-wing transport, which safety zone is considered the safest for approach and departure?",
+    "options": [
+      "A. From the rear of the aircraft",
+      "B. From the downhill side",
+      "C. From the 10 o’clock to 2 o’clock position",
+      "D. From directly above the aircraft"
+    ],
+    "correct_answer": "C",
+    "explanation": "Approaching from the 10 to 2 o’clock position keeps crew visible to the pilot and avoids tail rotor hazards.",
+    "reference": "FAA Rotorcraft Safety Guidelines, p. 54."
+  },
+  {
+    "question_id": "CCP-C-Q105",
+    "subject_id": 18,
+    "question_text": "What is the primary role of Crew Resource Management (CRM) in transport operations?",
+    "options": [
+      "A. Reduce patient care errors only",
+      "B. Enhance teamwork, communication, and safety",
+      "C. Limit flight hours for pilots",
+      "D. Standardize medication administration"
+    ],
+    "correct_answer": "B",
+    "explanation": "CRM fosters effective communication, decision-making, and teamwork to improve operational safety.",
+    "reference": "FAA Advisory Circular on CRM, AC 120-51."
+  },
+  {
+    "question_id": "CCP-C-Q106",
+    "subject_id": 18,
+    "question_text": "Which action should be taken immediately if a fire is detected during flight?",
+    "options": [
+      "A. Notify ATC and continue flight as planned",
+      "B. Don oxygen masks, extinguish fire, and prepare for emergency landing",
+      "C. Shut down all patient equipment immediately",
+      "D. Open cabin doors to ventilate smoke"
+    ],
+    "correct_answer": "B",
+    "explanation": "Fire in flight is an extreme emergency—crew oxygen masks and extinguishing actions are prioritized, followed by landing as soon as possible.",
+    "reference": "ICAO Flight Operations Manual, Emergency Procedures, p. 211."
+  },
+  {
+    "question_id": "CCP-C-Q107",
+    "subject_id": 18,
+    "question_text": "When securing a patient on a stretcher during transport, what is the most important consideration?",
+    "options": [
+      "A. Tightening straps around arms only",
+      "B. Ensuring the patient is immobilized with all straps and belts secured",
+      "C. Loosely securing to allow patient movement",
+      "D. Using oxygen tubing as additional restraint"
+    ],
+    "correct_answer": "B",
+    "explanation": "Patients must be secured with all restraint systems to prevent injury during turbulence or sudden maneuvers.",
+    "reference": "CAMTS Patient Safety Standards, p. 134."
+  },
+  {
+    "question_id": "CCP-C-Q108",
+    "subject_id": 18,
+    "question_text": "Which factor increases the risk of hypoxia for crew and patients during flight?",
+    "options": [
+      "A. Cabin pressurization failure",
+      "B. Increased humidity in the cabin",
+      "C. Excessive patient sedation",
+      "D. Use of supplemental oxygen"
+    ],
+    "correct_answer": "A",
+    "explanation": "Loss of cabin pressurization reduces available oxygen at altitude, leading to hypoxia risk.",
+    "reference": "FAA Aeromedical Factors Guide, p. 47."
+  },
+  {
+    "question_id": "CCP-C-Q109",
+    "subject_id": 18,
+    "question_text": "Which of the following best describes a sterile cockpit rule?",
+    "options": [
+      "A. Restriction of food and drink near flight controls",
+      "B. Limiting non-essential communication during critical phases of flight",
+      "C. Prohibition of radio use below 10,000 feet",
+      "D. Only allowing medical crew to speak to pilots in emergencies"
+    ],
+    "correct_answer": "B",
+    "explanation": "Sterile cockpit requires all non-essential conversations and distractions to cease during takeoff, landing, and other critical phases.",
+    "reference": "FAA FAR 121.542, Sterile Cockpit Rule."
+  },
+  {
+    "question_id": "CCP-C-Q110",
+    "subject_id": 18,
+    "question_text": "Why is a hazard reporting system important in critical care transport programs?",
+    "options": [
+      "A. It ensures only aviation incidents are documented",
+      "B. It allows proactive identification and correction of safety risks",
+      "C. It replaces crew debriefings",
+      "D. It reduces the need for regular safety training"
+    ],
+    "correct_answer": "B",
+    "explanation": "Hazard reporting enables continuous safety improvement by identifying and mitigating risks before accidents occur.",
+    "reference": "CAMTS Quality Management Standards, p. 201."
+  },
+  {
+    "question_id": "CCP-C-Q111",
+    "subject_id": 19,
+    "question_text": "Which ethical principle requires paramedics to act in the best interest of the patient, even if it conflicts with the patient's wishes?",
+    "options": [
+      "A. Autonomy",
+      "B. Beneficence",
+      "C. Justice",
+      "D. Non-maleficence"
+    ],
+    "correct_answer": "B",
+    "explanation": "Beneficence emphasizes actions that benefit the patient, prioritizing well-being over other considerations.",
+    "reference": "Principles of Biomedical Ethics, Beauchamp & Childress, p. 101."
+  },
+  {
+    "question_id": "CCP-C-Q112",
+    "subject_id": 19,
+    "question_text": "In professional conduct, maintaining patient confidentiality primarily reflects which ethical principle?",
+    "options": [
+      "A. Fidelity",
+      "B. Autonomy",
+      "C. Justice",
+      "D. Veracity"
+    ],
+    "correct_answer": "A",
+    "explanation": "Fidelity refers to loyalty, faithfulness, and keeping promises, which includes maintaining confidentiality.",
+    "reference": "Code of Ethics for Paramedics, NAEMT, 2020."
+  },
+  {
+    "question_id": "CCP-C-Q113",
+    "subject_id": 19,
+    "question_text": "When two patients require immediate treatment but resources allow only one to be treated, which ethical principle guides decision-making?",
+    "options": [
+      "A. Justice",
+      "B. Autonomy",
+      "C. Fidelity",
+      "D. Non-maleficence"
+    ],
+    "correct_answer": "A",
+    "explanation": "Justice refers to fairness and equitable distribution of healthcare resources.",
+    "reference": "Medical Ethics: A Very Short Introduction, Singer, p. 88."
+  },
+  {
+    "question_id": "CCP-C-Q114",
+    "subject_id": 19,
+    "question_text": "A paramedic refusing a gift from a grateful patient is an example of adhering to which professional standard?",
+    "options": [
+      "A. Conflict of interest avoidance",
+      "B. Justice",
+      "C. Fidelity",
+      "D. Advocacy"
+    ],
+    "correct_answer": "A",
+    "explanation": "Avoiding conflicts of interest ensures impartial clinical judgment free from undue influence.",
+    "reference": "Paramedic Professional Standards, NREMT, 2021."
+  },
+  {
+    "question_id": "CCP-C-Q115",
+    "subject_id": 19,
+    "question_text": "Which legal concept ensures that a patient voluntarily agrees to treatment after being informed of risks and benefits?",
+    "options": [
+      "A. Informed Consent",
+      "B. Autonomy",
+      "C. Capacity",
+      "D. Advance Directive"
+    ],
+    "correct_answer": "A",
+    "explanation": "Informed consent is a legal and ethical requirement for medical interventions.",
+    "reference": "Clinical Ethics: A Practical Approach, Jonsen et al., p. 55."
+  },
+  {
+    "question_id": "CCP-C-Q116",
+    "subject_id": 19,
+    "question_text": "Which ethical duty is violated when a paramedic documents false information in a patient care report?",
+    "options": [
+      "A. Veracity",
+      "B. Autonomy",
+      "C. Beneficence",
+      "D. Non-maleficence"
+    ],
+    "correct_answer": "A",
+    "explanation": "Veracity is the obligation to tell the truth and ensure honesty in documentation and communication.",
+    "reference": "Ethics in Emergency Medicine, Cambridge University Press, p. 72."
+  },
+  {
+    "question_id": "CCP-C-Q117",
+    "subject_id": 19,
+    "question_text": "When a paramedic respects a patient's refusal of care despite disagreeing, which ethical principle is being upheld?",
+    "options": [
+      "A. Autonomy",
+      "B. Justice",
+      "C. Fidelity",
+      "D. Beneficence"
+    ],
+    "correct_answer": "A",
+    "explanation": "Autonomy respects the patient’s right to make their own healthcare decisions.",
+    "reference": "Principles of Biomedical Ethics, Beauchamp & Childress, p. 120."
+  },
+  {
+    "question_id": "CCP-C-Q118",
+    "subject_id": 19,
+    "question_text": "Which professional role includes advocating for system improvements to reduce barriers to emergency care access?",
+    "options": [
+      "A. Clinician",
+      "B. Educator",
+      "C. Advocate",
+      "D. Researcher"
+    ],
+    "correct_answer": "C",
+    "explanation": "As advocates, paramedics work to improve systems for equitable patient access to care.",
+    "reference": "NAEMT Code of Ethics, 2020."
+  },
+  {
+    "question_id": "CCP-C-Q119",
+    "subject_id": 19,
+    "question_text": "A paramedic encountering an unsafe work environment should first act under which professional responsibility?",
+    "options": [
+      "A. Self-care",
+      "B. Non-maleficence",
+      "C. Advocacy",
+      "D. Duty to report"
+    ],
+    "correct_answer": "D",
+    "explanation": "Reporting unsafe conditions ensures safety for both providers and patients.",
+    "reference": "Paramedic Safety Guidelines, OSHA, 2019."
+  },
+  {
+    "question_id": "CCP-C-Q120",
+    "subject_id": 19,
+    "question_text": "Maintaining competence through ongoing training and education is most closely tied to which professional role?",
+    "options": [
+      "A. Researcher",
+      "B. Lifelong Learner",
+      "C. Advocate",
+      "D. Administrator"
+    ],
+    "correct_answer": "B",
+    "explanation": "Continuous professional development reflects the role of the paramedic as a lifelong learner.",
+    "reference": "Continuing Education Standards, IBSC CCP-C Handbook, p. 33."
+  },
+
   {
     "question_id": "CP-C-Q1",
     "subject_id": 5,

@@ -3,7 +3,7 @@
     "exam_id": 1,
     "exam_name": "Firefighter I & II",
     "total_subjects": "7",
-    "total_questions": "1000",
+    "total_questions": "70",
     "subjects": [
       {
         "subject_id": 1,
@@ -12,6 +12,26 @@
       {
         "subject_id": 2,
         "subject_name": "Building Materials and Structure"
+      },
+      {
+        "subject_id": 3,
+        "subject_name": "Fire Behavior and Combustion"
+      },
+      {
+        "subject_id": 4,
+        "subject_name": "Firefighting Equipment and Tools"
+      },
+      {
+        "subject_id": 5,
+        "subject_name": "Rescue Operations and Extrication"
+      },
+      {
+        "subject_id": 6,
+        "subject_name": "Hazardous Materials Awareness and Operations"
+      },
+      {
+        "subject_id": 7,
+        "subject_name": "Incident Command System and Fireground Operations"
       }
     ]
   },
@@ -20,7 +40,7 @@
     "exam_id": 2,
     "exam_name": "IBSC CCP-C",
     "total_subjects": "12",
-    "total_questions": "400",
+    "total_questions": "120",
     "subjects": [
       {
         "subject_id": 8,
@@ -29,9 +49,50 @@
       {
         "subject_id": 9,
         "subject_name": "Ventilator Management"
+      },
+      {
+        "subject_id": 10,
+        "subject_name": "Airway Management"
+      },
+      {
+        "subject_id": 11,
+        "subject_name": "Cardiology & Resuscitation"
+      },
+      {
+        "subject_id": 12,
+        "subject_name": "Pharmacology"
+      },
+      {
+        "subject_id": 13,
+        "subject_name": "Trauma Management"
+      },
+      {
+        "subject_id": 14,
+        "subject_name": "Neurological Emergencies"
+      },
+      {
+        "subject_id": 15,
+        "subject_name": "Shock & Hemodynamics"
+      },
+      {
+        "subject_id": 16,
+        "subject_name": "Medical Emergencies"
+      },
+      {
+        "subject_id": 17,
+        "subject_name": "Flight Physiology"
+      },
+      {
+        "subject_id": 18,
+        "subject_name": "Safety & Operations"
+      },
+      {
+        "subject_id": 19,
+        "subject_name": "Professional Roles & Ethics"
       }
     ]
   },
+
 
   {
     "exam_id": 3,
