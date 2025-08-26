@@ -2644,6 +2644,878 @@
       "explanation": "Chase strategy matches production with demand, reducing inventory but requiring flexible resources.",
       "reference": "CPIM Part 2, Module 2 – Master Planning (Capacity Strategies, pp. 2.35–2.40)"
     },
+    {
+      "exam_id": 0,
+      "question": "Which planning method evaluates whether available capacity can support the Master Production Schedule before detailed scheduling?",
+      "options": {
+        "a": "Capacity Requirements Planning (CRP)",
+        "b": "Rough-Cut Capacity Planning (RCCP)",
+        "c": "Finite loading",
+        "d": "Material Requirements Planning (MRP)"
+      },
+      "correct_answer": "b",
+      "explanation": "Rough-Cut Capacity Planning checks if critical resources are sufficient to meet the MPS before committing to detailed production plans.",
+      "reference": "CPIM Part 2, Module 2 – Master Planning (Capacity Planning, pp. 2.40–2.45)"
+    },
+    {
+      "exam_id": 0,
+      "question": "Which performance metric measures the proportion of planned production actually completed within a period?",
+      "options": {
+        "a": "Throughput",
+        "b": "Capacity utilization",
+        "c": "Overall Equipment Effectiveness (OEE)",
+        "d": "Lead time adherence"
+      },
+      "correct_answer": "b",
+      "explanation": "Capacity utilization compares actual production output to the maximum possible output over a given period.",
+      "reference": "CPIM Part 2, Module 3 – Detailed Scheduling (Performance Metrics, pp. 3.40–3.45)"
+    },
+    {
+      "exam_id": 0,
+      "question": "Which inventory type is used to maintain smooth production despite variability in process times or supply delays?",
+      "options": {
+        "a": "Cycle stock",
+        "b": "Safety stock",
+        "c": "Decoupling stock",
+        "d": "Anticipation stock"
+      },
+      "correct_answer": "c",
+      "explanation": "Decoupling stock acts as a buffer between production stages to absorb variability and maintain continuous flow.",
+      "reference": "CPIM Part 1, Module 4 – Inventory (Inventory Categories, pp. 4.15–4.20)"
+    },
+    {
+      "exam_id": 0,
+      "question": "Which forecasting technique uses cause-and-effect relationships between variables to predict future demand?",
+      "options": {
+        "a": "Time series forecasting",
+        "b": "Causal forecasting",
+        "c": "Qualitative forecasting",
+        "d": "Moving average"
+      },
+      "correct_answer": "b",
+      "explanation": "Causal forecasting predicts demand by analyzing relationships between independent variables (like price or marketing) and demand.",
+      "reference": "CPIM Part 1, Module 2 – Demand (Forecasting Methods, pp. 2.25–2.30)"
+    },
+    {
+      "exam_id": 0,
+      "question": "Which method schedules production based on actual available capacity and prevents overloading of resources?",
+      "options": {
+        "a": "Infinite loading",
+        "b": "Finite loading",
+        "c": "Forward scheduling",
+        "d": "Backward scheduling"
+      },
+      "correct_answer": "b",
+      "explanation": "Finite loading schedules work only up to the resource capacity, ensuring feasibility and avoiding bottlenecks.",
+      "reference": "CPIM Part 2, Module 3 – Detailed Scheduling (Loading Methods, pp. 3.15–3.20)"
+    },
+    {
+      "exam_id": 0,
+      "question": "Which production environment keeps standard components in stock and assembles final products after customer orders are received?",
+      "options": {
+        "a": "Make-to-stock",
+        "b": "Make-to-order",
+        "c": "Assemble-to-order",
+        "d": "Engineer-to-order"
+      },
+      "correct_answer": "c",
+      "explanation": "Assemble-to-order balances efficiency and responsiveness by holding components while delaying final assembly until orders arrive.",
+      "reference": "CPIM Part 1, Module 3 – Transformation of Demand (Production Environments, pp. 3.15–3.20)"
+    },
+    {
+      "exam_id": 0,
+      "question": "Which type of bill of material shows only immediate components required to produce a parent item?",
+      "options": {
+        "a": "Single-level BOM",
+        "b": "Indented BOM",
+        "c": "Modular BOM",
+        "d": "Super BOM"
+      },
+      "correct_answer": "a",
+      "explanation": "Single-level BOM lists only the direct components of a parent item without breaking down subcomponents.",
+      "reference": "CPIM Part 2, Module 1 – MRP (Types of BOM, pp. 1.15–1.20)"
+    },
+    {
+      "exam_id": 0,
+      "question": "Which scheduling rule prioritizes jobs with the shortest processing time to reduce average flow time?",
+      "options": {
+        "a": "Earliest due date",
+        "b": "First come, first served",
+        "c": "Shortest processing time",
+        "d": "Critical ratio"
+      },
+      "correct_answer": "c",
+      "explanation": "Shortest processing time scheduling reduces average completion time and increases overall throughput efficiency.",
+      "reference": "CPIM Part 2, Module 3 – Detailed Scheduling (Dispatching Rules, pp. 3.55–3.60)"
+    },
+    {
+      "exam_id": 0,
+      "question": "Which strategy shares inventory and demand information with suppliers to optimize replenishment and reduce stockouts?",
+      "options": {
+        "a": "Just-in-Time",
+        "b": "Vendor-Managed Inventory (VMI)",
+        "c": "Postponement",
+        "d": "Kanban"
+      },
+      "correct_answer": "b",
+      "explanation": "VMI allows suppliers to monitor inventory levels and automatically replenish stock, improving collaboration and reducing stockouts.",
+      "reference": "CPIM Part 2, Module 2 – Master Planning (Supply Chain Collaboration, pp. 2.50–2.55)"
+    },
+    {
+      "exam_id": 0,
+      "question": "Which term describes the amount of inventory available for customer orders, considering scheduled receipts and allocations?",
+      "options": {
+        "a": "Safety stock",
+        "b": "Available-to-promise",
+        "c": "Projected on-hand",
+        "d": "Cycle stock"
+      },
+      "correct_answer": "b",
+      "explanation": "Available-to-promise (ATP) is the portion of inventory not yet committed and available to meet new customer orders.",
+      "reference": "CPIM Part 2, Module 2 – Master Planning (ATP, pp. 2.45–2.50)"
+    },
+    {
+        "exam_id": 0,
+        "question": "Which inventory policy triggers a replenishment order when inventory drops below a set level?",
+        "options": {
+          "a": "Reorder point system",
+          "b": "Periodic review system",
+          "c": "Lot-for-lot",
+          "d": "EOQ"
+        },
+        "correct_answer": "a",
+        "explanation": "A reorder point system automatically triggers replenishment when inventory reaches the predetermined minimum level.",
+        "reference": "CPIM Part 1, Module 4 – Inventory (Replenishment Policies, pp. 4.25–4.30)"
+      },
+      {
+        "exam_id": 0,
+        "question": "Which continuous improvement philosophy focuses on small, incremental changes involving all employees?",
+        "options": {
+          "a": "Six Sigma",
+          "b": "Kaizen",
+          "c": "Lean",
+          "d": "Theory of Constraints"
+        },
+        "correct_answer": "b",
+        "explanation": "Kaizen emphasizes continuous small improvements with participation from everyone in the organization.",
+        "reference": "CPIM Part 2, Module 4 – Continuous Improvement (Kaizen, pp. 4.10–4.15)"
+      },
+      {
+        "exam_id": 0,
+        "question": "Which method calculates the number of units a machine can produce based on available time and cycle time?",
+        "options": {
+          "a": "Capacity requirements planning",
+          "b": "Work center capacity calculation",
+          "c": "Finite loading",
+          "d": "Rough-cut capacity planning"
+        },
+        "correct_answer": "b",
+        "explanation": "Work center capacity calculation estimates production potential using available time and processing cycle times.",
+        "reference": "CPIM Part 2, Module 2 – Master Planning (Capacity Planning, pp. 2.35–2.40)"
+      },
+      {
+        "exam_id": 0,
+        "question": "Which scheduling approach starts from the due date and schedules operations backward to determine start dates?",
+        "options": {
+          "a": "Forward scheduling",
+          "b": "Backward scheduling",
+          "c": "Finite loading",
+          "d": "Infinite loading"
+        },
+        "correct_answer": "b",
+        "explanation": "Backward scheduling begins with the due date and works back to schedule operations so the product is finished on time.",
+        "reference": "CPIM Part 2, Module 3 – Detailed Scheduling (Scheduling Methods, pp. 3.15–3.20)"
+      },
+      {
+        "exam_id": 0,
+        "question": "Which lot-sizing technique orders a fixed quantity every time an order is placed?",
+        "options": {
+          "a": "Fixed-order quantity",
+          "b": "Lot-for-lot",
+          "c": "Period order quantity",
+          "d": "EOQ"
+        },
+        "correct_answer": "a",
+        "explanation": "Fixed-order quantity places the same order amount whenever inventory reaches the reorder point, balancing ordering and holding costs.",
+        "reference": "CPIM Part 1, Module 4 – Inventory (Lot Sizing Methods, pp. 4.30–4.35)"
+      },
+      {
+        "exam_id": 0,
+        "question": "Which type of forecast combines both historical demand patterns and managerial judgment?",
+        "options": {
+          "a": "Qualitative forecast",
+          "b": "Time series forecast",
+          "c": "Causal forecast",
+          "d": "Hybrid forecast"
+        },
+        "correct_answer": "d",
+        "explanation": "Hybrid forecasting blends statistical time series analysis with expert judgment for more accurate predictions.",
+        "reference": "CPIM Part 1, Module 2 – Demand (Forecasting Methods, pp. 2.35–2.40)"
+      },
+      {
+        "exam_id": 0,
+        "question": "Which production strategy keeps all components in stock and produces finished products in anticipation of demand?",
+        "options": {
+          "a": "Make-to-stock",
+          "b": "Make-to-order",
+          "c": "Assemble-to-order",
+          "d": "Engineer-to-order"
+        },
+        "correct_answer": "a",
+        "explanation": "Make-to-stock produces finished goods in advance of customer demand, relying on forecasted sales.",
+        "reference": "CPIM Part 1, Module 3 – Transformation of Demand (Production Environments, pp. 3.15–3.20)"
+      },
+      {
+        "exam_id": 0,
+        "question": "Which type of BOM shows components and subcomponents in a hierarchical, multi-level structure?",
+        "options": {
+          "a": "Single-level BOM",
+          "b": "Indented BOM",
+          "c": "Modular BOM",
+          "d": "Super BOM"
+        },
+        "correct_answer": "b",
+        "explanation": "Indented BOM lists components and subcomponents in levels, showing the relationship of each part to the parent assembly.",
+        "reference": "CPIM Part 2, Module 1 – MRP (Types of BOM, pp. 1.15–1.20)"
+      },
+      {
+        "exam_id": 0,
+        "question": "Which supply chain strategy delays product customization until customer orders are received to reduce inventory risk?",
+        "options": {
+          "a": "Just-in-Time",
+          "b": "Postponement",
+          "c": "Make-to-stock",
+          "d": "Vendor-managed inventory"
+        },
+        "correct_answer": "b",
+        "explanation": "Postponement postpones final product differentiation until demand is known, reducing inventory holding costs.",
+        "reference": "CPIM Part 2, Module 2 – Master Planning (Postponement Strategy, pp. 2.55–2.60)"
+      },
+      {
+        "exam_id": 0,
+        "question": "Which type of scheduling rule prioritizes jobs closest to their due date to minimize lateness?",
+        "options": {
+          "a": "Shortest processing time",
+          "b": "Critical ratio",
+          "c": "Earliest due date",
+          "d": "First come, first served"
+        },
+        "correct_answer": "c",
+        "explanation": "Earliest due date rule schedules jobs with the nearest due date first to reduce the chance of late deliveries.",
+        "reference": "CPIM Part 2, Module 3 – Detailed Scheduling (Dispatching Rules, pp. 3.30–3.35)"
+      },
+      {
+        "exam_id": 0,
+        "question": "Which inventory type is used to buffer against uncertainty in supply or demand?",
+        "options": {
+          "a": "Cycle stock",
+          "b": "Safety stock",
+          "c": "Decoupling stock",
+          "d": "Anticipation stock"
+        },
+        "correct_answer": "b",
+        "explanation": "Safety stock acts as a protective buffer to prevent stockouts caused by variability in supply or demand.",
+        "reference": "CPIM Part 1, Module 4 – Inventory (Types of Inventory, pp. 4.15–4.20)"
+      },
+      {
+        "exam_id": 0,
+        "question": "Which method schedules the system based on the pace of the most constrained resource and uses buffers to protect flow?",
+        "options": {
+          "a": "Kanban",
+          "b": "Drum-buffer-rope",
+          "c": "Push system",
+          "d": "Backflushing"
+        },
+        "correct_answer": "b",
+        "explanation": "Drum-buffer-rope aligns production with the constraint, using time buffers to ensure smooth flow through the system.",
+        "reference": "CPIM Part 2, Module 3 – Detailed Scheduling (Theory of Constraints, pp. 3.45–3.50)"
+      },
+      {
+        "exam_id": 0,
+        "question": "Which measure evaluates forecast accuracy by comparing forecast errors to actual demand in percentage terms?",
+        "options": {
+          "a": "MAD",
+          "b": "MAPE",
+          "c": "Tracking signal",
+          "d": "Bias"
+        },
+        "correct_answer": "b",
+        "explanation": "MAPE (Mean Absolute Percentage Error) expresses forecast errors as a percentage, allowing comparison across different scales.",
+        "reference": "CPIM Part 1, Module 2 – Demand (Forecast Performance, pp. 2.35–2.40)"
+      },
+      {
+        "exam_id": 0,
+        "question": "Which order policy reviews inventory levels at fixed intervals and places an order to reach a target inventory level?",
+        "options": {
+          "a": "Continuous review system",
+          "b": "Periodic review system",
+          "c": "Reorder point system",
+          "d": "Lot-for-lot"
+        },
+        "correct_answer": "b",
+        "explanation": "Periodic review checks inventory at scheduled intervals and orders the quantity needed to restore inventory to the target level.",
+        "reference": "CPIM Part 1, Module 4 – Inventory (Replenishment Policies, pp. 4.25–4.30)"
+      },
+    {
+      "exam_id": 0,
+      "question": "Which inventory classification method categorizes items based on their annual consumption value?",
+      "options": {
+        "a": "ABC analysis",
+        "b": "FIFO",
+        "c": "LIFO",
+        "d": "Cycle counting"
+      },
+      "correct_answer": "a",
+      "explanation": "ABC analysis classifies inventory into categories A, B, and C based on the annual consumption value to prioritize management focus.",
+      "reference": "CPIM Part 1, Module 4 – Inventory (Inventory Classification, pp. 4.30–4.35)"
+    },
+    {
+      "exam_id": 0,
+      "question": "Which planning tool determines if the Master Production Schedule can be supported by available resources?",
+      "options": {
+        "a": "Material Requirements Planning (MRP)",
+        "b": "Rough-Cut Capacity Planning (RCCP)",
+        "c": "Finite scheduling",
+        "d": "Lot-sizing"
+      },
+      "correct_answer": "b",
+      "explanation": "RCCP verifies that critical resources like labor and machines can meet the requirements of the MPS.",
+      "reference": "CPIM Part 2, Module 2 – Master Planning (Capacity Planning, pp. 2.40–2.45)"
+    },
+    {
+      "exam_id": 0,
+      "question": "Which approach to inventory management emphasizes reducing waste and holding only what is needed?",
+      "options": {
+        "a": "Just-in-Time (JIT)",
+        "b": "EOQ",
+        "c": "Safety stock",
+        "d": "Periodic review system"
+      },
+      "correct_answer": "a",
+      "explanation": "JIT focuses on reducing inventory levels and producing or receiving materials only when needed.",
+      "reference": "CPIM Part 2, Module 3 – Detailed Scheduling (JIT, pp. 3.40–3.45)"
+    },
+    {
+      "exam_id": 0,
+      "question": "Which production layout arranges machines in sequence according to the flow of operations for a product?",
+      "options": {
+        "a": "Product layout",
+        "b": "Process layout",
+        "c": "Cellular layout",
+        "d": "Fixed-position layout"
+      },
+      "correct_answer": "a",
+      "explanation": "Product layout arranges machines in the order of operations for continuous flow, ideal for high-volume production.",
+      "reference": "CPIM Part 1, Module 3 – Transformation of Demand (Manufacturing Layouts, pp. 3.30–3.35)"
+    },
+    {
+      "exam_id": 0,
+      "question": "Which system integrates procurement, production, and distribution planning in a single software environment?",
+      "options": {
+        "a": "ERP (Enterprise Resource Planning)",
+        "b": "MRP II",
+        "c": "SCM",
+        "d": "RCCP"
+      },
+      "correct_answer": "a",
+      "explanation": "ERP systems provide a centralized platform to manage core business processes, including procurement, production, and distribution.",
+      "reference": "CPIM Part 1, Module 1 – Supply Chain Overview (ERP, pp. 1.15–1.20)"
+    },
+    {
+      "exam_id": 0,
+      "question": "Which demand type is directly related to the production of another item?",
+      "options": {
+        "a": "Independent demand",
+        "b": "Dependent demand",
+        "c": "Derived demand",
+        "d": "Aggregate demand"
+      },
+      "correct_answer": "b",
+      "explanation": "Dependent demand arises from the need for components to produce another item, such as raw materials for assemblies.",
+      "reference": "CPIM Part 1, Module 2 – Demand (Demand Types, pp. 2.10–2.15)"
+    },
+    {
+      "exam_id": 0,
+      "question": "Which scheduling approach assumes unlimited capacity and generates planned orders without resource constraints?",
+      "options": {
+        "a": "Finite loading",
+        "b": "Infinite loading",
+        "c": "Forward scheduling",
+        "d": "Backward scheduling"
+      },
+      "correct_answer": "b",
+      "explanation": "Infinite loading ignores capacity limitations when generating schedules, potentially creating unrealistic plans.",
+      "reference": "CPIM Part 2, Module 3 – Detailed Scheduling (Loading Methods, pp. 3.15–3.20)"
+    },
+    {
+      "exam_id": 0,
+      "question": "Which inventory control method calculates inventory usage based on standard quantity and bills of material?",
+      "options": {
+        "a": "Cycle counting",
+        "b": "Backflushing",
+        "c": "Periodic review",
+        "d": "Lot-for-lot"
+      },
+      "correct_answer": "b",
+      "explanation": "Backflushing automatically deducts component inventory from stock when finished goods are produced based on BOM standards.",
+      "reference": "CPIM Part 1, Module 4 – Inventory (Inventory Accounting, pp. 4.45–4.50)"
+    },
+    {
+      "exam_id": 0,
+      "question": "Which key performance indicator measures the time between placing an order and receiving it from suppliers?",
+      "options": {
+        "a": "Lead time",
+        "b": "Cycle time",
+        "c": "Fill rate",
+        "d": "On-time delivery"
+      },
+      "correct_answer": "a",
+      "explanation": "Lead time represents the total time required for a supplier to deliver goods after an order is placed.",
+      "reference": "CPIM Part 1, Module 2 – Demand (Performance Metrics, pp. 2.40–2.45)"
+    },
+    {
+      "exam_id": 0,
+      "question": "Which production environment designs products that are unique and highly customized for each customer?",
+      "options": {
+        "a": "Make-to-stock",
+        "b": "Engineer-to-order",
+        "c": "Assemble-to-order",
+        "d": "Batch production"
+      },
+      "correct_answer": "b",
+      "explanation": "Engineer-to-order environments create highly customized products starting from design, based on specific customer requirements.",
+      "reference": "CPIM Part 1, Module 3 – Transformation of Demand (Manufacturing Environments, pp. 3.15–3.20)"
+    },
+    {
+      "exam_id": 0,
+      "question": "Which scheduling metric measures the percentage of production orders completed on time?",
+      "options": {
+        "a": "Throughput",
+        "b": "On-time completion",
+        "c": "Cycle time",
+        "d": "Inventory turnover"
+      },
+      "correct_answer": "b",
+      "explanation": "On-time completion tracks the proportion of production orders finished by the planned completion date.",
+      "reference": "CPIM Part 2, Module 3 – Detailed Scheduling (Performance Metrics, pp. 3.40–3.45)"
+    },
+    {
+      "exam_id": 0,
+      "question": "Which quality approach emphasizes employees taking responsibility for preventing defects at the point of work?",
+      "options": {
+        "a": "Quality at the source",
+        "b": "Acceptance sampling",
+        "c": "Statistical process control",
+        "d": "Rework inspection"
+      },
+      "correct_answer": "a",
+      "explanation": "Quality at the source empowers employees to identify and correct defects immediately, preventing downstream issues.",
+      "reference": "CPIM Part 2, Module 4 – Continuous Improvement (Quality Approaches, pp. 4.30–4.35)"
+    },
+    {
+      "exam_id": 0,
+      "question": "Which sourcing strategy reduces dependency on a single supplier by splitting purchases among multiple suppliers?",
+      "options": {
+        "a": "Single sourcing",
+        "b": "Dual sourcing",
+        "c": "Global sourcing",
+        "d": "Local sourcing"
+      },
+      "correct_answer": "b",
+      "explanation": "Dual sourcing reduces supply risk by purchasing from two suppliers, ensuring continuity if one supplier fails.",
+      "reference": "CPIM Part 2, Module 1 – Strategy (Sourcing Approaches, pp. 1.40–1.45)"
+    },
+    {
+      "exam_id": 0,
+      "question": "Which lot-sizing method minimizes total costs by balancing ordering and holding costs?",
+      "options": {
+        "a": "EOQ (Economic Order Quantity)",
+        "b": "Lot-for-lot",
+        "c": "Fixed-order quantity",
+        "d": "Period order quantity"
+      },
+      "correct_answer": "a",
+      "explanation": "EOQ calculates the optimal order quantity that minimizes the sum of ordering and holding costs.",
+      "reference": "CPIM Part 1, Module 4 – Inventory (Lot Sizing, pp. 4.30–4.35)"
+    },
+    {
+      "exam_id": 0,
+      "question": "Which inventory type decouples stages of production to allow independent operation of work centers?",
+      "options": {
+        "a": "Safety stock",
+        "b": "Decoupling stock",
+        "c": "Cycle stock",
+        "d": "Anticipation stock"
+      },
+      "correct_answer": "b",
+      "explanation": "Decoupling stock provides a buffer between production stages to prevent disruptions from upstream or downstream variability.",
+      "reference": "CPIM Part 1, Module 4 – Inventory (Inventory Categories, pp. 4.15–4.20)"
+    },
+    {
+      "exam_id": 0,
+      "question": "Which production scheduling method prioritizes jobs with the highest urgency relative to remaining processing time?",
+      "options": {
+        "a": "Critical ratio",
+        "b": "Earliest due date",
+        "c": "Shortest processing time",
+        "d": "First come, first served"
+      },
+      "correct_answer": "a",
+      "explanation": "Critical ratio divides the time remaining until due date by remaining processing time to determine job priority.",
+      "reference": "CPIM Part 2, Module 3 – Detailed Scheduling (Dispatching Rules, pp. 3.30–3.35)"
+    },
+    {
+      "exam_id": 0,
+      "question": "Which pull system uses cards or signals to authorize production or movement of materials?",
+      "options": {
+        "a": "JIT",
+        "b": "Kanban",
+        "c": "Drum-buffer-rope",
+        "d": "Backflushing"
+      },
+      "correct_answer": "b",
+      "explanation": "Kanban signals when to produce or move items, preventing overproduction and maintaining flow.",
+      "reference": "CPIM Part 2, Module 4 – Continuous Improvement (Lean and Kanban, pp. 4.15–4.20)"
+    },
+    {
+      "exam_id": 0,
+      "question": "Which performance metric evaluates how efficiently inventory is sold and replaced over a period?",
+      "options": {
+        "a": "Days of supply",
+        "b": "Inventory turnover",
+        "c": "Fill rate",
+        "d": "Carrying cost"
+      },
+      "correct_answer": "b",
+      "explanation": "Inventory turnover shows the number of times inventory is used and replenished, indicating management efficiency.",
+      "reference": "CPIM Part 1, Module 4 – Inventory (Performance Metrics, pp. 4.60–4.65)"
+    },
+    {
+      "exam_id": 0,
+      "question": "Which production layout groups machines into cells to produce a family of similar products efficiently?",
+      "options": {
+        "a": "Product layout",
+        "b": "Process layout",
+        "c": "Cellular layout",
+        "d": "Fixed-position layout"
+      },
+      "correct_answer": "c",
+      "explanation": "Cellular layout arranges machines by product families to reduce movement and increase throughput.",
+      "reference": "CPIM Part 1, Module 3 – Transformation of Demand (Manufacturing Layouts, pp. 3.30–3.35)"
+    },
+    {
+      "exam_id": 0,
+      "question": "Which type of forecast error measure indicates whether the forecast consistently over or underestimates demand?",
+      "options": {
+        "a": "MAD",
+        "b": "Tracking signal",
+        "c": "MAPE",
+        "d": "Bias"
+      },
+      "correct_answer": "d",
+      "explanation": "Bias measures the tendency of a forecast to consistently overestimate or underestimate actual demand.",
+      "reference": "CPIM Part 1, Module 2 – Demand (Forecast Performance, pp. 2.35–2.40)"
+    },
+    {
+      "exam_id": 0,
+      "question": "Which technique is used to forecast demand using both historical data and causal factors like promotions?",
+      "options": {
+        "a": "Time series forecasting",
+        "b": "Qualitative forecasting",
+        "c": "Causal forecasting",
+        "d": "Simulation forecasting"
+      },
+      "correct_answer": "c",
+      "explanation": "Causal forecasting predicts demand by analyzing relationships between factors such as promotions, pricing, or economic conditions.",
+      "reference": "CPIM Part 1, Module 2 – Demand (Forecasting Methods, pp. 2.25–2.30)"
+    },
+    {
+      "exam_id": 0,
+      "question": "Which inventory type is kept to satisfy expected future demand fluctuations due to seasonal trends?",
+      "options": {
+        "a": "Safety stock",
+        "b": "Cycle stock",
+        "c": "Anticipation stock",
+        "d": "Decoupling stock"
+      },
+      "correct_answer": "c",
+      "explanation": "Anticipation stock is built up in advance of expected demand changes, such as seasonal peaks.",
+      "reference": "CPIM Part 1, Module 4 – Inventory (Inventory Categories, pp. 4.15–4.20)"
+    },
+    {
+      "exam_id": 0,
+      "question": "Which performance metric indicates how well a company meets customer orders without backorders?",
+      "options": {
+        "a": "Inventory turnover",
+        "b": "Fill rate",
+        "c": "Cycle time",
+        "d": "Lead time"
+      },
+      "correct_answer": "b",
+      "explanation": "Fill rate measures the proportion of customer orders fulfilled from stock on hand without delay.",
+      "reference": "CPIM Part 1, Module 4 – Inventory (Performance Metrics, pp. 4.40–4.45)"
+    },
+    {
+      "exam_id": 0,
+      "question": "Which planning technique adjusts the master production schedule based on rough capacity availability?",
+      "options": {
+        "a": "Material Requirements Planning (MRP)",
+        "b": "Rough-Cut Capacity Planning (RCCP)",
+        "c": "Finite Loading",
+        "d": "Safety Stock Planning"
+      },
+      "correct_answer": "b",
+      "explanation": "RCCP ensures that critical resources can support the planned production quantities before finalizing the schedule.",
+      "reference": "CPIM Part 2, Module 2 – Master Planning (Capacity Planning, pp. 2.40–2.45)"
+    },
+    {
+      "exam_id": 0,
+      "question": "Which production strategy keeps finished goods inventory ready for immediate customer delivery?",
+      "options": {
+        "a": "Make-to-order",
+        "b": "Assemble-to-order",
+        "c": "Make-to-stock",
+        "d": "Engineer-to-order"
+      },
+      "correct_answer": "c",
+      "explanation": "Make-to-stock strategy produces goods in advance based on forecasts to meet expected demand promptly.",
+      "reference": "CPIM Part 1, Module 3 – Transformation of Demand (Production Environments, pp. 3.15–3.20)"
+    },
+    {
+      "exam_id": 0,
+      "question": "Which scheduling rule prioritizes jobs with the earliest due date?",
+      "options": {
+        "a": "Critical ratio",
+        "b": "Earliest due date",
+        "c": "Shortest processing time",
+        "d": "First come, first served"
+      },
+      "correct_answer": "b",
+      "explanation": "Earliest due date scheduling reduces lateness by focusing on orders with the nearest deadlines.",
+      "reference": "CPIM Part 2, Module 3 – Detailed Scheduling (Dispatching Rules, pp. 3.30–3.35)"
+    },
+    {
+      "exam_id": 0,
+      "question": "Which technique identifies the root causes of problems to prevent recurrence in production?",
+      "options": {
+        "a": "Pareto analysis",
+        "b": "Root cause analysis",
+        "c": "Kaizen",
+        "d": "Six Sigma"
+      },
+      "correct_answer": "b",
+      "explanation": "Root cause analysis systematically investigates issues to eliminate the source of defects or inefficiencies.",
+      "reference": "CPIM Part 2, Module 4 – Continuous Improvement (Problem Solving, pp. 4.30–4.35)"
+    },
+    {
+      "exam_id": 0,
+      "question": "Which type of inventory is located between work centers to prevent stoppages due to process variation?",
+      "options": {
+        "a": "Safety stock",
+        "b": "Pipeline stock",
+        "c": "Decoupling stock",
+        "d": "Cycle stock"
+      },
+      "correct_answer": "c",
+      "explanation": "Decoupling stock buffers production stages so downstream operations can continue even if upstream delays occur.",
+      "reference": "CPIM Part 1, Module 4 – Inventory (Inventory Categories, pp. 4.15–4.20)"
+    },
+    {
+      "exam_id": 0,
+      "question": "Which capacity strategy adds resources before demand reaches current capacity?",
+      "options": {
+        "a": "Lead strategy",
+        "b": "Lag strategy",
+        "c": "Chase strategy",
+        "d": "Match strategy"
+      },
+      "correct_answer": "a",
+      "explanation": "Lead strategy proactively adds capacity to ensure it is available before demand increases, reducing potential shortages.",
+      "reference": "CPIM Part 2, Module 2 – Master Planning (Capacity Strategies, pp. 2.35–2.40)"
+    },
+    {
+      "exam_id": 0,
+      "question": "Which continuous improvement methodology focuses on incremental changes rather than large-scale projects?",
+      "options": {
+        "a": "Kaizen",
+        "b": "Lean",
+        "c": "Six Sigma",
+        "d": "Theory of Constraints"
+      },
+      "correct_answer": "a",
+      "explanation": "Kaizen emphasizes small, continuous improvements that collectively enhance process efficiency and quality.",
+      "reference": "CPIM Part 2, Module 4 – Continuous Improvement (Kaizen, pp. 4.20–4.25)"
+    },
+    {
+      "exam_id": 0,
+      "question": "Which type of demand is unpredictable and not influenced by the production of other items?",
+      "options": {
+        "a": "Dependent demand",
+        "b": "Independent demand",
+        "c": "Derived demand",
+        "d": "Aggregate demand"
+      },
+      "correct_answer": "b",
+      "explanation": "Independent demand arises from external customer orders and is not linked to other products’ production.",
+      "reference": "CPIM Part 1, Module 2 – Demand (Demand Types, pp. 2.10–2.15)"
+    },
+    {
+      "exam_id": 0,
+      "question": "Which scheduling method calculates the longest sequence of dependent tasks in a project?",
+      "options": {
+        "a": "Critical path",
+        "b": "Slack time",
+        "c": "Lead time",
+        "d": "Float"
+      },
+      "correct_answer": "a",
+      "explanation": "The critical path is the longest sequence of dependent tasks, determining the shortest possible project completion time.",
+      "reference": "CPIM Part 2, Module 3 – Detailed Scheduling (Project Scheduling, pp. 3.25–3.30)"
+    },
+    {
+      "exam_id": 0,
+      "question": "Which production layout arranges machines into groups to produce a family of products efficiently?",
+      "options": {
+        "a": "Process layout",
+        "b": "Product layout",
+        "c": "Cellular layout",
+        "d": "Fixed-position layout"
+      },
+      "correct_answer": "c",
+      "explanation": "Cellular layouts reduce movement and waiting times by grouping machines according to product families.",
+      "reference": "CPIM Part 1, Module 3 – Transformation of Demand (Manufacturing Layouts, pp. 3.30–3.35)"
+    },
+    {
+      "exam_id": 0,
+      "question": "Which planning tool schedules production while considering actual capacity constraints?",
+      "options": {
+        "a": "Infinite loading",
+        "b": "Finite loading",
+        "c": "MRP",
+        "d": "RCCP"
+      },
+      "correct_answer": "b",
+      "explanation": "Finite loading schedules only as much work as can be performed with available resources, preventing overload.",
+      "reference": "CPIM Part 2, Module 3 – Detailed Scheduling (Loading Methods, pp. 3.15–3.20)"
+    },
+    {
+      "exam_id": 0,
+      "question": "Which sourcing strategy reduces supply risk by splitting purchases between multiple suppliers?",
+      "options": {
+        "a": "Single sourcing",
+        "b": "Dual sourcing",
+        "c": "Global sourcing",
+        "d": "Local sourcing"
+      },
+      "correct_answer": "b",
+      "explanation": "Dual sourcing ensures continuity of supply and reduces dependency on any single supplier.",
+      "reference": "CPIM Part 2, Module 1 – Strategy (Sourcing Approaches, pp. 1.40–1.45)"
+    },
+    {
+      "exam_id": 0,
+      "question": "Which inventory replenishment method places orders at fixed intervals and adjusts quantity based on demand?",
+      "options": {
+        "a": "Continuous review system",
+        "b": "Periodic review system",
+        "c": "Two-bin system",
+        "d": "Lot-for-lot"
+      },
+      "correct_answer": "b",
+      "explanation": "Periodic review replenishes inventory at regular intervals, adjusting the quantity to meet the target level.",
+      "reference": "CPIM Part 1, Module 4 – Inventory (Replenishment Policies, pp. 4.25–4.30)"
+    },
+    {
+      "exam_id": 0,
+      "question": "Which forecasting measure expresses forecast error as a percentage of actual demand?",
+      "options": {
+        "a": "MAD",
+        "b": "Tracking signal",
+        "c": "MAPE",
+        "d": "Bias"
+      },
+      "correct_answer": "c",
+      "explanation": "MAPE (Mean Absolute Percentage Error) expresses forecast errors relative to actual demand, allowing comparison across items.",
+      "reference": "CPIM Part 1, Module 2 – Demand (Forecast Performance, pp. 2.35–2.40)"
+    },
+    {
+      "exam_id": 0,
+      "question": "Which production environment produces goods only after receiving a confirmed customer order?",
+      "options": {
+        "a": "Make-to-stock",
+        "b": "Make-to-order",
+        "c": "Assemble-to-order",
+        "d": "Engineer-to-order"
+      },
+      "correct_answer": "b",
+      "explanation": "Make-to-order reduces finished goods inventory by producing only upon confirmed customer orders.",
+      "reference": "CPIM Part 1, Module 3 – Transformation of Demand (Manufacturing Environments, pp. 3.15–3.20)"
+    },
+    {
+      "exam_id": 0,
+      "question": "Which metric tracks the proportion of orders delivered on time, complete, and without damage?",
+      "options": {
+        "a": "Fill rate",
+        "b": "Service level",
+        "c": "Perfect order fulfillment",
+        "d": "Lead time"
+      },
+      "correct_answer": "c",
+      "explanation": "Perfect order fulfillment measures the percentage of orders that meet all customer requirements without issues.",
+      "reference": "CPIM Part 2, Module 1 – Strategy (Performance Metrics, pp. 1.60–1.65)"
+    },
+    {
+      "exam_id": 0,
+      "question": "Which scheduling rule prioritizes jobs with the shortest remaining processing time?",
+      "options": {
+        "a": "Earliest due date",
+        "b": "Shortest processing time",
+        "c": "Critical ratio",
+        "d": "First come, first served"
+      },
+      "correct_answer": "b",
+      "explanation": "Shortest processing time reduces average job flow time by processing the quickest jobs first.",
+      "reference": "CPIM Part 2, Module 3 – Detailed Scheduling (Dispatching Rules, pp. 3.55–3.60)"
+    },
+    {
+      "exam_id": 0,
+      "question": "Which inventory control method compares actual counts with system records regularly to maintain accuracy?",
+      "options": {
+        "a": "Cycle counting",
+        "b": "Backflushing",
+        "c": "Periodic review",
+        "d": "EOQ"
+      },
+      "correct_answer": "a",
+      "explanation": "Cycle counting ensures inventory accuracy by continually verifying stock against records.",
+      "reference": "CPIM Part 1, Module 4 – Inventory (Inventory Accuracy, pp. 4.50–4.55)"
+    },
+    {
+      "exam_id": 0,
+      "question": "Which method schedules production to the pace of the slowest resource and uses buffers to protect flow?",
+      "options": {
+        "a": "Lean pull",
+        "b": "Drum-buffer-rope",
+        "c": "Kanban",
+        "d": "Backflushing"
+      },
+      "correct_answer": "b",
+      "explanation": "Drum-buffer-rope ensures production aligns with the system’s constraint, protecting throughput with buffers.",
+      "reference": "CPIM Part 2, Module 3 – Detailed Scheduling (Theory of Constraints, pp. 3.45–3.50)"
+    },
+    {
+      "exam_id": 0,
+      "question": "Which cost type includes expenses for storage, insurance, obsolescence, and capital tied up in inventory?",
+      "options": {
+        "a": "Ordering cost",
+        "b": "Carrying cost",
+        "c": "Setup cost",
+        "d": "Stockout cost"
+      },
+      "correct_answer": "b",
+      "explanation": "Carrying cost represents the total cost of holding inventory, including capital, storage, and risk.",
+      "reference": "CPIM Part 1, Module 4 – Inventory (Inventory Costs, pp. 4.20–4.25)"
+    },
+
 
     {
       "exam_id": 1,
@@ -5230,6 +6102,266 @@
       },
       "correct_answer": "b",
       "explanation": "Blockchain provides secure and immutable records, enhancing traceability and transparency across the supply chain.",
+      "reference": "CSCP Module 4 – Supply Chain Improvements (pp. 345–348)"
+    },
+    {
+      "exam_id": 1,
+      "question": "Which of the following best describes supply chain segmentation?",
+      "options": {
+        "a": "Dividing suppliers by geography",
+        "b": "Customizing supply chain strategies for different products and customers",
+        "c": "Separating demand into forecasted and actual categories",
+        "d": "Separating logistics into inbound and outbound flows"
+      },
+      "correct_answer": "b",
+      "explanation": "Segmentation allows organizations to apply different supply chain strategies based on product, market, or customer characteristics.",
+      "reference": "CSCP Module 1 – Supply Chain Strategy (pp. 80–83)"
+    },
+    {
+      "exam_id": 1,
+      "question": "Which of the following best describes vendor-managed inventory (VMI)?",
+      "options": {
+        "a": "Suppliers manage inventory replenishment at the customer's location",
+        "b": "Customers dictate supplier delivery schedules",
+        "c": "Third-party logistics manage inbound shipments",
+        "d": "Inventory is audited by finance teams"
+      },
+      "correct_answer": "a",
+      "explanation": "VMI shifts responsibility for maintaining inventory levels to the supplier, improving replenishment efficiency.",
+      "reference": "CSCP Module 3 – Supply Chain Planning (pp. 230–233)"
+    },
+    {
+      "exam_id": 1,
+      "question": "Which of the following is a key driver of supply chain complexity?",
+      "options": {
+        "a": "Standardized product lines",
+        "b": "Global sourcing and distribution",
+        "c": "Single sourcing strategies",
+        "d": "Centralized decision-making"
+      },
+      "correct_answer": "b",
+      "explanation": "Global sourcing and distribution add complexity due to longer lead times, cultural differences, and regulations.",
+      "reference": "CSCP Module 1 – Supply Chain Strategy (pp. 72–75)"
+    },
+    {
+      "exam_id": 1,
+      "question": "Which of the following best describes just-in-time (JIT) systems?",
+      "options": {
+        "a": "High inventory buffers",
+        "b": "Production triggered by actual demand",
+        "c": "Large batch production",
+        "d": "Forecast-driven production"
+      },
+      "correct_answer": "b",
+      "explanation": "JIT reduces waste by producing goods only in response to actual demand, minimizing inventory.",
+      "reference": "CSCP Module 3 – Supply Chain Planning (pp. 280–283)"
+    },
+    {
+      "exam_id": 1,
+      "question": "Which of the following best describes a responsive supply chain?",
+      "options": {
+        "a": "Emphasizes low-cost operations",
+        "b": "Prioritizes speed and flexibility to meet customer needs",
+        "c": "Relies exclusively on forecasts",
+        "d": "Minimizes product customization"
+      },
+      "correct_answer": "b",
+      "explanation": "Responsive supply chains emphasize agility and flexibility to respond quickly to market changes.",
+      "reference": "CSCP Module 1 – Supply Chain Strategy (pp. 60–64)"
+    },
+    {
+      "exam_id": 1,
+      "question": "Which of the following is the primary purpose of performance metrics in supply chain management?",
+      "options": {
+        "a": "To replace financial reporting",
+        "b": "To align operational activities with strategic objectives",
+        "c": "To eliminate supplier contracts",
+        "d": "To forecast demand"
+      },
+      "correct_answer": "b",
+      "explanation": "Performance metrics ensure operations are aligned with business strategy and customer service goals.",
+      "reference": "CSCP Module 2 – Supply Chain Design (pp. 160–163)"
+    },
+    {
+      "exam_id": 1,
+      "question": "Which of the following best describes supply chain sustainability?",
+      "options": {
+        "a": "Focusing only on short-term profitability",
+        "b": "Balancing environmental, social, and economic goals in supply chain decisions",
+        "c": "Eliminating global suppliers",
+        "d": "Focusing only on transportation efficiency"
+      },
+      "correct_answer": "b",
+      "explanation": "Sustainability integrates environmental and social responsibility with economic performance.",
+      "reference": "CSCP Module 4 – Supply Chain Improvements (pp. 365–369)"
+    },
+    {
+      "exam_id": 1,
+      "question": "Which of the following is a key objective of supply chain design?",
+      "options": {
+        "a": "Reducing customer churn",
+        "b": "Minimizing manufacturing cycle time",
+        "c": "Balancing cost, quality, and service across the supply chain",
+        "d": "Increasing safety stock levels"
+      },
+      "correct_answer": "c",
+      "explanation": "Supply chain design creates structures that deliver optimal service levels at the lowest total cost while maintaining quality.",
+      "reference": "CSCP Module 2 – Supply Chain Design (pp. 120–123)"
+    },
+    {
+      "exam_id": 1,
+      "question": "Which of the following best defines a supply chain strategy?",
+      "options": {
+        "a": "A set of software tools used to monitor logistics",
+        "b": "A plan for aligning supply chain activities with business goals",
+        "c": "A list of key suppliers",
+        "d": "An inventory optimization method"
+      },
+      "correct_answer": "b",
+      "explanation": "A supply chain strategy defines how supply chain activities support overall business objectives.",
+      "reference": "CSCP Module 1 – Supply Chain Strategy (pp. 45–49)"
+    },
+    {
+      "exam_id": 1,
+      "question": "Which of the following is the primary purpose of Sales and Operations Planning (S&OP)?",
+      "options": {
+        "a": "To optimize machine utilization",
+        "b": "To balance demand and supply at the aggregate level",
+        "c": "To schedule employees",
+        "d": "To measure supplier performance"
+      },
+      "correct_answer": "b",
+      "explanation": "S&OP aligns demand and supply by creating a consensus-based plan at an aggregate level.",
+      "reference": "CSCP Module 3 – Supply Chain Planning (pp. 210–214)"
+    },
+    {
+      "exam_id": 1,
+      "question": "Which of the following best describes the bullwhip effect?",
+      "options": {
+        "a": "Increased customer churn due to poor service",
+        "b": "Amplification of demand variability up the supply chain",
+        "c": "A strategy to minimize transportation costs",
+        "d": "Use of safety stock to protect against shortages"
+      },
+      "correct_answer": "b",
+      "explanation": "The bullwhip effect occurs when small changes in customer demand cause larger fluctuations upstream in the supply chain.",
+      "reference": "CSCP Module 3 – Supply Chain Planning (pp. 260–262)"
+    },
+    {
+      "exam_id": 1,
+      "question": "Which of the following is a primary role of distribution centers?",
+      "options": {
+        "a": "Performing product engineering",
+        "b": "Providing local manufacturing",
+        "c": "Consolidating and dispersing inventory for efficient delivery",
+        "d": "Monitoring supplier quality"
+      },
+      "correct_answer": "c",
+      "explanation": "Distribution centers consolidate inventory and distribute it closer to customers to improve delivery speed and efficiency.",
+      "reference": "CSCP Module 2 – Supply Chain Design (pp. 185–188)"
+    },
+    {
+      "exam_id": 1,
+      "question": "Which technology enables real-time visibility in supply chain operations?",
+      "options": {
+        "a": "RFID",
+        "b": "Poka-yoke",
+        "c": "EOQ",
+        "d": "Kaizen"
+      },
+      "correct_answer": "a",
+      "explanation": "RFID allows real-time tracking of goods throughout the supply chain, enhancing visibility and control.",
+      "reference": "CSCP Module 4 – Supply Chain Improvements (pp. 340–343)"
+    },
+    {
+      "exam_id": 1,
+      "question": "Which type of inventory is held to decouple operations and ensure smooth flow between processes?",
+      "options": {
+        "a": "Pipeline inventory",
+        "b": "Safety stock",
+        "c": "Decoupling inventory",
+        "d": "Obsolete inventory"
+      },
+      "correct_answer": "c",
+      "explanation": "Decoupling inventory buffers variability between processes, ensuring continuity of operations.",
+      "reference": "CSCP Module 3 – Supply Chain Planning (pp. 226–229)"
+    },
+    {
+      "exam_id": 1,
+      "question": "Which of the following best describes collaborative supplier relationships?",
+      "options": {
+        "a": "Adversarial relationships",
+        "b": "Relationships focused on innovation and joint development",
+        "c": "Arms-length transactions",
+        "d": "Spot market purchases"
+      },
+      "correct_answer": "b",
+      "explanation": "Collaborative relationships promote joint development, innovation, and long-term partnerships with suppliers.",
+      "reference": "CSCP Module 2 – Supply Chain Design (pp. 170–174)"
+    },
+    {
+      "exam_id": 1,
+      "question": "Which type of supply chain strategy is most appropriate for innovative products with unpredictable demand?",
+      "options": {
+        "a": "Lean supply chain",
+        "b": "Agile supply chain",
+        "c": "Efficient supply chain",
+        "d": "Push-based supply chain"
+      },
+      "correct_answer": "b",
+      "explanation": "Agile supply chains are flexible and responsive, making them suitable for unpredictable demand scenarios.",
+      "reference": "CSCP Module 1 – Supply Chain Strategy (pp. 60–64)"
+    },
+    {
+      "exam_id": 1,
+      "question": "Which financial metric is most directly affected by supply chain efficiency?",
+      "options": {
+        "a": "Return on assets (ROA)",
+        "b": "Gross margin",
+        "c": "Debt-to-equity ratio",
+        "d": "Earnings per share"
+      },
+      "correct_answer": "a",
+      "explanation": "Efficient supply chain operations improve asset utilization, directly affecting ROA.",
+      "reference": "CSCP Module 2 – Supply Chain Design (pp. 150–153)"
+    },
+    {
+      "exam_id": 1,
+      "question": "Which of the following best describes the purpose of Sales and Operations Execution (S&OE)?",
+      "options": {
+        "a": "Long-term capacity decisions",
+        "b": "Daily and weekly alignment of supply and demand",
+        "c": "Financial reporting",
+        "d": "Supplier qualification"
+      },
+      "correct_answer": "b",
+      "explanation": "S&OE focuses on short-term execution, ensuring alignment between daily and weekly supply and demand.",
+      "reference": "CSCP Module 3 – Supply Chain Planning (pp. 215–218)"
+    },
+    {
+      "exam_id": 1,
+      "question": "Which of the following is a key enabler of supply chain collaboration?",
+      "options": {
+        "a": "Standardized data sharing",
+        "b": "Independent planning",
+        "c": "Excessive inventory buffers",
+        "d": "Limited supplier integration"
+      },
+      "correct_answer": "a",
+      "explanation": "Standardized data sharing among partners enables collaboration and alignment in supply chains.",
+      "reference": "CSCP Module 3 – Supply Chain Planning (pp. 240–244)"
+    },
+    {
+      "exam_id": 1,
+      "question": "Which technology provides predictive insights to optimize supply chain performance?",
+      "options": {
+        "a": "Artificial intelligence",
+        "b": "RFID",
+        "c": "Kanban",
+        "d": "SMED"
+      },
+      "correct_answer": "a",
+      "explanation": "Artificial intelligence supports forecasting, planning, and optimization by providing predictive insights.",
       "reference": "CSCP Module 4 – Supply Chain Improvements (pp. 345–348)"
     },
 
