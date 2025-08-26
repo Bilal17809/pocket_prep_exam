@@ -1,0 +1,1 @@
+final String examAndSubjectsJson="assets/ems_exam_subjects.json";
