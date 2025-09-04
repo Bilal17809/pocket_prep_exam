@@ -1,58 +1,7 @@
-
 import 'package:flutter/material.dart';
-import 'package:pocket_prep_exam/pages/home/control/home_control.dart';
-import '../../main_appbar/main_appbar.dart';
+
+import '/pages/home/control/home_control.dart';
 import '../../questions/view/questions_view.dart';
-import '/pages/home/widgets/widgets.dart';
-import '/core/theme/theme.dart';
-
-
-// class HomeView extends StatelessWidget {
-//
-//   const HomeView({super.key});
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       backgroundColor: kWhiteF7,
-//       appBar: const MainAppBar(
-//         isBackButton: false,
-//         title: 'Car Scanner',
-//         subtitle: 'Scan your all Car Sensors',
-//       ),
-//       body: SafeArea(
-//         child: Padding(
-//           padding: const EdgeInsets.symmetric(horizontal:20,vertical: 20),
-//           child: CustomScrollView(
-//             slivers: [
-//               SliverGrid(
-//                 delegate: SliverChildBuilderDelegate(
-//                       (context, index) {
-//                     final item = homeItems[index];
-//                     return HomeFeatureItem(
-//                       image: item["image"]!,
-//                       label: item["name"]!,
-//                       onTap: () {},
-//                     );
-//                   },
-//                   childCount: homeItems.length,
-//                 ),
-//                 gridDelegate:
-//                 const SliverGridDelegateWithFixedCrossAxisCount(
-//                   crossAxisCount: 3,
-//                   mainAxisSpacing: 16,
-//                   crossAxisSpacing: 16,
-//                   childAspectRatio: 1,
-//                 ),
-//               ),
-//             ],
-//           ),
-//         ),
-//       ),
-//     );
-//   }
-// }
-
 import 'package:get/get.dart';
 
 class ExamAndSubjectScreen extends StatelessWidget {
@@ -60,7 +9,7 @@ class ExamAndSubjectScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(ExamAndSubjectController());
+    final controller = Get.find<ExamAndSubjectController>();
 
     return Scaffold(
       appBar: AppBar(title: const Text('Exams & Subjects')),

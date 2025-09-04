@@ -1,12 +1,16 @@
 
 import 'package:get/get.dart';
 
-import '../../../data/models/exams_and_subject.dart';
+import '/data/models/exams_and_subject.dart';
 import '/services/services.dart';
 
 
 class ExamAndSubjectController extends GetxController {
-  final ExamService _examService = ExamService();
+  final ExamService _examService ;
+
+  ExamAndSubjectController({
+    required ExamService examServices})
+      :_examService=examServices;
 
   RxList<Exam> exams = <Exam>[].obs;
   RxBool isLoading = true.obs;

@@ -10,7 +10,4 @@ class ExamService {
     final List<dynamic> dataList = json.decode(response);
     return dataList.map((item) => Exam.fromJson(item)).toList();
   }
-
-
-
 }

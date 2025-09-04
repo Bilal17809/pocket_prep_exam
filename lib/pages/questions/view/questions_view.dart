@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../../data/models/exams_and_subject.dart';
+
+import '/data/models/exams_and_subject.dart';
 import '../control/questions_controller.dart';
+
+
 class QuestionScreen extends StatelessWidget {
   final Subject subject;
 
@@ -40,7 +43,7 @@ class QuestionScreen extends StatelessWidget {
                       title: Text(opt),
                       leading: Radio<String>(
                         groupValue: q.correctAnswer,
-                        value: opt.substring(0, 1), // 'A', 'B', etc.
+                        value: opt.substring(0, 1),
                         onChanged: null, // static preview
                       ),
                     )),
