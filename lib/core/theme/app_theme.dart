@@ -18,6 +18,8 @@ abstract class AppTheme {
     backgroundColor: kWhite,
     textStyle: buttonTextStyle,
     foregroundColor: Colors.white,
+
+
     
     padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 08),
     minimumSize: const Size(double.maxFinite, 50),
@@ -26,6 +28,15 @@ abstract class AppTheme {
       borderRadius: BorderRadius.circular(50),
     ),
   );
+
+  static List<BoxShadow> defaultShadow = [
+    BoxShadow(
+      color: Colors.black.withOpacity(0.14),
+      offset: const Offset(0, 2),
+      blurRadius: 3,
+      spreadRadius: 3,
+    ),
+  ];
 
   static final ButtonStyle textButtonStyle = TextButton.styleFrom(
     backgroundColor: kWhite,

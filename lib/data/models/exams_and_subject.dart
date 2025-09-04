@@ -12,7 +12,6 @@ class Subject{
   }
 }
 
-
 class Exam {
   final int examId;
   final String examName;

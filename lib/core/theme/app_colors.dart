@@ -13,6 +13,7 @@ const Color kWhiteFA = Color(0xFFFAFAFA);
 const Color kWhiteEF = Color(0xFFEFEFEF);
 const Color kWhite01 = Color(0x1AFFFFFF);
 
+const Color backgroundColor = Color(0xffF0F9D2);
 
 
 //Categories card colors
