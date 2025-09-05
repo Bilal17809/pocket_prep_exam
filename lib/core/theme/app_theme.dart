@@ -31,9 +31,9 @@ abstract class AppTheme {
 
   static List<BoxShadow> defaultShadow = [
     BoxShadow(
-      color: Colors.black.withOpacity(0.14),
+      color: Colors.black.withOpacity(0.10),
       offset: const Offset(0, 2),
-      blurRadius: 3,
+      blurRadius: 2,
       spreadRadius: 3,
     ),
   ];

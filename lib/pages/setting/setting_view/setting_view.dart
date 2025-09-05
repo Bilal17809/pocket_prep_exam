@@ -18,18 +18,18 @@ class SettingView extends StatelessWidget {
         title: 'Setting',
         subtitle: '',
       ),
-      body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-          child: Obx(() {
-            return CustomScrollView(
-              slivers: [
-
-              ],
-            );
-          }),
-        ),
-      ),
+      // body: SafeArea(
+      //   child: Padding(
+      //     padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+      //     child: Obx(() {
+      //       return CustomScrollView(
+      //         slivers: [
+      //
+      //         ],
+      //       );
+      //     }),
+      //   ),
+      // ),
 
     );
   }
