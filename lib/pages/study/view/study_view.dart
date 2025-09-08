@@ -37,8 +37,7 @@ class StudyView extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         SizedBox(height: height * 0.06,),
-                        CalenderListSection(controller: controller,
-                            height: height * 1.00, width: width * 1.00),
+                        CalenderListSection(controller: controller,height: height * 1.00, width: width * 1.00),
                         ShowAnswers(),
                         UpgradeButton(),
                          Padding(

@@ -15,21 +15,18 @@ class QuizModeList extends StatelessWidget {
             final item = controller.quizModeDataList[index];
             return Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10),
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  height: height * 0.08,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    color: kWhite,
-                  borderRadius: BorderRadius.circular(10),
-                    border: Border.all(color: kBlue.withAlpha(200),width: 0.50)),
-                  child: Center(
-                    child: ListTile(
-                      leading: Image.asset(item.icon.toString()),
-                      title: Text(item.title.toString(),),
-                      trailing: Text(item.date.toString(),style: TextStyle(color: kBlue,fontSize: 14),),
-                    ),
+              child: Container(
+                margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  color: kWhite,
+                borderRadius: BorderRadius.circular(10),
+                  border: Border.all(color: kBlue.withAlpha(200),width: 0.50)),
+                child: Center(
+                  child: ListTile(
+                    leading: Image.asset(item.icon.toString()),
+                    title: Text(item.title.toString(),),
+                    trailing: Text(item.date.toString(),style: TextStyle(color: kBlue,fontSize: 14),),
                   ),
                 ),
               ),

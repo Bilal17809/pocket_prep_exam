@@ -31,10 +31,10 @@ abstract class AppTheme {
 
   static List<BoxShadow> defaultShadow = [
     BoxShadow(
-      color: Colors.black.withOpacity(0.10),
+      color: Colors.black.withOpacity(0.04),
       offset: const Offset(0, 2),
       blurRadius: 2,
-      spreadRadius: 3,
+      spreadRadius: 2,
     ),
   ];
 

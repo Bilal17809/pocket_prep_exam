@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pocket_prep_exam/core/theme/app_colors.dart';
+import 'package:pocket_prep_exam/pages/stats/view/stats_view.dart';
 import 'package:pocket_prep_exam/pages/study/view/study_view.dart';
 import '/pages/dashboard/control/dashboard_controller.dart';
 import '/pages/home/view/home_view.dart';
@@ -16,7 +17,8 @@ class DashboardView extends StatelessWidget {
 
     final List<Widget> screens=[
       StudyView(),
-      ExamAndSubjectScreen(),
+     StatsView(),
+      // ExamAndSubjectScreen(),
       LiveDataView(),
       SettingView()
     ];
@@ -36,7 +38,7 @@ class DashboardView extends StatelessWidget {
           onTap: controller.trackIndex,
           items:  [
             BottomNavigationBarItem(icon: Icon(Icons.book),label: "Study",),
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
+            BottomNavigationBarItem(icon: Icon(Icons.home), label: "Stats"),
             BottomNavigationBarItem(icon: Icon(Icons.show_chart), label: "Live Data"),
             BottomNavigationBarItem(icon: Icon(Icons.settings), label: "Settings"),
           ],

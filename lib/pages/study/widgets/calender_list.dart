@@ -7,7 +7,7 @@ class CalenderListSection extends StatelessWidget {
   final StudyController controller;
   final double height;
   final double width;
-  CalenderListSection ({
+const CalenderListSection ({
     super.key,
     required  this.controller,
     required this.height,
@@ -18,7 +18,7 @@ class CalenderListSection extends StatelessWidget {
     return Column(
       children: [
         SizedBox(
-          height: height * 0.18,
+          height: height * 0.16,
           child: ListView.separated(
             padding: const EdgeInsets.symmetric(horizontal: 6),
             scrollDirection: Axis.horizontal,
@@ -26,7 +26,7 @@ class CalenderListSection extends StatelessWidget {
             separatorBuilder: (context, index) => const SizedBox(width: 0),
             itemBuilder: (context, index) {
               final item = controller.calenderList[index];
-              final cardWidth = width / 7 - 12;
+              final cardWidth = (width / 5) * 0.58;
               return InkWell(
                 onTap: (){
                   // controller.selectItem(index);

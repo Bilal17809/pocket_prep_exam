@@ -43,7 +43,7 @@ class CalenderListCard extends StatelessWidget {
                   item.date.toString(),
                   style: context.textTheme.bodyMedium!.copyWith(
                     color: isSelected ? Colors.white : Colors.black,
-                    fontSize: 22,
+                    fontSize: 18,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -52,7 +52,7 @@ class CalenderListCard extends StatelessWidget {
                   item.day.toString(),
                   style: context.textTheme.bodyMedium!.copyWith(
                     color: isSelected ? Colors.white : Colors.black,
-                    fontSize: 22,
+                    fontSize: 18,
                     fontWeight: FontWeight.bold,
                   ),
                   textAlign: TextAlign.center,
