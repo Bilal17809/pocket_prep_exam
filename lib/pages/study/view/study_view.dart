@@ -21,7 +21,6 @@ class StudyView extends StatelessWidget {
             backgroundColor: backgroundColor,
             body: Stack(
                 children: [
-
                   HomeBanner(height: height),
                   Positioned(
                     top: height * 0.23,

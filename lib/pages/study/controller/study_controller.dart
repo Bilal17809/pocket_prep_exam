@@ -11,9 +11,9 @@ class StudyController extends GetxController{
   final RxInt selectedIndex = (-1).obs;
   final RxString selectedExamName = "".obs;
 
-  StudyController({required StorageService storageService}) : _storageService = storageService{
+  StudyController({required StorageService storageService}) :
+        _storageService = storageService{
     loadExamName();
-    selectedExamName.value='abc';
   }
 
   @override
