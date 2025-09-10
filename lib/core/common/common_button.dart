@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:pocket_prep_exam/core/common/constant.dart';
 import 'package:pocket_prep_exam/core/theme/app_colors.dart';
+import 'package:pocket_prep_exam/core/theme/app_theme.dart';
 
 class CommonButton extends StatelessWidget {
   final String title;
@@ -18,12 +19,9 @@ class CommonButton extends StatelessWidget {
       child: GestureDetector(
         onTap: onTap,
         child: Container(
-          height: height * 0.06,
+          height: height * 0.07,
           width: width * 0.60,
-          decoration: BoxDecoration(
-              color: kBlue,
-              borderRadius: BorderRadius.circular(22)
-          ),
+          decoration: AppTheme.buttonDecoration.copyWith(color: kBlue),
           child: Center(
             child: Text(title,style: context.textTheme.bodyLarge!.copyWith(
                 color: kWhite,
@@ -45,12 +43,9 @@ class HideCommonButton extends StatelessWidget {
     return Padding(
       padding:  EdgeInsets.symmetric(vertical: bodySmallWH),
       child: Container(
-        height: height * 0.06,
+        height: height * 0.07,
         width: width * 0.60,
-        decoration: BoxDecoration(
-            color: kBlue.withAlpha(100),
-            borderRadius: BorderRadius.circular(22)
-        ),
+        decoration: AppTheme.buttonDecoration,
         child: Center(
           child: Text("Switch Exam",style: context.textTheme.bodyLarge!.copyWith(
               color: kWhite,

@@ -1,7 +1,5 @@
 
-
 import 'package:get/get.dart';
-import 'package:pocket_prep_exam/core/Utility/utils.dart';
 import 'package:pocket_prep_exam/core/local_storage/storage_helper.dart';
 
 class StudyController extends GetxController{
@@ -11,10 +9,7 @@ class StudyController extends GetxController{
   final RxInt selectedIndex = (-1).obs;
   final RxString selectedExamName = "".obs;
 
-  StudyController({required StorageService storageService}) :
-        _storageService = storageService{
-    loadExamName();
-  }
+  StudyController({required StorageService storageService}) : _storageService = storageService;
 
   @override
   void onInit() {
@@ -30,7 +25,6 @@ class StudyController extends GetxController{
     final name = await _storageService.loadExamName();
     if(name != null && name.isNotEmpty){
       selectedExamName.value = name[0];
-      Utils().snackBarMessage("Success", "loaded Exam Name ${name[0]}",isSuccess: true);
     }
   }
 

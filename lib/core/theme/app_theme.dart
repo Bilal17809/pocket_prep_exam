@@ -43,6 +43,22 @@ abstract class AppTheme {
     ),
   );
 
+
+
+  static BoxDecoration topRounded(double height) {
+    return BoxDecoration(
+      color: kWhiteF7,
+      borderRadius: BorderRadius.vertical(
+        top: Radius.elliptical(height, 200.0),
+      ),
+    );
+  }
+
+  static BoxDecoration buttonDecoration =  BoxDecoration(
+  color: kBlue.withAlpha(100),
+  borderRadius: BorderRadius.circular(30)
+  );
+
   static BoxDecoration borderedBlue = BoxDecoration(
     color: kWhite,
     borderRadius: BorderRadius.circular(10),

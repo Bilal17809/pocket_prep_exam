@@ -22,7 +22,6 @@ class DashboardView extends StatelessWidget {
       LiveDataView(),
       SettingView()
     ];
-
     return Obx((){
       return Scaffold(
         backgroundColor: Colors.transparent,

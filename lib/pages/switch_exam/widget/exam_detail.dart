@@ -22,7 +22,7 @@ class ExamDetail extends StatelessWidget {
           width: double.infinity,
           padding: EdgeInsets.all(15),
           decoration: roundedDecoration.copyWith(
-              border: Border.all(color: isSelected ? kBlue.withAlpha(240) : greyColor.withAlpha(60))
+            border: Border.all(color: isSelected ? kBlue.withAlpha(240) : greyColor.withAlpha(60)),
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -32,7 +32,7 @@ class ExamDetail extends StatelessWidget {
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
               ),),
-              SizedBox(height: 60),
+              SizedBox(height: 30),
               Row(
                 children: [
                   _QuesAndSubText(text: "${data.totalQuestions.toString()} questions," ),

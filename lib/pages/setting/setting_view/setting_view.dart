@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import '../../../core/common/common_button.dart';
-import '../control/setting_controller.dart';
+import '/core/common/common_button.dart';
 import '/core/theme/theme.dart';
 import '/pages/setting/widgets/widgets.dart';
 
@@ -11,7 +9,7 @@ class SettingView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.find<SettingController>();
+    // final controller = Get.find<SettingController>();
     return Scaffold(
       backgroundColor: kWhiteF7,
       body: SafeArea(
@@ -23,7 +21,6 @@ class SettingView extends StatelessWidget {
               ShowDetail(),
               StudyPlane(),
              SizedBox(height: 24),
-              ItemsList(),
               CommonButton(title: "Logout",onTap: (){},),
               SizedBox(height: 24),
             ],

@@ -1,6 +1,9 @@
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:pocket_prep_exam/core/common/constant.dart';
 import 'package:pocket_prep_exam/core/theme/app_colors.dart';
+import 'package:pocket_prep_exam/core/theme/app_styles.dart';
 
 class ShowAnswers extends StatelessWidget {
   final double height;
@@ -12,15 +15,14 @@ class ShowAnswers extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 06),
+      padding:  EdgeInsets.symmetric(horizontal: bodyWH,vertical: 06),
       child: Row(
         children: [
           Container(
             height:height ,
             width:width,
-            decoration: BoxDecoration(
+            decoration: roundedDecoration.copyWith(
               color:  kBlue.withAlpha(220),
-              borderRadius: BorderRadius.circular(10)
             ),
             child: Center(
               child: Icon(Icons.menu,color: kWhite,size: 28,),
@@ -35,20 +37,20 @@ class ShowAnswers extends StatelessWidget {
             ),
           ),
           Text(" Key : ",style: TextStyle(fontSize: 18),),
-            CorrectWrong(answerTitle: " Correct", icon: Icons.circle,color: Colors.green,),
+          _CorrectWrong(answerTitle: " Correct", icon: Icons.circle,color: Colors.green,),
           SizedBox(width: 14),
-          CorrectWrong(answerTitle: " Incorrect", icon: Icons.circle_outlined,color: Colors.red,)
+          _CorrectWrong(answerTitle: " Incorrect", icon: Icons.circle_outlined,color: Colors.red,)
         ],
       ),
     );
   }
 }
 
-class CorrectWrong extends StatelessWidget {
+class _CorrectWrong extends StatelessWidget {
   final String answerTitle;
  final IconData? icon;
  final Color? color;
-  const CorrectWrong({super.key,
+  const _CorrectWrong({super.key,
   required  this.answerTitle,
     required this.icon,
     this.color
@@ -58,7 +60,7 @@ class CorrectWrong extends StatelessWidget {
     return Row(
       children: [
         Icon(icon,size: 10,color: color,),
-        Text( answerTitle)
+        Text(answerTitle,style: context.textTheme.bodyMedium)
       ],
     );
   }

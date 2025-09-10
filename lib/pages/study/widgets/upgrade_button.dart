@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pocket_prep_exam/core/common/app_drawer.dart';
 import 'package:pocket_prep_exam/core/theme/app_colors.dart';
 
 class UpgradeButton extends StatelessWidget {
@@ -11,10 +12,14 @@ class UpgradeButton extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 52),
         child: SizedBox(
           height: 60,
-          child: Card(
-            color: kBlue.withAlpha(220),
-            child:
-              Center(child: Text("Upgrade for all quiz modes.",style: TextStyle(color: kWhite,fontSize: 18),))
+          child: GestureDetector(
+            onTap: (){
+            },
+            child: Card(
+              color: kBlue.withAlpha(220),
+              child:
+                Center(child: Text("Upgrade for all quiz modes.",style: TextStyle(color: kWhite,fontSize: 18),))
+            ),
           ),
         ),
       )

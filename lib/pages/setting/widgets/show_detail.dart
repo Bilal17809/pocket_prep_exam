@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pocket_prep_exam/core/theme/app_theme.dart';
-import 'package:pocket_prep_exam/pages/switch_exam/controller/switch_exam_cont.dart';
+import 'package:pocket_prep_exam/pages/study/controller/study_controller.dart';
 import 'package:pocket_prep_exam/pages/switch_exam/view/examp_switch_view.dart';
 import '/core/common/app_divider.dart';
 import '/core/theme/app_colors.dart';
@@ -13,7 +13,7 @@ class ShowDetail extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.find<SwitchExamController>();
+    final controller = Get.find<StudyController>();
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: bodyWH, vertical: bodyWH),
       child: Column(
@@ -35,7 +35,7 @@ class ShowDetail extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          controller.selectedExamName.toString(),
+                         controller.selectedExamName.value,
                           style: context.textTheme.bodySmall!.copyWith(
                             color: kBlack,
                             fontSize: 16,
@@ -66,7 +66,6 @@ class ShowDetail extends StatelessWidget {
                 ButtonText(
                   title: "Exam Settings",
                   onTap: () {
-                    print("object");
                   },
                 ),
                 AppDivider(height: 10.0,color: greyColor.withAlpha(60),),

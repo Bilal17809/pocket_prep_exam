@@ -39,9 +39,9 @@ class StudyPlane extends StatelessWidget {
                         ),
                       ),
                       SizedBox(height: 6),
-                     _TextWidget(text: "Questions of the Day"),
-                      _TextWidget(text: "30 Questions (of 1000 Question Bank)"),
-                      _TextWidget(text: "Limited Quiz Modes"),
+                     // _TextWidget(text: "Questions of the Day"),
+                     //  _TextWidget(text: "30 Questions (of 1000 Question Bank)"),
+                     //  _TextWidget(text: "Limited Quiz Modes"),
 
                     ],
                   ),

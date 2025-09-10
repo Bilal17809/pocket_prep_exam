@@ -1,5 +1,3 @@
-import 'package:flutter/cupertino.dart';
-
 
 
 final double bodyWH= 20;

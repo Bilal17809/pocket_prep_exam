@@ -3,7 +3,6 @@ import 'package:pocket_prep_exam/core/Utility/utils.dart';
 import 'package:pocket_prep_exam/core/local_storage/storage_helper.dart';
 import 'package:pocket_prep_exam/data/models/exams_and_subject.dart';
 import 'package:pocket_prep_exam/services/exam_and_subjects_services.dart';
-
 import '../../study/controller/study_controller.dart';
 
 class SwitchExamController extends GetxController {
@@ -50,11 +49,6 @@ class SwitchExamController extends GetxController {
     }
   }
 
-  String? get selectedExamName {
-    if (selectExamIndex.value == -1 || exam.isEmpty) return null;
-    return exam[selectExamIndex.value].examName;
-  }
-
   Future<void> loadSelectedExamFromStorage() async {
     savedIndex = await _storageService.loadSelectedExam();
     _updateButtonVisibility();
@@ -62,29 +56,14 @@ class SwitchExamController extends GetxController {
 
   Future<void> saveSelectedExamAndName() async {
     if (selectExamIndex.value == -1) {
-      Utils().snackBarMessage("Error", "Please select an exam first!", isSuccess: false);
-      return;
-    }
+      Utils().snackBarMessage("Error", "Please select an exam first!", isSuccess: false);return;}
     final selected = exam[selectExamIndex.value];
     await _storageService.saveSelectedExam(selectExamIndex.value);
     await _storageService.saveName([selected.examName]);
     Get.find<StudyController>().loadExamName();
     savedIndex = selectExamIndex.value;
     _updateButtonVisibility();
-
-    Utils().snackBarMessage("Success", "Exam \"${selected.examName}\" has been saved!", isSuccess: true);
   }
-
-  // Future<void> saveSelectedExamAndName() async {
-  //   if (selectExamIndex.value == -1) {
-  //     Utils().snackBarMessage("Error", "Please select an exam first!", isSuccess: false);return;}
-  //   final selected = exam[selectExamIndex.value];
-  //   await _storageService.saveSelectedExam(selectExamIndex.value);
-  //   await _storageService.saveName([selected.examName]);
-  //   savedIndex = selectExamIndex.value;
-  //   _updateButtonVisibility();
-  //   Utils().snackBarMessage("Success","Exam \"${selected.examName}\" has been saved!",isSuccess: true,);
-  // }
 
   void _updateButtonVisibility() {
     if (savedIndex == null) {

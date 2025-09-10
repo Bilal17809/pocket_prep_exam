@@ -31,7 +31,7 @@ class ExamSwitchView extends StatelessWidget {
               ExamList(controller: controller),
               controller.showButton.value ?
               CommonButton(
-                title: "Save Exam",
+                title: "Switch Exam",
                 onTap: () {
                   controller.saveSelectedExamAndName();
                   Get.to(() => DashboardView());
