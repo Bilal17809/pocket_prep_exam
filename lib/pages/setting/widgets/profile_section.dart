@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:pocket_prep_exam/core/common/app_divider.dart';
 import 'package:pocket_prep_exam/core/theme/app_colors.dart';
 
 class ProfileSection extends StatelessWidget {
@@ -20,7 +21,7 @@ class ProfileSection extends StatelessWidget {
         SizedBox(height: 10),
         Text("Edite",style: context.textTheme.bodySmall!.copyWith(
            color: kBlue,fontSize: 16,fontWeight: FontWeight.bold
-        ),)
+        ),),
       ],
     );
   }
@@ -32,8 +33,8 @@ class DividerWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 30,top: 10),
-      child: Divider(thickness: 02,color: Color(0xFF1E90FF),),
+      padding: const EdgeInsets.only(left: 30),
+      child: AppDivider(thickness: 02,height: 30.0,color: Color(0xFF1E90FF),),
     );
   }
 }

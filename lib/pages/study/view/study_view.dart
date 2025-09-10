@@ -20,37 +20,38 @@ class StudyView extends StatelessWidget {
         child: Scaffold(
             backgroundColor: backgroundColor,
             body: Stack(
-              children: [
-                HomeBanner(height: height),
-                Positioned(
-                  top: height * 0.23,
-                  left: 0,
-                  bottom: 0,
-                  right: 0,
-                  child: Container(
-                    height: double.infinity,
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      color: kWhiteF7,
-                      borderRadius: BorderRadius.vertical(top: Radius.elliptical(height, 200.0)),) ,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        SizedBox(height: height * 0.06,),
-                        CalenderListSection(controller: controller,height: height * 1.00, width: width * 1.00),
-                        ShowAnswers(),
-                        UpgradeButton(),
-                         Padding(
-                           padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 06),
-                           child: Text("Quiz Modes",style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),),
-                         ),
-                         QuizModeList(controller: controller)
-                      ],
+                children: [
+
+                  HomeBanner(height: height),
+                  Positioned(
+                    top: height * 0.23,
+                    left: 0,
+                    bottom: 0,
+                    right: 0,
+                    child: Container(
+                      height: double.infinity,
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                        color: kWhiteF7,
+                        borderRadius: BorderRadius.vertical(top: Radius.elliptical(height, 200.0)),) ,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          SizedBox(height: height * 0.06,),
+                          CalenderListSection(controller: controller,height: height * 1.00, width: width * 1.00),
+                          ShowAnswers(),
+                          UpgradeButton(),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 06),
+                            child: Text("Quiz Modes",style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),),
+                          ),
+                          QuizModeList(controller: controller)
+                        ],
+                      ),
                     ),
-                  ),
-                )
-              ],
-            )
+                  )
+                ],
+              )
         ),
       );
 

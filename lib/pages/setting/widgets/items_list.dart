@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:pocket_prep_exam/core/common/app_divider.dart';
+import 'package:pocket_prep_exam/core/common/constant.dart';
 import 'package:pocket_prep_exam/core/theme/app_colors.dart';
 import '../control/setting_controller.dart';
 
@@ -23,7 +25,7 @@ class ItemsList extends StatelessWidget {
           onTap: () {
           },
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20.0),
+            padding:  EdgeInsets.symmetric(horizontal: bodyWH),
             child: Column(
               children: [
                 Padding(
@@ -47,18 +49,14 @@ class ItemsList extends StatelessWidget {
                     ],
                   ),
                 ),
+                AppDivider(height: 1,thickness: 1,color: greyColor.withAlpha(60),)
                 // if (showDivider)
-                   Divider(
-                    height: 1,
-                    thickness: 1,
-                    color: greyColor.withAlpha(80),
-                  ),
-                // // if(lastItem)
-                //    Divider(
-                //     height: 1,
-                //     thickness: 1,
-                //     color: greyColor.withAlpha(80),
+                // //    Divider(
+                // //     height: 1,
+                // //     thickness: 1,
+                // //     color: greyColor.withAlpha(80),
                 //   ),
+
               ],
             ),
           ),

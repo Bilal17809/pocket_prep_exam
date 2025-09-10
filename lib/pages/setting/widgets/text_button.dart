@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../../../core/common/constant.dart';
 import '/core/theme/app_colors.dart';
 
 class ButtonText extends StatelessWidget {
@@ -11,11 +12,11 @@ class ButtonText extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: onTap,
-      splashColor: kBlue.withOpacity(0.2), // Optional: Customize the splash color
+      splashColor: kBlue.withAlpha(10),
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+        padding:  EdgeInsets.symmetric(horizontal: bodyWH, vertical: 12),
         child: Align(
-          alignment: Alignment.centerLeft, // Align the text to the left
+          alignment: Alignment.centerLeft,
           child: Text(
             title,
             style: context.textTheme.bodySmall!.copyWith(

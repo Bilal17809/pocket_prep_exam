@@ -8,6 +8,7 @@ class ExamService {
   Future<List<Exam>> fetchExams() async {
     final String response = await rootBundle.loadString(examAndSubjectsJson);
     final List<dynamic> dataList = json.decode(response);
+
     return dataList.map((item) => Exam.fromJson(item)).toList();
   }
 }

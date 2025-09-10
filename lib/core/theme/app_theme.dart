@@ -18,14 +18,37 @@ abstract class AppTheme {
     backgroundColor: kWhite,
     textStyle: buttonTextStyle,
     foregroundColor: Colors.white,
-
-
-    
     padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 08),
     minimumSize: const Size(double.maxFinite, 50),
     shadowColor: Colors.grey.withValues(alpha: 0.5),
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.circular(50),
+    ),
+  );
+
+  static BoxDecoration card = BoxDecoration(
+    color: kWhite,
+    borderRadius: BorderRadius.circular(6),
+    border: Border.all(color: greyColor.withAlpha(60)),
+  );
+
+  static BoxDecoration gradientHeader = const BoxDecoration(
+    gradient: LinearGradient(
+      colors: [Color(0xFF1E90FF), Color(0xFF87CEFA)], // blue shades
+      begin: Alignment.topCenter,
+      end: Alignment.bottomCenter),
+    borderRadius: BorderRadius.only(
+      bottomRight: Radius.circular(30),
+      bottomLeft: Radius.circular(30),
+    ),
+  );
+
+  static BoxDecoration borderedBlue = BoxDecoration(
+    color: kWhite,
+    borderRadius: BorderRadius.circular(10),
+    border: Border.all(
+      color:kBlue.withAlpha(200),
+      width: 0.5,
     ),
   );
 
@@ -37,6 +60,7 @@ abstract class AppTheme {
       spreadRadius: 2,
     ),
   ];
+
 
   static final ButtonStyle textButtonStyle = TextButton.styleFrom(
     backgroundColor: kWhite,
@@ -58,6 +82,9 @@ abstract class AppTheme {
     padding: EdgeInsets.zero,
     side: BorderSide.none,
   );
+
+
+
 
   static final confirmButtonStyle = TextButton.styleFrom(
     foregroundColor: kRed,

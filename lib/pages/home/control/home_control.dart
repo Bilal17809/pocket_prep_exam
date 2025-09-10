@@ -8,9 +8,7 @@ import '/services/services.dart';
 class ExamAndSubjectController extends GetxController {
   final ExamService _examService ;
 
-  ExamAndSubjectController({
-    required ExamService examServices})
-      :_examService=examServices;
+  ExamAndSubjectController({required ExamService examServices}) :_examService=examServices;
 
   RxList<Exam> exams = <Exam>[].obs;
   RxBool isLoading = true.obs;

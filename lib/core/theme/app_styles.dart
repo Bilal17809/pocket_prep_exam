@@ -15,6 +15,8 @@ const TextStyle headlineMediumStyle = TextStyle(
   color: blackTextColor,
 );
 
+
+
 const TextStyle splashText = TextStyle(
   color: kWhite,
   fontSize: 34,

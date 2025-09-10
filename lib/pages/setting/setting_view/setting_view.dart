@@ -1,13 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:pocket_prep_exam/pages/setting/widgets/logout_button.dart';
-import 'package:pocket_prep_exam/pages/setting/widgets/profile_section.dart';
-import 'package:pocket_prep_exam/pages/setting/widgets/show_detail.dart';
-import '../../main_appbar/main_appbar.dart';
+import '../../../core/common/common_button.dart';
 import '../control/setting_controller.dart';
-import '../widgets/items_list.dart';
-import '../widgets/study_plane.dart';
 import '/core/theme/theme.dart';
+import '/pages/setting/widgets/widgets.dart';
 
 class SettingView extends StatelessWidget {
 
@@ -28,7 +24,7 @@ class SettingView extends StatelessWidget {
               StudyPlane(),
              SizedBox(height: 24),
               ItemsList(),
-              LogoutButton(),
+              CommonButton(title: "Logout",onTap: (){},),
               SizedBox(height: 24),
             ],
           ),

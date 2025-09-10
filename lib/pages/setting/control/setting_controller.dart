@@ -1,8 +1,20 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
+import 'package:pocket_prep_exam/core/local_storage/storage_helper.dart';
 
 class SettingController extends GetxController{
+
+  final  StorageService _storageService;
+
+
+  SettingController({required StorageService storageService}) : _storageService = storageService;
+
+  @override
+  void onInit() {
+    super.onInit();
+    // _storageService.loadExamName();
+  }
 
   final List<SettingsItem> settingsItems = [
     SettingsItem(icon: Icons.settings_outlined, title: 'App Preferences'),
@@ -14,6 +26,8 @@ class SettingController extends GetxController{
     SettingsItem(icon: Icons.star_border, title: 'Rate & Review'),
   ];
 }
+
+
 
 class SettingsItem {
   final IconData icon;

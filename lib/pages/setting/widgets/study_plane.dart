@@ -1,7 +1,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
+import 'package:pocket_prep_exam/core/common/constant.dart';
+import '../../../core/common/app_divider.dart';
+import '/core/theme/app_theme.dart';
 import '/pages/setting/widgets/text_button.dart';
 import '/core/theme/app_colors.dart';
 
@@ -11,7 +13,7 @@ class StudyPlane extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-        padding: EdgeInsets.symmetric(horizontal: 20),
+        padding: EdgeInsets.symmetric(horizontal: bodyWH),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -19,14 +21,12 @@ class StudyPlane extends StatelessWidget {
           SizedBox(height: 10),
           Container(
             width: double.infinity,
-            decoration: BoxDecoration(color: kWhite,
-                borderRadius: BorderRadius.circular(06),
-                border: Border.all(color: greyColor.withAlpha(60))),
+            decoration: AppTheme.card,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 10),
+                  padding:  EdgeInsets.symmetric(horizontal: bodyWH, vertical: 10),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -46,9 +46,9 @@ class StudyPlane extends StatelessWidget {
                     ],
                   ),
                 ),
-                Divider(height: 24,color: greyColor.withAlpha(60),),
+                AppDivider(height: 10.0,color: greyColor.withAlpha(60),),
                 ButtonText(title: "Upgrade to Premium", onTap: (){}),
-                SizedBox(height: 10)
+                SizedBox(height: 08)
               ],
             ),
           ),
@@ -64,7 +64,7 @@ class _TextWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 10),
+      padding: EdgeInsets.symmetric(horizontal: bodySmallWH),
       child: Row(
         children: [
           Icon(Icons.circle,color: Colors.grey,size: 06,),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pocket_prep_exam/core/theme/app_theme.dart';
 import 'package:pocket_prep_exam/pages/stats/widgets/progress_gauge.dart';
 import 'package:pocket_prep_exam/pages/stats/widgets/stat_card.dart';
 
@@ -9,14 +10,7 @@ class StatsHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.only(top: 40, bottom: 10),
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          colors: [Color(0xFF1E90FF), Color(0xFF87CEFA)], 
-          begin: Alignment.topCenter,
-          end: Alignment.bottomCenter,
-        ),
-        borderRadius: BorderRadius.only(bottomRight: Radius.circular(30),bottomLeft: Radius.circular(30))
-      ),
+      decoration: AppTheme.gradientHeader,
       child: const Center(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 20),
