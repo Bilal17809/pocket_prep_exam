@@ -18,6 +18,7 @@ class DashboardView extends StatelessWidget {
     final List<Widget> screens=[
       StudyView(),
      // StatsView(),
+     //  QuizzesView(),
       ExamAndSubjectScreen(),
       LiveDataView(),
       SettingView()

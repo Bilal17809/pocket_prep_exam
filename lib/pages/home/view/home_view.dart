@@ -1,4 +1,50 @@
 import 'package:flutter/material.dart';
+import 'package:pocket_prep_exam/core/theme/app_colors.dart';
+import 'package:pocket_prep_exam/pages/questions/widgets/quize_card.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+
+
+// class QuizzesView extends StatelessWidget {
+//    QuizzesView({super.key});
+//
+//   final controller = PageController();
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//         backgroundColor: kBlue,
+//       body: Column(
+//         crossAxisAlignment: CrossAxisAlignment.start,
+//         children: [
+//           SizedBox(
+//             height: 20,
+//           ),
+//           Padding(
+//             padding: const EdgeInsets.symmetric(horizontal: 10),
+//             child: SmoothPageIndicator(
+//                 controller: controller,
+//                 count: 10,
+//               effect: JumpingDotEffect(
+//                 dotWidth: 28,
+//                 dotHeight: 04,
+//
+//               ),
+//             ),
+//           ),
+//           QuizCard()
+//         ],
+//       ),
+//     );
+//   }
+// }
+//
+
+
+
+
+
+
+
 
 import '/pages/home/control/home_control.dart';
 import '../../questions/view/questions_view.dart';
@@ -52,7 +98,7 @@ class ExamAndSubjectScreen extends StatelessWidget {
                           leading: CircleAvatar(radius: 12, child: Text('${subject.subjectId}')),
                           title: Text(subject.subjectName),
                           onTap: () {
-                            Get.to(() => QuestionScreen(subject: subject));
+                            Get.to(() => QuizzesView(subject: subject));
                           },
 
                         );

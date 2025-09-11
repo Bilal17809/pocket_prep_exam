@@ -27,7 +27,6 @@ class SwitchExamController extends GetxController {
     loadSelectedExamFromStorage();
     loadExams();
   }
-
   void selectedExam(int index) {
     selectExamIndex.value = index;
     _updateButtonVisibility();
