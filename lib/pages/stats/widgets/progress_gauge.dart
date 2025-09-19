@@ -2,15 +2,17 @@
 
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
+import 'package:pocket_prep_exam/core/theme/app_colors.dart';
 
 class ProgressGauge extends StatelessWidget {
   final double progress;
   final double size;
-
+  final Color color;
   const ProgressGauge({
     Key? key,
     required this.progress,
     this.size = 200,
+    this.color = Colors.white
   }) : super(key: key);
 
   @override
@@ -23,7 +25,7 @@ class ProgressGauge extends StatelessWidget {
           painter: _SemiCirclePainter(
             progress: progress,
             progressColor: const Color(0xFFD58F00),
-            backgroundColor: Colors.white,
+            backgroundColor: Color(0xFF1E90FF),
             strokeWidth: 12.0,
           ),
         ),
@@ -32,9 +34,9 @@ class ProgressGauge extends StatelessWidget {
           top: size * 0.2,
           child: Text(
             '${(progress * 100).toInt()}%',
-            style: const TextStyle(
-              fontSize: 46,
-              color: Colors.white,
+            style:  TextStyle(
+              fontSize: 60,
+              color:color,
               fontWeight: FontWeight.w600,
               fontFamily: 'Arial',
             ),

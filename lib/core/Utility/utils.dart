@@ -5,7 +5,6 @@ import 'package:pocket_prep_exam/core/theme/app_colors.dart';
 
 
 class Utils{
-
   Future<void> snackBarMessage(String errorORSuccess,String message,{bool isSuccess = false})async{
     Get.snackbar(
       errorORSuccess,

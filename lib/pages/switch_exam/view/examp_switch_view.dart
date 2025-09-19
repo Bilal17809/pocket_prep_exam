@@ -33,13 +33,11 @@ class ExamSwitchView extends StatelessWidget {
               CommonButton(
                 title: "Switch Exam",
                 onTap: () {
-                  controller.saveSelectedExamAndName();
+                  controller.saveSelectedExam();
                   Get.to(() => DashboardView());
                 },
               ):
               HideCommonButton()
-
-
             ],
           );
         })

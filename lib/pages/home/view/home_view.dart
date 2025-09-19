@@ -39,19 +39,19 @@ import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 // }
 //
 
-
-
-
-
-
-
-
 import '/pages/home/control/home_control.dart';
 import '../../questions/view/questions_view.dart';
 import 'package:get/get.dart';
 
-class ExamAndSubjectScreen extends StatelessWidget {
+class ExamAndSubjectScreen extends StatefulWidget {
   const ExamAndSubjectScreen({super.key});
+
+  @override
+  State<ExamAndSubjectScreen> createState() => _ExamAndSubjectScreenState();
+}
+
+class _ExamAndSubjectScreenState extends State<ExamAndSubjectScreen> {
+
 
   @override
   Widget build(BuildContext context) {
@@ -100,7 +100,6 @@ class ExamAndSubjectScreen extends StatelessWidget {
                           onTap: () {
                             Get.to(() => QuizzesView(subject: subject));
                           },
-
                         );
                       },
                     ),

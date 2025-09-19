@@ -17,6 +17,7 @@ class ExamDetail extends StatelessWidget {
     return Padding(
       padding:  EdgeInsets.symmetric(horizontal: bodyWH,vertical: bodySmallWH),
       child: Obx((){
+        final examName = controller.selectExam.value;
         final isSelected = controller.selectExamIndex.value == index;
         return Container(
           width: double.infinity,

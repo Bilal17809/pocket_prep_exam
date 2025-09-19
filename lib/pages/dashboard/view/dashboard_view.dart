@@ -20,7 +20,8 @@ class DashboardView extends StatelessWidget {
      // StatsView(),
      //  QuizzesView(),
       ExamAndSubjectScreen(),
-      LiveDataView(),
+      StatsView(),
+      // LiveDataView(),
       SettingView()
     ];
     return Obx((){

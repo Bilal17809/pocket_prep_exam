@@ -1,25 +1,40 @@
-import 'package:flutter/cupertino.dart';
+
+import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import '/core/theme/app_colors.dart';
 
 class PageIndicator extends StatelessWidget {
-   PageIndicator({super.key});
-  final controller = PageController();
+  final PageController pageController;
+  final int itemCount;
+
+  const PageIndicator({
+    super.key,
+    required this.pageController,
+    required this.itemCount,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 10),
-      child: SmoothPageIndicator(
-        controller: controller,
-        count: 10,
-        effect: JumpingDotEffect(
-            dotWidth: 30,
-            dotHeight: 02,
-            dotColor: kWhite
-        ),
-      ),
+    return LayoutBuilder(
+      builder: (BuildContext context, BoxConstraints constraints) {
+        return Center(
+          child: Container(
+            padding: EdgeInsets.symmetric(horizontal: 20),
+            width: constraints.maxWidth,
+            child: SmoothPageIndicator(
+              controller: pageController,
+              count: itemCount,
+              effect: JumpingDotEffect(
+                dotWidth: (constraints.maxWidth - 120) / itemCount,
+                dotHeight: 02,
+                dotColor: kWhite,
+                activeDotColor: Colors.orange,
+              ),
+            ),
+          ),
+        );
+      },
     );
   }
 }

@@ -3,26 +3,23 @@ import 'package:get/get.dart';
 import 'package:pocket_prep_exam/core/local_storage/storage_helper.dart';
 import 'package:pocket_prep_exam/services/exam_and_subjects_services.dart';
 
-import '../../../data/models/exams_and_subject.dart';
+import '/data/models/exams_and_subject.dart';
 
-
-class SettingController extends GetxController {
+class ExamSettingController extends GetxController{
 
   final StorageService _storageService;
   final ExamService _examService;
 
+
   Rxn<Exam> selectedExam = Rxn<Exam>();
+
+  ExamSettingController({required StorageService storageServices, required ExamService examService}): _storageService = storageServices , _examService = examService;
 
   @override
   void onInit() {
     super.onInit();
     loadExamFromStorage();
   }
-
-
-  SettingController({required StorageService storageService, required ExamService examServices})
-      : _storageService = storageService , _examService = examServices;
-
 
   Future<void> loadExamFromStorage() async {
     final examId = await _storageService.getExam();
@@ -33,10 +30,10 @@ class SettingController extends GetxController {
   }
 
 
-  // Future<void> loadExamName() async {
-  //   final examName = await _storageService.loadExamName();
-  //   if (examName != null && examName.isNotEmpty) {
-  //     selectedExamName.value = examName[0];
+  // Future<void>  loadExamName()async{
+  //   final name = await _storageService.loadExamName();
+  //   if(name != null && name.isNotEmpty){
+  //     examName.value = name[0];
   //   }
   // }
 }

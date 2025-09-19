@@ -55,9 +55,28 @@ abstract class AppTheme {
   }
 
   static BoxDecoration buttonDecoration =  BoxDecoration(
-  color: kBlue.withAlpha(100),
+      gradient: LinearGradient(
+          colors: [Color(0xFF1E90FF), Color(0xFF87CEFA)], // blue shades
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter),
+  // color: gradientHeader,
   borderRadius: BorderRadius.circular(30)
   );
+
+  static BoxDecoration statViewStateDecoration = BoxDecoration(
+      color: Colors.white70,
+      borderRadius: BorderRadius.circular(12),
+    );
+
+  static BoxDecoration resultViewStateDecoration = BoxDecoration(
+    gradient: LinearGradient(
+        colors: [Color(0xFF1E90FF), Color(0xFF87CEFA)], // blue shades
+        begin: Alignment.topCenter,
+        end: Alignment.bottomCenter),
+    borderRadius: BorderRadius.circular(12),
+  );
+
+
 
   static BoxDecoration borderedBlue = BoxDecoration(
     color: kWhite,

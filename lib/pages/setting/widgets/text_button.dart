@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../../core/common/constant.dart';
+import '/core/common/constant.dart';
 import '/core/theme/app_colors.dart';
 
 class ButtonText extends StatelessWidget {
@@ -14,7 +14,7 @@ class ButtonText extends StatelessWidget {
       onTap: onTap,
       splashColor: kBlue.withAlpha(10),
       child: Padding(
-        padding:  EdgeInsets.symmetric(horizontal: bodyWH, vertical: 12),
+        padding:  EdgeInsets.symmetric(horizontal: 10, vertical: 12),
         child: Align(
           alignment: Alignment.centerLeft,
           child: Text(

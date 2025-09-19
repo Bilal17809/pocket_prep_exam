@@ -32,8 +32,8 @@ class StatsHeader extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children:  [
-                  StatCard(title: "0/1", subtitle: "Answered Correctly"),
-                  StatCard(title: "83%", subtitle: "Community"),
+                  StatCard(title: "0/1", subtitle: "Answered Correctly",statView: true),
+                  StatCard(title: "83%", subtitle: "Community",statView: true),
                 ],
               ),
             ],
