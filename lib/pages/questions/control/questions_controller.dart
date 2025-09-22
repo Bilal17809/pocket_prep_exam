@@ -1,14 +1,25 @@
 
 import 'package:get/get.dart';
+import 'package:pocket_prep_exam/pages/edite_subjects/controller/edite_subject_controller.dart';
+import '../../../data/models/exams_and_subject.dart';
 import '/data/models/question_model.dart';
 import '/services/questions_services.dart';
 import 'dart:async';
 
 class QuestionController extends GetxController {
-  final QuestionService _service;
 
+  final EditeSubjectController subjectController = Get.find<EditeSubjectController>();
+  final QuestionService _service;
+      final conroller = Get.find<EditeSubjectController>();
   RxList<Question> questions = <Question>[].obs;
   RxList<Question> reviewQuestions = <Question>[].obs;
+
+  RxList<Question> questionPool = <Question>[].obs;
+  Map<int, String> subjectIdToName = {};
+
+
+
+
   RxBool isLoading = true.obs;
   var currentPage = 0.obs;
   var isSubmitVisible = false.obs;
@@ -44,19 +55,6 @@ class QuestionController extends GetxController {
     _resetTimerState();
   }
 
-  Future<void> loadQuestions() async {
-    isLoading.value = true;
-    _resetQuizState();
-    try {
-      final result = await _service.fetchAllQuestions();
-      questions.assignAll(result);
-      _startQuizTimer();
-    } catch (e) {
-      Get.snackbar('Error', 'Failed to load questions: $e');
-    } finally {
-      isLoading.value = false;
-    }
-  }
 
 
   void setReviewQuestions(List<int> questionIdsToReview, Map<int, int> userSelectedOptions) {
@@ -77,6 +75,19 @@ class QuestionController extends GetxController {
       elapsedSeconds.value = DateTime.now().difference(_startTime!).inSeconds;
     });
   }
+
+  Future<void> startQuiz({List<Question>? fixedQuestions}) async {
+    _resetQuizState();
+    if (fixedQuestions != null && fixedQuestions.isNotEmpty) {
+      questions.assignAll(fixedQuestions);
+    } else {
+      final pool = subjectController.startQuiz();
+      questions.assignAll(pool);
+    }
+    _startQuizTimer();
+    isLoading.value = false;
+  }
+
 
   void _stopQuizTimer() {
     _endTime = DateTime.now();

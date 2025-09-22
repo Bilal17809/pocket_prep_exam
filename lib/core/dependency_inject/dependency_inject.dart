@@ -20,8 +20,8 @@ class DependencyInject{
     Get.lazyPut<SwitchExamController>(() => SwitchExamController(examService: ExamService(),
         storageService: StorageService()),fenix: true);
     Get.lazyPut<StatsController>(() => StatsController(),fenix: true);
-    Get.lazyPut<StudyController>(() => StudyController(storageService: StorageService()),fenix: true);
-    Get.lazyPut<SplashController>(() => SplashController(),fenix: true);
+    Get.lazyPut<StudyController>(() => StudyController(storageService: StorageService(),examServices: ExamService()),fenix: true);
+    Get.lazyPut<SplashController>(() => SplashController(storageService: StorageService()),fenix: true);
     Get.lazyPut<DashboardController>(() => DashboardController(),fenix: true);
     Get.lazyPut<ExamAndSubjectController>(() => ExamAndSubjectController(examServices:ExamService()),fenix: true);
     Get.lazyPut<QuestionController>(() => QuestionController(q: QuestionService()),fenix: true);

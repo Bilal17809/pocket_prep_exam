@@ -17,7 +17,7 @@ class EditeSubjectController extends GetxController {
   RxList<Question> questionPool = <Question>[].obs;
 
   static const int maxAllSubjectsPool = 30;
-  static const int maxQuizSize = 10;
+   int maxQuizSize = 10;
 
   EditeSubjectController({
     required QuestionService questionService,
@@ -33,12 +33,19 @@ class EditeSubjectController extends GetxController {
     super.onInit();
     loadExamFromStorage();
   }
-  void loadExamFromStorage() async {
+
+  Future<void> loadExamFromStorage() async {
     final examId = await _storageService.getExam();
     if (examId != null) {
       final exams = await _examService.fetchExams();
-      selectedExam.value = exams.firstWhere((e) => e.examId == examId);
+      final newExam = exams.firstWhere((e) => e.examId == examId);
+      selectedExam.value = null;
+      selectedSubjectIds.clear();
+      questionPool.clear();
+      examQuestions.clear();
+      selectedExam.value = newExam;
       examQuestions.value = await _service.fetchAllQuestions();
+      _buildPool();
     }
   }
 
@@ -59,7 +66,6 @@ class EditeSubjectController extends GetxController {
     _buildPool();
   }
 
-
   void toggleAllSubjects() {
     final exam = selectedExam.value;
     if (exam == null) {
@@ -73,7 +79,6 @@ class EditeSubjectController extends GetxController {
     }
     _buildPool();
   }
-
 
   void _buildPool() {
     questionPool.clear();
@@ -101,5 +106,22 @@ class EditeSubjectController extends GetxController {
     if (examQuestions.isEmpty) return false;
     final totalSubjects = examQuestions.map((q) => q.subjectId).toSet().length;
     return selectedSubjectIds.length == totalSubjects;
+  }
+
+  String getSubjectNameById(int subjectId) {
+    final exam = selectedExam.value;
+    if (exam == null) return "Unknown";
+    final subject = exam.subjects.firstWhereOrNull((s) => s.subjectId == subjectId);
+    return subject?.subjectName ?? "Unknown";
+  }
+
+
+  @override
+  void onClose() {
+    selectedExam.close();
+    examQuestions.close();
+    selectedSubjectIds.close();
+    questionPool.close();
+    super.onClose();
   }
 }

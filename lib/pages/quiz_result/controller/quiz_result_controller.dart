@@ -13,11 +13,9 @@ class QuizResultController extends GetxController {
   var selectedIndex = 0.obs;
   var exams = <Exam>[].obs;
 
-  List<Subject> modelList=<Subject>[];
-
-
-
+  // List<Subject> modelList=<Subject>[];
   RxList<Question> questions = <Question>[].obs;
+
 
   @override
   void onInit() {

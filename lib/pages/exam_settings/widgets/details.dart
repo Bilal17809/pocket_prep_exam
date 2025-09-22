@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
+import 'package:pocket_prep_exam/pages/edite_subjects/controller/edite_subject_controller.dart';
 import 'package:pocket_prep_exam/pages/edite_subjects/view/subjects_edite_view.dart';
 import 'package:pocket_prep_exam/pages/exam_settings/controller/exam_setting_controller.dart';
 import '/core/common/app_divider.dart';
@@ -20,6 +21,7 @@ class Details extends StatelessWidget {
         width: double.infinity,
         decoration: AppTheme.card,
         child: Obx((){
+          final selectedSubjects = Get.find<EditeSubjectController>().selectedSubjectIds.length;
           final exam = controller.selectedExam.value;
           return Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -37,7 +39,7 @@ class Details extends StatelessWidget {
               _ShowButtons(name: "Subjects",buttonTitle: "Edite Subjects",onTap: (){
                 Get.to(() => SubjectsEditeView());
               },),
-              _EditeData(text: exam == null ? "Null" :  " 0 of ${ exam.subjects.length.toString()} subjects"),
+              _EditeData(text: exam == null ? "Null" :  " $selectedSubjects of ${ exam.subjects.length.toString()} subjects"),
               SizedBox(height: 08),
               AppDivider(height: 08.0,color: greyColor.withAlpha(60),),
               _ShowButtons(name: "Organizations",buttonTitle: "Activate Code",onTap: (){},),

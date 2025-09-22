@@ -35,7 +35,7 @@ class ProgressGauge extends StatelessWidget {
           child: Text(
             '${(progress * 100).toInt()}%',
             style:  TextStyle(
-              fontSize: 60,
+              fontSize: 50,
               color:color,
               fontWeight: FontWeight.w600,
               fontFamily: 'Arial',

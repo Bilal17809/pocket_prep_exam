@@ -1,27 +1,28 @@
 
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pocket_prep_exam/core/theme/app_colors.dart';
 import 'package:pocket_prep_exam/data/models/exams_and_subject.dart';
 import 'package:pocket_prep_exam/data/models/question_model.dart';
 import 'package:pocket_prep_exam/pages/questions/view/questions_view.dart';
+import '../../edite_subjects/controller/edite_subject_controller.dart';
 import '../../questions/control/questions_controller.dart';
 
 class QuizResultTabView extends StatelessWidget {
-  final Subject subject;
+  final Subject? subject;
   final Map<String, dynamic> quizResults;
-
+  final List<Question> quizQuestions;
   const QuizResultTabView({
     super.key,
-    required this.subject,
+     this.subject,
     required this.quizResults,
+    required this.quizQuestions
   });
   @override
   Widget build(BuildContext context) {
     final controller = Get.find<QuestionController>();
     if (controller.questions.isEmpty) {
-      controller.loadQuestions();
+      controller.startQuiz();
     }
     return Column(
       children: [
@@ -39,6 +40,7 @@ class QuizResultTabView extends StatelessWidget {
     );
   }
   void _navigateToQuizView(
+
       int initialPageIndex,
       String tabTitle,
       List<int> questionIdsToReview,
@@ -50,7 +52,7 @@ class QuizResultTabView extends StatelessWidget {
     }
     final questionsController = Get.find<QuestionController>();
     final originalFlaggedList = List<int>.from(quizResults['flagged'] as List? ?? []);
-    questionsController.loadQuestions().then((_) {
+    questionsController.startQuiz(fixedQuestions: quizQuestions).then((_) {
       questionsController.setReviewQuestions(questionIdsToReview, selectedOptions);
       questionsController.flaggedQuestions.clear();
       List<int> filteredFlags = [];
@@ -61,7 +63,7 @@ class QuizResultTabView extends StatelessWidget {
       }
       questionsController.flaggedQuestions.assignAll(filteredFlags);
       Get.to(() => QuizzesView(
-        subject: subject,
+        // subject: subject,
         reviewMode: true,
         initialPage: initialPageIndex,
         tabTitle: tabTitle,
@@ -90,9 +92,7 @@ class QuizResultTabView extends StatelessWidget {
         itemCount: answeredQuestionIndices.length,
         itemBuilder: (context, index) {
           int qIndex = answeredQuestionIndices[index];
-          if (qIndex >= controller.questions.length) {
-            return const SizedBox();
-          }
+          if (qIndex >=   quizQuestions.length) return const SizedBox();
           final q = controller.questions[qIndex];
           final selectedOptionIndex = selectedOptionsMap[qIndex];
           bool isCorrect = false;
@@ -101,6 +101,7 @@ class QuizResultTabView extends StatelessWidget {
             isCorrect = _normalize(selectedOption) == _normalize(q.correctAnswer);
           }
           return _buildQuestionCard(
+            // subject: subject.subjectId,
             q,
             qIndex,
             isCorrect: isCorrect,
@@ -140,7 +141,6 @@ class QuizResultTabView extends StatelessWidget {
       return Center(child: Text("No $type questions"));
     }
     final selectedOptionsMap = quizResults['selectedOptions'] as Map<int, int>? ?? {};
-
     return Obx(() {
       if (controller.questions.isEmpty) {
         return const Center(child: CircularProgressIndicator());
@@ -150,9 +150,7 @@ class QuizResultTabView extends StatelessWidget {
         itemCount: questionIds.length,
         itemBuilder: (context, i) {
           int qIndex = questionIds[i];
-          if (qIndex >= controller.questions.length) {
-            return const SizedBox();
-          }
+          if (qIndex >= quizQuestions.length) return const SizedBox();
           final q = controller.questions[qIndex];
           final selectedOptionIndex = selectedOptionsMap[qIndex];
           bool isCorrect = false;
@@ -160,7 +158,6 @@ class QuizResultTabView extends StatelessWidget {
             final selectedOption = q.options[selectedOptionIndex];
             isCorrect = _normalize(selectedOption) == _normalize(q.correctAnswer);
           }
-
           return _buildQuestionCard(
             q,
             qIndex,
@@ -180,11 +177,11 @@ class QuizResultTabView extends StatelessWidget {
     });
   }
 
-
   Widget _buildQuestionCard(Question question, int qIndex, {required bool isCorrect, required VoidCallback onTap}) {
     final selectedOptionIndex = quizResults['selectedOptions']?[qIndex];
     final flaggedList = quizResults['flagged'] as List<dynamic>? ?? [];
     final isFlagged = flaggedList.contains(qIndex);
+    final subjectName = Get.find<EditeSubjectController>().getSubjectNameById(question.subjectId);
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: GestureDetector(
@@ -205,12 +202,15 @@ class QuizResultTabView extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
-                    "Q${qIndex + 1}",
-                    style: const TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.grey,
+                  Expanded(
+                    child: Text(
+                      subjectName,
+                      style: const TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.grey,
+                      ),
+                      maxLines: 2,
                     ),
                   ),
                   Row(
@@ -233,6 +233,7 @@ class QuizResultTabView extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 8),
+
               Text(
                 question.questionText,
                 style: const TextStyle(

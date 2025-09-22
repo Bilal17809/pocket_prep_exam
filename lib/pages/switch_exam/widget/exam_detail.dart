@@ -17,13 +17,12 @@ class ExamDetail extends StatelessWidget {
     return Padding(
       padding:  EdgeInsets.symmetric(horizontal: bodyWH,vertical: bodySmallWH),
       child: Obx((){
-        final examName = controller.selectExam.value;
         final isSelected = controller.selectExamIndex.value == index;
         return Container(
           width: double.infinity,
           padding: EdgeInsets.all(15),
           decoration: roundedDecoration.copyWith(
-            border: Border.all(color: isSelected ? kBlue.withAlpha(240) : greyColor.withAlpha(60)),
+            border: Border.all(color: isSelected ? lightSkyBlue.withAlpha(240) : greyColor.withAlpha(60),width:isSelected? 2:1),
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,

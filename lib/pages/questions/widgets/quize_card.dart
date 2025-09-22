@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pocket_prep_exam/core/theme/app_colors.dart';
 import 'package:pocket_prep_exam/core/theme/app_styles.dart';
+import 'package:pocket_prep_exam/pages/edite_subjects/controller/edite_subject_controller.dart';
 import '/data/models/question_model.dart';
 import '../control/questions_controller.dart';
 import 'options_card.dart';
@@ -15,7 +16,7 @@ class QuizCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = Get.find<QuestionController>();
-
+     final controlle = Get.find<EditeSubjectController>();
     return Container(
       width: double.infinity,
       decoration: roundedDecoration.copyWith(color: kWhite),

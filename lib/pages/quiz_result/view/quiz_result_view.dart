@@ -9,16 +9,18 @@ import 'package:pocket_prep_exam/pages/quiz_result/controller/quiz_result_contro
 import 'package:pocket_prep_exam/pages/quiz_result/widgets/quizzes_result_tabview.dart';
 import 'package:pocket_prep_exam/pages/stats/widgets/progress_gauge.dart';
 import 'package:pocket_prep_exam/pages/stats/widgets/stat_card.dart';
+import '../../../data/models/question_model.dart';
 import '../widgets/quiz_filtered_tab.dart';
 
 class QuizResultView extends StatelessWidget {
-  final Subject subject;
+  // final Subject subject;
   final Map<String, dynamic>? quizResults;
-
-  const QuizResultView({
+  final  List<Question> quizQuestions;
+  QuizResultView({
     super.key,
-    required this.subject,
+    // required this.subject,
     this.quizResults,
+    required this.quizQuestions,
   });
 
   @override
@@ -35,8 +37,8 @@ class QuizResultView extends StatelessWidget {
     final flaggedQuestions = (safeResults['flagged'] as List?)?.length ?? 0;
     final percentage = totalQuestions > 0 ? (fixedCorrect / totalQuestions) * 100 : 0.0;
     final timeTaken = safeResults['timeTaken'] ?? '0m';
-    final labels = ["All", "Flagged", "Incorrect", "Correct"];
 
+    final labels = ["All", "Flagged", "Incorrect", "Correct"];
     final counts = [
       answeredQuestions,
       flaggedQuestions,
@@ -67,8 +69,9 @@ class QuizResultView extends StatelessWidget {
               ),
             ],
             body: QuizResultTabView(
-              subject: subject,
+              // subject: subject,
               quizResults: safeResults,
+              quizQuestions: quizQuestions,
             ),
           ),
         ),
@@ -99,7 +102,6 @@ class QuizResultView extends StatelessWidget {
           textAlign: TextAlign.center,
         ),
         const SizedBox(height: 20),
-
        TweenAnimationBuilder<double>(tween: Tween<double>(begin: 0,end:  percentage / 100),
            duration: Duration(seconds: 4),
             curve: Curves.easeOut,
@@ -107,11 +109,7 @@ class QuizResultView extends StatelessWidget {
          return ProgressGauge(progress: value,color: kBlack,size: 270);
             }
        ),
-
-
         const SizedBox(height: 20),
-
-        // Stats row
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
           child: Row(
@@ -143,7 +141,7 @@ class QuizResultView extends StatelessWidget {
               if (Get.isRegistered<QuestionController>()) {
                 Get.delete<QuestionController>();
               }
-              await Get.to(() => QuizzesView(subject: subject));
+              await Get.to(() => QuizzesView(allQuestion: quizQuestions));
             },
           ),
         ),

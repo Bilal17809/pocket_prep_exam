@@ -1,11 +1,10 @@
-// lib/pages/questions/view/questions_view.dart
+
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pocket_prep_exam/core/common/common_button.dart';
+import 'package:pocket_prep_exam/data/models/models.dart';
 import 'package:pocket_prep_exam/pages/questions/widgets/quiz_appbar.dart';
-import 'package:pocket_prep_exam/services/services.dart';
-import '/data/models/exams_and_subject.dart';
 import 'package:pocket_prep_exam/pages/questions/widgets/page_indicator.dart';
 import 'package:pocket_prep_exam/pages/questions/widgets/quize_card.dart';
 import 'package:pocket_prep_exam/pages/quiz_result/view/quiz_result_view.dart';
@@ -14,16 +13,18 @@ import '../control/questions_controller.dart';
 import 'package:pocket_prep_exam/core/theme/app_colors.dart';
 
 class QuizzesView extends StatefulWidget {
-  final Subject subject;
+  // final Subject? subject;
   final bool reviewMode;
   final int? initialPage;
   final String? tabTitle;
   final List<int>? questionIdsToReview;
   final Map<int, int>? selectedOptions;
   final String reviewType;
+  final List<Question>? allQuestion;
   QuizzesView({
     super.key,
-    required this.subject,
+   this.allQuestion,
+     // this.subject,
     this.reviewMode = false,
     this.initialPage,
     this.tabTitle,
@@ -49,7 +50,7 @@ class _QuizzesViewState extends State<QuizzesView> {
       if (widget.reviewMode && widget.questionIdsToReview != null && widget.selectedOptions != null) {
         controller.setReviewQuestions(widget.questionIdsToReview!, widget.selectedOptions!);
       } else if (controller.questions.isEmpty) {
-        controller.loadQuestions();
+        controller.startQuiz(fixedQuestions: widget.allQuestion);
       }
     });
   }
@@ -69,15 +70,18 @@ class _QuizzesViewState extends State<QuizzesView> {
           if (controller.isLoading.value) {
             return const Center(child: CircularProgressIndicator());
           }
-          final questionsToShow = widget.reviewMode ? controller.reviewQuestions : controller.questions;
+          final questionsToShow = widget.allQuestion ?? (widget.reviewMode ? controller.reviewQuestions : controller.questions);
           if (questionsToShow.isEmpty) {
             return const Center(child: Text("No questions available."));
           }
           return Column(
             children: [
               if (widget.reviewMode)
-                QuizAppBar(controller: controller, totalQuestions:
-                questionsToShow.length, tabTitle: widget.tabTitle.toString())
+                QuizAppBar(
+                  controller: controller,
+                  totalQuestions: questionsToShow.length,
+                  tabTitle: widget.tabTitle.toString(),
+                )
               else
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 12),
@@ -107,32 +111,27 @@ class _QuizzesViewState extends State<QuizzesView> {
               ),
               if (!widget.reviewMode && controller.isSubmitVisible.value)
                 Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 26),
+                  padding:  EdgeInsets.symmetric(vertical: 8.0, horizontal: 26),
                   child: CommonButton(
                     title: "Submit Quiz",
-                    onTap: ()  {
+                    onTap: () {
                       final quizResults = controller.calculateQuizResults();
-                        CustomDialog.show(
-                          title: "Submit Quiz?",
-                          message: "You've answered ${quizResults['answered']} of ${quizResults['totalQuestions']} questions. if you submit, you'll only be scored on the ${quizResults['answered']} question you answered ",
-                          positiveButtonText: "Submit",
-                          onPositiveTap: () {
-                            Get.off(() => QuizResultView(
-                              subject: widget.subject,
-                              quizResults: quizResults,
-                            ));
-                          },
-                          negativeButtonText: "Cancel",
-                          onNegativeTap: () => Get.back(),
-                        );
-
-                        // Get.put(()=>QuestionController(q: QuestionService()));
-                       // await Get.off(() => QuizResultView(
-                       //    subject: widget.subject,
-                       //    quizResults: quizResults,
-                       //  ));
-
-
+                      CustomDialog.show(
+                        title: "Submit Quiz?",
+                        message:
+                        "You've answered ${quizResults['answered']} of ${quizResults['totalQuestions']} questions. "
+                            "If you submit, you'll only be scored on the ${quizResults['answered']} question you answered.",
+                        positiveButtonText: "Submit",
+                        onPositiveTap: () {
+                          Get.off(() => QuizResultView(
+                            // subject: widget.subject ?? Subject(subjectId: -1, subjectName: "Unknown"),
+                            quizQuestions: controller.questions,
+                            quizResults: quizResults,
+                          ));
+                        },
+                        negativeButtonText: "Cancel",
+                        onNegativeTap: () => Get.back(),
+                      );
                     },
                   ),
                 ),
@@ -147,8 +146,7 @@ class _QuizzesViewState extends State<QuizzesView> {
         }),
       ),
     );
-  }
-}
+  }}
 
 class _NavButton extends StatelessWidget {
   final IconData icon;

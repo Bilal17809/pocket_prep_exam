@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pocket_prep_exam/core/local_storage/storage_helper.dart';
+import 'package:pocket_prep_exam/core/routes/routes.dart';
+import 'package:pocket_prep_exam/core/routes/routes_name.dart';
 import '/pages/splash/view/splash_view.dart';
 import 'core/dependency_inject/dependency_inject.dart';
 
@@ -17,7 +19,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      home:SplashView(),
+      initialRoute: RoutesName.splash,
+      getPages: Routes.routes(),
       debugShowCheckedModeBanner: false,
     );
   }

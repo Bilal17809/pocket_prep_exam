@@ -13,11 +13,9 @@ class SubjectsList extends StatelessWidget {
     final controller = Get.find<EditeSubjectController>();
     return Obx(() {
       final exam = controller.selectedExam.value;
-
       if (exam == null) {
         return const Center(child: Text("No Exam Found"));
       }
-
       return Expanded(
         child: Container(
           decoration: roundedDecoration.copyWith(

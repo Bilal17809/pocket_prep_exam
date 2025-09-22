@@ -2,11 +2,13 @@ import 'package:get/get.dart';
 import 'package:pocket_prep_exam/core/Utility/utils.dart';
 import 'package:pocket_prep_exam/core/local_storage/storage_helper.dart';
 import 'package:pocket_prep_exam/data/models/exams_and_subject.dart';
+import 'package:pocket_prep_exam/pages/edite_subjects/controller/edite_subject_controller.dart';
 import 'package:pocket_prep_exam/pages/setting/control/setting_controller.dart';
 import 'package:pocket_prep_exam/services/exam_and_subjects_services.dart';
 import '../../study/controller/study_controller.dart';
 
 class SwitchExamController extends GetxController {
+
   final ExamService _examService;
   final StorageService _storageService;
 
@@ -38,11 +40,6 @@ class SwitchExamController extends GetxController {
     _updateButtonVisibility();
   }
 
-  // Future<void> selecExam(Exam exam)async {
-  //   await _storageService.saveExamId(exam.examId);
-  //   selectExam.value = exam;
-  // }
-
   Future<void> loadSelectExam()async{
     final examId = await _storageService.getExam();
     if(examId != null && exam.isNotEmpty){
@@ -66,8 +63,6 @@ class SwitchExamController extends GetxController {
     }
   }
 
-
-
   Future<void> loadSelectedExamFromStorage() async {
     savedIndex = await _storageService.loadSelectedExam();
     _updateButtonVisibility();
@@ -83,11 +78,11 @@ class SwitchExamController extends GetxController {
     selectExam.value = selected;
     savedIndex = selectExamIndex.value;
     await Get.find<SettingController>().loadExamFromStorage();
+    await Get.find<EditeSubjectController>().loadExamFromStorage();
+    await Get.find<StudyController>().loadExamFromStorage();
     _updateButtonVisibility();
-    Utils().snackBarMessage("Success", "${selected.examName} switched!",isSuccess: true);
+    // Utils().snackBarMessage("Success", "${selected.examName} switched!",isSuccess: true);
   }
-
-
   void _updateButtonVisibility() {
     if (savedIndex == null) {
       showButton.value = selectExamIndex.value != -1;

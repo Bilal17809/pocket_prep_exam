@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-
 import 'package:get/get.dart';
+import 'package:pocket_prep_exam/core/routes/routes_name.dart';
 import '../control/splash_controller.dart';
 
 class SplashView extends StatelessWidget {
@@ -8,7 +8,15 @@ class SplashView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller=Get.find<SplashController>();
+    final controller = Get.find<SplashController>();
+    Future.microtask(()async{
+      await Future.delayed(Duration(seconds: 3));
+      if(controller.isExam.value == true){
+        Get.offNamed(RoutesName.dashBoard);
+      }else{
+        Get.offNamed(RoutesName.examSwitchView);
+      }
+    });
     return Scaffold(
       body: Center(
         child: Column(
