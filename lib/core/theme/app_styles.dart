@@ -47,7 +47,7 @@ const TextStyle titleMediumStyle = TextStyle(
 
 const TextStyle titleSmallStyle = TextStyle(
   fontFamily: fontFamily,
-  fontSize: 16,
+  fontSize: 18,
   fontWeight: FontWeight.w500,
   color: blackTextColor,
 );

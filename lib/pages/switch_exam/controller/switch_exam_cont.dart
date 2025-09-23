@@ -57,7 +57,7 @@ class SwitchExamController extends GetxController {
       }
       _updateButtonVisibility();
     } catch (e) {
-      Utils().snackBarMessage("Error", "Exam fetching Error $e", isSuccess: false);
+      Utils.showError("Exam fetching Error $e");
     } finally {
       isLoading.value = false;
     }
@@ -70,7 +70,7 @@ class SwitchExamController extends GetxController {
 
   Future<void> saveSelectedExam() async {
     if (selectExamIndex.value == -1) {
-      Utils().snackBarMessage("Error", "Please select an exam first!", isSuccess: false);
+      Utils.showError( "Please select an exam first!");
       return;
     }
     final selected = exam[selectExamIndex.value];

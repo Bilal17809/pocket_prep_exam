@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pocket_prep_exam/core/theme/app_colors.dart';
+import 'package:pocket_prep_exam/pages/practice/view/practice_view.dart';
 import 'package:pocket_prep_exam/pages/stats/view/stats_view.dart';
 import 'package:pocket_prep_exam/pages/study/view/study_view.dart';
 import '/pages/dashboard/control/dashboard_controller.dart';
@@ -18,7 +19,8 @@ class DashboardView extends StatelessWidget {
     final List<Widget> screens=[
       StudyView(),
       StatsView(),
-      LiveDataView(),
+      PracticeView(),
+      // LiveDataView(),
       SettingView()
     ];
     return Obx((){
@@ -26,10 +28,10 @@ class DashboardView extends StatelessWidget {
         backgroundColor: Colors.transparent,
         body:screens[controller.setIndex.value],
         bottomNavigationBar: BottomNavigationBar(
-          backgroundColor: backgroundColor,
+          backgroundColor: lightSkyBlue,
           elevation: 0,
-          selectedItemColor: Colors.blue,
-          unselectedItemColor: Colors.grey,
+          selectedItemColor: Colors.white,
+          unselectedItemColor: Colors.black,
           type: BottomNavigationBarType.fixed,
           showUnselectedLabels: true,
           currentIndex: controller.setIndex.value,
@@ -37,7 +39,7 @@ class DashboardView extends StatelessWidget {
           items:  [
             BottomNavigationBarItem(icon: Icon(Icons.book),label: "Study",),
             BottomNavigationBarItem(icon: Icon(Icons.home), label: "Stats"),
-            BottomNavigationBarItem(icon: Icon(Icons.show_chart), label: "Live Data"),
+            BottomNavigationBarItem(icon: Icon(Icons.show_chart), label: "Practice"),
             BottomNavigationBarItem(icon: Icon(Icons.settings), label: "Settings"),
           ],
         ),

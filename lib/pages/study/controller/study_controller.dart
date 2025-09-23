@@ -1,11 +1,9 @@
 
 import 'dart:ui';
-
 import 'package:get/get.dart';
 import 'package:pocket_prep_exam/core/local_storage/storage_helper.dart';
-
-import '../../../data/models/exams_and_subject.dart';
-import '../../../services/exam_and_subjects_services.dart';
+import '/data/models/exams_and_subject.dart';
+import '/services/exam_and_subjects_services.dart';
 
 class StudyController extends GetxController{
 
@@ -50,12 +48,10 @@ class StudyController extends GetxController{
   ].obs;
 
   RxList<QuizModeModel> quizModeDataList =  <QuizModeModel>[
-    QuizModeModel("images/who.png", "Aug 26", "Question of the Day",(){}),
-    QuizModeModel("images/brain.png", "", "Quick 10 Quiz",(){
-
-    }),
-    QuizModeModel("images/track-of-time.png", "", "Timed Quiz",(){}),
-    QuizModeModel("images/start.png", "", "Level Up",(){}),
+    QuizModeModel("images/cards.png", "Aug 26", "Question of the Day",(){}),
+    QuizModeModel("images/quiz icon.png", "", "Quick 10 Quiz",(){}),
+    QuizModeModel("images/timer.png", "", "Timed Quiz",(){}),
+    QuizModeModel("images/set-up.png", "", "Level Up",(){}),
   ].obs;
 }
 

@@ -1,17 +1,23 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:pocket_prep_exam/core/theme/app_colors.dart';
 
 
-class Utils{
-  Future<void> snackBarMessage(String errorORSuccess,String message,{bool isSuccess = false})async{
+class Utils {
+  Utils._();
+  static void showSuccess(String message) {
+    _showSnackBar("Success", message, isSuccess: true);
+  }
+  static void showError(String message) {
+    _showSnackBar("Error", message, isSuccess: false);
+  }
+  static void _showSnackBar(String title, String message, {bool isSuccess = false}) {
     Get.snackbar(
-      errorORSuccess,
+      title,
       message,
       snackPosition: SnackPosition.BOTTOM,
-      backgroundColor: isSuccess ?  Color(0xFF4CAF50) : kRed,
-      colorText: const Color(0xFFFFFFFF),
+      backgroundColor: isSuccess ? const Color(0xFF4CAF50) : Colors.red,
+      colorText: Colors.white,
       margin: const EdgeInsets.all(12),
       duration: const Duration(seconds: 2),
     );

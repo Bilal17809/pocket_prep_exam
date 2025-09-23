@@ -81,10 +81,10 @@ abstract class AppTheme {
   static BoxDecoration borderedBlue = BoxDecoration(
     color: kWhite,
     borderRadius: BorderRadius.circular(10),
-    border: Border.all(
-      color:kBlue.withAlpha(200),
-      width: 0.5,
-    ),
+    // border: Border.all(
+    //   // color:kBlue.withAlpha(200),
+    //   // width: 0.5,
+    // ),
   );
 
   static List<BoxShadow> defaultShadow = [
