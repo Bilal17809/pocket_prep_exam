@@ -32,7 +32,7 @@ class CalenderListCard extends StatelessWidget {
             height: height,
             width: width,
             decoration: BoxDecoration(
-              color: isSelected ? kBlue.withAlpha(220) : kWhite,
+              color: isSelected ? lightSkyBlue : kWhite,
               borderRadius: BorderRadius.circular(40),
               boxShadow: AppTheme.defaultShadow,
             ),

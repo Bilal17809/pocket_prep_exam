@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pocket_prep_exam/core/theme/app_colors.dart';
 import 'package:pocket_prep_exam/core/theme/app_styles.dart';
 
 
@@ -51,12 +52,12 @@ class QuizRateCard extends StatelessWidget {
                   value: 0.2,
                   strokeWidth: 6,
                   backgroundColor: Colors.grey.shade200,
-                  valueColor: const AlwaysStoppedAnimation<Color>(Colors.green),
+                  valueColor: const AlwaysStoppedAnimation<Color>(lightSkyBlue),
                 ),
               ),
               Text(
                 percentage,
-                style: bodyMediumStyle.copyWith(color: Colors.green,fontSize: 20)
+                style: bodyMediumStyle.copyWith(color: lightSkyBlue,fontSize: 22,fontWeight: FontWeight.bold)
               ),
             ],
           )

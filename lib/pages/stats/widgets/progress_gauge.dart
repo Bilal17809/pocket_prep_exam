@@ -2,7 +2,7 @@
 
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
-import 'package:pocket_prep_exam/core/theme/app_colors.dart';
+
 
 class ProgressGauge extends StatelessWidget {
   final double progress;
@@ -26,7 +26,7 @@ class ProgressGauge extends StatelessWidget {
             progress: progress,
             progressColor: const Color(0xFFD58F00),
             backgroundColor: Color(0xFF1E90FF),
-            strokeWidth: 12.0,
+            strokeWidth: 14.0,
           ),
         ),
         // Center mein percentage text

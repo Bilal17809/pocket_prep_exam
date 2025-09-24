@@ -50,7 +50,7 @@ class SubjectStatisticsCard extends StatelessWidget {
           LinearProgressIndicator(
             value: 0,
             backgroundColor: Colors.grey.shade200,
-            color: Colors.green,
+            color: lightSkyBlue,
             minHeight: 6,
           ),
 

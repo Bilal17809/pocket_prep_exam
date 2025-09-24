@@ -5,4 +5,5 @@ class RoutesName{
   static const String dashBoard = "/dashboard";
   static const String splash = "/splash";
   static const String practice = "/practice";
+  static const String quizSetup = "/quiz_setup";
 }

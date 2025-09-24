@@ -25,15 +25,15 @@ class MainAppBar extends StatelessWidget
   Widget build(BuildContext context) {
     return AppBar(
       automaticallyImplyLeading: isBackButton,
-      backgroundColor: kWhite,
+      backgroundColor: kWhiteF7,
       title: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(title, style: context.textTheme.headlineSmall),
+          Text(title, style: context.textTheme.headlineSmall!.copyWith(fontWeight: FontWeight.bold,fontSize: 28)),
           Text(subtitle, style: context.textTheme.bodySmall),
         ],
       ),
-      actions: actions,
+      actions: actions ?? [],
     );
   }
 }

@@ -16,7 +16,7 @@ class UpgradeButton extends StatelessWidget {
             onTap: (){
             },
             child: Card(
-              color: kBlue.withAlpha(220),
+              color: lightSkyBlue,
               child:
                 Center(child: Text("Upgrade for all quiz modes.",style: TextStyle(color: kWhite,fontSize: 18),))
             ),

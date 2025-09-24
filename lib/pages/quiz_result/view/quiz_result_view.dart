@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pocket_prep_exam/core/common/common_button.dart';
 import 'package:pocket_prep_exam/core/theme/app_colors.dart';
+import 'package:pocket_prep_exam/core/theme/app_styles.dart';
 import 'package:pocket_prep_exam/data/models/exams_and_subject.dart';
 import 'package:pocket_prep_exam/pages/questions/control/questions_controller.dart';
 import 'package:pocket_prep_exam/pages/questions/view/questions_view.dart';
@@ -101,37 +102,49 @@ class QuizResultView extends StatelessWidget {
           ),
           textAlign: TextAlign.center,
         ),
-        const SizedBox(height: 20),
-       TweenAnimationBuilder<double>(tween: Tween<double>(begin: 0,end:  percentage / 100),
-           duration: Duration(seconds: 4),
-            curve: Curves.easeOut,
-            builder:(context,value,child){
-         return ProgressGauge(progress: value,color: kBlack,size: 270);
-            }
-       ),
-        const SizedBox(height: 20),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16),
-          child: Row(
-            children: [
-              Expanded(
-                child:StatCard(
-                  title: "$correctAnswers/$totalQuestions",
-                  subtitle: "Answer Correctly",
-                  statView: false,
-                ),
-              ),
-              const SizedBox(width: 12),
-              Expanded(
-                child: StatCard(
-                  title: timeTaken,
-                  subtitle: "Quiz Time",
-                  statView: false,
-                ),
-              ),
-            ],
+        // const SizedBox(height: 20),
+          Padding(
+            padding: const EdgeInsets.all(10),
+            child: Container(
+              width: double.infinity,
+              decoration: roundedDecoration.copyWith(),
+              child: Column(
+                children: [
+                  SizedBox(height: 16),
+                  TweenAnimationBuilder<double>(tween: Tween<double>(begin: 0,end:  percentage / 100),
+                      duration: Duration(seconds: 4),
+                      curve: Curves.easeOut,
+                      builder:(context,value,child){
+                        return ProgressGauge(progress: value,color: kBlack,size: 270);
+                      }
+                  ),
+                  const SizedBox(height: 20),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 16),
+                    child: Row(
+                      children: [
+                        Expanded(
+                          child:StatCard(
+                            title: "$correctAnswers/$totalQuestions",
+                            subtitle: "Answer Correctly",
+                            statView: false,
+                          ),
+                        ),
+                        const SizedBox(width: 12),
+                        Expanded(
+                          child: StatCard(
+                            title: timeTaken,
+                            subtitle: "Quiz Time",
+                            statView: false,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              )
+            ),
           ),
-        ),
         const SizedBox(height: 20),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),

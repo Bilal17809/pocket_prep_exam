@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:pocket_prep_exam/core/theme/app_styles.dart';
 
 class SubjectWidget extends StatelessWidget {
@@ -15,8 +16,8 @@ class SubjectWidget extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(subjectsName,style: bodyLargeStyle,),
-          Text(totalQuestion ?? "0")
+          Text(subjectsName,style: bodyLargeStyle.copyWith(color: Colors.black,fontWeight: FontWeight.bold),),
+          Text(totalQuestion ?? "0",style: bodyLargeStyle.copyWith(color: Colors.black54,fontWeight: FontWeight.bold),)
         ],
       ),
     );

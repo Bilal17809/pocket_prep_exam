@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:pocket_prep_exam/core/routes/routes_name.dart';
 import 'package:pocket_prep_exam/pages/dashboard/view/dashboard_view.dart';
 import 'package:pocket_prep_exam/pages/practice/view/practice_view.dart';
+import 'package:pocket_prep_exam/pages/quiz_setup/view/quiz_setup_view.dart';
 import 'package:pocket_prep_exam/pages/splash/view/splash_view.dart';
 import 'package:pocket_prep_exam/pages/switch_exam/view/examp_switch_view.dart';
 
@@ -14,6 +15,7 @@ class Routes{
     GetPage(name: RoutesName.examSwitchView, page: () => ExamSwitchView()),
     GetPage(name: RoutesName.dashBoard, page: () => DashboardView()),
     GetPage(name: RoutesName.splash, page: () => SplashView()),
-    GetPage(name: RoutesName.practice, page:() =>  PracticeView())
+    GetPage(name: RoutesName.practice, page:() =>  PracticeView()),
+    GetPage(name: RoutesName.quizSetup, page:() =>  QuizSetupView())
   ];
 }

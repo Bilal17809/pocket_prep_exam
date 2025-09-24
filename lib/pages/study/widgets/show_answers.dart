@@ -22,7 +22,7 @@ class ShowAnswers extends StatelessWidget {
             height:height ,
             width:width,
             decoration: roundedDecoration.copyWith(
-              color:  kBlue.withAlpha(220),
+              color: lightSkyBlue,
             ),
             child: Center(
               child: Icon(Icons.menu,color: kWhite,size: 28,),

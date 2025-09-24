@@ -3,6 +3,7 @@ import 'package:pocket_prep_exam/core/Utility/utils.dart';
 import 'package:pocket_prep_exam/core/local_storage/storage_helper.dart';
 import 'package:pocket_prep_exam/data/models/exams_and_subject.dart';
 import 'package:pocket_prep_exam/pages/edite_subjects/controller/edite_subject_controller.dart';
+import 'package:pocket_prep_exam/pages/practice/controller/practice_controller.dart';
 import 'package:pocket_prep_exam/pages/setting/control/setting_controller.dart';
 import 'package:pocket_prep_exam/services/exam_and_subjects_services.dart';
 import '../../study/controller/study_controller.dart';
@@ -31,19 +32,27 @@ class SwitchExamController extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    loadSelectedExamFromStorage();
-    loadExams();
-    loadSelectExam();
+    // loadSelectedExamFromStorage();
+    loadExams().then((_) {
+      loadSelectExam();
+    });
+    // loadSelectExam();
   }
   void selectedExam(int index) {
     selectExamIndex.value = index;
     _updateButtonVisibility();
   }
 
-  Future<void> loadSelectExam()async{
+
+  Future<void> loadSelectExam() async {
     final examId = await _storageService.getExam();
-    if(examId != null && exam.isNotEmpty){
-         selectExam.value = exam.firstWhere((e) => e.examId == examId);
+    if (examId != null && exam.isNotEmpty) {
+      final foundIndex = exam.indexWhere((e) => e.examId == examId);
+      if (foundIndex != -1) {
+        selectExam.value = exam[foundIndex];
+        selectExamIndex.value = foundIndex;
+        savedIndex = foundIndex;
+      }
     }
   }
 
@@ -63,11 +72,6 @@ class SwitchExamController extends GetxController {
     }
   }
 
-  Future<void> loadSelectedExamFromStorage() async {
-    savedIndex = await _storageService.loadSelectedExam();
-    _updateButtonVisibility();
-  }
-
   Future<void> saveSelectedExam() async {
     if (selectExamIndex.value == -1) {
       Utils.showError( "Please select an exam first!");
@@ -80,8 +84,8 @@ class SwitchExamController extends GetxController {
     await Get.find<SettingController>().loadExamFromStorage();
     await Get.find<EditeSubjectController>().loadExamFromStorage();
     await Get.find<StudyController>().loadExamFromStorage();
+    await Get.find<PracticeController>().loadExam();
     _updateButtonVisibility();
-    // Utils().snackBarMessage("Success", "${selected.examName} switched!",isSuccess: true);
   }
   void _updateButtonVisibility() {
     if (savedIndex == null) {
