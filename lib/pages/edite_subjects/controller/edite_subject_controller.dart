@@ -6,16 +6,15 @@ import '/data/models/question_model.dart';
 import '/services/exam_and_subjects_services.dart';
 
 class EditeSubjectController extends GetxController {
+
   final ExamService _examService;
   final StorageService _storageService;
   final QuestionService _service;
 
   Rxn<Exam> selectedExam = Rxn<Exam>();
   RxList<Question> examQuestions = <Question>[].obs;
-
   RxList<int> selectedSubjectIds = <int>[].obs;
   RxList<Question> questionPool = <Question>[].obs;
-
   static const int maxAllSubjectsPool = 30;
    int maxQuizSize = 10;
 

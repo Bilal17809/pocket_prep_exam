@@ -1,65 +1,89 @@
-
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:pocket_prep_exam/core/theme/app_colors.dart';
 import 'package:pocket_prep_exam/core/theme/app_styles.dart';
+import 'package:pocket_prep_exam/pages/quiz_setup/controller/quiz_setup_controller.dart';
 
 class DifficultySelector extends StatelessWidget {
   const DifficultySelector({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children:  [
-        DifficultyCard(label: "Easy", icon: Icons.tag_faces, isSelected: true,iconColor: Colors.yellow,),
-        SizedBox(width: 10),
-        DifficultyCard(label: "Medium", icon: Icons.balance, isSelected: false,iconColor: Colors.orange,),
-        SizedBox(width: 10),
-        DifficultyCard(label: "Hard", icon: Icons.flash_on, isSelected: false,iconColor: Colors.red,),
+    final controller = Get.find<QuizSetupController>();
+    return Obx(() => Row(
+      children: [
+        _DifficultyCard(
+          label: "Easy",
+          icon: Icons.tag_faces,
+          iconColor: Colors.yellow,
+          isSelected: controller.selectedDifficulty.value == "Easy",
+          onTap: () => controller.setDifficulty("Easy"),
+        ),
+        const SizedBox(width: 10),
+        _DifficultyCard(
+          label: "Medium",
+          icon: Icons.balance,
+          iconColor: Colors.orange,
+          isSelected: controller.selectedDifficulty.value == "Medium",
+          onTap: () => controller.setDifficulty("Medium"),
+        ),
+        const SizedBox(width: 10),
+        _DifficultyCard(
+          label: "Hard",
+          icon: Icons.flash_on,
+          iconColor: Colors.red,
+          isSelected: controller.selectedDifficulty.value == "Hard",
+          onTap: () => controller.setDifficulty("Hard"),
+        ),
       ],
-    );
+    ));
   }
 }
 
-class DifficultyCard extends StatelessWidget {
+class _DifficultyCard extends StatelessWidget {
   final String label;
   final IconData icon;
   final Color iconColor;
   final bool isSelected;
+  final VoidCallback onTap;
 
-  const DifficultyCard({
+  const _DifficultyCard({
     super.key,
-    this.iconColor = Colors.grey,
     required this.label,
     required this.icon,
-    this.isSelected = false,
+    required this.iconColor,
+    required this.isSelected,
+    required this.onTap,
   });
 
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      child: Container(
-        padding: const EdgeInsets.symmetric(vertical: 14),
-        decoration:roundedDecoration.copyWith(
-          borderRadius: BorderRadius.circular(10),
-          color: isSelected ? Colors.green.shade50 : Colors.white,
-          border: Border.all(
-            color: isSelected ? Colors.green : Colors.grey.shade300,
-            width: 2,
-          ),
-        ),
-        child: Column(
-          children: [
-            Icon(icon, color: isSelected ? Colors.green : iconColor),
-            const SizedBox(height: 6),
-            Text(
-              label,
-              style: TextStyle(
-                fontSize: 14,
-                color: isSelected ? Colors.green : Colors.black,
-                fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
-              ),
+      child: GestureDetector(
+        onTap: onTap,
+        child: Container(
+          padding: const EdgeInsets.symmetric(vertical: 14),
+          decoration: quizSetupContainer.copyWith(
+            borderRadius: BorderRadius.circular(10),
+            border: Border.all(
+              color: isSelected ? lightSkyBlue : Colors.grey.shade300,
+              width: 2,
             ),
-          ],
+          ),
+          child: Column(
+            children: [
+              Icon(icon, color: isSelected ? Colors.blue : iconColor),
+              const SizedBox(height: 6),
+              Text(
+                label,
+                style: TextStyle(
+                  fontSize: 14,
+                  color: isSelected ? Colors.blue : Colors.black,
+                  fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

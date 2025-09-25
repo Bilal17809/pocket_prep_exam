@@ -2,23 +2,31 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pocket_prep_exam/core/theme/app_colors.dart';
 import 'package:pocket_prep_exam/core/theme/app_styles.dart';
-import 'package:pocket_prep_exam/pages/edite_subjects/controller/edite_subject_controller.dart';
+import 'package:pocket_prep_exam/pages/quiz_view_second/controller/quiz_controller.dart';
+import '../../quiz_setup/controller/quiz_setup_controller.dart';
 import '/data/models/question_model.dart';
-import '../control/questions_controller.dart';
+
 import 'options_card.dart';
 
-class QuizCard extends StatelessWidget {
+class SecondQuizCard extends StatelessWidget {
   final Question question;
   final int index;
-  final bool reviewMode;
-  const QuizCard({super.key, required this.question, required this.index,this.reviewMode = false, required String reviewType});
+
+  const SecondQuizCard({
+    super.key,
+    required this.question,
+    required this.index,
+  });
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.find<QuestionController>();
+
+    final controller = Get.find<QuizController>();
+    final setupController = Get.find<QuizSetupController>();
+
     return Container(
       width: double.infinity,
-      decoration: roundedDecoration.copyWith(color: kWhite),
+      decoration: roundedDecoration.copyWith(color: kWhite,borderRadius: BorderRadius.circular(10)),
       child: Stack(
         children: [
           SingleChildScrollView(
@@ -30,12 +38,10 @@ class QuizCard extends StatelessWidget {
                   alignment: Alignment.center,
                   child: Column(
                     children: [
-                      if(!reviewMode)
                       const Icon(Icons.book_online_outlined),
                       const SizedBox(height: 6),
-                      if(!reviewMode)
                       Text(
-                        "Question ${index + 1} / ${controller.questions.length}",
+                        "Question ${index + 1} / ${setupController.selectedQuestions.value}",
                         style: Theme.of(context).textTheme.titleMedium,
                       ),
                     ],
@@ -49,8 +55,10 @@ class QuizCard extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 20),
+
+                // 🔹 Options List
                 Obx(() {
-                  final bool currentShowExplanationState = controller.showExplanation[index] ?? false;
+                  final bool showExp = controller.showExplanation[index] ?? false;
                   return Column(
                     children: List.generate(
                       question.options.length,
@@ -61,12 +69,13 @@ class QuizCard extends StatelessWidget {
                         correctAnswer: question.correctAnswer,
                         explanation: question.explanation,
                         reference: question.reference,
-                        showExplanationToggle: currentShowExplanationState,
-                            reviewMode: reviewMode,
+                            showExp: showExp,
+                        // timeLimit: setupController.selectedTimeLimit.value,
                       ),
                     ),
                   );
                 }),
+
                 const SizedBox(height: 10),
               ],
             ),

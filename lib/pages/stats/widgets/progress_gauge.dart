@@ -32,6 +32,7 @@ class ProgressGauge extends StatelessWidget {
         // Center mein percentage text
         Positioned(
           top: size * 0.2,
+          bottom: 0,
           child: Text(
             '${(progress * 100).toInt()}%',
             style:  TextStyle(

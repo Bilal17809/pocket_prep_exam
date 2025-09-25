@@ -10,7 +10,7 @@ class SplashView extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = Get.find<SplashController>();
     Future.microtask(()async{
-      await Future.delayed(Duration(seconds: 3));
+      await Future.delayed(Duration(seconds: 2));
       if(controller.isExam.value == true){
         Get.offNamed(RoutesName.dashBoard);
       }else{

@@ -58,7 +58,7 @@ class SubjectStatisticsCard extends StatelessWidget {
           GridView.count(
             crossAxisCount: 2,
             shrinkWrap: true,
-            childAspectRatio: 3.1,
+            childAspectRatio: 2.2,
             physics: const NeverScrollableScrollPhysics(),
             children: [
               _StatItem(value: "$quizTimes",label: "Quiz times"),

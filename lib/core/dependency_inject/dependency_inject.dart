@@ -5,6 +5,8 @@ import 'package:pocket_prep_exam/pages/edite_subjects/controller/edite_subject_c
 import 'package:pocket_prep_exam/pages/exam_settings/controller/exam_setting_controller.dart';
 import 'package:pocket_prep_exam/pages/practice/controller/practice_controller.dart';
 import 'package:pocket_prep_exam/pages/quiz_result/controller/quiz_result_controller.dart';
+import 'package:pocket_prep_exam/pages/quiz_setup/controller/quiz_setup_controller.dart';
+import 'package:pocket_prep_exam/pages/quiz_view_second/controller/quiz_controller.dart';
 import 'package:pocket_prep_exam/pages/stats/controller/stats_controller.dart';
 import 'package:pocket_prep_exam/pages/study/controller/study_controller.dart';
 import 'package:pocket_prep_exam/pages/switch_exam/controller/switch_exam_cont.dart';
@@ -33,5 +35,7 @@ class DependencyInject{
     Get.lazyPut<ExamSettingController>(() =>  ExamSettingController(storageServices:Get.find(),examService: Get.find()),fenix: true);
     Get.lazyPut<EditeSubjectController>(() => EditeSubjectController(storageServices: Get.find(), examService: Get.find(),questionService: Get.find()),fenix: true);
     Get.lazyPut<PracticeController>(() => PracticeController(questionService: Get.find()), fenix: true);
+    Get.lazyPut<QuizSetupController>(() => QuizSetupController(questionService: Get.find()), fenix: true);
+    Get.lazyPut<QuizController>(() =>QuizController(), fenix: true);
   }
 }

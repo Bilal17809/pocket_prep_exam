@@ -5,14 +5,15 @@ import 'package:pocket_prep_exam/services/services.dart';
 
 
 class PracticeController extends GetxController {
+
   final QuestionService _questionService;
 
   Rxn<Exam> selectExam = Rxn<Exam>();
   RxList<Question> allQuestions = <Question>[].obs;
-  RxList<Question> subjectQuestion = <Question>[].obs;
   final isLoading = false.obs;
 
-  PracticeController({required QuestionService questionService}) : _questionService = questionService;
+  PracticeController({required QuestionService questionService})
+      : _questionService = questionService;
 
 
   @override
@@ -37,5 +38,9 @@ class PracticeController extends GetxController {
 
   int? getQuestionCountBySubject(int subjectId) {
     return allQuestions.where((q) => q.subjectId == subjectId).length;
+  }
+
+  List<Question> getQuestionsBySubject(int subjectId) {
+    return allQuestions.where((q) => q.subjectId == subjectId).toList();
   }
 }

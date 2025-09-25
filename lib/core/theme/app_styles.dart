@@ -127,6 +127,14 @@ final BoxDecoration roundedDecoration = BoxDecoration(
   ],
 );
 
+final BoxDecoration quizSetupContainer = BoxDecoration(
+  borderRadius: BorderRadius.circular(10),
+  color: Colors.white,
+  border: Border.all(
+    color: Colors.grey.shade300,
+  )
+);
+
 //for home view
 final BoxDecoration roundedDecorationHomevie = BoxDecoration(
   gradient: kGradient,

@@ -1,12 +1,11 @@
-// lib/pages/questions/widgets/options_card.dart
+
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pocket_prep_exam/core/theme/app_colors.dart';
 import 'package:pocket_prep_exam/core/theme/app_styles.dart';
+import 'package:pocket_prep_exam/pages/quiz_view_second/controller/quiz_controller.dart';
 import '/core/common/text_span.dart';
-import '../control/questions_controller.dart';
-
 
 class OptionsCard extends StatelessWidget {
   final int questionIndex;
@@ -15,47 +14,41 @@ class OptionsCard extends StatelessWidget {
   final String correctAnswer;
   final String explanation;
   final String reference;
-  final bool showExplanationToggle;
-  final bool reviewMode;
-  final String reviewType;
+  final bool showExp;
   const OptionsCard({
     super.key,
+    required this.showExp,
     required this.questionIndex,
     required this.optionIndex,
     required this.option,
     required this.correctAnswer,
     required this.explanation,
     required this.reference,
-    required this.showExplanationToggle,
-    this.reviewMode = false,
-    this.reviewType = 'All',
-
   });
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.find<QuestionController>();
+    final controller = Get.find<QuizController>();
 
     return Obx(() {
       int? selectedOptionIndex = controller.selectedOptions[questionIndex];
-      String optionPrefix = '';
-      if (option.trim().isNotEmpty) {optionPrefix = option.trim().substring(0, 1).toUpperCase();}
-      String trimmedCorrectAnswerPrefix = '';
-      if (correctAnswer.trim().isNotEmpty) {
-        trimmedCorrectAnswerPrefix = correctAnswer.trim().substring(0, 1).toUpperCase();}
-      bool isCorrectOption = optionPrefix == trimmedCorrectAnswerPrefix;
-      bool isThisOptionSelectedByUser = selectedOptionIndex == optionIndex;
-
+      String optionPrefix = option.trim().isNotEmpty
+          ? option.trim().substring(0, 1).toUpperCase()
+          : '';
+      String correctPrefix = correctAnswer.trim().isNotEmpty
+          ? correctAnswer.trim().substring(0, 1).toUpperCase()
+          : '';
+      bool isCorrectOption = optionPrefix == correctPrefix;
+      bool isThisOptionSelected = selectedOptionIndex == optionIndex;
 
       Color borderColor = Colors.grey.shade300;
-      Color textColor = Colors.black;
-
+      Color textColor = kBlack;
 
       if (selectedOptionIndex != null) {
         if (isCorrectOption) {
           borderColor = Colors.green;
           textColor = Colors.green.shade800;
-        } else if (isThisOptionSelectedByUser) {
+        } else if (isThisOptionSelected) {
           borderColor = Colors.red;
           textColor = Colors.red.shade800;
         }
@@ -78,26 +71,27 @@ class OptionsCard extends StatelessWidget {
           padding: const EdgeInsets.all(12),
           decoration: roundedDecoration.copyWith(
             color: bgColor,
-            borderRadius: BorderRadius.circular(06),
-            border: Border.all(color: borderColor, width: isCorrectOption && isThisOptionSelectedByUser ? 2 : 1),
+            borderRadius: BorderRadius.circular(6),
+            border: Border.all(color: borderColor, width: 1.5),
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                option,
-                style: TextStyle(fontSize: 14, color: kBlack),
-              ),
+
+              Text(option, style: TextStyle(fontSize: 14, color: textColor)),
+
               if (selectedOptionIndex != null && isCorrectOption) ...[
                 const SizedBox(height: 8),
                 TextButton(
-                  onPressed: () => controller.toggleExplanation(questionIndex),
+                  onPressed: () =>
+                      controller.toggleExplanation(questionIndex),
                   child: Text(
-                    showExplanationToggle ? "Hide Explanation" : "Show Explanation",
+                    showExp ? "Hide Explanation" : "Show Explanation",
                     style: const TextStyle(color: Colors.blue, fontSize: 14),
                   ),
                 ),
-                if (showExplanationToggle) ...[
+
+                if (showExp) ...[
                   Container(
                     padding: const EdgeInsets.all(8),
                     decoration: BoxDecoration(
@@ -107,30 +101,33 @@ class OptionsCard extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        CommonTextSpan(labelOne: "Correct Answer: $correctAnswer - ${option}",labelTwo: "",
-                            textColorTwo:  kWhite,backgroundColorOne: Colors.green),
-
+                        CommonTextSpan(
+                          labelOne: "Correct Answer: $correctAnswer",
+                          labelTwo: "",
+                          textColorTwo: kWhite,
+                          backgroundColorOne: Colors.green,
+                        ),
                         const SizedBox(height: 8),
-                        CommonTextSpan(labelOne: "Explanation: ",
-                          labelTwo:  explanation,
+                        CommonTextSpan(
+                          labelOne: "Explanation: ",
+                          labelTwo: explanation,
                           textColorOne: Colors.green.shade800,
                           textColorTwo: Colors.blue,
                         ),
-
                         const SizedBox(height: 8),
                         Container(
-                          padding: EdgeInsets.all(12),
+                          padding: const EdgeInsets.all(12),
                           decoration: roundedDecoration.copyWith(
-                              color: Colors.green.shade100,
-                              borderRadius: BorderRadius.circular(10)
+                            color: Colors.green.shade100,
+                            borderRadius: BorderRadius.circular(10),
                           ),
-                          child:  CommonTextSpan(
+                          child: CommonTextSpan(
                             labelOne: "Reference: ",
                             labelTwo: reference,
                             fontStyle: FontStyle.italic,
                             textColorOne: greyColor,
                           ),
-                        )
+                        ),
                       ],
                     ),
                   ),

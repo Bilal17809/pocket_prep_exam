@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pocket_prep_exam/core/routes/routes_name.dart';
 import 'package:pocket_prep_exam/core/theme/theme.dart';
+import 'package:pocket_prep_exam/pages/quiz_setup/controller/quiz_setup_controller.dart';
 import '/pages/practice/controller/practice_controller.dart';
-import '/pages/practice/widgets/subjects.dart';
+
 
 class SubjectList extends StatelessWidget {
   const SubjectList({super.key});
@@ -33,7 +34,8 @@ class SubjectList extends StatelessWidget {
               decoration: roundedDecoration,
               child: GestureDetector(
                 onTap: (){
-                       Get.toNamed(RoutesName.quizSetup);
+                  Get.find<QuizSetupController>().setSubject(subject);
+                  Get.toNamed(RoutesName.quizSetup);
                 },
                 child: ListTile(
                   leading: CircleAvatar(
@@ -45,11 +47,6 @@ class SubjectList extends StatelessWidget {
                 ),
               ),
             )
-            // SubjectWidget(
-            //  
-            //   subjectsName:"${index + 1 },${subject.subjectName}",
-            //   totalQuestion: "Questions: $questions",
-            // ),
           );
         },
       );
