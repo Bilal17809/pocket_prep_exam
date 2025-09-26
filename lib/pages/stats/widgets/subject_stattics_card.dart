@@ -1,29 +1,34 @@
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pocket_prep_exam/core/theme/app_colors.dart';
 import 'package:pocket_prep_exam/core/theme/app_styles.dart';
+import 'package:pocket_prep_exam/data/models/models.dart';
 
+import '../controller/stats_controller.dart';
 class SubjectStatisticsCard extends StatelessWidget {
-  final String title;
-  final String percentage;
-  final int quizTimes;
-  final String practiceTime;
-  final int mistakes;
-  final String progress;
+  final Subject subject;
 
-  const SubjectStatisticsCard({
-    super.key,
-    this.title = "Airway, Respiration & Ventilation",
-    this.percentage = "0%",
-    this.quizTimes = 0,
-    this.practiceTime = "00:00",
-    this.mistakes = 0,
-    this.progress = "0/160 items",
-  });
+  String formatTime(int seconds) {
+    final minutes = seconds ~/ 60;
+    final secs = seconds % 60;
+    return minutes > 0 ? "${minutes}m ${secs}s" : "${secs}s";
+  }
+
+  const SubjectStatisticsCard({super.key, required this.subject});
 
   @override
   Widget build(BuildContext context) {
+    final statsController = Get.find<StatsController>();
+    final result = statsController.latestResultForSubject(subject.subjectId);
+    final quizTimes = statsController.quizTimesForSubject(subject.subjectId);
+
+    if (result == null) {
+      return Text("");
+    }
+
+    final double percentage =
+    result.totalQuestions > 0 ? (result.totalCorrect / result.totalQuestions) * 100 : 0.0;
+
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: roundedDecoration,
@@ -35,25 +40,24 @@ class SubjectStatisticsCard extends StatelessWidget {
             children: [
               Expanded(
                 child: Text(
-                  title,
-                  style: bodyLargeStyle.copyWith(color: greyColor,fontWeight: FontWeight.bold),
+                  subject.subjectName,
+                  style: bodyLargeStyle.copyWith(
+                    color: greyColor,
+                    fontWeight: FontWeight.bold,
+                  ),
                   maxLines: 2,
                 ),
               ),
-              Text(
-                percentage,
-                style: bodyLargeStyle
-              )
+              Text("${percentage.toStringAsFixed(1)}%", style: bodyLargeStyle),
             ],
           ),
           const SizedBox(height: 12),
           LinearProgressIndicator(
-            value: 0,
+            value: percentage / 100,
             backgroundColor: Colors.grey.shade200,
             color: lightSkyBlue,
             minHeight: 6,
           ),
-
           const SizedBox(height: 16),
           GridView.count(
             crossAxisCount: 2,
@@ -61,10 +65,10 @@ class SubjectStatisticsCard extends StatelessWidget {
             childAspectRatio: 2.2,
             physics: const NeverScrollableScrollPhysics(),
             children: [
-              _StatItem(value: "$quizTimes",label: "Quiz times"),
-              _StatItem(value:  progress, label: "Answer progress"),
-              _StatItem(value:  practiceTime,label:  "Total practice time"),
-              _StatItem(value:  "$mistakes",label:  "Remaining mistakes"),
+              _StatItem(value: formatTime(result.totalTime), label: "Quiz times"),
+              _StatItem(value: "${result.totalCorrect}/${result.totalQuestions} items", label: "Answer progress"),
+              _StatItem(value: "${result.selectedQuizTime}s", label: "Total practice time"),
+              _StatItem(value: "${result.totalWrong}", label: "Remaining mistakes"),
             ],
           ),
         ],
@@ -72,6 +76,7 @@ class SubjectStatisticsCard extends StatelessWidget {
     );
   }
 }
+
 
 class _StatItem extends StatelessWidget {
   final String value;
@@ -81,6 +86,7 @@ class _StatItem extends StatelessWidget {
     required this.value,
     required this.label,
   });
+
   @override
   Widget build(BuildContext context) {
     return Column(

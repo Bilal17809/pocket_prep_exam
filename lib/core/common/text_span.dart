@@ -1,55 +1,50 @@
-
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
-class CommonTextSpan extends StatelessWidget {
-  final String labelOne;
-  final String labelTwo;
-  final Color backgroundColorOne;
-  // final Color  backgroundColorTwo;
-  final Color textColorOne;
-  final Color textColorTwo;
-  final double fontSize;
-  final FontStyle? fontStyle;
-  const CommonTextSpan({super.key,
-   required this.labelOne,
-    required this.labelTwo,
-    this.backgroundColorOne = Colors.yellow,
-    // this.backgroundColorTwo
-    this.textColorOne = Colors.grey,
-    this.textColorTwo = Colors.black,
-    this.fontSize = 14,
-    this.fontStyle
+class CommonLabelValueText extends StatelessWidget {
+  final String label;
+  final String value;
+  final Color labelColor;
+  final Color valueColor;
+  final double labelFontSize;
+  final double valueFontSize;
+  final FontWeight labelWeight;
+  final FontStyle valueStyle;
+
+  const CommonLabelValueText({
+    super.key,
+    required this.label,
+    required this.value,
+    this.labelColor = Colors.black,
+    this.valueColor = Colors.black87,
+    this.labelFontSize = 14,
+    this.valueFontSize = 14,
+    this.labelWeight = FontWeight.bold,
+    this.valueStyle = FontStyle.normal,
   });
 
   @override
   Widget build(BuildContext context) {
-    return  RichText(
+    return RichText(
       text: TextSpan(
         children: [
           TextSpan(
-            text: labelOne,
-            style: context.textTheme.bodyMedium!.copyWith(
-                fontSize: fontSize,
-                color: textColorTwo,
-                fontStyle: fontStyle,
-                backgroundColor: backgroundColorOne,
-              fontWeight: FontWeight.bold,
-            )
+            text: label,
+            style: TextStyle(
+              color: labelColor,
+              fontWeight: labelWeight,
+              fontSize: labelFontSize,
+            ),
           ),
           TextSpan(
-            text: labelTwo,
-            style: context.textTheme.bodyLarge!.copyWith(
-                fontSize: fontSize,
-                color: textColorOne,
-
-                // backgroundColor: backgroundColorTwo,
-                fontStyle: fontStyle
-            )
+            text: value,
+            style: TextStyle(
+              color: valueColor,
+              fontSize: valueFontSize,
+              fontStyle: valueStyle,
+            ),
           ),
         ],
       ),
     );
   }
 }
-

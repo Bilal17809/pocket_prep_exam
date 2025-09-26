@@ -1,5 +1,4 @@
 
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pocket_prep_exam/core/theme/app_colors.dart';
@@ -77,55 +76,75 @@ class OptionsCard extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-
               Text(option, style: TextStyle(fontSize: 14, color: textColor)),
-
               if (selectedOptionIndex != null && isCorrectOption) ...[
                 const SizedBox(height: 8),
                 TextButton(
-                  onPressed: () =>
-                      controller.toggleExplanation(questionIndex),
+                  onPressed: () => controller.toggleExplanation(questionIndex),
                   child: Text(
                     showExp ? "Hide Explanation" : "Show Explanation",
                     style: const TextStyle(color: Colors.blue, fontSize: 14),
                   ),
                 ),
-
                 if (showExp) ...[
-                  Container(
-                    padding: const EdgeInsets.all(8),
+                  AnimatedContainer(
+                    duration: const Duration(milliseconds: 400),
+                    curve: Curves.easeInOut,
+                    padding: const EdgeInsets.all(14),
+                    margin: const EdgeInsets.only(top: 6),
                     decoration: BoxDecoration(
-                      color: Colors.green.shade50,
-                      borderRadius: BorderRadius.circular(8),
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(14),
+                      border: Border.all(color: Colors.green.shade300, width: 1.2),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.shade300,
+                          blurRadius: 8,
+                          spreadRadius: 1,
+                          offset: const Offset(2, 4),
+                        ),
+                      ],
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        CommonTextSpan(
-                          labelOne: "Correct Answer: $correctAnswer",
-                          labelTwo: "",
-                          textColorTwo: kWhite,
-                          backgroundColorOne: Colors.green,
-                        ),
-                        const SizedBox(height: 8),
-                        CommonTextSpan(
-                          labelOne: "Explanation: ",
-                          labelTwo: explanation,
-                          textColorOne: Colors.green.shade800,
-                          textColorTwo: Colors.blue,
-                        ),
-                        const SizedBox(height: 8),
                         Container(
-                          padding: const EdgeInsets.all(12),
-                          decoration: roundedDecoration.copyWith(
+                          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                          decoration: BoxDecoration(
                             color: Colors.green.shade100,
-                            borderRadius: BorderRadius.circular(10),
+                            borderRadius: BorderRadius.circular(12),
                           ),
-                          child: CommonTextSpan(
-                            labelOne: "Reference: ",
-                            labelTwo: reference,
-                            fontStyle: FontStyle.italic,
-                            textColorOne: greyColor,
+                          child: Text(
+                            "✅ Correct Answer: $correctAnswer",
+                            style: const TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 15,
+                            ),
+                          ),
+                        ),
+                        const SizedBox(height: 12),
+                        CommonLabelValueText(
+                          label: "📖 Explanation: ",
+                          value: explanation,
+                          labelColor: Colors.orange.shade700,
+                          valueColor: Colors.black87,
+                        ),
+                        const SizedBox(height: 10),
+                        Container(
+                          width: double.infinity,
+                          padding: const EdgeInsets.all(12),
+                          decoration: BoxDecoration(
+                            color: Colors.green.shade50,
+                            borderRadius: BorderRadius.circular(10),
+                            border: Border.all(color: Colors.green.shade200, width: 1),
+                          ),
+                          child: CommonLabelValueText(
+                            label: "📚 Reference: ",
+                            value: reference,
+                            labelColor: Colors.deepPurple,
+                            valueColor: Colors.black87,
+                            valueStyle: FontStyle.italic,
                           ),
                         ),
                       ],

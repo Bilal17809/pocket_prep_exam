@@ -11,7 +11,6 @@ import 'options_card.dart';
 class SecondQuizCard extends StatelessWidget {
   final Question question;
   final int index;
-
   const SecondQuizCard({
     super.key,
     required this.question,
@@ -56,7 +55,6 @@ class SecondQuizCard extends StatelessWidget {
                 ),
                 const SizedBox(height: 20),
 
-                // 🔹 Options List
                 Obx(() {
                   final bool showExp = controller.showExplanation[index] ?? false;
                   return Column(
@@ -75,7 +73,6 @@ class SecondQuizCard extends StatelessWidget {
                     ),
                   );
                 }),
-
                 const SizedBox(height: 10),
               ],
             ),

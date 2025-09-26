@@ -3,28 +3,50 @@ import 'package:get/get.dart';
 import 'package:pocket_prep_exam/data/models/models.dart';
 import '../../quiz_setup/controller/quiz_setup_controller.dart';
 
-class QuizController extends GetxController {
+enum QuizState { loading, success, error }
 
+class QuizController extends GetxController {
   var selectedOptions = <int, int>{}.obs;
   var showExplanation = <int, bool>{}.obs;
   var remainingTime = <int, int>{}.obs;
   var currentPage = 0.obs;
   RxBool isSubmitVisible = false.obs;
-  Timer? _activeTimer;
+  var elapsedTime = 0.obs;
 
-  final finalSelectionQuestion = Get.find<QuizSetupController>().finalSelectedQuestions;
-  List<Question> get questions => finalSelectionQuestion;
+  Timer? _activeTimer;
+  final state = QuizState.loading.obs;
+
+  List<Question> questions = [];
 
   @override
   void onInit() {
     super.onInit();
-    startTimerForQuestion(0);
+    _loadQuestions();
+  }
+
+  Future<void> _loadQuestions() async {
+    try {
+      state.value = QuizState.loading;
+      final setupController = Get.find<QuizSetupController>();
+      await Future.delayed(const Duration(milliseconds: 500));
+      questions = setupController.finalSelectedQuestions;
+      if (questions.isEmpty) {
+        state.value = QuizState.error;
+      } else {
+        state.value = QuizState.success;
+        _startGlobalTimer();
+        startTimerForQuestion(0);
+      }
+    } catch (e) {
+      state.value = QuizState.error;
+    }
   }
 
   void startTimerForQuestion(int questionIndex) {
-    final selectedTime =  Get.find<QuizSetupController>().selectedTimeLimit.value;
+    final selectedTime = Get.find<QuizSetupController>().selectedTimeLimit.value;
     stopTimer();
     if (selectedOptions.containsKey(questionIndex)) return;
+
     remainingTime[questionIndex] = selectedTime;
     _activeTimer = Timer.periodic(const Duration(seconds: 1), (timer) {
       if (remainingTime[questionIndex]! > 0) {
@@ -72,14 +94,105 @@ class QuizController extends GetxController {
       }
     }
   }
+
+  int get totalCorrect {
+    int correct = 0;
+    for (int i = 0; i < questions.length; i++) {
+      if (selectedOptions.containsKey(i)) {
+        final selectedIndex = selectedOptions[i]!;
+        final correctIndex = getCorrectOptionIndex(
+          questions[i].correctAnswer,
+          questions[i].options,
+        );
+        if (selectedIndex == correctIndex) correct++;
+      }
+    }
+    return correct;
+  }
+
+  int get totalSkipped {
+    return questions.length - selectedOptions.length;
+  }
+
+  int get totalWrong {
+    return selectedOptions.entries.where((entry) {
+      final q = questions[entry.key];
+      final correctIndex =
+      getCorrectOptionIndex(q.correctAnswer, q.options);
+      return entry.value != correctIndex;
+    }).length;
+  }
+
+  int get quizSetupTime {
+    final setupController = Get.find<QuizSetupController>();
+    return setupController.selectedTimeLimit.value;
+  }
+
+  void _startGlobalTimer() {
+    stopTimer();
+    elapsedTime.value = 0;
+    _activeTimer = Timer.periodic(const Duration(seconds: 1), (timer) {
+      elapsedTime.value++;
+    });
+  }
+
+
+
+  QuizResult generateResult() {
+    final selectedQTime = Get.find<QuizSetupController>().selectedTimeLimit.value;
+    final totalCorrect = selectedOptions.entries.where((e) {
+      final q = questions[e.key];
+      return getCorrectOptionIndex(q.correctAnswer, q.options) == e.value;
+    }).length;
+    final totalSkipped = questions.length - selectedOptions.length;
+    final totalWrong = selectedOptions.length - totalCorrect;
+    stopTimer();
+    return QuizResult(
+      totalCorrect: totalCorrect,
+      totalSkipped: totalSkipped,
+      totalWrong: totalWrong,
+      totalTime:  elapsedTime.value,
+      selectedQuizTime:  selectedQTime,
+      totalQuestions: questions.length,
+    );
+  }
   void stopTimer() {
     _activeTimer?.cancel();
     _activeTimer = null;
   }
-
   @override
   void onClose() {
     stopTimer();
     super.onClose();
   }
+  void resetQuiz() {
+    selectedOptions.clear();
+    showExplanation.clear();
+    remainingTime.clear();
+    currentPage.value = 0;
+    isSubmitVisible.value = false;
+    elapsedTime.value = 0;
+    stopTimer();
+    // questions = [];
+    // state.value = QuizState.loading;
+  }
+
+}
+
+class QuizResult {
+  final int totalCorrect;
+  final int totalSkipped;
+  final int totalWrong;
+  final int totalTime;
+  final int selectedQuizTime;
+  final int totalQuestions;
+
+  QuizResult({
+    required this.totalCorrect,
+    required this.totalSkipped,
+    required this.totalWrong,
+    required this.totalTime,
+    required this.selectedQuizTime,
+    required this.totalQuestions,
+  });
 }

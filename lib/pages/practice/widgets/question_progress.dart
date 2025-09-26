@@ -4,17 +4,29 @@ import 'package:pocket_prep_exam/core/theme/app_colors.dart';
 import 'package:pocket_prep_exam/pages/stats/widgets/progress_gauge.dart';
 
 class QuestionProgress extends StatelessWidget {
-  final double? percentage;
-  const QuestionProgress({super.key, this.percentage});
+  final int correct;
+  final int skipped;
+  final int totalTime;
+  final int totalQuestions;
+
+  const QuestionProgress({
+    super.key,
+    required this.correct,
+    required this.skipped,
+    required this.totalTime,
+    required this.totalQuestions,
+  });
 
   @override
   Widget build(BuildContext context) {
+    final double progress =
+    (totalQuestions > 0) ? correct / totalQuestions : 0.0;
     return Column(
       children: [
         Container(
           width: double.infinity,
-          padding: EdgeInsets.all(15),
-          decoration: BoxDecoration(
+          padding: const EdgeInsets.all(15),
+          decoration: const BoxDecoration(
             color: kWhite,
             borderRadius: BorderRadius.only(
               topRight: Radius.circular(10),
@@ -31,49 +43,44 @@ class QuestionProgress extends StatelessWidget {
                   fontSize: 20,
                 ),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               Center(
                 child: TweenAnimationBuilder<double>(
-                  tween: Tween(begin: 0, end: 0 / 100),
-                  duration: Duration(seconds: 2),
+                  tween: Tween<double>(begin: 0, end: progress),
+                  duration: const Duration(seconds: 2),
                   builder: (context, value, child) {
                     return ProgressGauge(
-                      progress: 0.10,
+                      progress: value,
                       color: kBlack,
                       size: 230,
                     );
                   },
                 ),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 20),
             ],
           ),
         ),
         Container(
           width: double.infinity,
-          height: 68,
-          decoration: BoxDecoration(
+          padding: const EdgeInsets.all(8),
+          decoration: const BoxDecoration(
             color: lightSkyBlue,
             borderRadius: BorderRadius.only(
               bottomLeft: Radius.circular(10),
               bottomRight: Radius.circular(10),
             ),
           ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    _ShowProgress(value: "0", title: "Answered"),
-                    _ShowProgress(value: "60", title: "Left"),
-                    _ShowProgress(value: "00:00", title: "Quiz Time"),
-                  ],
-                ),
-              ),
-            ],
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                _ShowProgress(value: "$correct", title: "Answered"),
+                _ShowProgress(value: "$skipped", title: "Left"),
+                _ShowProgress(value: "${totalTime}s", title: "Quiz Time"),
+              ],
+            ),
           ),
         ),
       ],
@@ -91,16 +98,19 @@ class _ShowProgress extends StatelessWidget {
     return Column(
       children: [
         Text(
-          value.toString(),
+          value,
           style: context.textTheme.bodyLarge!.copyWith(
             fontWeight: FontWeight.bold,
             fontSize: 22,
-            color: kWhite
+            color: kWhite,
           ),
         ),
-        Text(title, style: context.textTheme.bodyMedium!.copyWith(
-          color: kBlack
-        )),
+        Text(
+          title,
+          style: context.textTheme.bodyMedium!.copyWith(
+            color: kBlack,
+          ),
+        ),
       ],
     );
   }

@@ -1,4 +1,4 @@
-// lib/pages/questions/widgets/options_card.dart
+
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -99,38 +99,52 @@ class OptionsCard extends StatelessWidget {
                 ),
                 if (showExplanationToggle) ...[
                   Container(
-                    padding: const EdgeInsets.all(8),
+                    padding: const EdgeInsets.all(12),
                     decoration: BoxDecoration(
                       color: Colors.green.shade50,
-                      borderRadius: BorderRadius.circular(8),
+                      borderRadius: BorderRadius.circular(12),
+                      border: Border.all(color: Colors.green.shade200, width: 1),
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        CommonTextSpan(labelOne: "Correct Answer: $correctAnswer - ${option}",labelTwo: "",
-                            textColorTwo:  kWhite,backgroundColorOne: Colors.green),
-
-                        const SizedBox(height: 8),
-                        CommonTextSpan(labelOne: "Explanation: ",
-                          labelTwo:  explanation,
-                          textColorOne: Colors.green.shade800,
-                          textColorTwo: Colors.blue,
-                        ),
-
-                        const SizedBox(height: 8),
                         Container(
-                          padding: EdgeInsets.all(12),
-                          decoration: roundedDecoration.copyWith(
-                              color: Colors.green.shade100,
-                              borderRadius: BorderRadius.circular(10)
+                          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+                          decoration: BoxDecoration(
+                            color: Colors.green.shade100,
+                            borderRadius: BorderRadius.circular(10),
                           ),
-                          child:  CommonTextSpan(
-                            labelOne: "Reference: ",
-                            labelTwo: reference,
-                            fontStyle: FontStyle.italic,
-                            textColorOne: greyColor,
+                          child: Text(
+                            "✅ Correct Answer: $correctAnswer - $option",
+                            style: const TextStyle(
+                              color: Colors.black54,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 15,
+                            ),
                           ),
-                        )
+                        ),
+                        const SizedBox(height: 10),
+                        CommonLabelValueText(
+                          label: "📖 Explanation: ",
+                          value: explanation,
+                          labelColor: Colors.orange.shade700,
+                          valueColor: Colors.black87,
+                        ),
+                        const SizedBox(height: 10),
+                        Container(
+                          padding: const EdgeInsets.all(12),
+                          decoration: BoxDecoration(
+                            color: Colors.green.shade100,
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: CommonLabelValueText(
+                            label: "📚 Reference: ",
+                            value: reference,
+                            labelColor: Colors.deepPurple,
+                            valueColor: Colors.black87,
+                            valueStyle: FontStyle.italic,
+                          ),
+                        ),
                       ],
                     ),
                   ),

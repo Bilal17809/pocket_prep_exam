@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pocket_prep_exam/core/theme/app_colors.dart';
 import 'package:pocket_prep_exam/pages/practice/view/practice_view.dart';
+import 'package:pocket_prep_exam/pages/quiz_view_second/controller/quiz_controller.dart';
 import 'package:pocket_prep_exam/pages/stats/view/stats_view.dart';
 import 'package:pocket_prep_exam/pages/study/view/study_view.dart';
 import '/pages/dashboard/control/dashboard_controller.dart';
@@ -15,12 +16,10 @@ class DashboardView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller= Get.find<DashboardController>();
-
     final List<Widget> screens=[
       StudyView(),
       StatsView(),
-      PracticeView(),
-      // LiveDataView(),
+      PracticeView(result: Get.arguments is QuizResult ? Get.arguments as QuizResult : null),
       SettingView()
     ];
     return Obx((){

@@ -8,6 +8,7 @@ import 'package:pocket_prep_exam/core/routes/routes_name.dart';
 import 'package:pocket_prep_exam/core/theme/app_colors.dart';
 import 'package:pocket_prep_exam/core/theme/app_styles.dart';
 import 'package:pocket_prep_exam/pages/quiz_setup/controller/quiz_setup_controller.dart';
+import '../../quiz_view_second/controller/quiz_controller.dart';
 import '../../quiz_view_second/view/quiz_view.dart';
 import '../widgets/dificuty_selector.dart';
 import '../widgets/options_chip.dart';
@@ -76,6 +77,7 @@ class QuizSetupView extends StatelessWidget {
             CommonButton(
               title: "Start Quiz",
               onTap: () {
+                controller.clearQuiz();
                 Get.toNamed(RoutesName.secondQuizView);
               },
             )

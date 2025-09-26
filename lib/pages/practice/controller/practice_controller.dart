@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:pocket_prep_exam/data/models/models.dart';
+import 'package:pocket_prep_exam/pages/quiz_setup/controller/quiz_setup_controller.dart';
 import 'package:pocket_prep_exam/pages/study/controller/study_controller.dart';
 import 'package:pocket_prep_exam/services/services.dart';
 
@@ -21,6 +22,8 @@ class PracticeController extends GetxController {
     super.onInit();
     loadExam();
   }
+
+  final showQuizTime = Get.find<QuizSetupController>().selectedTimeLimit.value;
 
  Future<void>loadExam() async{
     isLoading.value = true;

@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:pocket_prep_exam/data/models/models.dart';
+import 'package:pocket_prep_exam/pages/quiz_view_second/controller/quiz_controller.dart';
 import 'package:pocket_prep_exam/services/services.dart';
 
 class QuizSetupController extends GetxController {
@@ -19,6 +20,7 @@ class QuizSetupController extends GetxController {
 
 
   Future<void> setSubject(Subject subject) async {
+    // clearQuiz();
     selectedSubject.value = subject;
     final allQuestions = await _questionService.fetchAllQuestions();
     subjectQuestions.assignAll(allQuestions.where((q) => q.subjectId == subject.subjectId).toList(),
@@ -51,6 +53,12 @@ class QuizSetupController extends GetxController {
   void setTimeLimit(int time) {
     selectedTimeLimit.value = time;
   }
+
+    void clearQuiz(){
+      Get.delete<QuizController>();
+     Get.find<QuizController>().resetQuiz();
+    }
+
   List<Question> get finalSelectedQuestions {
     return subjectQuestions.take(selectedQuestions.value).toList();
   }
