@@ -8,6 +8,7 @@ import 'package:pocket_prep_exam/core/theme/app_colors.dart';
 import 'package:pocket_prep_exam/pages/dashboard/view/dashboard_view.dart';
 import 'package:pocket_prep_exam/pages/practice/view/practice_view.dart';
 import 'package:pocket_prep_exam/pages/quiz_view_second/controller/quiz_controller.dart';
+import '../../../core/local_storage/storage_helper.dart';
 import '../../../data/models/exams_and_subject.dart';
 import '../../dashboard/control/dashboard_controller.dart';
 import '../../quiz_setup/controller/quiz_setup_controller.dart';
@@ -106,11 +107,11 @@ class QuizScaffold extends StatelessWidget {
                           title: "Submit Quiz?",
                           message: "",
                           positiveButtonText: "Submit",
-                          onPositiveTap: () {
+                          onPositiveTap: () async {
                             final result = quizController.generateResult();
                             final subject = Get.find<QuizSetupController>().selectedSubject.value;
                             if (subject != null) {
-                              Get.find<StatsController>().saveResult(subject, result);
+                              await Get.find<StatsController>().saveResultAndStore(subject, result);
                             }
                             final dashboardController = Get.find<DashboardController>();
                             dashboardController.setIndex.value = 2;
@@ -119,6 +120,7 @@ class QuizScaffold extends StatelessWidget {
                               arguments: result,
                             );
                           },
+
                           negativeButtonText: "Cancel",
                           onNegativeTap: () => Get.back(),
                         );

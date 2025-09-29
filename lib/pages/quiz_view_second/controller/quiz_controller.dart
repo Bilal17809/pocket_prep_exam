@@ -13,7 +13,9 @@ class QuizController extends GetxController {
   RxBool isSubmitVisible = false.obs;
   var elapsedTime = 0.obs;
 
-  Timer? _activeTimer;
+  Timer? _questionTimer;
+  Timer? _globalTimer;
+
   final state = QuizState.loading.obs;
 
   List<Question> questions = [];
@@ -44,11 +46,10 @@ class QuizController extends GetxController {
 
   void startTimerForQuestion(int questionIndex) {
     final selectedTime = Get.find<QuizSetupController>().selectedTimeLimit.value;
-    stopTimer();
+    _stopQuestionTimer();
     if (selectedOptions.containsKey(questionIndex)) return;
-
     remainingTime[questionIndex] = selectedTime;
-    _activeTimer = Timer.periodic(const Duration(seconds: 1), (timer) {
+    _questionTimer = Timer.periodic(const Duration(seconds: 1), (timer) {
       if (remainingTime[questionIndex]! > 0) {
         remainingTime[questionIndex] = remainingTime[questionIndex]! - 1;
       } else {
@@ -61,7 +62,7 @@ class QuizController extends GetxController {
   void selectOption(int questionIndex, int optionIndex, String selected, String correct) {
     if (!selectedOptions.containsKey(questionIndex)) {
       selectedOptions[questionIndex] = optionIndex;
-      stopTimer();
+      _stopQuestionTimer();
     }
   }
 
@@ -128,15 +129,30 @@ class QuizController extends GetxController {
     return setupController.selectedTimeLimit.value;
   }
 
+
   void _startGlobalTimer() {
-    stopTimer();
+    _stopGlobalTimer();
     elapsedTime.value = 0;
-    _activeTimer = Timer.periodic(const Duration(seconds: 1), (timer) {
+    _globalTimer = Timer.periodic(const Duration(seconds: 1), (timer) {
       elapsedTime.value++;
     });
   }
 
 
+  void _stopQuestionTimer() {
+    _questionTimer?.cancel();
+    _questionTimer = null;
+  }
+
+  void _stopGlobalTimer() {
+    _globalTimer?.cancel();
+    _globalTimer = null;
+  }
+
+  void stopAllTimers() {
+    _stopQuestionTimer();
+    _stopGlobalTimer();
+  }
 
   QuizResult generateResult() {
     final selectedQTime = Get.find<QuizSetupController>().selectedTimeLimit.value;
@@ -146,25 +162,27 @@ class QuizController extends GetxController {
     }).length;
     final totalSkipped = questions.length - selectedOptions.length;
     final totalWrong = selectedOptions.length - totalCorrect;
-    stopTimer();
+    stopAllTimers();
     return QuizResult(
       totalCorrect: totalCorrect,
       totalSkipped: totalSkipped,
       totalWrong: totalWrong,
-      totalTime:  elapsedTime.value,
-      selectedQuizTime:  selectedQTime,
+      totalTime: elapsedTime.value,
+      selectedQuizTime: selectedQTime,
       totalQuestions: questions.length,
     );
   }
+
   void stopTimer() {
-    _activeTimer?.cancel();
-    _activeTimer = null;
+    stopAllTimers();
   }
+
   @override
   void onClose() {
-    stopTimer();
+    stopAllTimers();
     super.onClose();
   }
+
   void resetQuiz() {
     selectedOptions.clear();
     showExplanation.clear();
@@ -172,12 +190,13 @@ class QuizController extends GetxController {
     currentPage.value = 0;
     isSubmitVisible.value = false;
     elapsedTime.value = 0;
-    stopTimer();
+    stopAllTimers();
     // questions = [];
     // state.value = QuizState.loading;
   }
-
 }
+
+
 
 class QuizResult {
   final int totalCorrect;
@@ -195,4 +214,21 @@ class QuizResult {
     required this.selectedQuizTime,
     required this.totalQuestions,
   });
+
+  Map<String, dynamic> toJson() => {
+    "totalCorrect": totalCorrect,
+    "totalSkipped": totalSkipped,
+    "totalWrong": totalWrong,
+    "totalTime": totalTime,
+    "selectedQuizTime": selectedQuizTime,
+    "totalQuestions": totalQuestions,
+  };
+  factory QuizResult.fromJson(Map<String, dynamic> json) => QuizResult(
+    totalCorrect: json["totalCorrect"],
+    totalSkipped: json["totalSkipped"],
+    totalWrong: json["totalWrong"],
+    totalTime: json["totalTime"],
+    selectedQuizTime: json["selectedQuizTime"],
+    totalQuestions: json["totalQuestions"],
+  );
 }

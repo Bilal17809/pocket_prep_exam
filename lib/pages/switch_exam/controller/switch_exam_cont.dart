@@ -5,6 +5,7 @@ import 'package:pocket_prep_exam/data/models/exams_and_subject.dart';
 import 'package:pocket_prep_exam/pages/edite_subjects/controller/edite_subject_controller.dart';
 import 'package:pocket_prep_exam/pages/practice/controller/practice_controller.dart';
 import 'package:pocket_prep_exam/pages/setting/control/setting_controller.dart';
+import 'package:pocket_prep_exam/pages/stats/controller/stats_controller.dart';
 import 'package:pocket_prep_exam/services/exam_and_subjects_services.dart';
 import '../../study/controller/study_controller.dart';
 
@@ -85,6 +86,7 @@ class SwitchExamController extends GetxController {
     await Get.find<EditeSubjectController>().loadExamFromStorage();
     await Get.find<StudyController>().loadExamFromStorage();
     await Get.find<PracticeController>().loadExam();
+    await Get.find<StatsController>().loadExam();
     _updateButtonVisibility();
   }
   void _updateButtonVisibility() {

@@ -22,9 +22,8 @@ class DependencyInject{
     Get.lazyPut<ExamService>(() => ExamService(), fenix: true);
     Get.lazyPut<QuestionService>(() => QuestionService(),fenix: true );
     Get.lazyPut<StorageService>(() => StorageService(),fenix: true);
-
     Get.lazyPut<SwitchExamController>(() => SwitchExamController(examService: Get.find(), storageService:Get.find() ),fenix: true);
-    Get.lazyPut<StatsController>(() => StatsController(),fenix: true);
+    Get.lazyPut<StatsController>(() => StatsController(questionService: Get.find(),storageServices: StorageService()),fenix: true);
     Get.lazyPut<StudyController>(() => StudyController(storageService: Get.find(),examServices: Get.find()),fenix: true);
     Get.lazyPut<SplashController>(() => SplashController(storageService: Get.find()),fenix: true);
     Get.lazyPut<DashboardController>(() => DashboardController(),fenix: true);
@@ -34,7 +33,7 @@ class DependencyInject{
     Get.lazyPut<QuizResultController>(() =>  QuizResultController(),fenix: true);
     Get.lazyPut<ExamSettingController>(() =>  ExamSettingController(storageServices:Get.find(),examService: Get.find()),fenix: true);
     Get.lazyPut<EditeSubjectController>(() => EditeSubjectController(storageServices: Get.find(), examService: Get.find(),questionService: Get.find()),fenix: true);
-    Get.lazyPut<PracticeController>(() => PracticeController(questionService: Get.find()), fenix: true);
+    Get.lazyPut<PracticeController>(() => PracticeController(questionService: Get.find(),storageServices: Get.find()), fenix: true);
     Get.lazyPut<QuizSetupController>(() => QuizSetupController(questionService: Get.find()), fenix: true);
     Get.lazyPut<QuizController>(() =>QuizController(), fenix: true);
   }
