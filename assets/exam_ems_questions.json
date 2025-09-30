@@ -8548,6 +8548,10 @@
     "reference": "IFSTA, Essentials of Fire Fighting, 7th Edition, Chapter 20, p. 1031."
   },
 
+
+//fjjas
+
+
   {
       "question_id": "CCP-C-Q1",
       "subject_id": 8,
@@ -8688,9 +8692,1282 @@
       "explanation": "Vasoactive medications like norepinephrine are commonly titrated during transport to maintain adequate blood pressure in septic shock patients.",
       "reference": "Surviving Sepsis Campaign, Transport Care Section, p. 147."
     },
+  {
+    "question_id": "CCP-C-Q11",
+    "subject_id": 8,
+    "question_text": "Which intervention is most important before transporting a patient with suspected increased intracranial pressure (ICP)?",
+    "options": [
+      "A. Elevating the head of the bed to 30 degrees",
+      "B. Administering diuretics without physician order",
+      "C. Avoiding oxygen administration",
+      "D. Performing endotracheal suctioning repeatedly"
+    ],
+    "correct_answer": "A",
+    "explanation": "Elevation of the head of the bed helps reduce intracranial pressure and improves venous drainage before and during transport.",
+    "reference": "Neurocritical Care Transport Guidelines, ICP Management, p. 189."
+  },
+  {
+    "question_id": "CCP-C-Q12",
+    "subject_id": 8,
+    "question_text": "What is the main advantage of pressure-controlled ventilation during aeromedical transport?",
+    "options": [
+      "A. It requires no monitoring",
+      "B. It reduces the risk of barotrauma at altitude",
+      "C. It eliminates the need for oxygen",
+      "D. It automatically adjusts to turbulence"
+    ],
+    "correct_answer": "B",
+    "explanation": "Pressure-controlled ventilation limits peak airway pressures, reducing barotrauma risk in patients transported at altitude.",
+    "reference": "ACEP Critical Care Transport Standards, Ventilation Modes, p. 127."
+  },
+  {
+    "question_id": "CCP-C-Q13",
+    "subject_id": 8,
+    "question_text": "Which electrolyte disturbance is most critical to identify before transporting a cardiac arrest survivor?",
+    "options": [
+      "A. Hypokalemia",
+      "B. Hypernatremia",
+      "C. Hypocalcemia",
+      "D. Hyperchloremia"
+    ],
+    "correct_answer": "A",
+    "explanation": "Hypokalemia significantly increases the risk of arrhythmias in post-cardiac arrest patients and must be corrected before transport.",
+    "reference": "AHA Post–Cardiac Arrest Transport Guidelines, p. 231."
+  },
+  {
+    "question_id": "CCP-C-Q14",
+    "subject_id": 8,
+    "question_text": "Which safety practice is mandatory for crew during rotor-wing critical care transport?",
+    "options": [
+      "A. Wearing high-visibility vests only",
+      "B. Seatbelt and helmet use at all times",
+      "C. Standing during takeoff for better visibility",
+      "D. Avoiding gloves when handling equipment"
+    ],
+    "correct_answer": "B",
+    "explanation": "Crew members must wear seatbelts and helmets during flight for protection against turbulence and accidents.",
+    "reference": "CAMTS Accreditation Standards, Safety Section, p. 52."
+  },
+  {
+    "question_id": "CCP-C-Q15",
+    "subject_id": 8,
+    "question_text": "What is the primary concern when transporting a patient receiving continuous IV vasopressor infusion?",
+    "options": [
+      "A. Risk of pump disconnection or malfunction",
+      "B. Patient developing hypothermia",
+      "C. Increased oxygen consumption",
+      "D. Low risk of complications"
+    ],
+    "correct_answer": "A",
+    "explanation": "Continuous vasopressor infusion requires uninterrupted delivery; pump malfunction or line disconnection can cause rapid deterioration.",
+    "reference": "SCCM Transport Pharmacology Guidelines, p. 278."
+  },
+  {
+    "question_id": "CCP-C-Q16",
+    "subject_id": 8,
+    "question_text": "Which piece of equipment is essential for transporting patients with severe traumatic brain injury (TBI)?",
+    "options": [
+      "A. Nebulizer",
+      "B. Portable ventilator with ICP management capability",
+      "C. Manual suction pump only",
+      "D. Oxygen nasal cannula"
+    ],
+    "correct_answer": "B",
+    "explanation": "A portable ventilator that allows control of CO₂ levels is essential in managing intracranial pressure during transport.",
+    "reference": "Brain Trauma Foundation Guidelines, Transport Section, p. 201."
+  },
+  {
+    "question_id": "CCP-C-Q17",
+    "subject_id": 8,
+    "question_text": "Which patient population is most vulnerable to hypothermia during prolonged ground transport?",
+    "options": [
+      "A. Neonates",
+      "B. Adolescents",
+      "C. Middle-aged adults",
+      "D. Patients with hypertension"
+    ],
+    "correct_answer": "A",
+    "explanation": "Neonates lose heat rapidly due to a large body surface area relative to weight and must be protected from hypothermia during transport.",
+    "reference": "Neonatal Critical Care Transport Manual, Thermoregulation Section, p. 73."
+  },
+  {
+    "question_id": "CCP-C-Q18",
+    "subject_id": 8,
+    "question_text": "Why is capnography especially important in patients with traumatic brain injury during transport?",
+    "options": [
+      "A. It prevents hypoglycemia",
+      "B. It guides CO₂ levels to avoid cerebral hypoperfusion or hyperemia",
+      "C. It measures oxygenation directly",
+      "D. It ensures airway suctioning is frequent"
+    ],
+    "correct_answer": "B",
+    "explanation": "Capnography helps monitor and maintain appropriate CO₂ levels, which directly impact cerebral blood flow in TBI patients.",
+    "reference": "Neurocritical Transport Guidelines, Airway and Ventilation, p. 142."
+  },
+  {
+    "question_id": "CCP-C-Q19",
+    "subject_id": 8,
+    "question_text": "What is the most important infection control measure during interfacility transport of critically ill patients?",
+    "options": [
+      "A. Frequent hand hygiene and PPE use",
+      "B. Keeping windows open for ventilation",
+      "C. Avoiding intubation at all costs",
+      "D. Not touching the patient’s IV lines"
+    ],
+    "correct_answer": "A",
+    "explanation": "Hand hygiene and proper PPE use are the most effective measures to reduce healthcare-associated infections during transport.",
+    "reference": "CDC Infection Control in Transport Guidelines, p. 65."
+  },
+  {
+    "question_id": "CCP-C-Q20",
+    "subject_id": 8,
+    "question_text": "Which of the following best describes a high-priority scenario for critical care transport?",
+    "options": [
+      "A. A stable patient requesting transfer for personal preference",
+      "B. A patient with septic shock requiring ongoing vasopressors",
+      "C. A patient with a simple wrist fracture",
+      "D. A patient requesting a second opinion"
+    ],
+    "correct_answer": "B",
+    "explanation": "Patients requiring continuous advanced support such as vasopressors must be prioritized for critical care transport.",
+    "reference": "IBSC CCP-C Content Outline, Transport Indications, p. 93."
+  },
+  {
+      "question_id": "CCP-C-Q21",
+      "subject_id": 8,
+      "question_text": "What is the best way to minimize the risk of equipment failure during critical care transport?",
+      "options": [
+        "A. Rely solely on aircraft power sources",
+        "B. Perform a thorough pre-transport equipment check",
+        "C. Assume equipment is always fully charged",
+        "D. Replace all equipment after each transport"
+      ],
+      "correct_answer": "B",
+      "explanation": "Pre-transport equipment checks ensure functionality and reduce the risk of critical failures during transport.",
+      "reference": "CAMTS Standards, Equipment Section, p. 112."
+    },
+  {
+      "question_id": "CCP-C-Q22",
+      "subject_id": 8,
+      "question_text": "Which patient condition is most sensitive to changes in cabin pressure during aeromedical transport?",
+      "options": [
+        "A. Congestive heart failure",
+        "B. Gastrointestinal obstruction",
+        "C. Chronic kidney disease",
+        "D. Hyperthyroidism"
+      ],
+      "correct_answer": "B",
+      "explanation": "Trapped gas within the gastrointestinal tract can expand at altitude, worsening obstruction and discomfort.",
+      "reference": "Aeromedical Physiology Handbook, Gas Expansion Section, p. 88."
+    },
+  {
+      "question_id": "CCP-C-Q23",
+      "subject_id": 8,
+      "question_text": "What is the safest method for transporting blood products in critical care transport?",
+      "options": [
+        "A. In a standard cooler with ice only",
+        "B. In a temperature-controlled storage unit",
+        "C. At room temperature for less than 2 hours",
+        "D. Mixed with IV fluids during transport"
+      ],
+      "correct_answer": "B",
+      "explanation": "Blood products must be stored in temperature-controlled units to maintain viability and prevent contamination.",
+      "reference": "AABB Blood Transport Standards, p. 54."
+    },
+  {
+      "question_id": "CCP-C-Q24",
+      "subject_id": 8,
+      "question_text": "Which factor is most important when planning ground critical care transport during severe weather?",
+      "options": [
+        "A. Route safety and accessibility",
+        "B. The patient's insurance approval",
+        "C. Number of vehicles available",
+        "D. Distance from nearest fueling station"
+      ],
+      "correct_answer": "A",
+      "explanation": "Safe and accessible routes are essential to avoid delays and risks when transporting critically ill patients.",
+      "reference": "SCCM Transport Safety Guidelines, p. 62."
+    },
+  {
+      "question_id": "CCP-C-Q25",
+      "subject_id": 8,
+      "question_text": "In patients requiring high FiO₂ during fixed-wing transport, what is a key planning consideration?",
+      "options": [
+        "A. Ensuring adequate onboard oxygen supply",
+        "B. Using portable suction devices only",
+        "C. Lowering ventilator settings to save oxygen",
+        "D. Switching to nasal cannula mid-flight"
+      ],
+      "correct_answer": "A",
+      "explanation": "High oxygen demand requires careful calculation and sufficient onboard oxygen for the entire transport duration.",
+      "reference": "AAFP Aeromedical Transport Oxygen Management, p. 135."
+    },
+  {
+      "question_id": "CCP-C-Q26",
+      "subject_id": 8,
+      "question_text": "Which of the following patients is MOST appropriate for extracorporeal membrane oxygenation (ECMO) transport?",
+      "options": [
+        "A. A stable patient with mild pneumonia",
+        "B. A patient with refractory hypoxemia despite maximal ventilator support",
+        "C. A patient with minor asthma exacerbation",
+        "D. A patient needing outpatient dialysis"
+      ],
+      "correct_answer": "B",
+      "explanation": "ECMO transport is indicated for patients with severe, refractory hypoxemia or cardiopulmonary failure unresponsive to standard interventions.",
+      "reference": "ELSO Transport Guidelines, p. 211."
+    },
+  {
+      "question_id": "CCP-C-Q27",
+      "subject_id": 8,
+      "question_text": "Which type of shock requires the most careful titration of vasodilators during transport?",
+      "options": [
+        "A. Septic shock",
+        "B. Neurogenic shock",
+        "C. Anaphylactic shock",
+        "D. Hypovolemic shock"
+      ],
+      "correct_answer": "B",
+      "explanation": "Neurogenic shock often involves profound vasodilation; vasopressor and vasodilator titration must be carefully balanced.",
+      "reference": "Critical Care Transport Shock Management, p. 175."
+    },
+  {
+      "question_id": "CCP-C-Q28",
+      "subject_id": 8,
+      "question_text": "Why is a secure airway especially critical during long-distance interfacility transport?",
+      "options": [
+        "A. Because airway compromise is harder to manage in transit",
+        "B. Because it allows the crew to avoid using oxygen",
+        "C. Because it prevents patient movement",
+        "D. Because intubation is not legal outside hospitals"
+      ],
+      "correct_answer": "A",
+      "explanation": "Airway emergencies are more difficult to manage during transport; a secured airway minimizes life-threatening complications.",
+      "reference": "ACEP Airway Transport Standards, p. 148."
+    },
+  {
+      "question_id": "CCP-C-Q29",
+      "subject_id": 8,
+      "question_text": "Which special precaution should be taken when transporting a patient with severe burns?",
+      "options": [
+        "A. Maintain a warm environment to prevent hypothermia",
+        "B. Avoid administering IV fluids en route",
+        "C. Withhold pain management until arrival",
+        "D. Use dry dressings only without oxygen"
+      ],
+      "correct_answer": "A",
+      "explanation": "Severe burn patients are highly susceptible to hypothermia and must be kept warm during transport.",
+      "reference": "ABA Burn Transport Guidelines, p. 94."
+    },
+  {
+      "question_id": "CCP-C-Q30",
+      "subject_id": 8,
+      "question_text": "Which is the greatest hazard of using electronic infusion pumps during helicopter transport?",
+      "options": [
+        "A. Electromagnetic interference",
+        "B. Noise levels in the cabin",
+        "C. Reduced accuracy due to vibration",
+        "D. Power fluctuations during flight"
+      ],
+      "correct_answer": "C",
+      "explanation": "Vibration in helicopters can affect the accuracy of infusion pumps; close monitoring is required.",
+      "reference": "CAMTS Standards, Equipment Performance Section, p. 144."
+    },
+  {
+    "question_id": "CCP-C-Q31",
+    "subject_id": 8,
+    "question_text": "Which patient condition requires the greatest caution when using air transport due to trapped gas expansion?",
+    "options": [
+      "A. Middle ear infection",
+      "B. Acute myocardial infarction",
+      "C. Hyperglycemia",
+      "D. Hypertension"
+    ],
+    "correct_answer": "A",
+    "explanation": "Trapped air in the middle ear can expand with altitude, worsening pain and causing tympanic membrane rupture.",
+    "reference": "Aeromedical Physiology Manual, Pressure Effects Section, p. 103."
+  },
+  {
+    "question_id": "CCP-C-Q32",
+    "subject_id": 8,
+    "question_text": "When transporting a patient with chest tubes, what must be ensured during flight?",
+    "options": [
+      "A. Tubes are clamped to prevent fluid loss",
+      "B. Chest tubes remain open to a water seal device",
+      "C. The drainage system is removed for flight",
+      "D. Tubes are disconnected to allow decompression"
+    ],
+    "correct_answer": "B",
+    "explanation": "Chest tubes must remain open to a water seal or suction device to prevent tension pneumothorax during transport.",
+    "reference": "CAMTS Standards, Thoracic Injury Section, p. 172."
+  },
+  {
+    "question_id": "CCP-C-Q33",
+    "subject_id": 8,
+    "question_text": "What is the most important consideration when transporting patients on continuous renal replacement therapy (CRRT)?",
+    "options": [
+      "A. Transport time relative to machine battery life",
+      "B. Patient’s oral fluid intake",
+      "C. Noise from CRRT machine",
+      "D. Avoiding IV medication administration"
+    ],
+    "correct_answer": "A",
+    "explanation": "Continuous renal replacement therapy depends on power; battery life and transport duration must be carefully calculated.",
+    "reference": "SCCM CRRT Transport Guidelines, p. 284."
+  },
+  {
+    "question_id": "CCP-C-Q34",
+    "subject_id": 8,
+    "question_text": "Which patient scenario requires immediate decompression before air transport?",
+    "options": [
+      "A. Patient with tension pneumothorax",
+      "B. Patient with controlled hypertension",
+      "C. Patient with mild COPD exacerbation",
+      "D. Patient with a central line"
+    ],
+    "correct_answer": "A",
+    "explanation": "Tension pneumothorax worsens rapidly with altitude changes and must be decompressed prior to air transport.",
+    "reference": "ACEP Critical Care Transport Standards, p. 161."
+  },
+  {
+    "question_id": "CCP-C-Q35",
+    "subject_id": 8,
+    "question_text": "What is the best monitoring tool to assess adequacy of chest compressions during transport CPR?",
+    "options": [
+      "A. Pulse oximetry",
+      "B. End-tidal CO₂ (ETCO₂)",
+      "C. Non-invasive blood pressure",
+      "D. Skin color assessment"
+    ],
+    "correct_answer": "B",
+    "explanation": "ETCO₂ monitoring provides immediate feedback on perfusion and CPR effectiveness during transport.",
+    "reference": "AHA CPR Transport Guidelines, p. 209."
+  },
+  {
+    "question_id": "CCP-C-Q36",
+    "subject_id": 8,
+    "question_text": "Which IV medication requires light protection during transport?",
+    "options": [
+      "A. Nitroprusside",
+      "B. Norepinephrine",
+      "C. Dopamine",
+      "D. Amiodarone"
+    ],
+    "correct_answer": "A",
+    "explanation": "Nitroprusside is photosensitive and must be protected from light during storage and administration.",
+    "reference": "Transport Pharmacology Reference, p. 76."
+  },
+  {
+    "question_id": "CCP-C-Q37",
+    "subject_id": 8,
+    "question_text": "What is the most appropriate action if a ventilated patient develops acute desaturation during transport?",
+    "options": [
+      "A. Increase FiO₂ immediately",
+      "B. Disconnect ventilator and bag manually",
+      "C. Lower PEEP to zero",
+      "D. Stop transport until arrival at hospital"
+    ],
+    "correct_answer": "A",
+    "explanation": "The first step in acute desaturation is to increase FiO₂ while troubleshooting for causes like dislodgement, obstruction, or pneumothorax.",
+    "reference": "IBSC CCP-C Candidate Handbook, Ventilation Emergencies, p. 132."
+  },
+  {
+    "question_id": "CCP-C-Q38",
+    "subject_id": 8,
+    "question_text": "Which critical care medication is most likely to be affected by vibration during helicopter transport?",
+    "options": [
+      "A. Insulin",
+      "B. Propofol",
+      "C. Heparin",
+      "D. Fentanyl"
+    ],
+    "correct_answer": "B",
+    "explanation": "Propofol is prone to emulsion instability and requires careful handling during vibration-heavy transport.",
+    "reference": "Critical Care Transport Pharmacology Manual, p. 182."
+  },
+  {
+    "question_id": "CCP-C-Q39",
+    "subject_id": 8,
+    "question_text": "Which infection control measure is essential when transporting a patient with suspected airborne illness?",
+    "options": [
+      "A. Standard gloves only",
+      "B. Negative-pressure transport isolation system",
+      "C. Removing the patient’s oxygen mask",
+      "D. Avoiding patient contact"
+    ],
+    "correct_answer": "B",
+    "explanation": "Patients with airborne illnesses should be transported using negative-pressure isolation systems to prevent crew contamination.",
+    "reference": "CDC Airborne Isolation Transport Guidelines, p. 57."
+  },
+  {
+    "question_id": "CCP-C-Q40",
+    "subject_id": 8,
+    "question_text": "Which factor is most critical when securing invasive lines and tubes during transport?",
+    "options": [
+      "A. Preventing dislodgement from patient movement and vibration",
+      "B. Avoiding use of transparent dressings",
+      "C. Placing lines only on the left side",
+      "D. Disconnecting lines before lift-off"
+    ],
+    "correct_answer": "A",
+    "explanation": "Proper securement prevents life-threatening complications caused by dislodged IV lines, ETTs, or catheters during movement and vibration.",
+    "reference": "IBSC CCP-C Content Outline, Transport Procedures, p. 116."
+  },
+  {
+      "question_id": "CCP-C-Q41",
+      "subject_id": 8,
+      "question_text": "Which type of ventilator setting is most affected by changes in altitude during aeromedical transport?",
+      "options": [
+        "A. Tidal volume in volume-controlled ventilation",
+        "B. FiO₂ in oxygen-blended ventilation",
+        "C. Respiratory rate settings",
+        "D. Inspiratory to expiratory (I:E) ratio"
+      ],
+      "correct_answer": "A",
+      "explanation": "Altitude changes alter gas volume; in volume-controlled ventilation, tidal volume delivery may be affected by pressure variations.",
+      "reference": "ACEP Critical Care Transport Ventilation Standards, p. 141."
+    },
+  {
+      "question_id": "CCP-C-Q42",
+      "subject_id": 8,
+      "question_text": "Which condition requires special protection from vibration during transport?",
+      "options": [
+        "A. Unstable pelvic fracture",
+        "B. Pneumonia",
+        "C. Hyperthyroidism",
+        "D. Stroke without hemorrhage"
+      ],
+      "correct_answer": "A",
+      "explanation": "Vibration can worsen bleeding and instability in patients with unstable fractures, requiring secure immobilization.",
+      "reference": "Orthopedic Trauma Transport Manual, p. 222."
+    },
+  {
+      "question_id": "CCP-C-Q43",
+      "subject_id": 8,
+      "question_text": "Which type of IV fluid is most appropriate for initial resuscitation in septic shock during transport?",
+      "options": [
+        "A. Normal saline",
+        "B. Lactated Ringer’s",
+        "C. Hypertonic saline",
+        "D. 5% dextrose in water"
+      ],
+      "correct_answer": "B",
+      "explanation": "Balanced crystalloids such as Lactated Ringer’s are preferred for initial resuscitation to avoid hyperchloremic acidosis.",
+      "reference": "Surviving Sepsis Campaign Transport Guidelines, p. 119."
+    },
+  {
+      "question_id": "CCP-C-Q44",
+      "subject_id": 8,
+      "question_text": "What is the most appropriate action when a ventilated patient develops suspected tension pneumothorax during transport?",
+      "options": [
+        "A. Increase PEEP",
+        "B. Perform immediate needle decompression",
+        "C. Switch to manual bagging",
+        "D. Wait until arrival at the hospital"
+      ],
+      "correct_answer": "B",
+      "explanation": "Tension pneumothorax requires immediate decompression to restore ventilation and perfusion during transport.",
+      "reference": "IBSC CCP-C Candidate Handbook, Airway and Thoracic Emergencies, p. 174."
+    },
+  {
+      "question_id": "CCP-C-Q45",
+      "subject_id": 8,
+      "question_text": "Which safety measure is most critical when loading a patient into a rotor-wing aircraft?",
+      "options": [
+        "A. Approaching from the tail rotor side",
+        "B. Always approaching from the front, within pilot’s view",
+        "C. Approaching with equipment held above the head",
+        "D. Walking under the main rotor during spin-up"
+      ],
+      "correct_answer": "B",
+      "explanation": "Approaching from the front keeps crew members visible to the pilot and minimizes risk of rotor injury.",
+      "reference": "CAMTS Accreditation Standards, Safety Section, p. 66."
+    },
+  {
+      "question_id": "CCP-C-Q46",
+      "subject_id": 8,
+      "question_text": "During neonatal transport, what is the most critical environmental factor to control?",
+      "options": [
+        "A. Cabin noise",
+        "B. Ambient temperature",
+        "C. Cabin lighting",
+        "D. Barometric pressure"
+      ],
+      "correct_answer": "B",
+      "explanation": "Neonates are highly vulnerable to hypothermia; maintaining a warm environment is the top priority.",
+      "reference": "Neonatal Critical Care Transport Manual, Thermoregulation Section, p. 47."
+    },
+  {
+      "question_id": "CCP-C-Q47",
+      "subject_id": 8,
+      "question_text": "Which is the most reliable indicator of effective fluid resuscitation during transport of a shock patient?",
+      "options": [
+        "A. Improved urine output",
+        "B. Increased blood glucose",
+        "C. Higher body temperature",
+        "D. Decreased ventilator rate"
+      ],
+      "correct_answer": "A",
+      "explanation": "Urine output is a sensitive and reliable marker of perfusion and effective fluid resuscitation.",
+      "reference": "SCCM Transport Shock Monitoring Guidelines, p. 163."
+    },
+  {
+      "question_id": "CCP-C-Q48",
+      "subject_id": 8,
+      "question_text": "Why are vibration and noise concerns particularly significant during helicopter critical care transport?",
+      "options": [
+        "A. They interfere with patient communication",
+        "B. They increase fuel consumption",
+        "C. They impair accuracy of monitoring equipment",
+        "D. Both A and C"
+      ],
+      "correct_answer": "D",
+      "explanation": "Noise and vibration complicate crew-patient communication and can cause inaccurate monitoring readings.",
+      "reference": "CAMTS Standards, Operational Limitations Section, p. 99."
+    },
+  {
+      "question_id": "CCP-C-Q49",
+      "subject_id": 8,
+      "question_text": "What is the priority intervention for a patient experiencing rapid arrhythmia deterioration during transport?",
+      "options": [
+        "A. Continue transport and reassess later",
+        "B. Immediate defibrillation or cardioversion if indicated",
+        "C. Increase oxygen only",
+        "D. Reduce intravenous fluids"
+      ],
+      "correct_answer": "B",
+      "explanation": "Arrhythmias threatening hemodynamic stability require immediate defibrillation or cardioversion.",
+      "reference": "AHA Advanced Cardiac Life Support Guidelines, Transport Care Section, p. 276."
+    },
+  {
+      "question_id": "CCP-C-Q50",
+      "subject_id": 8,
+      "question_text": "Which type of patient most benefits from prone positioning during transport?",
+      "options": [
+        "A. Severe ARDS patient on mechanical ventilation",
+        "B. Patient with minor head trauma",
+        "C. Patient with stable angina",
+        "D. Patient with COPD exacerbation"
+      ],
+      "correct_answer": "A",
+      "explanation": "Prone positioning can significantly improve oxygenation in patients with severe ARDS, even during transport.",
+      "reference": "ARDS Clinical Transport Guidelines, p. 188."
+    },
+  {
+    "question_id": "CCP-C-Q51",
+    "subject_id": 8,
+    "question_text": "Which patient condition poses the greatest risk of gas expansion during altitude changes in flight?",
+    "options": [
+      "A. Pneumothorax",
+      "B. Hypertension",
+      "C. Hyperglycemia",
+      "D. Hypothermia"
+    ],
+    "correct_answer": "A",
+    "explanation": "Boyle’s law predicts gas expansion with altitude; pneumothorax is the highest risk condition.",
+    "reference": "Aviation Physiology Transport Handbook, p. 73."
+  },
+  {
+    "question_id": "CCP-C-Q52",
+    "subject_id": 8,
+    "question_text": "During ground transport, what is the most common cause of unplanned endotracheal tube dislodgement?",
+    "options": [
+      "A. Patient coughing",
+      "B. Inadequate tube securing",
+      "C. Changes in ventilator pressure",
+      "D. Sedation medications"
+    ],
+    "correct_answer": "B",
+    "explanation": "Improper securing of the tube is the leading cause of dislodgement during transport.",
+    "reference": "IBSC Critical Care Exam Prep, p. 212."
+  },
+  {
+    "question_id": "CCP-C-Q53",
+    "subject_id": 8,
+    "question_text": "What is the most appropriate monitoring method for early detection of hypoxemia during critical care transport?",
+    "options": [
+      "A. Pulse oximetry",
+      "B. End-tidal CO₂ monitoring",
+      "C. Cardiac telemetry",
+      "D. Blood pressure monitoring"
+    ],
+    "correct_answer": "A",
+    "explanation": "Pulse oximetry provides real-time detection of oxygen desaturation.",
+    "reference": "Transport Monitoring Guidelines, p. 121."
+  },
+  {
+    "question_id": "CCP-C-Q54",
+    "subject_id": 8,
+    "question_text": "Which pharmacological agent is most appropriate for sedation during helicopter transport of a mechanically ventilated patient?",
+    "options": [
+      "A. Propofol infusion",
+      "B. Diazepam bolus",
+      "C. Haloperidol tablet",
+      "D. Oral midazolam"
+    ],
+    "correct_answer": "A",
+    "explanation": "Propofol infusion allows for rapid titration and control during transport.",
+    "reference": "Sedation Protocols in Critical Care Transport, p. 178."
+  },
+  {
+    "question_id": "CCP-C-Q55",
+    "subject_id": 8,
+    "question_text": "Which lab parameter is the most critical to monitor in a patient receiving massive transfusion en route?",
+    "options": [
+      "A. Calcium",
+      "B. Sodium",
+      "C. Glucose",
+      "D. Chloride"
+    ],
+    "correct_answer": "A",
+    "explanation": "Citrate in transfused blood can cause hypocalcemia, which must be monitored.",
+    "reference": "Massive Transfusion Transport Guide, p. 97."
+  },
+  {
+    "question_id": "CCP-C-Q56",
+    "subject_id": 8,
+    "question_text": "What is the safest practice when transferring a patient from stretcher to aircraft litter?",
+    "options": [
+      "A. Using at least four providers",
+      "B. Tilting the stretcher",
+      "C. Allowing family to assist",
+      "D. Moving quickly to reduce exposure"
+    ],
+    "correct_answer": "A",
+    "explanation": "A four-person lift minimizes risk of accidental injury during transfer.",
+    "reference": "CAMTS Transport Safety Standards, p. 45."
+  },
+  {
+    "question_id": "CCP-C-Q57",
+    "subject_id": 8,
+    "question_text": "During transport, what is the most effective method to manage intracranial pressure in a head-injured patient?",
+    "options": [
+      "A. Elevating the head of the bed to 30 degrees",
+      "B. Increasing FiO₂ to 100%",
+      "C. Using hypertonic saline only",
+      "D. Lowering blood pressure aggressively"
+    ],
+    "correct_answer": "A",
+    "explanation": "Elevation of the head improves venous drainage and helps reduce ICP.",
+    "reference": "Brain Trauma Foundation Transport Guidelines, p. 163."
+  },
+  {
+    "question_id": "CCP-C-Q58",
+    "subject_id": 8,
+    "question_text": "Which factor most limits defibrillator effectiveness during rotor-wing flight?",
+    "options": [
+      "A. Cabin noise",
+      "B. Vibration",
+      "C. Cabin temperature",
+      "D. Barometric pressure"
+    ],
+    "correct_answer": "B",
+    "explanation": "Aircraft vibration can affect pad adhesion and energy delivery.",
+    "reference": "Transport Cardiac Arrest Management Guide, p. 89."
+  },
+  {
+    "question_id": "CCP-C-Q59",
+    "subject_id": 8,
+    "question_text": "What is the priority intervention for a patient with suspected spinal cord injury during ground transport?",
+    "options": [
+      "A. Pain management",
+      "B. Cervical spine immobilization",
+      "C. Rapid warming",
+      "D. Starting IV fluids immediately"
+    ],
+    "correct_answer": "B",
+    "explanation": "Cervical spine immobilization prevents secondary spinal cord injury.",
+    "reference": "Spinal Trauma Transport Guidelines, p. 118."
+  },
+  {
+    "question_id": "CCP-C-Q60",
+    "subject_id": 8,
+    "question_text": "Which communication method is most reliable in rural ground transport settings?",
+    "options": [
+      "A. Cellular phone",
+      "B. Satellite radio",
+      "C. Internet-based messaging",
+      "D. Text messaging"
+    ],
+    "correct_answer": "B",
+    "explanation": "Satellite radio ensures reliable communication where cellular coverage is limited.",
+    "reference": "Transport Communication Protocols, p. 33."
+  },
+  {
+    "question_id": "CCP-C-Q61",
+    "subject_id": 8,
+    "question_text": "Which patient population is at highest risk of hypoglycemia during prolonged transport?",
+    "options": [
+      "A. Infants",
+      "B. COPD patients",
+      "C. Trauma patients",
+      "D. Hypertensive adults"
+    ],
+    "correct_answer": "A",
+    "explanation": "Infants have limited glycogen stores and are highly susceptible to hypoglycemia.",
+    "reference": "Neonatal and Pediatric Transport Manual, p. 112."
+  },
+  {
+    "question_id": "CCP-C-Q62",
+    "subject_id": 8,
+    "question_text": "Which oxygen delivery device is most efficient during long-distance transport with limited O₂ supply?",
+    "options": [
+      "A. Non-rebreather mask",
+      "B. Simple face mask",
+      "C. Nasal cannula",
+      "D. High-flow nasal cannula"
+    ],
+    "correct_answer": "C",
+    "explanation": "Nasal cannula conserves oxygen supply compared to high-flow devices.",
+    "reference": "Transport Oxygen Utilization Standards, p. 85."
+  },
+  {
+    "question_id": "CCP-C-Q63",
+    "subject_id": 8,
+    "question_text": "What is the most significant risk of transporting patients with intra-aortic balloon pumps (IABP)?",
+    "options": [
+      "A. Device migration",
+      "B. Patient hypothermia",
+      "C. Increased oxygen use",
+      "D. Air embolism"
+    ],
+    "correct_answer": "A",
+    "explanation": "Movement during transport can displace the balloon catheter, compromising effectiveness.",
+    "reference": "Cardiac Assist Device Transport Protocols, p. 146."
+  },
+  {
+    "question_id": "CCP-C-Q64",
+    "subject_id": 8,
+    "question_text": "Which is the most important consideration when transporting a patient with a left ventricular assist device (LVAD)?",
+    "options": [
+      "A. Ensuring spare batteries and controller are available",
+      "B. Monitoring for fever",
+      "C. Administering high-dose oxygen",
+      "D. Increasing IV fluid boluses"
+    ],
+    "correct_answer": "A",
+    "explanation": "Continuous power supply is critical for LVAD function, making backup equipment essential.",
+    "reference": "Mechanical Circulatory Support Transport Manual, p. 174."
+  },
+  {
+    "question_id": "CCP-C-Q65",
+    "subject_id": 8,
+    "question_text": "What is the preferred airway management strategy for a combative head-injured patient requiring transport?",
+    "options": [
+      "A. Non-invasive positive pressure ventilation",
+      "B. Rapid sequence intubation",
+      "C. Sedation without intubation",
+      "D. Bag-valve-mask only"
+    ],
+    "correct_answer": "B",
+    "explanation": "Rapid sequence intubation ensures a secure airway and prevents secondary injury.",
+    "reference": "Airway Management in Transport Medicine, p. 133."
+  },
+  {
+    "question_id": "CCP-C-Q66",
+    "subject_id": 8,
+    "question_text": "What is the safest method to monitor temperature in a neonate during transport?",
+    "options": [
+      "A. Axillary thermometer",
+      "B. Rectal probe",
+      "C. Skin probe attached to incubator",
+      "D. Tympanic thermometer"
+    ],
+    "correct_answer": "C",
+    "explanation": "Skin probes integrated with incubators provide continuous monitoring without additional stress.",
+    "reference": "Neonatal Transport Standards, p. 54."
+  },
+  {
+    "question_id": "CCP-C-Q67",
+    "subject_id": 8,
+    "question_text": "Which intervention is most effective for preventing ventilator-associated pneumonia during transport?",
+    "options": [
+      "A. Frequent suctioning",
+      "B. Elevating head of bed",
+      "C. Administering antibiotics en route",
+      "D. Avoiding sedation"
+    ],
+    "correct_answer": "B",
+    "explanation": "Elevating the head reduces aspiration risk, the most preventable cause of pneumonia.",
+    "reference": "Transport Ventilation Protocols, p. 211."
+  },
+  {
+    "question_id": "CCP-C-Q68",
+    "subject_id": 8,
+    "question_text": "Which condition requires pressurized oxygen cylinders during air transport?",
+    "options": [
+      "A. Long bone fracture",
+      "B. Severe COPD with hypoxemia",
+      "C. Minor laceration",
+      "D. Mild dehydration"
+    ],
+    "correct_answer": "B",
+    "explanation": "Pressurized cylinders ensure oxygen delivery remains effective despite altitude changes.",
+    "reference": "Aviation Medicine Transport Guide, p. 76."
+  },
+  {
+    "question_id": "CCP-C-Q69",
+    "subject_id": 8,
+    "question_text": "What is the best transport position for a patient with third-trimester pregnancy and hypotension?",
+    "options": [
+      "A. Supine position",
+      "B. Left lateral tilt",
+      "C. Trendelenburg",
+      "D. Semi-Fowler’s"
+    ],
+    "correct_answer": "B",
+    "explanation": "Left lateral tilt reduces uterine compression of the inferior vena cava and improves venous return.",
+    "reference": "Obstetric Transport Guidelines, p. 139."
+  },
+  {
+    "question_id": "CCP-C-Q70",
+    "subject_id": 8,
+    "question_text": "Which monitoring device is most susceptible to artifact during helicopter transport?",
+    "options": [
+      "A. Non-invasive blood pressure cuff",
+      "B. Invasive arterial line",
+      "C. Pulse oximeter",
+      "D. End-tidal CO₂ monitor"
+    ],
+    "correct_answer": "C",
+    "explanation": "Vibration and motion can cause inaccurate pulse oximetry readings during flight.",
+    "reference": "Transport Monitoring Standards, p. 122."
+  },
+  {
+    "question_id": "CCP-C-Q71",
+    "subject_id": 8,
+    "question_text": "Which electrolyte imbalance is most likely during prolonged diuretic therapy in transported ICU patients?",
+    "options": [
+      "A. Hyperkalemia",
+      "B. Hypokalemia",
+      "C. Hypernatremia",
+      "D. Hypercalcemia"
+    ],
+    "correct_answer": "B",
+    "explanation": "Loop diuretics commonly cause hypokalemia, requiring close monitoring during transport.",
+    "reference": "Critical Care Pharmacology in Transport, p. 101."
+  },
+  {
+    "question_id": "CCP-C-Q72",
+    "subject_id": 8,
+    "question_text": "What is the best initial management for an accidental extubation during transport?",
+    "options": [
+      "A. Apply CPAP mask",
+      "B. Reintubate immediately if resources allow",
+      "C. Administer sedation",
+      "D. Stop transport and wait for hospital arrival"
+    ],
+    "correct_answer": "B",
+    "explanation": "Immediate reintubation is required to secure the airway and prevent hypoxia.",
+    "reference": "Airway Emergencies in Critical Transport, p. 144."
+  },
+  {
+    "question_id": "CCP-C-Q73",
+    "subject_id": 8,
+    "question_text": "Which intravenous solution is preferred for rapid fluid resuscitation during trauma transport?",
+    "options": [
+      "A. 0.45% Normal Saline",
+      "B. Lactated Ringer’s",
+      "C. 5% Dextrose",
+      "D. Hypertonic saline 7.5%"
+    ],
+    "correct_answer": "B",
+    "explanation": "Lactated Ringer’s is an isotonic crystalloid commonly used for trauma resuscitation.",
+    "reference": "Advanced Trauma Transport Care, p. 89."
+  },
+  {
+    "question_id": "CCP-C-Q74",
+    "subject_id": 8,
+    "question_text": "What is the safest location for loading a helicopter in terms of rotor blade clearance?",
+    "options": [
+      "A. Uphill side",
+      "B. Downhill side",
+      "C. Always from the front unless directed otherwise",
+      "D. Always from the rear"
+    ],
+    "correct_answer": "C",
+    "explanation": "Approach from the front in view of the pilot ensures rotor clearance and safety.",
+    "reference": "Air Medical Crew Safety Standards, p. 34."
+  },
+  {
+    "question_id": "CCP-C-Q75",
+    "subject_id": 8,
+    "question_text": "What is the most significant hemodynamic concern with positive pressure ventilation during transport?",
+    "options": [
+      "A. Increased cardiac preload",
+      "B. Decreased venous return",
+      "C. Increased systemic vascular resistance",
+      "D. Increased stroke volume"
+    ],
+    "correct_answer": "B",
+    "explanation": "Positive pressure ventilation reduces venous return, potentially causing hypotension.",
+    "reference": "Ventilation and Hemodynamics in Transport, p. 167."
+  },
+  {
+    "question_id": "CCP-C-Q76",
+    "subject_id": 8,
+    "question_text": "Which monitoring device is required for patients receiving vasoactive drug infusions during transport?",
+    "options": [
+      "A. Invasive arterial line",
+      "B. Capnography",
+      "C. Pulse oximeter",
+      "D. Tympanic thermometer"
+    ],
+    "correct_answer": "A",
+    "explanation": "Continuous blood pressure monitoring is essential for safe titration of vasoactive infusions.",
+    "reference": "Transport Hemodynamic Monitoring, p. 214."
+  },
+  {
+    "question_id": "CCP-C-Q77",
+    "subject_id": 8,
+    "question_text": "What is the preferred analgesic for severe pain management during transport of a trauma patient?",
+    "options": [
+      "A. Fentanyl",
+      "B. Ibuprofen",
+      "C. Acetaminophen",
+      "D. Ketorolac"
+    ],
+    "correct_answer": "A",
+    "explanation": "Fentanyl is short-acting, potent, and easily titrated for pain control during transport.",
+    "reference": "Prehospital Pain Management Standards, p. 92."
+  },
+  {
+    "question_id": "CCP-C-Q78",
+    "subject_id": 8,
+    "question_text": "Which method best prevents accidental line dislodgement during transport?",
+    "options": [
+      "A. Looping tubing under sheets",
+      "B. Securing lines with tape and stabilization devices",
+      "C. Using only one IV line",
+      "D. Disconnecting unnecessary lines"
+    ],
+    "correct_answer": "B",
+    "explanation": "Proper securement prevents accidental removal of IV or arterial lines.",
+    "reference": "Line Management in Transport Medicine, p. 109."
+  },
+  {
+    "question_id": "CCP-C-Q79",
+    "subject_id": 8,
+    "question_text": "Which type of transport is most affected by weather delays?",
+    "options": [
+      "A. Rotor-wing",
+      "B. Ground ambulance",
+      "C. Fixed-wing",
+      "D. Water transport"
+    ],
+    "correct_answer": "A",
+    "explanation": "Helicopters are more sensitive to weather, visibility, and turbulence compared to ground or fixed-wing.",
+    "reference": "Transport Logistics Handbook, p. 64."
+  },
+  {
+    "question_id": "CCP-C-Q80",
+    "subject_id": 8,
+    "question_text": "What is the most reliable way to confirm endotracheal tube placement during transport?",
+    "options": [
+      "A. Chest rise observation",
+      "B. Auscultation only",
+      "C. Continuous waveform capnography",
+      "D. Fogging in the tube"
+    ],
+    "correct_answer": "C",
+    "explanation": "Waveform capnography is the gold standard for continuous confirmation of ETT placement.",
+    "reference": "Airway Verification Transport Protocols, p. 155."
+  },
+  {
+    "question_id": "CCP-C-Q81",
+    "subject_id": 8,
+    "question_text": "Which patient transport requires the greatest infection control precautions?",
+    "options": [
+      "A. Immunocompromised patient",
+      "B. Stroke patient",
+      "C. STEMI patient",
+      "D. Burn patient"
+    ],
+    "correct_answer": "A",
+    "explanation": "Immunocompromised patients are highly vulnerable to infections, requiring strict precautions.",
+    "reference": "Transport Infection Prevention Standards, p. 202."
+  },
+  {
+    "question_id": "CCP-C-Q82",
+    "subject_id": 8,
+    "question_text": "Which gas law explains why endotracheal tube cuff pressure increases during altitude ascent?",
+    "options": [
+      "A. Boyle’s law",
+      "B. Charles’s law",
+      "C. Henry’s law",
+      "D. Dalton’s law"
+    ],
+    "correct_answer": "A",
+    "explanation": "Boyle’s law: as ambient pressure decreases with altitude, gas volume expands, increasing cuff pressure.",
+    "reference": "Aeromedical Physiology in Critical Care, p. 73."
+  },
+  {
+    "question_id": "CCP-C-Q83",
+    "subject_id": 8,
+    "question_text": "Which blood product is most appropriate for correcting coagulopathy during transport?",
+    "options": [
+      "A. Platelets",
+      "B. Fresh frozen plasma",
+      "C. Packed red blood cells",
+      "D. Albumin"
+    ],
+    "correct_answer": "B",
+    "explanation": "FFP is used to replace clotting factors in coagulopathy patients.",
+    "reference": "Massive Transfusion and Transport Standards, p. 117."
+  },
+  {
+    "question_id": "CCP-C-Q84",
+    "subject_id": 8,
+    "question_text": "Which transport mode is preferred for long-distance stable interfacility transfer?",
+    "options": [
+      "A. Ground ambulance",
+      "B. Rotor-wing",
+      "C. Fixed-wing aircraft",
+      "D. Watercraft"
+    ],
+    "correct_answer": "C",
+    "explanation": "Fixed-wing transport is most efficient for long distances with stable patients.",
+    "reference": "IBSC Transport Logistics Guide, p. 41."
+  },
+  {
+    "question_id": "CCP-C-Q85",
+    "subject_id": 8,
+    "question_text": "Which is the most common complication of intraosseous access during transport?",
+    "options": [
+      "A. Osteomyelitis",
+      "B. Dislodgement or extravasation",
+      "C. Air embolism",
+      "D. Arrhythmia"
+    ],
+    "correct_answer": "B",
+    "explanation": "Dislodgement or extravasation is the most common complication of IO access.",
+    "reference": "Transport Vascular Access Guidelines, p. 128."
+  },
+  {
+    "question_id": "CCP-C-Q86",
+    "subject_id": 8,
+    "question_text": "Which patient transport is most likely to require isolette use?",
+    "options": [
+      "A. Pediatric trauma patient",
+      "B. Neonate",
+      "C. Immunocompromised adult",
+      "D. Burn patient"
+    ],
+    "correct_answer": "B",
+    "explanation": "Neonates require controlled environments with isolette transport systems.",
+    "reference": "Neonatal Critical Care Transport Manual, p. 88."
+  },
+  {
+    "question_id": "CCP-C-Q87",
+    "subject_id": 8,
+    "question_text": "Which cardiac arrhythmia is most associated with hypothermia during transport?",
+    "options": [
+      "A. Atrial fibrillation",
+      "B. Ventricular fibrillation",
+      "C. Sinus bradycardia",
+      "D. Supraventricular tachycardia"
+    ],
+    "correct_answer": "C",
+    "explanation": "Sinus bradycardia is the most common arrhythmia seen with hypothermia.",
+    "reference": "Hypothermia Transport Protocols, p. 139."
+  },
+  {
+    "question_id": "CCP-C-Q88",
+    "subject_id": 8,
+    "question_text": "Which factor most influences survival in septic shock transport patients?",
+    "options": [
+      "A. Early initiation and titration of vasopressors",
+      "B. Adequate pain control",
+      "C. Continuous glucose monitoring",
+      "D. Supplemental vitamins"
+    ],
+    "correct_answer": "A",
+    "explanation": "Maintaining adequate perfusion with vasopressors is critical in septic shock.",
+    "reference": "Surviving Sepsis Campaign Transport Guidelines, p. 172."
+  },
+  {
+    "question_id": "CCP-C-Q89",
+    "subject_id": 8,
+    "question_text": "Which patient requires the highest inspired oxygen concentration during transport?",
+    "options": [
+      "A. Stroke patient",
+      "B. Myocardial infarction",
+      "C. Smoke inhalation with carbon monoxide poisoning",
+      "D. Orthopedic fracture"
+    ],
+    "correct_answer": "C",
+    "explanation": "High-flow oxygen reduces carboxyhemoglobin levels in carbon monoxide poisoning.",
+    "reference": "Toxicology and Transport Medicine, p. 199."
+  },
+  {
+    "question_id": "CCP-C-Q90",
+    "subject_id": 8,
+    "question_text": "Which condition benefits most from transport with a prone position?",
+    "options": [
+      "A. ARDS",
+      "B. Myocardial infarction",
+      "C. Stroke",
+      "D. COPD"
+    ],
+    "correct_answer": "A",
+    "explanation": "Prone positioning improves oxygenation in patients with severe ARDS.",
+    "reference": "Ventilation Management in Critical Care Transport, p. 218."
+  },
+  {
+    "question_id": "CCP-C-Q91",
+    "subject_id": 8,
+    "question_text": "Which neuromuscular blocker is preferred for rapid sequence intubation during transport?",
+    "options": [
+      "A. Succinylcholine",
+      "B. Rocuronium",
+      "C. Pancuronium",
+      "D. Vecuronium"
+    ],
+    "correct_answer": "A",
+    "explanation": "Succinylcholine provides rapid onset and short duration, ideal for RSI.",
+    "reference": "Airway Pharmacology in Transport, p. 103."
+  },
+  {
+    "question_id": "CCP-C-Q92",
+    "subject_id": 8,
+    "question_text": "Which airway device is best as a rescue option when intubation fails during transport?",
+    "options": [
+      "A. Oropharyngeal airway",
+      "B. Nasal cannula",
+      "C. Supraglottic airway (LMA/i-gel)",
+      "D. Simple mask"
+    ],
+    "correct_answer": "C",
+    "explanation": "Supraglottic devices provide rapid alternative ventilation when intubation fails.",
+    "reference": "Rescue Airway Devices in Transport, p. 156."
+  },
+  {
+    "question_id": "CCP-C-Q93",
+    "subject_id": 8,
+    "question_text": "Which vital sign parameter is most important to trend in a patient with suspected sepsis during transport?",
+    "options": [
+      "A. Blood pressure",
+      "B. Heart rate",
+      "C. Oxygen saturation",
+      "D. Temperature"
+    ],
+    "correct_answer": "A",
+    "explanation": "Maintaining blood pressure is critical for organ perfusion in sepsis management.",
+    "reference": "Sepsis Transport Care Guidelines, p. 173."
+  },
+  {
+    "question_id": "CCP-C-Q94",
+    "subject_id": 8,
+    "question_text": "Which sedative is most appropriate for an agitated traumatic brain injury patient during transport?",
+    "options": [
+      "A. Midazolam",
+      "B. Diazepam",
+      "C. Ketamine",
+      "D. Haloperidol"
+    ],
+    "correct_answer": "C",
+    "explanation": "Ketamine provides sedation without significant hypotension, beneficial in TBI transport.",
+    "reference": "Neurocritical Transport Sedation Guidelines, p. 151."
+  },
+  {
+    "question_id": "CCP-C-Q95",
+    "subject_id": 8,
+    "question_text": "Which is the most reliable indicator of end-organ perfusion during transport?",
+    "options": [
+      "A. Capillary refill",
+      "B. Urine output",
+      "C. Heart rate",
+      "D. Skin temperature"
+    ],
+    "correct_answer": "B",
+    "explanation": "Urine output reflects renal perfusion and overall organ perfusion status.",
+    "reference": "Critical Care Transport Monitoring, p. 188."
+  },
+  {
+    "question_id": "CCP-C-Q96",
+    "subject_id": 8,
+    "question_text": "Which factor most complicates medication infusion accuracy during rotor-wing transport?",
+    "options": [
+      "A. Barometric pressure",
+      "B. Aircraft vibration",
+      "C. Ambient temperature",
+      "D. Pilot communication"
+    ],
+    "correct_answer": "B",
+    "explanation": "Vibration can interfere with infusion pumps, requiring close monitoring.",
+    "reference": "Medication Administration in Air Transport, p. 134."
+  },
+  {
+    "question_id": "CCP-C-Q97",
+    "subject_id": 8,
+    "question_text": "Which specialized equipment is mandatory for transporting bariatric patients?",
+    "options": [
+      "A. Scoop stretcher",
+      "B. Reinforced stretcher and lifting devices",
+      "C. Vacuum mattress",
+      "D. Neonatal isolette"
+    ],
+    "correct_answer": "B",
+    "explanation": "Bariatric patients require reinforced equipment for safety and stability.",
+    "reference": "Bariatric Transport Safety Standards, p. 211."
+  },
+  {
+    "question_id": "CCP-C-Q98",
+    "subject_id": 8,
+    "question_text": "Which clinical parameter is most critical when titrating vasopressors during transport?",
+    "options": [
+      "A. Mean arterial pressure (MAP)",
+      "B. Heart rate",
+      "C. Oxygen saturation",
+      "D. Temperature"
+    ],
+    "correct_answer": "A",
+    "explanation": "MAP guides perfusion pressure and vasopressor titration.",
+    "reference": "Hemodynamic Management in Transport, p. 215."
+  },
+  {
+    "question_id": "CCP-C-Q99",
+    "subject_id": 8,
+    "question_text": "Which condition most increases the risk of hypoxia during altitude ascent in fixed-wing transport?",
+    "options": [
+      "A. Severe anemia",
+      "B. Hypertension",
+      "C. Hyperglycemia",
+      "D. Hypothermia"
+    ],
+    "correct_answer": "A",
+    "explanation": "Patients with anemia have reduced oxygen-carrying capacity, worsening hypoxia at altitude.",
+    "reference": "Altitude Physiology and Transport Medicine, p. 82."
+  },
+  {
+    "question_id": "CCP-C-Q100",
+    "subject_id": 8,
+    "question_text": "Which is the most appropriate pre-transport preparation for a patient with severe ARDS requiring ECMO support?",
+    "options": [
+      "A. Confirm ECMO cannulas are secure and portable circuit is functioning",
+      "B. Start high-dose steroids",
+      "C. Administer oral antibiotics",
+      "D. Stop all anticoagulants"
+    ],
+    "correct_answer": "A",
+    "explanation": "Ensuring ECMO equipment and cannulas are secure is critical for safe transport.",
+    "reference": "ECMO Transport Safety Guidelines, p. 229."
+  },
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     {
-      "question_id": "CCP-C-Q11",
+      "question_id": "CCP-C-Q1",
       "subject_id": 9,
       "question_text": "What is the primary goal of adjusting the ventilator’s tidal volume in an ARDS patient?",
       "options": [
@@ -8704,7 +9981,7 @@
       "reference": "ARDSNet Ventilation Strategy, p. 212."
     },
     {
-      "question_id": "CCP-C-Q12",
+      "question_id": "CCP-C-Q2",
       "subject_id": 9,
       "question_text": "What is the recommended plateau pressure limit in mechanically ventilated patients with ARDS?",
       "options": [
@@ -8718,7 +9995,7 @@
       "reference": "Critical Care Ventilation Guidelines, p. 198."
     },
     {
-      "question_id": "CCP-C-Q13",
+      "question_id": "CCP-C-Q3",
       "subject_id": 9,
       "question_text": "Which ventilator mode provides a set tidal volume but allows the patient to initiate breaths?",
       "options": [
@@ -8732,7 +10009,7 @@
       "reference": "Ventilator Modes Overview, p. 121."
     },
     {
-      "question_id": "CCP-C-Q14",
+      "question_id": "CCP-C-Q4",
       "subject_id": 9,
       "question_text": "High PEEP levels are used in ARDS primarily to:",
       "options": [
@@ -8746,7 +10023,7 @@
       "reference": "ARDS Management Protocol, p. 230."
     },
     {
-      "question_id": "CCP-C-Q15",
+      "question_id": "CCP-C-Q5",
       "subject_id": 9,
       "question_text": "What is the effect of increasing inspiratory time in mechanical ventilation?",
       "options": [
@@ -8760,7 +10037,7 @@
       "reference": "Mechanical Ventilation Concepts, p. 145."
     },
     {
-      "question_id": "CCP-C-Q16",
+      "question_id": "CCP-C-Q6",
       "subject_id": 9,
       "question_text": "Permissive hypercapnia in ventilated patients is primarily used to:",
       "options": [
@@ -8774,7 +10051,7 @@
       "reference": "Critical Care Ventilation Principles, p. 178."
     },
     {
-      "question_id": "CCP-C-Q17",
+      "question_id": "CCP-C-Q7",
       "subject_id": 9,
       "question_text": "What is the most common complication of prolonged mechanical ventilation?",
       "options": [
@@ -8788,7 +10065,7 @@
       "reference": "Infectious Complications in Ventilation, p. 265."
     },
     {
-      "question_id": "CCP-C-Q18",
+      "question_id": "CCP-C-Q8",
       "subject_id": 9,
       "question_text": "Which parameter is adjusted to directly control PaCO2 in mechanical ventilation?",
       "options": [
@@ -8802,7 +10079,7 @@
       "reference": "Blood Gas Management in Ventilation, p. 156."
     },
     {
-      "question_id": "CCP-C-Q19",
+      "question_id": "CCP-C-Q9",
       "subject_id": 9,
       "question_text": "Which mode of ventilation is most appropriate for a patient requiring full ventilatory support with no spontaneous effort?",
       "options": [
@@ -8816,7 +10093,7 @@
       "reference": "Ventilation Mode Selection, p. 134."
     },
     {
-      "question_id": "CCP-C-Q20",
+      "question_id": "CCP-C-Q10",
       "subject_id": 9,
       "question_text": "Which strategy is recommended to reduce ventilator-induced lung injury?",
       "options": [
