@@ -103,9 +103,11 @@ class QuizScaffold extends StatelessWidget {
                   child: CommonButton(
                     title: "Submit Quiz",
                       onTap: () {
+                      final answered = quizController.questions.length - quizController.totalSkipped;
                         CustomDialog.show(
                           title: "Submit Quiz?",
-                          message: "",
+                          message: "You've answered $answered of ${quizController.questions.length} questions. "
+                          "If you submit, you'll only be scored on the $answered question you answered.",
                           positiveButtonText: "Submit",
                           onPositiveTap: () async {
                             final result = quizController.generateResult();

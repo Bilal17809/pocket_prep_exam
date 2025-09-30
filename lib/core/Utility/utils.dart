@@ -16,7 +16,7 @@ class Utils {
     Get.snackbar(
       title,
       message,
-      snackPosition: SnackPosition.BOTTOM,
+      snackPosition: SnackPosition.TOP,
       backgroundColor: isSuccess ? const Color(0xFF4CAF50) : Colors.red,
       colorText: Colors.white,
       margin: const EdgeInsets.all(12),
@@ -78,5 +78,11 @@ class Utils {
       },
     );
     return result ?? false;
+  }
+
+  static String formatTime(int seconds) {
+    final minutes = seconds ~/ 60;
+    final secs = seconds % 60;
+    return minutes > 0 ? "${minutes}m ${secs}s" : "${secs}s";
   }
 }

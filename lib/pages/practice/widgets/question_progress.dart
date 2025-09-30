@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
+import 'package:pocket_prep_exam/core/Utility/utils.dart';
 import 'package:pocket_prep_exam/core/theme/app_colors.dart';
 import 'package:pocket_prep_exam/pages/stats/widgets/progress_gauge.dart';
 
@@ -19,8 +20,7 @@ class QuestionProgress extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final double progress =
-    (totalQuestions > 0) ? correct / totalQuestions : 0.0;
+    final double progress = (totalQuestions > 0) ? correct / totalQuestions : 0.0;
     return Column(
       children: [
         Container(
@@ -78,7 +78,7 @@ class QuestionProgress extends StatelessWidget {
               children: [
                 _ShowProgress(value: "$correct", title: "Answered"),
                 _ShowProgress(value: "$skipped", title: "Left"),
-                _ShowProgress(value: "${totalTime}s", title: "Quiz Time"),
+                _ShowProgress(value: Utils.formatTime(totalTime), title: "Quiz Time"),
               ],
             ),
           ),

@@ -23,40 +23,44 @@ class PracticeView extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: kBodyHp),
         child: SingleChildScrollView(
-          child: Obx(() {
-            // 1. Priority: UI argument result (jab quiz complete hua ho)
-            final quizResult = result
-                ?? practiceController.savedResult.value;
-
-            final int correct = quizResult?.totalCorrect ?? 0;
-            final int skipped = quizResult?.totalSkipped ?? 0;
-            final int totalTime = quizResult?.totalTime ?? 0;
-            final int totalQuestions = quizResult?.totalQuestions ?? (correct + skipped);
-
-            return Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const SizedBox(height: 10),
-                QuestionProgress(
-                  correct: correct,
-                  skipped: skipped,
-                  totalTime: totalTime,
-                  totalQuestions: totalQuestions,
-                ),
-                const SizedBox(height: 10),
-                const StatsCard(text: "Return to last test"),
-                const SizedBox(height: 10),
-                Text(
-                  "Practice By Subject",
-                  style: context.textTheme.bodyMedium!.copyWith(fontSize: 18),
-                ),
-                const SizedBox(height: 10),
-                const SubjectList(),
-              ],
-            );
-          }),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const SizedBox(height: 10),
+              result != null
+                  ? _buildQuestionProgress(result!)
+                  : Obx(() {
+                final quizResult = practiceController.savedResult.value;
+                if (quizResult == null) {
+                  return _buildQuestionProgress(null);
+                }
+                return _buildQuestionProgress(quizResult);
+              }),
+              const SizedBox(height: 10),
+              const StatsCard(text: "Return to last test"),
+              const SizedBox(height: 10),
+              Text(
+                "Practice By Subject",
+                style: context.textTheme.bodyMedium!.copyWith(fontSize: 18),
+              ),
+              const SizedBox(height: 10),
+              const SubjectList(),
+            ],
+          ),
         ),
       ),
+    );
+  }
+  Widget _buildQuestionProgress(QuizResult? quizResult) {
+    final int correct = quizResult?.totalCorrect ?? 0;
+    final int skipped = quizResult?.totalSkipped ?? 0;
+    final int totalTime = quizResult?.selectedQuizTime ?? 0;
+    final int totalQuestions = quizResult?.totalQuestions ?? (correct + skipped);
+    return QuestionProgress(
+      correct: correct,
+      skipped: skipped,
+      totalTime: totalTime,
+      totalQuestions: totalQuestions,
     );
   }
 }

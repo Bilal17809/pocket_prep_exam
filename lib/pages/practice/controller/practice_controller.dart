@@ -38,16 +38,20 @@ class PracticeController extends GetxController {
       allQuestions.assignAll(questions);
       if (exam != null) {
         selectExam.value = exam;
-      }
-      final result = await _storageService.loadQuizResult();
-      if (result != null) {
-        savedResult.value = result;
+        final result = await _storageService.loadQuizResult(exam.examId);
+        if (result != null) {
+          savedResult.value = result;
+        } else {
+          savedResult.value = null;
+        }
       } else {
+        savedResult.value = null;
       }
     } finally {
       isLoading.value = false;
     }
   }
+
 
   int? getQuestionCountBySubject(int subjectId) {
     return allQuestions.where((q) => q.subjectId == subjectId).length;

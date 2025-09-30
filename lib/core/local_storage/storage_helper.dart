@@ -15,6 +15,7 @@ class StorageService {
   static const String _saveSelectedExam = "_selected_exam_index";
   static const String selectedExamKey = "selected_exam_id";
   static const String _quizResultKey = "_quiz_result";
+  static const String _selectedSubjectsKey = "_selected_subjects";
 
   Future<void> saveName(List<String> examName) async {
     await _preferences.setStringList(_saveExamName, examName);
@@ -71,19 +72,37 @@ class StorageService {
 
 
   //Save Quiz result
-  Future<void> saveQuizResult(QuizResult result) async {
+  Future<void> saveQuizResult(int examId, QuizResult result) async {
     final jsonString = jsonEncode(result.toJson());
-    await _preferences.setString(_quizResultKey, jsonString);
+    await _preferences.setString("quiz_result_$examId", jsonString);
   }
 
-  Future<QuizResult?> loadQuizResult() async {
-    final jsonString = _preferences.getString(_quizResultKey);
+  Future<QuizResult?> loadQuizResult(int examId) async {
+    final jsonString = _preferences.getString("quiz_result_$examId");
     if (jsonString == null) return null;
-    final map = jsonDecode(jsonString);
-    return QuizResult.fromJson(map);
+    return QuizResult.fromJson(jsonDecode(jsonString));
   }
 
   Future<void> clearQuizResult() async {
     await _preferences.remove(_quizResultKey);
+  }
+
+
+ // save subjects
+  Future<void> saveSelectedSubjects(int examId, List<int> subjectIds) async {
+    await _preferences.setStringList(
+      "${_selectedSubjectsKey}_$examId",
+      subjectIds.map((id) => id.toString()).toList(),
+    );
+  }
+
+  // Load saved subjects for a specific exam
+  Future<List<int>> loadSelectedSubjects(int examId) async {
+    final list = _preferences.getStringList("${_selectedSubjectsKey}_$examId");
+    return list?.map((e) => int.tryParse(e) ?? 0).where((id) => id != 0).toList() ?? [];
+  }
+
+  Future<void> clearSelectedSubjects(int examId) async {
+    await _preferences.remove("${_selectedSubjectsKey}_$examId");
   }
 }

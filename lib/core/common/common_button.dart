@@ -1,10 +1,10 @@
 
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pocket_prep_exam/core/common/constant.dart';
 import 'package:pocket_prep_exam/core/theme/app_colors.dart';
-import 'package:pocket_prep_exam/core/theme/app_theme.dart';
+
 
 class CommonButton extends StatelessWidget {
   final String title;
@@ -32,13 +32,13 @@ class CommonButton extends StatelessWidget {
               end: Alignment.bottomRight,
             ),
             borderRadius: BorderRadius.circular(40),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withOpacity(0.25),
-                offset: const Offset(3, 3),  // right-bottom shadow
-                blurRadius: 4,
-              ),
-            ],
+            // boxShadow: [
+            //   BoxShadow(
+            //     color: Colors.black.withOpacity(0.25),
+            //     offset: const Offset(3, 3),  // right-bottom shadow
+            //     blurRadius: 4,
+            //   ),
+            // ],
           ),
           child: Center(
             child: Text(
@@ -63,24 +63,52 @@ class CommonButton extends StatelessWidget {
 }
 
 class HideCommonButton extends StatelessWidget {
-  const HideCommonButton ({super.key});
+  final String title;
+
+  const HideCommonButton({super.key, required this.title});
+
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
-    final width = MediaQuery.of(context).size.width;
+
     return Padding(
-      padding:  EdgeInsets.symmetric(vertical: bodySmallWH,horizontal: 32),
+      padding: EdgeInsets.symmetric(vertical: bodySmallWH, horizontal: 10),
       child: Container(
         height: height * 0.07,
-        // width: width * 0.60,
-        decoration: AppTheme.buttonDecoration.copyWith(
-          color: Colors.blue.withAlpha(120)
+        width: double.infinity,
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [
+              lightSkyBlue.withOpacity(0.4), // lighter disabled look
+              lightSkyBlue.withOpacity(0.6),
+            ],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          ),
+          borderRadius: BorderRadius.circular(40),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.15), // softer shadow
+              offset: const Offset(2, 2),
+              blurRadius: 3,
+            ),
+          ],
         ),
         child: Center(
-          child: Text("Switch Exam",style: context.textTheme.bodyLarge!.copyWith(
-              color: kWhite,
-              fontWeight: FontWeight.bold
-          ),),
+          child: Text(
+            title,
+            style: context.textTheme.bodyLarge!.copyWith(
+              color: Colors.white.withOpacity(0.7), // faded text
+              fontWeight: FontWeight.bold,
+              shadows: const [
+                Shadow(
+                  blurRadius: 2,
+                  color: Colors.black26,
+                  offset: Offset(1, 1),
+                ),
+              ],
+            ),
+          ),
         ),
       ),
     );

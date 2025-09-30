@@ -1,6 +1,8 @@
 import 'package:get/get.dart';
 import 'package:pocket_prep_exam/core/local_storage/storage_helper.dart';
 import 'package:pocket_prep_exam/services/questions_services.dart';
+import '../../quiz_setup/controller/quiz_setup_controller.dart';
+import '../../study/controller/study_controller.dart';
 import '/data/models/question_model.dart';
 import '../../study/controller/study_controller.dart';
 import '/data/models/exams_and_subject.dart';
@@ -40,7 +42,9 @@ class StatsController extends GetxController {
 
   Future<void> saveResultAndStore(Subject subject, QuizResult result) async {
     saveResult(subject, result);
-    await _storageService.saveQuizResult(result);
+    final examId = selectExam.value!.examId;
+      await _storageService.saveQuizResult(examId, result);
+
   }
 
 

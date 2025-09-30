@@ -31,31 +31,16 @@ class QuizRateCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                      "Quiz Rate",
-                      style: titleSmallStyle.copyWith(fontWeight: FontWeight.bold)
+                    "Quiz Rate",
+                    style: titleSmallStyle.copyWith(fontWeight: FontWeight.bold),
                   ),
                   const SizedBox(height: 12),
-                  Text(
-                      "Average Time          ${statsController.averageTime}",
-                      style: bodyMediumStyle.copyWith(color: Colors.black54)
-                  ),
-                  const SizedBox(height: 8),
-                  Text(
-                      "Average Questions     ${statsController.averageQuestions}",
-                      style: bodyMediumStyle.copyWith(color: Colors.black54)
-                  ),
-                  const SizedBox(height: 8),
-                  Text(
-                      "Quiz Attempts         ${statsController.totalQuizAttempts}",
-                      style: bodyMediumStyle.copyWith(color: Colors.black54)
-                  ),
-                  const SizedBox(height: 4),
-                  Text(
-                      "Subjects Attempted    ${statsController.subjectsAttempted}",
-                      style: bodyMediumStyle.copyWith(color: Colors.black54)
-                  ),
+                  _StatRow(label: "Average Time", value:  statsController.averageTime),
+                  _StatRow(label: "Average Questions", value: statsController.averageQuestions),
+                  _StatRow(label: "Quiz Attempts", value: statsController.totalQuizAttempts.toString()),
+                  _StatRow(label: "Subjects Attempted", value: statsController.subjectsAttempted.toString()),
                 ],
-              ),
+              )
             ),
             Stack(
               alignment: Alignment.center,
@@ -67,14 +52,14 @@ class QuizRateCard extends StatelessWidget {
                     value: progressValue,
                     strokeWidth: 7,
                     backgroundColor: Colors.grey.shade200,
-                    valueColor: const AlwaysStoppedAnimation<Color>(lightSkyBlue),
+                    valueColor:  AlwaysStoppedAnimation<Color>(lightSkyBlue),
                   ),
                 ),
                 Text(
                     percentage,
                     style: bodyMediumStyle.copyWith(
                         color: lightSkyBlue,
-                        fontSize: 22,
+                        fontSize: 28,
                         fontWeight: FontWeight.bold
                     )
                 ),
@@ -87,69 +72,33 @@ class QuizRateCard extends StatelessWidget {
   }
 }
 
-// Alternative version with more compact layout
-// class QuizRateCardCompact extends StatelessWidget {
-//   const QuizRateCardCompact({super.key});
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     final statsController = Get.find<StatsController>();
-//
-//     return Obx(() {
-//       final percentage = statsController.overallProgressPercentage;
-//       final progressValue = statsController.progressValue;
-//
-//       return Container(
-//         padding: const EdgeInsets.all(16),
-//         decoration: roundedDecoration,
-//         child: Row(
-//           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-//           children: [
-//             Column(
-//               crossAxisAlignment: CrossAxisAlignment.start,
-//               children: [
-//                 Text(
-//                     "Quiz Rate",
-//                     style: titleSmallStyle.copyWith(fontWeight: FontWeight.bold)
-//                 ),
-//                 const SizedBox(height: 12),
-//                 Text(
-//                     "Average Time          ${statsController.averageTime}",
-//                     style: bodyMediumStyle.copyWith(color: Colors.black54)
-//                 ),
-//                 const SizedBox(height: 8),
-//                 Text(
-//                     "Average Questions     ${statsController.averageQuestions}",
-//                     style: bodyMediumStyle.copyWith(color: Colors.black54)
-//                 ),
-//               ],
-//             ),
-//             Stack(
-//               alignment: Alignment.center,
-//               children: [
-//                 SizedBox(
-//                   height: 80,
-//                   width: 80,
-//                   child: CircularProgressIndicator(
-//                     value: progressValue,
-//                     strokeWidth: 6,
-//                     backgroundColor: Colors.grey.shade200,
-//                     valueColor: const AlwaysStoppedAnimation<Color>(lightSkyBlue),
-//                   ),
-//                 ),
-//                 Text(
-//                     percentage,
-//                     style: bodyMediumStyle.copyWith(
-//                         color: lightSkyBlue,
-//                         fontSize: 22,
-//                         fontWeight: FontWeight.bold
-//                     )
-//                 ),
-//               ],
-//             )
-//           ],
-//         ),
-//       );
-//     });
-//   }
-// }
+class _StatRow extends StatelessWidget {
+  final String label;
+  final String value;
+
+  const _StatRow({required this.label, required this.value});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(right: 32),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(
+            label,
+            style: bodyMediumStyle.copyWith(color: Colors.black54),
+          ),
+          Text(
+            value,
+            style: bodyMediumStyle.copyWith(
+              color: kBlack,
+              fontSize: 16,
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}

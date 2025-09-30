@@ -29,7 +29,7 @@ class EmptyStatisticsCard extends StatelessWidget {
                   maxLines: 2,
                 ),
               ),
-              Text("0%", style: bodyLargeStyle),
+              Text("0.0%", style: bodyLargeStyle.copyWith(color: lightSkyBlue,fontSize: 18,fontWeight: FontWeight.bold)),
             ],
           ),
           const SizedBox(height: 12),

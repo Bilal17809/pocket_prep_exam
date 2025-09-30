@@ -47,16 +47,19 @@ class SubjectStatisticsCard extends StatelessWidget {
                     maxLines: 2,
                   ),
                 ),
-                Text("${percentage.toStringAsFixed(1)}%", style: bodyLargeStyle),
+                Text("${percentage.toStringAsFixed(1)}%", style: bodyLargeStyle.copyWith(color: lightSkyBlue,fontWeight: FontWeight.bold,fontSize: 18)),
               ],
             ),
             const SizedBox(height: 12),
-            LinearProgressIndicator(
+          ClipRRect(
+            borderRadius: BorderRadius.circular(10),
+            child:   LinearProgressIndicator(
               value: percentage / 100,
               backgroundColor: Colors.grey.shade200,
               color: lightSkyBlue,
               minHeight: 6,
             ),
+          ),
             const SizedBox(height: 16),
             GridView.count(
               crossAxisCount: 2,

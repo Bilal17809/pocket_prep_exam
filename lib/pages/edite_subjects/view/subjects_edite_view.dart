@@ -1,7 +1,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:pocket_prep_exam/core/Utility/utils.dart';
 import 'package:pocket_prep_exam/core/common/common_button.dart';
+import 'package:pocket_prep_exam/core/routes/routes_name.dart';
 import 'package:pocket_prep_exam/core/theme/app_colors.dart';
 import 'package:pocket_prep_exam/pages/edite_subjects/controller/edite_subject_controller.dart';
 import 'package:pocket_prep_exam/pages/edite_subjects/widgets/subjects_list.dart';
@@ -36,7 +38,12 @@ class SubjectsEditeView extends StatelessWidget {
             Text("${controller.questionPool.length} questions",style: context.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold
             ),),
 
-            CommonButton(title: "Save  Subjects", onTap: (){})
+            CommonButton(title: "Save  Subjects", onTap: (){
+              controller.saveSelectedSubjectsForExam();
+              Get.back();
+              Utils.showSuccess("Subjects saved successfully");
+
+            })
           ],
         );
       })

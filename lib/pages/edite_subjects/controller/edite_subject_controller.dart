@@ -44,6 +44,11 @@ class EditeSubjectController extends GetxController {
       examQuestions.clear();
       selectedExam.value = newExam;
       examQuestions.value = await _service.fetchAllQuestions();
+
+      final savedSubjects = await _storageService.loadSelectedSubjects(newExam.examId);
+      if (savedSubjects.isNotEmpty) {
+        selectedSubjectIds.assignAll(savedSubjects);
+      }
       _buildPool();
     }
   }
@@ -77,6 +82,12 @@ class EditeSubjectController extends GetxController {
       selectedSubjectIds.assignAll(allIds);
     }
     _buildPool();
+  }
+
+  Future<void> saveSelectedSubjectsForExam() async {
+    final exam = selectedExam.value;
+    if (exam == null) return;
+    await _storageService.saveSelectedSubjects(exam.examId, selectedSubjectIds.toList());
   }
 
   void _buildPool() {

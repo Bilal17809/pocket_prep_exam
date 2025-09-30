@@ -37,7 +37,7 @@ class ExamSwitchView extends StatelessWidget {
                   Get.to(() => DashboardView());
                 },
               ):
-              HideCommonButton()
+              HideCommonButton(title: "Switch Exam",)
             ],
           );
         })
