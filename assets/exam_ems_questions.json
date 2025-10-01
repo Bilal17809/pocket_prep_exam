@@ -8549,7 +8549,7 @@
   },
 
 
-//fjjas
+
 
 
   {
@@ -10106,6 +10106,1271 @@
       "explanation": "Low tidal volume ventilation with adequate PEEP minimizes alveolar overdistension and shear stress.",
       "reference": "Lung Protective Ventilation, p. 201."
     },
+  {
+    "question_id": "CCP-C-Q11",
+    "subject_id": 9,
+    "question_text": "What is the recommended initial tidal volume setting in ARDS patients according to lung-protective strategies?",
+    "options": [
+      "A. 4–6 mL/kg predicted body weight",
+      "B. 6–8 mL/kg actual body weight",
+      "C. 8–10 mL/kg predicted body weight",
+      "D. 10–12 mL/kg actual body weight"
+    ],
+    "correct_answer": "A",
+    "explanation": "Lung-protective ventilation uses tidal volumes of 4–6 mL/kg predicted body weight to minimize lung injury.",
+    "reference": "ARDSNet Protocol, p. 214."
+  },
+  {
+    "question_id": "CCP-C-Q12",
+    "subject_id": 9,
+    "question_text": "Which ventilator setting is adjusted to primarily improve oxygenation?",
+    "options": [
+      "A. Respiratory Rate",
+      "B. FiO2",
+      "C. Tidal Volume",
+      "D. Inspiratory Flow Rate"
+    ],
+    "correct_answer": "B",
+    "explanation": "Increasing FiO2 increases the amount of oxygen delivered to the alveoli, directly improving oxygenation.",
+    "reference": "Critical Care Ventilation Concepts, p. 142."
+  },
+  {
+    "question_id": "CCP-C-Q13",
+    "subject_id": 9,
+    "question_text": "Which waveform is most useful in detecting auto-PEEP during mechanical ventilation?",
+    "options": [
+      "A. Pressure-Time waveform",
+      "B. Flow-Time waveform",
+      "C. Volume-Time waveform",
+      "D. Pressure-Volume loop"
+    ],
+    "correct_answer": "B",
+    "explanation": "A flow-time waveform that does not return to baseline before the next breath suggests auto-PEEP.",
+    "reference": "Waveform Interpretation in Ventilation, p. 178."
+  },
+  {
+    "question_id": "CCP-C-Q14",
+    "subject_id": 9,
+    "question_text": "What is the primary benefit of pressure support ventilation (PSV)?",
+    "options": [
+      "A. Guarantees tidal volume delivery",
+      "B. Improves patient comfort and synchrony",
+      "C. Prevents barotrauma",
+      "D. Ensures complete ventilatory support"
+    ],
+    "correct_answer": "B",
+    "explanation": "PSV augments spontaneous breaths, reducing patient effort and improving synchrony.",
+    "reference": "Modes of Ventilation Review, p. 119."
+  },
+  {
+    "question_id": "CCP-C-Q15",
+    "subject_id": 9,
+    "question_text": "Which factor most increases the risk of barotrauma in mechanical ventilation?",
+    "options": [
+      "A. High FiO2",
+      "B. High peak inspiratory pressure",
+      "C. Low PEEP",
+      "D. Short inspiratory time"
+    ],
+    "correct_answer": "B",
+    "explanation": "Excessively high peak inspiratory pressures can cause alveolar rupture and barotrauma.",
+    "reference": "Complications of Mechanical Ventilation, p. 221."
+  },
+  {
+    "question_id": "CCP-C-Q16",
+    "subject_id": 9,
+    "question_text": "In APRV (Airway Pressure Release Ventilation), oxygenation is primarily improved by:",
+    "options": [
+      "A. Prolonged high-pressure phase",
+      "B. Increasing FiO2",
+      "C. Short release time",
+      "D. Low tidal volumes"
+    ],
+    "correct_answer": "A",
+    "explanation": "APRV maintains alveolar recruitment through prolonged high-pressure phases, improving oxygenation.",
+    "reference": "Advanced Ventilation Strategies, p. 256."
+  },
+  {
+    "question_id": "CCP-C-Q17",
+    "subject_id": 9,
+    "question_text": "What is the primary risk of using high FiO2 (>60%) for prolonged periods?",
+    "options": [
+      "A. Barotrauma",
+      "B. Oxygen toxicity",
+      "C. Hypocapnia",
+      "D. Auto-PEEP"
+    ],
+    "correct_answer": "B",
+    "explanation": "Prolonged high FiO2 can lead to oxygen toxicity and lung damage.",
+    "reference": "Oxygen Therapy Guidelines, p. 190."
+  },
+  {
+    "question_id": "CCP-C-Q18",
+    "subject_id": 9,
+    "question_text": "Which ventilator mode is most commonly used during weaning trials?",
+    "options": [
+      "A. Assist-Control",
+      "B. Pressure Support Ventilation",
+      "C. SIMV with mandatory breaths",
+      "D. APRV"
+    ],
+    "correct_answer": "B",
+    "explanation": "PSV supports spontaneous breathing, making it ideal for weaning trials.",
+    "reference": "Weaning from Mechanical Ventilation, p. 271."
+  },
+  {
+    "question_id": "CCP-C-Q19",
+    "subject_id": 9,
+    "question_text": "What does an elevated plateau pressure indicate in mechanical ventilation?",
+    "options": [
+      "A. Increased airway resistance",
+      "B. Decreased chest wall compliance",
+      "C. Increased alveolar pressure",
+      "D. Increased tidal volume"
+    ],
+    "correct_answer": "C",
+    "explanation": "Elevated plateau pressure reflects increased alveolar pressure and reduced compliance.",
+    "reference": "Ventilation Monitoring, p. 167."
+  },
+  {
+    "question_id": "CCP-C-Q20",
+    "subject_id": 9,
+    "question_text": "Which maneuver is used to measure intrinsic PEEP?",
+    "options": [
+      "A. End-inspiratory hold",
+      "B. End-expiratory hold",
+      "C. Inspiratory pause",
+      "D. Rapid shallow breathing index"
+    ],
+    "correct_answer": "B",
+    "explanation": "An end-expiratory hold maneuver allows measurement of trapped pressure, indicating intrinsic PEEP.",
+    "reference": "Advanced Ventilation Monitoring, p. 188."
+  },
+  {
+    "question_id": "CCP-C-Q21",
+    "subject_id": 9,
+    "question_text": "Which setting should be adjusted first to improve CO2 removal in mechanical ventilation?",
+    "options": [
+      "A. FiO2",
+      "B. Respiratory Rate",
+      "C. PEEP",
+      "D. I:E Ratio"
+    ],
+    "correct_answer": "B",
+    "explanation": "Increasing respiratory rate enhances minute ventilation and improves CO2 elimination.",
+    "reference": "Blood Gas Management, p. 153."
+  },
+  {
+    "question_id": "CCP-C-Q22",
+    "subject_id": 9,
+    "question_text": "What is the major hemodynamic consequence of excessive PEEP?",
+    "options": [
+      "A. Increased preload",
+      "B. Decreased cardiac output",
+      "C. Hypertension",
+      "D. Bradycardia"
+    ],
+    "correct_answer": "B",
+    "explanation": "Excessive PEEP reduces venous return, leading to decreased cardiac output.",
+    "reference": "PEEP and Hemodynamics, p. 211."
+  },
+  {
+    "question_id": "CCP-C-Q23",
+    "subject_id": 9,
+    "question_text": "In which condition is non-invasive ventilation (NIV) most beneficial?",
+    "options": [
+      "A. Severe ARDS",
+      "B. Acute exacerbation of COPD",
+      "C. Pulmonary embolism",
+      "D. Tension pneumothorax"
+    ],
+    "correct_answer": "B",
+    "explanation": "NIV is particularly effective in acute COPD exacerbations to reduce intubation need.",
+    "reference": "Non-Invasive Ventilation, p. 203."
+  },
+  {
+    "question_id": "CCP-C-Q24",
+    "subject_id": 9,
+    "question_text": "Which ventilator alarm indicates a possible circuit disconnection?",
+    "options": [
+      "A. High-pressure alarm",
+      "B. Low-pressure alarm",
+      "C. Apnea alarm",
+      "D. High PEEP alarm"
+    ],
+    "correct_answer": "B",
+    "explanation": "A low-pressure alarm usually indicates disconnection or leak in the circuit.",
+    "reference": "Ventilator Alarm Management, p. 129."
+  },
+  {
+    "question_id": "CCP-C-Q25",
+    "subject_id": 9,
+    "question_text": "What is the target SpO2 range for most ventilated critically ill patients?",
+    "options": [
+      "A. 70–75%",
+      "B. 80–85%",
+      "C. 88–95%",
+      "D. 96–100%"
+    ],
+    "correct_answer": "C",
+    "explanation": "Targeting 88–95% avoids hypoxemia while minimizing oxygen toxicity risk.",
+    "reference": "Oxygenation Targets in ICU, p. 141."
+  },
+  {
+    "question_id": "CCP-C-Q26",
+    "subject_id": 9,
+    "question_text": "Which ventilator setting adjustment can help reduce dynamic hyperinflation in COPD patients?",
+    "options": [
+      "A. Increase inspiratory time",
+      "B. Decrease respiratory rate",
+      "C. Increase tidal volume",
+      "D. Increase PEEP significantly"
+    ],
+    "correct_answer": "B",
+    "explanation": "Reducing respiratory rate allows more time for exhalation, reducing air trapping.",
+    "reference": "COPD Ventilation Strategies, p. 233."
+  },
+  {
+    "question_id": "CCP-C-Q27",
+    "subject_id": 9,
+    "question_text": "What is the primary purpose of an inspiratory hold maneuver?",
+    "options": [
+      "A. To measure plateau pressure",
+      "B. To detect auto-PEEP",
+      "C. To assess dead space ventilation",
+      "D. To increase tidal volume"
+    ],
+    "correct_answer": "A",
+    "explanation": "An inspiratory hold is used to measure plateau pressure, reflecting alveolar pressure.",
+    "reference": "Ventilation Monitoring Techniques, p. 158."
+  },
+  {
+    "question_id": "CCP-C-Q28",
+    "subject_id": 9,
+    "question_text": "Which condition is most likely if peak inspiratory pressure increases but plateau pressure remains unchanged?",
+    "options": [
+      "A. Decreased lung compliance",
+      "B. Increased airway resistance",
+      "C. Pneumothorax",
+      "D. Pulmonary edema"
+    ],
+    "correct_answer": "B",
+    "explanation": "When plateau pressure is stable but peak pressure rises, it indicates increased airway resistance (e.g., secretions, bronchospasm).",
+    "reference": "Airway Resistance in Ventilation, p. 174."
+  },
+  {
+    "question_id": "CCP-C-Q29",
+    "subject_id": 9,
+    "question_text": "Which strategy is recommended for preventing ventilator-associated pneumonia (VAP)?",
+    "options": [
+      "A. Routine high-dose antibiotics",
+      "B. Daily sedation interruption",
+      "C. Zero PEEP approach",
+      "D. Low FiO2 only"
+    ],
+    "correct_answer": "B",
+    "explanation": "Daily sedation interruption reduces duration of ventilation and lowers VAP risk.",
+    "reference": "VAP Prevention Guidelines, p. 269."
+  },
+  {
+    "question_id": "CCP-C-Q30",
+    "subject_id": 9,
+    "question_text": "What is the main clinical sign of patient-ventilator asynchrony?",
+    "options": [
+      "A. Stable tidal volumes",
+      "B. Irregular ventilator waveforms",
+      "C. Normal plateau pressure",
+      "D. Stable oxygen saturation"
+    ],
+    "correct_answer": "B",
+    "explanation": "Asynchrony manifests as irregularities in ventilator waveforms and patient discomfort.",
+    "reference": "Patient-Ventilator Interaction, p. 246."
+  },
+  {
+    "question_id": "CCP-C-Q31",
+    "subject_id": 9,
+    "question_text": "What is the typical inspiratory to expiratory (I:E) ratio used in patients with obstructive lung disease on mechanical ventilation?",
+    "options": [
+      "A. 1:1",
+      "B. 1:2",
+      "C. 1:3 to 1:4",
+      "D. 2:1"
+    ],
+    "correct_answer": "C",
+    "explanation": "In obstructive disease, a longer expiratory phase (1:3–1:4) prevents air trapping and auto-PEEP.",
+    "reference": "Ventilation Strategies for COPD, p. 237."
+  },
+  {
+    "question_id": "CCP-C-Q32",
+    "subject_id": 9,
+    "question_text": "Which type of dead space is increased by mechanical ventilation with high tidal volumes?",
+    "options": [
+      "A. Anatomic dead space",
+      "B. Physiologic dead space",
+      "C. Alveolar dead space",
+      "D. Equipment dead space"
+    ],
+    "correct_answer": "C",
+    "explanation": "Overdistension increases alveolar dead space, impairing CO2 clearance.",
+    "reference": "Ventilation Physiology, p. 125."
+  },
+  {
+    "question_id": "CCP-C-Q33",
+    "subject_id": 9,
+    "question_text": "Which intervention is most effective to reduce oxygen toxicity in ventilated patients?",
+    "options": [
+      "A. Reduce FiO2 below 60% as soon as possible",
+      "B. Increase respiratory rate",
+      "C. Increase tidal volume",
+      "D. Shorten inspiratory time"
+    ],
+    "correct_answer": "A",
+    "explanation": "Reducing FiO2 below 60% minimizes oxygen toxicity risk while maintaining safe oxygenation.",
+    "reference": "Oxygen Therapy Guidelines, p. 192."
+  },
+  {
+    "question_id": "CCP-C-Q34",
+    "subject_id": 9,
+    "question_text": "What does a 'beaking' pattern on the pressure-volume loop indicate?",
+    "options": [
+      "A. Optimal compliance",
+      "B. Overdistension of alveoli",
+      "C. Auto-PEEP",
+      "D. Circuit leak"
+    ],
+    "correct_answer": "B",
+    "explanation": "Beaking on the pressure-volume curve suggests overdistension from excessive tidal volume or pressure.",
+    "reference": "Ventilator Waveform Analysis, p. 176."
+  },
+  {
+    "question_id": "CCP-C-Q35",
+    "subject_id": 9,
+    "question_text": "Which parameter should be monitored to avoid dynamic hyperinflation?",
+    "options": [
+      "A. Peak inspiratory pressure",
+      "B. Expiratory flow returning to baseline",
+      "C. Inspiratory time",
+      "D. Plateau pressure"
+    ],
+    "correct_answer": "B",
+    "explanation": "If expiratory flow fails to return to baseline, it indicates incomplete exhalation and potential hyperinflation.",
+    "reference": "Waveform Interpretation in Ventilation, p. 179."
+  },
+  {
+    "question_id": "CCP-C-Q36",
+    "subject_id": 9,
+    "question_text": "Which strategy is recommended when managing ventilation in severe asthma?",
+    "options": [
+      "A. High respiratory rate",
+      "B. Low tidal volume and long expiratory time",
+      "C. High PEEP",
+      "D. APRV mode"
+    ],
+    "correct_answer": "B",
+    "explanation": "Long expiratory time prevents air trapping and barotrauma in severe asthma.",
+    "reference": "Asthma Critical Care Management, p. 224."
+  },
+  {
+    "question_id": "CCP-C-Q37",
+    "subject_id": 9,
+    "question_text": "What is the main purpose of adjusting trigger sensitivity in mechanical ventilation?",
+    "options": [
+      "A. Improve FiO2 delivery",
+      "B. Enhance patient-ventilator synchrony",
+      "C. Reduce plateau pressure",
+      "D. Increase mean airway pressure"
+    ],
+    "correct_answer": "B",
+    "explanation": "Proper trigger sensitivity ensures the ventilator responds appropriately to patient effort, improving synchrony.",
+    "reference": "Patient-Ventilator Interaction, p. 243."
+  },
+  {
+    "question_id": "CCP-C-Q38",
+    "subject_id": 9,
+    "question_text": "Which lung condition is best managed with inverse ratio ventilation (IRV)?",
+    "options": [
+      "A. ARDS with refractory hypoxemia",
+      "B. COPD exacerbation",
+      "C. Neuromuscular weakness",
+      "D. Post-operative atelectasis"
+    ],
+    "correct_answer": "A",
+    "explanation": "IRV increases mean airway pressure and alveolar recruitment, improving oxygenation in severe ARDS.",
+    "reference": "Advanced Ventilation Strategies, p. 259."
+  },
+  {
+    "question_id": "CCP-C-Q39",
+    "subject_id": 9,
+    "question_text": "Which sedation strategy reduces duration of mechanical ventilation?",
+    "options": [
+      "A. Continuous deep sedation",
+      "B. Daily sedation interruption",
+      "C. Neuromuscular blockade for all patients",
+      "D. Benzodiazepine infusion only"
+    ],
+    "correct_answer": "B",
+    "explanation": "Daily sedation breaks allow assessment of readiness to wean and reduce ventilation time.",
+    "reference": "Sedation in ICU Patients, p. 267."
+  },
+  {
+    "question_id": "CCP-C-Q40",
+    "subject_id": 9,
+    "question_text": "In pressure-controlled ventilation, what determines tidal volume?",
+    "options": [
+      "A. Inspiratory flow",
+      "B. Airway resistance and lung compliance",
+      "C. FiO2",
+      "D. Set respiratory rate"
+    ],
+    "correct_answer": "B",
+    "explanation": "In pressure-controlled modes, tidal volume depends on lung compliance and airway resistance.",
+    "reference": "Ventilation Modes, p. 136."
+  },
+  {
+    "question_id": "CCP-C-Q41",
+    "subject_id": 9,
+    "question_text": "What is the most appropriate intervention for high peak inspiratory pressure due to secretions?",
+    "options": [
+      "A. Increase FiO2",
+      "B. Administer bronchodilators",
+      "C. Perform suctioning",
+      "D. Increase tidal volume"
+    ],
+    "correct_answer": "C",
+    "explanation": "Suctioning clears secretions that increase airway resistance and peak pressure.",
+    "reference": "Airway Management in Ventilation, p. 189."
+  },
+  {
+    "question_id": "CCP-C-Q42",
+    "subject_id": 9,
+    "question_text": "Which condition would benefit from high-frequency oscillatory ventilation (HFOV)?",
+    "options": [
+      "A. COPD exacerbation",
+      "B. Severe pediatric ARDS",
+      "C. Neuromuscular weakness",
+      "D. Pulmonary embolism"
+    ],
+    "correct_answer": "B",
+    "explanation": "HFOV is occasionally used in refractory pediatric ARDS when conventional ventilation fails.",
+    "reference": "Pediatric Ventilation Strategies, p. 281."
+  },
+  {
+    "question_id": "CCP-C-Q43",
+    "subject_id": 9,
+    "question_text": "What is the recommended target driving pressure (ΔP = plateau pressure – PEEP) in ARDS patients?",
+    "options": [
+      "A. < 10 cmH2O",
+      "B. < 15 cmH2O",
+      "C. < 20 cmH2O",
+      "D. < 25 cmH2O"
+    ],
+    "correct_answer": "B",
+    "explanation": "Keeping driving pressure below 15 cmH2O reduces mortality in ARDS patients.",
+    "reference": "Driving Pressure in Ventilation, p. 220."
+  },
+  {
+    "question_id": "CCP-C-Q44",
+    "subject_id": 9,
+    "question_text": "What does a sudden drop in exhaled tidal volume alarm usually indicate?",
+    "options": [
+      "A. Patient effort mismatch",
+      "B. Air leak or circuit disconnection",
+      "C. Bronchospasm",
+      "D. Increased lung compliance"
+    ],
+    "correct_answer": "B",
+    "explanation": "A sudden drop in exhaled tidal volume indicates a leak, commonly due to disconnection.",
+    "reference": "Ventilator Alarms, p. 131."
+  },
+  {
+    "question_id": "CCP-C-Q45",
+    "subject_id": 9,
+    "question_text": "In which patients should plateau pressure be closely monitored to prevent lung injury?",
+    "options": [
+      "A. COPD exacerbation",
+      "B. ARDS",
+      "C. Pulmonary embolism",
+      "D. Myasthenia gravis"
+    ],
+    "correct_answer": "B",
+    "explanation": "Plateau pressure is crucial in ARDS to minimize volutrauma and barotrauma.",
+    "reference": "ARDSNet Ventilation Strategy, p. 212."
+  },
+  {
+    "question_id": "CCP-C-Q46",
+    "subject_id": 9,
+    "question_text": "Which patient condition is most likely to develop auto-PEEP during ventilation?",
+    "options": [
+      "A. Restrictive lung disease",
+      "B. Obstructive lung disease",
+      "C. Pulmonary edema",
+      "D. Pleural effusion"
+    ],
+    "correct_answer": "B",
+    "explanation": "Obstructive lung diseases, such as COPD, predispose patients to air trapping and auto-PEEP.",
+    "reference": "Dynamic Hyperinflation in COPD, p. 241."
+  },
+  {
+    "question_id": "CCP-C-Q47",
+    "subject_id": 9,
+    "question_text": "Which ventilator setting should be minimized to prevent volutrauma?",
+    "options": [
+      "A. PEEP",
+      "B. Tidal Volume",
+      "C. Respiratory Rate",
+      "D. FiO2"
+    ],
+    "correct_answer": "B",
+    "explanation": "Low tidal volume ventilation reduces alveolar overdistension and prevents volutrauma.",
+    "reference": "Protective Ventilation Strategies, p. 200."
+  },
+  {
+    "question_id": "CCP-C-Q48",
+    "subject_id": 9,
+    "question_text": "What is the main purpose of a spontaneous breathing trial (SBT)?",
+    "options": [
+      "A. To test oxygen delivery",
+      "B. To evaluate readiness for extubation",
+      "C. To measure lung compliance",
+      "D. To increase cardiac output"
+    ],
+    "correct_answer": "B",
+    "explanation": "SBT assesses if a patient can maintain adequate breathing without full ventilator support.",
+    "reference": "Weaning Protocols, p. 272."
+  },
+  {
+    "question_id": "CCP-C-Q49",
+    "subject_id": 9,
+    "question_text": "Which acid-base disturbance is commonly seen with permissive hypercapnia?",
+    "options": [
+      "A. Metabolic acidosis",
+      "B. Respiratory acidosis",
+      "C. Metabolic alkalosis",
+      "D. Respiratory alkalosis"
+    ],
+    "correct_answer": "B",
+    "explanation": "Permissive hypercapnia allows elevated PaCO2, resulting in respiratory acidosis.",
+    "reference": "Ventilation Principles, p. 177."
+  },
+  {
+    "question_id": "CCP-C-Q50",
+    "subject_id": 9,
+    "question_text": "Which complication is associated with high mean airway pressures in mechanical ventilation?",
+    "options": [
+      "A. Atelectasis",
+      "B. Reduced venous return",
+      "C. Bronchospasm",
+      "D. Increased preload"
+    ],
+    "correct_answer": "B",
+    "explanation": "High mean airway pressure increases intrathoracic pressure, reducing venous return and cardiac output.",
+    "reference": "Hemodynamic Effects of Ventilation, p. 213."
+  },
+  {
+    "question_id": "CCP-C-Q51",
+    "subject_id": 9,
+    "question_text": "What is the primary indication for initiating prone positioning in ARDS patients on mechanical ventilation?",
+    "options": [
+      "A. Refractory hypercapnia",
+      "B. Severe hypoxemia despite optimized settings",
+      "C. Hypotension from high PEEP",
+      "D. Auto-PEEP management"
+    ],
+    "correct_answer": "B",
+    "explanation": "Prone positioning improves oxygenation in patients with severe hypoxemia unresponsive to conventional ventilation.",
+    "reference": "Prone Ventilation Guidelines, p. 227."
+  },
+  {
+    "question_id": "CCP-C-Q52",
+    "subject_id": 9,
+    "question_text": "What does a widening difference between peak and plateau pressures usually indicate?",
+    "options": [
+      "A. Decreased lung compliance",
+      "B. Increased airway resistance",
+      "C. Pulmonary embolism",
+      "D. Cardiac tamponade"
+    ],
+    "correct_answer": "B",
+    "explanation": "A larger difference between peak and plateau pressures suggests increased airway resistance.",
+    "reference": "Ventilation Pressure Monitoring, p. 174."
+  },
+  {
+    "question_id": "CCP-C-Q53",
+    "subject_id": 9,
+    "question_text": "Which clinical measurement best reflects the adequacy of ventilation?",
+    "options": [
+      "A. PaO2",
+      "B. PaCO2",
+      "C. Oxygen saturation",
+      "D. Tidal volume"
+    ],
+    "correct_answer": "B",
+    "explanation": "PaCO2 reflects alveolar ventilation and is the best measure of ventilatory adequacy.",
+    "reference": "Blood Gas Analysis in Ventilation, p. 159."
+  },
+  {
+    "question_id": "CCP-C-Q54",
+    "subject_id": 9,
+    "question_text": "Which adjustment helps minimize asynchrony in patients with high inspiratory demand?",
+    "options": [
+      "A. Increase inspiratory flow rate",
+      "B. Increase FiO2",
+      "C. Increase tidal volume",
+      "D. Increase PEEP"
+    ],
+    "correct_answer": "A",
+    "explanation": "Raising inspiratory flow meets patient demand and improves comfort and synchrony.",
+    "reference": "Patient-Ventilator Interaction, p. 242."
+  },
+  {
+    "question_id": "CCP-C-Q55",
+    "subject_id": 9,
+    "question_text": "What is the primary risk of setting tidal volume based on actual body weight instead of predicted body weight?",
+    "options": [
+      "A. Hypoventilation",
+      "B. Volutrauma",
+      "C. Auto-PEEP",
+      "D. Hypoxemia"
+    ],
+    "correct_answer": "B",
+    "explanation": "Using actual body weight can result in excessive tidal volumes, leading to volutrauma.",
+    "reference": "Protective Ventilation Strategies, p. 202."
+  },
+  {
+    "question_id": "CCP-C-Q56",
+    "subject_id": 9,
+    "question_text": "Which ventilator strategy is used to improve secretion clearance?",
+    "options": [
+      "A. Pressure-controlled ventilation",
+      "B. High-frequency percussive ventilation",
+      "C. Volume control ventilation",
+      "D. CPAP"
+    ],
+    "correct_answer": "B",
+    "explanation": "High-frequency percussive ventilation enhances secretion mobilization and clearance.",
+    "reference": "Advanced Ventilation Strategies, p. 264."
+  },
+  {
+    "question_id": "CCP-C-Q57",
+    "subject_id": 9,
+    "question_text": "Which factor most directly increases mean airway pressure?",
+    "options": [
+      "A. Shorter inspiratory time",
+      "B. Longer inspiratory time",
+      "C. Decreased FiO2",
+      "D. Lower tidal volume"
+    ],
+    "correct_answer": "B",
+    "explanation": "Extending inspiratory time increases mean airway pressure and may improve oxygenation.",
+    "reference": "Ventilation Time Variables, p. 146."
+  },
+  {
+    "question_id": "CCP-C-Q58",
+    "subject_id": 9,
+    "question_text": "Which ventilator mode allows the patient to set their own respiratory rate and tidal volume, while receiving continuous positive airway pressure?",
+    "options": [
+      "A. CPAP",
+      "B. SIMV",
+      "C. ACV",
+      "D. PRVC"
+    ],
+    "correct_answer": "A",
+    "explanation": "CPAP maintains airway pressure while allowing the patient to breathe spontaneously.",
+    "reference": "Ventilation Modes Overview, p. 122."
+  },
+  {
+    "question_id": "CCP-C-Q59",
+    "subject_id": 9,
+    "question_text": "What is the best indicator of alveolar recruitment with PEEP application?",
+    "options": [
+      "A. Improved PaCO2",
+      "B. Increased PaO2",
+      "C. Decreased plateau pressure",
+      "D. Increased peak inspiratory pressure"
+    ],
+    "correct_answer": "B",
+    "explanation": "Improved oxygenation (PaO2) after PEEP suggests alveolar recruitment.",
+    "reference": "PEEP in ARDS, p. 229."
+  },
+  {
+    "question_id": "CCP-C-Q60",
+    "subject_id": 9,
+    "question_text": "What is the most common cause of patient-ventilator dyssynchrony?",
+    "options": [
+      "A. Circuit leak",
+      "B. Improper trigger sensitivity",
+      "C. Excessive FiO2",
+      "D. Low PEEP"
+    ],
+    "correct_answer": "B",
+    "explanation": "Incorrect trigger sensitivity is a frequent cause of patient-ventilator asynchrony.",
+    "reference": "Synchrony Troubleshooting, p. 244."
+  },
+  {
+    "question_id": "CCP-C-Q61",
+    "subject_id": 9,
+    "question_text": "Which complication is most likely if plateau pressures exceed 30 cmH2O?",
+    "options": [
+      "A. Atelectasis",
+      "B. Barotrauma",
+      "C. Hypercapnia",
+      "D. Respiratory alkalosis"
+    ],
+    "correct_answer": "B",
+    "explanation": "Plateau pressures above 30 cmH2O increase the risk of barotrauma.",
+    "reference": "ARDSNet Guidelines, p. 198."
+  },
+  {
+    "question_id": "CCP-C-Q62",
+    "subject_id": 9,
+    "question_text": "Which ventilator mode ensures a set minute ventilation regardless of patient effort?",
+    "options": [
+      "A. Volume Control Ventilation",
+      "B. Pressure Support Ventilation",
+      "C. CPAP",
+      "D. BiPAP"
+    ],
+    "correct_answer": "A",
+    "explanation": "Volume control guarantees a set tidal volume and minute ventilation regardless of patient effort.",
+    "reference": "Ventilation Modes, p. 133."
+  },
+  {
+    "question_id": "CCP-C-Q63",
+    "subject_id": 9,
+    "question_text": "Which blood gas change indicates inadequate alveolar ventilation?",
+    "options": [
+      "A. Low PaCO2",
+      "B. High PaCO2",
+      "C. High PaO2",
+      "D. High SaO2"
+    ],
+    "correct_answer": "B",
+    "explanation": "Elevated PaCO2 indicates hypoventilation and impaired alveolar ventilation.",
+    "reference": "ABG Interpretation, p. 160."
+  },
+  {
+    "question_id": "CCP-C-Q64",
+    "subject_id": 9,
+    "question_text": "What is the purpose of using pressure-regulated volume control (PRVC)?",
+    "options": [
+      "A. To allow spontaneous breathing",
+      "B. To deliver guaranteed volume with lower pressures",
+      "C. To prevent intrinsic PEEP",
+      "D. To minimize FiO2"
+    ],
+    "correct_answer": "B",
+    "explanation": "PRVC delivers set tidal volumes using the lowest pressure possible, optimizing lung protection.",
+    "reference": "Hybrid Ventilation Modes, p. 138."
+  },
+  {
+    "question_id": "CCP-C-Q65",
+    "subject_id": 9,
+    "question_text": "Which parameter should be prioritized when setting ventilation for traumatic brain injury patients?",
+    "options": [
+      "A. Maintain PaCO2 in normal range",
+      "B. Maintain SpO2 at 100%",
+      "C. Use tidal volumes >10 mL/kg",
+      "D. Apply high PEEP"
+    ],
+    "correct_answer": "A",
+    "explanation": "Strict control of PaCO2 is essential to avoid worsening intracranial pressure.",
+    "reference": "Neurocritical Care Ventilation, p. 252."
+  },
+  {
+    "question_id": "CCP-C-Q66",
+    "subject_id": 9,
+    "question_text": "What is the main benefit of using a decelerating flow pattern in volume-controlled ventilation?",
+    "options": [
+      "A. Reduces oxygen requirements",
+      "B. Improves gas exchange and comfort",
+      "C. Guarantees lower plateau pressures",
+      "D. Prevents intrinsic PEEP"
+    ],
+    "correct_answer": "B",
+    "explanation": "Decelerating flow patterns improve gas exchange and patient comfort by matching inspiratory demand.",
+    "reference": "Flow Patterns in Ventilation, p. 149."
+  },
+  {
+    "question_id": "CCP-C-Q67",
+    "subject_id": 9,
+    "question_text": "Which adjustment is most effective for correcting respiratory alkalosis caused by over-ventilation?",
+    "options": [
+      "A. Increase FiO2",
+      "B. Decrease respiratory rate",
+      "C. Increase tidal volume",
+      "D. Increase PEEP"
+    ],
+    "correct_answer": "B",
+    "explanation": "Reducing respiratory rate lowers minute ventilation, correcting respiratory alkalosis.",
+    "reference": "Acid-Base Management in Ventilation, p. 162."
+  },
+  {
+    "question_id": "CCP-C-Q68",
+    "subject_id": 9,
+    "question_text": "Which patient condition benefits most from the application of recruitment maneuvers?",
+    "options": [
+      "A. ARDS with diffuse atelectasis",
+      "B. COPD exacerbation",
+      "C. Neuromuscular weakness",
+      "D. Pulmonary embolism"
+    ],
+    "correct_answer": "A",
+    "explanation": "Recruitment maneuvers temporarily increase airway pressure to open collapsed alveoli in ARDS.",
+    "reference": "Recruitment Maneuvers in ICU, p. 231."
+  },
+  {
+    "question_id": "CCP-C-Q69",
+    "subject_id": 9,
+    "question_text": "Which alarm should be prioritized as a life-threatening emergency?",
+    "options": [
+      "A. Low PEEP alarm",
+      "B. High-pressure alarm",
+      "C. Apnea alarm",
+      "D. Low battery alarm"
+    ],
+    "correct_answer": "C",
+    "explanation": "An apnea alarm indicates the patient is not initiating breaths and requires immediate intervention.",
+    "reference": "Ventilator Alarm Prioritization, p. 128."
+  },
+  {
+    "question_id": "CCP-C-Q70",
+    "subject_id": 9,
+    "question_text": "Which strategy minimizes ventilator-induced diaphragmatic dysfunction?",
+    "options": [
+      "A. Early tracheostomy",
+      "B. Allowing spontaneous breathing with support",
+      "C. Deep continuous sedation",
+      "D. High-frequency ventilation"
+    ],
+    "correct_answer": "B",
+    "explanation": "Encouraging spontaneous efforts helps preserve diaphragmatic strength during ventilation.",
+    "reference": "Ventilator-Induced Muscle Weakness, p. 266."
+  },
+  {
+    "question_id": "CCP-C-Q71",
+    "subject_id": 9,
+    "question_text": "Which gas exchange abnormality is most typical in ARDS patients?",
+    "options": [
+      "A. Hypercapnia",
+      "B. Hypoxemia",
+      "C. Metabolic acidosis",
+      "D. Respiratory alkalosis"
+    ],
+    "correct_answer": "B",
+    "explanation": "ARDS is characterized by severe hypoxemia due to shunting and poor oxygenation.",
+    "reference": "ARDS Pathophysiology, p. 209."
+  },
+  {
+    "question_id": "CCP-C-Q72",
+    "subject_id": 9,
+    "question_text": "What does a sawtooth pattern on the flow-time waveform typically indicate?",
+    "options": [
+      "A. Patient effort",
+      "B. Air leak",
+      "C. Secretions in the airway",
+      "D. Auto-PEEP"
+    ],
+    "correct_answer": "C",
+    "explanation": "A sawtooth waveform is commonly due to secretions causing turbulent flow.",
+    "reference": "Waveform Troubleshooting, p. 180."
+  },
+  {
+    "question_id": "CCP-C-Q73",
+    "subject_id": 9,
+    "question_text": "Which ventilator setting has the most direct impact on mean airway pressure?",
+    "options": [
+      "A. FiO2",
+      "B. Inspiratory time",
+      "C. PEEP",
+      "D. Tidal volume"
+    ],
+    "correct_answer": "C",
+    "explanation": "Increasing PEEP raises baseline airway pressure, strongly affecting mean airway pressure.",
+    "reference": "Ventilation Parameters, p. 147."
+  },
+  {
+    "question_id": "CCP-C-Q74",
+    "subject_id": 9,
+    "question_text": "Which maneuver can be used to measure plateau pressure?",
+    "options": [
+      "A. End-inspiratory hold",
+      "B. End-expiratory hold",
+      "C. Spontaneous breathing trial",
+      "D. Recruitment maneuver"
+    ],
+    "correct_answer": "A",
+    "explanation": "An end-inspiratory hold allows alveolar pressure equilibration, measuring plateau pressure.",
+    "reference": "Ventilation Monitoring, p. 157."
+  },
+  {
+    "question_id": "CCP-C-Q75",
+    "subject_id": 9,
+    "question_text": "Which ventilator setting change would help manage intrinsic PEEP in obstructive lung disease?",
+    "options": [
+      "A. Increase respiratory rate",
+      "B. Decrease tidal volume",
+      "C. Shorten expiratory time",
+      "D. Decrease inspiratory flow"
+    ],
+    "correct_answer": "B",
+    "explanation": "Lowering tidal volume reduces air trapping, minimizing intrinsic PEEP.",
+    "reference": "COPD Ventilation Management, p. 238."
+  },
+  {
+    "question_id": "CCP-C-Q76",
+    "subject_id": 9,
+    "question_text": "Which physiologic variable is most improved by applying PEEP in ventilated patients?",
+    "options": [
+      "A. Functional residual capacity",
+      "B. Minute ventilation",
+      "C. Cardiac output",
+      "D. Tidal volume"
+    ],
+    "correct_answer": "A",
+    "explanation": "PEEP prevents alveolar collapse and increases functional residual capacity, improving oxygenation.",
+    "reference": "PEEP Effects, p. 232."
+  },
+  {
+    "question_id": "CCP-C-Q77",
+    "subject_id": 9,
+    "question_text": "What is the primary mechanism of ventilator-associated lung injury?",
+    "options": [
+      "A. Pulmonary embolism",
+      "B. Volutrauma, barotrauma, and atelectrauma",
+      "C. Cardiac compression",
+      "D. Fluid overload"
+    ],
+    "correct_answer": "B",
+    "explanation": "Ventilator-associated lung injury is caused by volutrauma, barotrauma, and atelectrauma.",
+    "reference": "VILI Pathophysiology, p. 199."
+  },
+  {
+    "question_id": "CCP-C-Q78",
+    "subject_id": 9,
+    "question_text": "What is the recommended oxygen saturation (SpO2) target for ARDS patients to balance safety and efficacy?",
+    "options": [
+      "A. 70–80%",
+      "B. 82–86%",
+      "C. 88–95%",
+      "D. 96–100%"
+    ],
+    "correct_answer": "C",
+    "explanation": "Maintaining SpO2 between 88–95% optimizes oxygenation while reducing oxygen toxicity risk.",
+    "reference": "ARDS Oxygen Targets, p. 210."
+  },
+  {
+    "question_id": "CCP-C-Q79",
+    "subject_id": 9,
+    "question_text": "Which condition is most likely if both peak and plateau pressures are elevated?",
+    "options": [
+      "A. Airway obstruction",
+      "B. Decreased lung compliance",
+      "C. Endotracheal tube leak",
+      "D. Normal resistance and compliance"
+    ],
+    "correct_answer": "B",
+    "explanation": "Elevated peak and plateau pressures together indicate reduced lung compliance.",
+    "reference": "Compliance vs Resistance in Ventilation, p. 175."
+  },
+  {
+    "question_id": "CCP-C-Q80",
+    "subject_id": 9,
+    "question_text": "What is the primary rationale for early tracheostomy in ventilated patients?",
+    "options": [
+      "A. Reduce oxygen requirements",
+      "B. Improve patient comfort and weaning",
+      "C. Prevent auto-PEEP",
+      "D. Reduce PaCO2"
+    ],
+    "correct_answer": "B",
+    "explanation": "Early tracheostomy improves patient comfort, facilitates weaning, and reduces complications.",
+    "reference": "Airway Management in ICU, p. 268."
+  },
+  {
+    "question_id": "CCP-C-Q81",
+    "subject_id": 9,
+    "question_text": "Which waveform abnormality indicates patient effort during expiration in volume control ventilation?",
+    "options": [
+      "A. Scooping of expiratory flow curve",
+      "B. Sawtooth pattern",
+      "C. Elevated plateau pressure",
+      "D. Square pressure waveform"
+    ],
+    "correct_answer": "A",
+    "explanation": "Scooping of the expiratory flow curve shows active expiratory effort.",
+    "reference": "Waveform Interpretation, p. 182."
+  },
+  {
+    "question_id": "CCP-C-Q82",
+    "subject_id": 9,
+    "question_text": "Which strategy reduces oxygen toxicity in long-term ventilated patients?",
+    "options": [
+      "A. Minimize FiO2 below 60%",
+      "B. Use high PEEP with high FiO2",
+      "C. Prolong inspiratory time",
+      "D. Switch to pressure support ventilation"
+    ],
+    "correct_answer": "A",
+    "explanation": "Keeping FiO2 below 60% reduces the risk of oxygen toxicity.",
+    "reference": "FiO2 Management, p. 153."
+  },
+  {
+    "question_id": "CCP-C-Q83",
+    "subject_id": 9,
+    "question_text": "Which patient population is most at risk for auto-PEEP?",
+    "options": [
+      "A. ARDS",
+      "B. COPD",
+      "C. Traumatic brain injury",
+      "D. Pulmonary embolism"
+    ],
+    "correct_answer": "B",
+    "explanation": "Patients with obstructive lung disease like COPD are prone to auto-PEEP.",
+    "reference": "Auto-PEEP Physiology, p. 236."
+  },
+  {
+    "question_id": "CCP-C-Q84",
+    "subject_id": 9,
+    "question_text": "What is the best bedside maneuver to detect auto-PEEP?",
+    "options": [
+      "A. End-expiratory hold",
+      "B. End-inspiratory hold",
+      "C. Decrease FiO2",
+      "D. Recruitment maneuver"
+    ],
+    "correct_answer": "A",
+    "explanation": "End-expiratory hold allows measurement of intrinsic PEEP.",
+    "reference": "Auto-PEEP Measurement, p. 239."
+  },
+  {
+    "question_id": "CCP-C-Q85",
+    "subject_id": 9,
+    "question_text": "Which condition is a contraindication to permissive hypercapnia?",
+    "options": [
+      "A. ARDS",
+      "B. Status asthmaticus",
+      "C. Traumatic brain injury",
+      "D. COPD exacerbation"
+    ],
+    "correct_answer": "C",
+    "explanation": "Hypercapnia increases intracranial pressure, contraindicating it in brain injury.",
+    "reference": "Ventilation Contraindications, p. 213."
+  },
+  {
+    "question_id": "CCP-C-Q86",
+    "subject_id": 9,
+    "question_text": "Which parameter most reliably reflects patient oxygen delivery?",
+    "options": [
+      "A. SpO2",
+      "B. PaO2",
+      "C. Mixed venous oxygen saturation (SvO2)",
+      "D. Respiratory rate"
+    ],
+    "correct_answer": "C",
+    "explanation": "SvO2 reflects the balance of oxygen delivery and consumption.",
+    "reference": "Oxygenation Monitoring, p. 170."
+  },
+  {
+    "question_id": "CCP-C-Q87",
+    "subject_id": 9,
+    "question_text": "What is the most effective intervention for ventilator-induced atelectasis?",
+    "options": [
+      "A. Increase tidal volume",
+      "B. Apply appropriate PEEP",
+      "C. Increase respiratory rate",
+      "D. Use high FiO2"
+    ],
+    "correct_answer": "B",
+    "explanation": "PEEP prevents alveolar collapse and reduces atelectasis.",
+    "reference": "Atelectasis Prevention, p. 233."
+  },
+  {
+    "question_id": "CCP-C-Q88",
+    "subject_id": 9,
+    "question_text": "Which factor increases the risk of volutrauma?",
+    "options": [
+      "A. Low tidal volume ventilation",
+      "B. High tidal volume relative to predicted body weight",
+      "C. Short inspiratory time",
+      "D. Use of decelerating flow pattern"
+    ],
+    "correct_answer": "B",
+    "explanation": "Volutrauma occurs when tidal volumes are too high for lung size.",
+    "reference": "VILI Mechanisms, p. 200."
+  },
+  {
+    "question_id": "CCP-C-Q89",
+    "subject_id": 9,
+    "question_text": "What is the most appropriate initial FiO2 when starting invasive ventilation?",
+    "options": [
+      "A. 21%",
+      "B. 40%",
+      "C. 100%",
+      "D. 60%"
+    ],
+    "correct_answer": "C",
+    "explanation": "Start with FiO2 100% to ensure oxygenation, then titrate down.",
+    "reference": "Initial Ventilation Setup, p. 144."
+  },
+  {
+    "question_id": "CCP-C-Q90",
+    "subject_id": 9,
+    "question_text": "Which factor most directly determines tidal volume delivery in pressure-controlled ventilation?",
+    "options": [
+      "A. Inspiratory time",
+      "B. Airway resistance and compliance",
+      "C. FiO2",
+      "D. Set pressure support level"
+    ],
+    "correct_answer": "B",
+    "explanation": "In pressure control, tidal volume depends on compliance and resistance.",
+    "reference": "PCV Physiology, p. 135."
+  },
+  {
+    "question_id": "CCP-C-Q91",
+    "subject_id": 9,
+    "question_text": "Which patient is the best candidate for non-invasive ventilation (NIV)?",
+    "options": [
+      "A. Severe hypoxemia in ARDS",
+      "B. COPD exacerbation with hypercapnia",
+      "C. Cardiac arrest",
+      "D. Severe facial trauma"
+    ],
+    "correct_answer": "B",
+    "explanation": "NIV is highly effective in COPD exacerbations with hypercapnia.",
+    "reference": "NIV Indications, p. 220."
+  },
+  {
+    "question_id": "CCP-C-Q92",
+    "subject_id": 9,
+    "question_text": "What is the major hemodynamic consequence of excessive PEEP?",
+    "options": [
+      "A. Hypertension",
+      "B. Decreased venous return and cardiac output",
+      "C. Increased systemic vascular resistance",
+      "D. Bradycardia"
+    ],
+    "correct_answer": "B",
+    "explanation": "Excessive PEEP reduces preload, lowering cardiac output.",
+    "reference": "PEEP Hemodynamic Effects, p. 234."
+  },
+  {
+    "question_id": "CCP-C-Q93",
+    "subject_id": 9,
+    "question_text": "Which clinical goal guides daily sedation interruption in ventilated patients?",
+    "options": [
+      "A. Reduce FiO2 requirements",
+      "B. Facilitate spontaneous breathing and neurological assessment",
+      "C. Prevent auto-PEEP",
+      "D. Reduce plateau pressures"
+    ],
+    "correct_answer": "B",
+    "explanation": "Sedation interruption helps assess readiness for weaning and prevents oversedation.",
+    "reference": "Sedation Protocols, p. 260."
+  },
+  {
+    "question_id": "CCP-C-Q94",
+    "subject_id": 9,
+    "question_text": "Which ventilator parameter is most effective to improve oxygenation in refractory hypoxemia?",
+    "options": [
+      "A. Tidal volume",
+      "B. FiO2",
+      "C. PEEP",
+      "D. Respiratory rate"
+    ],
+    "correct_answer": "C",
+    "explanation": "PEEP improves oxygenation by preventing alveolar collapse in refractory hypoxemia.",
+    "reference": "Refractory Hypoxemia Management, p. 230."
+  },
+  {
+    "question_id": "CCP-C-Q95",
+    "subject_id": 9,
+    "question_text": "Which parameter should be decreased first to avoid dynamic hyperinflation in asthma ventilation?",
+    "options": [
+      "A. FiO2",
+      "B. Respiratory rate",
+      "C. Inspiratory flow rate",
+      "D. PEEP"
+    ],
+    "correct_answer": "B",
+    "explanation": "Reducing respiratory rate prolongs expiratory time, minimizing air trapping.",
+    "reference": "Asthma Ventilation Strategy, p. 241."
+  },
+  {
+    "question_id": "CCP-C-Q96",
+    "subject_id": 9,
+    "question_text": "Which strategy is most useful in preventing ventilator-associated pneumonia (VAP)?",
+    "options": [
+      "A. Routine use of high PEEP",
+      "B. Daily spontaneous breathing trials",
+      "C. Elevating head of bed 30–45 degrees",
+      "D. Permissive hypercapnia"
+    ],
+    "correct_answer": "C",
+    "explanation": "Head elevation prevents aspiration, reducing risk of VAP.",
+    "reference": "VAP Prevention Guidelines, p. 262."
+  },
+  {
+    "question_id": "CCP-C-Q97",
+    "subject_id": 9,
+    "question_text": "What is the purpose of using a spontaneous breathing trial (SBT)?",
+    "options": [
+      "A. Improve gas exchange",
+      "B. Assess readiness for extubation",
+      "C. Reduce oxygen consumption",
+      "D. Prevent auto-PEEP"
+    ],
+    "correct_answer": "B",
+    "explanation": "SBT evaluates the patient’s ability to breathe without ventilator support.",
+    "reference": "Weaning Assessment, p. 258."
+  },
+  {
+    "question_id": "CCP-C-Q98",
+    "subject_id": 9,
+    "question_text": "Which condition would most benefit from inverse ratio ventilation (IRV)?",
+    "options": [
+      "A. COPD exacerbation",
+      "B. Severe ARDS with refractory hypoxemia",
+      "C. Neuromuscular weakness",
+      "D. Pulmonary embolism"
+    ],
+    "correct_answer": "B",
+    "explanation": "IRV prolongs inspiratory time, improving oxygenation in refractory ARDS.",
+    "reference": "Advanced Ventilation Techniques, p. 265."
+  },
+  {
+    "question_id": "CCP-C-Q99",
+    "subject_id": 9,
+    "question_text": "Which parameter confirms successful alveolar ventilation during weaning?",
+    "options": [
+      "A. Stable PaCO2",
+      "B. High PaO2",
+      "C. Normal SvO2",
+      "D. Low FiO2 requirement"
+    ],
+    "correct_answer": "A",
+    "explanation": "Stable PaCO2 shows adequate alveolar ventilation during weaning.",
+    "reference": "Weaning Criteria, p. 259."
+  },
+  {
+    "question_id": "CCP-C-Q100",
+    "subject_id": 9,
+    "question_text": "Which strategy best reduces ventilator-induced lung injury in ARDS?",
+    "options": [
+      "A. High tidal volume, low PEEP",
+      "B. Low tidal volume, adequate PEEP",
+      "C. Hyperventilation with low FiO2",
+      "D. Rapid weaning"
+    ],
+    "correct_answer": "B",
+    "explanation": "Protective ventilation uses low tidal volume with adequate PEEP to reduce lung injury.",
+    "reference": "ARDSNet Protocol, p. 205."
+  },
+
+
+
+
+
 
   {
     "question_id": "CCP-C-Q21",
