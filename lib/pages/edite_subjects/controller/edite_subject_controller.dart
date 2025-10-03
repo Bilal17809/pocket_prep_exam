@@ -17,6 +17,7 @@ class EditeSubjectController extends GetxController {
   RxList<Question> questionPool = <Question>[].obs;
   static const int maxAllSubjectsPool = 30;
    int maxQuizSize = 10;
+  int maxQuizSizeForTime  = 20;
 
   EditeSubjectController({
     required QuestionService questionService,
@@ -31,6 +32,7 @@ class EditeSubjectController extends GetxController {
   void onInit() {
     super.onInit();
     loadExamFromStorage();
+    startQuizForTime();
   }
 
   Future<void> loadExamFromStorage() async {
@@ -104,6 +106,11 @@ class EditeSubjectController extends GetxController {
         questionPool.addAll(subjectQs.take(5).toList());
       }
     }
+  }
+  Future<List<Question>> startQuizForTime() async {
+    final pool = [...questionPool];
+    pool.shuffle();
+    return pool.take(maxQuizSizeForTime).toList();
   }
 
   List<Question> startQuiz() {

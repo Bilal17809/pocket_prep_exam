@@ -1,19 +1,19 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:pocket_prep_exam/core/Utility/utils.dart';
 import 'package:pocket_prep_exam/core/common/common_button.dart';
+import 'package:pocket_prep_exam/core/common/loading_container.dart';
 import 'package:pocket_prep_exam/data/models/models.dart';
 import 'package:pocket_prep_exam/pages/questions/widgets/quiz_appbar.dart';
 import 'package:pocket_prep_exam/pages/questions/widgets/page_indicator.dart';
 import 'package:pocket_prep_exam/pages/questions/widgets/quize_card.dart';
 import 'package:pocket_prep_exam/pages/quiz_result/view/quiz_result_view.dart';
+import 'package:pocket_prep_exam/pages/study/view/study_view.dart';
 import '/core/common/custom_dialog.dart';
 import '../control/questions_controller.dart';
 import 'package:pocket_prep_exam/core/theme/app_colors.dart';
 
-class QuizzesView extends StatefulWidget {
-  // final Subject? subject;
+class QuizzesView extends StatelessWidget {
   final bool reviewMode;
   final int? initialPage;
   final String? tabTitle;
@@ -21,132 +21,190 @@ class QuizzesView extends StatefulWidget {
   final Map<int, int>? selectedOptions;
   final String reviewType;
   final List<Question>? allQuestion;
-  QuizzesView({
+  final bool isTimedQuiz;
+  final int? timedQuizMinutes;
+  final bool fromRetake;
+  const QuizzesView({
     super.key,
-   this.allQuestion,
-     // this.subject,
+    this.allQuestion,
     this.reviewMode = false,
     this.initialPage,
     this.tabTitle,
     this.questionIdsToReview,
     this.selectedOptions,
     this.reviewType = 'All',
+    this.isTimedQuiz = false,
+    this.timedQuizMinutes,
+    this.fromRetake = false,
   });
-
-  @override
-  State<QuizzesView> createState() => _QuizzesViewState();
-}
-
-class _QuizzesViewState extends State<QuizzesView> {
-  late PageController _pageController;
-  late final QuestionController controller;
-
-  @override
-  void initState() {
-    super.initState();
-    _pageController = PageController(initialPage: widget.initialPage ?? 0);
-    controller = Get.find<QuestionController>();
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      if (widget.reviewMode && widget.questionIdsToReview != null && widget.selectedOptions != null) {
-        controller.setReviewQuestions(widget.questionIdsToReview!, widget.selectedOptions!);
-      } else if (controller.questions.isEmpty) {
-        controller.startQuiz(fixedQuestions: widget.allQuestion);
-      }
-    });
-  }
-
-  @override
-  void dispose() {
-    _pageController.dispose();
-    super.dispose();
-  }
-
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        backgroundColor: const Color(0xFF1E90FF),
-        body: Obx(() {
-          if (controller.isLoading.value) {
-            return const Center(child: CircularProgressIndicator());
+    final controller = Get.find<QuestionController>();
+    final PageController pageController = PageController(initialPage: initialPage ?? 0);
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      controller.initQuiz(
+          reviewMode: reviewMode,
+          questionIdsToReview: questionIdsToReview,
+          selectedOptions:selectedOptions,
+          allQuestions:allQuestion,
+          isTimedQuiz:isTimedQuiz,
+          timedQuizMinutes:timedQuizMinutes,
+          fromRetake: fromRetake
+      );
+      print('################################### Time Quiz: ${timedQuizMinutes}');
+      print("..................is TimeQuiz Value: ${isTimedQuiz}");
+      print("ReviewMode is: $reviewMode");
+      print("Your Review type is: $reviewType");
+
+    });
+    return WillPopScope(
+        onWillPop: () async {
+          final controller = Get.find<QuestionController>();
+          if (reviewMode == true) {
+            Get.back();
+            return false;
           }
-          final questionsToShow = widget.allQuestion ?? (widget.reviewMode ? controller.reviewQuestions : controller.questions);
-          if (questionsToShow.isEmpty) {
-            return const Center(child: Text("No questions available."));
+          if (controller.selectedOptions.isEmpty) {
+            if (fromRetake) {
+              Get.offAll(() => StudyView());
+              controller.resetController();
+              return false;
+            }
+            return true;
           }
-          return Column(
-            children: [
-              if (widget.reviewMode)
-                QuizAppBar(
-                  controller: controller,
-                  totalQuestions: questionsToShow.length,
-                  tabTitle: widget.tabTitle.toString(),
-                )
-              else
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 12),
-                  child: PageIndicator(
-                    pageController: _pageController,
-                    itemCount: questionsToShow.length,
+          final results = controller.calculateQuizResults();
+          await Utils.showLeaveQuizDialog(
+            isTimedQuiz: controller.isTimedQuiz.value,
+            answered: results["answered"],
+            totalQuestions: results["totalQuestions"],
+            onLeave: () {
+              controller.resetController();
+              if (fromRetake) {
+                Get.back();
+                Get.offAll(() => StudyView());
+              } else {
+                Get.back();
+                Get.back();
+              }
+            },
+          );
+          return false;
+        },
+        child: SafeArea(
+        child: Scaffold(
+          backgroundColor: const Color(0xFF1E90FF),
+          body: Obx(() {
+            if (controller.state.value == QuestionState.loading) {
+              return const Center(
+                  child: LoadingContainer(message: "Loading...",backgroundColor: lightSkyBlue,messageTextColor: kWhite,indicatorColor: kWhite,));
+            }
+            if (controller.state.value == QuestionState.error) {
+              return const Center(child: Text("Error loading questions."));
+            }
+            final questionsToShow = allQuestion ?? (reviewMode ? controller.reviewQuestions : controller.questions);
+            if (questionsToShow.isEmpty) {
+              return const Center(child: Text("No questions available."));
+            }
+            return Column(
+              children: [
+                if (controller.isTimedQuiz.value && !reviewMode)
+                  Container(
+                    padding:
+                    const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Icon(Icons.timer_outlined,
+                            color: Colors.white, size: 24),
+                        const SizedBox(width: 8),
+                        Text(
+                          controller.getTimerDisplay().toString(),
+                          style: const TextStyle(
+                            color: Colors.white,
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
-                ),
-              const SizedBox(height: 10),
-              Expanded(
-                child: PageView.builder(
-                  controller: _pageController,
-                  itemCount: questionsToShow.length,
-                  onPageChanged: (index) {
-                    controller.onPageChange(index);
-                  },
-                  itemBuilder: (context, index) {
-                    final question = questionsToShow[index];
-                    return QuizCard(
-                      question: question,
-                      index: index,
-                      reviewMode: widget.reviewMode,
-                      reviewType: widget.reviewType,
-                    );
-                  },
-                ),
-              ),
-              if (!widget.reviewMode && controller.isSubmitVisible.value)
-                Padding(
-                  padding:  EdgeInsets.symmetric(vertical: 8.0, horizontal: 26),
-                  child: CommonButton(
-                    title: "Submit Quiz",
-                    onTap: () {
-                      final quizResults = controller.calculateQuizResults();
-                      CustomDialog.show(
-                        title: "Submit Quiz?",
-                        message:
-                        "You've answered ${quizResults['answered']} of ${quizResults['totalQuestions']} questions. "
-                            "If you submit, you'll only be scored on the ${quizResults['answered']} question you answered.",
-                        positiveButtonText: "Submit",
-                        onPositiveTap: () {
-                          Get.off(() => QuizResultView(
-                            // subject: widget.subject ?? Subject(subjectId: -1, subjectName: "Unknown"),
-                            quizQuestions: controller.questions,
-                            quizResults: quizResults,
-                          ));
-                        },
-                        negativeButtonText: "Cancel",
-                        onNegativeTap: () => Get.back(),
+                if (reviewMode)
+                  QuizAppBar(
+                    controller: controller,
+                    totalQuestions: questionsToShow.length,
+                    tabTitle: tabTitle.toString(),
+                  )
+                else if (!controller.isTimedQuiz.value)
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 12),
+                    child: PageIndicator(
+                      pageController: pageController,
+                      itemCount: questionsToShow.length,
+                    ),
+                  ),
+                const SizedBox(height: 6),
+                Expanded(
+                  child: Obx(() => PageView.builder(
+                    controller: pageController,
+                    physics: controller.isTimedQuiz.value
+                        ? (controller.remainingSeconds.value == 0
+                        ? const NeverScrollableScrollPhysics()
+                        : const BouncingScrollPhysics())
+                        : const BouncingScrollPhysics(),
+                    itemCount: questionsToShow.length,
+                    onPageChanged: (index) => controller.onPageChange(index),
+                    itemBuilder: (context, index) {
+                      final question = questionsToShow[index];
+                      return QuizCard(
+                        question: question,
+                        index: index,
+                        reviewMode: reviewMode,
+                        reviewType: reviewType,
                       );
                     },
-                  ),
+                  )),
                 ),
-              _NavigationRow(
-                controller: controller,
-                pageController: _pageController,
-                reviewMode: widget.reviewMode,
-                reviewQuestionIds: widget.questionIdsToReview,
-              )
-            ],
-          );
-        }),
+                if (!reviewMode && controller.isSubmitVisible.value)
+                  Padding(
+                    padding:
+                    const EdgeInsets.symmetric(vertical: 8.0, horizontal: 26),
+                    child: CommonButton(
+                      title: "Submit Quiz",
+                      onTap: () {
+                        final quizResults = controller.calculateQuizResults();
+                        CustomDialog.show(
+                          title: "Submit Quiz?",
+                          message:
+                          "You've answered ${quizResults['answered']} of ${quizResults['totalQuestions']} questions. "
+                              "If you submit, you'll only be scored on the ${quizResults['answered']} question you answered.",
+                          positiveButtonText: "Submit",
+                          onPositiveTap: () {
+                            Get.offAll(() => QuizResultView(
+                              quizQuestions: controller.questions,
+                              quizResults: quizResults,
+                            ));
+                          },
+                          negativeButtonText: "Cancel",
+                          onNegativeTap: () => Get.back(),
+                        );
+                      },
+                    ),
+                  ),
+                _NavigationRow(
+                  isTimeQuiz: isTimedQuiz,
+                  controller: controller,
+                  pageController: pageController,
+                  reviewMode: reviewMode,
+                  reviewQuestionIds: questionIdsToReview,
+                ),
+              ],
+            );
+          }),
+        ),
       ),
     );
-  }}
+  }
+}
 
 class _NavButton extends StatelessWidget {
   final IconData icon;
@@ -158,39 +216,39 @@ class _NavButton extends StatelessWidget {
     this.isFlag = false,
     super.key,
   });
+
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 36, vertical: 10),
       child: GestureDetector(
         onTap: onTap,
-        child: Icon(
-          icon,
-          size: 34,
-          color: isFlag ? Colors.orange : kWhite,
-        ),
+        child: Icon(icon, size: 34, color: isFlag ? Colors.orange : kWhite),
       ),
     );
   }
-}
-
-class _NavigationRow extends StatelessWidget {
+}class _NavigationRow extends StatelessWidget {
   final QuestionController controller;
   final PageController pageController;
   final bool reviewMode;
   final List<int>? reviewQuestionIds;
-
+final bool isTimeQuiz;
   const _NavigationRow({
     super.key,
     required this.controller,
     required this.pageController,
     this.reviewMode = false,
     this.reviewQuestionIds,
+    this.isTimeQuiz = false
   });
-
   @override
   Widget build(BuildContext context) {
     return Obx(() {
+      if(isTimeQuiz) {
+        if (controller.remainingSeconds.value == 0) {
+         return Container(color: const Color(0xFF1E90FF),height: 30,width: double.infinity,);
+        }
+      }
       final currentIndex = controller.currentPage.value;
       int originalQuestionIndex;
       if (reviewMode && reviewQuestionIds != null && reviewQuestionIds!.isNotEmpty) {
@@ -202,7 +260,9 @@ class _NavigationRow extends StatelessWidget {
       } else {
         originalQuestionIndex = currentIndex;
       }
-      final bool isFlagged = controller.flaggedQuestions.contains(originalQuestionIndex);
+      final bool isFlagged =
+      controller.flaggedQuestions.contains(originalQuestionIndex);
+
       return Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -248,3 +308,4 @@ class _NavigationRow extends StatelessWidget {
     });
   }
 }
+

@@ -1,12 +1,9 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pocket_prep_exam/core/theme/app_colors.dart';
 import 'package:pocket_prep_exam/core/theme/app_styles.dart';
 import '/core/common/text_span.dart';
 import '../control/questions_controller.dart';
-
 
 class OptionsCard extends StatelessWidget {
   final int questionIndex;
@@ -18,6 +15,7 @@ class OptionsCard extends StatelessWidget {
   final bool showExplanationToggle;
   final bool reviewMode;
   final String reviewType;
+
   const OptionsCard({
     super.key,
     required this.questionIndex,
@@ -29,28 +27,18 @@ class OptionsCard extends StatelessWidget {
     required this.showExplanationToggle,
     this.reviewMode = false,
     this.reviewType = 'All',
-
   });
 
   @override
   Widget build(BuildContext context) {
     final controller = Get.find<QuestionController>();
-
     return Obx(() {
       int? selectedOptionIndex = controller.selectedOptions[questionIndex];
-      String optionPrefix = '';
-      if (option.trim().isNotEmpty) {optionPrefix = option.trim().substring(0, 1).toUpperCase();}
-      String trimmedCorrectAnswerPrefix = '';
-      if (correctAnswer.trim().isNotEmpty) {
-        trimmedCorrectAnswerPrefix = correctAnswer.trim().substring(0, 1).toUpperCase();}
-      bool isCorrectOption = optionPrefix == trimmedCorrectAnswerPrefix;
+      int correctIndex = "ABCD".indexOf(correctAnswer.toUpperCase());
+      bool isCorrectOption = optionIndex == correctIndex;
       bool isThisOptionSelectedByUser = selectedOptionIndex == optionIndex;
-
-
       Color borderColor = Colors.grey.shade300;
       Color textColor = Colors.black;
-
-
       if (selectedOptionIndex != null) {
         if (isCorrectOption) {
           borderColor = Colors.green;
@@ -60,10 +48,11 @@ class OptionsCard extends StatelessWidget {
           textColor = Colors.red.shade800;
         }
       }
-
       return GestureDetector(
         onTap: selectedOptionIndex == null
             ? () {
+          print(
+              "Selected OptionIndex: $optionIndex  CorrectIndex: $correctIndex  CorrectAnswer: $correctAnswer");
           controller.selectOption(
             questionIndex,
             optionIndex,
@@ -79,21 +68,26 @@ class OptionsCard extends StatelessWidget {
           decoration: roundedDecoration.copyWith(
             color: bgColor,
             borderRadius: BorderRadius.circular(06),
-            border: Border.all(color: borderColor, width: isCorrectOption && isThisOptionSelectedByUser ? 2 : 1),
+            border: Border.all(
+              color: borderColor,
+              width: isCorrectOption && isThisOptionSelectedByUser ? 2 : 1,
+            ),
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
                 option,
-                style: TextStyle(fontSize: 14, color: kBlack),
+                style: TextStyle(fontSize: 14, color: textColor),
               ),
               if (selectedOptionIndex != null && isCorrectOption) ...[
                 const SizedBox(height: 8),
                 TextButton(
                   onPressed: () => controller.toggleExplanation(questionIndex),
                   child: Text(
-                    showExplanationToggle ? "Hide Explanation" : "Show Explanation",
+                    showExplanationToggle
+                        ? "Hide Explanation"
+                        : "Show Explanation",
                     style: const TextStyle(color: Colors.blue, fontSize: 14),
                   ),
                 ),
@@ -103,13 +97,15 @@ class OptionsCard extends StatelessWidget {
                     decoration: BoxDecoration(
                       color: Colors.green.shade50,
                       borderRadius: BorderRadius.circular(12),
-                      border: Border.all(color: Colors.green.shade200, width: 1),
+                      border: Border.all(
+                          color: Colors.green.shade200, width: 1),
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Container(
-                          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 10, vertical: 6),
                           decoration: BoxDecoration(
                             color: Colors.green.shade100,
                             borderRadius: BorderRadius.circular(10),

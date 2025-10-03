@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:pocket_prep_exam/core/Utility/utils.dart';
 import 'package:pocket_prep_exam/core/theme/app_colors.dart';
 import 'package:pocket_prep_exam/core/theme/app_styles.dart';
 import 'package:pocket_prep_exam/data/models/models.dart';
@@ -11,14 +12,7 @@ class SubjectStatisticsCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    String formatTime(int seconds) {
-      final minutes = seconds ~/ 60;
-      final secs = seconds % 60;
-      return minutes > 0 ? "${minutes}m ${secs}s" : "${secs}s";
-    }
-
     final statsController = Get.find<StatsController>();
-
     return Obx(() {
       final result = statsController.latestResultForSubject(subject.subjectId);
 
@@ -67,9 +61,9 @@ class SubjectStatisticsCard extends StatelessWidget {
               childAspectRatio: 2.5,
               physics: const NeverScrollableScrollPhysics(),
               children: [
-                _StatItem(value: formatTime(result.selectedQuizTime), label: "Quiz times"),
+                _StatItem(value: Utils.formatTime(result.selectedQuizTime), label: "Quiz times"),
                 _StatItem(value: "${result.totalCorrect}/${result.totalQuestions} items", label: "Answer progress"),
-                _StatItem(value: formatTime(result.totalTime), label: "Total practice time"),
+                _StatItem(value: Utils.formatTime(result.totalTime), label: "Total practice time"),
                 _StatItem(value: "${result.totalWrong}", label: "Remaining mistakes "),
               ],
             ),

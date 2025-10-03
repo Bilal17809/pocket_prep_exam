@@ -1,15 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 import 'package:pocket_prep_exam/core/common/common_button.dart';
 import 'package:pocket_prep_exam/core/constant/constant.dart';
 import 'package:pocket_prep_exam/core/routes/routes_name.dart';
 import 'package:pocket_prep_exam/core/theme/app_colors.dart';
 import 'package:pocket_prep_exam/core/theme/app_styles.dart';
 import 'package:pocket_prep_exam/pages/quiz_setup/controller/quiz_setup_controller.dart';
-import '../../quiz_view_second/controller/quiz_controller.dart';
-import '../../quiz_view_second/view/quiz_view.dart';
 import '../widgets/dificuty_selector.dart';
 import '../widgets/options_chip.dart';
 

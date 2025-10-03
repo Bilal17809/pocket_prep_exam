@@ -25,9 +25,6 @@ class SecondQuizView extends StatelessWidget {
     return QuizStateHandler(pageController: _pageController);
   }
 }
-
-
-
 class QuizScaffold extends StatelessWidget {
   final QuizController quizController;
   final PageController pageController;
@@ -39,10 +36,9 @@ class QuizScaffold extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final questions = quizController.questions;
-
     return WillPopScope(
       onWillPop: () async {
-        return await Utils.leaveBottomSheet(context);
+        return await Utils.leaveBottomSheet(context,"Are you sure you want to leave the quiz? Your progress will be lost");
       },
       child: SafeArea(
         child: Scaffold(
@@ -52,7 +48,7 @@ class QuizScaffold extends StatelessWidget {
             leading: IconButton(
               icon: const Icon(Icons.arrow_back,color: kWhite,),
               onPressed: () async {
-                bool shouldLeave = await Utils.leaveBottomSheet(context);
+                bool shouldLeave = await Utils.leaveBottomSheet(context,"Are you sure you want to leave the quiz? Your progress will be lost");
                 if (shouldLeave) Get.back();
               },
             ),

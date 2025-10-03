@@ -28,8 +28,10 @@ class DependencyInject{
     Get.lazyPut<SplashController>(() => SplashController(storageService: Get.find()),fenix: true);
     Get.lazyPut<DashboardController>(() => DashboardController(),fenix: true);
     Get.lazyPut<ExamAndSubjectController>(() => ExamAndSubjectController(examServices:Get.find()),fenix: true);
-    Get.lazyPut<QuestionController>(() => QuestionController(q: Get.find()),fenix: true);
-    Get.lazyPut<SettingController>(() => SettingController(storageService: Get.find(),examServices: Get.find()),fenix: true);
+    Get.put<QuestionController>(
+      QuestionController(q: Get.find<QuestionService>()),
+      permanent: true,
+    );    Get.lazyPut<SettingController>(() => SettingController(storageService: Get.find(),examServices: Get.find()),fenix: true);
     Get.lazyPut<QuizResultController>(() =>  QuizResultController(),fenix: true);
     Get.lazyPut<ExamSettingController>(() =>  ExamSettingController(storageServices:Get.find(),examService: Get.find()),fenix: true);
     Get.lazyPut<EditeSubjectController>(() => EditeSubjectController(storageServices: Get.find(), examService: Get.find(),questionService: Get.find()),fenix: true);

@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pocket_prep_exam/core/theme/app_colors.dart';
 
+import '../common/custom_dialog.dart';
+
 
 class Utils {
   Utils._();
@@ -23,7 +25,7 @@ class Utils {
       duration: const Duration(seconds: 2),
     );
   }
-  static Future<bool> leaveBottomSheet(BuildContext context) async {
+  static Future<bool> leaveBottomSheet(BuildContext context, String message) async {
     final result = await showModalBottomSheet<bool>(
       context: context,
       shape: const RoundedRectangleBorder(
@@ -41,8 +43,8 @@ class Utils {
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 10),
-              const Text(
-                "Are you sure you want to leave the quiz? Your progress will be lost.",
+               Text(
+               message,
                 textAlign: TextAlign.start,
                 style: TextStyle(fontSize: 14, color: Colors.grey),
               ),
@@ -84,5 +86,33 @@ class Utils {
     final minutes = seconds ~/ 60;
     final secs = seconds % 60;
     return minutes > 0 ? "${minutes}m ${secs}s" : "${secs}s";
+  }
+
+  static Future<void> showLeaveQuizDialog({
+    required bool isTimedQuiz,
+    required int answered,
+    required int totalQuestions,
+    required VoidCallback onLeave,
+  }) async {
+    if (isTimedQuiz) {
+      CustomDialog.show(
+        title: "Leave Quiz?",
+        message: "You've answered $answered questions but you still have more time",
+        positiveButtonText: "Leave Quiz",
+        onPositiveTap: onLeave,
+        negativeButtonText: "Cancel",
+        onNegativeTap: () => Get.back(),
+      );
+    } else {
+      CustomDialog.show(
+        title: "Leave Quiz?",
+        message:
+        "You've answered $answered of $totalQuestions questions. If you leave now, your progress will be lost.",
+        positiveButtonText: "Leave Quiz",
+        onPositiveTap: onLeave,
+        negativeButtonText: "Cancel",
+        onNegativeTap: () => Get.back(),
+      );
+    }
   }
 }

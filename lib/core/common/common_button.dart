@@ -9,8 +9,13 @@ import 'package:pocket_prep_exam/core/theme/app_colors.dart';
 class CommonButton extends StatelessWidget {
   final String title;
   final VoidCallback onTap;
+  final Color colorA;
+  final Color colorB;
 
-  const CommonButton({super.key, required this.title, required this.onTap});
+   CommonButton({super.key, required this.title, required this.onTap,
+    this.colorA = lightSkyBlue,
+     this.colorB = lightSkyBlue
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -25,8 +30,8 @@ class CommonButton extends StatelessWidget {
           decoration: BoxDecoration(
             gradient: LinearGradient(
               colors: [
-                lightSkyBlue.withOpacity(0.9),
-                lightSkyBlue,
+                colorA,
+               colorB,
               ],
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,

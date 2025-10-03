@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:pocket_prep_exam/pages/questions/control/questions_controller.dart';
+import 'package:pocket_prep_exam/pages/questions/widgets/quiz_bottomsheet.dart';
 import '/core/Utility/utils.dart';
 import '/core/common/constant.dart';
 import '/core/theme/app_colors.dart';
@@ -29,12 +31,18 @@ class QuizModeList extends StatelessWidget {
                 child: Center(
                   child: GestureDetector(
                       onTap: (){
-                        final quizQuestions = Get.find<EditeSubjectController>().startQuiz();
-                        if (quizQuestions.isEmpty) {
-                          Utils.showError("Please select at least one subject!");
-                          return;
+                        if (index == 2) {
+                          Get.find<QuestionController>().resetController();
+                          TimedQuizBottomSheet.show();
+                        } else {
+
+                          final quizQuestions = Get.find<EditeSubjectController>().startQuiz();
+                          if (quizQuestions.isEmpty) {
+                            Utils.showError("Please select at least one subject!");
+                            return;
+                          }
+                          Get.to(() => QuizzesView(allQuestion: quizQuestions,isTimedQuiz: false,));
                         }
-                        Get.to(() => QuizzesView(allQuestion: quizQuestions));
                       },
                     child: ListTile(
                       leading: Image.asset(item.icon.toString(),height: 40,),

@@ -21,6 +21,7 @@ class StudyController extends GetxController{
   @override
   void onInit() {
     super.onInit();
+    // Get.find<EditeSubjectController>();
     loadExamFromStorage();
   }
 
@@ -48,10 +49,10 @@ class StudyController extends GetxController{
   ].obs;
 
   RxList<QuizModeModel> quizModeDataList =  <QuizModeModel>[
-    QuizModeModel("images/cards.png", "Aug 26", "Question of the Day",(){}),
+    QuizModeModel("images/cards.png", "", "Question of the Day",(){}),
     QuizModeModel("images/quiz icon.png", "", "Quick 10 Quiz",(){}),
-    QuizModeModel("images/timer.png", "", "Timed Quiz",(){}),
-    QuizModeModel("images/set-up.png", "", "Level Up",(){}),
+    QuizModeModel("images/stopwatch.png", "", "Timed Quiz",(){}),
+    QuizModeModel("images/set-up.png", "", "Quiz Builder",(){}),
   ].obs;
 }
 

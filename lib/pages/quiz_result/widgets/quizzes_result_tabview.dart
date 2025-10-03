@@ -40,39 +40,34 @@ class QuizResultTabView extends StatelessWidget {
     );
   }
   void _navigateToQuizView(
-
       int initialPageIndex,
       String tabTitle,
       List<int> questionIdsToReview,
       Map<int, int> selectedOptions,
       String reviewType,
       ) {
-    if (Get.isRegistered<QuestionController>()) {
-      Get.delete<QuestionController>();
-    }
     final questionsController = Get.find<QuestionController>();
+    questionsController.setReviewQuestions(questionIdsToReview, selectedOptions);
+    questionsController.flaggedQuestions.clear();
+    List<int> filteredFlags = [];
     final originalFlaggedList = List<int>.from(quizResults['flagged'] as List? ?? []);
-    questionsController.startQuiz(fixedQuestions: quizQuestions).then((_) {
-      questionsController.setReviewQuestions(questionIdsToReview, selectedOptions);
-      questionsController.flaggedQuestions.clear();
-      List<int> filteredFlags = [];
-      for (int qId in questionIdsToReview) {
-        if (originalFlaggedList.contains(qId)) {
-          filteredFlags.add(qId);
-        }
+    for (int qId in questionIdsToReview) {
+      if (originalFlaggedList.contains(qId)) {
+        filteredFlags.add(qId);
       }
-      questionsController.flaggedQuestions.assignAll(filteredFlags);
-      Get.to(() => QuizzesView(
-        // subject: subject,
-        reviewMode: true,
-        initialPage: initialPageIndex,
-        tabTitle: tabTitle,
-        questionIdsToReview: questionIdsToReview,
-        selectedOptions: selectedOptions,
-        reviewType: reviewType,
-      ));
-    });
+    }
+    questionsController.flaggedQuestions.assignAll(filteredFlags);
+    Get.to(() => QuizzesView(
+      reviewMode: true,
+      initialPage: initialPageIndex,
+      tabTitle: tabTitle,
+      questionIdsToReview: questionIdsToReview,
+      selectedOptions: selectedOptions,
+      reviewType: reviewType,
+    ));
   }
+
+
 
   Widget _buildAll(QuestionController controller) {
     return Obx(() {

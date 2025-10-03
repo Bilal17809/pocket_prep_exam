@@ -6,7 +6,6 @@ class QuizAppBar extends StatelessWidget implements PreferredSizeWidget {
   final QuestionController controller;
   final int totalQuestions;
   final String tabTitle;
-
   const QuizAppBar({
     super.key,
     required this.controller,
