@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:pocket_prep_exam/core/local_storage/storage_helper.dart';
+import 'package:pocket_prep_exam/pages/Quiz_builder/controller/quiz_builder_controller.dart';
 import 'package:pocket_prep_exam/pages/dashboard/control/dashboard_controller.dart';
 import 'package:pocket_prep_exam/pages/edite_subjects/controller/edite_subject_controller.dart';
 import 'package:pocket_prep_exam/pages/exam_settings/controller/exam_setting_controller.dart';
@@ -38,5 +39,6 @@ class DependencyInject{
     Get.lazyPut<PracticeController>(() => PracticeController(questionService: Get.find(),storageServices: Get.find()), fenix: true);
     Get.lazyPut<QuizSetupController>(() => QuizSetupController(questionService: Get.find()), fenix: true);
     Get.lazyPut<QuizController>(() =>QuizController(), fenix: true);
+    Get.lazyPut<QuizBuilderController>(() => QuizBuilderController(examService: Get.find(), questionService: Get.find()), fenix: true);
   }
 }

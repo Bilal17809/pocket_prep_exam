@@ -95,10 +95,6 @@ class TimedQuizBottomSheet extends StatelessWidget {
                     timedQuizMinutes: controller.selectedMinutes.value.toInt(),
                   ))?.then((_){
                      Get.back();
-                     // controller.resetController();
-                     // if (Get.isRegistered<QuestionController>()) {
-                     //   Get.delete<QuestionController>();
-                     // }
                   });
 
                 }

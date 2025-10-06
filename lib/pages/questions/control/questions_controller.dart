@@ -68,14 +68,14 @@ class QuestionController extends GetxController {
       isSubmitVisible.value = false;
       selectedOptions.clear();
       showExplanation.clear();
-      // questions.clear();
       flaggedQuestions.clear();
       reviewQuestions.clear();
-      // resetTimerState();
-      selectedMinutes.value = 5.0;
-      // isTimedQuiz.value = false;
-      // remainingSeconds.value = 0;
-      timedQuizDuration = null;
+      _startTime = null;
+      _endTime = null;
+      elapsedSeconds.value = 0;
+      remainingSeconds.value = 0;
+      _timer?.cancel();
+      _timer = null;
     } else {
       currentPage.value = 0;
       isSubmitVisible.value = false;
@@ -87,7 +87,7 @@ class QuestionController extends GetxController {
       resetTimerState();
       selectedMinutes.value = 5.0;
       isTimedQuiz.value = false;
-      // timedQuizDuration = null;
+      timedQuizDuration = null;
     }
   }
 
@@ -177,8 +177,7 @@ class QuestionController extends GetxController {
         questions.assignAll(fixedQuestion);
         state.value = QuestionState.success;
       } else {
-        final pool =
-            await Get.find<EditeSubjectController>().startQuizForTime();
+        final pool = await Get.find<EditeSubjectController>().startQuizForTime();
         await Future.delayed(Duration(milliseconds: 300));
         questions.assignAll(pool);
         state.value = QuestionState.success;

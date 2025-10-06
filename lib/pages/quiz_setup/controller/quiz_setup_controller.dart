@@ -5,9 +5,7 @@ import 'package:pocket_prep_exam/services/services.dart';
 
 class QuizSetupController extends GetxController {
 
-
   final QuestionService _questionService;
-
 
   var selectedSubject = Rxn<Subject>();
   var selectedDifficulty = "Easy".obs;
@@ -15,8 +13,7 @@ class QuizSetupController extends GetxController {
   var selectedQuestions = 10.obs;
   var subjectQuestions = <Question>[].obs;
 
-  QuizSetupController({required QuestionService questionService})
-      : _questionService = questionService;
+  QuizSetupController({required QuestionService questionService}) : _questionService = questionService;
 
 
   Future<void> setSubject(Subject subject) async {

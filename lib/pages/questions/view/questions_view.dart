@@ -51,11 +51,6 @@ class QuizzesView extends StatelessWidget {
           timedQuizMinutes:timedQuizMinutes,
           fromRetake: fromRetake
       );
-      print('################################### Time Quiz: ${timedQuizMinutes}');
-      print("..................is TimeQuiz Value: ${isTimedQuiz}");
-      print("ReviewMode is: $reviewMode");
-      print("Your Review type is: $reviewType");
-
     });
     return WillPopScope(
         onWillPop: () async {
@@ -78,10 +73,10 @@ class QuizzesView extends StatelessWidget {
             answered: results["answered"],
             totalQuestions: results["totalQuestions"],
             onLeave: () {
-              controller.resetController();
               if (fromRetake) {
                 Get.back();
                 Get.offAll(() => StudyView());
+                controller.resetController();
               } else {
                 Get.back();
                 Get.back();

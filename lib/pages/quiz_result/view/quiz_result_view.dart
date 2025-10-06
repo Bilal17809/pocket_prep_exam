@@ -161,15 +161,14 @@ class QuizResultView extends StatelessWidget {
           child: CommonButton(
             title: "Retake Quiz",
             onTap: () async {
+              final isTime = Get.find<QuestionController>().isTimedQuiz.value;
+              final isTimeQMin =  Get.find<QuestionController>().timedQuizDuration;
               Get.find<QuestionController>().resetController(isRetake: true);
-               final isTime =Get.find<QuestionController>().isTimedQuiz.value;
-               final  isTimeQMin = Get.find<QuestionController>().selectedMinutes.value.toInt();
-              await Get.off(() =>
-                  QuizzesView(
-                    allQuestion: quizQuestions,
+              await Get.off(() => QuizzesView(
+                allQuestion: quizQuestions,
                 fromRetake: true,
                 isTimedQuiz: isTime,
-                    timedQuizMinutes: isTimeQMin,
+                timedQuizMinutes: isTimeQMin,
               ));
             },
           ),

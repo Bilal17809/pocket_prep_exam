@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:pocket_prep_exam/pages/Quiz_builder/view/quiz_builder_screen.dart';
 import 'package:pocket_prep_exam/pages/questions/control/questions_controller.dart';
 import 'package:pocket_prep_exam/pages/questions/widgets/quiz_bottomsheet.dart';
 import '/core/Utility/utils.dart';
@@ -34,7 +35,7 @@ class QuizModeList extends StatelessWidget {
                         if (index == 2) {
                           Get.find<QuestionController>().resetController();
                           TimedQuizBottomSheet.show();
-                        } else {
+                        } else if(index == 1){
 
                           final quizQuestions = Get.find<EditeSubjectController>().startQuiz();
                           if (quizQuestions.isEmpty) {
@@ -42,6 +43,8 @@ class QuizModeList extends StatelessWidget {
                             return;
                           }
                           Get.to(() => QuizzesView(allQuestion: quizQuestions,isTimedQuiz: false,));
+                        }else{
+                          Get.to(() => QuizBuilderScreen());
                         }
                       },
                     child: ListTile(
