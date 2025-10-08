@@ -1,23 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:pocket_prep_exam/core/Utility/utils.dart';
 import 'package:pocket_prep_exam/core/common/common_button.dart';
 import 'package:pocket_prep_exam/core/theme/app_colors.dart';
+import '../../questions/view/questions_view.dart';
 import '../controller/quiz_builder_controller.dart';
 import '../widgets/exam_selection.dart';
 import '../widgets/subject_selection.dart';
 import '../widgets/time_picker.dart';
-import '../../../services/exam_and_subjects_services.dart';
-import '../../../services/questions_services.dart';
+
+
 
 class QuizBuilderScreen extends StatelessWidget {
   const QuizBuilderScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    Get.put(QuizBuilderController(
-      examService: ExamService(),
-      questionService: QuestionService(),
-    ));
 
     final controller = Get.find<QuizBuilderController>();
 
@@ -33,45 +31,64 @@ class QuizBuilderScreen extends StatelessWidget {
         }
 
         return SingleChildScrollView(
-          padding: const EdgeInsets.all(16),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const SizedBox(height: 8),
-              Text(
-                "Chose one or more exams to include in your quiz",
-                style: TextStyle(
-                  fontSize: 13,
-                  color: Colors.grey[600],
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16),
+                child: Text(
+                  "Choose one or more exams to include in your quiz",
+                  style: TextStyle(fontSize: 13, color: Colors.grey[600]),
                 ),
               ),
               const SizedBox(height: 4),
               const ExamSelectionWidget(),
               const SizedBox(height: 20),
-              if (controller.selectedExams.isNotEmpty)
-                const Text("Select Subjects:",
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
-                const SizedBox(height: 8),
-              ImprovedExamSelectionWidget(),
-              // const Text("Select Exams:"),
-              //     style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
 
-              // const Divider(height: 30),
-              //
-              // if (controller.selectedExams.isNotEmpty) ...[
-              //   const Text("Select Subjects:",
-              //       style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
-              //   const SizedBox(height: 8),
-              //   const SubjectSelectionWidget(),
-              //   const SizedBox(height: 16),
-              //   const QuestionCountWidget(),
-                const SizedBox(height: 16),
-                const TimePickerWidget(),
-                const SizedBox(height: 24),
-                Center(
-                  child: CommonButton(title: "Start Quiz", onTap:(){})
+              if (controller.selectedExams.isNotEmpty)
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 16),
+                  child: Text(
+                    "Select Subjects:",
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                  ),
                 ),
-              // ]
+
+              const SizedBox(height: 8),
+              ImprovedExamSelectionWidget(),
+
+              const SizedBox(height: 16),
+              const TimePickerWidget(),
+              const SizedBox(height: 24),
+
+              Center(
+                child: Obx(() {
+                  final hasTime = controller.selectedTime.value != Duration.zero;
+                  final hasSubjects = controller.selectedSubjects.isNotEmpty;
+                  final hasQuestionCount = controller.questionCountPerSubject.isNotEmpty;
+                  final canStartQuiz = hasTime && hasSubjects && hasQuestionCount;
+                  return canStartQuiz
+                      ? CommonButton(
+                    title: "Start Quiz",
+                    onTap: () async {
+                      final allQuestionsForQuiz = await controller.prepareQuizQuestions();
+                      final totalSeconds = controller.selectedTime.value.inSeconds;
+                      Get.off(() => QuizzesView(
+                        allQuestion: allQuestionsForQuiz,
+                        reviewMode: false,
+                        isTimedQuiz: true,
+                        timedQuizMinutes: totalSeconds,
+                      ));
+                    },
+                  )
+                      : HideCommonButton(
+                    title: "Start Quiz",
+                  );
+                }),
+              ),
+
+
             ],
           ),
         );

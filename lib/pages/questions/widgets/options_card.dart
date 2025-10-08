@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pocket_prep_exam/core/theme/app_colors.dart';
 import 'package:pocket_prep_exam/core/theme/app_styles.dart';
+import 'package:pocket_prep_exam/pages/study/controller/study_controller.dart';
 import '/core/common/text_span.dart';
 import '../control/questions_controller.dart';
 
@@ -50,7 +51,8 @@ class OptionsCard extends StatelessWidget {
       }
       return GestureDetector(
         onTap: selectedOptionIndex == null
-            ? () {
+            ? () async{
+
           print(
               "Selected OptionIndex: $optionIndex  CorrectIndex: $correctIndex  CorrectAnswer: $correctAnswer");
           controller.selectOption(
@@ -59,6 +61,10 @@ class OptionsCard extends StatelessWidget {
             option,
             correctAnswer,
           );
+        final isQuestionOfTheDay =  Get.find<StudyController>().questionOfDayDate.value;
+          if (isQuestionOfTheDay.isNotEmpty) {
+            await Get.find<StudyController>().markQuestionOfDayAttempted();
+          }
         }
             : null,
         child: Container(

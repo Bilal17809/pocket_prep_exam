@@ -67,7 +67,7 @@ class SwitchExamController extends GetxController {
       }
       _updateButtonVisibility();
     } catch (e) {
-      Utils.showError("Exam fetching Error $e");
+      Utils.showError("Exam fetching Error $e","");
     } finally {
       isLoading.value = false;
     }
@@ -75,7 +75,7 @@ class SwitchExamController extends GetxController {
 
   Future<void> saveSelectedExam() async {
     if (selectExamIndex.value == -1) {
-      Utils.showError( "Please select an exam first!");
+      Utils.showError( "Please select an exam first!","");
       return;
     }
     final selected = exam[selectExamIndex.value];

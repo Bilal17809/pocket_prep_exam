@@ -26,6 +26,7 @@ class QuestionController extends GetxController {
   var showExplanation = <int, bool>{}.obs;
   var flaggedQuestions = <int>[].obs;
 
+
   DateTime? _startTime;
   DateTime? _endTime;
   var elapsedSeconds = 0.obs;
@@ -42,6 +43,7 @@ class QuestionController extends GetxController {
   @override
   void onInit() {
     super.onInit();
+    fetchQuestions();
     // Get.find<EditeSubjectController>();
   }
 
@@ -91,6 +93,13 @@ class QuestionController extends GetxController {
     }
   }
 
+  Future<void> fetchQuestions()async{
+    final q = await _questionService.fetchAllQuestions();
+    if(q.isNotEmpty){
+      questions.value = q;
+    }
+  }
+
   void updateMinutes(double value) {
     selectedMinutes.value = value;
   }
@@ -103,7 +112,7 @@ class QuestionController extends GetxController {
     );
     quizQForTime = quizQuestionForTime;
     if (quizQuestionForTime.isEmpty) {
-      Utils.showError("No subject Found");
+      Utils.showError("No subject Found","");
     } else {
       isMoveQuizView.value = true;
     }
@@ -163,35 +172,6 @@ class QuestionController extends GetxController {
     }
   }
 
-  Future<void> startQuizForTime({
-    List<Question>? fixedQuestion,
-    required int timedMinutes,
-  }) async {
-    try {
-      state.value = QuestionState.loading;
-      _resetQuizState();
-      isTimedQuiz.value = true;
-      timedQuizDuration = timedMinutes;
-      if (fixedQuestion != null && fixedQuestion.isNotEmpty) {
-        await Future.delayed(Duration(milliseconds: 300));
-        questions.assignAll(fixedQuestion);
-        state.value = QuestionState.success;
-      } else {
-        final pool = await Get.find<EditeSubjectController>().startQuizForTime();
-        await Future.delayed(Duration(milliseconds: 300));
-        questions.assignAll(pool);
-        state.value = QuestionState.success;
-      }
-      if (questions.isEmpty) {
-        state.value = QuestionState.error;
-      } else {
-        _startTimedQuizCountdown();
-      }
-    } catch (e) {
-      state.value = QuestionState.error;
-    }
-  }
-
   Future<void> initQuiz({
     required bool reviewMode,
     List<int>? questionIdsToReview,
@@ -201,28 +181,75 @@ class QuestionController extends GetxController {
     int? timedQuizMinutes,
     bool fromRetake = false,
   }) async {
-    if (reviewMode && questionIdsToReview != null && selectedOptions != null) {
-      setReviewQuestions(questionIdsToReview, selectedOptions);
-    } else {
+    try {
+      if (reviewMode && questionIdsToReview != null && selectedOptions != null) {
+        setReviewQuestions(questionIdsToReview, selectedOptions);
+        return;
+      }
       if (!fromRetake && allQuestions != null) {
         originalAttemptQuestions = List.from(allQuestions);
       }
       final quizQuestions = fromRetake ? originalAttemptQuestions : allQuestions;
+      if (quizQuestions == null || quizQuestions.isEmpty) {
+        state.value = QuestionState.error;
+        return;
+      }
       if (isTimedQuiz && timedQuizMinutes != null) {
         await startQuizForTime(
           fixedQuestion: quizQuestions,
-          timedMinutes: timedQuizMinutes,
+          timedSeconds: timedQuizMinutes, // Already in seconds
         );
       } else {
         await startQuiz(fixedQuestions: quizQuestions);
       }
+    } catch (e) {
+      state.value = QuestionState.error;
     }
   }
+
+
+  Future<void> startQuizForTime({
+    List<Question>? fixedQuestion,
+    required int timedSeconds,
+  }) async {
+    try {
+      state.value = QuestionState.loading;
+      _resetQuizState();
+      isTimedQuiz.value = true;
+      if (timedSeconds <= 0) {
+        state.value = QuestionState.error;
+        return;
+      }
+      timedQuizDuration = timedSeconds;
+      if (fixedQuestion != null && fixedQuestion.isNotEmpty) {
+        await Future.delayed(const Duration(milliseconds: 300));
+        questions.assignAll(fixedQuestion);
+      } else {
+        final pool = await Get.find<EditeSubjectController>().startQuizForTime();
+        await Future.delayed(const Duration(milliseconds: 300));
+        questions.assignAll(pool);
+      }
+      if (questions.isEmpty) {
+        state.value = QuestionState.error;
+        return;
+      }
+      _startTimedQuizCountdown();
+      state.value = QuestionState.success;
+      if (questions.length == 1) {
+        Future.delayed(const Duration(milliseconds: 100), () {
+          isSubmitVisible.value = true;
+        });
+      }
+    } catch (e) {
+      state.value = QuestionState.error;
+    }
+  }
+
 
   void _startTimedQuizCountdown() {
     _timer?.cancel();
     _startTime = DateTime.now();
-    remainingSeconds.value = timedQuizDuration! * 60;
+    remainingSeconds.value = timedQuizDuration!;
     _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
       if (remainingSeconds.value > 0) {
         remainingSeconds.value--;
@@ -232,14 +259,10 @@ class QuestionController extends GetxController {
       }
     });
   }
-
-  // Stop Quiz Timer
   void _stopQuizTimer() {
     _endTime = DateTime.now();
     _timer?.cancel();
   }
-
-  // Option Selection
   void selectOption(
     int questionIndex,
     int optionIndex,
@@ -263,15 +286,15 @@ class QuestionController extends GetxController {
     }
   }
 
-  // Page Change
   void onPageChange(int index) {
     currentPage.value = index;
-    if (index == questions.length - 1) {
+    if (questions.length == 1|| index == questions.length - 1) {
       isSubmitVisible.value = true;
     }
   }
 
-  // Normalize Answer
+
+
   String _normalizeAnswer(String text) {
     String clean = text.trim();
     if (clean.length > 1 &&

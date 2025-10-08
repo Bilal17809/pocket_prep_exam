@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:pocket_prep_exam/core/theme/app_colors.dart';
 import '../controller/quiz_builder_controller.dart';
 
 class ImprovedExamSelectionWidget extends StatelessWidget {
@@ -13,7 +14,7 @@ class ImprovedExamSelectionWidget extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: controller.selectedExams.map((exam) {
         return Container(
-          margin: const EdgeInsets.only(bottom: 16),
+          margin: const EdgeInsets.only(bottom: 16,right: 16,left: 16),
           decoration: BoxDecoration(
             color: Colors.blue.shade50,
             borderRadius: BorderRadius.circular(06),
@@ -84,8 +85,18 @@ class ImprovedExamSelectionWidget extends StatelessWidget {
                                 keyboardType: TextInputType.number,
                                 decoration: InputDecoration(
                                   hintText: "Enter count",
+
                                   border: OutlineInputBorder(
+                                      borderSide: BorderSide(color: lightSkyBlue),
                                     borderRadius: BorderRadius.circular(8),
+                                  ),
+                                  enabledBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(color: Colors.grey.withAlpha(120)),
+                                    borderRadius: BorderRadius.circular(8),
+                                  ),
+                                  focusedBorder: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(8),
+                                      borderSide: BorderSide(color: lightSkyBlue)
                                   ),
                                   contentPadding:
                                   const EdgeInsets.symmetric(

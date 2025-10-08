@@ -11,21 +11,24 @@ class CommonButton extends StatelessWidget {
   final VoidCallback onTap;
   final Color colorA;
   final Color colorB;
-
+   final IconData? icon;
+   final bool isIcon;
    CommonButton({super.key, required this.title, required this.onTap,
     this.colorA = lightSkyBlue,
-     this.colorB = lightSkyBlue
+     this.colorB = lightSkyBlue,
+     this.icon,
+     this.isIcon = false
   });
 
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
     return Padding(
-      padding: EdgeInsets.symmetric(vertical: bodySmallWH, horizontal: 10),
+      padding: EdgeInsets.symmetric(vertical: bodySmallWH, horizontal: 16),
       child: GestureDetector(
         onTap: onTap,
         child: Container(
-          height: height * 0.07,
+          height: height * 0.06,
           width: double.infinity,
           decoration: BoxDecoration(
             gradient: LinearGradient(
@@ -36,7 +39,7 @@ class CommonButton extends StatelessWidget {
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
             ),
-            borderRadius: BorderRadius.circular(40),
+            borderRadius: BorderRadius.circular(10),
             // boxShadow: [
             //   BoxShadow(
             //     color: Colors.black.withOpacity(0.25),
@@ -46,19 +49,28 @@ class CommonButton extends StatelessWidget {
             // ],
           ),
           child: Center(
-            child: Text(
-              title,
-              style: context.textTheme.bodyLarge!.copyWith(
-                color: kWhite,
-                fontWeight: FontWeight.bold,
-                shadows: [
-                  const Shadow(
-                    blurRadius: 3,
-                    color: Colors.black45,
-                    offset: Offset(1, 1),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                if(isIcon)
+                Icon(icon,size: 16,color: kWhite,),
+                if(isIcon)
+                SizedBox(width: 04),
+                Text(
+                  title,
+                  style: context.textTheme.bodyLarge!.copyWith(
+                    color: kWhite,
+                    fontWeight: FontWeight.bold,
+                    shadows: [
+                      const Shadow(
+                        blurRadius: 3,
+                        color: Colors.black45,
+                        offset: Offset(1, 1),
+                      ),
+                    ],
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
         ),
@@ -77,9 +89,9 @@ class HideCommonButton extends StatelessWidget {
     final height = MediaQuery.of(context).size.height;
 
     return Padding(
-      padding: EdgeInsets.symmetric(vertical: bodySmallWH, horizontal: 10),
+      padding: EdgeInsets.symmetric(vertical: bodySmallWH, horizontal: 16),
       child: Container(
-        height: height * 0.07,
+        height: height * 0.06,
         width: double.infinity,
         decoration: BoxDecoration(
           gradient: LinearGradient(
@@ -90,14 +102,7 @@ class HideCommonButton extends StatelessWidget {
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),
-          borderRadius: BorderRadius.circular(40),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withOpacity(0.15), // softer shadow
-              offset: const Offset(2, 2),
-              blurRadius: 3,
-            ),
-          ],
+          borderRadius: BorderRadius.circular(10),
         ),
         child: Center(
           child: Text(

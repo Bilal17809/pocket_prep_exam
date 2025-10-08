@@ -12,8 +12,8 @@ class TimedQuizBottomSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = Get.find<QuestionController>();
+
     return Container(
-      padding: const EdgeInsets.all(20),
       decoration: const BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
@@ -21,85 +21,98 @@ class TimedQuizBottomSheet extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          // Close button
-          Align(
-            alignment: Alignment.topLeft,
-            child: IconButton(
-              icon: const Icon(Icons.close, color: lightSkyBlue, size: 30),
-              onPressed: () => Get.back(),
-            ),
-          ),
-          Image.asset("images/stopwatch.png", height: 36),
-          const Text(
-            'Timed Quiz',
-            style: TextStyle(
-              fontSize: 22,
-              fontWeight: FontWeight.bold,
-              color: Colors.black87,
-            ),
-          ),
-          const SizedBox(height: 36),
-          const Text(
-            'How many minutes?',
-            style: TextStyle(
-              fontSize: 18,
-              fontWeight: FontWeight.w500,
-              color: Colors.black87,
-            ),
-          ),
-          Obx(() => Text(
-            controller.selectedMinutes.value.toInt().toString(),
-            style: const TextStyle(
-              fontSize: 46,
-              fontWeight: FontWeight.bold,
-              color: Colors.black,
-            ),
-          )),
-          const SizedBox(height: 24),
+          Padding(
+            padding: const EdgeInsets.all(10),
+            child: Column(
 
-          // Slider
-          Row(
-            children: [
-              const Text('5', style: TextStyle(fontSize: 16, color: Colors.grey)),
-              Expanded(
-                child: Obx(() => SliderTheme(
-                  data: SliderTheme.of(context).copyWith(
-                    activeTrackColor: lightSkyBlue,
-                    inactiveTrackColor: Colors.grey.withAlpha(60),
-                    thumbColor: lightSkyBlue,
-                    overlayColor: lightSkyBlue.withAlpha(100),
-                    thumbShape: const RoundSliderThumbShape(enabledThumbRadius: 12),
-                    overlayShape: const RoundSliderOverlayShape(overlayRadius: 20),
+              children: [
+                // Close button
+                Align(
+                  alignment: Alignment.topLeft,
+                  child: IconButton(
+                    icon: const Icon(Icons.close, color: lightSkyBlue, size: 30),
+                    onPressed: () => Get.back(),
                   ),
-                  child: Slider(
-                    value: controller.selectedMinutes.value,
-                    min: 5,
-                    max: 15,
-                    onChanged: (value) => controller.updateMinutes(value),
+                ),
+                Image.asset("images/stopwatch.png", height: 36),
+                const Text(
+                  'Timed Quiz',
+                  style: TextStyle(
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black87,
+                  ),
+                ),
+                const SizedBox(height: 36),
+                const Text(
+                  'How many minutes?',
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.w500,
+                    color: Colors.black87,
+                  ),
+                ),
+                Obx(() => Text(
+                  controller.selectedMinutes.value.toInt().toString(),
+                  style: const TextStyle(
+                    fontSize: 46,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,
                   ),
                 )),
-              ),
-              const Text('15', style: TextStyle(fontSize: 16, color: Colors.grey)),
-            ],
+                const SizedBox(height: 24),
+                Row(
+                  children: [
+                    const Text(
+                      '5', style: TextStyle(fontSize: 16, color: Colors.grey),
+                    ),
+                    Expanded(
+                      child: Obx(() => SliderTheme(
+                        data: SliderTheme.of(context).copyWith(
+                          activeTrackColor: lightSkyBlue,
+                          inactiveTrackColor: Colors.grey.withAlpha(60),
+                          thumbColor: lightSkyBlue,
+                          overlayColor: lightSkyBlue.withAlpha(100),
+                          thumbShape: const RoundSliderThumbShape(
+                            enabledThumbRadius: 12,
+                          ),
+                          overlayShape: const RoundSliderOverlayShape(
+                            overlayRadius: 20,
+                          ),
+                        ),
+                        child: Slider(
+                          value: controller.selectedMinutes.value,
+                          min: 5,
+                          max: 15,
+                          label: '${controller.selectedMinutes.value.toInt()} min',
+                          onChanged: (value) => controller.updateMinutes(value),
+                        ),
+                      )),
+                    ),
+                    const Text(
+                      '15',
+                      style: TextStyle(fontSize: 16, color: Colors.grey),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 32),
+              ],
+            ),
           ),
-          const SizedBox(height: 32),
           CommonButton(
-              title: "Start Quiz",
-              onTap: () async {
+            title: "Start Quiz",
+            onTap: () async {
+                final selectedMinutes = controller.selectedMinutes.value.toInt();
+                final totalSeconds = selectedMinutes * 60;
                 controller.moveQuizView();
-                await Future.delayed(Duration(milliseconds: 500));
-                if(controller.isMoveQuizView.value == true){
                   Get.to(() => QuizzesView(
                     allQuestion: controller.quizQForTime,
                     isTimedQuiz: true,
-                    timedQuizMinutes: controller.selectedMinutes.value.toInt(),
-                  ))?.then((_){
-                     Get.back();
+                    timedQuizMinutes: totalSeconds,
+                  ))?.then((_) {
+                    Get.back();
                   });
-
-                }
-              }
-
+            },
           ),
         ],
       ),
@@ -110,6 +123,8 @@ class TimedQuizBottomSheet extends StatelessWidget {
       const TimedQuizBottomSheet(),
       isScrollControlled: true,
       backgroundColor: Colors.transparent,
+      isDismissible: true,
+      enableDrag: true,
     );
   }
 }

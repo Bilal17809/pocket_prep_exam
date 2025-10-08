@@ -16,6 +16,31 @@ class StorageService {
   static const String selectedExamKey = "selected_exam_id";
   static const String _quizResultKey = "_quiz_result";
   static const String _selectedSubjectsKey = "_selected_subjects";
+  static const String _questionOfDayKey = "question_of_day_attempt_date";
+
+
+
+  // -------------------- Question of the Day Methods --------------------
+
+  Future<void> saveQuestionOfDayAttempt(int examId) async {
+    final today = DateTime.now().toIso8601String().split('T').first;
+    await _preferences.setString("$_questionOfDayKey$examId", today);
+  }
+
+  Future<bool> isQuestionOfDayAttempted(int examId) async {
+    final today = DateTime.now().toIso8601String().split('T').first;
+    final savedDate = _preferences.getString("$_questionOfDayKey$examId");
+    return savedDate == today;
+  }
+
+  Future<String?> getLastQuestionOfDayDate(int examId) async {
+    return _preferences.getString("$_questionOfDayKey$examId");
+  }
+
+  Future<void> clearQuestionOfDayAttempt(int examId) async {
+    await _preferences.remove("$_questionOfDayKey$examId");
+  }
+
 
   Future<void> saveName(List<String> examName) async {
     await _preferences.setStringList(_saveExamName, examName);

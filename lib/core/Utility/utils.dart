@@ -8,17 +8,17 @@ import '../common/custom_dialog.dart';
 
 class Utils {
   Utils._();
-  static void showSuccess(String message) {
-    _showSnackBar("Success", message, isSuccess: true);
+  static void showSuccess(String message,String title) {
+    _showSnackBar(title ?? "Success", message, isSuccess: true,showBottom: true);
   }
-  static void showError(String message) {
-    _showSnackBar("Error", message, isSuccess: false);
+  static void showError(String message,String title) {
+    _showSnackBar(title ?? "Error", message, isSuccess: false,showBottom: true);
   }
-  static void _showSnackBar(String title, String message, {bool isSuccess = false}) {
+  static void _showSnackBar(String title, String message, {bool isSuccess = false,bool showBottom = false}) {
     Get.snackbar(
       title,
       message,
-      snackPosition: SnackPosition.TOP,
+      snackPosition: showBottom ? SnackPosition.BOTTOM : SnackPosition.TOP,
       backgroundColor: isSuccess ? const Color(0xFF4CAF50) : Colors.red,
       colorText: Colors.white,
       margin: const EdgeInsets.all(12),

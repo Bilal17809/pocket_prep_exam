@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:pocket_prep_exam/pages/dashboard/view/dashboard_view.dart';
 import 'package:pocket_prep_exam/pages/study/view/study_view.dart';
 import '../../../services/questions_services.dart';
 import '/core/common/common_button.dart';
@@ -53,7 +54,7 @@ class QuizResultView extends StatelessWidget {
     return WillPopScope(
       onWillPop: () async {
         Get.find<QuestionController>().resetController();
-        Get.offAll(() =>  StudyView());
+        Get.offAll(() =>  DashboardView());
         return false;
       },
       child: SafeArea(
