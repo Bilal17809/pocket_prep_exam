@@ -1,8 +1,8 @@
 import 'dart:math';
-import 'dart:ui';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
-import '../../../core/local_storage/storage_helper.dart';
+import '/core/local_storage/storage_helper.dart';
 import '/data/models/exams_and_subject.dart';
 import '/services/exam_and_subjects_services.dart';
 import '/services/questions_services.dart';
@@ -18,7 +18,10 @@ class StudyController extends GetxController {
   Rxn<Exam> selectedExam = Rxn<Exam>();
   RxString questionOfDayDate = ''.obs;
   RxBool isQuestionOfDayVisible = true.obs;
+  RxBool isQuestionOfDayCorrect = false.obs;
+
   RxList<CalendarDateModel> calendarDates = <CalendarDateModel>[].obs;
+
 
   StudyController({
     required StorageService storageService,
@@ -36,24 +39,26 @@ class StudyController extends GetxController {
     checkQuestionOfDayStatus();
   }
 
-  // ---------------- Calendar ----------------
+
   void selectItem(int index) => selectedIndex.value = index;
 
   void generateCalendarDates() {
     final today = DateTime.now();
+    final startOfWeek = today.subtract(Duration(days: today.weekday - 1));
     calendarDates.clear();
     for (int i = 0; i < 7; i++) {
-      final date = today.add(Duration(days: i));
+      final date = startOfWeek.add(Duration(days: i));
       calendarDates.add(CalendarDateModel(
         date: date,
         dayName: DateFormat('EEE').format(date).toUpperCase(),
         dayNumber: date.day,
-        isToday: i == 0,
+        isToday: DateUtils.isSameDay(date, today),
       ));
     }
   }
 
-  // ---------------- Exam ----------------
+
+
   Future<void> loadExamFromStorage() async {
     try {
       final examId = await _storageService.getExam();
@@ -73,17 +78,20 @@ class StudyController extends GetxController {
     }
   }
 
-  // ---------------- Question of the Day ----------------
+
   Future<void> checkQuestionOfDayStatus() async {
     final exam = selectedExam.value;
     if (exam == null) return;
     final attempted = await _storageService.isQuestionOfDayAttempted(exam.examId);
     final savedDate = await _storageService.getLastQuestionOfDayDate(exam.examId);
+    final isCorrect = await _storageService.getQuestionOfDayCorrectness(exam.examId);
     if (savedDate != null) {
       questionOfDayDate.value = savedDate;
     }
     isQuestionOfDayVisible.value = !attempted;
+    isQuestionOfDayCorrect.value = isCorrect ?? false;
   }
+
 
   Future<void> markQuestionOfDayAttempted() async {
     final exam = selectedExam.value;
@@ -94,6 +102,23 @@ class StudyController extends GetxController {
     questionOfDayDate.value = today;
   }
 
+  Future<void> updateQuestionOfDayProgress(bool isCorrect) async {
+    final exam = selectedExam.value;
+    if (exam == null) return;
+
+    await _storageService.saveQuestionOfDayCorrectness(exam.examId, isCorrect);
+    await _storageService.saveQuestionOfDayAttempt(exam.examId);
+
+    isQuestionOfDayVisible.value = false;
+    isQuestionOfDayCorrect.value = isCorrect;
+    questionOfDayDate.value = DateFormat('yyyy-MM-dd').format(DateTime.now());
+
+    if (isCorrect) {
+      print("✅ Question of the Day completed successfully!");
+    } else {
+      print("❌ Wrong answer, progress saved.");
+    }
+  }
   Future<Question?> getQuestionOfTheDay() async {
     final exam = selectedExam.value;
     if (exam == null) return null;
@@ -116,6 +141,7 @@ class StudyController extends GetxController {
     if (exam == null) return;
     await _storageService.clearQuestionOfDayAttempt(exam.examId);
     isQuestionOfDayVisible.value = true;
+    isQuestionOfDayCorrect.value = false;
     questionOfDayDate.value = '';
     print("Question of the Day cleared for Exam ID: ${exam.examId}");
   }

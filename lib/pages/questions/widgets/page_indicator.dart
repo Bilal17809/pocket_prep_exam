@@ -18,6 +18,9 @@ class PageIndicator extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (BuildContext context, BoxConstraints constraints) {
+        final availableWidth = itemCount <= 5
+            ? (constraints.maxWidth - 80)
+            : (constraints.maxWidth - 120);
         return Center(
           child: Container(
             padding: EdgeInsets.symmetric(horizontal: 20),
@@ -26,7 +29,7 @@ class PageIndicator extends StatelessWidget {
               controller: pageController,
               count: itemCount,
               effect: JumpingDotEffect(
-                dotWidth: (constraints.maxWidth - 120) / itemCount,
+                dotWidth: (availableWidth) / itemCount,
                 dotHeight: 02,
                 dotColor: kWhite,
                 activeDotColor: Colors.orange,

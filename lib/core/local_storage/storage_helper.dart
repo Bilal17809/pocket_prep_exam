@@ -17,6 +17,8 @@ class StorageService {
   static const String _quizResultKey = "_quiz_result";
   static const String _selectedSubjectsKey = "_selected_subjects";
   static const String _questionOfDayKey = "question_of_day_attempt_date";
+  static const String _questionOfDayCorrectnessKey = "qotd_correctness"; // ✅ NEW
+
 
 
 
@@ -39,8 +41,20 @@ class StorageService {
 
   Future<void> clearQuestionOfDayAttempt(int examId) async {
     await _preferences.remove("$_questionOfDayKey$examId");
+    await _preferences.remove("${_questionOfDayCorrectnessKey}_$examId"); // ✅ Also clear correctness
   }
 
+  // ✅ NEW: Save Question of the Day Correctness
+  Future<void> saveQuestionOfDayCorrectness(int examId, bool isCorrect) async {
+    final key = '${_questionOfDayCorrectnessKey}_$examId';
+    await _preferences.setBool(key, isCorrect);
+  }
+
+  // ✅ NEW: Get Question of the Day Correctness
+  Future<bool?> getQuestionOfDayCorrectness(int examId) async {
+    final key = '${_questionOfDayCorrectnessKey}_$examId';
+    return _preferences.getBool(key);
+  }
 
   Future<void> saveName(List<String> examName) async {
     await _preferences.setStringList(_saveExamName, examName);

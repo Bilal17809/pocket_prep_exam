@@ -58,7 +58,7 @@ class QuizModeList extends StatelessWidget {
                         final quizQuestions = Get.find<EditeSubjectController>().startQuiz();
                        // controller.clearQuestionOfDayAttempt();
                         if (quizQuestions.isEmpty) {
-                          Utils.showError("Please select at least one subject!", "");
+                          Utils.showError("Please select at least one subject!", "Error");
                           return;
                         }
                         Get.to(() => QuizzesView(allQuestion: quizQuestions, isTimedQuiz: false));
@@ -85,7 +85,7 @@ class QuizModeList extends StatelessWidget {
                       ),
                       trailing: Text(
                         item.date ?? "",
-                        style: TextStyle(color: isHidden ? greyColor :  kBlue, fontSize: 14),
+                        style: TextStyle(color: isHidden ? greyColor :  lightSkyBlue, fontSize: 16),
                       ),
                     ),
                   ),

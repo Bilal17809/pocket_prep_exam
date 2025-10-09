@@ -159,11 +159,11 @@ class TimePickerWidget extends StatelessWidget {
                 icon: Icons.check_circle_outline,
                 isIcon: true,
                 onTap: () {
+                  FocusManager.instance.primaryFocus?.unfocus();
                   final totalMinutes = minutes.value;
                   final totalSeconds = seconds.value;
                   if (totalMinutes == 0 && totalSeconds == 0) {
-                  Utils.showError(
-                    "Please select at least 1 second","Invalid Duration");
+                    Utils.showError("Please select at least 1 second", "Invalid Duration");
                     return;
                   }
                   final duration = Duration(
@@ -171,11 +171,12 @@ class TimePickerWidget extends StatelessWidget {
                     seconds: totalSeconds,
                   );
                   controller.setQuizDuration(duration);
-                  Get.back();
-              Utils.showSuccess(
-                "Quiz duration: ${_formatDuration(totalMinutes, totalSeconds)}",
-                    "Duration Set"
-              );
+                    FocusManager.instance.primaryFocus?.unfocus();
+                    Get.back();
+                    Utils.showSuccess(
+                      "Quiz duration: ${_formatDuration(totalMinutes, totalSeconds)}",
+                      "Duration Set",
+                    );
                 },
               ),
             ),

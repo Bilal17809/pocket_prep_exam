@@ -38,7 +38,7 @@ class StatsView extends StatelessWidget {
               Text(
                 "Subject Statistics",
                 style: context.textTheme.titleLarge!
-                    .copyWith(fontWeight: FontWeight.bold),
+                    .copyWith(fontWeight: FontWeight.bold,fontSize: 16),
               ),
               const SizedBox(height: 20),
               SubStatisticList(),

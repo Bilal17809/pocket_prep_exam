@@ -10,6 +10,7 @@ class EditeSubjectController extends GetxController {
   final ExamService _examService;
   final StorageService _storageService;
   final QuestionService _service;
+  RxBool hasSelectionChanged = false.obs;
 
   Rxn<Exam> selectedExam = Rxn<Exam>();
   RxList<Question> examQuestions = <Question>[].obs;
@@ -33,6 +34,7 @@ class EditeSubjectController extends GetxController {
     super.onInit();
     loadExamFromStorage();
     startQuizForTime();
+    startQuiz();
   }
 
   Future<void> loadExamFromStorage() async {
@@ -46,14 +48,16 @@ class EditeSubjectController extends GetxController {
       examQuestions.clear();
       selectedExam.value = newExam;
       examQuestions.value = await _service.fetchAllQuestions();
-
       final savedSubjects = await _storageService.loadSelectedSubjects(newExam.examId);
       if (savedSubjects.isNotEmpty) {
         selectedSubjectIds.assignAll(savedSubjects);
+      } else if (newExam.subjects.isNotEmpty) {
+        selectedSubjectIds.add(newExam.subjects.first.subjectId);
       }
       _buildPool();
     }
   }
+
 
   void toggleSubject(int subjectId) {
     final exam = selectedExam.value;
@@ -70,6 +74,7 @@ class EditeSubjectController extends GetxController {
       selectedSubjectIds.add(subjectId);
     }
     _buildPool();
+    _checkSelectionChanged();
   }
 
   void toggleAllSubjects() {
@@ -84,6 +89,7 @@ class EditeSubjectController extends GetxController {
       selectedSubjectIds.assignAll(allIds);
     }
     _buildPool();
+    _checkSelectionChanged();
   }
 
   Future<void> saveSelectedSubjectsForExam() async {
@@ -107,15 +113,31 @@ class EditeSubjectController extends GetxController {
       }
     }
   }
-  Future<List<Question>> startQuizForTime() async {
+
+  void _checkSelectionChanged() async {
+    final exam = selectedExam.value;
+    if (exam == null) return;
+    if (selectedSubjectIds.isEmpty) {
+      hasSelectionChanged.value = false;
+      return;
+    }
+    final saved = await _storageService.loadSelectedSubjects(exam.examId);
+    final current = selectedSubjectIds.toList();
+    hasSelectionChanged.value = !(saved.length == current.length &&
+        saved.every((id) => current.contains(id)));
+  }
+
+  Future<List<Question>> startQuizForTime()async {
     final pool = [...questionPool];
     pool.shuffle();
+    print("Your pool QuizForTime is ${pool.length}");
     return pool.take(maxQuizSizeForTime).toList();
   }
 
   List<Question> startQuiz() {
     final pool = [...questionPool];
     pool.shuffle();
+    print("Your pool is start Quiz pool is:  ${pool.length}");
     return pool.take(maxQuizSize).toList();
   }
 

@@ -104,19 +104,6 @@ class QuestionController extends GetxController {
     selectedMinutes.value = value;
   }
 
-  Future<void> moveQuizView() async {
-    final quizQuestionForTime =
-        await Get.find<EditeSubjectController>().startQuizForTime();
-    print(
-      "#####>>>>>> question length for quizTime ${quizQuestionForTime.length}",
-    );
-    quizQForTime = quizQuestionForTime;
-    if (quizQuestionForTime.isEmpty) {
-      Utils.showError("No subject Found","");
-    } else {
-      isMoveQuizView.value = true;
-    }
-  }
 
   void setReviewQuestions(
     List<int> questionIdsToReview,
@@ -197,7 +184,7 @@ class QuestionController extends GetxController {
       if (isTimedQuiz && timedQuizMinutes != null) {
         await startQuizForTime(
           fixedQuestion: quizQuestions,
-          timedSeconds: timedQuizMinutes, // Already in seconds
+          timedSeconds: timedQuizMinutes,
         );
       } else {
         await startQuiz(fixedQuestions: quizQuestions);

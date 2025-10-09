@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:pocket_prep_exam/core/Utility/utils.dart';
 import '/pages/edite_subjects/controller/edite_subject_controller.dart';
 import '/pages/questions/control/questions_controller.dart';
 import '/pages/questions/view/questions_view.dart';
@@ -104,14 +105,21 @@ class TimedQuizBottomSheet extends StatelessWidget {
             onTap: () async {
                 final selectedMinutes = controller.selectedMinutes.value.toInt();
                 final totalSeconds = selectedMinutes * 60;
-                controller.moveQuizView();
-                  Get.to(() => QuizzesView(
-                    allQuestion: controller.quizQForTime,
-                    isTimedQuiz: true,
-                    timedQuizMinutes: totalSeconds,
-                  ))?.then((_) {
-                    Get.back();
-                  });
+                final quizQuestionForTime = await Get.find<EditeSubjectController>().startQuizForTime();
+                if(quizQuestionForTime.isEmpty){
+                  Utils.showError("Please select at lest one subject", "Error");
+                }else{
+                    Get.to(() =>
+                        QuizzesView(
+                          allQuestion:quizQuestionForTime,
+                          isTimedQuiz: true,
+                          timedQuizMinutes: totalSeconds,
+                        ))?.then((_) {
+                      Get.back();
+                    });
+                  }
+
+
             },
           ),
         ],

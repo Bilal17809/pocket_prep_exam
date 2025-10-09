@@ -52,13 +52,13 @@ class QuizRateCard extends StatelessWidget {
                     value: progressValue,
                     strokeWidth: 7,
                     backgroundColor: Colors.grey.shade200,
-                    valueColor:  AlwaysStoppedAnimation<Color>(lightSkyBlue),
+                    valueColor:  AlwaysStoppedAnimation<Color>(kMintGreen),
                   ),
                 ),
                 Text(
                     percentage,
                     style: bodyMediumStyle.copyWith(
-                        color: lightSkyBlue,
+                        color: kMintGreen,
                         fontSize: 28,
                         fontWeight: FontWeight.bold
                     )

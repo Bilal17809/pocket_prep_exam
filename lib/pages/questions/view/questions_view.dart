@@ -130,7 +130,6 @@ class QuizzesView extends StatelessWidget {
 
             return Column(
               children: [
-                // Timer (for timed quiz)
                 if (controller.isTimedQuiz.value && !reviewMode)
                   Container(
                     padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
@@ -181,10 +180,7 @@ class QuizzesView extends StatelessWidget {
                       itemCount: questionsToShow.length,
                     ),
                   ),
-
                 const SizedBox(height: 6),
-
-                // Question Card
                 Expanded(
                   child: Obx(
                         () => PageView.builder(
@@ -203,13 +199,13 @@ class QuizzesView extends StatelessWidget {
                           index: index,
                           reviewMode: reviewMode,
                           reviewType: reviewType,
+                          isQuestionOfDay: isQuestionOfDayMode, // ✅ Pass QOTD flag
+
                         );
                       },
                     ),
                   ),
                 ),
-
-                // Submit button (normal mode only)
                 if (!reviewMode && controller.isSubmitVisible.value && !isQuestionOfDayMode)
                   Padding(
                     padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 26),
@@ -235,7 +231,6 @@ class QuizzesView extends StatelessWidget {
                       },
                     ),
                   ),
-
                 if (isQuestionOfDayMode)
                   Padding(
                     padding: const EdgeInsets.only(bottom: 20),

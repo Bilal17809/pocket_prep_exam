@@ -19,7 +19,7 @@ class Utils {
       title,
       message,
       snackPosition: showBottom ? SnackPosition.BOTTOM : SnackPosition.TOP,
-      backgroundColor: isSuccess ? const Color(0xFF4CAF50) : Colors.red,
+      backgroundColor: isSuccess ? const Color(0xFF4CAF50).withAlpha(100) : Colors.red.withAlpha(100),
       colorText: Colors.white,
       margin: const EdgeInsets.all(12),
       duration: const Duration(seconds: 2),

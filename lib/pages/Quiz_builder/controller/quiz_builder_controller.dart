@@ -16,8 +16,8 @@ class QuizBuilderController extends GetxController {
   RxList<Subject> selectedSubjects = <Subject>[].obs;
   RxMap<int, int> questionCountPerSubject = <int, int>{}.obs;
 
-  // ✅ Store as Duration for consistency
-  Rx<Duration> selectedTime = const Duration(minutes: 1).obs;
+
+  Rx<Duration> selectedTime = const Duration(minutes: 0).obs;
   RxBool isLoading = false.obs;
   RxList<Question> allQuestions = <Question>[].obs;
 
@@ -85,16 +85,13 @@ class QuizBuilderController extends GetxController {
     questionCountPerSubject[subjectId] = count;
   }
 
-  /// ✅ PRODUCTION: Clean duration setter
   void setQuizDuration(Duration duration) {
     if (duration.inSeconds < 0) {
-      print('Warning: Negative duration not allowed');
       return;
     }
     selectedTime.value = duration;
   }
 
-  /// ✅ PRODUCTION: Smart formatted duration with proper grammar
   String get formattedDuration {
     final d = selectedTime.value;
     final totalSeconds = d.inSeconds;
@@ -127,7 +124,6 @@ class QuizBuilderController extends GetxController {
     return parts.join(" ");
   }
 
-  /// ✅ PRODUCTION: Get total seconds for quiz timer
   int get totalQuizSeconds => selectedTime.value.inSeconds;
 
   Future<List<Question>> prepareQuizQuestions() async {
@@ -181,7 +177,6 @@ class QuizBuilderController extends GetxController {
     return allQuestionsForQuiz;
   }
 
-  /// ✅ PRODUCTION: Reset controller state
   void resetQuizBuilder() {
     selectedExams.clear();
     selectedSubjects.clear();

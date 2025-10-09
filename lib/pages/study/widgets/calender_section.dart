@@ -50,26 +50,28 @@ class CalendarSection extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: controller.calendarDates.asMap().entries.map((entry) {
-                    final index = entry.key;
                     final dateModel = entry.value;
                     final isToday = dateModel.isToday;
-                    final isNextDate = (todayIndex != -1 && index == todayIndex + 1);
-                    final isPastDate = (todayIndex != -1 && index < todayIndex);
                     return Expanded(
                       child: Center(
                         child: Container(
                           width: 36,
                           height: 36,
-                          decoration: roundedDecoration.copyWith(
+                          decoration: calender.copyWith(
                             color: isToday
                                 ? lightSkyBlue
-                                : (isPastDate ? lightSkyBlue.withOpacity(0.3) : Colors.white),
+                                : (dateModel.date.isBefore(DateTime.now())
+                                ? lightSkyBlue.withOpacity(0.3)
+                                : Colors.white),
                             border: Border.all(
                               color: isToday
                                   ? lightSkyBlue
-                                  : (isNextDate
+                                  : (dateModel.date.isBefore(DateTime.now())
+                                  ? lightSkyBlue.withOpacity(0.3)
+                                  : (dateModel.date.isAfter(DateTime.now()) &&
+                                  dateModel.date.day == DateTime.now().add(const Duration(days: 1)).day)
                                   ? lightSkyBlue
-                                  : (isPastDate ? lightSkyBlue.withOpacity(0.3) : Colors.white)),
+                                  : Colors.white),
                               width: isToday ? 1.5 : 2,
                             ),
                           ),
@@ -101,18 +103,31 @@ class ConnectingLinePainter extends CustomPainter {
   final int dateCount;
   final int todayIndex;
   ConnectingLinePainter({required this.dateCount, required this.todayIndex});
+
   @override
   void paint(Canvas canvas, Size size) {
     if (dateCount < 2) return;
     final itemWidth = size.width / dateCount;
     final centerY = size.height / 2;
     for (int i = 0; i < dateCount - 1; i++) {
-      final startX = (i + 0.5) * itemWidth;
-      final endX = (i + 1.5) * itemWidth;
-      final isActiveSegment = (todayIndex != -1 && i == todayIndex);
+      final startX = (i + 0.5) * itemWidth + 18;
+      final endX = (i + 1.5) * itemWidth - 18;
+      late Color lineColor;
+      if (todayIndex != -1) {
+        if (i == todayIndex) {
+          lineColor = lightSkyBlue;
+        } else if (i < todayIndex) {
+          lineColor = lightSkyBlue.withAlpha(100);
+        } else {
+          lineColor = Colors.grey.shade300;
+        }
+      } else {
+        lineColor = Colors.grey.shade300;
+      }
       final paint = Paint()
-        ..color = isActiveSegment ? lightSkyBlue : Colors.grey.shade300
-        ..strokeWidth = 2
+        ..color = lineColor
+        ..strokeWidth = 2.5
+        ..strokeCap = StrokeCap.round
         ..style = PaintingStyle.stroke;
       canvas.drawLine(
         Offset(startX, centerY),

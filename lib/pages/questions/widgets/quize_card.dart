@@ -11,7 +11,14 @@ class QuizCard extends StatelessWidget {
   final Question question;
   final int index;
   final bool reviewMode;
-  const QuizCard({super.key, required this.question, required this.index,this.reviewMode = false, required String reviewType});
+  final bool isQuestionOfDay;
+  const QuizCard({super.key, required this.question,
+    required this.index,this.reviewMode = false,
+    required String reviewType,
+    this.isQuestionOfDay = false,
+
+
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -63,7 +70,8 @@ class QuizCard extends StatelessWidget {
                         reference: question.reference,
                         showExplanationToggle: currentShowExplanationState,
                             reviewMode: reviewMode,
-                      ),
+                            isQuestionOfDay: isQuestionOfDay,
+                          ),
                     ),
                   );
                 }),

@@ -126,6 +126,24 @@ final BoxDecoration roundedDecoration = BoxDecoration(
     ),
   ],
 );
+final BoxDecoration calender = BoxDecoration(
+  color: Colors.white,
+  borderRadius: BorderRadius.circular(08),
+  boxShadow: [
+    BoxShadow(
+      color: Colors.grey.withValues(alpha: 0.2),
+      offset: const Offset(0, 2),
+      blurRadius: 6,
+    ),
+    BoxShadow(
+      color: Colors.white,
+      offset: const Offset(-0, -0),
+      blurRadius: 1,
+    ),
+  ],
+);
+
+
 
 final BoxDecoration quizSetupContainer = BoxDecoration(
   borderRadius: BorderRadius.circular(10),

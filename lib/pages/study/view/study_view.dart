@@ -29,7 +29,8 @@ class StudyView extends StatelessWidget {
             CalendarSection(controller: controller),
             SizedBox(height: 10),
             ProgressSection(),
-            SizedBox(height: 10),
+            const SizedBox(height: 20),
+            GameButton(),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 20, vertical: 6),
               child: Text("Quiz Modes", style: context.textTheme.titleMedium),

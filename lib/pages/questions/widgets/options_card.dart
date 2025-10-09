@@ -16,7 +16,7 @@ class OptionsCard extends StatelessWidget {
   final bool showExplanationToggle;
   final bool reviewMode;
   final String reviewType;
-
+  final bool isQuestionOfDay; // add this field
   const OptionsCard({
     super.key,
     required this.questionIndex,
@@ -28,6 +28,8 @@ class OptionsCard extends StatelessWidget {
     required this.showExplanationToggle,
     this.reviewMode = false,
     this.reviewType = 'All',
+    this.isQuestionOfDay = false, // default false
+
   });
 
   @override
@@ -52,7 +54,7 @@ class OptionsCard extends StatelessWidget {
       return GestureDetector(
         onTap: selectedOptionIndex == null
             ? () async{
-
+          final studyCtrl = Get.find<StudyController>();
           print(
               "Selected OptionIndex: $optionIndex  CorrectIndex: $correctIndex  CorrectAnswer: $correctAnswer");
           controller.selectOption(
@@ -64,6 +66,9 @@ class OptionsCard extends StatelessWidget {
         final isQuestionOfTheDay =  Get.find<StudyController>().questionOfDayDate.value;
           if (isQuestionOfTheDay.isNotEmpty) {
             await Get.find<StudyController>().markQuestionOfDayAttempted();
+          }
+          if (isQuestionOfDay) {
+            await studyCtrl.updateQuestionOfDayProgress(isCorrectOption);
           }
         }
             : null,
