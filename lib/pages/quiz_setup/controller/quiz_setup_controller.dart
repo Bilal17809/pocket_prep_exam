@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
-import 'package:pocket_prep_exam/data/models/models.dart';
-import 'package:pocket_prep_exam/pages/quiz_view_second/controller/quiz_controller.dart';
-import 'package:pocket_prep_exam/services/services.dart';
+import '/data/models/models.dart';
+import '/pages/quiz_view_second/controller/quiz_controller.dart';
+import '/services/services.dart';
 
 class QuizSetupController extends GetxController {
 
@@ -9,7 +9,7 @@ class QuizSetupController extends GetxController {
 
   var selectedSubject = Rxn<Subject>();
   var selectedDifficulty = "Easy".obs;
-  var selectedTimeLimit = 30.obs;
+  var selectedTimeLimit = 5.obs;
   var selectedQuestions = 10.obs;
   var subjectQuestions = <Question>[].obs;
 
@@ -28,21 +28,21 @@ class QuizSetupController extends GetxController {
   List<int> get questionOptions {
     switch (selectedDifficulty.value) {
       case "Medium":
-        return [10, 20];
+        return [5, 15];
       case "Hard":
-        return [10, 15];
+        return [5, 10];
       case "Easy":
       default:
-        return [10, 30];
+        return [5, 20];
     }
   }
 
-  List<int> get timeOptions => [30, 60, 300];
+  List<int> get timeOptions => [5, 10, 15];
 
   void setDifficulty(String difficulty) {
     selectedDifficulty.value = difficulty;
     selectedQuestions.value = questionOptions.first;
-    selectedTimeLimit.value = 30;
+    selectedTimeLimit.value = 5;
   }
   void setQuestions(int count) {
     selectedQuestions.value = count;

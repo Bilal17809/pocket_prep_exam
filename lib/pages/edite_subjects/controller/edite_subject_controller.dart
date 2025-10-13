@@ -77,6 +77,7 @@ class EditeSubjectController extends GetxController {
     _checkSelectionChanged();
   }
 
+
   void toggleAllSubjects() {
     final exam = selectedExam.value;
     if (exam == null) {

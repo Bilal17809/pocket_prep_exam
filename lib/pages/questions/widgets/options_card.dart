@@ -63,10 +63,6 @@ class OptionsCard extends StatelessWidget {
             option,
             correctAnswer,
           );
-        final isQuestionOfTheDay =  Get.find<StudyController>().questionOfDayDate.value;
-          if (isQuestionOfTheDay.isNotEmpty) {
-            await Get.find<StudyController>().markQuestionOfDayAttempted();
-          }
           if (isQuestionOfDay) {
             await studyCtrl.updateQuestionOfDayProgress(isCorrectOption);
           }

@@ -13,10 +13,11 @@ class StudyPlane extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-        padding: EdgeInsets.symmetric(horizontal: bodyWH),
+      padding: const EdgeInsets.symmetric(horizontal: 16),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          SizedBox(height: 10),
           Text("Study Plan"),
           SizedBox(height: 10),
           Container(
@@ -26,7 +27,7 @@ class StudyPlane extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
-                  padding:  EdgeInsets.symmetric(horizontal: bodyWH, vertical: 10),
+                  padding:  EdgeInsets.symmetric(horizontal: 08, vertical: 10),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [

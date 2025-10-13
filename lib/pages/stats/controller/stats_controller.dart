@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:pocket_prep_exam/core/local_storage/storage_helper.dart';
+import 'package:pocket_prep_exam/pages/edite_subjects/controller/edite_subject_controller.dart';
 import 'package:pocket_prep_exam/services/questions_services.dart';
 import '../../study/controller/study_controller.dart';
 import '/data/models/question_model.dart';
@@ -28,7 +29,7 @@ class StatsController extends GetxController {
   Future<void> loadExam() async {
     isLoading.value = true;
     try {
-      final exam = Get.find<StudyController>().selectedExam.value;
+      final exam = Get.find<EditeSubjectController>().selectedExam.value;
       if (exam != null) {
         selectExam.value = exam;
         subjectResults.value = await _storageService.loadExamResults(exam.examId);

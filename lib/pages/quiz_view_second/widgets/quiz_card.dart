@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:pocket_prep_exam/core/theme/app_colors.dart';
 import 'package:pocket_prep_exam/core/theme/app_styles.dart';
 import 'package:pocket_prep_exam/pages/quiz_view_second/controller/quiz_controller.dart';
+import 'package:pocket_prep_exam/pages/quiz_view_second/widgets/timer_display.dart';
 import '../../quiz_setup/controller/quiz_setup_controller.dart';
 import '/data/models/question_model.dart';
 
@@ -41,12 +42,14 @@ class SecondQuizCard extends StatelessWidget {
                       const SizedBox(height: 6),
                       Text(
                         "Question ${index + 1} / ${setupController.selectedQuestions.value}",
-                        style: Theme.of(context).textTheme.titleMedium,
+                        style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                          color: kBlack
+                        ),
                       ),
                     ],
                   ),
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: 60),
                 Text(
                   question.questionText,
                   style: Theme.of(context).textTheme.bodyLarge!.copyWith(
@@ -76,6 +79,11 @@ class SecondQuizCard extends StatelessWidget {
                 const SizedBox(height: 10),
               ],
             ),
+          ),
+          Positioned(
+            top: 10,
+            right: 10,
+            child: TimerDisplayWidget(),
           ),
         ],
       ),

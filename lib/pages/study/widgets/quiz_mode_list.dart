@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:pocket_prep_exam/core/local_storage/storage_helper.dart';
-import 'package:pocket_prep_exam/core/theme/app_styles.dart';
-
-import '../../../core/common/constant.dart';
+import '/core/theme/app_styles.dart';
+import '/core/common/constant.dart';
 import '../../questions/widgets/quiz_bottomsheet.dart';
 import '/core/theme/app_colors.dart';
-
 import '/core/Utility/utils.dart';
 import '/pages/questions/view/questions_view.dart';
 import '/pages/edite_subjects/controller/edite_subject_controller.dart';
@@ -78,7 +75,7 @@ class QuizModeList extends StatelessWidget {
                       title: Text(
                         item.title ?? "",
                         style: context.textTheme.bodyLarge!.copyWith(
-                          fontSize: 18,
+                          fontSize: 17,
                           color: isHidden ? Colors.grey.shade600 : kBlack.withAlpha(180),
                           fontWeight: FontWeight.bold,
                         ),

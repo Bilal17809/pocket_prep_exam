@@ -79,8 +79,8 @@ class QuizzesView extends StatelessWidget {
           return true;
         }
         if (isQuestionOfDay && controller.selectedOptions.isNotEmpty) {
-          await studyController.markQuestionOfDayAttempted();
-          controller.resetController();
+          // await studyController.markQuestionOfDayAttempted();
+          // controller.resetController();
           Get.offAll(() => DashboardView());
           return false;
         }
@@ -199,7 +199,7 @@ class QuizzesView extends StatelessWidget {
                           index: index,
                           reviewMode: reviewMode,
                           reviewType: reviewType,
-                          isQuestionOfDay: isQuestionOfDayMode, // ✅ Pass QOTD flag
+                          isQuestionOfDay: isQuestionOfDayMode,
 
                         );
                       },
@@ -213,21 +213,34 @@ class QuizzesView extends StatelessWidget {
                       title: "Submit Quiz",
                       onTap: () {
                         final quizResults = controller.calculateQuizResults();
-                        CustomDialog.show(
-                          title: "Submit Quiz?",
-                          message:
-                          "You've answered ${quizResults['answered']} of ${quizResults['totalQuestions']} questions. "
-                              "If you submit, you'll only be scored on the ${quizResults['answered']} question you answered.",
-                          positiveButtonText: "Submit",
-                          onPositiveTap: () {
-                            Get.offAll(() => QuizResultView(
-                              quizQuestions: controller.questions,
-                              quizResults: quizResults,
-                            ));
-                          },
-                          negativeButtonText: "Cancel",
-                          onNegativeTap: () => Get.back(),
-                        );
+                        final answered = quizResults['answered'] ?? 0;
+                        final totalQuestions = quizResults['totalQuestions'] ?? 0;
+                        if (answered == 0) {
+                          Get.offAll(() => DashboardView(initialIndex: 0));
+                          return;
+                        }
+                        if (answered <= 5) {
+                          CustomDialog.show(
+                            title: "Submit Quiz?",
+                            message:
+                            "You've answered $answered of $totalQuestions questions.\n"
+                                "If you submit now, you'll only be scored on those $answered questions.",
+                            positiveButtonText: "Submit",
+                            onPositiveTap: () {
+                              Get.offAll(() => QuizResultView(
+                                quizQuestions: controller.questions,
+                                quizResults: quizResults,
+                              ));
+                            },
+                            negativeButtonText: "Cancel",
+                            onNegativeTap: () => Get.back(),
+                          );
+                          return;
+                        }
+                        Get.offAll(() => QuizResultView(
+                          quizQuestions: controller.questions,
+                          quizResults: quizResults,
+                        ));
                       },
                     ),
                   ),
@@ -237,13 +250,17 @@ class QuizzesView extends StatelessWidget {
                     child: Obx(() {
                       final hasAttempted = controller.selectedOptions.isNotEmpty;
                       return CommonButton(
-                        title: hasAttempted ? "Close" : "Submitted",
+                        title: "Submitted",
                         onTap: () async{
                           if (hasAttempted) {
+                            // final isQuestionOfTheDay =  Get.find<StudyController>().questionOfDayDate.value;
+                            // if (isQuestionOfTheDay.isNotEmpty) {
+                            //   await Get.find<StudyController>().markQuestionOfDayAttempted();
+                            // }
                            await Get.find<StudyController>().markQuestionOfDayAttempted();
                             Get.offAll(() => const DashboardView());
                           } else {
-                            Utils.showError("Please answer before closing.", "");
+                            Utils.showError("Please answer before closing.", "Error");
                           }
                         },
                       );

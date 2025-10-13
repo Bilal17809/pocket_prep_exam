@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:pocket_prep_exam/pages/stats/controller/stats_controller.dart';
 import '../controller/study_controller.dart';
 import '/core/theme/app_colors.dart';
 import '/core/theme/app_styles.dart';
@@ -15,11 +16,14 @@ class ProgressSection extends StatelessWidget {
     return Obx(() {
       final bool completed = !studyController.isQuestionOfDayVisible.value;
       final bool isCorrect = studyController.isQuestionOfDayCorrect.value;
+      final averageTimeAllSubjects = Get.find<StatsController>().averageTime;
+      // final averageTimeMinutes = _parseAverageTimeToMinutes(averageTimeAllSubjects);
+      // final normalizedValue = (averageTimeMinutes / 60).clamp(0.0, 1.0);
+      final progressValueAllSubjects = Get.find<StatsController>().progressValue;
 
-      final Color progressColor = completed ? (isCorrect ? Colors.green : Colors.red)
+      final Color progressColor = completed ? (isCorrect ? kMintGreen: Colors.red)
           : Colors.grey.shade300;
-      final Color textColor = completed ? (isCorrect ? Colors.green : Colors.red)
-          : greyColor.withAlpha(240);
+
 
       final double progressValue = completed ? 1.0 : 0.0;
       final String progressText = completed ? "1/1" : "0/1";
@@ -47,7 +51,7 @@ class ProgressSection extends StatelessWidget {
                       _ProgressText(
                         title: "Today's questions progress",
                         value: progressText,
-                        color: textColor,
+                        color: greyColor.withAlpha(220),
                       ),
                       const SizedBox(height: 4),
                       _LProgressIndicator(
@@ -56,13 +60,13 @@ class ProgressSection extends StatelessWidget {
                       ),
                       const SizedBox(height: 16),
                       _ProgressText(
-                        title: "Today's practice minutes",
-                        value: "0/30",
+                        title: "Today's practice Avg Time",
+                        value:averageTimeAllSubjects,
                         color: greyColor.withAlpha(220),
                       ),
                       const SizedBox(height: 4),
                       _LProgressIndicator(
-                        value: 0.2,
+                        value: progressValueAllSubjects,
                         color: lightSkyBlue,
                       ),
                     ],
@@ -77,7 +81,6 @@ class ProgressSection extends StatelessWidget {
     });
   }
 }
-
 
 class _LProgressIndicator extends StatelessWidget {
   final double value;
@@ -123,4 +126,12 @@ class _ProgressText extends StatelessWidget {
       ],
     );
   }
+}
+
+double _parseAverageTimeToMinutes(String timeString) {
+  final parts = timeString.split(':');
+  if (parts.length != 2) return 0.0;
+  final minutes = int.tryParse(parts[0]) ?? 0;
+  final seconds = int.tryParse(parts[1]) ?? 0;
+  return minutes + (seconds / 60);
 }

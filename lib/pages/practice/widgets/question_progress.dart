@@ -76,7 +76,7 @@ class QuestionProgress extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                _ShowProgress(value: "$correct", title: "Answered"),
+                _ShowProgress(value: "$correct", title: "Total Corrects"),
                 _ShowProgress(value: "$skipped", title: "Left"),
                 _ShowProgress(value: Utils.formatTime(totalTime), title: "Quiz Time"),
               ],

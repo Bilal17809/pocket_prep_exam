@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pocket_prep_exam/pages/dashboard/view/dashboard_view.dart';
-import 'package:pocket_prep_exam/pages/study/view/study_view.dart';
-import '../../../services/questions_services.dart';
 import '/core/common/common_button.dart';
 import '/core/theme/app_colors.dart';
 import '/core/theme/app_styles.dart';
@@ -13,7 +11,6 @@ import '/pages/quiz_result/widgets/quizzes_result_tabview.dart';
 import '/pages/stats/widgets/progress_gauge.dart';
 import '/pages/stats/widgets/stat_card.dart';
 import '/data/models/question_model.dart';
-import '/core/routes/routes_name.dart';
 import '../widgets/quiz_filtered_tab.dart';
 
 class QuizResultView extends StatelessWidget {

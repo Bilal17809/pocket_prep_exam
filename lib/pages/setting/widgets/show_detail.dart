@@ -16,7 +16,7 @@ class ShowDetail extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = Get.find<SettingController>();
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: bodyWH, vertical: bodyWH),
+      padding: const EdgeInsets.symmetric(horizontal: 16),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -28,9 +28,7 @@ class ShowDetail extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Padding(
-                  padding:
-                   EdgeInsets.symmetric(horizontal: bodyWH, vertical: 10),
+                Padding(padding: EdgeInsets.symmetric(horizontal: 08, vertical: 10),
                   child: Obx((){
                     final exam = controller.selectedExam.value;
                     return Column(
@@ -77,7 +75,7 @@ class ShowDetail extends StatelessWidget {
                 ButtonText(
                   title: "Switch Exam",
                   onTap: () {
-                    Get.to(() => ExamSwitchView());
+                    Get.off( ()=> ExamSwitchView());
                   },
                 ),
                 const SizedBox(height: 08),

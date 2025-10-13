@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:pocket_prep_exam/core/Utility/utils.dart';
 import 'package:pocket_prep_exam/core/common/common_button.dart';
 import 'package:pocket_prep_exam/core/theme/app_colors.dart';
 import '../../questions/view/questions_view.dart';
@@ -60,8 +59,7 @@ class QuizBuilderScreen extends StatelessWidget {
 
               const SizedBox(height: 16),
               const TimePickerWidget(),
-              const SizedBox(height: 24),
-
+              const SizedBox(height: 16),
               Center(
                 child: Obx(() {
                   final hasTime = controller.selectedTime.value != Duration.zero;
@@ -70,8 +68,8 @@ class QuizBuilderScreen extends StatelessWidget {
                   final canStartQuiz = hasTime && hasSubjects && hasQuestionCount;
                   return canStartQuiz
                       ? CommonButton(
-                    title: "Start Quiz",
-                    onTap: () async {
+                                          title: "Start Quiz",
+                                          onTap: () async {
                       final allQuestionsForQuiz = await controller.prepareQuizQuestions();
                       final totalSeconds = controller.selectedTime.value.inSeconds;
                       Get.off(() => QuizzesView(
@@ -80,8 +78,8 @@ class QuizBuilderScreen extends StatelessWidget {
                         isTimedQuiz: true,
                         timedQuizMinutes: totalSeconds,
                       ));
-                    },
-                  )
+                                          },
+                                        )
                       : HideCommonButton(
                     title: "Start Quiz",
                   );

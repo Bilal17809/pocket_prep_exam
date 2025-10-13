@@ -66,12 +66,12 @@ class SubjectsList extends StatelessWidget {
                 return ListTile(
                   title: Text(
                     subject.subjectName,
-                    style: context.textTheme.titleMedium!.copyWith(color: greyColor),
+                    style: context.textTheme.titleMedium!.copyWith(color: isSelected ? Colors.blue : kBlack),
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                   ),
                   trailing: Checkbox(
-                    activeColor: Colors.blue,
+                    activeColor: Colors.black,
                     value: isSelected,
                     onChanged: (_) => controller.toggleSubject(subject.subjectId),
                   ),

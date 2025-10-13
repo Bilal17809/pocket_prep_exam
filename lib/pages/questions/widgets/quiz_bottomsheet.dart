@@ -25,9 +25,7 @@ class TimedQuizBottomSheet extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(10),
             child: Column(
-
               children: [
-                // Close button
                 Align(
                   alignment: Alignment.topLeft,
                   child: IconButton(

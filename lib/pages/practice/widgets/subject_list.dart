@@ -40,7 +40,9 @@ class SubjectList extends StatelessWidget {
                 child: ListTile(
                   leading: CircleAvatar(
                     backgroundColor: lightSkyBlue.withAlpha(40),
-                    child: Text("${index + 1}"),
+                    child: Text("${index + 1}",style: context.textTheme.titleMedium!.copyWith(
+                      color: kBlack
+                    ),),
                   ),
                   title: Text(subject.subjectName,style: bodyLargeStyle.copyWith(fontWeight: FontWeight.bold),),
                   subtitle: Text("Questions: $questions",style: bodyMediumStyle.copyWith(color: Colors.black54,fontWeight: FontWeight.bold),),

@@ -17,7 +17,7 @@ class StorageService {
   static const String _quizResultKey = "_quiz_result";
   static const String _selectedSubjectsKey = "_selected_subjects";
   static const String _questionOfDayKey = "question_of_day_attempt_date";
-  static const String _questionOfDayCorrectnessKey = "qotd_correctness"; // ✅ NEW
+  static const String _questionOfDayCorrectnessKey = "qotd_correctness";
 
 
 

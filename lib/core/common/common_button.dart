@@ -39,7 +39,7 @@ class CommonButton extends StatelessWidget {
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
             ),
-            borderRadius: BorderRadius.circular(10),
+            borderRadius: BorderRadius.circular(08),
             // boxShadow: [
             //   BoxShadow(
             //     color: Colors.black.withOpacity(0.25),
@@ -102,7 +102,7 @@ class HideCommonButton extends StatelessWidget {
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: BorderRadius.circular(08),
         ),
         child: Center(
           child: Text(

@@ -59,7 +59,7 @@ class QuizRateCard extends StatelessWidget {
                     percentage,
                     style: bodyMediumStyle.copyWith(
                         color: kMintGreen,
-                        fontSize: 28,
+                        fontSize: 20,
                         fontWeight: FontWeight.bold
                     )
                 ),

@@ -17,7 +17,7 @@ class StudyController extends GetxController {
   final RxString selectedExamName = "".obs;
   Rxn<Exam> selectedExam = Rxn<Exam>();
   RxString questionOfDayDate = ''.obs;
-  RxBool isQuestionOfDayVisible = true.obs;
+  RxBool isQuestionOfDayVisible =true.obs;
   RxBool isQuestionOfDayCorrect = false.obs;
 
   RxList<CalendarDateModel> calendarDates = <CalendarDateModel>[].obs;
@@ -42,6 +42,7 @@ class StudyController extends GetxController {
 
   void selectItem(int index) => selectedIndex.value = index;
 
+
   void generateCalendarDates() {
     final today = DateTime.now();
     final startOfWeek = today.subtract(Duration(days: today.weekday - 1));
@@ -58,12 +59,10 @@ class StudyController extends GetxController {
   }
 
 
-
   Future<void> loadExamFromStorage() async {
     try {
       final examId = await _storageService.getExam();
       final exams = await _examService.fetchExams();
-
       if (examId != null && exams.isNotEmpty) {
         selectedExam.value = exams.firstWhere(
               (e) => e.examId == examId,
@@ -92,7 +91,6 @@ class StudyController extends GetxController {
     isQuestionOfDayCorrect.value = isCorrect ?? false;
   }
 
-
   Future<void> markQuestionOfDayAttempted() async {
     final exam = selectedExam.value;
     if (exam == null) return;
@@ -105,20 +103,18 @@ class StudyController extends GetxController {
   Future<void> updateQuestionOfDayProgress(bool isCorrect) async {
     final exam = selectedExam.value;
     if (exam == null) return;
-
     await _storageService.saveQuestionOfDayCorrectness(exam.examId, isCorrect);
     await _storageService.saveQuestionOfDayAttempt(exam.examId);
-
     isQuestionOfDayVisible.value = false;
     isQuestionOfDayCorrect.value = isCorrect;
     questionOfDayDate.value = DateFormat('yyyy-MM-dd').format(DateTime.now());
-
     if (isCorrect) {
       print("✅ Question of the Day completed successfully!");
     } else {
       print("❌ Wrong answer, progress saved.");
     }
   }
+
   Future<Question?> getQuestionOfTheDay() async {
     final exam = selectedExam.value;
     if (exam == null) return null;
@@ -163,7 +159,7 @@ class StudyController extends GetxController {
       final formatted = questionOfDayDate.value.isNotEmpty ? DateFormat('d MMM').format(DateTime.parse(questionOfDayDate.value))
           : "";
       modes.add(QuizModeModel(
-        "images/cards.png",
+        "images/greycard.png",
         formatted,
         "Hidden until tomorrow",
         null,

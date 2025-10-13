@@ -7,6 +7,7 @@ import 'package:pocket_prep_exam/data/models/question_model.dart';
 import 'package:pocket_prep_exam/pages/questions/view/questions_view.dart';
 import '../../edite_subjects/controller/edite_subject_controller.dart';
 import '../../questions/control/questions_controller.dart';
+import 'empty_state.dart';
 
 class QuizResultTabView extends StatelessWidget {
   final Subject? subject;
@@ -133,7 +134,7 @@ class QuizResultTabView extends StatelessWidget {
       }
     }
     if (questionIds.isEmpty) {
-      return Center(child: Text("No $type questions"));
+      return EmptyStateWidget(type: type);
     }
     final selectedOptionsMap = quizResults['selectedOptions'] as Map<int, int>? ?? {};
     return Obx(() {
