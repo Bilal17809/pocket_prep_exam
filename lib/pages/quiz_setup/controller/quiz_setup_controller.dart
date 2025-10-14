@@ -33,7 +33,7 @@ class QuizSetupController extends GetxController {
         return [5, 10];
       case "Easy":
       default:
-        return [5, 20];
+        return [5,10,15,20];
     }
   }
 

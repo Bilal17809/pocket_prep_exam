@@ -22,13 +22,13 @@ class EmptyStateWidget extends StatelessWidget {
               backgroundColor: kWhite,
               child: Icon(config.icon, color: config.color, size: 32),
             ),
-            const SizedBox(height: 16),
+            const SizedBox(height: 08),
             Text(
               config.message,
               style:context.textTheme.titleMedium!.copyWith(
               )
             ),
-            const SizedBox(height: 6),
+            const SizedBox(height: 2),
             Text(
              config.message2,
               textAlign: TextAlign.center,

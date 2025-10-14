@@ -35,9 +35,9 @@ class ExamDetail extends StatelessWidget {
               SizedBox(height: 30),
               Row(
                 children: [
-                  _QuesAndSubText(text: "${data.totalQuestions.toString()} questions," ),
+                  _QuesAndSubText(text: "${data.totalQuestions.toString()} Questions," ),
                   SizedBox(width: 10),
-                  _QuesAndSubText(text: "${data.totalSubjects.toString()} subjects"),
+                  _QuesAndSubText(text: "${data.totalSubjects.toString()} Subjects"),
                 ],
               )
             ],
@@ -55,7 +55,7 @@ class _QuesAndSubText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  Text(text, style: context.textTheme.bodySmall!.copyWith(
-      color: greyColor,
+      color: grey,
       fontSize: 15,
     ),);
   }

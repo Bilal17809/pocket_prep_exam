@@ -163,7 +163,7 @@ class QuizzesView extends StatelessWidget {
                     child: isQuestionOfDayMode
                         ? Column(
                       children: const [
-                        Icon(Icons.wb_sunny_outlined, color: Colors.white, size: 36),
+                        Icon(Icons.wb_sunny_outlined, color: Colors.yellow, size: 36),
                         SizedBox(height: 6),
                         Text(
                           "Question of the Day",

@@ -1,5 +1,7 @@
 
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_tts/flutter_tts.dart';
 import 'package:get/get.dart';
 import 'package:pocket_prep_exam/core/theme/app_colors.dart';
 import 'package:pocket_prep_exam/core/theme/app_styles.dart';
@@ -14,7 +16,7 @@ class OptionsCard extends StatelessWidget {
   final String explanation;
   final String reference;
   final bool showExp;
-  const OptionsCard({
+   OptionsCard({
     super.key,
     required this.showExp,
     required this.questionIndex,
@@ -25,6 +27,8 @@ class OptionsCard extends StatelessWidget {
     required this.reference,
   });
 
+  final AudioPlayer _player = AudioPlayer();
+  final FlutterTts _tts = FlutterTts();
   @override
   Widget build(BuildContext context) {
     final controller = Get.find<QuizController>();
@@ -55,13 +59,27 @@ class OptionsCard extends StatelessWidget {
 
       return GestureDetector(
         onTap: selectedOptionIndex == null
-            ? () {
+            ? ()async {
           controller.selectOption(
             questionIndex,
             optionIndex,
             option,
             correctAnswer,
           );
+//           String optionPrefix = option.trim().isNotEmpty
+//               ? option.trim().substring(0, 1).toUpperCase()
+//               : '';
+//           String correctPrefix = correctAnswer.trim().isNotEmpty
+//               ? correctAnswer.trim().substring(0, 1).toUpperCase()
+//               : '';
+//           bool isCorrect = optionPrefix == correctPrefix;
+//
+// // If correct, speak full option (prefix + text)
+//           if (isCorrect) {
+//             await _tts.setLanguage("en-US");
+//             await _tts.setSpeechRate(0.9);
+//             await _tts.speak("Correct answer is option $option");
+//           }
         }
             : null,
         child: Container(

@@ -264,7 +264,6 @@ class QuestionController extends GetxController {
     showExplanation[questionIndex] = !(showExplanation[questionIndex] ?? false);
   }
 
-  // Toggle Flag
   void toggleFlag(int questionIndex) {
     if (flaggedQuestions.contains(questionIndex)) {
       flaggedQuestions.remove(questionIndex);

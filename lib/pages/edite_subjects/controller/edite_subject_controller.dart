@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:pocket_prep_exam/core/Utility/utils.dart';
 import 'package:pocket_prep_exam/services/questions_services.dart';
 import '/core/local_storage/storage_helper.dart';
 import '/data/models/exams_and_subject.dart';
@@ -16,6 +17,7 @@ class EditeSubjectController extends GetxController {
   RxList<Question> examQuestions = <Question>[].obs;
   RxList<int> selectedSubjectIds = <int>[].obs;
   RxList<Question> questionPool = <Question>[].obs;
+  RxList<Exam> allExams = <Exam>[].obs;
   static const int maxAllSubjectsPool = 30;
    int maxQuizSize = 10;
   int maxQuizSizeForTime  = 20;
@@ -35,6 +37,7 @@ class EditeSubjectController extends GetxController {
     loadExamFromStorage();
     startQuizForTime();
     startQuiz();
+    _loadAllExams();
   }
 
   Future<void> loadExamFromStorage() async {
@@ -148,13 +151,23 @@ class EditeSubjectController extends GetxController {
     return selectedSubjectIds.length == totalSubjects;
   }
 
-  String getSubjectNameById(int subjectId) {
-    final exam = selectedExam.value;
-    if (exam == null) return "Unknown";
-    final subject = exam.subjects.firstWhereOrNull((s) => s.subjectId == subjectId);
-    return subject?.subjectName ?? "Unknown";
-  }
 
+  Future<void> _loadAllExams() async {
+    try {
+      allExams.value = await _examService.fetchExams();
+    } catch (e) {
+      Utils.showError("$e: ", "Error");
+    }
+  }
+  String getSubjectNameById(int subjectId) {
+    for (final exam in allExams) {
+      final subject = exam.subjects.firstWhereOrNull((s) => s.subjectId == subjectId);
+      if (subject != null) {
+        return subject.subjectName;
+      }
+    }
+    return "Unknown";
+  }
 
   @override
   void onClose() {

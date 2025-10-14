@@ -177,7 +177,7 @@ class QuizResultTabView extends StatelessWidget {
     final selectedOptionIndex = quizResults['selectedOptions']?[qIndex];
     final flaggedList = quizResults['flagged'] as List<dynamic>? ?? [];
     final isFlagged = flaggedList.contains(qIndex);
-    final subjectName = Get.find<EditeSubjectController>().getSubjectNameById(question.subjectId);
+    final subjectName =  Get.find<EditeSubjectController>().getSubjectNameById(question.subjectId);
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: GestureDetector(

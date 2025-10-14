@@ -51,10 +51,38 @@ class QuizSetupView extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(height: 20),
-            const _SectionTitle(title: "Select Difficulty"),
-            const SizedBox(height: 10),
-            DifficultySelector(),
+            const SizedBox(height: 24),
+            Container(
+              width: double.infinity,
+              margin: const EdgeInsets.only(bottom: 12),
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Colors.blue.shade50,
+                borderRadius: BorderRadius.circular(12),
+                border: Border.all(color: Colors.blue.shade100),
+              ),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Icon(Icons.info_outline, color: lightSkyBlue, size: 22),
+                  const SizedBox(width: 8),
+                  Expanded(
+                    child: Text(
+                      "⏳ Each question has its own timer. Be quick and stay focused!",
+                      style: context.textTheme.titleMedium!.copyWith(
+                        color: Colors.blueGrey.shade700,
+                        fontSize: 13.5,
+                        height: 1.4,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+
+            // const _SectionTitle(title: "Note: The timer applies to each question individually"),
+            // const SizedBox(height: ),
+            // DifficultySelector(),
             const SizedBox(height: 20),
             const _SectionTitle(title: "Select Time Limit : sec"),
             const SizedBox(height: 10),

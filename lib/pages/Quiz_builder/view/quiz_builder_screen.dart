@@ -4,7 +4,6 @@ import 'package:pocket_prep_exam/core/common/common_button.dart';
 import 'package:pocket_prep_exam/core/theme/app_colors.dart';
 import '../../questions/view/questions_view.dart';
 import '../controller/quiz_builder_controller.dart';
-import '../widgets/exam_selection.dart';
 import '../widgets/subject_selection.dart';
 import '../widgets/time_picker.dart';
 
@@ -37,24 +36,24 @@ class QuizBuilderScreen extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16),
                 child: Text(
-                  "Choose one or more exams to include in your quiz",
-                  style: TextStyle(fontSize: 13, color: Colors.grey[600]),
+                  "Choose subjects from the selected exam to build your quiz.",
+                  style: TextStyle(fontSize: 16, color: Colors.grey[600]),
                 ),
               ),
               const SizedBox(height: 4),
-              const ExamSelectionWidget(),
+              // const ExamSelectionWidget(),
               const SizedBox(height: 20),
 
-              if (controller.selectedExams.isNotEmpty)
-                const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 16),
-                  child: Text(
-                    "Select Subjects:",
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                  ),
-                ),
-
-              const SizedBox(height: 8),
+              // if (controller.selectedExams.isNotEmpty)
+              //   const Padding(
+              //     padding: EdgeInsets.symmetric(horizontal: 16),
+              //     child: Text(
+              //       "Select Subjects:",
+              //       style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+              //     ),
+              //   ),
+              //
+              // const SizedBox(height: 8),
               ImprovedExamSelectionWidget(),
 
               const SizedBox(height: 16),
@@ -78,8 +77,8 @@ class QuizBuilderScreen extends StatelessWidget {
                         isTimedQuiz: true,
                         timedQuizMinutes: totalSeconds,
                       ));
-                                          },
-                                        )
+                      },
+                  )
                       : HideCommonButton(
                     title: "Start Quiz",
                   );

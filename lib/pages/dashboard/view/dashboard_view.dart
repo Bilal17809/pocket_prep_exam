@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import '/core/common/exite_dialog.dart';
 import '/core/theme/app_colors.dart';
 import '/pages/practice/view/practice_view.dart';
 import '/pages/quiz_view_second/controller/quiz_controller.dart';
@@ -10,6 +12,7 @@ import '/pages/setting/setting_view/setting_view.dart';
 
 class DashboardView extends StatelessWidget {
   final int initialIndex;
+
   const DashboardView({super.key, this.initialIndex = 0});
 
   @override
@@ -22,7 +25,9 @@ class DashboardView extends StatelessWidget {
     final List<Widget> screens = [
       StudyView(),
       StatsView(),
-      PracticeView(result: Get.arguments is QuizResult ? Get.arguments as QuizResult : null),
+      PracticeView(result: Get.arguments is QuizResult
+          ? Get.arguments as QuizResult
+          : null),
       SettingView()
     ];
     return Obx(() {
@@ -32,8 +37,20 @@ class DashboardView extends StatelessWidget {
             controller.setInitialIndex(0);
             return false;
           }
-          final shouldExit = await _showExitDialog();
-          return shouldExit ?? false;
+          CustomDialogForExitAndWarning.show(
+            title: "Exit App",
+            message: "Do you really want to exit the app?",
+            positiveButtonText: "Yes",
+            onPositiveTap: () {
+              SystemNavigator.pop();
+            },
+            negativeButtonText: "No",
+            onNegativeTap: () {
+              Get.back();
+            },
+            isWarning: true,
+          );
+          return false;
         },
         child: Scaffold(
           backgroundColor: Colors.transparent,
@@ -57,31 +74,5 @@ class DashboardView extends StatelessWidget {
         ),
       );
     });
-  }
-
-
-  Future<bool?> _showExitDialog() {
-    return Get.dialog<bool>(
-      AlertDialog(
-        title: Center(child: const Text("Exit App?",)),
-        content: const Text("Do you really want to exit the app?"),
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-        actions: [
-          TextButton(
-            onPressed: () => Get.back(result: false),
-            child: const Text("No", style: TextStyle(color: kBlue)),
-          ),
-          ElevatedButton(
-            onPressed: () => Get.back(result: true),
-            style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.redAccent,
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-            ),
-            child: Text("Exit",style: TextStyle(color: kWhite),),
-          ),
-        ],
-      ),
-      barrierDismissible: false,
-    );
   }
 }

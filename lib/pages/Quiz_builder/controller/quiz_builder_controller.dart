@@ -1,6 +1,5 @@
 import 'package:get/get.dart';
-import 'package:pocket_prep_exam/pages/questions/control/questions_controller.dart';
-import '../../questions/view/questions_view.dart';
+import 'package:pocket_prep_exam/pages/edite_subjects/controller/edite_subject_controller.dart';
 import '/services/exam_and_subjects_services.dart';
 import '/data/models/exams_and_subject.dart';
 import '/data/models/question_model.dart';
@@ -10,13 +9,11 @@ class QuizBuilderController extends GetxController {
   final ExamService _examService;
   final QuestionService _questionService;
 
-  RxList<Exam> exams = <Exam>[].obs;
+  Rxn<Exam> exams = Rxn<Exam>();
   RxList<Exam> selectedExams = <Exam>[].obs;
   RxList<Subject> allSubjects = <Subject>[].obs;
   RxList<Subject> selectedSubjects = <Subject>[].obs;
   RxMap<int, int> questionCountPerSubject = <int, int>{}.obs;
-
-
   Rx<Duration> selectedTime = const Duration(minutes: 0).obs;
   RxBool isLoading = false.obs;
   RxList<Question> allQuestions = <Question>[].obs;
@@ -37,41 +34,60 @@ class QuizBuilderController extends GetxController {
   Future<void> fetchExams() async {
     try {
       isLoading.value = true;
-      exams.value = await _examService.fetchExams();
+      final selectedExam = Get.find<EditeSubjectController>().selectedExam.value;
+      if (selectedExam != null) {
+        exams.value = selectedExam;
+        selectedExams.assignAll([selectedExam]);
+        allSubjects.assignAll(selectedExam.subjects);
+      } else {
+        selectedExams.clear();
+        allSubjects.clear();
+      }
     } catch (e) {
       print('Error fetching exams: $e');
-      Get.snackbar('Error', 'Failed to load exams');
     } finally {
       isLoading.value = false;
     }
   }
 
+
   Future<void> fetchAllQuestions() async {
     try {
       final questions = await _questionService.fetchAllQuestions();
-      allQuestions.assignAll(questions);
+      final selectedExam = Get.find<EditeSubjectController>().selectedExam.value;
+
+      if (selectedExam != null) {
+        final subjectIds = selectedExam.subjects.map((s) => s.subjectId).toList();
+        final filteredQuestions = questions
+            .where((q) => subjectIds.contains(q.subjectId))
+            .toList();
+        allQuestions.assignAll(filteredQuestions);
+      } else {
+        allQuestions.assignAll(questions);
+      }
     } catch (e) {
       print('Error fetching questions: $e');
     }
   }
 
+
   int getQuestionCountBySubject(int subjectId) {
     return allQuestions.where((q) => q.subjectId == subjectId).length;
   }
 
-  void toggleExamSelection(Exam exam) {
-    if (selectedExams.contains(exam)) {
-      selectedExams.remove(exam);
-    } else {
-      selectedExams.add(exam);
-    }
+  // void toggleExamSelection(Exam exam) {
+  //   if (selectedExams.contains(exam)) {
+  //     selectedExams.remove(exam);
+  //   } else {
+  //     selectedExams.add(exam);
+  //   }
 
-    final all = selectedExams.expand((e) => e.subjects).toList();
-    allSubjects.value = all;
-    selectedSubjects.clear();
-    questionCountPerSubject.clear();
-  }
-
+  //   final all = selectedExams.expand((e) => e.subjects).toList();
+  //   allSubjects.value = all;
+  //   selectedSubjects.clear();
+  //   questionCountPerSubject.clear();
+  // }
+  //
   void toggleSubjectSelection(Subject subject) {
     if (selectedSubjects.contains(subject)) {
       selectedSubjects.remove(subject);
@@ -116,11 +132,9 @@ class QuizBuilderController extends GetxController {
       parts.add("${seconds}s");
     }
 
-    // If no parts (edge case), show seconds
     if (parts.isEmpty) {
       return "0s";
     }
-
     return parts.join(" ");
   }
 
@@ -128,54 +142,24 @@ class QuizBuilderController extends GetxController {
 
   Future<List<Question>> prepareQuizQuestions() async {
     if (selectedSubjects.isEmpty) {
-      Get.snackbar(
-        "Selection Required",
-        "Please select at least one subject",
-        snackPosition: SnackPosition.BOTTOM,
-      );
+      Get.snackbar("Selection Required", "Please select at least one subject");
       return [];
     }
-
-    if (questionCountPerSubject.isEmpty) {
-      Get.snackbar(
-        "Question Count Required",
-        "Please set question count for selected subjects",
-        snackPosition: SnackPosition.BOTTOM,
-      );
-      return [];
-    }
-
-    final allQuestionsForQuiz = <Question>[];
+    final quizQuestions = <Question>[];
     for (var subject in selectedSubjects) {
-      final requestedCount = questionCountPerSubject[subject.subjectId] ?? 0;
-      if (requestedCount <= 0) {
-        continue;
-      }
+      final count = questionCountPerSubject[subject.subjectId] ?? 0;
+      if (count <= 0) continue;
       final filtered = allQuestions
           .where((q) => q.subjectId == subject.subjectId)
           .toList();
-
-      if (filtered.isEmpty) {
-        print('Warning: No questions found for subject ${subject.subjectId}');
-        continue;
-      }
-      final questionsToAdd = filtered.take(requestedCount).toList();
-      allQuestionsForQuiz.addAll(questionsToAdd);
+      quizQuestions.addAll(filtered.take(count));
     }
-    if (allQuestionsForQuiz.isEmpty) {
-      Get.snackbar(
-        "No Questions Available",
-        "No questions found for selected subjects",
-        snackPosition: SnackPosition.BOTTOM,
-      );
-      return [];
+    if (quizQuestions.isEmpty) {
+      Get.snackbar("No Questions", "No questions found for selected subjects");
     }
-
-    // Optional: Shuffle questions for randomization
-    // allQuestionsForQuiz.shuffle();
-
-    return allQuestionsForQuiz;
+    return quizQuestions;
   }
+
 
   void resetQuizBuilder() {
     selectedExams.clear();

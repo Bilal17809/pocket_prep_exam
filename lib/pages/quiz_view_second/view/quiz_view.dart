@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:pocket_prep_exam/pages/dashboard/view/dashboard_view.dart';
 import '/core/Utility/utils.dart';
 import '/core/common/common_button.dart';
 import '/core/common/custom_dialog.dart';
@@ -112,11 +113,8 @@ class QuizScaffold extends StatelessWidget {
                               if (subject != null) {
                                 await Get.find<StatsController>().saveResultAndStore(subject, result);
                               }
-                              final dashboardController =
-                              Get.find<DashboardController>();
-                              dashboardController.setIndex.value = 2;
-                              Get.offNamed(
-                                RoutesName.dashBoard,
+                              Get.off(
+                                ()=> DashboardView(initialIndex: 2),
                                 arguments: result,
                               );
                             },
