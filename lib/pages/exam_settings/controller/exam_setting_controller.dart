@@ -13,7 +13,9 @@ class ExamSettingController extends GetxController{
 
   Rxn<Exam> selectedExam = Rxn<Exam>();
 
-  ExamSettingController({required StorageService storageServices, required ExamService examService}): _storageService = storageServices , _examService = examService;
+  ExamSettingController({required StorageService storageServices,
+    required ExamService examService}):
+        _storageService = storageServices , _examService = examService;
 
   @override
   void onInit() {
@@ -29,11 +31,4 @@ class ExamSettingController extends GetxController{
     }
   }
 
-
-  // Future<void>  loadExamName()async{
-  //   final name = await _storageService.loadExamName();
-  //   if(name != null && name.isNotEmpty){
-  //     examName.value = name[0];
-  //   }
-  // }
 }

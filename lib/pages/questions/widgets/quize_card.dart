@@ -53,6 +53,7 @@ class QuizCard extends StatelessWidget {
                   question.questionText,
                   style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                     fontWeight: FontWeight.bold,
+                    fontSize: 18
                   ),
                 ),
                 const SizedBox(height: 20),

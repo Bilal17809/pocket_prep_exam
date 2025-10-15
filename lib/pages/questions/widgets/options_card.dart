@@ -85,7 +85,10 @@ class OptionsCard extends StatelessWidget {
             children: [
               Text(
                 option,
-                style: TextStyle(fontSize: 14, color: textColor),
+                style: TextStyle(fontSize: 16, color: textColor,
+                  fontFamily: "Roboto",
+                  fontWeight: FontWeight.w600,
+                ),
               ),
               if (selectedOptionIndex != null && isCorrectOption) ...[
                 const SizedBox(height: 8),
@@ -95,14 +98,14 @@ class OptionsCard extends StatelessWidget {
                     showExplanationToggle
                         ? "Hide Explanation"
                         : "Show Explanation",
-                    style: const TextStyle(color: Colors.blue, fontSize: 14),
+                    style:  TextStyle(color: Colors.blue, fontSize: 14,fontWeight: FontWeight.bold),
                   ),
                 ),
                 if (showExplanationToggle) ...[
                   Container(
                     padding: const EdgeInsets.all(12),
                     decoration: BoxDecoration(
-                      color: Colors.green.shade50,
+                      color: Colors.white,
                       borderRadius: BorderRadius.circular(12),
                       border: Border.all(
                           color: Colors.green.shade200, width: 1),
@@ -111,22 +114,21 @@ class OptionsCard extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Container(
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 10, vertical: 6),
+                          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                           decoration: BoxDecoration(
                             color: Colors.green.shade100,
-                            borderRadius: BorderRadius.circular(10),
+                            borderRadius: BorderRadius.circular(12),
                           ),
                           child: Text(
-                            "✅ Correct Answer: $correctAnswer - $option",
+                            "✅ Correct Answer: $correctAnswer",
                             style: const TextStyle(
-                              color: Colors.black54,
+                              color: Colors.black,
                               fontWeight: FontWeight.bold,
                               fontSize: 15,
                             ),
                           ),
                         ),
-                        const SizedBox(height: 10),
+                        const SizedBox(height: 12),
                         CommonLabelValueText(
                           label: "📖 Explanation: ",
                           value: explanation,
@@ -135,10 +137,12 @@ class OptionsCard extends StatelessWidget {
                         ),
                         const SizedBox(height: 10),
                         Container(
+                          width: double.infinity,
                           padding: const EdgeInsets.all(12),
                           decoration: BoxDecoration(
-                            color: Colors.green.shade100,
+                            color: Colors.green.shade50,
                             borderRadius: BorderRadius.circular(10),
+                            border: Border.all(color: Colors.green.shade200, width: 1),
                           ),
                           child: CommonLabelValueText(
                             label: "📚 Reference: ",

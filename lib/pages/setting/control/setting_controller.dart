@@ -1,4 +1,5 @@
 
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pocket_prep_exam/core/local_storage/storage_helper.dart';
 import 'package:pocket_prep_exam/services/exam_and_subjects_services.dart';
@@ -13,12 +14,15 @@ class SettingController extends GetxController {
 
   Rxn<Exam> selectedExam = Rxn<Exam>();
   RxBool isTtsEnabled = true.obs;
+  var isDarkMode = false.obs;
 
   @override
   void onInit() {
     super.onInit();
     loadExamFromStorage();
     isTtsEnabled.value = _storageService.loadTTsToggle();
+    // isDarkMode.value = _storageService.loadDarkMode();
+    // _applyTheme(isDarkMode.value);
   }
 
 
@@ -32,6 +36,16 @@ class SettingController extends GetxController {
     if (examId != null) {
       selectedExam.value = exams.firstWhere((e) => e.examId == examId);
     }
+  }
+
+  void toggleTheme(bool value) {
+    isDarkMode.value = value;
+    StorageService.saveDarkMode(value);
+    _applyTheme(value);
+  }
+
+  void _applyTheme(bool isDark) {
+    Get.changeThemeMode(isDark ? ThemeMode.dark : ThemeMode.light);
   }
 
 

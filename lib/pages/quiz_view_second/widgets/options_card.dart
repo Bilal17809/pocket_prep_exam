@@ -94,14 +94,20 @@ class OptionsCard extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(option, style: TextStyle(fontSize: 14, color: textColor)),
+            Text(
+            option,
+            style: TextStyle(fontSize: 16, color: textColor,
+              fontFamily: "Roboto",
+              fontWeight: FontWeight.w600,
+            ),
+          ),
               if (selectedOptionIndex != null && isCorrectOption) ...[
                 const SizedBox(height: 8),
                 TextButton(
                   onPressed: () => controller.toggleExplanation(questionIndex),
                   child: Text(
                     showExp ? "Hide Explanation" : "Show Explanation",
-                    style: const TextStyle(color: Colors.blue, fontSize: 14),
+                    style: const TextStyle(color: Colors.blue, fontSize: 14,fontWeight: FontWeight.bold),
                   ),
                 ),
                 if (showExp) ...[

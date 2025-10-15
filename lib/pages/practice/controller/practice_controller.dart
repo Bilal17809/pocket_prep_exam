@@ -1,9 +1,9 @@
 import 'package:get/get.dart';
-import 'package:pocket_prep_exam/core/local_storage/storage_helper.dart';
-import 'package:pocket_prep_exam/data/models/models.dart';
-import 'package:pocket_prep_exam/pages/edite_subjects/controller/edite_subject_controller.dart';
-import 'package:pocket_prep_exam/pages/quiz_setup/controller/quiz_setup_controller.dart';
-import 'package:pocket_prep_exam/services/services.dart';
+import '/core/local_storage/storage_helper.dart';
+import '/data/models/models.dart';
+import '/pages/edite_subjects/controller/edite_subject_controller.dart';
+import '/pages/quiz_setup/controller/quiz_setup_controller.dart';
+import '/services/services.dart';
 import '../../quiz_view_second/controller/quiz_controller.dart';
 
 

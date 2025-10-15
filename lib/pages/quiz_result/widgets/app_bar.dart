@@ -8,7 +8,7 @@ class QuizResultAppBarTwo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const double expandedHeight = 100; // upar ka khali area
+    const double expandedHeight = 100;
 
     return SliverAppBar(
       pinned: true,
@@ -36,7 +36,7 @@ class QuizResultAppBarTwo extends StatelessWidget {
               
             )
             
-                : null, // 👈 pehle null rakha, scroll ke baad hi dikhega
+                : null,
           );
         },
       ),

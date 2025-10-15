@@ -19,6 +19,7 @@ class StorageService {
   static const String _questionOfDayKey = "question_of_day_attempt_date";
   static const String _questionOfDayCorrectnessKey = "qotd_correctness";
   static const String _ttsEnabled = "tts_Enabled";
+  static const String _darkModeKey = "dark_mode_enabled";
 
 
 
@@ -28,6 +29,15 @@ class StorageService {
   bool loadTTsToggle() {
     return _preferences.getBool(_ttsEnabled) ?? true;
   }
+
+  static Future<void> saveDarkMode(bool isDark) async {
+    await _preferences.setBool(_darkModeKey, isDark);
+  }
+
+  bool loadDarkMode() {
+    return _preferences.getBool(_darkModeKey) ?? false;
+  }
+
 
   // -------------------- Question of the Day Methods --------------------
 

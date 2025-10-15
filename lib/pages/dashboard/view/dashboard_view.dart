@@ -12,7 +12,6 @@ import '/pages/setting/setting_view/setting_view.dart';
 
 class DashboardView extends StatelessWidget {
   final int initialIndex;
-
   const DashboardView({super.key, this.initialIndex = 0});
 
   @override

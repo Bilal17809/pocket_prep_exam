@@ -41,7 +41,7 @@ class SubjectList extends StatelessWidget {
                   leading: CircleAvatar(
                     backgroundColor: lightSkyBlue.withAlpha(40),
                     child: Text("${index + 1}",style: context.textTheme.titleMedium!.copyWith(
-                      color: kBlack
+                      color: kBlack,fontWeight: FontWeight.bold
                     ),),
                   ),
                   title: Text(subject.subjectName,style: bodyLargeStyle.copyWith(fontWeight: FontWeight.bold),),

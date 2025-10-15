@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pocket_prep_exam/pages/dashboard/view/dashboard_view.dart';
+import '../../../core/common/progress_gauge.dart';
 import '/core/common/common_button.dart';
 import '/core/theme/app_colors.dart';
 import '/core/theme/app_styles.dart';
@@ -8,7 +9,6 @@ import '/pages/questions/control/questions_controller.dart';
 import '/pages/questions/view/questions_view.dart';
 import '/pages/quiz_result/controller/quiz_result_controller.dart';
 import '/pages/quiz_result/widgets/quizzes_result_tabview.dart';
-import '/pages/stats/widgets/progress_gauge.dart';
 import '/pages/stats/widgets/stat_card.dart';
 import '/data/models/question_model.dart';
 import '../widgets/quiz_filtered_tab.dart';
@@ -102,7 +102,7 @@ class QuizResultView extends StatelessWidget {
         Image.asset("images/exam.png", height: 40),
         const SizedBox(height: 12),
         Text(
-          "Quick 10 Quiz Results",
+          " Quiz Results",
           style: context.textTheme.bodyLarge!.copyWith(
             fontWeight: FontWeight.bold,
             fontSize: 20,

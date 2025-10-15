@@ -1,8 +1,10 @@
-import 'package:flutter/cupertino.dart';
+
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pocket_prep_exam/core/Utility/utils.dart';
 import 'package:pocket_prep_exam/core/theme/app_colors.dart';
-import 'package:pocket_prep_exam/pages/stats/widgets/progress_gauge.dart';
+import '/core/common/progress_gauge.dart';
+
 
 class QuestionProgress extends StatelessWidget {
   final int correct;
@@ -23,16 +25,11 @@ class QuestionProgress extends StatelessWidget {
     final double progress = (totalQuestions > 0) ? correct / totalQuestions : 0.0;
     return Column(
       children: [
-        Container(
-          width: double.infinity,
+
+        _CustomContainer(
+          isTopRounded: true,
+          backgroundColor: kWhite,
           padding: const EdgeInsets.all(15),
-          decoration: const BoxDecoration(
-            color: kWhite,
-            borderRadius: BorderRadius.only(
-              topRight: Radius.circular(10),
-              topLeft: Radius.circular(10),
-            ),
-          ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -61,26 +58,17 @@ class QuestionProgress extends StatelessWidget {
             ],
           ),
         ),
-        Container(
-          width: double.infinity,
-          padding: const EdgeInsets.all(8),
-          decoration: const BoxDecoration(
-            color: lightSkyBlue,
-            borderRadius: BorderRadius.only(
-              bottomLeft: Radius.circular(10),
-              bottomRight: Radius.circular(10),
-            ),
-          ),
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                _ShowProgress(value: "$correct", title: "Total Corrects"),
-                _ShowProgress(value: "$skipped", title: "Left"),
-                _ShowProgress(value: Utils.formatTime(totalTime), title: "Quiz Time"),
-              ],
-            ),
+        _CustomContainer(
+          isBottomRounded: true,
+          backgroundColor: lightSkyBlue,
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              _ShowProgress(value: "$correct", title: "Total Corrects"),
+              _ShowProgress(value: "$skipped", title: "Left"),
+              _ShowProgress(value: Utils.formatTime(totalTime), title: "Quiz Time"),
+            ],
           ),
         ),
       ],
@@ -91,7 +79,7 @@ class QuestionProgress extends StatelessWidget {
 class _ShowProgress extends StatelessWidget {
   final String value;
   final String title;
-  const _ShowProgress({super.key, required this.value, required this.title});
+  const _ShowProgress({required this.value, required this.title});
 
   @override
   Widget build(BuildContext context) {
@@ -108,10 +96,46 @@ class _ShowProgress extends StatelessWidget {
         Text(
           title,
           style: context.textTheme.bodyMedium!.copyWith(
-            color: kBlack,
+            color: kWhite,
           ),
         ),
       ],
+    );
+  }
+}
+
+
+
+class _CustomContainer extends StatelessWidget {
+  final Widget child;
+  final Color backgroundColor;
+  final bool isTopRounded;
+  final bool isBottomRounded;
+  final EdgeInsetsGeometry padding;
+
+  const _CustomContainer({
+    required this.child,
+    this.backgroundColor = Colors.white,
+    this.isTopRounded = false,
+    this.isBottomRounded = false,
+    this.padding = const EdgeInsets.all(12),
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: double.infinity,
+      padding: padding,
+      decoration: BoxDecoration(
+        color: backgroundColor,
+        borderRadius: BorderRadius.only(
+          topLeft: isTopRounded ? const Radius.circular(10) : Radius.zero,
+          topRight: isTopRounded ? const Radius.circular(10) : Radius.zero,
+          bottomLeft: isBottomRounded ? const Radius.circular(10) : Radius.zero,
+          bottomRight: isBottomRounded ? const Radius.circular(10) : Radius.zero,
+        ),
+      ),
+      child: child,
     );
   }
 }

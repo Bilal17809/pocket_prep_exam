@@ -38,7 +38,7 @@ class SettingView extends StatelessWidget {
                   activeColor: kWhite,
                   tileColor: lightSkyBlue.withAlpha(200),
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12), // optional rounded corners
+                    borderRadius: BorderRadius.circular(12),
                   ),
                   activeTrackColor: kBlack,
                   inactiveThumbColor: lightSkyBlue,

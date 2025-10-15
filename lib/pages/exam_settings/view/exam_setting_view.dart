@@ -1,11 +1,11 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:pocket_prep_exam/core/theme/app_colors.dart';
-import 'package:pocket_prep_exam/pages/exam_settings/controller/exam_setting_controller.dart';
-import 'package:pocket_prep_exam/pages/exam_settings/widgets/details.dart';
-import 'package:pocket_prep_exam/pages/exam_settings/widgets/exam_name.dart';
+import '/core/theme/app_colors.dart';
+import '/pages/exam_settings/controller/exam_setting_controller.dart';
+import '/pages/exam_settings/widgets/widgets.dart';
 import '/core/common/common_appbar.dart';
+
 
 class ExamSettingView extends StatelessWidget {
   const ExamSettingView({super.key});

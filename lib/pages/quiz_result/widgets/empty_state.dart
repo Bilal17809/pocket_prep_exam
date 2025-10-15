@@ -33,7 +33,7 @@ class EmptyStateWidget extends StatelessWidget {
              config.message2,
               textAlign: TextAlign.center,
               style: context.textTheme.bodyMedium!.copyWith(
-                color: Colors.grey
+                color: grey
 
               )
             ),
@@ -77,7 +77,7 @@ class EmptyStateWidget extends StatelessWidget {
       default:
         return _EmptyConfig(
           icon: Icons.inbox_outlined,
-          color: Colors.grey,
+          color: grey,
           message: "No $type Questions",
           message2: ""
         );

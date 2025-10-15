@@ -1,19 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:pocket_prep_exam/core/Utility/utils.dart';
-import 'package:pocket_prep_exam/core/common/common_button.dart';
-import 'package:pocket_prep_exam/core/common/loading_container.dart';
-import 'package:pocket_prep_exam/data/models/models.dart';
-import 'package:pocket_prep_exam/pages/dashboard/view/dashboard_view.dart';
-import 'package:pocket_prep_exam/pages/questions/widgets/quiz_appbar.dart';
-import 'package:pocket_prep_exam/pages/questions/widgets/page_indicator.dart';
-import 'package:pocket_prep_exam/pages/questions/widgets/quize_card.dart';
-import 'package:pocket_prep_exam/pages/quiz_result/view/quiz_result_view.dart';
-import 'package:pocket_prep_exam/pages/study/controller/study_controller.dart';
+import '/core/Utility/utils.dart';
+import '/core/common/common_button.dart';
+import '/core/common/loading_container.dart';
+import '/data/models/models.dart';
+import '/pages/dashboard/view/dashboard_view.dart';
+import '/pages/quiz_result/view/quiz_result_view.dart';
+import '/pages/study/controller/study_controller.dart';
 import '/core/common/custom_dialog.dart';
 import '../control/questions_controller.dart';
 import '/core/theme/app_colors.dart';
-import '/pages/study/view/study_view.dart'; // 👈 added to navigate back
+import '/pages/questions/widgets/widgets.dart';
+
 
 class QuizzesView extends StatelessWidget {
   final bool reviewMode;
@@ -64,7 +62,6 @@ class QuizzesView extends StatelessWidget {
     return WillPopScope(
       onWillPop: () async {
         final controller = Get.find<QuestionController>();
-        final studyController = Get.find<StudyController>();
         if (reviewMode == true) {
           Get.back();
           return false;
@@ -116,18 +113,14 @@ class QuizzesView extends StatelessWidget {
                 ),
               );
             }
-
             if (controller.state.value == QuestionState.error) {
               return const Center(child: Text("Error loading questions."));
             }
-
             final questionsToShow =
                 allQuestion ?? (reviewMode ? controller.reviewQuestions : controller.questions);
-
             if (questionsToShow.isEmpty) {
               return const Center(child: Text("No questions available."));
             }
-
             return Column(
               children: [
                 if (controller.isTimedQuiz.value && !reviewMode)
@@ -149,8 +142,6 @@ class QuizzesView extends StatelessWidget {
                       ],
                     ),
                   ),
-
-                // Header
                 if (reviewMode)
                   QuizAppBar(
                     controller: controller,
@@ -188,8 +179,8 @@ class QuizzesView extends StatelessWidget {
                       physics: controller.isTimedQuiz.value
                           ? (controller.remainingSeconds.value == 0
                           ? const NeverScrollableScrollPhysics()
-                          : const BouncingScrollPhysics())
-                          : const BouncingScrollPhysics(),
+                          : const ClampingScrollPhysics())
+                          : const ClampingScrollPhysics(),
                       itemCount: questionsToShow.length,
                       onPageChanged: (index) => controller.onPageChange(index),
                       itemBuilder: (context, index) {
@@ -291,7 +282,6 @@ class _NavButton extends StatelessWidget {
     required this.icon,
     required this.onTap,
     this.isFlag = false,
-    super.key,
   });
 
   @override
@@ -314,7 +304,6 @@ class _NavigationRow extends StatelessWidget {
   final bool isTimeQuiz;
 
   const _NavigationRow({
-    super.key,
     required this.controller,
     required this.pageController,
     this.reviewMode = false,

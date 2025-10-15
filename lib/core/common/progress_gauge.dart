@@ -9,11 +9,11 @@ class ProgressGauge extends StatelessWidget {
   final double size;
   final Color color;
   const ProgressGauge({
-    Key? key,
+    super.key,
     required this.progress,
     this.size = 200,
     this.color = Colors.white
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -26,12 +26,13 @@ class ProgressGauge extends StatelessWidget {
             progress: progress,
             progressColor: const Color(0xFFD58F00),
             backgroundColor: Color(0xFF1E90FF),
-            strokeWidth: 12.0,
+            strokeWidth: 14.0,
           ),
         ),
         // Center mein percentage text
         Positioned(
           top: size * 0.2,
+          bottom: 0,
           child: Text(
             '${(progress * 100).toInt()}%',
             style:  TextStyle(

@@ -30,7 +30,10 @@ class StudyView extends StatelessWidget {
             SizedBox(height: 10),
             ProgressSection(),
             const SizedBox(height: 20),
-            GameButton(),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: GameButton(),
+            ),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 20, vertical: 6),
               child: Text("Quiz Modes", style: context.textTheme.titleMedium),

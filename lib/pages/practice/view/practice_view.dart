@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:pocket_prep_exam/core/constant/constant.dart';
-import 'package:pocket_prep_exam/core/theme/app_colors.dart';
-import 'package:pocket_prep_exam/pages/main_appbar/main_appbar.dart';
-import 'package:pocket_prep_exam/pages/practice/controller/practice_controller.dart';
-import 'package:pocket_prep_exam/pages/practice/widgets/statscard.dart';
-import 'package:pocket_prep_exam/pages/practice/widgets/subject_list.dart';
-import 'package:pocket_prep_exam/pages/quiz_view_second/controller/quiz_controller.dart';
-import 'package:pocket_prep_exam/pages/study/widgets/game_button.dart';
-import '../widgets/question_progress.dart';
+import '/core/constant/constant.dart';
+import '/core/theme/app_colors.dart';
+import '/pages/main_appbar/main_appbar.dart';
+import '/pages/practice/controller/practice_controller.dart';
+import '/pages/quiz_view_second/controller/quiz_controller.dart';
+import '/pages/study/widgets/game_button.dart';
+import '/pages/practice/widgets/widgets.dart';
 
 class PracticeView extends StatelessWidget {
   final QuizResult? result;

@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
-import 'package:pocket_prep_exam/core/Utility/utils.dart';
-import 'package:pocket_prep_exam/services/questions_services.dart';
+import '/core/Utility/utils.dart';
+import '/services/questions_services.dart';
 import '/core/local_storage/storage_helper.dart';
 import '/data/models/exams_and_subject.dart';
 import '/data/models/question_model.dart';
@@ -134,14 +134,14 @@ class EditeSubjectController extends GetxController {
   Future<List<Question>> startQuizForTime()async {
     final pool = [...questionPool];
     pool.shuffle();
-    print("Your pool QuizForTime is ${pool.length}");
+    // print("Your pool QuizForTime is ${pool.length}");
     return pool.take(maxQuizSizeForTime).toList();
   }
 
   List<Question> startQuiz() {
     final pool = [...questionPool];
     pool.shuffle();
-    print("Your pool is start Quiz pool is:  ${pool.length}");
+    // print("Your pool is start Quiz pool is:  ${pool.length}");
     return pool.take(maxQuizSize).toList();
   }
 
