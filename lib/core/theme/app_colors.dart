@@ -16,7 +16,7 @@ const Color kWhite01 = Color(0x1AFFFFFF);
 const Color backgroundColor = Color(0xffF0F9D2);
 
 //app colors
-const Color lightSkyBlue = Color(0xFF87CEFA);
+const Color lightSkyBlue = Color(0xFF42A5F5);
 const Color dodgerBlue = Color(0xFF1E90FF);
 //Categories card colors
 const Color greetingsColor = Color(0xff2CA9FB);

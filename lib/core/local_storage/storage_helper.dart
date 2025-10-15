@@ -18,9 +18,16 @@ class StorageService {
   static const String _selectedSubjectsKey = "_selected_subjects";
   static const String _questionOfDayKey = "question_of_day_attempt_date";
   static const String _questionOfDayCorrectnessKey = "qotd_correctness";
+  static const String _ttsEnabled = "tts_Enabled";
 
 
 
+ static Future<void> saveTTsToggle(bool isEnabled) async {
+    await _preferences.setBool(_ttsEnabled, isEnabled);
+  }
+  bool loadTTsToggle() {
+    return _preferences.getBool(_ttsEnabled) ?? true;
+  }
 
   // -------------------- Question of the Day Methods --------------------
 

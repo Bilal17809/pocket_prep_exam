@@ -2,7 +2,9 @@ import 'dart:async';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 import 'package:get/get.dart';
+import 'package:pocket_prep_exam/core/Utility/utils.dart';
 import 'package:pocket_prep_exam/data/models/models.dart';
+import 'package:pocket_prep_exam/pages/setting/control/setting_controller.dart';
 import '../../quiz_setup/controller/quiz_setup_controller.dart';
 
 enum QuizState { loading, success, error }
@@ -15,8 +17,7 @@ class QuizController extends GetxController {
   RxBool isSubmitVisible = false.obs;
   var elapsedTime = 0.obs;
 
-  final AudioPlayer _player = AudioPlayer();
-  final FlutterTts _flutterTts = FlutterTts();
+
 
   Timer? _questionTimer;
   Timer? _globalTimer;
@@ -48,32 +49,6 @@ class QuizController extends GetxController {
       state.value = QuizState.error;
     }
   }
-  Future<void> _playSound(bool isCorrect, [String? correctOptionText]) async {
-    try {
-      await _player.stop();
-      await _player.play(
-        AssetSource(isCorrect ? 'correctness.mp3' : 'ForWrong.mp3'),
-      );
-      if (isCorrect && correctOptionText != null) {
-        await Future.delayed(const Duration(milliseconds: 600));
-        await _speakText("The correct answer is $correctOptionText");
-      }
-    } catch (e) {
-      print("Audio/TTS error: $e");
-    }
-  }
-
-
-  Future<void> _speakText(String text) async {
-    try {
-      await _flutterTts.setLanguage("en-US");
-      await _flutterTts.setPitch(1.0);
-      await _flutterTts.setSpeechRate(0.45);
-      await _flutterTts.speak(text);
-    } catch (e) {
-      print("TTS error: $e");
-    }
-  }
 
 
   void startTimerForQuestion(int questionIndex) {
@@ -95,26 +70,30 @@ class QuizController extends GetxController {
     if (!selectedOptions.containsKey(questionIndex)) {
       selectedOptions[questionIndex] = optionIndex;
       _stopQuestionTimer();
-      // _playSound(isCorrect)
-      String optionPrefix = selected
-          .trim()
-          .isNotEmpty
+      String optionPrefix = selected.trim().isNotEmpty
           ? selected.trim().substring(0, 1).toUpperCase()
           : '';
-      String correctPrefix = correct
-          .trim()
-          .isNotEmpty
+      String correctPrefix = correct.trim().isNotEmpty
           ? correct.trim().substring(0, 1).toUpperCase()
           : '';
       bool isCorrect = optionPrefix == correctPrefix;
-      await _playSound(isCorrect);
+      final question = questions[questionIndex];
+      int correctIndex = getCorrectOptionIndex(correct, question.options);
+      final correctOptionText = correctIndex != -1
+          ? question.options[correctIndex]
+          : correct;
+      await Utils.playSound(isCorrect);
       await Future.delayed(const Duration(milliseconds: 500));
-      if (isCorrect) {
-        await _speakText("Correct! The answer is: $selected");
-      } else {
-        await _speakText("Wrong answer. The correct answer is: $correct");
+      if(Get.find<SettingController>().isTtsEnabled.value){
+        if (isCorrect) {
+          await Utils.speak("Correct! The answer is: $selected");
+        } else {
+          await Utils.speak("Wrong answer. The correct answer is: $correctOptionText");
+        }
       }
-    }}
+
+    }
+  }
 
   void toggleExplanation(int questionIndex) {
     showExplanation[questionIndex] = !(showExplanation[questionIndex] ?? false);
@@ -142,7 +121,13 @@ class QuizController extends GetxController {
       if (correctIndex != -1) {
         selectedOptions[questionIndex] = correctIndex;
         showExplanation[questionIndex] = false;
-        await _playSound(true, question.correctAnswer);
+        final correctOptionText = question.options[correctIndex];
+        await Utils.playSound(true);
+        await Future.delayed(const Duration(milliseconds: 500));
+        if(Get.find<SettingController>().isTtsEnabled.value){
+          await Utils.speak("The correct answer is: $correctOptionText");
+        }
+
       }
     }
   }
@@ -243,6 +228,7 @@ class QuizController extends GetxController {
     isSubmitVisible.value = false;
     elapsedTime.value = 0;
     stopAllTimers();
+    Utils.stopAll();
     // questions = [];
     // state.value = QuizState.loading;
   }

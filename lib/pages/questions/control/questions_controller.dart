@@ -78,6 +78,7 @@ class QuestionController extends GetxController {
       remainingSeconds.value = 0;
       _timer?.cancel();
       _timer = null;
+      Utils.stopAll();
     } else {
       currentPage.value = 0;
       isSubmitVisible.value = false;
@@ -90,6 +91,7 @@ class QuestionController extends GetxController {
       selectedMinutes.value = 5.0;
       isTimedQuiz.value = false;
       timedQuizDuration = null;
+      Utils.stopAll();
     }
   }
 
@@ -255,9 +257,17 @@ class QuestionController extends GetxController {
     int optionIndex,
     String option,
     String correctAnswer,
-  ) {
+  )async {
     if (selectedOptions[questionIndex] != null) return;
     selectedOptions[questionIndex] = optionIndex;
+    String optionPrefix = option.trim().isNotEmpty
+        ? option.trim().substring(0, 1).toUpperCase()
+        : '';
+    String correctPrefix = correctAnswer.trim().isNotEmpty
+        ? correctAnswer.trim().substring(0, 1).toUpperCase()
+        : '';
+    bool isCorrect = optionPrefix == correctPrefix;
+    await Utils.playSound(isCorrect);
   }
 
   void toggleExplanation(int questionIndex) {

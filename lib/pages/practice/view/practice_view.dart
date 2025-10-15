@@ -7,6 +7,7 @@ import 'package:pocket_prep_exam/pages/practice/controller/practice_controller.d
 import 'package:pocket_prep_exam/pages/practice/widgets/statscard.dart';
 import 'package:pocket_prep_exam/pages/practice/widgets/subject_list.dart';
 import 'package:pocket_prep_exam/pages/quiz_view_second/controller/quiz_controller.dart';
+import 'package:pocket_prep_exam/pages/study/widgets/game_button.dart';
 import '../widgets/question_progress.dart';
 
 class PracticeView extends StatelessWidget {
@@ -37,7 +38,8 @@ class PracticeView extends StatelessWidget {
                 return _buildQuestionProgress(quizResult);
               }),
               const SizedBox(height: 10),
-              const StatsCard(text: "Return to last test"),
+              GameButton(),
+              // const StatsCard(text: "Return to last test"),
               const SizedBox(height: 10),
               Text(
                 "Practice By Subject",

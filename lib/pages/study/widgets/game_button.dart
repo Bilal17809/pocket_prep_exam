@@ -9,51 +9,48 @@ class GameButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 18),
-      child: Container(
-        margin: const EdgeInsets.all(04),
-        padding: const EdgeInsets.all(12),
-        decoration: roundedDecoration.copyWith(
-            color: Colors.blue.shade400,
-            borderRadius: BorderRadius.circular(10)
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Row(
-              children: [
-                Lottie.asset("assets/premium.json",
-                  width: 40,
-                  height: 40,
-                  fit: BoxFit.fill,
-                  repeat: true,
-                ),
-                const SizedBox(width: 12),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "Noun Kingdom Awakens!",
-                      style: context.textTheme.bodyLarge?.copyWith(
-                        color: Colors.white,
-                        fontSize: 15,
-                        fontWeight: FontWeight.w600,
-                      ),
+    return Container(
+      margin: const EdgeInsets.all(04),
+      padding: const EdgeInsets.all(12),
+      decoration: roundedDecoration.copyWith(
+          color: Colors.blue.shade400,
+          borderRadius: BorderRadius.circular(10)
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Row(
+            children: [
+              Lottie.asset("assets/premium.json",
+                width: 40,
+                height: 40,
+                fit: BoxFit.fill,
+                repeat: true,
+              ),
+              const SizedBox(width: 12),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "Noun Kingdom Awakens!",
+                    style: context.textTheme.bodyLarge?.copyWith(
+                      color: Colors.white,
+                      fontSize: 15,
+                      fontWeight: FontWeight.w600,
                     ),
-                    Text(
-                      "Learn Grammar by Game",
-                      style: context.textTheme.bodySmall?.copyWith(
-                        color: Colors.white,
+                  ),
+                  Text(
+                    "Learn Grammar by Game",
+                    style: context.textTheme.bodySmall?.copyWith(
+                      color: Colors.white,
 
-                      ),
                     ),
-                  ],
-                ),
-              ],
-            ),
-          ],
-        ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }

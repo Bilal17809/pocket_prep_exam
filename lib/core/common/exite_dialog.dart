@@ -76,7 +76,9 @@ class CustomDialogForExitAndWarning extends StatelessWidget {
                 const SizedBox(height: 8.0),
                 Text(
                   title,
-                  style: context.textTheme.titleLarge!,
+                  style: context.textTheme.titleLarge!.copyWith(
+                    fontWeight: FontWeight.bold
+                  )
                 ),
                 const SizedBox(height: 10.0),
                 Text(

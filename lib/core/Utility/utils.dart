@@ -1,5 +1,7 @@
 
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_tts/flutter_tts.dart';
 import 'package:get/get.dart';
 import 'package:pocket_prep_exam/core/theme/app_colors.dart';
 
@@ -8,6 +10,9 @@ import '../common/custom_dialog.dart';
 
 class Utils {
   Utils._();
+  static final AudioPlayer _player = AudioPlayer();
+  static final FlutterTts _flutterTts = FlutterTts();
+
   static void showSuccess(String message,String title) {
     _showSnackBar(title ?? "Success", message, isSuccess: true,showBottom: true);
   }
@@ -25,7 +30,15 @@ class Utils {
       duration: const Duration(seconds: 2),
     );
   }
-  static Future<bool> leaveBottomSheet(BuildContext context, String message) async {
+  static Future<bool> leaveBottomSheet(
+      BuildContext context,
+      String title,
+      String message, {
+        String cancelText = "Cancel",
+        String confirmText = "Leave",
+        Color confirmColor = const Color(0xFF2196F3), // lightSkyBlue
+        VoidCallback? onConfirm, // ✅ Reusable action
+      }) async {
     final result = await showModalBottomSheet<bool>(
       context: context,
       shape: const RoundedRectangleBorder(
@@ -38,15 +51,18 @@ class Utils {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisSize: MainAxisSize.min,
             children: [
-              const Text(
-                "Leave Quiz? ⚠️",
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              Text(
+                title,
+                style: const TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
               const SizedBox(height: 10),
-               Text(
-               message,
+              Text(
+                message,
                 textAlign: TextAlign.start,
-                style: TextStyle(fontSize: 14, color: Colors.grey),
+                style: const TextStyle(fontSize: 14, color: Colors.grey),
               ),
               const SizedBox(height: 20),
               Row(
@@ -58,18 +74,21 @@ class Utils {
                         foregroundColor: Colors.black,
                       ),
                       onPressed: () => Navigator.of(context).pop(false),
-                      child: const Text("Cancel"),
+                      child: Text(cancelText),
                     ),
                   ),
                   const SizedBox(width: 10),
                   Expanded(
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: lightSkyBlue,
+                        backgroundColor: confirmColor,
                         foregroundColor: Colors.white,
                       ),
-                      onPressed: () => Navigator.of(context).pop(true),
-                      child: const Text("Leave"),
+                      onPressed: () {
+                        Navigator.of(context).pop(true);
+                        if (onConfirm != null) onConfirm(); // ✅ Execute reusable action
+                      },
+                      child: Text(confirmText),
                     ),
                   ),
                 ],
@@ -80,6 +99,37 @@ class Utils {
       },
     );
     return result ?? false;
+  }
+
+
+  static Future<void> playSound(bool isCorrect) async {
+    try {
+      await _player.stop();
+      await _player.play(
+        AssetSource(isCorrect ? 'correctness.mp3' : 'ForWrong.mp3'),
+      );
+    } catch (e) {
+      print("Audio play error: $e");
+    }
+  }
+  static Future<void> speak(String text) async {
+    try {
+      await _flutterTts.setLanguage("en-US");
+      await _flutterTts.setPitch(1.0);
+      await _flutterTts.setSpeechRate(0.45);
+      await _flutterTts.speak(text);
+    } catch (e) {
+      print("TTS error: $e");
+    }
+  }
+
+  static Future<void> stopAll() async {
+    try {
+      await _player.stop();
+      await _flutterTts.stop();
+    } catch (e) {
+      print("Stop audio error: $e");
+    }
   }
 
   static String formatTime(int seconds) {

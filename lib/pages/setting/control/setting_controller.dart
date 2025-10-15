@@ -12,11 +12,13 @@ class SettingController extends GetxController {
   final ExamService _examService;
 
   Rxn<Exam> selectedExam = Rxn<Exam>();
+  RxBool isTtsEnabled = true.obs;
 
   @override
   void onInit() {
     super.onInit();
     loadExamFromStorage();
+    isTtsEnabled.value = _storageService.loadTTsToggle();
   }
 
 

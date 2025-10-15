@@ -4,10 +4,8 @@ import 'package:pocket_prep_exam/pages/dashboard/view/dashboard_view.dart';
 import '/core/Utility/utils.dart';
 import '/core/common/common_button.dart';
 import '/core/common/custom_dialog.dart';
-import '/core/routes/routes_name.dart';
 import '/core/theme/app_colors.dart';
 import '/pages/quiz_view_second/controller/quiz_controller.dart';
-import '../../dashboard/control/dashboard_controller.dart';
 import '../../quiz_setup/controller/quiz_setup_controller.dart';
 import '../../stats/controller/stats_controller.dart';
 import '../widgets/quiz_card.dart';
@@ -35,7 +33,14 @@ class QuizScaffold extends StatelessWidget {
     final questions = quizController.questions;
     return WillPopScope(
       onWillPop: () async {
-        return await Utils.leaveBottomSheet(context,"Are you sure you want to leave the quiz? Your progress will be lost");
+        return await Utils.leaveBottomSheet(
+          context,
+          "Leave Quiz? ⚠️",
+          "Are you sure you want to leave the quiz? Your progress will be lost.",
+          onConfirm: (){
+           quizController.resetQuiz();
+          }
+        );
       },
       child: SafeArea(
         child: Scaffold(
@@ -45,7 +50,14 @@ class QuizScaffold extends StatelessWidget {
             leading: IconButton(
               icon: const Icon(Icons.arrow_back,color: kWhite,),
               onPressed: () async {
-                bool shouldLeave = await Utils.leaveBottomSheet(context,"Are you sure you want to leave the quiz? Your progress will be lost");
+                bool shouldLeave = await Utils.leaveBottomSheet(
+                  context,
+                  "Leave Quiz? ⚠️",
+                  "Are you sure you want to leave the quiz? Your progress will be lost.",
+                  onConfirm: (){
+                   quizController.resetQuiz();
+                  }
+                );
                 if (shouldLeave) Get.back();
               },
             ),
@@ -132,94 +144,6 @@ class QuizScaffold extends StatelessWidget {
                   ),
                 ],
               ),
-              // Obx(() {
-              //   final currentIndex = quizController.currentPage.value;
-              //   final int remainingTime = quizController.remainingTime[currentIndex] ?? 0;
-              //
-              //   if (remainingTime == 0) {
-              //     return SizedBox();
-              //   }
-              //   const Color darkTeal = Color(0xFF006080);
-              //   const Color lightAquaBlue = Color(0xFF00ACD2);
-              //   const Color lightSegmentGray = Color(0xFFE0E0E0);
-              //   const Color lowTimeGray = Colors.red;
-              //
-              //   final int initialMaxTime = Get.find<QuizSetupController>().selectedTimeLimit.value;
-              //   final double progress = (remainingTime / initialMaxTime).clamp(0.0, 1.0);
-              //   final bool isLowTime = remainingTime <= 5;
-              //   final Color timerNumberColor = isLowTime ? lowTimeGray : lightSkyBlue;
-              //   const double outerRingWidth = 10.0;
-              //   const double innerProgressWidth = 10.0;
-              //
-              //   return Positioned.fill(
-              //     child: Center(
-              //       child:
-              //         Stack(
-              //         alignment: Alignment.center,
-              //         children: [
-              //           Image.asset(
-              //             'images/alarm.png',
-              //             width: 300,
-              //             height: 300,
-              //             fit: BoxFit.contain,
-              //           ),
-              //           Container(
-              //             width: 250,
-              //             height: 250,
-              //             decoration: BoxDecoration(
-              //               shape: BoxShape.circle,
-              //               border: Border.all(
-              //                 color: lightSkyBlue,
-              //                 width: outerRingWidth,
-              //               ),
-              //               color: Colors.white,
-              //             ),
-              //             child: Padding(
-              //               padding: const EdgeInsets.all(16),
-              //               child: CircularProgressIndicator(
-              //                 value: progress, // 0.0 to 1.0
-              //                 strokeWidth: innerProgressWidth,
-              //                 backgroundColor: lightSegmentGray,
-              //                 valueColor: AlwaysStoppedAnimation<Color>(lightAquaBlue),
-              //               ),
-              //             )
-              //           ),
-              //           AnimatedSwitcher(
-              //             duration: const Duration(milliseconds: 800),
-              //             transitionBuilder: (Widget child, Animation<double> animation) {
-              //               return ScaleTransition(
-              //                 scale: CurvedAnimation(parent: animation, curve: Curves.easeIn),
-              //                 child: FadeTransition(opacity: animation, child: child),
-              //               );
-              //             },
-              //             child: Column(
-              //               key: ValueKey<int>(remainingTime),
-              //               mainAxisAlignment: MainAxisAlignment.center,
-              //               mainAxisSize: MainAxisSize.min,
-              //               children: [
-              //                 Text(
-              //                   "$remainingTime",
-              //                   style: TextStyle(
-              //                     fontSize: 80,
-              //                     color: timerNumberColor,
-              //                     fontWeight: FontWeight.bold,
-              //                   ),
-              //                 ),
-              //                 Text(
-              //                   'sec',
-              //                   style: TextStyle(
-              //                     fontSize: 24,
-              //                     color: timerNumberColor,
-              //                     fontWeight: FontWeight.normal,
-              //                   ),
-              //                 ),
-              //               ],
-              //             ),
-              //           )
-              //         ],
-              //       ),
-              //     ));
-              // }),
             ],
           ),
         ),
@@ -245,6 +169,7 @@ class _NavigationRow extends StatelessWidget {
         _NavButton(
           icon: Icons.arrow_back_ios,
           onTap: () {
+            Utils.stopAll();
             if (pageController.hasClients &&
                 pageController.page!.toInt() > 0) {
               pageController.previousPage(
@@ -257,6 +182,7 @@ class _NavigationRow extends StatelessWidget {
         _NavButton(
           icon: Icons.arrow_forward_ios,
           onTap: () {
+            Utils.stopAll();
             if (pageController.hasClients &&
                 pageController.page!.toInt() <
                     controller.questions.length - 1) {
