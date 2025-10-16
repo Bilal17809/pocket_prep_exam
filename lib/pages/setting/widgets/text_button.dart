@@ -13,17 +13,14 @@ class ButtonText extends StatelessWidget {
     return InkWell(
       onTap: onTap,
       splashColor: kBlue.withAlpha(10),
-      child: Padding(
-        padding:  EdgeInsets.symmetric(horizontal: 10, vertical: 12),
-        child: Align(
-          alignment: Alignment.centerLeft,
-          child: Text(
-            title,
-            style: context.textTheme.bodySmall!.copyWith(
-              color: kBlue,
-              fontSize: 16,
-              fontWeight: FontWeight.bold,
-            ),
+      child: Align(
+        alignment: Alignment.centerLeft,
+        child: Text(
+          title,
+          style: context.textTheme.bodySmall!.copyWith(
+            color: lightSkyBlue,
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
           ),
         ),
       ),

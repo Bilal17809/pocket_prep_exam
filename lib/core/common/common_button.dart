@@ -11,9 +11,13 @@ class CommonButton extends StatelessWidget {
   final VoidCallback onTap;
   final Color colorA;
   final Color colorB;
+  final Color textColor;
    final IconData? icon;
    final bool isIcon;
-   CommonButton({super.key, required this.title, required this.onTap,
+  final  bool useTextShadow;
+   const CommonButton({super.key, required this.title, required this.onTap,
+     this.useTextShadow = true,
+     this.textColor = kWhite,
     this.colorA = lightSkyBlue,
      this.colorB = lightSkyBlue,
      this.icon,
@@ -24,7 +28,7 @@ class CommonButton extends StatelessWidget {
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
     return Padding(
-      padding: EdgeInsets.symmetric(vertical: bodySmallWH, horizontal: 16),
+      padding: EdgeInsets.symmetric(vertical: bodySmallWH, horizontal: 00),
       child: GestureDetector(
         onTap: onTap,
         child: Container(
@@ -59,15 +63,17 @@ class CommonButton extends StatelessWidget {
                 Text(
                   title,
                   style: context.textTheme.bodyLarge!.copyWith(
-                    color: kWhite,
+                    color: textColor,
                     fontWeight: FontWeight.bold,
-                    shadows: [
-                      const Shadow(
+                    fontSize: 16,
+                    fontFamily: 'Poppins',
+                    shadows: useTextShadow ? [
+                       Shadow(
                         blurRadius: 3,
                         color: Colors.black45,
                         offset: Offset(1, 1),
                       ),
-                    ],
+                    ]:[]
                   ),
                 ),
               ],

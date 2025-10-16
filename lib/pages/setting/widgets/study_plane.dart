@@ -27,7 +27,7 @@ class StudyPlane extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
-                  padding:  EdgeInsets.symmetric(horizontal: 08, vertical: 10),
+                  padding:  EdgeInsets.symmetric(horizontal: 16, vertical: 12),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -47,8 +47,9 @@ class StudyPlane extends StatelessWidget {
                     ],
                   ),
                 ),
-                AppDivider(height: 10.0,color: greyColor.withAlpha(60),),
-                ButtonText(title: "Upgrade to Premium", onTap: (){}),
+                // AppDivider(height: 10.0,color: greyColor.withAlpha(60),),
+                ReusableRow(widget: ButtonText(title: "Upgrade to Premium", onTap: (){})),
+                // ButtonText(title: "Upgrade to Premium", onTap: (){}),
                 SizedBox(height: 08)
               ],
             ),
@@ -58,28 +59,47 @@ class StudyPlane extends StatelessWidget {
     );
   }
 }
+class ReusableRow extends StatelessWidget {
+  final Widget widget;
+  const ReusableRow({super.key,required this.widget});
 
-class _TextWidget extends StatelessWidget {
-  final String text;
-  const _TextWidget({super.key,required this.text});
   @override
   Widget build(BuildContext context) {
-    return  Padding(
-      padding: EdgeInsets.symmetric(horizontal: bodySmallWH),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16,vertical: 10),
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Icon(Icons.circle,color: Colors.grey,size: 06,),
-          SizedBox(width: 04),
-          Text(
-            text,
-            style: context.textTheme.bodySmall!.copyWith(
-              color: kBlack,
-              fontSize: 14,
-            ),
-          ),
+          widget,
+          Icon(Icons.arrow_forward_ios,color: lightSkyBlue,size: 20,)
         ],
       ),
     );
   }
 }
+
+//
+// class _TextWidget extends StatelessWidget {
+//   final String text;
+//   const _TextWidget({super.key,required this.text});
+//   @override
+//   Widget build(BuildContext context) {
+//     return  Padding(
+//       padding: EdgeInsets.symmetric(horizontal: bodySmallWH),
+//       child: Row(
+//         children: [
+//           Icon(Icons.circle,color: Colors.grey,size: 06,),
+//           SizedBox(width: 04),
+//           Text(
+//             text,
+//             style: context.textTheme.bodySmall!.copyWith(
+//               color: kBlack,
+//               fontSize: 14,
+//             ),
+//           ),
+//         ],
+//       ),
+//     );
+//   }
+// }
 

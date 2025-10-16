@@ -258,6 +258,10 @@ class QuizzesView extends StatelessWidget {
                     }),
                   )
                 else
+                  if(isTimedQuiz)
+                    if(controller.remainingSeconds.value == 0)
+            Container(color: const Color(0xFF1E90FF), height:  80, width: double.infinity)
+                else
                   _NavigationRow(
                     isTimeQuiz: isTimedQuiz,
                     controller: controller,
@@ -314,11 +318,11 @@ class _NavigationRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Obx(() {
-      if (isTimeQuiz) {
-        if (controller.remainingSeconds.value == 0) {
-          return Container(color: const Color(0xFF1E90FF), height: 30, width: double.infinity);
-        }
-      }
+      // if (isTimeQuiz) {
+      //   if (controller.remainingSeconds.value == 0) {
+      //     return Container(color: const Color(0xFF1E90FF), height: 30, width: double.infinity);
+      //   }
+      // }
       final currentIndex = controller.currentPage.value;
       int originalQuestionIndex;
       if (reviewMode && reviewQuestionIds != null && reviewQuestionIds!.isNotEmpty) {

@@ -1,0 +1,82 @@
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:pocket_prep_exam/pages/premium/view/premium_screen.dart';
+import '/core/theme/theme.dart';
+import '/core/common/common_button.dart';
+
+class UnlockProCard extends StatelessWidget {
+  final VoidCallback? onTap;
+  const UnlockProCard({super.key, this.onTap});
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 20),
+      padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 05),
+      decoration: roundedDecoration.copyWith(
+        color: lightSkyBlue,
+        borderRadius: BorderRadius.circular(16)
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          SizedBox(height: 12),
+           Text(
+            "Unlock Pro Features!",
+            style: titleSmallStyle.copyWith(color: kWhite)
+          ),
+          SizedBox(height: 04),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: const [
+                  _FeatureText("✓  No Ads anymore."),
+                  _FeatureText("✓  Access to All features."),
+                  _FeatureText("✓  New filters and effects."),
+                ],
+              ),
+              // SizedBox(width: 46),
+              Container(
+                padding: const EdgeInsets.all(12),
+                decoration: BoxDecoration(
+                  color: kWhite.withAlpha(60),
+                  shape: BoxShape.circle,
+                ),
+                child: const Icon(
+                  Icons.workspace_premium_rounded,
+                  color: Colors.white,
+                  size: 46,
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 06),
+          CommonButton(title: "Try Pro Free for 7 Days", onTap: (){
+            Get.to(()=> PremiumScreen());
+          },
+            colorA: kWhite,colorB: kWhite,textColor:
+            Color(0xFFFF4D4D),useTextShadow: false,
+          )
+        ]
+      ),
+    );
+  }
+}
+class _FeatureText extends StatelessWidget {
+  final String text;
+  const _FeatureText(this.text);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 2),
+      child: Text(
+        text,
+        style: bodyMediumStyle.copyWith(color: kWhite,
+          fontFamily: "Poppins",fontWeight: FontWeight.w500, )
+      )
+    );
+  }
+}

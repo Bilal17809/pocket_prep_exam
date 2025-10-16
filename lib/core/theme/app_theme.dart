@@ -26,10 +26,16 @@ abstract class AppTheme {
     ),
   );
 
-  static BoxDecoration card = BoxDecoration(
-    color: kWhite,
-    borderRadius: BorderRadius.circular(6),
-    border: Border.all(color: greyColor.withAlpha(60)),
+  static BoxDecoration card =  BoxDecoration(
+    color: Colors.white,
+    borderRadius: BorderRadius.circular(10),
+    boxShadow: [
+      BoxShadow(
+        color: Colors.grey.withValues(alpha: 0.2),
+        blurRadius: 6,
+        offset: Offset(0, 2),
+      ),
+    ],
   );
 
   static BoxDecoration gradientHeader = const BoxDecoration(
