@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../../data/models/user_model.dart';
 import '../../pages/quiz_view_second/controller/quiz_controller.dart';
 
 class StorageService {
@@ -20,6 +21,7 @@ class StorageService {
   static const String _questionOfDayCorrectnessKey = "qotd_correctness";
   static const String _ttsEnabled = "tts_Enabled";
   static const String _darkModeKey = "dark_mode_enabled";
+  static const String _userDataKey = "user_data";
 
 
 
@@ -160,5 +162,26 @@ class StorageService {
 
   Future<void> clearSelectedSubjects(int examId) async {
     await _preferences.remove("${_selectedSubjectsKey}_$examId");
+  }
+
+
+
+  Future<void> saveUser(UserModel user) async {
+    final jsonString = jsonEncode(user.toJson());
+    await _preferences.setString(_userDataKey, jsonString);
+  }
+  
+  UserModel? getUser() {
+    final jsonString = _preferences.getString(_userDataKey);
+    if (jsonString == null) return null;
+    return UserModel.fromJson(jsonDecode(jsonString));
+  }
+
+  Future<void> clearUser() async {
+    await _preferences.remove(_userDataKey);
+  }
+
+  bool isLoggedIn() {
+    return _preferences.containsKey(_userDataKey);
   }
 }

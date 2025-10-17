@@ -60,6 +60,7 @@ const Color greyColor = Color(0xff626262);
 const Color grey = Colors.grey;
 const Color kMintGreen = Color(0xff18C184);
 const Color kMintGreenDark = Color(0xff0F5E42);
+const Color pinkAccent = Colors.pinkAccent;
 //green
 const greenColor = Color(0xff00AB3F);
 

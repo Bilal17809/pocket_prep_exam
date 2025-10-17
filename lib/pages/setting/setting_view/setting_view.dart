@@ -24,8 +24,9 @@ class SettingView extends StatelessWidget {
           child: Column(
             children: [
               UnlockProCard(),
+
               // ProFeaturesCard(),
-              // ProfileSection(),
+              ProfileSection(),
              // DividerWidget(),
               ShowDetail(),
               StudyPlane(),

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:pocket_prep_exam/pages/premium/view/premium_screen.dart';
 import '/core/theme/theme.dart';
 import '/core/common/common_button.dart';
@@ -12,7 +11,7 @@ class UnlockProCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 20),
-      padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 05),
+      padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 03),
       decoration: roundedDecoration.copyWith(
         color: lightSkyBlue,
         borderRadius: BorderRadius.circular(16)
@@ -23,7 +22,7 @@ class UnlockProCard extends StatelessWidget {
           SizedBox(height: 12),
            Text(
             "Unlock Pro Features!",
-            style: titleSmallStyle.copyWith(color: kWhite)
+            style: titleSmallStyle.copyWith(color: kWhite,fontSize: 16)
           ),
           SizedBox(height: 04),
           Row(
@@ -34,7 +33,7 @@ class UnlockProCard extends StatelessWidget {
                 children: const [
                   _FeatureText("✓  No Ads anymore."),
                   _FeatureText("✓  Access to All features."),
-                  _FeatureText("✓  New filters and effects."),
+                  // _FeatureText("✓  New filters and effects."),
                 ],
               ),
               // SizedBox(width: 46),
@@ -47,12 +46,12 @@ class UnlockProCard extends StatelessWidget {
                 child: const Icon(
                   Icons.workspace_premium_rounded,
                   color: Colors.white,
-                  size: 46,
+                  size: 42,
                 ),
               ),
             ],
           ),
-          const SizedBox(height: 06),
+          const SizedBox(height: 04),
           CommonButton(title: "Try Pro Free for 7 Days", onTap: (){
             Get.to(()=> PremiumScreen());
           },

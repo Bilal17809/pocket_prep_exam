@@ -1,4 +1,6 @@
 import 'package:get/get.dart';
+import 'package:pocket_prep_exam/pages/login/controller/login_controller.dart';
+import 'package:pocket_prep_exam/pages/premium/controller/premium_controller.dart';
 import '/core/local_storage/storage_helper.dart';
 import '/pages/Quiz_builder/controller/quiz_builder_controller.dart';
 import '/pages/dashboard/control/dashboard_controller.dart';
@@ -21,6 +23,8 @@ class DependencyInject{
     Get.lazyPut<ExamService>(() => ExamService(), fenix: true);
     Get.lazyPut<QuestionService>(() => QuestionService(),fenix: true );
     Get.lazyPut<StorageService>(() => StorageService(),fenix: true);
+    Get.lazyPut<PremiumPlansController>(()=>PremiumPlansController(),fenix: true);
+    Get.lazyPut<LoginController>(()=>LoginController(storageServices: Get.find()),fenix: true);
     Get.lazyPut<SwitchExamController>(() => SwitchExamController(examService: Get.find(), storageService:Get.find() ),fenix: true);
     Get.lazyPut<StatsController>(() => StatsController(questionService: Get.find(),storageServices: StorageService()),fenix: true);
     Get.lazyPut<StudyController>(() => StudyController(storageService: Get.find(),examServices: Get.find(),questionService: Get.find()),fenix: true);

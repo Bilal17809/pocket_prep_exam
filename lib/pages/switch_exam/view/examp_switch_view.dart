@@ -37,17 +37,21 @@ class ExamSwitchView extends StatelessWidget {
                 const TopText(),
                 ExamList(controller: controller),
                 controller.showButton.value
-                    ? CommonButton(
-                  title: "Switch Exam",
-                  onTap: () async {
-                    LoadingDialog.show(message: "Switching Exam...");
-                    await controller.saveSelectedExam();
-                    await Future.delayed(const Duration(milliseconds: 500));
-                    LoadingDialog.hide();
-                    Get.offAll(() => DashboardView(initialIndex: 3));
-                  },
-
-                )
+                    ? Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 16),
+                      child: CommonButton(
+                        title: "Switch Exam",
+                        onTap: () async {
+                          LoadingDialog.show(message: "Switching Exam...");
+                          await controller.saveSelectedExam();
+                          await Future.delayed(
+                            const Duration(milliseconds: 500),
+                          );
+                          LoadingDialog.hide();
+                          Get.offAll(() => DashboardView(initialIndex: 3));
+                        },
+                      ),
+                    )
                     : const HideCommonButton(title: "Switch Exam"),
               ],
             );

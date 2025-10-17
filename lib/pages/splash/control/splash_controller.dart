@@ -7,6 +7,7 @@ class SplashController extends GetxController{
 
 final StorageService _storageService;
 RxBool isExam = false.obs;
+RxBool isUserLoggedIn = false.obs;
 
 SplashController({required StorageService storageService})
     : _storageService = storageService;
@@ -16,9 +17,16 @@ SplashController({required StorageService storageService})
     super.onInit();
     Future.delayed(Duration(seconds: 1),(){
            loadExams();
+      // loadUser();
     });
   }
-
+// Future<void> loadUser() async {
+//   final user =  _storageService.getUser();
+//   if (user != null) {
+//     isUserLoggedIn.value = true;
+//   }
+// }
+//
 Future<void> loadExams()async{
   final examId = await _storageService.getExam();
   if(examId != null){

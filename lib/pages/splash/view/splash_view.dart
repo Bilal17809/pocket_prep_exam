@@ -14,23 +14,20 @@ class SplashView extends StatelessWidget {
       if(controller.isExam.value == true){
         Get.offNamed(RoutesName.dashBoard);
       }else{
-        Get.offNamed(RoutesName.examSwitchView);
+        Get.offNamed(RoutesName.login);
       }
     });
     return Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            FlutterLogo(size: 100),
-            SizedBox(height: 20),
-            Text(
-              "Welcome to My App",
-              style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
-            ),
-          ],
-        ),
-      ),
+      body: Stack(
+        children: [
+          Container(
+            height: double.infinity,
+            width: double.infinity,
+            child: Image.asset("images/spla.png",fit: BoxFit.cover,),
+          )
+        ],
+      )
+   
     );
   }
 }

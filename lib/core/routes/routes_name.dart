@@ -9,4 +9,5 @@ class RoutesName{
   static const String secondQuizView = "/second_quiz_view";
   static const String examSetting = "/exam_setting";
   static const String premium = "/premium";
+  static const String login= "/login";
 }
