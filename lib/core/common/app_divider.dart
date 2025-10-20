@@ -20,12 +20,15 @@ class AppDivider extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Divider(
-      height: height,
-      thickness: thickness,
-      indent: indent,
-      endIndent: endIndent,
-      color: color,
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16),
+      child: Divider(
+        height: height,
+        thickness: thickness,
+        indent: indent,
+        endIndent: endIndent,
+        color: color,
+      ),
     );
   }
 }

@@ -48,10 +48,10 @@ class EmptyStatisticsCard extends StatelessWidget {
             childAspectRatio: 2.5,
             physics: const NeverScrollableScrollPhysics(),
             children: const [
-              _StatItem(value: "-", label: "Quiz times"),
-              _StatItem(value: "-/- items", label: "Answer progress"),
+              _StatItem(value: "--", label: "Total Questions"),
+              _StatItem(value: "--", label: "Correct Answer"),
               _StatItem(value: "-s", label: "Total practice time"),
-              _StatItem(value: "-", label: "Remaining mistakes"),
+              _StatItem(value: "--", label: "Remaining mistakes"),
             ],
           ),
         ],

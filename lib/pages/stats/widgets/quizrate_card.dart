@@ -35,8 +35,8 @@ class QuizRateCard extends StatelessWidget {
                     style: titleSmallStyle.copyWith(fontWeight: FontWeight.bold),
                   ),
                   const SizedBox(height: 12),
-                  _StatRow(label: "Average Time", value:  statsController.averageTime),
-                  _StatRow(label: "Average Questions", value: statsController.averageQuestions),
+                  _StatRow(label: "Total Questions", value:  statsController.totalAttemptedQuestions.toString()),
+                  // _StatRow(label: "Average Questions", value: statsController.averageQuestions),
                   _StatRow(label: "Quiz Attempts", value: statsController.totalQuizAttempts.toString()),
                   _StatRow(label: "Subjects Attempted", value: statsController.subjectsAttempted.toString()),
                 ],
@@ -52,13 +52,13 @@ class QuizRateCard extends StatelessWidget {
                     value: progressValue,
                     strokeWidth: 7,
                     backgroundColor: Colors.grey.shade200,
-                    valueColor:  AlwaysStoppedAnimation<Color>(kMintGreen),
+                    valueColor:  AlwaysStoppedAnimation<Color>(lightSkyBlue),
                   ),
                 ),
                 Text(
                     percentage,
                     style: bodyMediumStyle.copyWith(
-                        color: kMintGreen,
+                        color: lightSkyBlue,
                         fontSize: 20,
                         fontWeight: FontWeight.bold
                     )

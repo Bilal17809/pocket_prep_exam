@@ -66,7 +66,7 @@ class SubjectsList extends StatelessWidget {
                 return ListTile(
                   title: Text(
                     subject.subjectName,
-                    style: context.textTheme.titleMedium!.copyWith(color: isSelected ? Colors.blue : kBlack),
+                    style: context.textTheme.titleMedium!.copyWith(color: isSelected ? lightSkyBlue : kBlack),
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                   ),

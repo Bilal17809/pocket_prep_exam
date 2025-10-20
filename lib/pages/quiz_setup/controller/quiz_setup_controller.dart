@@ -37,12 +37,12 @@ class QuizSetupController extends GetxController {
     }
   }
 
-  List<int> get timeOptions => [5, 10, 15];
+  List<int> get timeOptions => [10, 15, 20,25,30];
 
   void setDifficulty(String difficulty) {
     selectedDifficulty.value = difficulty;
     selectedQuestions.value = questionOptions.first;
-    selectedTimeLimit.value = 5;
+    selectedTimeLimit.value = 10;
   }
   void setQuestions(int count) {
     selectedQuestions.value = count;

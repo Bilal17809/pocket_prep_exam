@@ -2,6 +2,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pocket_prep_exam/core/common/constant.dart';
+import 'package:pocket_prep_exam/pages/premium/view/premium_screen.dart';
+import 'package:pocket_prep_exam/pages/setting/widgets/show_detail.dart';
 import '../../../core/common/app_divider.dart';
 import '/core/theme/app_theme.dart';
 import '/pages/setting/widgets/text_button.dart';
@@ -18,7 +20,7 @@ class StudyPlane extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SizedBox(height: 10),
-          Text("Study Plan"),
+          Text("Study Plan",style: Theme.of(context).textTheme.titleSmall!.copyWith(color: grey),),
           SizedBox(height: 10),
           Container(
             width: double.infinity,
@@ -39,17 +41,16 @@ class StudyPlane extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      SizedBox(height: 6),
-                     // _TextWidget(text: "Questions of the Day"),
-                     //  _TextWidget(text: "30 Questions (of 1000 Question Bank)"),
-                     //  _TextWidget(text: "Limited Quiz Modes"),
-
+                      // SizedBox(height: 6),
                     ],
                   ),
                 ),
-                // AppDivider(height: 10.0,color: greyColor.withAlpha(60),),
-                ReusableRow(widget: ButtonText(title: "Upgrade to Premium", onTap: (){})),
-                // ButtonText(title: "Upgrade to Premium", onTap: (){}),
+                ClickableDividerRow(
+                  title: "Upgrade to Premium",
+                  onTap: () {
+                    Get.to(() => PremiumScreen());
+                  },
+                ),
                 SizedBox(height: 08)
               ],
             ),
@@ -77,29 +78,3 @@ class ReusableRow extends StatelessWidget {
     );
   }
 }
-
-//
-// class _TextWidget extends StatelessWidget {
-//   final String text;
-//   const _TextWidget({super.key,required this.text});
-//   @override
-//   Widget build(BuildContext context) {
-//     return  Padding(
-//       padding: EdgeInsets.symmetric(horizontal: bodySmallWH),
-//       child: Row(
-//         children: [
-//           Icon(Icons.circle,color: Colors.grey,size: 06,),
-//           SizedBox(width: 04),
-//           Text(
-//             text,
-//             style: context.textTheme.bodySmall!.copyWith(
-//               color: kBlack,
-//               fontSize: 14,
-//             ),
-//           ),
-//         ],
-//       ),
-//     );
-//   }
-// }
-

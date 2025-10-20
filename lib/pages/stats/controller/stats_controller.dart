@@ -69,37 +69,48 @@ class StatsController extends GetxController {
     return subjectResults[subjectId]?.length ?? 0;
   }
 
-  // Calculate average time across all quiz attempts
-  String get averageTime {
-    if (subjectResults.isEmpty) return "00:00";
-    int totalTime = 0;
-    int totalAttempts = 0;
-    for (var results in subjectResults.values) {
-      for (var result in results) {
-        totalTime += result.totalTime;
-        totalAttempts++;
+  int get totalAttemptedQuestions {
+    int total = 0;
+    subjectResults.forEach((subjectId, results) {
+      if (results.isNotEmpty) {
+        final lastAttempt = results.last;
+        total += lastAttempt.totalQuestions;
       }
-    }
-    if (totalAttempts == 0) return "00:00";
-    final avgTimeInSeconds = totalTime ~/ totalAttempts;
-    return _formatTime(avgTimeInSeconds);
+    });
+    return total;
   }
 
-  // Calculate average questions across all quiz attempts
-  String get averageQuestions {
-    if (subjectResults.isEmpty) return "0.0";
-    int totalQuestions = 0;
-    int totalAttempts = 0;
-    for (var results in subjectResults.values) {
-      for (var result in results) {
-        totalQuestions += result.totalQuestions;
-        totalAttempts++;
-      }
-    }
-    if (totalAttempts == 0) return "0.0";
-    final avgQuestions = totalQuestions / totalAttempts;
-    return avgQuestions.toStringAsFixed(1);
-  }
+  // Calculate average time across all quiz attempts
+  // String get averageTime {
+  //   if (subjectResults.isEmpty) return "00:00";
+  //   int totalTime = 0;
+  //   int totalAttempts = 0;
+  //   for (var results in subjectResults.values) {
+  //     for (var result in results) {
+  //       totalTime += result.totalTime;
+  //       totalAttempts++;
+  //     }
+  //   }
+  //   if (totalAttempts == 0) return "00:00";
+  //   final avgTimeInSeconds = totalTime ~/ totalAttempts;
+  //   return _formatTime(avgTimeInSeconds);
+  // }
+  //
+  // // Calculate average questions across all quiz attempts
+  // String get averageQuestions {
+  //   if (subjectResults.isEmpty) return "0.0";
+  //   int totalQuestions = 0;
+  //   int totalAttempts = 0;
+  //   for (var results in subjectResults.values) {
+  //     for (var result in results) {
+  //       totalQuestions += result.totalQuestions;
+  //       totalAttempts++;
+  //     }
+  //   }
+  //   if (totalAttempts == 0) return "0.0";
+  //   final avgQuestions = totalQuestions / totalAttempts;
+  //   return avgQuestions.toStringAsFixed(1);
+  // }
 
   // Calculate overall progress percentage
   String get overallProgressPercentage {

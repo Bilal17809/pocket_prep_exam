@@ -5,23 +5,19 @@ import '/core/theme/app_colors.dart';
 
 class ButtonText extends StatelessWidget {
   final String title;
-  final VoidCallback onTap;
-  const ButtonText({super.key, required this.title, required this.onTap});
+  final Color color;
+  const ButtonText({super.key, required this.title,this.color = lightSkyBlue});
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: onTap,
-      splashColor: kBlue.withAlpha(10),
-      child: Align(
-        alignment: Alignment.centerLeft,
-        child: Text(
-          title,
-          style: context.textTheme.bodySmall!.copyWith(
-            color: lightSkyBlue,
-            fontSize: 16,
-            fontWeight: FontWeight.bold,
-          ),
+    return Align(
+      alignment: Alignment.centerLeft,
+      child: Text(
+        title,
+        style: context.textTheme.bodySmall!.copyWith(
+          color: color,
+          fontSize: 16,
+          fontWeight: FontWeight.bold,
         ),
       ),
     );

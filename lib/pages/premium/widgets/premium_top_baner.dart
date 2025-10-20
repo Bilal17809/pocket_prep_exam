@@ -36,9 +36,10 @@ class PremiumTopBanner extends StatelessWidget {
             top: 30,
             right: 16,
             child: CircleAvatar(
-              backgroundColor: kWhite.withOpacity(0.2),
+              maxRadius: 18,
+              backgroundColor: kWhite.withAlpha(50),
               child: IconButton(
-                icon: const Icon(Icons.close, color: kWhite),
+                icon: const Icon(Icons.close, color: kWhite,size: 20,),
                 onPressed: () => Get.back(),
               ),
             ),

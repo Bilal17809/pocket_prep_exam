@@ -10,4 +10,5 @@ class RoutesName{
   static const String examSetting = "/exam_setting";
   static const String premium = "/premium";
   static const String login= "/login";
+  static const String termOfServices= "/termOfServices";
 }

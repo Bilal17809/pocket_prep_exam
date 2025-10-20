@@ -52,7 +52,7 @@ class UnlockProCard extends StatelessWidget {
             ],
           ),
           const SizedBox(height: 04),
-          CommonButton(title: "Try Pro Free for 7 Days", onTap: (){
+          CommonButton(title: "Upgrade to premium", onTap: (){
             Get.to(()=> PremiumScreen());
           },
             colorA: kWhite,colorB: kWhite,textColor:

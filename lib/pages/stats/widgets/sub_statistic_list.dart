@@ -23,10 +23,10 @@ class SubStatisticList extends StatelessWidget {
       final subjectsWithResult = exam.subjects.where((subject) {
         final result = statsController.latestResultForSubject(subject.subjectId);
         return result != null;
-      }).toList();
+      }).toList().reversed.toList();
 
       if (subjectsWithResult.isEmpty) {
-        return  Center(child: EmptyStatisticsCard(title: "No Subjects"));
+        return  Center(child: EmptyStatisticsCard(title: "No subjects found"));
       }
       return ListView.builder(
         shrinkWrap: true,

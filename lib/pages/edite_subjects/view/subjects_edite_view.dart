@@ -41,14 +41,17 @@ class SubjectsEditeView extends StatelessWidget {
             ),
             !controller.hasSelectionChanged.value
                 ? HideCommonButton(title: "Save Subject")
-                : CommonButton(
-                  title: "Save Subjects",
-                  onTap: () {
-                    controller.saveSelectedSubjectsForExam();
-                    controller.hasSelectionChanged.value = false;
-                    Get.back();
-                    // Utils.showSuccess("Subjects saved successfully", "Saved!");
-                  },
+                : Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  child: CommonButton(
+                    title: "Save Subjects",
+                    onTap: () {
+                      controller.saveSelectedSubjectsForExam();
+                      controller.hasSelectionChanged.value = false;
+                      Get.back();
+                      // Utils.showSuccess("Subjects saved successfully", "Saved!");
+                    },
+                  ),
                 ),
           ],
         );

@@ -16,8 +16,8 @@ class LoginView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final textTheme = Theme.of(context).textTheme;
     final controller = Get.find<LoginController>();
-
     return Scaffold(
       backgroundColor: kWhiteF7,
       body: SafeArea(
@@ -28,10 +28,14 @@ class LoginView extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Image.asset("images/appicon.png", height: 100),
-                const SizedBox(height: 20),
+                // const SizedBox(height: 20),
+                Text(
+                  "Professional",
+                  style: textTheme.displaySmall!.copyWith(color: Colors.blue.shade700,fontWeight: FontWeight.w600,fontSize: 16),
+                ),
                 Text(
                   "PocketPrep",
-                  style: Theme.of(context).textTheme.displaySmall!.copyWith(color: Colors.blue.shade700),
+                  style: textTheme.displaySmall!.copyWith(color: Colors.blue.shade700,fontWeight: FontWeight.w600,fontSize: 24),
                 ),
                 const SizedBox(height: 36),
                 Form(
@@ -45,9 +49,9 @@ class LoginView extends StatelessWidget {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Text(
-                          "Welcome to PocketPrep!",
+                          "Welcome to  Professional PocketPrep!",
                           style: context.textTheme.titleLarge!.copyWith(
-                            fontSize: 18,
+                            fontSize: 16,
                             fontWeight: FontWeight.w600,
                           ),
                           textAlign: TextAlign.center,

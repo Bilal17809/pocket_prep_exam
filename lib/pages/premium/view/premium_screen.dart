@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:pocket_prep_exam/pages/term_of_services/view/term_services_view.dart';
 import '../widgets/plane_tile.dart';
 import '../widgets/premium_top_baner.dart';
 import '/core/common/common_button.dart';
@@ -46,7 +47,7 @@ class PremiumScreen extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: CommonButton(
-              title: "Start 7 Days Free Trial",
+              title: "Upgrade to premium",
               onTap: () {
                 final selected = controller.selectedPlan;
                 Get.snackbar(
@@ -64,7 +65,7 @@ class PremiumScreen extends StatelessWidget {
               children:  [
                 _BottomLink(text: "How to cancel",onTap: (){},),
                 // _BottomLink(text: "Restore Purchase"),
-                _BottomLink(text: "Privacy Policy",onTap: (){},),
+                _BottomLink(text: "Privacy Policy",onTap: (){Get.to(() => TermServicesView());},),
               ],
             ),
           ),

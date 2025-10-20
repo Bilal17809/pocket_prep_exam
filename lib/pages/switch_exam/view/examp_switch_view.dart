@@ -48,7 +48,7 @@ class ExamSwitchView extends StatelessWidget {
                             const Duration(milliseconds: 500),
                           );
                           LoadingDialog.hide();
-                          Get.offAll(() => DashboardView(initialIndex: 3));
+                          Get.offAll(() => DashboardView(initialIndex: 0));
                         },
                       ),
                     )

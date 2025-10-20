@@ -11,6 +11,7 @@ import 'package:pocket_prep_exam/pages/quiz_setup/view/quiz_setup_view.dart';
 import 'package:pocket_prep_exam/pages/quiz_view_second/view/quiz_view.dart';
 import 'package:pocket_prep_exam/pages/splash/view/splash_view.dart';
 import 'package:pocket_prep_exam/pages/switch_exam/view/examp_switch_view.dart';
+import 'package:pocket_prep_exam/pages/term_of_services/view/term_services_view.dart';
 
 class Routes{
 
@@ -24,6 +25,7 @@ class Routes{
     GetPage(name: RoutesName.secondQuizView, page:() =>  SecondQuizView()),
     GetPage(name: RoutesName.examSetting, page:() =>  ExamSettingView()),
     GetPage(name: RoutesName.premium, page:() =>  PremiumScreen()),
-    GetPage(name: RoutesName.login, page:() =>  LoginView())
+    GetPage(name: RoutesName.login, page:() =>  LoginView()),
+    GetPage(name: RoutesName.termOfServices, page:() =>  TermServicesView())
   ];
 }

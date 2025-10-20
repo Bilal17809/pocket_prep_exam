@@ -98,27 +98,30 @@ class TimedQuizBottomSheet extends StatelessWidget {
               ],
             ),
           ),
-          CommonButton(
-            title: "Start Quiz",
-            onTap: () async {
-                final selectedMinutes = controller.selectedMinutes.value.toInt();
-                final totalSeconds = selectedMinutes * 60;
-                final quizQuestionForTime = await Get.find<EditeSubjectController>().startQuizForTime();
-                if(quizQuestionForTime.isEmpty){
-                  Utils.showError("Please select at lest one subject", "Error");
-                }else{
-                    Get.to(() =>
-                        QuizzesView(
-                          allQuestion:quizQuestionForTime,
-                          isTimedQuiz: true,
-                          timedQuizMinutes: totalSeconds,
-                        ))?.then((_) {
-                      Get.back();
-                    });
-                  }
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: CommonButton(
+              title: "Start Quiz",
+              onTap: () async {
+                  final selectedMinutes = controller.selectedMinutes.value.toInt();
+                  final totalSeconds = selectedMinutes * 60;
+                  final quizQuestionForTime = await Get.find<EditeSubjectController>().startQuizForTime();
+                  if(quizQuestionForTime.isEmpty){
+                    Utils.showError("Please select at lest one subject", "Error");
+                  }else{
+                      Get.to(() =>
+                          QuizzesView(
+                            allQuestion:quizQuestionForTime,
+                            isTimedQuiz: true,
+                            timedQuizMinutes: totalSeconds,
+                          ))?.then((_) {
+                        Get.back();
+                      });
+                    }
 
 
-            },
+              },
+            ),
           ),
         ],
       ),

@@ -17,9 +17,9 @@ class StatsView extends StatelessWidget {
         backgroundColor: kWhiteF7,
         automaticallyImplyLeading: false,
         title: Text(
-          "Stats",
+          "Stats Progress",
           style: context.textTheme.bodyLarge!.copyWith(
-            fontSize: 32,
+            fontSize: 26,
             fontWeight: FontWeight.bold,
           ),
         ),

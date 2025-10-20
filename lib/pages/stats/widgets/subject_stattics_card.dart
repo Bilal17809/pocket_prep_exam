@@ -61,8 +61,8 @@ class SubjectStatisticsCard extends StatelessWidget {
               childAspectRatio: 2.5,
               physics: const NeverScrollableScrollPhysics(),
               children: [
-                _StatItem(value: Utils.formatTime(result.selectedQuizTime), label: "Quiz times"),
-                _StatItem(value: "${result.totalCorrect}/${result.totalQuestions} items", label: "Answer progress"),
+                _StatItem(value: "${result.totalQuestions}", label: "Total Questions"),
+                _StatItem(value: "${result.totalCorrect}", label: "Correct Answer"),
                 _StatItem(value: Utils.formatTime(result.totalTime), label: "Total practice time"),
                 _StatItem(value: "${result.totalWrong}", label: "Remaining mistakes "),
               ],

@@ -2,6 +2,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
+import 'package:pocket_prep_exam/pages/edite_subjects/controller/edite_subject_controller.dart';
 import '/core/local_storage/storage_helper.dart';
 import '/data/models/exams_and_subject.dart';
 import '/services/exam_and_subjects_services.dart';
@@ -147,7 +148,7 @@ class StudyController extends GetxController {
     final modes = <QuizModeModel>[];
     if (isQuestionOfDayVisible.value) {
       final today = DateTime.now();
-      final formatted = DateFormat('d MMM').format(today);
+      final formatted = DateFormat('d-MMM').format(today);
       modes.add(QuizModeModel(
         "images/cards.png",
         formatted,
@@ -156,7 +157,7 @@ class StudyController extends GetxController {
       ));
     }
     else {
-      final formatted = questionOfDayDate.value.isNotEmpty ? DateFormat('d MMM').format(DateTime.parse(questionOfDayDate.value))
+      final formatted = questionOfDayDate.value.isNotEmpty ? DateFormat('d-MMM').format(DateTime.parse(questionOfDayDate.value))
           : "";
       modes.add(QuizModeModel(
         "images/greycard.png",
@@ -166,7 +167,7 @@ class StudyController extends GetxController {
       ));
     }
     modes.addAll([
-      QuizModeModel("images/quiz icon.png", "", "Quick 10 Quiz", null),
+      QuizModeModel("images/quiz icon.png", "", "Quick ${Get.find<EditeSubjectController>().questionPool.length} Quiz", null),
       QuizModeModel("images/stopwatch.png", "", "Timed Quiz", null),
       QuizModeModel("images/set-up.png", "", "Quiz Builder", null),
     ]);

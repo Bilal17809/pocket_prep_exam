@@ -142,7 +142,7 @@ class EditeSubjectController extends GetxController {
     final pool = [...questionPool];
     pool.shuffle();
     // print("Your pool is start Quiz pool is:  ${pool.length}");
-    return pool.take(maxQuizSize).toList();
+    return pool;
   }
 
   bool _isAllSubjectsSelected() {

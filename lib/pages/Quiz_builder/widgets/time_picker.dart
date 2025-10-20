@@ -94,7 +94,6 @@ class TimePickerWidget extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            // Header
             Container(
               padding: const EdgeInsets.all(20),
               decoration: BoxDecoration(
@@ -153,7 +152,7 @@ class TimePickerWidget extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(bottom: 10, left: 06, right: 06),
+              padding: const EdgeInsets.only(bottom: 10, left: 16, right: 16),
               child: CommonButton(
                 title: "Set Duration",
                 icon: Icons.check_circle_outline,

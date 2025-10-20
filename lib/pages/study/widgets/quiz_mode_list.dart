@@ -51,7 +51,7 @@ class QuizModeList extends StatelessWidget {
                           reviewMode: false,
                           isTimedQuiz: false,
                         ));
-                      } else if (item.title == "Quick 10 Quiz") {
+                      } else if (idx == 1) {
                         final quizQuestions = Get.find<EditeSubjectController>().startQuiz();
                        // controller.clearQuestionOfDayAttempt();
                         if (quizQuestions.isEmpty) {
@@ -82,7 +82,7 @@ class QuizModeList extends StatelessWidget {
                       ),
                       trailing: Text(
                         item.date ?? "",
-                        style: TextStyle(color: isHidden ? greyColor :  lightSkyBlue, fontSize: 16),
+                        style: TextStyle(color: isHidden ? greyColor :  lightSkyBlue, fontSize: 16,fontWeight: isHidden ? FontWeight.normal : FontWeight.bold),
                       ),
                     ),
                   ),

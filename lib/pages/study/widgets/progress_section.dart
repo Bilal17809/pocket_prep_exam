@@ -16,7 +16,7 @@ class ProgressSection extends StatelessWidget {
     return Obx(() {
       final bool completed = !studyController.isQuestionOfDayVisible.value;
       final bool isCorrect = studyController.isQuestionOfDayCorrect.value;
-      final averageTimeAllSubjects = Get.find<StatsController>().averageTime;
+      final averageTimeAllSubjects = Get.find<StatsController>().totalAttemptedQuestions;
       // final averageTimeMinutes = _parseAverageTimeToMinutes(averageTimeAllSubjects);
       // final normalizedValue = (averageTimeMinutes / 60).clamp(0.0, 1.0);
       final progressValueAllSubjects = Get.find<StatsController>().progressValue;
@@ -60,8 +60,8 @@ class ProgressSection extends StatelessWidget {
                       ),
                       const SizedBox(height: 16),
                       _ProgressText(
-                        title: "Today's practice Avg Time",
-                        value:averageTimeAllSubjects,
+                        title: "Total questions progress",
+                        value:Get.find<StatsController>().overallProgressPercentage,
                         color: greyColor.withAlpha(220),
                       ),
                       const SizedBox(height: 4),

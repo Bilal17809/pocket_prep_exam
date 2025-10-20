@@ -21,7 +21,7 @@ class ShowDetail extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text("I'm preparing for"),
+           Text("I'm preparing for",style: Theme.of(context).textTheme.titleSmall!.copyWith(color: grey)),
           const SizedBox(height: 12),
           Container(
             width: double.infinity,
@@ -44,41 +44,22 @@ class ShowDetail extends StatelessWidget {
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-                        // const SizedBox(height: 6),
-                        // Text(
-                        //   exam == null ? "Null" :
-                        //   exam.examName,
-                        //   style: context.textTheme.bodySmall!.copyWith(
-                        //     color: kBlack,
-                        //     fontSize: 14,
-                        //   ),
-                        // ),
-                        // const SizedBox(height: 20),
-                        // Text(
-                        //   "Free Study Progress . 0 / 30 Questions",
-                        //   style: context.textTheme.bodySmall!.copyWith(
-                        //     color: kBlack,
-                        //     fontSize: 12,
-                        //   ),
-                        // ),
                       ],
                     );
                   })
                 ),
-                // AppDivider(height: 10.0,color: greyColor.withAlpha(60),),
-              ReusableRow(widget:   ButtonText(
-                title: "Exam Settings",
-                onTap: () {
-                  Get.to(() => ExamSettingView());
-                },
-              ),),
-                // AppDivider(height: 10.0,color: greyColor.withAlpha(60),),
-              ReusableRow(widget:   ButtonText(
-                title: "Switch Exam",
-                onTap: () {
-                  Get.off( ()=> ExamSwitchView());
-                },
-              )),
+                ClickableDividerRow(
+                  title: "Exam Settings",
+                  onTap: () {
+                    Get.to(() => ExamSettingView());
+                  },
+                ),
+                ClickableDividerRow(
+                  title: "Switch Exam",
+                  onTap: () {
+                    Get.off(() => ExamSwitchView());
+                  },
+                ),
                 const SizedBox(height: 08),
               ],
             ),
@@ -89,3 +70,39 @@ class ShowDetail extends StatelessWidget {
   }
 }
 
+class ClickableDividerRow extends StatelessWidget {
+  final String title;
+  final VoidCallback onTap;
+
+  const ClickableDividerRow({
+    super.key,
+    required this.title,
+    required this.onTap,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: onTap,
+      borderRadius: BorderRadius.circular(8),
+      splashColor: kBlack,
+      highlightColor: kBlack,
+      child: Ink(
+        decoration: BoxDecoration(
+          color: Colors.transparent,
+          borderRadius: BorderRadius.circular(8),
+        ),
+        child: Column(
+          children: [
+            AppDivider(height: 10.0, color: greyColor.withAlpha(40)),
+            ReusableRow(
+              widget: ButtonText(
+                title: title,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
