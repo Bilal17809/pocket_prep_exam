@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1082886160109",
+    "project_id": "professional-exam-prep-e9991",
+    "storage_bucket": "professional-exam-prep-e9991.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1082886160109:android:383b07e2277c67bed256e4",
+        "android_client_info": {
+          "package_name": "com.examprep.professionalcertification"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-C5vUVoEMeuRYwCHWXg0u9rTY3mrGCbg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,13 +1,68 @@
+//import java.util.Properties
+//import java.io.FileInputStream
+//
+//plugins {
+//    id("com.android.application")
+//    id("kotlin-android")
+//    id("com.google.gms.google-services")
+//    id("dev.flutter.flutter-gradle-plugin")
+//}
+//
+//android {
+//    namespace = "com.examprep.professionalcertification"
+//    compileSdk = 35
+//    ndkVersion = "28.2.13676358"
+//
+//    compileOptions {
+//        sourceCompatibility = JavaVersion.VERSION_11
+//        targetCompatibility = JavaVersion.VERSION_11
+//    }
+//
+//    kotlinOptions {
+//        jvmTarget = JavaVersion.VERSION_11.toString()
+//    }
+//
+//    defaultConfig {
+//        applicationId = "com.examprep.professionalcertification"
+//        minSdk = 23
+//        targetSdk = 35
+//        versionCode = flutter.versionCode
+//        versionName = flutter.versionName
+//    }
+//
+//    buildTypes {
+//        release {
+//            signingConfig = signingConfigs.getByName("debug")
+//        }
+//    }
+//}
+//
+//apply(plugin = "com.google.gms.google-services")
+//apply(plugin = "com.google.firebase.crashlytics")
+//
+//dependencies {
+//    implementation("com.google.android.gms:play-services-ads:24.4.0")
+//    implementation("com.google.firebase:firebase-analytics")
+//    implementation("com.google.firebase:firebase-crashlytics")
+//}
+
+import java.util.Properties
+import java.io.FileInputStream
 plugins {
     id("com.android.application")
     id("kotlin-android")
-    // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
+    id("com.google.gms.google-services")
     id("dev.flutter.flutter-gradle-plugin")
 }
 
+//val keystoreProperties = Properties()
+//val keystorePropertiesFile = rootProject.file("key.properties")
+//if (keystorePropertiesFile.exists()) {
+//    keystoreProperties.load(FileInputStream(keystorePropertiesFile))
+//}
 android {
-    namespace = "com.example.pocket_prep_exam"
-    compileSdk = flutter.compileSdkVersion
+    namespace = "com.examprep.professionalcertification"
+    compileSdk = 36
     ndkVersion = "28.2.13676358"
 
     compileOptions {
@@ -20,25 +75,33 @@ android {
     }
 
     defaultConfig {
-        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId = "com.example.pocket_prep_exam"
-        // You can update the following values to match your application needs.
-        // For more information, see: https://flutter.dev/to/review-gradle-config.
-        minSdk = flutter.minSdkVersion
-        targetSdk = flutter.targetSdkVersion
+        applicationId = "com.examprep.professionalcertification"
+        minSdkVersion(24)
+        targetSdkVersion(36)
         versionCode = flutter.versionCode
         versionName = flutter.versionName
     }
 
-    buildTypes {
+//    signingConfigs {
+//        create("release") {
+//            keyAlias = keystoreProperties["keyAlias"] as String
+//            keyPassword = keystoreProperties["keyPassword"] as String
+//            storeFile = keystoreProperties["storeFile"]?.let { file(it) }
+//            storePassword = keystoreProperties["storePassword"] as String
+//        }
+//    }
+
+        buildTypes {
         release {
-            // TODO: Add your own signing config for the release build.
-            // Signing with the debug keys for now, so `flutter run --release` works.
             signingConfig = signingConfigs.getByName("debug")
         }
     }
 }
+apply(plugin = "com.google.gms.google-services")
+apply(plugin = "com.google.firebase.crashlytics")
 
-flutter {
-    source = "../.."
+dependencies {
+    implementation("com.google.android.gms:play-services-ads:24.4.0")
+    implementation("com.google.firebase:firebase-analytics")
+    implementation("com.google.firebase:firebase-crashlytics")
 }

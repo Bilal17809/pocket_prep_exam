@@ -1,4 +1,4 @@
-package com.example.pocket_prep_exam
+package com.examprep.professionalcertification
 // com.example.pocket_prep_exam
 import io.flutter.embedding.android.FlutterActivity
 
