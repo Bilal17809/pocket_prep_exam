@@ -19,7 +19,6 @@ class ImprovedExamSelectionWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: controller.selectedExams.map((exam) {
           return Container(
-            margin: const EdgeInsets.only(bottom: 16, right: 16, left: 16),
             decoration: BoxDecoration(
               color: Colors.blue.shade50,
               borderRadius: BorderRadius.circular(06),

@@ -86,7 +86,7 @@ class Utils {
                       ),
                       onPressed: () {
                         Navigator.of(context).pop(true);
-                        if (onConfirm != null) onConfirm(); // ✅ Execute reusable action
+                        if (onConfirm != null) onConfirm();
                       },
                       child: Text(confirmText),
                     ),

@@ -58,6 +58,7 @@ class CustomDialog extends StatelessWidget {
             title: negativeButtonText,
             onTap: onNegativeTap ?? () => Get.back(),
           ),
+          SizedBox(height: 16),
           CommonButton(
             colorA: color,
             title: positiveButtonText,

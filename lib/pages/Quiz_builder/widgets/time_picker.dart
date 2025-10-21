@@ -10,7 +10,9 @@ class TimePickerWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final textTheme = context.textTheme;
     final controller = Get.find<QuizBuilderController>();
+
     return Obx(() {
       final selected = controller.selectedTime.value;
       final durationText = selected.inSeconds > 0
@@ -19,13 +21,13 @@ class TimePickerWidget extends StatelessWidget {
       return GestureDetector(
         onTap: () => _showCustomDurationPicker(context, controller),
         child: Container(
-          margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 16),
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(10),
             border: Border.all(
-              color: selected.inSeconds > 0 ? lightSkyBlue : Colors.grey.shade300,
+              color:
+              selected.inSeconds > 0 ? lightSkyBlue : Colors.grey.shade300,
               width: 1.2,
             ),
           ),
@@ -48,17 +50,17 @@ class TimePickerWidget extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Text(
+                    Text(
                       "Set Total Quiz Duration",
-                      style: TextStyle(
-                        fontSize: 15,
+                      style: textTheme.titleMedium?.copyWith(
                         fontWeight: FontWeight.w600,
+                        fontSize: 15,
                       ),
                     ),
                     const SizedBox(height: 4),
                     Text(
                       durationText,
-                      style: TextStyle(
+                      style: textTheme.bodyMedium?.copyWith(
                         fontSize: 13,
                         color: selected.inSeconds > 0
                             ? lightSkyBlue
@@ -80,11 +82,14 @@ class TimePickerWidget extends StatelessWidget {
       );
     });
   }
+
   void _showCustomDurationPicker(
       BuildContext context, QuizBuilderController controller) {
+    final textTheme = context.textTheme;
     final currentDuration = controller.selectedTime.value;
     final minutes = currentDuration.inMinutes.obs;
     final seconds = (currentDuration.inSeconds % 60).obs;
+
     Get.bottomSheet(
       Container(
         decoration: const BoxDecoration(
@@ -98,9 +103,8 @@ class TimePickerWidget extends StatelessWidget {
               padding: const EdgeInsets.all(20),
               decoration: BoxDecoration(
                 color: lightSkyBlue.withOpacity(0.1),
-                borderRadius: const BorderRadius.vertical(
-                  top: Radius.circular(16),
-                ),
+                borderRadius:
+                const BorderRadius.vertical(top: Radius.circular(16)),
               ),
               child: Row(
                 children: [
@@ -117,11 +121,11 @@ class TimePickerWidget extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(width: 12),
-                  const Text(
+                  Text(
                     "Select Quiz Duration",
-                    style: TextStyle(
-                      fontSize: 18,
+                    style: textTheme.titleMedium?.copyWith(
                       fontWeight: FontWeight.bold,
+                      fontSize: 18,
                     ),
                   ),
                 ],
@@ -132,22 +136,16 @@ class TimePickerWidget extends StatelessWidget {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  // Minutes Slider
                   Obx(() => _buildSliderSection(
+                    context: context,
                     label: "Minutes",
                     value: minutes.value,
-                    max: 120,
-                    divisions: 120,
+                    max: 30,
+                    divisions: 30,
                     onChanged: (val) => minutes.value = val.toInt(),
                   )),
                   const SizedBox(height: 10),
-                  Obx(() => _buildSliderSection(
-                    label: "Seconds",
-                    value: seconds.value,
-                    max: 59,
-                    divisions: 59,
-                    onChanged: (val) => seconds.value = val.toInt(),
-                  )),
+                  // Seconds slider (optional)
                 ],
               ),
             ),
@@ -161,21 +159,26 @@ class TimePickerWidget extends StatelessWidget {
                   FocusManager.instance.primaryFocus?.unfocus();
                   final totalMinutes = minutes.value;
                   final totalSeconds = seconds.value;
+
                   if (totalMinutes == 0 && totalSeconds == 0) {
-                    Utils.showError("Please select at least 1 second", "Invalid Duration");
+                    Utils.showError(
+                        "Please select at least 1 minute", "Invalid Duration");
                     return;
                   }
+
                   final duration = Duration(
                     minutes: totalMinutes,
                     seconds: totalSeconds,
                   );
+
                   controller.setQuizDuration(duration);
-                    FocusManager.instance.primaryFocus?.unfocus();
-                    Get.back();
-                    Utils.showSuccess(
-                      "Quiz duration: ${_formatDuration(totalMinutes, totalSeconds)}",
-                      "Duration Set",
-                    );
+                  FocusManager.instance.primaryFocus?.unfocus();
+                  Get.back();
+
+                  Utils.showSuccess(
+                    "Quiz duration: ${_formatDuration(totalMinutes, totalSeconds)}",
+                    "Duration Set",
+                  );
                 },
               ),
             ),
@@ -188,12 +191,14 @@ class TimePickerWidget extends StatelessWidget {
   }
 
   Widget _buildSliderSection({
+    required BuildContext context,
     required String label,
     required int value,
     required double max,
     required int divisions,
     required Function(double) onChanged,
   }) {
+    final textTheme = context.textTheme;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -202,22 +207,22 @@ class TimePickerWidget extends StatelessWidget {
           children: [
             Text(
               label,
-              style: const TextStyle(
-                fontSize: 16,
+              style: textTheme.titleSmall?.copyWith(
                 fontWeight: FontWeight.w600,
+                fontSize: 16,
               ),
             ),
             Container(
-              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 02),
+              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 2),
               decoration: BoxDecoration(
                 color: lightSkyBlue.withOpacity(0.2),
                 borderRadius: BorderRadius.circular(20),
               ),
               child: Text(
                 "$value",
-                style: const TextStyle(
-                  fontSize: 16,
+                style: textTheme.bodyMedium?.copyWith(
                   fontWeight: FontWeight.bold,
+                  fontSize: 16,
                   color: lightSkyBlue,
                 ),
               ),
@@ -246,6 +251,7 @@ class TimePickerWidget extends StatelessWidget {
       ],
     );
   }
+
   String _formatDuration(int minutes, int seconds) {
     List<String> parts = [];
     if (minutes > 0) parts.add("${minutes}m");

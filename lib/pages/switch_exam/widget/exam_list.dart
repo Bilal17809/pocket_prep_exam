@@ -13,9 +13,12 @@ class ExamList extends StatelessWidget {
             itemCount: controller.exam.length,
             itemBuilder: (context, index) {
               final data = controller.exam[index];
-              return GestureDetector(
-                onTap: () => controller.selectedExam(index),
-                child: ExamDetail(data: data, index: index),
+              return Padding(
+                padding: const EdgeInsets.only(top: 16),
+                child: GestureDetector(
+                  onTap: () => controller.selectedExam(index),
+                  child: ExamDetail(data: data, index: index),
+                ),
               );
             },
           ),

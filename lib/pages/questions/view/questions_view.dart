@@ -58,28 +58,28 @@ class QuizzesView extends StatelessWidget {
         fromRetake: fromRetake,
       );
     });
-
-    return WillPopScope(
-      onWillPop: () async {
+    return PopScope(
+      canPop: false,
+      onPopInvokedWithResult: (didPop, result) async {
+        if (didPop) return;
         final controller = Get.find<QuestionController>();
         if (reviewMode == true) {
           Get.back();
-          return false;
+          return;
         }
         final isQuestionOfDay = isQuestionOfDayMode;
         if (controller.selectedOptions.isEmpty) {
           if (fromRetake) {
             Get.offAll(() => DashboardView());
-            controller.resetController();
-            return false;
+            // controller.resetController();
+          } else {
+            Get.back();
           }
-          return true;
+          return;
         }
         if (isQuestionOfDay && controller.selectedOptions.isNotEmpty) {
-          // await studyController.markQuestionOfDayAttempted();
-          // controller.resetController();
           Get.offAll(() => DashboardView());
-          return false;
+          return;
         }
         final results = controller.calculateQuizResults();
         await Utils.showLeaveQuizDialog(
@@ -88,16 +88,15 @@ class QuizzesView extends StatelessWidget {
           totalQuestions: results["totalQuestions"],
           onLeave: () {
             if (fromRetake) {
-              Get.back();
+              Get.back(); // close dialog
               Get.offAll(() => DashboardView());
               controller.resetController();
             } else {
-              Get.back();
-              Get.back();
+              Get.back(); // close dialog
+              Get.back(); // exit quiz
             }
           },
         );
-        return false;
       },
       child: SafeArea(
         child: Scaffold(
@@ -199,7 +198,7 @@ class QuizzesView extends StatelessWidget {
                 ),
                 if (!reviewMode && controller.isSubmitVisible.value && !isQuestionOfDayMode)
                   Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 26),
+                    padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 26),
                     child: CommonButton(
                       title: "Submit Quiz",
                       onTap: () {
@@ -237,7 +236,7 @@ class QuizzesView extends StatelessWidget {
                   ),
                 if (isQuestionOfDayMode)
                   Padding(
-                    padding: const EdgeInsets.only(bottom: 20,left: 16,right: 16),
+                    padding: const EdgeInsets.all(16),
                     child: Obx(() {
                       final hasAttempted = controller.selectedOptions.isNotEmpty;
                       return CommonButton(

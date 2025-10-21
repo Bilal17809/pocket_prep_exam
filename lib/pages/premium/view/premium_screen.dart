@@ -65,7 +65,7 @@ class PremiumScreen extends StatelessWidget {
               children:  [
                 _BottomLink(text: "How to cancel",onTap: (){},),
                 // _BottomLink(text: "Restore Purchase"),
-                _BottomLink(text: "Privacy Policy",onTap: (){Get.to(() => TermServicesView());},),
+                _BottomLink(text: "Terms & Conditions",onTap: (){Get.to(() => TermServicesView());},),
               ],
             ),
           ),
@@ -75,7 +75,7 @@ class PremiumScreen extends StatelessWidget {
   }
 }
 
-//
+
 class _BottomLink extends StatelessWidget {
   final String text;
   final VoidCallback onTap;

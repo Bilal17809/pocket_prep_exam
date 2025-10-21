@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:pocket_prep_exam/pages/setting/control/setting_controller.dart';
 import '/core/local_storage/storage_helper.dart';
 import '/core/routes/routes.dart';
 import '/core/routes/routes_name.dart';

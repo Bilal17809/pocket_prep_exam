@@ -12,6 +12,7 @@ import 'package:pocket_prep_exam/pages/quiz_view_second/view/quiz_view.dart';
 import 'package:pocket_prep_exam/pages/splash/view/splash_view.dart';
 import 'package:pocket_prep_exam/pages/switch_exam/view/examp_switch_view.dart';
 import 'package:pocket_prep_exam/pages/term_of_services/view/term_services_view.dart';
+import '../../pages/switch_exam/view/examp_switch_view.dart';
 
 class Routes{
 

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:pocket_prep_exam/core/common/app_divider.dart';
+import 'package:pocket_prep_exam/pages/premium/view/premium_screen.dart';
 import '../theme/app_colors.dart';
 
 class SettingsItem {
@@ -21,9 +23,9 @@ class DrawerItemWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      leading: Icon(item.icon, color: Colors.blue),
+      leading: Icon(item.icon, color: lightSkyBlue),
       title: Text(item.title,  style: context.textTheme.titleMedium!.copyWith(
-        color: kBlue
+        color:kBlack
       )),
       onTap: onTap ?? () => Navigator.pop(context),
     );
@@ -41,50 +43,85 @@ class AppDrawer extends StatelessWidget {
       ),
       child: Column(
         children: [
-          DrawerHeader(
-            decoration: BoxDecoration(color: Colors.blue),
-            child: Align(
-              alignment: Alignment.centerLeft,
+          SizedBox(
+            width: double.infinity,
+            child: DrawerHeader(
+              decoration: BoxDecoration(color: lightSkyBlue.withAlpha(200)),
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Image.asset("images/exam.png",height: 60,color: kWhite,),
+                  Image.asset("images/appicon.png",height: 60),
                   Text(
-                    "Pocket prep exam",
+                    "Professional",
                     style: context.textTheme.bodyLarge!.copyWith(
-                      fontSize: 22,
+                      fontSize: 16,
                       color: kWhite,
                       fontWeight: FontWeight.bold
                     )
+                  ),
+                  Text(
+                      "PocketPrep",
+                      style: context.textTheme.bodyLarge!.copyWith(
+                          fontSize: 26,
+                          color: kWhite,
+                          fontWeight: FontWeight.bold
+                      )
                   ),
                 ],
               ),
             ),
           ),
-           DrawerItemWidget(
-            item: SettingsItem(icon: Icons.settings_outlined, title: 'App Preferences',),
-             onTap: (){
-             },
+          DrawerItemWidget(
+            item: SettingsItem(
+              icon: Icons.star_outline,
+              title: 'Rate Us',
+            ),
+            onTap: () {
+            },
           ),
-          const DrawerItemWidget(
-            item: SettingsItem(icon: Icons.style_outlined, title: 'Study Reminders'),
+           Divider(height: 2.0,color: grey.withAlpha(60),),
+          DrawerItemWidget(
+            item: SettingsItem(
+              icon: Icons.apps_outlined,
+              title: 'More Apps',
+            ),
+            onTap: () {
+
+            },
           ),
-          const DrawerItemWidget(
-            item: SettingsItem(icon: Icons.front_hand_outlined, title: 'Help'),
+          AppDivider(height: 2.0,),
+          DrawerItemWidget(
+            item: SettingsItem(
+              icon: Icons.privacy_tip_outlined,
+              title: 'Privacy Policy',
+            ),
+            onTap: () {
+            },
           ),
-          const DrawerItemWidget(
-            item: SettingsItem(icon: Icons.email_outlined, title: 'Email Preferences'),
+          AppDivider(height: 2.0,),
+          DrawerItemWidget(
+            item: SettingsItem(
+              icon: Icons.bar_chart_outlined,
+              title: 'Reports',
+            ),
+            onTap: () {
+            },
           ),
-          const DrawerItemWidget(
-            item: SettingsItem(icon: Icons.favorite_border, title: 'Accessibility, Terms, Privacy'),
+          AppDivider(height: 2.0,),
+          DrawerItemWidget(
+            item: SettingsItem(
+              icon: Icons.workspace_premium_outlined,
+              title: 'Premium',
+            ),
+            onTap: () {
+              Get.to(()=> PremiumScreen());
+            },
           ),
-          const DrawerItemWidget(
-            item: SettingsItem(icon: Icons.share_outlined, title: 'Share App'),
-          ),
-          const DrawerItemWidget(
-            item: SettingsItem(icon: Icons.star_border, title: 'Rate & Review'),
-          ),
+
         ],
       ),
     );
   }
 }
+

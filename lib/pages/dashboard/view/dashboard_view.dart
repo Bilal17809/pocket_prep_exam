@@ -30,27 +30,28 @@ class DashboardView extends StatelessWidget {
       SettingView()
     ];
     return Obx(() {
-      return WillPopScope(
-        onWillPop: () async {
-          if (controller.setIndex.value != 0) {
-            controller.setInitialIndex(0);
-            return false;
-          }
-          CustomDialogForExitAndWarning.show(
-            title: "Exit App",
-            message: "Do you really want to exit the app?",
-            positiveButtonText: "Yes",
-            onPositiveTap: () {
-              SystemNavigator.pop();
-            },
-            negativeButtonText: "No",
-            onNegativeTap: () {
-              Get.back();
-            },
-            isWarning: true,
-          );
-          return false;
-        },
+      return PopScope(
+          canPop: false,
+          onPopInvokedWithResult: (didPop, result) async {
+            if (didPop) return;
+            if (controller.setIndex.value != 0) {
+              controller.setInitialIndex(0);
+              return;
+            }
+            CustomDialogForExitAndWarning.show(
+              title: "Exit App",
+              message: "Do you really want to exit the app?",
+              positiveButtonText: "Yes",
+              onPositiveTap: () {
+                SystemNavigator.pop();
+              },
+              negativeButtonText: "No",
+              onNegativeTap: () {
+                Get.back();
+              },
+              isWarning: true,
+            );
+          },
         child: Scaffold(
           backgroundColor: Colors.transparent,
           body: screens[controller.setIndex.value],

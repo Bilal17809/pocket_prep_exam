@@ -48,12 +48,13 @@ class QuizResultView extends StatelessWidget {
       fixedIncorrect,
       fixedCorrect,
     ];
-    return WillPopScope(
-      onWillPop: () async {
-        Get.find<QuestionController>().resetController();
-        Get.offAll(() =>  DashboardView());
-        return false;
-      },
+    return PopScope(
+    canPop: false,
+    onPopInvokedWithResult: (didPop, result) async {
+      if (didPop) return;
+      Get.offAll(() => DashboardView());
+      Get.find<QuestionController>().resetController();
+    },
       child: SafeArea(
         child: DefaultTabController(
           length: labels.length,

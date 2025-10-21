@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
-import 'package:pocket_prep_exam/pages/login/controller/login_controller.dart';
-import 'package:pocket_prep_exam/pages/premium/controller/premium_controller.dart';
+import '../../pages/login/controller/login_controller.dart';
+import '../../pages/premium/controller/premium_controller.dart';
 import '/core/local_storage/storage_helper.dart';
 import '/pages/Quiz_builder/controller/quiz_builder_controller.dart';
 import '/pages/dashboard/control/dashboard_controller.dart';

@@ -1,11 +1,9 @@
 import 'dart:async';
-import 'package:audioplayers/audioplayers.dart';
-import 'package:flutter_tts/flutter_tts.dart';
 import 'package:get/get.dart';
-import 'package:pocket_prep_exam/core/Utility/utils.dart';
-import 'package:pocket_prep_exam/data/models/models.dart';
-import 'package:pocket_prep_exam/pages/setting/control/setting_controller.dart';
+import '/core/Utility/utils.dart';
+import '/data/models/question_model.dart';
 import '../../quiz_setup/controller/quiz_setup_controller.dart';
+import '../../setting/control/setting_controller.dart';
 
 enum QuizState { loading, success, error }
 

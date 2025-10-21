@@ -24,10 +24,7 @@ class SettingView extends StatelessWidget {
           child: Column(
             children: [
               UnlockProCard(),
-
-              // ProFeaturesCard(),
               ProfileSection(),
-             // DividerWidget(),
               ShowDetail(),
               StudyPlane(),
              SizedBox(height: 24),
@@ -60,14 +57,10 @@ class SettingView extends StatelessWidget {
                   ),
                 )
               )),
-              // SizedBox(height: 10),
-              // CommonButton(title: "Logout",onTap: (){},),
               SizedBox(height: 24),
             ],
           ),
         )
-      // ),
-
     ));
   }
 }

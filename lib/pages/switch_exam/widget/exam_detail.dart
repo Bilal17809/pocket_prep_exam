@@ -14,37 +14,34 @@ class ExamDetail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = Get.find<SwitchExamController>();
-    return Padding(
-      padding:  EdgeInsets.symmetric(horizontal: bodyWH,vertical: bodySmallWH),
-      child: Obx((){
-        final isSelected = controller.selectExamIndex.value == index;
-        return Container(
-          width: double.infinity,
-          padding: EdgeInsets.all(15),
-          decoration: roundedDecoration.copyWith(
-            border: Border.all(color: isSelected ? lightSkyBlue.withAlpha(240) : greyColor.withAlpha(60),width:isSelected? 2:1),
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(data.examName, style: context.textTheme.bodySmall!.copyWith(
-                color: kBlack,
-                fontSize: 16,
-                fontWeight: FontWeight.bold,
-              ),),
-              SizedBox(height: 30),
-              Row(
-                children: [
-                  _QuesAndSubText(text: "${data.totalQuestions.toString()} Questions," ),
-                  SizedBox(width: 10),
-                  _QuesAndSubText(text: "${data.totalSubjects.toString()} Subjects"),
-                ],
-              )
-            ],
-          ) ,
-        );
-      }
-      )
+    return Obx((){
+      final isSelected = controller.selectExamIndex.value == index;
+      return Container(
+        width: double.infinity,
+        padding: EdgeInsets.all(15),
+        decoration: roundedDecoration.copyWith(
+          border: Border.all(color: isSelected ? lightSkyBlue.withAlpha(240) : greyColor.withAlpha(60),width:isSelected? 2:1),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(data.examName, style: context.textTheme.bodySmall!.copyWith(
+              color: kBlack,
+              fontSize: 16,
+              fontWeight: FontWeight.bold,
+            ),),
+            SizedBox(height: 30),
+            Row(
+              children: [
+                _QuesAndSubText(text: "${data.totalQuestions.toString()} Questions," ),
+                SizedBox(width: 10),
+                _QuesAndSubText(text: "${data.totalSubjects.toString()} Subjects"),
+              ],
+            )
+          ],
+        ) ,
+      );
+    }
     );
   }
 }

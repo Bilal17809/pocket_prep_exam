@@ -94,7 +94,7 @@ class ClickableDividerRow extends StatelessWidget {
         ),
         child: Column(
           children: [
-            AppDivider(height: 10.0, color: greyColor.withAlpha(40)),
+           _Divider(),
             ReusableRow(
               widget: ButtonText(
                 title: title,
@@ -103,6 +103,18 @@ class ClickableDividerRow extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+}
+
+class _Divider extends StatelessWidget {
+  const _Divider({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return  Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16),
+      child: AppDivider(height: 10.0),
     );
   }
 }
