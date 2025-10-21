@@ -92,8 +92,8 @@ class QuizzesView extends StatelessWidget {
               Get.offAll(() => DashboardView());
               controller.resetController();
             } else {
-              Get.back(); // close dialog
-              Get.back(); // exit quiz
+              Get.back();
+              Get.back();
             }
           },
         );
