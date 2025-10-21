@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pocket_prep_exam/core/common/app_divider.dart';
 import 'package:pocket_prep_exam/pages/premium/view/premium_screen.dart';
+import 'package:pocket_prep_exam/pages/reports/view/reports_view.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../theme/app_colors.dart';
 
 class SettingsItem {
@@ -19,6 +21,8 @@ class DrawerItemWidget extends StatelessWidget {
     required this.item,
     this.onTap,
   });
+ 
+
 
   @override
   Widget build(BuildContext context) {
@@ -35,6 +39,15 @@ class DrawerItemWidget extends StatelessWidget {
 class AppDrawer extends StatelessWidget {
   const AppDrawer({super.key});
 
+  Future<void> _launchURL(String url) async {
+    final Uri uri = Uri.parse(url);
+    if (await canLaunchUrl(uri)) {
+      await launchUrl(uri, mode: LaunchMode.externalApplication);
+    } else {
+      Get.snackbar("Error", "Could not open link",
+          snackPosition: SnackPosition.BOTTOM);
+    }
+  }
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -51,23 +64,47 @@ class AppDrawer extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Image.asset("images/appicon.png",height: 60),
-                  Text(
-                    "Professional",
-                    style: context.textTheme.bodyLarge!.copyWith(
-                      fontSize: 16,
-                      color: kWhite,
-                      fontWeight: FontWeight.bold
-                    )
-                  ),
-                  Text(
-                      "PocketPrep",
-                      style: context.textTheme.bodyLarge!.copyWith(
-                          fontSize: 26,
-                          color: kWhite,
-                          fontWeight: FontWeight.bold
-                      )
-                  ),
+                 Row(
+                   children: [
+                     Image.asset("images/appicon.png",height: 80),
+                     SizedBox(width: 10),
+                     Expanded(
+                       child: Column(
+                         mainAxisAlignment: MainAxisAlignment.start,
+                         crossAxisAlignment: CrossAxisAlignment.start,
+                         children: [
+                           Text(
+                               "Professional",
+                               style: context.textTheme.bodyLarge!.copyWith(
+                                   fontSize: 16,
+                                   color: kWhite.withAlpha(200),
+                                   fontWeight: FontWeight.bold
+                               ),
+
+
+                           ),
+                           Text(
+                               "PocketPrep",
+                               style: context.textTheme.bodyLarge!.copyWith(
+                                   fontSize: 24,
+                                   color: kWhite,
+                                   fontWeight: FontWeight.bold
+                               )
+
+                           ),
+                         ],
+                       ),
+                     ),
+                   ],
+                 )
+                  // Text(
+                  //     "PocketPrep",
+                  //     style: context.textTheme.bodyLarge!.copyWith(
+                  //         fontSize: 26,
+                  //         color: kWhite,
+                  //         fontWeight: FontWeight.bold
+                  //     )
+                  // ),
                 ],
               ),
             ),
@@ -87,7 +124,7 @@ class AppDrawer extends StatelessWidget {
               title: 'More Apps',
             ),
             onTap: () {
-
+              _launchURL("https://play.google.com/store/apps/developer?id=Modern+School");
             },
           ),
           AppDivider(height: 2.0,),
@@ -97,6 +134,7 @@ class AppDrawer extends StatelessWidget {
               title: 'Privacy Policy',
             ),
             onTap: () {
+               _launchURL("https://modernmobileschool.blogspot.com/2017/07/modern-school-privacy-policy.ht");
             },
           ),
           AppDivider(height: 2.0,),
@@ -106,6 +144,7 @@ class AppDrawer extends StatelessWidget {
               title: 'Reports',
             ),
             onTap: () {
+              Get.to(() => ReportScreen());
             },
           ),
           AppDivider(height: 2.0,),

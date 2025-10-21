@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:pocket_prep_exam/ad_manager/ad_manager.dart';
-import 'package:pocket_prep_exam/core/theme/app_colors.dart';
+import '/ad_manager/ad_manager.dart';
+import '/core/theme/app_colors.dart';
 import '../widgets/quizrate_card.dart';
 import '../widgets/sub_statistic_list.dart';
 

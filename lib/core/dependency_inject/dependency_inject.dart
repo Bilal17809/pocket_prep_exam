@@ -25,7 +25,7 @@ class DependencyInject{
     Get.lazyPut<QuestionService>(() => QuestionService(),fenix: true );
     Get.lazyPut<StorageService>(() => StorageService(),fenix: true);
     Get.lazyPut<PremiumPlansController>(()=>PremiumPlansController(),fenix: true);
-    Get.lazyPut<RemoveAds>(() => RemoveAds());
+    Get.lazyPut<RemoveAds>(() => RemoveAds(),fenix: true);
     Get.lazyPut<AppOpenAdManager>(() => AppOpenAdManager(),fenix: true);
     Get.lazyPut<LoginController>(()=>LoginController(storageServices: Get.find()),fenix: true);
     Get.lazyPut<SwitchExamController>(() => SwitchExamController(examService: Get.find(), storageService:Get.find() ),fenix: true);

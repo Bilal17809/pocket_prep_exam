@@ -23,11 +23,13 @@ class CustomTextFormField extends StatelessWidget {
   final Function(String)? onChanged;
   final Function(String?)? onSaved;
   final String? Function(String?)? validator;
+  final int? MaxLine;
   final EdgeInsetsGeometry? contentPadding;
 
   const CustomTextFormField({
     super.key,
     required this.hintText,
+    this.MaxLine = 1,
     this.textAlignVertical,
     this.hintStyle,
     this.textDirection,
@@ -69,7 +71,7 @@ class CustomTextFormField extends StatelessWidget {
       // textAlignVertical: textAlignVertical ?? TextAlignVertical.center,
 
       // 👇 important changes
-      maxLines: 1,
+      maxLines: MaxLine,
       scrollPhysics: const BouncingScrollPhysics(),
       textInputAction: TextInputAction.done,
 

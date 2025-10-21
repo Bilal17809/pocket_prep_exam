@@ -63,7 +63,7 @@ class LoginView extends StatelessWidget {
                           textAlign: TextAlign.center,
                         ),
                         const SizedBox(height: 28),
-                        _ValidatedField(
+                        ValidatedField(
                           hintText: "First Name",
                           label: "First Name",
                           controller: firstNameController,
@@ -71,7 +71,7 @@ class LoginView extends StatelessWidget {
                           icon: Icons.person_outline,
                         ),
                         const SizedBox(height: 16),
-                        _ValidatedField(
+                        ValidatedField(
                           hintText: "Last Name",
                           label: "Last Name",
                           controller: lastNameController,
@@ -104,15 +104,17 @@ class LoginView extends StatelessWidget {
 }
 
 
-class _ValidatedField extends StatelessWidget {
+class ValidatedField extends StatelessWidget {
   final String hintText;
+  final int MaxLine;
   final TextEditingController controller;
   final String? Function(String?) validator;
-  final IconData icon;
+  final IconData? icon;
   final String label;
-  const _ValidatedField({
+  const ValidatedField({
     required this.hintText,
     required this.controller,
+    this.MaxLine = 1,
     required this.validator,
     required this.icon,
     required this.label
@@ -140,9 +142,10 @@ class _ValidatedField extends StatelessWidget {
                     : Border.all(color: Colors.transparent, width: 0),
               ),
               child: CustomTextFormField(
+                MaxLine: MaxLine,
                   controller: controller,
                   onChanged: (val) => field.didChange(val),
-                    prefixIcon: Icon(icon, color: Colors.grey),
+                   prefixIcon: icon != null ? Icon(icon) : null,
                     border: InputBorder.none,
                     hintText: hintText,
                     hintStyle:
