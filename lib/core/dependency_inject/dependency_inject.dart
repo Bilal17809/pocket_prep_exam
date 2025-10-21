@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:pocket_prep_exam/ad_manager/ad_manager.dart';
 import '../../pages/login/controller/login_controller.dart';
 import '../../pages/premium/controller/premium_controller.dart';
 import '/core/local_storage/storage_helper.dart';
@@ -24,6 +25,8 @@ class DependencyInject{
     Get.lazyPut<QuestionService>(() => QuestionService(),fenix: true );
     Get.lazyPut<StorageService>(() => StorageService(),fenix: true);
     Get.lazyPut<PremiumPlansController>(()=>PremiumPlansController(),fenix: true);
+    Get.lazyPut<RemoveAds>(() => RemoveAds());
+    Get.lazyPut<AppOpenAdManager>(() => AppOpenAdManager(),fenix: true);
     Get.lazyPut<LoginController>(()=>LoginController(storageServices: Get.find()),fenix: true);
     Get.lazyPut<SwitchExamController>(() => SwitchExamController(examService: Get.find(), storageService:Get.find() ),fenix: true);
     Get.lazyPut<StatsController>(() => StatsController(questionService: Get.find(),storageServices: StorageService()),fenix: true);

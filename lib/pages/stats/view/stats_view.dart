@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:pocket_prep_exam/ad_manager/ad_manager.dart';
 import 'package:pocket_prep_exam/core/theme/app_colors.dart';
-import 'package:pocket_prep_exam/pages/stats/controller/stats_controller.dart';
 import '../widgets/quizrate_card.dart';
 import '../widgets/sub_statistic_list.dart';
 
@@ -10,8 +10,6 @@ class StatsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final statsController = Get.find<StatsController>();
-
     return Scaffold(
       appBar: AppBar(
         backgroundColor: kWhiteF7,
@@ -37,15 +35,19 @@ class StatsView extends StatelessWidget {
               const SizedBox(height: 20),
               Text(
                 "Subject Statistics",
-                style: context.textTheme.titleLarge!
-                    .copyWith(fontWeight: FontWeight.bold,fontSize: 16),
+                style: context.textTheme.titleLarge!.copyWith(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 16,
+                ),
               ),
               const SizedBox(height: 20),
               SubStatisticList(),
+              // const SizedBox(height: 80),
             ],
           ),
         ),
       ),
+      bottomNavigationBar: BannerAdWidget(),
     );
   }
 }

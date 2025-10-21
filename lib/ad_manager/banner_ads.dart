@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:pocket_prep_exam/ad_manager/remove_ads.dart';
 import 'package:shimmer/shimmer.dart';
+import '../core/constant/constant.dart';
 import '../services/remote_config_service.dart';
 import 'app_open_ads.dart';
 
@@ -48,8 +49,8 @@ class _BannerAdWidgetState extends State<BannerAdWidget> {
     );
     _bannerAd = BannerAd(
       adUnitId: Platform.isAndroid
-          ? 'ca-app-pub-8331781061822056/3644450392'
-          :'ca-app-pub-5405847310750111/8147189222',
+          ? androidBannerId
+          :'',
       size:adSize!,
       request: const AdRequest(extras: {'collapsible': 'bottom'}),
       listener: BannerAdListener(
