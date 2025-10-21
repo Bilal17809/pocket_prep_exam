@@ -22,10 +22,18 @@ class StorageService {
   static const String _ttsEnabled = "tts_Enabled";
   static const String _darkModeKey = "dark_mode_enabled";
   static const String _userDataKey = "user_data";
+  static const String _subscribePocketPrepKey = "SubscribePocketPrep";
+
+  static Future<void> saveSubscriptionStatus(bool value) async {
+    await _preferences.setBool(_subscribePocketPrepKey, value);
+  }
+
+  static Future<bool> getSubscriptionStatus() async {
+    return _preferences.getBool(_subscribePocketPrepKey) ?? false;
+  }
 
 
-
- static Future<void> saveTTsToggle(bool isEnabled) async {
+  static Future<void> saveTTsToggle(bool isEnabled) async {
     await _preferences.setBool(_ttsEnabled, isEnabled);
   }
   bool loadTTsToggle() {
