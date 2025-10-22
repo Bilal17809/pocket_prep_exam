@@ -80,8 +80,6 @@ class AppDrawer extends StatelessWidget {
                                    color: kWhite.withAlpha(200),
                                    fontWeight: FontWeight.bold
                                ),
-
-
                            ),
                            Text(
                                "PocketPrep",

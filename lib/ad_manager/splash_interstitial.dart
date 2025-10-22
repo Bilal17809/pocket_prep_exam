@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:pocket_prep_exam/ad_manager/remove_ads.dart';
+import 'package:pocket_prep_exam/core/constant/constant.dart';
 import 'app_open_ads.dart';
 
 class SplashInterstitialManager extends GetxController {
@@ -55,8 +56,8 @@ class SplashInterstitialManager extends GetxController {
 
   void loadAd() {
     InterstitialAd.load(
-      adUnitId:Platform.isAndroid?'ca-app-pub-8331781061822056/3494893690'
-      :'ca-app-pub-5405847310750111/2747522883',
+      adUnitId:Platform.isAndroid? androidSplashInterstitialId
+      : '',
       request: const AdRequest(),
       adLoadCallback: InterstitialAdLoadCallback(
         onAdLoaded: (ad) {

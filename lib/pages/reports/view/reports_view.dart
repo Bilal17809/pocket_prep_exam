@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:pocket_prep_exam/core/common/common_button.dart';
+import '/core/common/common_button.dart';
 import '../../login/view/login_view.dart';
 import '../controller/reports_controller.dart';
 import '/core/theme/app_colors.dart';
@@ -14,19 +14,18 @@ class ReportScreen extends StatelessWidget {
     final formKey = GlobalKey<FormState>();
     final nameController = TextEditingController();
     final detailController = TextEditingController();
-
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: lightSkyBlue,
         elevation: 0,
         title: const Text(
           "Report an Issue",
-          style: TextStyle(color: Colors.black, fontWeight: FontWeight.w600),
+          style: TextStyle(color: kWhite, fontWeight: FontWeight.w600),
         ),
         centerTitle: true,
         leading: IconButton(
-          icon: const Icon(Icons.close, color: Colors.black),
+          icon: const Icon(Icons.close, color: kWhite),
           onPressed: () => Get.back(),
         ),
       ),

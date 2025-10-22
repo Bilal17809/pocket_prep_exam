@@ -36,7 +36,7 @@ class ReportController extends GetxController {
       'User Report - ${selectedIssues.isEmpty ? "Unknown" : selectedIssues.join(", ")}',
     );
     final body = Uri.encodeComponent('''
-Item Name: $itemName
+ Name: $itemName
 
 Issue(s): ${selectedIssues.join(", ")}
 
@@ -46,7 +46,6 @@ Details: $details
     final uri = Uri.parse(
       'mailto:unisoftaps@gmail.com?subject=$subject&body=$body',
     );
-
     if (await canLaunchUrl(uri)) {
       await launchUrl(uri);
       ScaffoldMessenger.of(context).showSnackBar(

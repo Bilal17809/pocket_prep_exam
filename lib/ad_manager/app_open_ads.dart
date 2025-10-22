@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:pocket_prep_exam/ad_manager/remove_ads.dart' show RemoveAds;
+import 'package:pocket_prep_exam/core/constant/constant.dart';
 import '../services/remote_config_service.dart';
 
 class AppOpenAdManager extends GetxController with WidgetsBindingObserver {
@@ -97,8 +98,8 @@ class AppOpenAdManager extends GetxController with WidgetsBindingObserver {
     }
     if (!shouldShowAppOpenAd) return;
     AppOpenAd.load(
-      adUnitId:Platform.isAndroid? "ca-app-pub-8331781061822056/2970674737"
-          :"ca-app-pub-5405847310750111/8961577440",
+      adUnitId:Platform.isAndroid? androidAppOpenId
+          :"",
       request: const AdRequest(),
       adLoadCallback: AppOpenAdLoadCallback(
         onAdLoaded: (ad) {
