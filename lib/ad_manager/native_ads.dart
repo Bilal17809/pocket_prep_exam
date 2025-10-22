@@ -4,9 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:pocket_prep_exam/ad_manager/remove_ads.dart';
-import 'package:pocket_prep_exam/core/constant/constant.dart';
 import 'package:shimmer/shimmer.dart';
 
+import '../core/common/ads_shimmer.dart';
+import '../core/constant/constant.dart';
+import '../core/global_keys/global_keys.dart';
 import 'app_open_ads.dart';
 
 class NativeAdController extends GetxController {
@@ -35,7 +37,7 @@ class NativeAdController extends GetxController {
         ),
       );
       await remoteConfig.fetchAndActivate();
-      final key = Platform.isAndroid ? 'NativeAdvAd' : 'NativeAdvAd';
+      final key = Platform.isAndroid ? androidNativeVal : '';
       showAd = remoteConfig.getBool(key);
 
       if (showAd) {
@@ -50,13 +52,8 @@ class NativeAdController extends GetxController {
 
   void loadNativeAd() {
     isAdReady.value = false;
-
-    final adUnitId = Platform.isAndroid
-        ? androidNativeAdvId
-        : '';
-
     _nativeAd = NativeAd(
-      adUnitId: adUnitId,
+      adUnitId:Platform.isAndroid?androidNativeAdvId:'',
       request: const AdRequest(),
       listener: NativeAdListener(
         onAdLoaded: (ad) {
@@ -118,51 +115,6 @@ class _NativeAdWidgetState extends State<NativeAdWidget> {
     super.dispose();
   }
 
-  Widget shimmerWidget(double width) {
-    return Shimmer.fromColors(
-      baseColor: Theme.of(context).scaffoldBackgroundColor,
-      highlightColor:Colors.white38,
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            // Shimmer Image
-            AspectRatio(
-              aspectRatio: 55 / 15,
-              child: Container(
-                width: width,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(8),
-                ),
-              ),
-            ),
-            const SizedBox(height: 10),
-            // First Text Line
-            Container(
-              width: double.infinity,
-              height: 12,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(8),
-              ),
-            ),
-            const SizedBox(height: 10),
-            Container(
-              width: width * 0.7,
-              height: 12,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(8),
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     final appOpenAdController = Get.find<AppOpenAdManager>();
@@ -190,7 +142,7 @@ class _NativeAdWidgetState extends State<NativeAdWidget> {
         ),
         child: AdWidget(ad: _adController._nativeAd!),
       )
-          :shimmerWidget(adHeight);
+          :NativeAdsShimmer();
     });
   }
 }

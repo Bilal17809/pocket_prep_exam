@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:pocket_prep_exam/pages/edite_subjects/controller/edite_subject_controller.dart';
+import '../../../ad_manager/interstitial_ads.dart';
 import '/core/local_storage/storage_helper.dart';
 import '/data/models/exams_and_subject.dart';
 import '/services/exam_and_subjects_services.dart';
@@ -35,6 +36,7 @@ class StudyController extends GetxController {
   @override
   void onInit() {
     super.onInit();
+    Get.find<InterstitialAdManager>().checkAndDisplayAd();
     loadExamFromStorage();
     generateCalendarDates();
     checkQuestionOfDayStatus();

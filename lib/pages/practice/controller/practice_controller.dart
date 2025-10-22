@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import '../../../ad_manager/interstitial_ads.dart';
 import '/core/local_storage/storage_helper.dart';
 import '/data/models/models.dart';
 import '/pages/edite_subjects/controller/edite_subject_controller.dart';
@@ -23,6 +24,7 @@ class PracticeController extends GetxController {
 
   @override
   void onInit() {
+    Get.find<InterstitialAdManager>().checkAndDisplayAd();
     super.onInit();
     loadExam();
   }

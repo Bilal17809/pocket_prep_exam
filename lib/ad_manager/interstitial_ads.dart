@@ -5,6 +5,7 @@ import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:pocket_prep_exam/ad_manager/remove_ads.dart';
 import 'package:pocket_prep_exam/core/constant/constant.dart';
 
+import '../core/global_keys/global_keys.dart';
 import '../services/remote_config_service.dart';
 import 'app_open_ads.dart';
 
@@ -38,8 +39,8 @@ class InterstitialAdManager extends GetxController {
         minimumFetchInterval: const Duration(seconds: 1),
       );
       final newThreshold = RemoteConfigService().getInt(
-        'InterstitialAd',
-        'InterstitialAd',
+        androidIntersVal,
+        '',
       );
       if (newThreshold > 0) {
         displayThreshold = newThreshold;
@@ -98,7 +99,6 @@ class InterstitialAdManager extends GetxController {
   void checkAndDisplayAd() {
     visitCounter++;
     debugPrint("Visit count: $visitCounter");
-
     if (visitCounter >= displayThreshold) {
       if (_isAdReady) {
         _showAd();

@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import '../../../ad_manager/interstitial_ads.dart';
 import '/core/Utility/utils.dart';
 import '/services/questions_services.dart';
 import '/core/local_storage/storage_helper.dart';
@@ -34,6 +35,7 @@ class EditeSubjectController extends GetxController {
   @override
   void onInit() {
     super.onInit();
+    Get.find<InterstitialAdManager>().checkAndDisplayAd();
     loadExamFromStorage();
     startQuizForTime();
     startQuiz();

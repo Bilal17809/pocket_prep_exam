@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:pocket_prep_exam/ad_manager/remove_ads.dart';
 import 'package:pocket_prep_exam/core/constant/constant.dart';
+import '../core/global_keys/global_keys.dart';
 import 'app_open_ads.dart';
 
 class SplashInterstitialManager extends GetxController {
@@ -37,9 +38,9 @@ class SplashInterstitialManager extends GetxController {
       );
       String interstitialKey;
       if (Platform.isAndroid) {
-        interstitialKey = 'SplashInterstitialAd';
+        interstitialKey = androidSplashVal;
       } else if (Platform.isIOS) {
-        interstitialKey = 'SplashInterstitialAd';
+        interstitialKey = '';
       } else {
         throw UnsupportedError('Unsupported platform');
       }

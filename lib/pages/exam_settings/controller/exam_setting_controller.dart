@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:pocket_prep_exam/core/local_storage/storage_helper.dart';
 import 'package:pocket_prep_exam/services/exam_and_subjects_services.dart';
 
+import '../../../ad_manager/interstitial_ads.dart';
 import '/data/models/exams_and_subject.dart';
 
 class ExamSettingController extends GetxController{
@@ -20,6 +21,7 @@ class ExamSettingController extends GetxController{
   @override
   void onInit() {
     super.onInit();
+    Get.find<InterstitialAdManager>().checkAndDisplayAd();
     loadExamFromStorage();
   }
 

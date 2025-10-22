@@ -12,7 +12,7 @@ class PremiumPlansCarousel extends StatelessWidget {
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
     return SizedBox(
-      height: height * 0.19,
+      height: height * 0.15,
       width: width * 0.74,
       child: PageView.builder(
         controller: controller.pageController,

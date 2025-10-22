@@ -21,6 +21,13 @@ import '/pages/splash/control/splash_controller.dart';
 
 class DependencyInject{
   static void init(){
+    // ads injections
+    Get.lazyPut<InterstitialAdManager>(() => InterstitialAdManager(), fenix: true);
+    Get.lazyPut<NativeAdController>(() => NativeAdController(), fenix: true);
+    Get.lazyPut<SplashInterstitialManager>(() => SplashInterstitialManager(), fenix: true);
+    Get.lazyPut<RemoveAds>(() => RemoveAds(), fenix: true);
+
+
     Get.lazyPut<ExamService>(() => ExamService(), fenix: true);
     Get.lazyPut<QuestionService>(() => QuestionService(),fenix: true );
     Get.lazyPut<StorageService>(() => StorageService(),fenix: true);
@@ -42,5 +49,6 @@ class DependencyInject{
     Get.lazyPut<QuizSetupController>(() => QuizSetupController(questionService: Get.find()), fenix: true);
     Get.lazyPut<QuizController>(() =>QuizController(), fenix: true);
     Get.lazyPut<QuizBuilderController>(() => QuizBuilderController(examService: Get.find(), questionService: Get.find()), fenix: true);
+
   }
 }

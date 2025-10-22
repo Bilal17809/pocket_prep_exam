@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../../../ad_manager/banner_ads.dart';
 import '/core/theme/app_styles.dart';
 import '/core/common/app_drawer.dart';
 import '/core/theme/app_colors.dart';
@@ -37,9 +38,10 @@ class StudyView extends StatelessWidget {
               padding: EdgeInsets.symmetric(horizontal: 20, vertical: 6),
               child: Text("Quiz Modes", style: context.textTheme.titleMedium),
             ),
-            QuizModeList(controller: controller),
+            QuickQuiz(controller: controller),
           ],
         ),
+        bottomNavigationBar: BannerAdWidget(),
       ),
     );
   }

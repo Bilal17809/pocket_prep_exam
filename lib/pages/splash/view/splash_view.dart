@@ -1,11 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:pocket_prep_exam/ad_manager/ad_manager.dart';
 import '/core/routes/routes_name.dart';
 import '/core/theme/app_colors.dart';
 import '../control/splash_controller.dart';
 
-class SplashView extends StatelessWidget {
+class SplashView extends StatefulWidget {
   const SplashView({super.key});
+
+  @override
+  State<SplashView> createState() => _SplashViewState();
+}
+
+class _SplashViewState extends State<SplashView> {
+  final splashAds=Get.find<SplashInterstitialManager>();
+
+  @override
+  void initState() {
+    splashAds.loadAd();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -72,6 +86,9 @@ class SplashView extends StatelessWidget {
               ),
               onPressed: () {
                 if (controller.isExam.value == true) {
+                  if(splashAds.isAdReady){
+                    splashAds.showSplashAd((){});
+                  }
                   Get.offNamed(RoutesName.dashBoard);
                 } else {
                   Get.offNamed(RoutesName.login);

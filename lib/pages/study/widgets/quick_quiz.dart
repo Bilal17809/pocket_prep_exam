@@ -12,9 +12,9 @@ import '/pages/questions/control/questions_controller.dart';
 import '/pages/Quiz_builder/view/quiz_builder_screen.dart';
 
 
-class QuizModeList extends StatelessWidget {
+class QuickQuiz extends StatelessWidget {
   final StudyController controller;
-  const QuizModeList({super.key, required this.controller});
+  const QuickQuiz({super.key, required this.controller});
 
   @override
   Widget build(BuildContext context) {

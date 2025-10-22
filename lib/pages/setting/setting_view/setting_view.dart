@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:pocket_prep_exam/pages/setting/widgets/unlock_card.dart';
+import '/pages/setting/widgets/unlock_card.dart';
+import '/ad_manager/banner_ads.dart';
 import '/core/local_storage/storage_helper.dart';
 import '../control/setting_controller.dart';
 import '/core/theme/theme.dart';
@@ -61,7 +62,9 @@ class SettingView extends StatelessWidget {
             ],
           ),
         )
-    ));
+    ),
+      bottomNavigationBar: BannerAdWidget(),
+    );
   }
 }
 

@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:pocket_prep_exam/ad_manager/remove_ads.dart';
-import 'package:shimmer/shimmer.dart';
+import '../core/common/ads_shimmer.dart';
 import '../core/constant/constant.dart';
+import '../core/global_keys/global_keys.dart';
 import '../services/remote_config_service.dart';
 import 'app_open_ads.dart';
 
@@ -31,7 +32,7 @@ class _BannerAdWidgetState extends State<BannerAdWidget> {
   Future<void> _fetchRemoteConfigAndLoadAd() async {
     try {
       await RemoteConfigService().init();
-      final showBanner = RemoteConfigService().getBool('BannerAd','BannerAd');
+      final showBanner = RemoteConfigService().getBool(androidBannerVal,'');
       if (!mounted) return;
       setState(() => _isAdEnabled = showBanner);
       if (showBanner) {
@@ -52,7 +53,7 @@ class _BannerAdWidgetState extends State<BannerAdWidget> {
           ? androidBannerId
           :'',
       size:adSize!,
-      request: const AdRequest(extras: {'collapsible': 'bottom'}),
+      request: const AdRequest(),
       listener: BannerAdListener(
         onAdLoaded: (ad) {
           setState(() => _isAdLoaded = true);
@@ -94,28 +95,7 @@ class _BannerAdWidgetState extends State<BannerAdWidget> {
           child: AdWidget(ad: _bannerAd!),
         ),
       )
-          :  SafeArea(
-        top: false,
-        bottom: true,
-        left: false,
-        right: false,
-        child: Shimmer.fromColors(
-          baseColor:Theme
-              .of(context).secondaryHeaderColor,
-          highlightColor: Colors.grey.shade200,
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Container(
-              height: 50,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(5.0),
-              ),
-            ),
-          ),
-        ),
-      );
+          :  AdsShimmer();
     });
   }
 }

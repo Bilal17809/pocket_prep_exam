@@ -2,6 +2,8 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'package:pocket_prep_exam/services/onesignal_services.dart';
+import 'package:pocket_prep_exam/services/subscription_services.dart';
 import '/core/local_storage/storage_helper.dart';
 import '/core/routes/routes.dart';
 import '/core/routes/routes_name.dart';
@@ -14,6 +16,9 @@ void main() async{
   MobileAds.instance.initialize();
   DependencyInject.init();
   await StorageService.init();
+  OnesignalService.init();
+  final purchaseService = PurchaseService();
+  Get.put(purchaseService, permanent: true);
   Get.put<EditeSubjectController>(EditeSubjectController(questionService: Get.find(),
     storageServices: Get.find(),
       examService: Get.find(),

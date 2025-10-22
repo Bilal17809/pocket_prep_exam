@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../../../ad_manager/native_ads.dart';
 import '/core/constant/constant.dart';
 import '/core/theme/app_colors.dart';
 import '/pages/main_appbar/main_appbar.dart';
@@ -36,8 +37,8 @@ class PracticeView extends StatelessWidget {
                 return _buildQuestionProgress(quizResult);
               }),
               const SizedBox(height: 10),
-              GameButton(),
-              // const StatsCard(text: "Return to last test"),
+              NativeAdWidget(),
+              // GameButton(),
               const SizedBox(height: 10),
               Text(
                 "Practice By Subject",

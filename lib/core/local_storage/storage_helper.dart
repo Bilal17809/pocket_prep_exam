@@ -22,7 +22,44 @@ class StorageService {
   static const String _ttsEnabled = "tts_Enabled";
   static const String _darkModeKey = "dark_mode_enabled";
   static const String _userDataKey = "user_data";
+
   static const String _subscribePocketPrepKey = "SubscribePocketPrep";
+  static const String _subscribeStatusKey = 'Subscribe';
+  static const String _subscriptionProductIdKey = 'subscriptionAiId';
+
+
+  // =========================================================================
+  // --- NEW / MODIFIED SUBSCRIPTION METHODS ---
+  // =========================================================================
+
+  /// Saves the general subscription status ('SubscribeMalta' = true/false).
+  static Future<void> saveGeneralSubscriptionStatus(bool value) async {
+    await _preferences.setBool(_subscribeStatusKey, value);
+  }
+
+  /// Gets the general subscription status.
+  static bool getGeneralSubscriptionStatus() {
+    return _preferences.getBool(_subscribeStatusKey) ?? false;
+  }
+
+  /// Saves the ID of the active subscription product.
+  static Future<void> saveSubscriptionProductId(String productId) async {
+    await _preferences.setString(_subscriptionProductIdKey, productId);
+  }
+
+  /// Gets the ID of the active subscription product.
+  static String? getSubscriptionProductId() {
+    return _preferences.getString(_subscriptionProductIdKey);
+  }
+
+  /// Clears both subscription status and product ID when a subscription expires.
+  static Future<void> clearSubscriptionState() async {
+    await _preferences.remove(_subscribeStatusKey);
+    await _preferences.remove(_subscriptionProductIdKey);
+  }
+
+
+  // --- Original methods related to subscription (Retained for existing usage) ---
 
   static Future<void> saveSubscriptionStatus(bool value) async {
     await _preferences.setBool(_subscribePocketPrepKey, value);
@@ -31,6 +68,7 @@ class StorageService {
   static Future<bool> getSubscriptionStatus() async {
     return _preferences.getBool(_subscribePocketPrepKey) ?? false;
   }
+
 
 
   static Future<void> saveTTsToggle(bool isEnabled) async {

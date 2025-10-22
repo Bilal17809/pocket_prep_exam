@@ -51,16 +51,16 @@ class PlanCard extends StatelessWidget {
               children: [
                 Image.asset(
                   plan.type,
-                  height: 60,
+                  height:45,
                   fit: BoxFit.contain,
                 ),
-                const SizedBox(height: 06),
+                const SizedBox(height:02),
                 Text(
                   plan.price,
                   style: theme.textTheme.titleMedium!.copyWith(
                     color: kBlack,
                     fontWeight: FontWeight.bold,
-                    fontSize: 17,
+                    fontSize: 12,
                   ),
                   textAlign: TextAlign.center,
                 ),

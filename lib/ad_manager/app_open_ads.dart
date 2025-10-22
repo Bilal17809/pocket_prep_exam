@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:pocket_prep_exam/ad_manager/remove_ads.dart' show RemoveAds;
 import 'package:pocket_prep_exam/core/constant/constant.dart';
+import '../core/global_keys/global_keys.dart';
 import '../services/remote_config_service.dart';
 
 class AppOpenAdManager extends GetxController with WidgetsBindingObserver {
@@ -45,7 +46,7 @@ class AppOpenAdManager extends GetxController with WidgetsBindingObserver {
   Future<void> initializeRemoteConfig() async {
     try {
       await RemoteConfigService().init();
-      final showAd = RemoteConfigService().getBool('AppOpenAd','AppOpenAd');
+      final showAd = RemoteConfigService().getBool(androidOpenAppVal,'');
       if (showAd) {
         loadAd();
       }
@@ -93,7 +94,7 @@ class AppOpenAdManager extends GetxController with WidgetsBindingObserver {
   }
 
   void loadAd() {
-    if (Platform.isIOS && removeAdsController.isSubscribedGet.value) {
+    if (removeAdsController.isSubscribedGet.value) {
       return;
     }
     if (!shouldShowAppOpenAd) return;

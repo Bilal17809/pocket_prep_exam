@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:pocket_prep_exam/ad_manager/interstitial_ads.dart';
 import 'package:pocket_prep_exam/core/local_storage/storage_helper.dart';
 import 'package:pocket_prep_exam/pages/edite_subjects/controller/edite_subject_controller.dart';
 import 'package:pocket_prep_exam/services/questions_services.dart';
@@ -20,6 +21,7 @@ class StatsController extends GetxController {
 
   @override
   void onInit() {
+    Get.find<InterstitialAdManager>().checkAndDisplayAd();
     super.onInit();
     loadExam();
   }

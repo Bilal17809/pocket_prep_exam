@@ -19,7 +19,7 @@ class PremiumScreen extends StatelessWidget {
       body: Column(
         children: [
           const PremiumTopBanner(),
-          SizedBox(height: 20),
+          SizedBox(height:16),
           const PremiumPlansCarousel(),
           Expanded(
             child: Padding(
@@ -36,7 +36,13 @@ class PremiumScreen extends StatelessWidget {
                       return PlanTile(
                         plan: plan,
                         isSelected: isSelected,
-                        onTap: () => controller.selectPlan(index),
+                        onTap: () async {
+                          final selected = controller.selectedPlan;
+                          final product = controller.purchaseService.products.firstWhere(
+                                (p) => p.id == selected.productId,
+                          );
+                          await controller.purchaseService.buyProduct(product, null, context);
+                        },
                       );
                     },
                   );
@@ -44,20 +50,20 @@ class PremiumScreen extends StatelessWidget {
               ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16),
-            child: CommonButton(
-              title: "Upgrade to premium",
-              onTap: () {
-                final selected = controller.selectedPlan;
-                Get.snackbar(
-                  "Selected Plan",
-                  selected.title,
-                  snackPosition: SnackPosition.BOTTOM,
-                );
-              },
-            ),
-          ),
+          // Padding(
+          //   padding: const EdgeInsets.symmetric(horizontal: 16),
+          //   child: CommonButton(
+          //     title: "Upgrade to premium",
+          //     onTap: () {
+          //       final selected = controller.selectedPlan;
+          //       Get.snackbar(
+          //         "Selected Plan",
+          //         selected.title,
+          //         snackPosition: SnackPosition.BOTTOM,
+          //       );
+          //     },
+          //   ),
+          // ),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 8,horizontal: 16),
             child: Row(

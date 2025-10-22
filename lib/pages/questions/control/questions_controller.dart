@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:get/get.dart';
 import 'package:pocket_prep_exam/core/Utility/utils.dart';
+import '../../../ad_manager/interstitial_ads.dart';
 import '/pages/edite_subjects/controller/edite_subject_controller.dart';
 import '/data/models/question_model.dart';
 import '/services/questions_services.dart';
@@ -43,6 +44,7 @@ class QuestionController extends GetxController {
   @override
   void onInit() {
     super.onInit();
+    Get.find<InterstitialAdManager>().checkAndDisplayAd();
     fetchQuestions();
     // Get.find<EditeSubjectController>();
   }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../../../ad_manager/banner_ads.dart';
 import '/core/common/common_button.dart';
 import '/core/theme/app_colors.dart';
 import '/pages/edite_subjects/controller/edite_subject_controller.dart';
@@ -56,6 +57,7 @@ class SubjectsEditeView extends StatelessWidget {
           ],
         );
       }),
+      bottomNavigationBar: BannerAdWidget(),
     );
   }
 }
