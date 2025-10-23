@@ -95,7 +95,7 @@ class ReportScreen extends StatelessWidget {
                   if (formKey.currentState!.validate()) {
                     controller.sendReport(
                       context: context,
-                      itemName: nameController.text,
+                      Name: nameController.text,
                       details: detailController.text,
                     );
                     nameController.clear();

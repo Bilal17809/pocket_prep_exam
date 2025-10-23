@@ -57,7 +57,7 @@ class ShowDetail extends StatelessWidget {
                 ClickableDividerRow(
                   title: "Switch Exam",
                   onTap: () {
-                    Get.off(() => ExamSwitchView());
+                    Get.to(() => ExamSwitchView());
                   },
                 ),
                 const SizedBox(height: 08),

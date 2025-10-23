@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:pocket_prep_exam/core/common/back_button.dart';
 import '../../../ad_manager/banner_ads.dart';
 import '/core/common/common_button.dart';
 import '/core/theme/app_colors.dart';
@@ -14,6 +15,10 @@ class SubjectsEditeView extends StatelessWidget {
     final controller = Get.find<EditeSubjectController>();
     return Scaffold(
       appBar: AppBar(
+        leading: CommonBackButton(
+          size: 36,
+          iconSize: 22,
+        ),
         centerTitle: true,
         backgroundColor: kWhiteF7,
         title: Column(
@@ -41,7 +46,10 @@ class SubjectsEditeView extends StatelessWidget {
               ),
             ),
             !controller.hasSelectionChanged.value
-                ? HideCommonButton(title: "Save Subject")
+                ? Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  child: HideCommonButton(title: "Save Subject"),
+                )
                 : Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 16),
                   child: CommonButton(

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:pocket_prep_exam/core/common/back_button.dart';
+import 'package:pocket_prep_exam/core/theme/app_colors.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
@@ -19,6 +21,13 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         title,
         style: const TextStyle(fontSize: 16),
       ),
+      leading: CommonBackButton(
+        size: 26, // button ka actual circle size
+        iconSize: 20,
+        backgroundColor: lightSkyBlue,
+      ),
+
+
       elevation: 0,
       bottom: PreferredSize(
         preferredSize: const Size.fromHeight(2.0),

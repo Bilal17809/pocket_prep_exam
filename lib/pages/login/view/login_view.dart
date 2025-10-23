@@ -86,7 +86,7 @@ class LoginView extends StatelessWidget {
                               controller.firstName.value = firstNameController.text.trim();
                               controller.lastName.value = lastNameController.text.trim();
                               await controller.saveUser();
-                              Get.off(() => ExamSwitchView());
+                              Get.offAll(() => ExamSwitchView());
                             }
                           },
                         ),

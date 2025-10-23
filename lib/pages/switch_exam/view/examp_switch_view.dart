@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:pocket_prep_exam/core/common/back_button.dart';
 import '/core/common/common.dart';
 import '/core/common/common_button.dart';
 import '/core/theme/app_colors.dart';
@@ -15,16 +16,8 @@ class ExamSwitchView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = Get.find<SwitchExamController>();
-
     return SafeArea(
-      child: PopScope(
-        canPop: false,
-        onPopInvokedWithResult: (didPop, result) {
-          if (!didPop) {
-            Get.offAll(() => DashboardView(initialIndex: 3));
-          }
-        },
-        child: Scaffold(
+      child: Scaffold(
           backgroundColor: kWhiteF7,
           body: Obx(() {
             if (controller.isLoading.value) {
@@ -33,32 +26,50 @@ class ExamSwitchView extends StatelessWidget {
             if (controller.exam.isEmpty) {
               return const NoDataFound(description: "EXAM IS EMPTY");
             }
-            return Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: Column(
-                children: [
-                  const TopText(),
-                  ExamList(controller: controller),
-                  controller.showButton.value
-                      ? CommonButton(
-                    title: "Switch Exam",
-                    onTap: () async {
-                      LoadingDialog.show(message: "Switching Exam...");
-                      await controller.saveSelectedExam();
-                      await Future.delayed(
-                        const Duration(milliseconds: 500),
-                      );
-                      LoadingDialog.hide();
-                      Get.offAll(() => DashboardView(initialIndex: 0));
-                    },
-                  )
-                      : const HideCommonButton(title: "Switch Exam"),
-                ],
-              ),
+            return Stack(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16,vertical: 10),
+                  child: Column(
+                    children: [
+                      const TopText(),
+                      const SizedBox(height: 10),
+                      ExamList(controller: controller),
+                      const SizedBox(height: 10),
+                      controller.showButton.value
+                          ? CommonButton(
+                        title: "Switch Exam",
+                        onTap: () async {
+                          LoadingDialog.show(message: "Switching Exam...");
+                          await controller.saveSelectedExam();
+                          await Future.delayed(
+                            const Duration(milliseconds: 500),
+                          );
+                          LoadingDialog.hide();
+                          Get.offAll(() => DashboardView(initialIndex: 0));
+                        },
+                      )
+                          : const HideCommonButton(title: "Switch Exam"),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 06,vertical: 08),
+                  child: Align(
+                    alignment: Alignment.topLeft,
+                    child: CommonBackButton(
+                      size: 36,
+                      iconSize: 22,
+                      backgroundColor: lightSkyBlue,
+                      onTap: () => Get.back(),
+                    ),
+                  ),
+                ),
+              ],
             );
           }),
         ),
-      ),
+
     );
   }
 }

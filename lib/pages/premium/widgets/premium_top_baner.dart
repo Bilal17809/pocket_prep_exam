@@ -9,7 +9,7 @@ class PremiumTopBanner extends StatelessWidget {
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
     return SizedBox(
-      height: height * 0.38,
+      height: height * 0.36,
       child: Stack(
         fit: StackFit.expand,
         children: [
@@ -33,7 +33,7 @@ class PremiumTopBanner extends StatelessWidget {
           ),
 
           Positioned(
-            top: 30,
+            top: 36,
             right: 16,
             child: CircleAvatar(
               maxRadius: 18,
@@ -55,36 +55,20 @@ class PremiumTopBanner extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      "Pocket Prep",
+                      "Professional PocketPrep",
                       style: context.textTheme.headlineSmall!.copyWith(
                         color: kBlack,
-                        fontSize: 20,
+                        fontSize: 18,
                         fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    const SizedBox(width: 8),
-                    Container(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 8, vertical: 4),
-                      decoration: BoxDecoration(
-                        color: kBlack,
-                        borderRadius: BorderRadius.circular(6),
-                      ),
-                      child: Text(
-                        "Pro",
-                        style: context.textTheme.titleSmall!.copyWith(
-                          color: kWhite,
-                          fontWeight: FontWeight.bold,
-                        ),
                       ),
                     ),
                   ],
                 ),
                 const SizedBox(height: 4),
                 Text(
-                  "Unlock all premium features\nand functions. No Watermark, No Ads",
+                  "Unlock all premium features and functions. No Ads",
                   style:
-                  context.textTheme.titleSmall!.copyWith(color: kBlack,fontSize: 14),
+                  context.textTheme.titleSmall!.copyWith(color: kBlack,fontSize: 11),
                   textAlign: TextAlign.center,
                 ),
                 const SizedBox(height: 12),

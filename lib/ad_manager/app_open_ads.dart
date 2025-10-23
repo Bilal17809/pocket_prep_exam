@@ -4,11 +4,14 @@ import 'package:get/get.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:pocket_prep_exam/ad_manager/remove_ads.dart' show RemoveAds;
 import 'package:pocket_prep_exam/core/constant/constant.dart';
+import 'package:pocket_prep_exam/pages/premium/controller/premium_controller.dart';
 import '../core/global_keys/global_keys.dart';
 import '../services/remote_config_service.dart';
 
 class AppOpenAdManager extends GetxController with WidgetsBindingObserver {
   final RxBool isAdVisible = false.obs;
+
+
   final RemoveAds removeAdsController = Get.put(RemoveAds());
   AppOpenAd? _appOpenAd;
   bool _isAdAvailable = false;
@@ -100,7 +103,7 @@ class AppOpenAdManager extends GetxController with WidgetsBindingObserver {
     if (!shouldShowAppOpenAd) return;
     AppOpenAd.load(
       adUnitId:Platform.isAndroid? androidAppOpenId
-          :"",
+          :iosAppOpenId,
       request: const AdRequest(),
       adLoadCallback: AppOpenAdLoadCallback(
         onAdLoaded: (ad) {

@@ -19,51 +19,55 @@ class PremiumScreen extends StatelessWidget {
       body: Column(
         children: [
           const PremiumTopBanner(),
-          SizedBox(height:16),
-          const PremiumPlansCarousel(),
+           PremiumPlansCarousel(controller: controller),
           Expanded(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Obx(() {
-                  final plans = controller.plan;
-                  final selected = controller.selectedIndex.value;
-                  return ListView.separated(
-                    itemCount: plans.length,
-                    separatorBuilder: (_, __) => const SizedBox(height: 10),
-                    itemBuilder: (_, index) {
-                      final plan = plans[index];
-                      final isSelected = selected == index;
-                      return PlanTile(
-                        plan: plan,
-                        isSelected: isSelected,
-                        onTap: () async {
-                          final selected = controller.selectedPlan;
-                          final product = controller.purchaseService.products.firstWhere(
-                                (p) => p.id == selected.productId,
-                          );
-                          await controller.purchaseService.buyProduct(product, null, context);
-                        },
-                      );
-                    },
-                  );
+                final plans = controller.plan;
+                final selected = controller.selectedIndex.value;
+                if(controller.isLoading.value){
+                  return Center(child: CircularProgressIndicator(color: Colors.pinkAccent,));
+                }
+                return ListView.separated(
+                  padding: EdgeInsets.only(bottom: 04,top: 18),
+                  itemCount: plans.length,
+                  separatorBuilder: (_, __) => const SizedBox(height: 10),
+                  itemBuilder: (_, index) {
+                    final plan = plans[index];
+                    final isSelected = selected == index;
+                    return PlanTile(
+                      plan: plan,
+                      isSelected: isSelected,
+                      onTap: () async {
+                        controller.selectPlan(index);
+                        final selected = controller.selectedPlan;
+                        final product = controller.purchaseService.products.firstWhere(
+                              (p) => p.id == selected.productId,
+                        );
+                        await controller.purchaseService.buyProduct(product, null, context);
+                      },
+                    );
+                  },
+                );
                 },
               ),
             ),
           ),
-          // Padding(
-          //   padding: const EdgeInsets.symmetric(horizontal: 16),
-          //   child: CommonButton(
-          //     title: "Upgrade to premium",
-          //     onTap: () {
-          //       final selected = controller.selectedPlan;
-          //       Get.snackbar(
-          //         "Selected Plan",
-          //         selected.title,
-          //         snackPosition: SnackPosition.BOTTOM,
-          //       );
-          //     },
-          //   ),
-          // ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: CommonButton(
+              title: "Upgrade to premium",
+              onTap: () {
+                final selected = controller.selectedPlan;
+                Get.snackbar(
+                  "Selected Plan",
+                  selected.title,
+                  snackPosition: SnackPosition.BOTTOM,
+                );
+              },
+            ),
+          ),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 8,horizontal: 16),
             child: Row(

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class ReportController extends GetxController {
+
   final List<String> issues = [
     'App Crashing',
     'Ad not working',
@@ -29,20 +30,17 @@ class ReportController extends GetxController {
 
   Future<void> sendReport({
     required BuildContext context,
-    required String itemName,
+    required String Name,
     required String details,
   }) async {
     final subject = Uri.encodeComponent(
       'User Report - ${selectedIssues.isEmpty ? "Unknown" : selectedIssues.join(", ")}',
     );
     final body = Uri.encodeComponent('''
- Name: $itemName
-
-Issue(s): ${selectedIssues.join(", ")}
-
-Details: $details
-''');
-
+     Name: $Name
+     Issue(s): ${selectedIssues.join(", ")}
+     Details: $details
+     ''');
     final uri = Uri.parse(
       'mailto:unisoftaps@gmail.com?subject=$subject&body=$body',
     );

@@ -10,7 +10,7 @@ class OnesignalService {
       OneSignal.initialize(oneSignalAndroidKey);
       await OneSignal.Notifications.requestPermission(true);
     } else if (Platform.isIOS) {
-      OneSignal.initialize("");
+      OneSignal.initialize(iosOneSignalKey);
       await OneSignal.Notifications.requestPermission(true);
     } else {
       debugPrint("Platform not supported");

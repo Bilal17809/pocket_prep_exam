@@ -14,7 +14,7 @@ class PlanCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+      margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 04),
       decoration: BoxDecoration(
         color: kWhite,
         borderRadius: BorderRadius.circular(16),
@@ -48,13 +48,14 @@ class PlanCard extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 16),
             child: Column(
               mainAxisSize: MainAxisSize.min,
+
               children: [
+                const SizedBox(height:02),
                 Image.asset(
                   plan.type,
-                  height:45,
+                  height:50,
                   fit: BoxFit.contain,
                 ),
-                const SizedBox(height:02),
                 Text(
                   plan.price,
                   style: theme.textTheme.titleMedium!.copyWith(
@@ -64,6 +65,7 @@ class PlanCard extends StatelessWidget {
                   ),
                   textAlign: TextAlign.center,
                 ),
+
               ],
             ),
           ),

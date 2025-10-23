@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:pocket_prep_exam/core/common/back_button.dart';
 import 'package:pocket_prep_exam/core/common/common_button.dart';
 import 'package:pocket_prep_exam/core/theme/app_colors.dart';
 import '../../questions/view/questions_view.dart';
@@ -17,6 +18,10 @@ class QuizBuilderScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: kWhiteF7,
       appBar: AppBar(
+        leading: CommonBackButton(
+          size: 36,
+          iconSize: 22,
+        ),
         title: const Text("Custom Quiz Builder"),
         centerTitle: true,
       ),
