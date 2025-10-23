@@ -7,7 +7,6 @@ class PlanTile extends StatelessWidget {
   final PlanModelForFree plan;
   final bool isSelected;
   final VoidCallback onTap;
-
   const PlanTile({
     super.key,
     required this.plan,
@@ -49,14 +48,14 @@ class PlanTile extends StatelessWidget {
                     style: context.textTheme.bodyLarge!.copyWith(
                       color: kBlack,
                       fontWeight: FontWeight.bold,
-                      fontSize: 15,
+                      fontSize: 14,
                     ),
                   ),
                 ),
                 if (price.isNotEmpty)
                   Container(
                     padding:
-                    const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                    const EdgeInsets.symmetric(horizontal: 08, vertical: 4),
                     decoration: BoxDecoration(
                       color: isSelected ? pinkAccent : grey,
                       borderRadius: BorderRadius.circular(8),
@@ -76,7 +75,7 @@ class PlanTile extends StatelessWidget {
               cleanedSubtitle,
               style: context.textTheme.headlineSmall!.copyWith(
                 color: kBlack,
-                fontSize: 13,
+                fontSize: 12,
                 fontWeight: FontWeight.w500
               ),
             ),

@@ -38,10 +38,43 @@ class QuizzesView extends StatelessWidget {
     this.timedQuizMinutes,
     this.fromRetake = false,
   });
-
   bool get isQuestionOfDayMode =>
       allQuestion != null && allQuestion!.length == 1 && !isTimedQuiz;
 
+  Future<void> _handleBackNavigation(BuildContext context) async {
+    final controller = Get.find<QuestionController>();
+    if (reviewMode == true) {
+      Get.back();
+      return;
+    }
+    final isQuestionOfDay = isQuestionOfDayMode;
+    if (controller.selectedOptions.isEmpty) {
+      if (fromRetake) {
+        Get.offAll(() => DashboardView());
+      } else {
+        Get.back();
+      }
+      return;
+    }
+    if (isQuestionOfDay && controller.selectedOptions.isNotEmpty) {
+      Get.offAll(() => DashboardView());
+      return;
+    }
+    final results = controller.calculateQuizResults();
+    await Utils.showLeaveQuizDialog(
+      isTimedQuiz: controller.isTimedQuiz.value,
+      answered: results["answered"],
+      totalQuestions: results["totalQuestions"],
+      onLeave: () {
+        if (fromRetake) {
+          Get.back();
+          Get.offAll(() => DashboardView());
+          controller.resetController();
+        } else {
+          Get.back();
+          Get.back();
+        }
+      });}
   @override
   Widget build(BuildContext context) {
     final controller = Get.find<QuestionController>();
@@ -62,41 +95,42 @@ class QuizzesView extends StatelessWidget {
       canPop: false,
       onPopInvokedWithResult: (didPop, result) async {
         if (didPop) return;
-        final controller = Get.find<QuestionController>();
-        if (reviewMode == true) {
-          Get.back();
-          return;
-        }
-        final isQuestionOfDay = isQuestionOfDayMode;
-        if (controller.selectedOptions.isEmpty) {
-          if (fromRetake) {
-            Get.offAll(() => DashboardView());
-            // controller.resetController();
-          } else {
-            Get.back();
-          }
-          return;
-        }
-        if (isQuestionOfDay && controller.selectedOptions.isNotEmpty) {
-          Get.offAll(() => DashboardView());
-          return;
-        }
-        final results = controller.calculateQuizResults();
-        await Utils.showLeaveQuizDialog(
-          isTimedQuiz: controller.isTimedQuiz.value,
-          answered: results["answered"],
-          totalQuestions: results["totalQuestions"],
-          onLeave: () {
-            if (fromRetake) {
-              Get.back(); // close dialog
-              Get.offAll(() => DashboardView());
-              controller.resetController();
-            } else {
-              Get.back();
-              Get.back();
-            }
-          },
-        );
+        await _handleBackNavigation(context);
+        // final controller = Get.find<QuestionController>();
+        // if (reviewMode == true) {
+        //   Get.back();
+        //   return;
+        // }
+        // final isQuestionOfDay = isQuestionOfDayMode;
+        // if (controller.selectedOptions.isEmpty) {
+        //   if (fromRetake) {
+        //     Get.offAll(() => DashboardView());
+        //     // controller.resetController();
+        //   } else {
+        //     Get.back();
+        //   }
+        //   return;
+        // }
+        // if (isQuestionOfDay && controller.selectedOptions.isNotEmpty) {
+        //   Get.offAll(() => DashboardView());
+        //   return;
+        // }
+        // final results = controller.calculateQuizResults();
+        // await Utils.showLeaveQuizDialog(
+        //   isTimedQuiz: controller.isTimedQuiz.value,
+        //   answered: results["answered"],
+        //   totalQuestions: results["totalQuestions"],
+        //   onLeave: () {
+        //     if (fromRetake) {
+        //       Get.back(); // close dialog
+        //       Get.offAll(() => DashboardView());
+        //       controller.resetController();
+        //     } else {
+        //       Get.back();
+        //       Get.back();
+        //     }
+        //   },
+        // );
       },
       child: SafeArea(
         child: Scaffold(
@@ -190,7 +224,7 @@ class QuizzesView extends StatelessWidget {
                           reviewMode: reviewMode,
                           reviewType: reviewType,
                           isQuestionOfDay: isQuestionOfDayMode,
-
+                          onBackTap:() => _handleBackNavigation(context),
                         );
                       },
                     ),

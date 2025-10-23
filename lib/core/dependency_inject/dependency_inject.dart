@@ -26,8 +26,6 @@ class DependencyInject{
     Get.lazyPut<NativeAdController>(() => NativeAdController(), fenix: true);
     Get.lazyPut<SplashInterstitialManager>(() => SplashInterstitialManager(), fenix: true);
     Get.lazyPut<RemoveAds>(() => RemoveAds(), fenix: true);
-
-
     Get.lazyPut<ExamService>(() => ExamService(), fenix: true);
     Get.lazyPut<QuestionService>(() => QuestionService(),fenix: true );
     Get.lazyPut<StorageService>(() => StorageService(),fenix: true);

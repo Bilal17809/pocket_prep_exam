@@ -1,40 +1,53 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:pocket_prep_exam/pages/premium/widgets/plane_card.dart';
+import '/pages/premium/widgets/plane_card.dart';
 import '../controller/premium_controller.dart';
 
 class PremiumPlansCarousel extends StatelessWidget {
-  const PremiumPlansCarousel({super.key});
+  final PremiumPlansController controller;
+  PremiumPlansCarousel({super.key, required this.controller});
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.find<PremiumPlansController>();
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
-    return SizedBox(
-      height: height * 0.15,
-      width: width * 0.74,
-      child: PageView.builder(
-        controller: controller.pageController,
-        itemCount: controller.plans.length,
-        clipBehavior: Clip.none,
-        onPageChanged: controller.onPageChanged,
-        itemBuilder: (context, index) {
-          final plan = controller.plans[index];
-          return Obx(() {
-            final isActive = index == controller.currentPage.value;
-            return AnimatedScale(
-              duration: const Duration(milliseconds: 350),
-              scale: isActive ? 1.05 : 0.92,
-              child: AnimatedOpacity(
+    return Obx(() {
+      if (controller.isLoading.value) {
+      return SizedBox();
+      }
+      if (controller.plan.isEmpty) {
+        return const Center(
+          child: Text(
+            "No plans available",
+            style: TextStyle(fontSize: 14),
+          ),
+        );
+      }
+      return SizedBox(
+        height: height * 0.15,
+        width: width * 0.74,
+        child: PageView.builder(
+          controller: controller.pageController,
+          itemCount: controller.plans.length,
+          clipBehavior: Clip.none,
+          onPageChanged: controller.onPageChanged,
+          itemBuilder: (context, index) {
+            final plan = controller.plans[index];
+            return Obx(() {
+              final isActive = index == controller.currentPage.value;
+              return AnimatedScale(
                 duration: const Duration(milliseconds: 350),
-                opacity: isActive ? 1.0 : 0.7,
-                child: PlanCard(plan: plan, isActive: isActive),
-              ),
-            );
-          });
-        },
-      ),
-    );
+                scale: isActive ? 1.05 : 0.92,
+                child: AnimatedOpacity(
+                  duration: const Duration(milliseconds: 350),
+                  opacity: isActive ? 1.0 : 0.7,
+                  child: PlanCard(plan: plan, isActive: isActive),
+                ),
+              );
+            });
+          },
+        ),
+      );
+    });
   }
 }

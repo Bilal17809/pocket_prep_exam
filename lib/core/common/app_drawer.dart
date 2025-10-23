@@ -21,9 +21,6 @@ class DrawerItemWidget extends StatelessWidget {
     required this.item,
     this.onTap,
   });
- 
-
-
   @override
   Widget build(BuildContext context) {
     return ListTile(
@@ -95,14 +92,6 @@ class AppDrawer extends StatelessWidget {
                      ),
                    ],
                  )
-                  // Text(
-                  //     "PocketPrep",
-                  //     style: context.textTheme.bodyLarge!.copyWith(
-                  //         fontSize: 26,
-                  //         color: kWhite,
-                  //         fontWeight: FontWeight.bold
-                  //     )
-                  // ),
                 ],
               ),
             ),
@@ -115,7 +104,7 @@ class AppDrawer extends StatelessWidget {
             onTap: () {
             },
           ),
-           Divider(height: 2.0,color: grey.withAlpha(60),),
+            AppDivider(height: 2.0,),
           DrawerItemWidget(
             item: SettingsItem(
               icon: Icons.apps_outlined,
@@ -155,7 +144,6 @@ class AppDrawer extends StatelessWidget {
               Get.to(()=> PremiumScreen());
             },
           ),
-
         ],
       ),
     );
