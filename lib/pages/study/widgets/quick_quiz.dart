@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:lottie/lottie.dart';
+import '../../../core/common/unlock_question_dialog.dart';
 import '/core/theme/app_styles.dart';
 import '/core/common/constant.dart';
 import '../../questions/widgets/quiz_bottomsheet.dart';
@@ -43,6 +45,7 @@ class QuickQuiz extends StatelessWidget {
                       if (item.title == "Question of the Day") {
                         final q = await controller.getQuestionOfTheDay();
                         if (q == null) {
+                          showAccessDialog(context);
                           Utils.showError("No Question", "No question available for today.");
                           return;
                         }
@@ -61,7 +64,8 @@ class QuickQuiz extends StatelessWidget {
                         Get.to(() => QuizzesView(allQuestion: quizQuestions, isTimedQuiz: false));
                       } else if (item.title == "Timed Quiz") {
                         Get.find<QuestionController>().resetController();
-                        TimedQuizBottomSheet.show();
+                        showAccessDialog(context);
+                        // TimedQuizBottomSheet.show();
                       } else if (item.title == "Quiz Builder") {
                         Get.to(() => QuizBuilderScreen());
                       }
@@ -94,4 +98,20 @@ class QuickQuiz extends StatelessWidget {
       }),
     );
   }
+}
+
+void showAccessDialog(BuildContext context) {
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return SimpleAdAccessDialog(
+        title: "Unlock today question!",
+        description: "This feature is currently locked. Watch a quick video ad to unlock temporary access and continue enjoying the app.",
+        onWatchAds: () {
+          Navigator.of(context).pop();
+          print('--- Triggering Ad playback logic ---');
+        },
+      );
+    },
+  );
 }
