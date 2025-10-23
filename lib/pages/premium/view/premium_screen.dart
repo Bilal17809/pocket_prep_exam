@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:pocket_prep_exam/pages/term_of_services/view/term_services_view.dart';
 import '../widgets/plane_tile.dart';
 import '../widgets/premium_top_baner.dart';
-import '/core/common/common_button.dart';
 import '/core/theme/app_colors.dart';
 import '../controller/premium_controller.dart';
 import '../widgets/premium_plans_carousel.dart';
@@ -19,7 +18,9 @@ class PremiumScreen extends StatelessWidget {
       body: Column(
         children: [
           const PremiumTopBanner(),
-           PremiumPlansCarousel(controller: controller),
+          SizedBox(height:12,),
+          PremiumPlansCarousel(controller: controller),
+          SizedBox(height:8,),
           Expanded(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -55,26 +56,11 @@ class PremiumScreen extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16),
-            child: CommonButton(
-              title: "Upgrade to premium",
-              onTap: () {
-                final selected = controller.selectedPlan;
-                Get.snackbar(
-                  "Selected Plan",
-                  selected.title,
-                  snackPosition: SnackPosition.BOTTOM,
-                );
-              },
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 8,horizontal: 16),
+            padding: const EdgeInsets.symmetric(vertical:8,horizontal: 16),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children:  [
                 _BottomLink(text: "How to cancel",onTap: (){},),
-                // _BottomLink(text: "Restore Purchase"),
                 _BottomLink(text: "Terms & Conditions",onTap: (){Get.to(() => TermServicesView());},),
               ],
             ),
