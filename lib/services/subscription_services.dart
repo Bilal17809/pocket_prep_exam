@@ -28,11 +28,24 @@ class PurchaseService {
 
   final bool _kAutoConsume = Platform.isIOS || false;
 
-  final List<String> _kSubscriptionIds = const [
+  final List<String> _kSubscriptionIdsForAndroid = const [
     'com.professionalexam.yearly',
     'com.professionalexam.quarterly',
     'com.professionalexam.monthly',
   ];
+  final List<String> _kSubscriptionIdsForIOS = const [
+    'com.professionalexamprep.yearly',
+    'com.professionalexamprep.quarterly',
+    'com.professionalexamprep.monthly',
+  ];
+
+  /*
+  Monthly:  com.professionalexamprep.monthly
+
+Quarterly: com.professionalexamprep.quarterly
+
+Yearly:  com.professionalexamprep.yearly
+  */
 
   final List<String> _kNonSubscriptionIds = const [
     'consumable',
@@ -41,8 +54,16 @@ class PurchaseService {
 
   Set<String> get _allProductIds => {
     ..._kNonSubscriptionIds,
-    ..._kSubscriptionIds,
-  }.toSet();
+    if (Platform.isAndroid)
+      ..._kSubscriptionIdsForAndroid
+    else if (Platform.isIOS)
+      ..._kSubscriptionIdsForIOS,
+  };
+
+  // Set<String> get _allProductIds => {
+  //   ..._kNonSubscriptionIds,
+  //   ..._kSubscriptionIdsForAndroid,
+  // }.toSet();
 
 
   Future<void> init([void Function(void Function())? setState]) async {
@@ -114,12 +135,12 @@ class PurchaseService {
     });
   }
 
+
   Future<void> buyProduct(
       ProductDetails product,
       PurchaseDetails? purchase,
       BuildContext context,
       ) async {
-    // 1. Show the INITIAL custom loader dialog (Pre-native call)
     showDialog(
       context: context,
       barrierDismissible: false,
@@ -135,65 +156,45 @@ class PurchaseService {
     );
 
     try {
-      final purchaseParam = GooglePlayPurchaseParam(
-        productDetails: product,
-        changeSubscriptionParam:
-        purchase != null && purchase is GooglePlayPurchaseDetails
-            ? ChangeSubscriptionParam(oldPurchaseDetails: purchase)
-            : null,
-      );
+      late PurchaseParam purchaseParam;
 
-      // 2. DISMISS the INITIAL loader
-      if (Navigator.of(context).canPop()) {
-        Navigator.of(context).pop();
+      if (Platform.isAndroid) {
+        purchaseParam = GooglePlayPurchaseParam(
+          productDetails: product,
+          changeSubscriptionParam:
+          purchase != null && purchase is GooglePlayPurchaseDetails
+              ? ChangeSubscriptionParam(oldPurchaseDetails: purchase)
+              : null,
+        );
+      } else if (Platform.isIOS) {
+        purchaseParam = PurchaseParam(productDetails: product);
       }
 
-      // 3. Re-show the loader to block the screen while the transaction processes (POST-native call) 👈 UNCOMMENT THIS FIX!
-      // showDialog(
-      //   context: context,
-      //   barrierDismissible: false,
-      //   builder: (_) => const AlertDialog(
-      //     content: Row(
-      //       children: [
-      //         CircularProgressIndicator(),
-      //         SizedBox(width: 20),
-      //         Text('Processing purchase...'),
-      //       ],
-      //     ),
-      //   ),
-      // );
+      if (Navigator.of(context).canPop()) Navigator.of(context).pop();
 
-      // 4. Initiate the native purchase flow (User interacts with Google Dialog)
       if (product.id == 'consumable') {
-        // DO NOT use await here.
         _inAppPurchase.buyConsumable(
           purchaseParam: purchaseParam,
           autoConsume: _kAutoConsume,
         );
       } else {
-        // DO NOT use await here.
         _inAppPurchase.buyNonConsumable(purchaseParam: purchaseParam);
       }
-
-      // The screen is now blocked by the "Processing purchase..." dialog.
-
     } catch (e) {
       debugPrint('Purchase initiation error: $e');
-
-      // In case of an immediate catch error, close the loader that was just shown.
-      if (Navigator.of(Get.context!).canPop()) {
-        Navigator.of(Get.context!).pop();
-      }
+      if (Navigator.of(Get.context!).canPop()) Navigator.of(Get.context!).pop();
       ScaffoldMessenger.of(Get.context!).showSnackBar(
         SnackBar(content: Text('Failed to initiate purchase: ${e.toString()}')),
       );
     }
   }
+
   // Future<void> buyProduct(
   //     ProductDetails product,
   //     PurchaseDetails? purchase,
   //     BuildContext context,
   //     ) async {
+  //   // 1. Show the INITIAL custom loader dialog (Pre-native call)
   //   showDialog(
   //     context: context,
   //     barrierDismissible: false,
@@ -217,22 +218,50 @@ class PurchaseService {
   //           : null,
   //     );
   //
+  //     // 2. DISMISS the INITIAL loader
+  //     if (Navigator.of(context).canPop()) {
+  //       Navigator.of(context).pop();
+  //     }
+  //
+  //     // 3. Re-show the loader to block the screen while the transaction processes (POST-native call) 👈 UNCOMMENT THIS FIX!
+  //     // showDialog(
+  //     //   context: context,
+  //     //   barrierDismissible: false,
+  //     //   builder: (_) => const AlertDialog(
+  //     //     content: Row(
+  //     //       children: [
+  //     //         CircularProgressIndicator(),
+  //     //         SizedBox(width: 20),
+  //     //         Text('Processing purchase...'),
+  //     //       ],
+  //     //     ),
+  //     //   ),
+  //     // );
+  //
+  //     // 4. Initiate the native purchase flow (User interacts with Google Dialog)
   //     if (product.id == 'consumable') {
-  //       await _inAppPurchase.buyConsumable(
+  //       // DO NOT use await here.
+  //       _inAppPurchase.buyConsumable(
   //         purchaseParam: purchaseParam,
   //         autoConsume: _kAutoConsume,
   //       );
   //     } else {
-  //       await _inAppPurchase.buyNonConsumable(purchaseParam: purchaseParam);
+  //       // DO NOT use await here.
+  //       _inAppPurchase.buyNonConsumable(purchaseParam: purchaseParam);
   //     }
+  //
+  //     // The screen is now blocked by the "Processing purchase..." dialog.
+  //
   //   } catch (e) {
   //     debugPrint('Purchase initiation error: $e');
-  //     ScaffoldMessenger.of(Get.context!).showSnackBar(
-  //       SnackBar(content: Text('Failed to initiate purchase: ${e.toString()}')),
-  //     );
+  //
+  //     // In case of an immediate catch error, close the loader that was just shown.
   //     if (Navigator.of(Get.context!).canPop()) {
   //       Navigator.of(Get.context!).pop();
   //     }
+  //     ScaffoldMessenger.of(Get.context!).showSnackBar(
+  //       SnackBar(content: Text('Failed to initiate purchase: ${e.toString()}')),
+  //     );
   //   }
   // }
 
@@ -275,8 +304,8 @@ class PurchaseService {
         );
       } else if (details.status == PurchaseStatus.purchased ||
           details.status == PurchaseStatus.restored) {
-
-        if (_kSubscriptionIds.contains(details.productID)) {
+        if (_kSubscriptionIdsForAndroid.contains(details.productID) ||
+            _kSubscriptionIdsForIOS.contains(details.productID)) {
           foundActiveSubscription = true;
 
           setState(() => _purchasePending = false);
@@ -284,20 +313,43 @@ class PurchaseService {
           if (Navigator.of(Get.context!).canPop()) {
             Navigator.of(Get.context!).pop();
           }
+
           await StorageService.saveGeneralSubscriptionStatus(true);
           await StorageService.saveSubscriptionProductId(details.productID);
           removeAdsController.isSubscribedGet(true);
+
           if (details.status == PurchaseStatus.purchased) {
             ScaffoldMessenger.of(Get.context!).showSnackBar(
               const SnackBar(content: Text('Subscription purchased successfully!')),
             );
-          } else {
-            debugPrint('Subscription restored: ${details.productID}');
           }
+
           if (details.pendingCompletePurchase) {
             await _inAppPurchase.completePurchase(details);
           }
         }
+        // if (_kSubscriptionIdsForAndroid.contains(details.productID)) {
+        //   foundActiveSubscription = true;
+        //
+        //   setState(() => _purchasePending = false);
+        //
+        //   if (Navigator.of(Get.context!).canPop()) {
+        //     Navigator.of(Get.context!).pop();
+        //   }
+        //   await StorageService.saveGeneralSubscriptionStatus(true);
+        //   await StorageService.saveSubscriptionProductId(details.productID);
+        //   removeAdsController.isSubscribedGet(true);
+        //   if (details.status == PurchaseStatus.purchased) {
+        //     ScaffoldMessenger.of(Get.context!).showSnackBar(
+        //       const SnackBar(content: Text('Subscription purchased successfully!')),
+        //     );
+        //   } else {
+        //     debugPrint('Subscription restored: ${details.productID}');
+        //   }
+        //   if (details.pendingCompletePurchase) {
+        //     await _inAppPurchase.completePurchase(details);
+        //   }
+        // }
       }
     }
 
