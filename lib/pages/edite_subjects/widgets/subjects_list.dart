@@ -4,10 +4,7 @@ import 'package:pocket_prep_exam/core/common/app_divider.dart';
 import 'package:pocket_prep_exam/core/theme/app_colors.dart';
 import 'package:pocket_prep_exam/core/theme/app_styles.dart';
 import 'package:pocket_prep_exam/pages/edite_subjects/controller/edite_subject_controller.dart';
-
 import '../../premium/view/premium_screen.dart';
-
-
 
 class SubjectsList extends StatelessWidget {
   const SubjectsList({super.key});
@@ -15,11 +12,13 @@ class SubjectsList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = Get.find<EditeSubjectController>();
+
     return Obx(() {
       final exam = controller.selectedExam.value;
       if (exam == null) {
         return const Center(child: Text("No Exam Found"));
       }
+
       return Expanded(
         child: Container(
           decoration: roundedDecoration.copyWith(
@@ -44,7 +43,7 @@ class SubjectsList extends StatelessWidget {
                 } else if (allSelected) {
                   titleText = "All subjects selected ($selectedCount of $totalSubjects)";
                 } else {
-                  titleText = "Subjects selected  ($selectedCount of $totalSubjects)";
+                  titleText = "Subjects selected ($selectedCount of $totalSubjects)";
                 }
                 return ListTile(
                   title: Text(
@@ -57,34 +56,46 @@ class SubjectsList extends StatelessWidget {
                   trailing: Checkbox(
                     activeColor: Colors.blue,
                     tristate: true,
-                    value: noneSelected
-                        ? false
-                        : (allSelected ? true : null),
-                    onChanged: (_) => controller.toggleAllSubjects(onUpgrade: (){
-                      Get.back(); // close dialog
-                      Get.to(() => PremiumScreen());
-                    }),
+                    value: noneSelected ? false : (allSelected ? true : null),
+                    onChanged: (_) => controller.toggleAllSubjects(
+                      onUpgrade: () {
+                        Get.back();
+                        Get.to(() => PremiumScreen());
+                      },
+                    ),
                   ),
                 );
               }
               final subject = exam.subjects[index - 1];
               return Obx(() {
-                final isSelected = controller.selectedSubjectIds.contains(subject.subjectId);
+                final isSelected =
+                controller.selectedSubjectIds.contains(subject.subjectId);
                 return ListTile(
                   title: Text(
                     subject.subjectName,
-                    style: context.textTheme.titleMedium!.copyWith(color: isSelected ? lightSkyBlue : kBlack),
+                    style: context.textTheme.titleMedium!.copyWith(
+                      color: isSelected ? lightSkyBlue : kBlack,
+                    ),
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                   ),
                   trailing: Checkbox(
                     activeColor: Colors.black,
                     value: isSelected,
-                    onChanged: (_) => controller.toggleSubject(subject.subjectId,onUpgrade: (){
+                    onChanged: (_) => controller.toggleSubject(
+                      subject.subjectId,
+                      onUpgrade: () {
+                        Get.back();
+                        Get.to(() => PremiumScreen());
+                      },
+                    ),
+                  ),
+                  onTap: () => controller.toggleSubject(
+                    subject.subjectId,
+                    onUpgrade: () {
                       Get.back();
                       Get.to(() => PremiumScreen());
-                    }
-                    ),
+                    },
                   ),
                 );
               });
@@ -95,4 +106,3 @@ class SubjectsList extends StatelessWidget {
     });
   }
 }
-

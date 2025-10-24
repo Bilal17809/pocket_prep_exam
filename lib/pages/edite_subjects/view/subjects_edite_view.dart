@@ -15,10 +15,7 @@ class SubjectsEditeView extends StatelessWidget {
     final controller = Get.find<EditeSubjectController>();
     return Scaffold(
       appBar: AppBar(
-        leading: CommonBackButton(
-          size: 36,
-          iconSize: 22,
-        ),
+        leading: CommonBackButton(size: 36, iconSize: 22),
         centerTitle: true,
         backgroundColor: kWhiteF7,
         title: Column(

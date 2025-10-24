@@ -57,7 +57,8 @@ class SplashInterstitialManager extends GetxController {
 
   void loadAd() {
     InterstitialAd.load(
-      adUnitId:Platform.isAndroid? androidSplashInterstitialId
+      adUnitId:Platform.isAndroid? ""
+      // androidSplashInterstitialId
       : iosSplashInterstitialId,
       request: const AdRequest(),
       adLoadCallback: InterstitialAdLoadCallback(

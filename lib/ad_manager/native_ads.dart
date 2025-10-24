@@ -53,8 +53,11 @@ class NativeAdController extends GetxController {
   void loadNativeAd() {
     isAdReady.value = false;
     _nativeAd = NativeAd(
-      adUnitId:Platform.isAndroid?androidNativeAdvId:iosNativeAdvId,
-      request: const AdRequest(),
+      adUnitId:Platform.isAndroid ? ""
+      // androidNativeAdvId
+          :
+      iosNativeAdvId, request:
+    const AdRequest(),
       listener: NativeAdListener(
         onAdLoaded: (ad) {
           _nativeAd = ad as NativeAd;

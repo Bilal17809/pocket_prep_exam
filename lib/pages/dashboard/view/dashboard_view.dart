@@ -20,7 +20,6 @@ class DashboardView extends StatelessWidget {
     WidgetsBinding.instance.addPostFrameCallback((_) {
       controller.setInitialIndex(initialIndex);
     });
-
     final List<Widget> screens = [
       StudyView(),
       StatsView(),

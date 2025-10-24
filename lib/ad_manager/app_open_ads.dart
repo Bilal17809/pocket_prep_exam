@@ -102,7 +102,8 @@ class AppOpenAdManager extends GetxController with WidgetsBindingObserver {
     }
     if (!shouldShowAppOpenAd) return;
     AppOpenAd.load(
-      adUnitId:Platform.isAndroid? androidAppOpenId
+      adUnitId:Platform.isAndroid? ""
+      // androidAppOpenId
           :iosAppOpenId,
       request: const AdRequest(),
       adLoadCallback: AppOpenAdLoadCallback(

@@ -50,6 +50,7 @@ class ExamSwitchView extends StatelessWidget {
                         },
                       )
                           : const HideCommonButton(title: "Switch Exam"),
+                      SizedBox(height: 14)
                     ],
                   ),
                 ),
