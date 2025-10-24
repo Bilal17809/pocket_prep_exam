@@ -2,9 +2,8 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
-import 'package:pocket_prep_exam/ad_manager/remove_ads.dart';
-import 'package:pocket_prep_exam/core/constant/constant.dart';
-
+import '/ad_manager/remove_ads.dart';
+import '/core/constant/constant.dart';
 import '../core/global_keys/global_keys.dart';
 import '../services/remote_config_service.dart';
 import 'app_open_ads.dart';

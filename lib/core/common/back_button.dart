@@ -16,7 +16,7 @@ class CommonBackButton extends StatelessWidget {
     this.iconColor,
     this.icon = Icons.arrow_back_ios_new_rounded,
     this.size = 20,
-    this.iconSize = 26,
+    this.iconSize = 22,
     this.onTap,
   });
 

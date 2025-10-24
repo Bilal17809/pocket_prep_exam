@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../../ad_manager/native_ads.dart';
+import '/ad_manager/native_ads.dart';
 import '/core/constant/constant.dart';
 import '/core/theme/app_colors.dart';
 import '/pages/main_appbar/main_appbar.dart';
 import '/pages/practice/controller/practice_controller.dart';
 import '/pages/quiz_view_second/controller/quiz_controller.dart';
-import '/pages/study/widgets/game_button.dart';
 import '/pages/practice/widgets/widgets.dart';
 
 class PracticeView extends StatelessWidget {
@@ -16,7 +15,6 @@ class PracticeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final practiceController = Get.find<PracticeController>();
-
     return Scaffold(
       backgroundColor: kWhiteF7,
       appBar: MainAppBar(title: "Practice", subtitle: ""),

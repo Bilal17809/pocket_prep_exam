@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../../ad_manager/banner_ads.dart';
+import '/ad_manager/banner_ads.dart';
 import '/core/theme/app_styles.dart';
 import '/core/common/app_drawer.dart';
 import '/core/theme/app_colors.dart';
@@ -32,7 +32,7 @@ class StudyView extends StatelessWidget {
             const SizedBox(height: 20),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: GameButton(),
+              child: SetPurchaseCard(),
             ),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 20, vertical: 6),

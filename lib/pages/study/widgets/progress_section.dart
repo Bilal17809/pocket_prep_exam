@@ -4,7 +4,7 @@ import 'package:pocket_prep_exam/pages/stats/controller/stats_controller.dart';
 import '../controller/study_controller.dart';
 import '/core/theme/app_colors.dart';
 import '/core/theme/app_styles.dart';
-import 'game_button.dart';
+import '../../../core/common/set_purchase_card.dart';
 
 class ProgressSection extends StatelessWidget {
   const ProgressSection({super.key});

@@ -1,9 +1,8 @@
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:pocket_prep_exam/core/routes/routes_name.dart';
-import 'package:pocket_prep_exam/core/theme/theme.dart';
-import 'package:pocket_prep_exam/pages/quiz_setup/controller/quiz_setup_controller.dart';
+import '/core/routes/routes_name.dart';
+import '/core/theme/theme.dart';
+import '/pages/quiz_setup/controller/quiz_setup_controller.dart';
 import '/pages/practice/controller/practice_controller.dart';
 
 

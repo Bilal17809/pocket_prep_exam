@@ -22,15 +22,26 @@ class StorageService {
   static const String _ttsEnabled = "tts_Enabled";
   static const String _darkModeKey = "dark_mode_enabled";
   static const String _userDataKey = "user_data";
-
   static const String _subscribePocketPrepKey = "SubscribePocketPrep";
   static const String _subscribeStatusKey = 'Subscribe';
   static const String _subscriptionProductIdKey = 'subscriptionAiId';
+  static const String _hasFirstAttemptKey = 'hasFirstAttemptKey';
 
 
-  // =========================================================================
-  // --- NEW / MODIFIED SUBSCRIPTION METHODS ---
-  // =========================================================================
+  /// Saves the  First Attempt ('SubscribeMalta' = true/false).
+  static Future<void> saveFirstAttempt(bool value) async {
+    await _preferences.setBool(_hasFirstAttemptKey, value);
+  }
+
+  /// Gets the  First Attempt.
+  static bool getFirstAttempt() {
+    return _preferences.getBool(_hasFirstAttemptKey) ?? false;
+  }
+
+  /// Gets the  First Attempt.
+  static Future<void> watchAdsClearFirstAttempt() async {
+    await _preferences.remove(_hasFirstAttemptKey);
+  }
 
   /// Saves the general subscription status ('SubscribeMalta' = true/false).
   static Future<void> saveGeneralSubscriptionStatus(bool value) async {

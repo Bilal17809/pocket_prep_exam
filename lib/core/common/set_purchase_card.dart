@@ -5,8 +5,8 @@ import 'package:lottie/lottie.dart';
 import 'package:pocket_prep_exam/pages/premium/view/premium_screen.dart';
 import '/core/theme/app_styles.dart';
 
-class GameButton extends StatelessWidget {
-  const GameButton({super.key});
+class SetPurchaseCard extends StatelessWidget {
+  const SetPurchaseCard({super.key});
 
   @override
   Widget build(BuildContext context) {

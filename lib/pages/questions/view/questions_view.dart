@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../../../core/local_storage/storage_helper.dart';
 import '/core/Utility/utils.dart';
 import '/core/common/common_button.dart';
 import '/core/common/loading_container.dart';
@@ -80,7 +81,7 @@ class QuizzesView extends StatelessWidget {
     final controller = Get.find<QuestionController>();
     final PageController pageController = PageController(initialPage: initialPage ?? 0);
 
-    WidgetsBinding.instance.addPostFrameCallback((_) {
+    WidgetsBinding.instance.addPostFrameCallback((_) async{
       controller.initQuiz(
         reviewMode: reviewMode,
         questionIdsToReview: questionIdsToReview,
@@ -90,47 +91,16 @@ class QuizzesView extends StatelessWidget {
         timedQuizMinutes: timedQuizMinutes,
         fromRetake: fromRetake,
       );
+      final hasAttempted = StorageService.getFirstAttempt();
+      if (!hasAttempted) {
+        await StorageService.saveFirstAttempt(true);
+      }
     });
     return PopScope(
       canPop: false,
       onPopInvokedWithResult: (didPop, result) async {
         if (didPop) return;
         await _handleBackNavigation(context);
-        // final controller = Get.find<QuestionController>();
-        // if (reviewMode == true) {
-        //   Get.back();
-        //   return;
-        // }
-        // final isQuestionOfDay = isQuestionOfDayMode;
-        // if (controller.selectedOptions.isEmpty) {
-        //   if (fromRetake) {
-        //     Get.offAll(() => DashboardView());
-        //     // controller.resetController();
-        //   } else {
-        //     Get.back();
-        //   }
-        //   return;
-        // }
-        // if (isQuestionOfDay && controller.selectedOptions.isNotEmpty) {
-        //   Get.offAll(() => DashboardView());
-        //   return;
-        // }
-        // final results = controller.calculateQuizResults();
-        // await Utils.showLeaveQuizDialog(
-        //   isTimedQuiz: controller.isTimedQuiz.value,
-        //   answered: results["answered"],
-        //   totalQuestions: results["totalQuestions"],
-        //   onLeave: () {
-        //     if (fromRetake) {
-        //       Get.back(); // close dialog
-        //       Get.offAll(() => DashboardView());
-        //       controller.resetController();
-        //     } else {
-        //       Get.back();
-        //       Get.back();
-        //     }
-        //   },
-        // );
       },
       child: SafeArea(
         child: Scaffold(
@@ -277,10 +247,6 @@ class QuizzesView extends StatelessWidget {
                         title: "Submitted",
                         onTap: () async{
                           if (hasAttempted) {
-                            // final isQuestionOfTheDay =  Get.find<StudyController>().questionOfDayDate.value;
-                            // if (isQuestionOfTheDay.isNotEmpty) {
-                            //   await Get.find<StudyController>().markQuestionOfDayAttempted();
-                            // }
                            await Get.find<StudyController>().markQuestionOfDayAttempted();
                             Get.offAll(() => const DashboardView());
                           } else {
@@ -349,7 +315,9 @@ class _NavigationRow extends StatelessWidget {
     return Obx(() {
       if (isTimeQuiz) {
         if (controller.remainingSeconds.value == 0) {
-          return Container(color: const Color(0xFF1E90FF), height: 30, width: double.infinity);
+          return Container(
+              color: const Color(0xFF1E90FF),
+              height: 30, width: double.infinity);
         }
       }
       final currentIndex = controller.currentPage.value;
@@ -364,7 +332,6 @@ class _NavigationRow extends StatelessWidget {
         originalQuestionIndex = currentIndex;
       }
       final bool isFlagged = controller.flaggedQuestions.contains(originalQuestionIndex);
-
       return Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [

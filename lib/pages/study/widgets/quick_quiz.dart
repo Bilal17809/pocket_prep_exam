@@ -45,7 +45,6 @@ class QuickQuiz extends StatelessWidget {
                       if (item.title == "Question of the Day") {
                         final q = await controller.getQuestionOfTheDay();
                         if (q == null) {
-                          showAccessDialog(context);
                           Utils.showError("No Question", "No question available for today.");
                           return;
                         }
@@ -54,7 +53,8 @@ class QuickQuiz extends StatelessWidget {
                           reviewMode: false,
                           isTimedQuiz: false,
                         ));
-                      } else if (idx == 1) {
+                      }
+                      else if (idx == 1) {
                         final quizQuestions = Get.find<EditeSubjectController>().startQuiz();
                        // controller.clearQuestionOfDayAttempt();
                         if (quizQuestions.isEmpty) {
@@ -64,8 +64,8 @@ class QuickQuiz extends StatelessWidget {
                         Get.to(() => QuizzesView(allQuestion: quizQuestions, isTimedQuiz: false));
                       } else if (item.title == "Timed Quiz") {
                         Get.find<QuestionController>().resetController();
-                        showAccessDialog(context);
-                        // TimedQuizBottomSheet.show();
+                        // showAccessDialog(context);
+                        TimedQuizBottomSheet.show();
                       } else if (item.title == "Quiz Builder") {
                         Get.to(() => QuizBuilderScreen());
                       }
@@ -100,16 +100,15 @@ class QuickQuiz extends StatelessWidget {
   }
 }
 
-void showAccessDialog(BuildContext context) {
+void showAccessDialog(BuildContext context){
   showDialog(
     context: context,
     builder: (BuildContext context) {
       return SimpleAdAccessDialog(
-        title: "Unlock today question!",
-        description: "This feature is currently locked. Watch a quick video ad to unlock temporary access and continue enjoying the app.",
+        title: "Unlock Today's Question",
+        description: "This feature is currently locked. Watch an ad to unlock today's question.",
         onWatchAds: () {
           Navigator.of(context).pop();
-          print('--- Triggering Ad playback logic ---');
         },
       );
     },

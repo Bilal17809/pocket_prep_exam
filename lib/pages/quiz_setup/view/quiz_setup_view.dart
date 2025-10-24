@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:pocket_prep_exam/core/common/common_button.dart';
-import 'package:pocket_prep_exam/core/constant/constant.dart';
-import 'package:pocket_prep_exam/core/routes/routes_name.dart';
-import 'package:pocket_prep_exam/core/theme/app_colors.dart';
-import 'package:pocket_prep_exam/core/theme/app_styles.dart';
-import 'package:pocket_prep_exam/pages/quiz_setup/controller/quiz_setup_controller.dart';
-import '../widgets/dificuty_selector.dart';
+import 'package:pocket_prep_exam/core/common/set_purchase_card.dart';
+import '/ad_manager/remove_ads.dart';
+import '/core/common/common_button.dart';
+import '/core/constant/constant.dart';
+import '/core/routes/routes_name.dart';
+import '/core/theme/app_colors.dart';
+import '/core/theme/app_styles.dart';
+import '/pages/quiz_setup/controller/quiz_setup_controller.dart';
 import '../widgets/options_chip.dart';
 
 class QuizSetupView extends StatelessWidget {
@@ -46,12 +47,17 @@ class QuizSetupView extends StatelessWidget {
                 child: Center(
                   child:Obx(() => Text(
                     controller.selectedSubject.value?.subjectName ?? "",
-                    style: titleMediumStyle.copyWith(color: lightSkyBlue),
+                    style: titleMediumStyle.copyWith(
+                      color: lightSkyBlue,
+                      fontSize: 17
+                    ),
                   )),
                 ),
               ),
             ),
-            const SizedBox(height: 24),
+            const SizedBox(height:16),
+            SetPurchaseCard(),
+            const SizedBox(height:16),
             Container(
               width: double.infinity,
               margin: const EdgeInsets.only(bottom: 12),
@@ -79,10 +85,6 @@ class QuizSetupView extends StatelessWidget {
                 ],
               ),
             ),
-
-            // const _SectionTitle(title: "Note: The timer applies to each question individually"),
-            // const SizedBox(height: ),
-            // DifficultySelector(),
             const SizedBox(height: 20),
             const _SectionTitle(title: "Select Time Limit : sec"),
             const SizedBox(height: 10),
@@ -118,7 +120,11 @@ class _SectionTitle extends StatelessWidget {
   const _SectionTitle({super.key, required this.title});
   @override
   Widget build(BuildContext context) {
-    return Text(title, style: titleMediumStyle.copyWith(fontSize: 22,fontWeight: FontWeight.normal));
+    return Text(title, style:
+    titleMediumStyle.copyWith(
+        fontSize: 20,
+        fontWeight: FontWeight.normal
+    ));
   }
 }
 
@@ -128,20 +134,25 @@ class _TimeLimitSelector extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = Get.find<QuizSetupController>();
+    final subController = Get.find<RemoveAds>();
     return Obx(() {
       final options = controller.timeOptions;
+      final isSubscribed = subController.isSubscribedGet.value;
       return Padding(
         padding: const EdgeInsets.only(right: 80),
         child: Row(
           children: options.map((time) {
             final isSelected = controller.selectedTimeLimit.value == time;
+            final isLocked = !isSubscribed && time != 10;
             return Expanded(
               child: Padding(
                 padding: const EdgeInsets.only(right: 10),
                 child: OptionChip(
                   label: "$time",
+                  isLocked: isLocked,
                   isSelected: isSelected,
-                  onTap: () => controller.setTimeLimit(time),
+                  onTap:isLocked
+                      ? () => null: () => controller.setTimeLimit(time),
                 ),
               ),
             );

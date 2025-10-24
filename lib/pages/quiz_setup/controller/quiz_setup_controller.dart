@@ -4,18 +4,13 @@ import '/pages/quiz_view_second/controller/quiz_controller.dart';
 import '/services/services.dart';
 
 class QuizSetupController extends GetxController {
-
   final QuestionService _questionService;
-
   var selectedSubject = Rxn<Subject>();
   var selectedDifficulty = "Easy".obs;
   var selectedTimeLimit = 5.obs;
   var selectedQuestions = 10.obs;
   var subjectQuestions = <Question>[].obs;
-
   QuizSetupController({required QuestionService questionService}) : _questionService = questionService;
-
-
   Future<void> setSubject(Subject subject) async {
     // clearQuiz();
     selectedSubject.value = subject;
@@ -36,9 +31,7 @@ class QuizSetupController extends GetxController {
         return [5,10,15,20];
     }
   }
-
   List<int> get timeOptions => [10, 15, 20,25,30];
-
   void setDifficulty(String difficulty) {
     selectedDifficulty.value = difficulty;
     selectedQuestions.value = questionOptions.first;
@@ -50,15 +43,17 @@ class QuizSetupController extends GetxController {
   void setTimeLimit(int time) {
     selectedTimeLimit.value = time;
   }
-
     void clearQuiz(){
       Get.delete<QuizController>();
      Get.find<QuizController>().resetQuiz();
     }
-
   List<Question> get finalSelectedQuestions {
-    return subjectQuestions.take(selectedQuestions.value).toList();
+    final shuffled = List<Question>.from(subjectQuestions)..shuffle();
+    return shuffled.take(selectedQuestions.value).toList();
   }
+// List<Question> get finalSelectedQuestions {
+  //   return subjectQuestions.take(selectedQuestions.value).toList();
+  // }
 
 
 }

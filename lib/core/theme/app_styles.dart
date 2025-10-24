@@ -196,3 +196,31 @@ final boxShadow = BoxShadow(
   blurRadius: 6,
   offset: Offset(0, 2),
 );
+
+final elevatedAdsDecoration = ElevatedButton.styleFrom(
+  foregroundColor: Colors.white,
+  backgroundColor:lightSkyBlue,
+  padding: const EdgeInsets.symmetric(vertical: 10),
+  shape: RoundedRectangleBorder(
+    borderRadius: BorderRadius.circular(30),
+  ),
+  elevation: 6,
+);
+
+final outLineCancelDecoration= OutlinedButton.styleFrom(
+  side: const BorderSide(color: Colors.grey),
+  padding: const EdgeInsets.symmetric(vertical: 10),
+  shape: RoundedRectangleBorder(
+    borderRadius: BorderRadius.circular(30),
+  ),
+);
+
+final elevatedPremiumDecoration = ElevatedButton.styleFrom(
+  foregroundColor: Colors.white,
+  backgroundColor:lightSkyBlue,
+  padding: const EdgeInsets.symmetric(vertical:10,horizontal:30),
+  shape: RoundedRectangleBorder(
+    borderRadius: BorderRadius.circular(15),
+  ),
+  elevation:2,
+);

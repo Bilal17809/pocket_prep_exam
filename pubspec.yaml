@@ -93,7 +93,7 @@ flutter:
     - assets/correctness.mp3
     - assets/ForWrong.mp3
     - assets/fonts/
-    - assets/watch_ads_json
+    - assets/watch_ads_lottie.json
 
   fonts:
     - family: Roboto

@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
+import 'package:pocket_prep_exam/core/common/set_purchase_card.dart';
+import '../../pages/premium/view/premium_screen.dart';
+import '../theme/app_styles.dart';
 
-// --- Custom Dialog Widget ---
 class SimpleAdAccessDialog extends StatelessWidget {
   final String title;
   final String description;
-  final VoidCallback onWatchAds; // The required action
+  final VoidCallback onWatchAds;
 
   const SimpleAdAccessDialog({
     Key? key,
@@ -14,15 +17,8 @@ class SimpleAdAccessDialog extends StatelessWidget {
     required this.onWatchAds,
   }) : super(key: key);
 
-  // Placeholder actions used directly in the dialog
-  void _onGoPremium(BuildContext context) {
-    Navigator.of(context).pop();
-    print('Placeholder: Navigating to Premium Screen.');
-  }
-
   void _onCancel(BuildContext context) {
     Navigator.of(context).pop();
-    print('Dialog Cancelled.');
   }
 
   @override
@@ -32,106 +28,116 @@ class SimpleAdAccessDialog extends StatelessWidget {
       elevation: 10,
       backgroundColor: Colors.white,
       child: SingleChildScrollView(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: <Widget>[
-            // --- Animation Section ---
-          SizedBox(
-            height:200,
-            child:  Lottie.asset(
-              'assets/watch_ads_lottie.json',
-            ),
-          ) ,
-
-            // Title
-            Text(
-              title,
-              style: const TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.w900,
-                color: Colors.black87,
-              ),
-            ),
-            const SizedBox(height: 10),
-
-            // Description
-            Text(
-              description,
-              style: TextStyle(
-                fontSize: 16,
-                color: Colors.grey[700],
-                height: 1.4,
-              ),
-            ),
-            const SizedBox(height: 30),
-
-            // --- Watch Ads + Cancel Buttons in One Row ---
-            Row(
-              children: [
-                // Watch Ads Button
-                Expanded(
-                  child: ElevatedButton.icon(
-                    onPressed: onWatchAds,
-                    icon: const Icon(Icons.slow_motion_video_rounded, color: Colors.white),
-                    label: const Text(
-                      'WATCH AD',
-                      style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                    ),
-                    style: ElevatedButton.styleFrom(
-                      foregroundColor: Colors.white,
-                      backgroundColor: const Color(0xFF4CAF50),
-                      padding: const EdgeInsets.symmetric(vertical: 14),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                      elevation: 6,
-                    ),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Stack(
+                alignment: Alignment.bottomCenter,
+                children: [
+                  Lottie.asset(
+                    'assets/watch_ads_lottie.json',
+                    height: 180,
+                    fit: BoxFit.cover,
+                    repeat: true,
                   ),
-                ),
-                const SizedBox(width: 10),
-
-                // Cancel Button (in same row)
-                Expanded(
-                  child: OutlinedButton(
-                    onPressed: () => _onCancel(context),
-                    style: OutlinedButton.styleFrom(
-                      side: const BorderSide(color: Colors.grey),
-                      padding: const EdgeInsets.symmetric(vertical: 14),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                    ),
-                    child: const Text(
-                      'CANCEL',
-                      style: TextStyle(
-                        color: Colors.grey,
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
+                  Positioned(
+                    bottom: 10,
+                    left: 0,
+                    right: 0,
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 12),
+                      child: FittedBox(
+                        fit: BoxFit.scaleDown,
+                        child: Text(
+                          title,
+                          textAlign: TextAlign.center,
+                          style: context.textTheme.titleLarge?.copyWith(
+                            fontWeight: FontWeight.w700,
+                            fontSize: 16,
+                          ),
+                        ),
                       ),
                     ),
                   ),
-                ),
-              ],
-            ),
-            const SizedBox(height: 20),
-
-            // --- Premium Option ---
-            Center(
-              child: TextButton(
-                onPressed: () => _onGoPremium(context),
-                child: const Text(
-                  'Or Go Ad-Free with Premium',
-                  style: TextStyle(
-                    color: Color(0xFF6C63FF),
-                    fontWeight: FontWeight.w700,
-                    decoration: TextDecoration.underline,
-                  ),
+                ],
+              ),
+              Text(
+                description,
+                textAlign: TextAlign.center,
+                style: context.textTheme.bodyMedium?.copyWith(
+                  fontWeight: FontWeight.w500,
                 ),
               ),
-            ),
-          ],
+              const SizedBox(height: 16),
+              ElevatedButton.icon(
+                onPressed: () => Get.to(() => const PremiumScreen()),
+                icon: Image.asset("images/quality-product.png", height: 30),
+                label: const Text(
+                  'Go To Premium',
+                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+                ),
+                style: elevatedPremiumDecoration,
+              ),
+
+              const SizedBox(height: 16),
+              _DialogButtonsRow(
+                onCancel: () => _onCancel(context),
+                onWatchAds: onWatchAds,
+              ),
+            ],
+          ),
         ),
+      ),
+    );
+  }
+}
+
+class _DialogButtonsRow extends StatelessWidget {
+  final VoidCallback onCancel;
+  final VoidCallback onWatchAds;
+
+  const _DialogButtonsRow({
+    super.key,
+    required this.onCancel,
+    required this.onWatchAds,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 10.0),
+      child: Row(
+        children: [
+          Expanded(
+            child: OutlinedButton(
+              onPressed: onCancel,
+              style: outLineCancelDecoration,
+              child: const Text(
+                'CANCEL',
+                style: TextStyle(
+                  color: Colors.grey,
+                  fontSize: 14,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+          ),
+          const SizedBox(width: 10),
+          Expanded(
+            child: ElevatedButton.icon(
+              onPressed: onWatchAds,
+              icon: const Icon(Icons.slow_motion_video_rounded,
+                  color: Colors.white),
+              label: const Text(
+                'WATCH AD',
+                style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+              ),
+              style: elevatedAdsDecoration,
+            ),
+          ),
+        ],
       ),
     );
   }

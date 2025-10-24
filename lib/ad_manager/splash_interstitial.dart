@@ -77,7 +77,6 @@ class SplashInterstitialManager extends GetxController {
 
   void showSplashAd(VoidCallback onAdClosed) {
     if (!isAdReady || removeAds.isSubscribedGet.value) {
-      debugPrint("Splash Interstitial not ready.");
       onAdClosed();
       return;
     }

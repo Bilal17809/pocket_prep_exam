@@ -24,7 +24,6 @@ class StudyController extends GetxController {
 
   RxList<CalendarDateModel> calendarDates = <CalendarDateModel>[].obs;
 
-
   StudyController({
     required StorageService storageService,
     required ExamService examServices,
@@ -144,7 +143,6 @@ class StudyController extends GetxController {
     questionOfDayDate.value = '';
     print("Question of the Day cleared for Exam ID: ${exam.examId}");
   }
-
 
   List<QuizModeModel> buildQuizModeList() {
     final modes = <QuizModeModel>[];
