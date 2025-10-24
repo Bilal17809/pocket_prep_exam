@@ -11,7 +11,7 @@ class TopText extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         SizedBox(height: 10),
-        Image.asset("images/exam.png",height: 28,),
+        Image.asset("images/exams.png",height: 28,),
         Text("Switch Exam"),
         SizedBox(height: 14),
         Text("What are you preparing for?",style:buttonTextStyle.copyWith(

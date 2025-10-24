@@ -31,46 +31,33 @@ class PlanCard extends StatelessWidget {
           width: isActive ? 1.8 : 1,
         ),
       ),
-      child: Stack(
-        clipBehavior: Clip.none,
-        alignment: Alignment.center,
-        children: [
-          Positioned(
-            top: -12,
-            left: -12,
-            child: Image.asset(
-              plan.duration,
-              height: 34,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 1),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            const SizedBox(height:05),
+            Image.asset(
+              plan.type,
+              height:60,
               fit: BoxFit.contain,
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 16),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-
-              children: [
-                const SizedBox(height:02),
-                Image.asset(
-                  plan.type,
-                  height:50,
-                  fit: BoxFit.contain,
-                ),
-                Text(
-                  plan.price,
-                  style: theme.textTheme.titleMedium!.copyWith(
-                    color: kBlack,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 12,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-
-              ],
+            SizedBox(height:5,),
+            Text(
+              plan.features.join('\n'),
+              style: theme.textTheme.titleMedium!.copyWith(
+                color: kBlack,
+                fontWeight: FontWeight.bold,
+                fontSize: 12,
+              ),
+              textAlign: TextAlign.center,
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
 }
+
+
+

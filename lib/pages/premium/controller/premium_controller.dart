@@ -20,11 +20,39 @@ class PremiumPlansController extends GetxController {
     startAutoScroll();
     _loadProducts();
   }
-
   final List<PlanModel> plans = [
-    PlanModel(duration: "images/100-percent.png", type: "images/premium-quality.png", price: "", isPopular: false),
-    PlanModel(duration: "images/special-tag.png", type: "images/crown.png", price: "", isPopular: false),
-    PlanModel(duration: "images/100-percent.png", type: "images/quality-product.png", price: "", isPopular: false),
+    PlanModel(
+      duration: "images/100-percent.png",
+      type: "images/exams.png",
+      features: [
+        "Unlimited Exams",
+      ],
+      isPopular: false,
+    ),
+    PlanModel(
+      duration: "images/special-tag.png",
+      type: "images/premium-quality.png",
+      features: [
+        "Unlimited Subjects",
+      ],
+      isPopular: true,
+    ),
+    PlanModel(
+      duration: "images/100-percent.png",
+      type: "images/quiz.png",
+      features: [
+        "Different Quiz",
+      ],
+      isPopular: false,
+    ),
+    PlanModel(
+      duration: "images/100-percent.png",
+      type: "images/quality-product.png",
+      features: [
+        "Ads free",
+      ],
+      isPopular: false,
+    ),
   ];
 
   Future<void> _loadProducts() async {
@@ -32,6 +60,7 @@ class PremiumPlansController extends GetxController {
       isLoading.value = true;
       await purchaseService.init((fn) => fn());
       final products = purchaseService.products;
+
       plan.value = products.map((p) {
         return PlanModelForFree(
           title: p.title,
@@ -40,40 +69,12 @@ class PremiumPlansController extends GetxController {
           productId: p.id,
         );
       }).toList();
-      for (int i = 0; i < plans.length && i < products.length; i++) {
-        plans[i] = PlanModel(
-          duration: plans[i].duration,
-          type: plans[i].type,
-          price: products[i].price,
-          isPopular: plans[i].isPopular,
-        );
-      }
-      if (products.isNotEmpty) {
-        if (plans.length > 1 && products.length > 0) {
-          plans[1] = PlanModel(
-            duration: plans[1].duration,
-            type: plans[1].type,
-            price: products.first.price,
-            isPopular: plans[1].isPopular,
-          );
-        }
-        if (plans.isNotEmpty && products.length > 1) {
-          plans[0] = PlanModel(
-            duration: plans[0].duration,
-            type: plans[0].type,
-            price: products[1].price,
-            isPopular: plans[0].isPopular,
-          );
-        }
-      }
-
     } catch (e) {
       print("❌ Error loading products: $e");
     } finally {
       isLoading.value = false;
     }
   }
-
 
   void selectPlan(int index) {
     selectedIndex.value = index;
@@ -121,13 +122,13 @@ class PlanModelForFree {
 class PlanModel {
   final String duration;
   final String type;
-  final String price;
+  final List<String> features;
   final bool isPopular;
 
   PlanModel({
     required this.duration,
     required this.type,
-    required this.price,
+    required this.features,
     this.isPopular = false,
   });
 }

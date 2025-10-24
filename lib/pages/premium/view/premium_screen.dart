@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:pocket_prep_exam/pages/term_of_services/view/term_services_view.dart';
+import '/pages/term_of_services/view/term_services_view.dart';
 import '../widgets/plane_tile.dart';
 import '../widgets/premium_top_baner.dart';
 import '/core/theme/app_colors.dart';
@@ -37,17 +37,34 @@ class PremiumScreen extends StatelessWidget {
                   itemBuilder: (_, index) {
                     final plan = plans[index];
                     final isSelected = selected == index;
-                    return PlanTile(
-                      plan: plan,
-                      isSelected: isSelected,
-                      onTap: () async {
-                        controller.selectPlan(index);
-                        final selected = controller.selectedPlan;
-                        final product = controller.purchaseService.products.firstWhere(
-                              (p) => p.id == selected.productId,
-                        );
-                        await controller.purchaseService.buyProduct(product, null, context);
-                      },
+                    return Stack(
+                      clipBehavior: Clip.none,
+                      children: [
+                        PlanTile(
+                          plan: plan,
+                          isSelected: isSelected,
+                          onTap: () async {
+                            controller.selectPlan(index);
+                            final selected = controller.selectedPlan;
+                            final product = controller.purchaseService.products.firstWhere(
+                                  (p) => p.id == selected.productId,
+                            );
+                            await controller.purchaseService.buyProduct(product, null, context);
+                          },
+                        ),
+
+                        if (index == 0)
+                          Positioned(
+                            top: -32,
+                            right:4,
+                            child: Image.asset(
+                              'images/special-tag.png',
+                              height:52,
+                              width:52,
+                              fit: BoxFit.contain,
+                            ),
+                          ),
+                      ],
                     );
                   },
                 );

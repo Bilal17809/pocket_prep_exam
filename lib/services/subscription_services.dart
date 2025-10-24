@@ -131,8 +131,24 @@ Yearly:  com.professionalexamprep.yearly
 
     setState(() {
       _isAvailable = available;
-      _products = productDetailResponse.productDetails;
+      _products = productDetailResponse.productDetails..sort((a, b) {
+        const order = ['year', 'annual', 'quarter', 'month'];
+        int getIndex(ProductDetails p) {
+          final id = p.id.toLowerCase();
+          for (int i = 0; i < order.length; i++) {
+            if (id.contains(order[i])) return i;
+          }
+          return order.length;
+        }
+        return getIndex(a).compareTo(getIndex(b));
+      });
+      _queryProductError = null;
     });
+
+    // setState(() {
+    //   _isAvailable = available;
+    //   _products = productDetailResponse.productDetails;
+    // });
   }
 
 
@@ -188,83 +204,6 @@ Yearly:  com.professionalexamprep.yearly
       );
     }
   }
-
-  // Future<void> buyProduct(
-  //     ProductDetails product,
-  //     PurchaseDetails? purchase,
-  //     BuildContext context,
-  //     ) async {
-  //   // 1. Show the INITIAL custom loader dialog (Pre-native call)
-  //   showDialog(
-  //     context: context,
-  //     barrierDismissible: false,
-  //     builder: (_) => const AlertDialog(
-  //       content: Row(
-  //         children: [
-  //           CircularProgressIndicator(),
-  //           SizedBox(width: 20),
-  //           Text('Connecting to store...'),
-  //         ],
-  //       ),
-  //     ),
-  //   );
-  //
-  //   try {
-  //     final purchaseParam = GooglePlayPurchaseParam(
-  //       productDetails: product,
-  //       changeSubscriptionParam:
-  //       purchase != null && purchase is GooglePlayPurchaseDetails
-  //           ? ChangeSubscriptionParam(oldPurchaseDetails: purchase)
-  //           : null,
-  //     );
-  //
-  //     // 2. DISMISS the INITIAL loader
-  //     if (Navigator.of(context).canPop()) {
-  //       Navigator.of(context).pop();
-  //     }
-  //
-  //     // 3. Re-show the loader to block the screen while the transaction processes (POST-native call) 👈 UNCOMMENT THIS FIX!
-  //     // showDialog(
-  //     //   context: context,
-  //     //   barrierDismissible: false,
-  //     //   builder: (_) => const AlertDialog(
-  //     //     content: Row(
-  //     //       children: [
-  //     //         CircularProgressIndicator(),
-  //     //         SizedBox(width: 20),
-  //     //         Text('Processing purchase...'),
-  //     //       ],
-  //     //     ),
-  //     //   ),
-  //     // );
-  //
-  //     // 4. Initiate the native purchase flow (User interacts with Google Dialog)
-  //     if (product.id == 'consumable') {
-  //       // DO NOT use await here.
-  //       _inAppPurchase.buyConsumable(
-  //         purchaseParam: purchaseParam,
-  //         autoConsume: _kAutoConsume,
-  //       );
-  //     } else {
-  //       // DO NOT use await here.
-  //       _inAppPurchase.buyNonConsumable(purchaseParam: purchaseParam);
-  //     }
-  //
-  //     // The screen is now blocked by the "Processing purchase..." dialog.
-  //
-  //   } catch (e) {
-  //     debugPrint('Purchase initiation error: $e');
-  //
-  //     // In case of an immediate catch error, close the loader that was just shown.
-  //     if (Navigator.of(Get.context!).canPop()) {
-  //       Navigator.of(Get.context!).pop();
-  //     }
-  //     ScaffoldMessenger.of(Get.context!).showSnackBar(
-  //       SnackBar(content: Text('Failed to initiate purchase: ${e.toString()}')),
-  //     );
-  //   }
-  // }
-
   Future<void> _checkInitialPurchases() async {
     debugPrint('Checking existing purchases via silent restore...');
     try {
@@ -287,14 +226,9 @@ Yearly:  com.professionalexamprep.yearly
         setState(() => _purchasePending = true);
       } else if (details.status == PurchaseStatus.error) {
         setState(() => _purchasePending = false);
-
-        // NEW (Use GetX for safer dialog dismissal):
-        if (Get.isDialogOpen ?? false) { // Check if ANY dialog is open
-          Get.back(); // Safely dismisses the topmost dialog ('Processing purchase...')
+        if (Get.isDialogOpen ?? false) {
+          Get.back();
         }
-        // if (Navigator.of(Get.context!).canPop()) {
-        //   Navigator.of(Get.context!).pop();
-        // }
         ScaffoldMessenger.of(Get.context!).showSnackBar(
           SnackBar(
             content: Text(
@@ -328,28 +262,6 @@ Yearly:  com.professionalexamprep.yearly
             await _inAppPurchase.completePurchase(details);
           }
         }
-        // if (_kSubscriptionIdsForAndroid.contains(details.productID)) {
-        //   foundActiveSubscription = true;
-        //
-        //   setState(() => _purchasePending = false);
-        //
-        //   if (Navigator.of(Get.context!).canPop()) {
-        //     Navigator.of(Get.context!).pop();
-        //   }
-        //   await StorageService.saveGeneralSubscriptionStatus(true);
-        //   await StorageService.saveSubscriptionProductId(details.productID);
-        //   removeAdsController.isSubscribedGet(true);
-        //   if (details.status == PurchaseStatus.purchased) {
-        //     ScaffoldMessenger.of(Get.context!).showSnackBar(
-        //       const SnackBar(content: Text('Subscription purchased successfully!')),
-        //     );
-        //   } else {
-        //     debugPrint('Subscription restored: ${details.productID}');
-        //   }
-        //   if (details.pendingCompletePurchase) {
-        //     await _inAppPurchase.completePurchase(details);
-        //   }
-        // }
       }
     }
 

@@ -100,7 +100,7 @@ class QuizResultView extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         const SizedBox(height: 28),
-        Image.asset("images/exam.png", height: 40),
+        Image.asset("images/exams.png", height: 40),
         const SizedBox(height: 12),
         Text(
           " Quiz Results",
