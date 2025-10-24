@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:get/get.dart';
+import 'package:pocket_prep_exam/ad_manager/ad_manager.dart';
 import 'package:pocket_prep_exam/core/Utility/utils.dart';
 import '../../../ad_manager/interstitial_ads.dart';
 import '/pages/edite_subjects/controller/edite_subject_controller.dart';
@@ -163,6 +164,27 @@ class QuestionController extends GetxController {
     }
   }
 
+  Future<void> startQuizForFreUser({List<Question>? fixedQuestions}) async {
+    try {
+      state.value = QuestionState.loading;
+      _resetQuizState();
+      if (fixedQuestions != null && fixedQuestions.isNotEmpty) {
+        questions.assignAll(fixedQuestions);
+      } else {
+        final pool = Get.find<EditeSubjectController>().startQuizForFreeUser();
+        questions.assignAll(pool);
+      }
+      if (questions.isEmpty) {
+        state.value = QuestionState.error;
+      } else {
+        _startQuizTimer();
+        state.value = QuestionState.success;
+      }
+    } catch (e) {
+      state.value = QuestionState.error;
+    }
+  }
+
   Future<void> initQuiz({
     required bool reviewMode,
     List<int>? questionIdsToReview,
@@ -191,7 +213,12 @@ class QuestionController extends GetxController {
           timedSeconds: timedQuizMinutes,
         );
       } else {
-        await startQuiz(fixedQuestions: quizQuestions);
+        if(Get.find<RemoveAds>().isSubscribedGet.value){
+          await startQuiz(fixedQuestions: quizQuestions);
+        }else{
+          await startQuizForFreUser(fixedQuestions: quizQuestions);
+        }
+
       }
     } catch (e) {
       state.value = QuestionState.error;

@@ -2,6 +2,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
+import 'package:pocket_prep_exam/ad_manager/ad_manager.dart';
 import 'package:pocket_prep_exam/pages/edite_subjects/controller/edite_subject_controller.dart';
 import '../../../ad_manager/interstitial_ads.dart';
 import '/core/local_storage/storage_helper.dart';
@@ -21,6 +22,7 @@ class StudyController extends GetxController {
   RxString questionOfDayDate = ''.obs;
   RxBool isQuestionOfDayVisible =true.obs;
   RxBool isQuestionOfDayCorrect = false.obs;
+  final isSubscribed = Get.find<RemoveAds>().isSubscribedGet.value;
 
   RxList<CalendarDateModel> calendarDates = <CalendarDateModel>[].obs;
 
@@ -169,7 +171,7 @@ class StudyController extends GetxController {
       ));
     }
     modes.addAll([
-      QuizModeModel("images/quiz icon.png", "", "Quick ${Get.find<EditeSubjectController>().questionPool.length} Quiz", null),
+      QuizModeModel("images/quiz icon.png", "", "Quick ${isSubscribed ? Get.find<EditeSubjectController>().questionPool.length:"10"} Quiz", null),
       QuizModeModel("images/stopwatch.png", "", "Timed Quiz", null),
       QuizModeModel("images/set-up.png", "", "Quiz Builder", null),
     ]);

@@ -140,7 +140,1251 @@
     "explanation": "Rollover is the ignition of fire gases at the upper levels of a compartment. It often precedes flashover and is a warning sign of dangerous fire development.",
     "reference": "IFSTA, Essentials of Fire Fighting and Fire Department Operations, 7th Edition, Chapter 6, p. 265."
   },
-
+  {
+    "question_id": "FF-Q11",
+    "subject_id": 1,
+    "question_text": "Which of the following best describes the fire tetrahedron?",
+    "options": [
+      "A. Heat, oxygen, fuel, chemical chain reaction",
+      "B. Heat, oxygen, fuel, water",
+      "C. Fuel, ignition source, smoke, chain reaction",
+      "D. Heat, oxygen, ignition, smoke"
+    ],
+    "correct_answer": "A",
+    "explanation": "The fire tetrahedron includes heat, fuel, oxygen, and the chemical chain reaction. Removing any element prevents combustion.",
+    "reference": "IFSTA, Essentials of Fire Fighting and Fire Department Operations, 7th Edition, Chapter 3."
+  },
+  {
+    "question_id": "FF-Q12",
+    "subject_id": 1,
+    "question_text": "A Class C fire involves energized electrical equipment.",
+    "options": ["A. True", "B. False"],
+    "correct_answer": "A",
+    "explanation": "Class C fires involve energized electrical equipment. Once de-energized, the fire can be reclassified.",
+    "reference": "IFSTA, Essentials, Chapter 6."
+  },
+  {
+    "question_id": "FF-Q13",
+    "subject_id": 1,
+    "question_text": "What is the primary purpose of the Incident Command System (ICS)?",
+    "options": [
+      "A. To replace fireground communication",
+      "B. To ensure clear command, control, and coordination",
+      "C. To provide backup radios for firefighters",
+      "D. To track fire apparatus maintenance"
+    ],
+    "correct_answer": "B",
+    "explanation": "ICS provides command, control, and coordination at incidents, ensuring safety and effective operations.",
+    "reference": "IFSTA, Essentials, Chapter 3."
+  },
+  {
+    "question_id": "FF-Q14",
+    "subject_id": 1,
+    "question_text": "The transfer of heat through direct contact between materials is called ___________.",
+    "options": [
+      "A. Radiation",
+      "B. Conduction",
+      "C. Convection",
+      "D. Ignition"
+    ],
+    "correct_answer": "B",
+    "explanation": "Conduction is heat transfer through direct contact of materials.",
+    "reference": "IFSTA, Essentials, Chapter 5."
+  },
+  {
+    "question_id": "FF-Q15",
+    "subject_id": 1,
+    "question_text": "Which radio communication guideline is most critical during fireground operations?",
+    "options": [
+      "A. Speak as quickly as possible",
+      "B. Use slang for faster communication",
+      "C. Keep messages brief and clear",
+      "D. Hold the microphone close to your SCBA regulator"
+    ],
+    "correct_answer": "C",
+    "explanation": "Clear, concise messages are essential to ensure communication is understood on the fireground.",
+    "reference": "IFSTA, Essentials, Chapter 3."
+  },
+  {
+    "question_id": "FF-Q16",
+    "subject_id": 1,
+    "question_text": "Backdraft conditions occur when oxygen is suddenly introduced into a confined space containing hot gases and unburned fuel vapors.",
+    "options": ["A. True", "B. False"],
+    "correct_answer": "A",
+    "explanation": "Backdrafts result from reintroduction of oxygen into a superheated, oxygen-depleted environment.",
+    "reference": "IFSTA, Essentials, Chapter 5."
+  },
+  {
+    "question_id": "FF-Q17",
+    "subject_id": 1,
+    "question_text": "List two signs that may indicate the potential for flashover inside a structure.",
+    "options": [
+      "A. Rapidly increasing heat and rollover",
+      "B. Presence of water on the floor",
+      "C. Visible smoke only at the roof level",
+      "D. Stable, cool interior conditions"
+    ],
+    "correct_answer": "A",
+    "explanation": "Flashover indicators include rollover, rapidly increasing heat, and smoke banked down to the floor.",
+    "reference": "IFSTA, Essentials, Chapter 5."
+  },
+  {
+    "question_id": "FF-Q18",
+    "subject_id": 1,
+    "question_text": "Which type of construction is most resistant to collapse during a fire?",
+    "options": [
+      "A. Type I – Fire Resistive",
+      "B. Type II – Noncombustible",
+      "C. Type III – Ordinary",
+      "D. Type V – Wood Frame"
+    ],
+    "correct_answer": "A",
+    "explanation": "Type I construction uses reinforced concrete and protected steel, providing the highest fire resistance.",
+    "reference": "IFSTA, Essentials, Chapter 4."
+  },
+  {
+    "question_id": "FF-Q19",
+    "subject_id": 1,
+    "question_text": "A PASS device is designed to help locate a firefighter who is motionless or in distress.",
+    "options": ["A. True", "B. False"],
+    "correct_answer": "A",
+    "explanation": "PASS devices emit a loud alarm to help rescuers locate downed firefighters.",
+    "reference": "IFSTA, Essentials, Chapter 2."
+  },
+  {
+    "question_id": "FF-Q20",
+    "subject_id": 1,
+    "question_text": "Explain why maintaining situational awareness is essential for firefighter safety on the fireground.",
+    "options": [
+      "A. To improve communication speed",
+      "B. To anticipate hazards and make safe decisions",
+      "C. To ensure tools are returned after use",
+      "D. To reduce the need for PPE"
+    ],
+    "correct_answer": "B",
+    "explanation": "Situational awareness helps firefighters recognize changing conditions, anticipate hazards, and avoid entrapment.",
+    "reference": "IFSTA, Essentials, Chapter 2."
+  },
+  {
+    "question_id": "FF-Q21",
+    "subject_id": 1,
+    "question_text": "Which NFPA standard primarily addresses firefighter protective clothing and equipment?",
+    "options": [
+      "A. NFPA 1403",
+      "B. NFPA 1971",
+      "C. NFPA 1001",
+      "D. NFPA 1500"
+    ],
+    "correct_answer": "B",
+    "explanation": "NFPA 1971 outlines standards for firefighter protective ensembles, including turnout gear and helmets.",
+    "reference": "IFSTA, Essentials, Chapter 2."
+  },
+  {
+    "question_id": "FF-Q22",
+    "subject_id": 1,
+    "question_text": "Thermal layering in a structure fire refers to:",
+    "options": [
+      "A. The division of gases by temperature levels",
+      "B. The spread of flames from floor to ceiling",
+      "C. Smoke rolling out of openings",
+      "D. The layering of PPE on firefighters"
+    ],
+    "correct_answer": "A",
+    "explanation": "Thermal layering occurs as hot gases rise and cooler gases remain near the floor inside a fire environment.",
+    "reference": "IFSTA, Essentials, Chapter 5."
+  },
+  {
+    "question_id": "FF-Q23",
+    "subject_id": 1,
+    "question_text": "What type of radio report is given to provide a quick description of conditions upon arrival?",
+    "options": [
+      "A. PAR report",
+      "B. Size-up report",
+      "C. Tactical benchmark",
+      "D. Emergency traffic"
+    ],
+    "correct_answer": "B",
+    "explanation": "A size-up report provides a quick initial description of the incident scene, hazards, and resources needed.",
+    "reference": "IFSTA, Essentials, Chapter 3."
+  },
+  {
+    "question_id": "FF-Q24",
+    "subject_id": 1,
+    "question_text": "Which fire extinguishing method works by removing heat from the fire?",
+    "options": [
+      "A. Smothering",
+      "B. Cooling",
+      "C. Fuel removal",
+      "D. Chemical inhibition"
+    ],
+    "correct_answer": "B",
+    "explanation": "Cooling, usually with water, removes heat below ignition temperature and stops combustion.",
+    "reference": "IFSTA, Essentials, Chapter 6."
+  },
+  {
+    "question_id": "FF-Q25",
+    "subject_id": 1,
+    "question_text": "What is the most reliable way to ensure accountability of firefighters on the fireground?",
+    "options": [
+      "A. Helmet markings",
+      "B. Personnel Accountability Report (PAR)",
+      "C. Portable radio check-ins",
+      "D. Apparatus assignment lists"
+    ],
+    "correct_answer": "B",
+    "explanation": "PAR checks confirm the location and safety of crews working in hazardous areas.",
+    "reference": "IFSTA, Essentials, Chapter 2."
+  },
+  {
+    "question_id": "FF-Q26",
+    "subject_id": 1,
+    "question_text": "Which stage of fire is characterized by all combustible materials in the compartment igniting almost simultaneously?",
+    "options": [
+      "A. Growth stage",
+      "B. Flashover",
+      "C. Decay stage",
+      "D. Incipient stage"
+    ],
+    "correct_answer": "B",
+    "explanation": "Flashover occurs when radiant heat causes all combustibles in a compartment to ignite at once.",
+    "reference": "IFSTA, Essentials, Chapter 5."
+  },
+  {
+    "question_id": "FF-Q27",
+    "subject_id": 1,
+    "question_text": "Which type of building construction uses large, heavy timber members for structural support?",
+    "options": [
+      "A. Type I",
+      "B. Type II",
+      "C. Type IV",
+      "D. Type V"
+    ],
+    "correct_answer": "C",
+    "explanation": "Type IV (Heavy Timber) construction uses large wooden beams that provide some fire resistance.",
+    "reference": "IFSTA, Essentials, Chapter 4."
+  },
+  {
+    "question_id": "FF-Q28",
+    "subject_id": 1,
+    "question_text": "Which signal indicates that a firefighter needs immediate help?",
+    "options": [
+      "A. Emergency traffic",
+      "B. Mayday",
+      "C. PAR",
+      "D. Evacuation order"
+    ],
+    "correct_answer": "B",
+    "explanation": "The term 'Mayday' is reserved for situations when a firefighter is in distress or lost.",
+    "reference": "IFSTA, Essentials, Chapter 3."
+  },
+  {
+    "question_id": "FF-Q29",
+    "subject_id": 1,
+    "question_text": "What is the main hazard of lightweight truss construction during fire conditions?",
+    "options": [
+      "A. High thermal mass",
+      "B. Rapid collapse potential",
+      "C. Limited fuel load",
+      "D. Strong resistance to heat"
+    ],
+    "correct_answer": "B",
+    "explanation": "Lightweight trusses fail quickly when exposed to fire due to small cross-sectional members.",
+    "reference": "IFSTA, Essentials, Chapter 4."
+  },
+  {
+    "question_id": "FF-Q30",
+    "subject_id": 1,
+    "question_text": "What communication term should be used to clear radio traffic for urgent safety messages?",
+    "options": [
+      "A. Priority",
+      "B. Emergency traffic",
+      "C. Urgent alert",
+      "D. Tactical order"
+    ],
+    "correct_answer": "B",
+    "explanation": "The phrase 'Emergency Traffic' alerts all units to stop routine communication for urgent messages.",
+    "reference": "IFSTA, Essentials, Chapter 3."
+  },
+  {
+    "question_id": "FF-Q31",
+    "subject_id": 1,
+    "question_text": "Which type of ventilation uses natural wind currents and temperature differences to move smoke?",
+    "options": [
+      "A. Hydraulic ventilation",
+      "B. Mechanical ventilation",
+      "C. Natural ventilation",
+      "D. Positive-pressure ventilation"
+    ],
+    "correct_answer": "C",
+    "explanation": "Natural ventilation relies on wind and buoyancy without mechanical devices.",
+    "reference": "IFSTA, Essentials, Chapter 13."
+  },
+  {
+    "question_id": "FF-Q32",
+    "subject_id": 1,
+    "question_text": "Which factor most influences fire behavior in a compartment?",
+    "options": [
+      "A. Fuel color",
+      "B. Ventilation",
+      "C. Presence of firefighters",
+      "D. Age of structure"
+    ],
+    "correct_answer": "B",
+    "explanation": "Ventilation directly impacts heat release rate, oxygen supply, and fire growth inside a compartment.",
+    "reference": "IFSTA, Essentials, Chapter 5."
+  },
+  {
+    "question_id": "FF-Q33",
+    "subject_id": 1,
+    "question_text": "Which device is worn by firefighters to provide breathable air in IDLH environments?",
+    "options": [
+      "A. APR",
+      "B. SCBA",
+      "C. PASS",
+      "D. SAR"
+    ],
+    "correct_answer": "B",
+    "explanation": "Self-Contained Breathing Apparatus (SCBA) allows firefighters to work safely in IDLH conditions.",
+    "reference": "IFSTA, Essentials, Chapter 2."
+  },
+  {
+    "question_id": "FF-Q34",
+    "subject_id": 1,
+    "question_text": "In fire dynamics, what is the lowest temperature at which a liquid gives off enough vapor to ignite?",
+    "options": [
+      "A. Fire point",
+      "B. Flash point",
+      "C. Ignition temperature",
+      "D. Boiling point"
+    ],
+    "correct_answer": "B",
+    "explanation": "The flash point is the minimum temperature at which a liquid produces sufficient vapor to ignite.",
+    "reference": "IFSTA, Essentials, Chapter 5."
+  },
+  {
+    "question_id": "FF-Q35",
+    "subject_id": 1,
+    "question_text": "Which fire service communication practice improves clarity during stressful conditions?",
+    "options": [
+      "A. Use plain language",
+      "B. Use department-specific codes",
+      "C. Speak rapidly to save time",
+      "D. Omit repeat-backs"
+    ],
+    "correct_answer": "A",
+    "explanation": "Plain language eliminates confusion and ensures all responders understand radio messages.",
+    "reference": "IFSTA, Essentials, Chapter 3."
+  },
+  {
+    "question_id": "FF-Q36",
+    "subject_id": 1,
+    "question_text": "Which structural collapse indicator involves sagging or bowing of floors and roofs?",
+    "options": [
+      "A. Sudden loud cracking sounds",
+      "B. Large volume of smoke",
+      "C. Visible deflection of structural members",
+      "D. Flashover conditions"
+    ],
+    "correct_answer": "C",
+    "explanation": "Sagging or deflection of beams or roofs indicates impending collapse.",
+    "reference": "IFSTA, Essentials, Chapter 4."
+  },
+  {
+    "question_id": "FF-Q37",
+    "subject_id": 1,
+    "question_text": "What is the main purpose of a Personnel Accountability System?",
+    "options": [
+      "A. Track apparatus maintenance",
+      "B. Monitor equipment use",
+      "C. Track firefighter location and safety",
+      "D. Record training attendance"
+    ],
+    "correct_answer": "C",
+    "explanation": "Accountability systems ensure all firefighters are tracked and can be located in emergencies.",
+    "reference": "IFSTA, Essentials, Chapter 2."
+  },
+  {
+    "question_id": "FF-Q38",
+    "subject_id": 1,
+    "question_text": "Which fire behavior phenomenon involves ignition of unburned gases at the ceiling level?",
+    "options": [
+      "A. Flashover",
+      "B. Rollover",
+      "C. Backdraft",
+      "D. Decay"
+    ],
+    "correct_answer": "B",
+    "explanation": "Rollover is the ignition of unburned gases at ceiling level, often a precursor to flashover.",
+    "reference": "IFSTA, Essentials, Chapter 5."
+  },
+  {
+    "question_id": "FF-Q39",
+    "subject_id": 1,
+    "question_text": "Which NFPA standard defines the professional qualifications for Firefighter I and II?",
+    "options": [
+      "A. NFPA 1001",
+      "B. NFPA 1500",
+      "C. NFPA 1971",
+      "D. NFPA 1403"
+    ],
+    "correct_answer": "A",
+    "explanation": "NFPA 1001 outlines the professional qualifications for Firefighter I and II.",
+    "reference": "NFPA 1001, Standard for Fire Fighter Professional Qualifications."
+  },
+  {
+    "question_id": "FF-Q40",
+    "subject_id": 1,
+    "question_text": "Which element of the fire tetrahedron can be disrupted by applying a dry chemical extinguisher?",
+    "options": [
+      "A. Fuel",
+      "B. Heat",
+      "C. Oxygen",
+      "D. Chemical chain reaction"
+    ],
+    "correct_answer": "D",
+    "explanation": "Dry chemical extinguishers interrupt the chemical chain reaction required for combustion.",
+    "reference": "IFSTA, Essentials, Chapter 6."
+  },
+  {
+    "question_id": "FF-Q41",
+    "subject_id": 1,
+    "question_text": "Which component of the fire tetrahedron represents the self-sustaining nature of combustion?",
+    "options": [
+      "A. Fuel",
+      "B. Heat",
+      "C. Oxygen",
+      "D. Chemical chain reaction"
+    ],
+    "correct_answer": "D",
+    "explanation": "The chemical chain reaction sustains combustion once ignition has occurred.",
+    "reference": "IFSTA, Essentials, Chapter 5."
+  },
+  {
+    "question_id": "FF-Q42",
+    "subject_id": 1,
+    "question_text": "In fire dynamics, which form of heat transfer is responsible for the spread of fire through solid materials in direct contact?",
+    "options": [
+      "A. Radiation",
+      "B. Conduction",
+      "C. Convection",
+      "D. Expansion"
+    ],
+    "correct_answer": "B",
+    "explanation": "Conduction transfers heat through direct contact between solid materials.",
+    "reference": "IFSTA, Essentials, Chapter 5."
+  },
+  {
+    "question_id": "FF-Q43",
+    "subject_id": 1,
+    "question_text": "What is the primary hazard associated with backdraft conditions?",
+    "options": [
+      "A. Rapid collapse of the structure",
+      "B. Explosive ignition of gases",
+      "C. Sudden drop in temperature",
+      "D. Loss of visibility from steam"
+    ],
+    "correct_answer": "B",
+    "explanation": "Backdrafts cause explosive ignition when oxygen re-enters a superheated, fuel-rich atmosphere.",
+    "reference": "IFSTA, Essentials, Chapter 5."
+  },
+  {
+    "question_id": "FF-Q44",
+    "subject_id": 1,
+    "question_text": "What does the acronym 'PAR' stand for in fireground communications?",
+    "options": [
+      "A. Personal Accountability Report",
+      "B. Public Announcement Relay",
+      "C. Personnel Assignment Record",
+      "D. Portable Alarm Radio"
+    ],
+    "correct_answer": "A",
+    "explanation": "PAR stands for Personal Accountability Report, used to confirm firefighter safety and location.",
+    "reference": "IFSTA, Essentials, Chapter 3."
+  },
+  {
+    "question_id": "FF-Q45",
+    "subject_id": 1,
+    "question_text": "Which stage of fire occurs immediately after ignition and is characterized by a small flame localized to the point of origin?",
+    "options": [
+      "A. Incipient stage",
+      "B. Growth stage",
+      "C. Fully developed stage",
+      "D. Decay stage"
+    ],
+    "correct_answer": "A",
+    "explanation": "The incipient stage begins at ignition and involves a small flame with minimal heat production.",
+    "reference": "IFSTA, Essentials, Chapter 5."
+  },
+  {
+    "question_id": "FF-Q46",
+    "subject_id": 1,
+    "question_text": "Which fireground radio communication should only be used by a firefighter in life-threatening distress?",
+    "options": [
+      "A. Emergency traffic",
+      "B. Mayday",
+      "C. PAR",
+      "D. Tactical benchmark"
+    ],
+    "correct_answer": "B",
+    "explanation": "A 'Mayday' is reserved for firefighters in distress and triggers an immediate rescue response.",
+    "reference": "IFSTA, Essentials, Chapter 3."
+  },
+  {
+    "question_id": "FF-Q47",
+    "subject_id": 1,
+    "question_text": "Which sign may indicate an impending flashover?",
+    "options": [
+      "A. Smoke lifting and clearing",
+      "B. Rapidly increasing heat at floor level",
+      "C. Decreasing flame intensity",
+      "D. Ventilation-limited fire conditions"
+    ],
+    "correct_answer": "B",
+    "explanation": "Flashover indicators include rapidly increasing heat and rollover flames overhead.",
+    "reference": "IFSTA, Essentials, Chapter 5."
+  },
+  {
+    "question_id": "FF-Q48",
+    "subject_id": 1,
+    "question_text": "What is the recommended practice for holding a portable radio while transmitting with SCBA?",
+    "options": [
+      "A. Speak directly into the facepiece",
+      "B. Hold the microphone 1–2 inches from the mouthpiece opening",
+      "C. Place the radio on the ground near the SCBA",
+      "D. Remove the facepiece to transmit clearly"
+    ],
+    "correct_answer": "B",
+    "explanation": "Holding the microphone near the facepiece opening ensures clear transmission while wearing SCBA.",
+    "reference": "IFSTA, Essentials, Chapter 3."
+  },
+  {
+    "question_id": "FF-Q49",
+    "subject_id": 1,
+    "question_text": "Which method of heat transfer spreads fire gases and smoke throughout a structure?",
+    "options": [
+      "A. Radiation",
+      "B. Conduction",
+      "C. Convection",
+      "D. Absorption"
+    ],
+    "correct_answer": "C",
+    "explanation": "Convection circulates heat and smoke through air movement inside a structure.",
+    "reference": "IFSTA, Essentials, Chapter 5."
+  },
+  {
+    "question_id": "FF-Q50",
+    "subject_id": 1,
+    "question_text": "What should a firefighter do immediately after transmitting a Mayday?",
+    "options": [
+      "A. Attempt to find an exit silently",
+      "B. Activate PASS device and conserve air",
+      "C. Turn off the radio to save battery",
+      "D. Attempt to remove SCBA for easier movement"
+    ],
+    "correct_answer": "B",
+    "explanation": "After a Mayday, firefighters should activate their PASS and attempt self-rescue while conserving air.",
+    "reference": "IFSTA, Essentials, Chapter 3."
+  },
+  {
+    "question_id": "FF-Q51",
+    "subject_id": 1,
+    "question_text": "Which factor most influences the growth of a compartment fire?",
+    "options": [
+      "A. Size of firefighting crew",
+      "B. Ventilation",
+      "C. Color of smoke",
+      "D. Age of the building"
+    ],
+    "correct_answer": "B",
+    "explanation": "Ventilation directly affects fire growth by controlling oxygen supply.",
+    "reference": "IFSTA, Essentials, Chapter 5."
+  },
+  {
+    "question_id": "FF-Q52",
+    "subject_id": 1,
+    "question_text": "What does the term 'Emergency Traffic' mean during fireground operations?",
+    "options": [
+      "A. Routine status update",
+      "B. Request for additional apparatus",
+      "C. Urgent safety message requiring radio silence",
+      "D. Report of equipment malfunction"
+    ],
+    "correct_answer": "C",
+    "explanation": "Emergency Traffic clears the radio for urgent safety-related transmissions.",
+    "reference": "IFSTA, Essentials, Chapter 3."
+  },
+  {
+    "question_id": "FF-Q53",
+    "subject_id": 1,
+    "question_text": "Which type of fire behavior phenomenon involves ignition of gas layers near the ceiling prior to flashover?",
+    "options": [
+      "A. Rollover",
+      "B. Backdraft",
+      "C. Decay",
+      "D. Flameover"
+    ],
+    "correct_answer": "A",
+    "explanation": "Rollover is the ignition of gas layers overhead and often precedes flashover.",
+    "reference": "IFSTA, Essentials, Chapter 5."
+  },
+  {
+    "question_id": "FF-Q54",
+    "subject_id": 1,
+    "question_text": "Which radio communication best practice reduces misunderstandings?",
+    "options": [
+      "A. Use plain language instead of codes",
+      "B. Speak as quickly as possible",
+      "C. Use department-specific slang",
+      "D. Avoid repeating messages"
+    ],
+    "correct_answer": "A",
+    "explanation": "Using plain language eliminates confusion and improves communication across agencies.",
+    "reference": "IFSTA, Essentials, Chapter 3."
+  },
+  {
+    "question_id": "FF-Q55",
+    "subject_id": 1,
+    "question_text": "Which fire stage is characterized by the highest heat release rate?",
+    "options": [
+      "A. Incipient",
+      "B. Growth",
+      "C. Fully developed",
+      "D. Decay"
+    ],
+    "correct_answer": "C",
+    "explanation": "The fully developed stage produces maximum heat and fire spread.",
+    "reference": "IFSTA, Essentials, Chapter 5."
+  },
+  {
+    "question_id": "FF-Q56",
+    "subject_id": 1,
+    "question_text": "What does 'CAN' stand for in a progress report over the radio?",
+    "options": [
+      "A. Conditions, Actions, Needs",
+      "B. Command, Assign, Notify",
+      "C. Call, Alert, Neutralize",
+      "D. Critical, Active, Necessary"
+    ],
+    "correct_answer": "A",
+    "explanation": "The CAN report format ensures clear updates: Conditions, Actions, and Needs.",
+    "reference": "IFSTA, Essentials, Chapter 3."
+  },
+  {
+    "question_id": "FF-Q57",
+    "subject_id": 1,
+    "question_text": "Which phenomenon occurs when unburned gases ignite violently after fresh air enters a confined space?",
+    "options": [
+      "A. Flashover",
+      "B. Rollover",
+      "C. Backdraft",
+      "D. Thermal layering"
+    ],
+    "correct_answer": "C",
+    "explanation": "Backdraft occurs when oxygen reintroduces explosive combustion in a fuel-rich, oxygen-poor environment.",
+    "reference": "IFSTA, Essentials, Chapter 5."
+  },
+  {
+    "question_id": "FF-Q58",
+    "subject_id": 1,
+    "question_text": "Which radio communication should be used to confirm crew location and safety status?",
+    "options": [
+      "A. Mayday",
+      "B. PAR",
+      "C. Emergency Traffic",
+      "D. CAN Report"
+    ],
+    "correct_answer": "B",
+    "explanation": "A Personnel Accountability Report (PAR) confirms crew location and safety status.",
+    "reference": "IFSTA, Essentials, Chapter 3."
+  },
+  {
+    "question_id": "FF-Q59",
+    "subject_id": 1,
+    "question_text": "Which condition is a key indicator of a ventilation-limited fire?",
+    "options": [
+      "A. Steady flames with low smoke",
+      "B. Heavy, dark smoke under pressure",
+      "C. Visible rollover flames",
+      "D. Complete flame extinction"
+    ],
+    "correct_answer": "B",
+    "explanation": "Ventilation-limited fires produce dark, pressurized smoke due to insufficient oxygen.",
+    "reference": "IFSTA, Essentials, Chapter 5."
+  },
+  {
+    "question_id": "FF-Q60",
+    "subject_id": 1,
+    "question_text": "Which practice ensures clear, effective communication during fireground operations?",
+    "options": [
+      "A. Hold the radio antenna downward",
+      "B. Speak slowly and distinctly",
+      "C. Use multiple codes and signals",
+      "D. Wait until several users transmit simultaneously"
+    ],
+    "correct_answer": "B",
+    "explanation": "Speaking slowly and clearly ensures messages are understood in noisy fireground conditions.",
+    "reference": "IFSTA, Essentials, Chapter 3."
+  },
+  {
+    "question_id": "FF-Q61",
+    "subject_id": 1,
+    "question_text": "Which element of the fire tetrahedron is affected when applying foam to a flammable liquid fire?",
+    "options": [
+      "A. Heat",
+      "B. Oxygen",
+      "C. Fuel",
+      "D. Chain reaction"
+    ],
+    "correct_answer": "B",
+    "explanation": "Foam creates a blanket that separates the fuel from oxygen, disrupting combustion.",
+    "reference": "IFSTA, Essentials, Chapter 6."
+  },
+  {
+    "question_id": "FF-Q62",
+    "subject_id": 1,
+    "question_text": "Which type of heat transfer is responsible for preheating objects across a room from the flames?",
+    "options": [
+      "A. Conduction",
+      "B. Convection",
+      "C. Radiation",
+      "D. Absorption"
+    ],
+    "correct_answer": "C",
+    "explanation": "Radiation transfers heat through electromagnetic waves, preheating materials across a distance.",
+    "reference": "IFSTA, Essentials, Chapter 5."
+  },
+  {
+    "question_id": "FF-Q63",
+    "subject_id": 1,
+    "question_text": "Which communication guideline should be followed when multiple units are transmitting?",
+    "options": [
+      "A. Transmit over them to save time",
+      "B. Wait until the channel is clear",
+      "C. Switch radios off",
+      "D. Use codes instead of plain speech"
+    ],
+    "correct_answer": "B",
+    "explanation": "Waiting until the channel is clear prevents radio traffic overlap and ensures message clarity.",
+    "reference": "IFSTA, Essentials, Chapter 3."
+  },
+  {
+    "question_id": "FF-Q64",
+    "subject_id": 1,
+    "question_text": "Which stage of fire is characterized by a decreasing oxygen supply and smoldering combustion?",
+    "options": [
+      "A. Incipient stage",
+      "B. Growth stage",
+      "C. Fully developed stage",
+      "D. Decay stage"
+    ],
+    "correct_answer": "D",
+    "explanation": "The decay stage occurs when fuel or oxygen becomes limited, reducing combustion.",
+    "reference": "IFSTA, Essentials, Chapter 5."
+  },
+  {
+    "question_id": "FF-Q65",
+    "subject_id": 1,
+    "question_text": "Which phrase should be used when a firefighter observes conditions that threaten safety?",
+    "options": [
+      "A. Tactical report",
+      "B. Emergency traffic",
+      "C. Mayday",
+      "D. PAR"
+    ],
+    "correct_answer": "B",
+    "explanation": "Emergency traffic is used to report urgent hazards affecting firefighter safety.",
+    "reference": "IFSTA, Essentials, Chapter 3."
+  },
+  {
+    "question_id": "FF-Q66",
+    "subject_id": 1,
+    "question_text": "Which smoke condition is most associated with backdraft potential?",
+    "options": [
+      "A. Light, lazy smoke venting steadily",
+      "B. Dense, pressurized smoke puffing from cracks",
+      "C. White steam mixed with smoke",
+      "D. Thin gray smoke rising straight up"
+    ],
+    "correct_answer": "B",
+    "explanation": "Dense, turbulent smoke under pressure indicates unburned fuel buildup and backdraft risk.",
+    "reference": "IFSTA, Essentials, Chapter 5."
+  },
+  {
+    "question_id": "FF-Q67",
+    "subject_id": 1,
+    "question_text": "What does the 'C' stand for in a CAN report?",
+    "options": [
+      "A. Communications",
+      "B. Conditions",
+      "C. Command",
+      "D. Collapse"
+    ],
+    "correct_answer": "B",
+    "explanation": "In CAN reports, 'C' stands for Conditions, describing fire and smoke environment.",
+    "reference": "IFSTA, Essentials, Chapter 3."
+  },
+  {
+    "question_id": "FF-Q68",
+    "subject_id": 1,
+    "question_text": "What is the minimum temperature at which a substance will ignite without an external flame?",
+    "options": [
+      "A. Flash point",
+      "B. Fire point",
+      "C. Ignition temperature",
+      "D. Combustion threshold"
+    ],
+    "correct_answer": "C",
+    "explanation": "Ignition temperature is the minimum temperature at which a substance self-ignites.",
+    "reference": "IFSTA, Essentials, Chapter 5."
+  },
+  {
+    "question_id": "FF-Q69",
+    "subject_id": 1,
+    "question_text": "Which fireground report provides updates on crew actions and resource needs?",
+    "options": [
+      "A. Size-up report",
+      "B. PAR",
+      "C. CAN report",
+      "D. Mayday"
+    ],
+    "correct_answer": "C",
+    "explanation": "CAN reports (Conditions, Actions, Needs) keep command updated on progress and requirements.",
+    "reference": "IFSTA, Essentials, Chapter 3."
+  },
+  {
+    "question_id": "FF-Q70",
+    "subject_id": 1,
+    "question_text": "Which factor primarily influences whether a fire becomes ventilation-limited or fuel-limited?",
+    "options": [
+      "A. Fire department staffing",
+      "B. Building construction",
+      "C. Availability of oxygen",
+      "D. Quantity of water applied"
+    ],
+    "correct_answer": "C",
+    "explanation": "Oxygen availability determines whether the fire is ventilation-limited or fuel-limited.",
+    "reference": "IFSTA, Essentials, Chapter 5."
+  },
+  {
+    "question_id": "FF-Q71",
+    "subject_id": 1,
+    "question_text": "What is the recommended practice for transmitting a Mayday message?",
+    "options": [
+      "A. Use plain language and identify unit/location",
+      "B. Transmit codes to save radio time",
+      "C. Wait until other users finish talking",
+      "D. Use a siren or whistle sound"
+    ],
+    "correct_answer": "A",
+    "explanation": "Mayday transmissions should use plain language and provide unit, location, and situation.",
+    "reference": "IFSTA, Essentials, Chapter 3."
+  },
+  {
+    "question_id": "FF-Q72",
+    "subject_id": 1,
+    "question_text": "Which term describes the movement of hot gases to upper portions of a compartment?",
+    "options": [
+      "A. Conduction",
+      "B. Convection",
+      "C. Stratification",
+      "D. Layering"
+    ],
+    "correct_answer": "B",
+    "explanation": "Convection moves heated gases upward, creating thermal layers inside compartments.",
+    "reference": "IFSTA, Essentials, Chapter 5."
+  },
+  {
+    "question_id": "FF-Q73",
+    "subject_id": 1,
+    "question_text": "Which phrase should firefighters avoid using over the radio?",
+    "options": [
+      "A. Mayday",
+      "B. Plain language messages",
+      "C. 10-codes and slang",
+      "D. CAN reports"
+    ],
+    "correct_answer": "C",
+    "explanation": "Codes and slang can cause confusion; plain language should always be used.",
+    "reference": "IFSTA, Essentials, Chapter 3."
+  },
+  {
+    "question_id": "FF-Q74",
+    "subject_id": 1,
+    "question_text": "Which condition is most likely to precede flashover?",
+    "options": [
+      "A. High humidity levels",
+      "B. Rollover flames overhead",
+      "C. White smoke clearing out",
+      "D. Water droplets forming on walls"
+    ],
+    "correct_answer": "B",
+    "explanation": "Rollover, the ignition of gases at ceiling level, is a warning sign of flashover.",
+    "reference": "IFSTA, Essentials, Chapter 5."
+  },
+  {
+    "question_id": "FF-Q75",
+    "subject_id": 1,
+    "question_text": "What does 'A' stand for in CAN reporting?",
+    "options": [
+      "A. Alert",
+      "B. Actions",
+      "C. Assignment",
+      "D. Awareness"
+    ],
+    "correct_answer": "B",
+    "explanation": "'A' in CAN stands for Actions being taken by the crew.",
+    "reference": "IFSTA, Essentials, Chapter 3."
+  },
+  {
+    "question_id": "FF-Q76",
+    "subject_id": 1,
+    "question_text": "Which phenomenon describes the violent ignition of smoke gases when exposed to sufficient heat?",
+    "options": [
+      "A. Flashover",
+      "B. Smoke explosion",
+      "C. Rollover",
+      "D. Convection ignition"
+    ],
+    "correct_answer": "B",
+    "explanation": "Smoke explosions occur when accumulated smoke gases ignite suddenly with heat and oxygen.",
+    "reference": "IFSTA, Essentials, Chapter 5."
+  },
+  {
+    "question_id": "FF-Q77",
+    "subject_id": 1,
+    "question_text": "What is the purpose of repeating critical radio messages?",
+    "options": [
+      "A. To fill air time",
+      "B. To ensure message accuracy",
+      "C. To confuse the receiver",
+      "D. To replace PAR checks"
+    ],
+    "correct_answer": "B",
+    "explanation": "Repeating critical information ensures that the receiver has understood the message correctly.",
+    "reference": "IFSTA, Essentials, Chapter 3."
+  },
+  {
+    "question_id": "FF-Q78",
+    "subject_id": 1,
+    "question_text": "What is the fire point of a liquid?",
+    "options": [
+      "A. The lowest temperature at which vapor will ignite",
+      "B. The temperature at which vapor sustains burning",
+      "C. The boiling point of the liquid",
+      "D. The ignition temperature without flame"
+    ],
+    "correct_answer": "B",
+    "explanation": "The fire point is the temperature at which a liquid produces vapors that sustain combustion.",
+    "reference": "IFSTA, Essentials, Chapter 5."
+  },
+  {
+    "question_id": "FF-Q79",
+    "subject_id": 1,
+    "question_text": "Which radio transmission should be given after reaching a tactical benchmark like 'fire under control'?",
+    "options": [
+      "A. CAN report",
+      "B. PAR",
+      "C. Emergency traffic",
+      "D. Mayday"
+    ],
+    "correct_answer": "A",
+    "explanation": "After benchmarks, CAN reports provide updates on conditions, actions, and needs.",
+    "reference": "IFSTA, Essentials, Chapter 3."
+  },
+  {
+    "question_id": "FF-Q80",
+    "subject_id": 1,
+    "question_text": "Which fire condition occurs when fuel vapors are heated to ignition temperature away from the flame?",
+    "options": [
+      "A. Autoignition",
+      "B. Backdraft",
+      "C. Rollover",
+      "D. Decay stage"
+    ],
+    "correct_answer": "A",
+    "explanation": "Autoignition occurs when vapors reach their ignition temperature without direct flame contact.",
+    "reference": "IFSTA, Essentials, Chapter 5."
+  },
+  {
+    "question_id": "FF-Q81",
+    "subject_id": 1,
+    "question_text": "Which stage of fire growth is characterized by the ignition of contents and rapid heat increase?",
+    "options": [
+      "A. Incipient",
+      "B. Growth",
+      "C. Fully developed",
+      "D. Decay"
+    ],
+    "correct_answer": "B",
+    "explanation": "The growth stage begins after ignition and is marked by increasing heat and flame spread.",
+    "reference": "IFSTA, Essentials, Chapter 5."
+  },
+  {
+    "question_id": "FF-Q82",
+    "subject_id": 1,
+    "question_text": "Which radio call requires all units to stop transmitting except for emergency messages?",
+    "options": [
+      "A. CAN report",
+      "B. Emergency traffic",
+      "C. Mayday",
+      "D. Size-up"
+    ],
+    "correct_answer": "B",
+    "explanation": "Emergency traffic signals all units to maintain radio silence for urgent safety messages.",
+    "reference": "IFSTA, Essentials, Chapter 3."
+  },
+  {
+    "question_id": "FF-Q83",
+    "subject_id": 1,
+    "question_text": "What term describes the heat transfer that occurs when flames spread through hot gases moving upward?",
+    "options": [
+      "A. Convection",
+      "B. Conduction",
+      "C. Radiation",
+      "D. Flashover"
+    ],
+    "correct_answer": "A",
+    "explanation": "Convection transfers heat through the movement of heated gases or liquids.",
+    "reference": "IFSTA, Essentials, Chapter 5."
+  },
+  {
+    "question_id": "FF-Q84",
+    "subject_id": 1,
+    "question_text": "When providing a CAN report, what information should be included for 'Needs'?",
+    "options": [
+      "A. Conditions observed",
+      "B. Resources required to complete tasks",
+      "C. Command location",
+      "D. Personal assignments"
+    ],
+    "correct_answer": "B",
+    "explanation": "'Needs' communicates resources or support required by the crew to continue operations.",
+    "reference": "IFSTA, Essentials, Chapter 3."
+  },
+  {
+    "question_id": "FF-Q85",
+    "subject_id": 1,
+    "question_text": "Which sign indicates that a fire is in the fully developed stage?",
+    "options": [
+      "A. Visible rollover",
+      "B. Complete involvement of combustible materials",
+      "C. Smoldering combustion",
+      "D. Oxygen depletion"
+    ],
+    "correct_answer": "B",
+    "explanation": "In the fully developed stage, all available fuels are burning at maximum intensity.",
+    "reference": "IFSTA, Essentials, Chapter 5."
+  },
+  {
+    "question_id": "FF-Q86",
+    "subject_id": 1,
+    "question_text": "What type of radio language is recommended during multi-agency responses?",
+    "options": [
+      "A. Ten-codes",
+      "B. Plain language",
+      "C. Slang terms",
+      "D. Local jargon"
+    ],
+    "correct_answer": "B",
+    "explanation": "Plain language ensures all responding agencies understand critical messages.",
+    "reference": "IFSTA, Essentials, Chapter 3."
+  },
+  {
+    "question_id": "FF-Q87",
+    "subject_id": 1,
+    "question_text": "What is the primary heat transfer responsible for igniting materials in direct contact with flames?",
+    "options": [
+      "A. Radiation",
+      "B. Convection",
+      "C. Conduction",
+      "D. Combustion"
+    ],
+    "correct_answer": "C",
+    "explanation": "Conduction transfers heat through direct contact, causing nearby materials to ignite.",
+    "reference": "IFSTA, Essentials, Chapter 5."
+  },
+  {
+    "question_id": "FF-Q88",
+    "subject_id": 1,
+    "question_text": "Which communication practice reduces unnecessary radio congestion?",
+    "options": [
+      "A. Using long detailed messages",
+      "B. Keeping transmissions brief and clear",
+      "C. Transmitting simultaneously with others",
+      "D. Avoiding the use of tactical channels"
+    ],
+    "correct_answer": "B",
+    "explanation": "Short, clear transmissions minimize radio congestion and ensure efficiency.",
+    "reference": "IFSTA, Essentials, Chapter 3."
+  },
+  {
+    "question_id": "FF-Q89",
+    "subject_id": 1,
+    "question_text": "Which fire gas condition is a strong indicator of flashover potential?",
+    "options": [
+      "A. Clear visibility",
+      "B. Rollover flames in the gas layer",
+      "C. White steam emission",
+      "D. Smoke leaving the structure slowly"
+    ],
+    "correct_answer": "B",
+    "explanation": "Rollover indicates ignition of gases in the upper layer and flashover risk.",
+    "reference": "IFSTA, Essentials, Chapter 5."
+  },
+  {
+    "question_id": "FF-Q90",
+    "subject_id": 1,
+    "question_text": "What is the recommended method for addressing unclear radio transmissions?",
+    "options": [
+      "A. Ignore them",
+      "B. Ask for repetition",
+      "C. Guess the meaning",
+      "D. Wait until later to clarify"
+    ],
+    "correct_answer": "B",
+    "explanation": "If a message is unclear, request repetition to avoid miscommunication.",
+    "reference": "IFSTA, Essentials, Chapter 3."
+  },
+  {
+    "question_id": "FF-Q91",
+    "subject_id": 1,
+    "question_text": "What does the term 'flash point' describe?",
+    "options": [
+      "A. Temperature at which liquid vapors ignite briefly",
+      "B. Temperature at which vapors sustain combustion",
+      "C. Self-ignition temperature without flame",
+      "D. Boiling temperature of the liquid"
+    ],
+    "correct_answer": "A",
+    "explanation": "Flash point is the lowest temperature at which liquid vapors can ignite momentarily.",
+    "reference": "IFSTA, Essentials, Chapter 5."
+  },
+  {
+    "question_id": "FF-Q92",
+    "subject_id": 1,
+    "question_text": "Which radio call requires immediate firefighter rescue operations?",
+    "options": [
+      "A. CAN report",
+      "B. Emergency traffic",
+      "C. Mayday",
+      "D. PAR"
+    ],
+    "correct_answer": "C",
+    "explanation": "A Mayday call signals a firefighter is in distress and needs rescue.",
+    "reference": "IFSTA, Essentials, Chapter 3."
+  },
+  {
+    "question_id": "FF-Q93",
+    "subject_id": 1,
+    "question_text": "Which smoke movement is most commonly caused by convection currents?",
+    "options": [
+      "A. Smoke settling to the floor",
+      "B. Smoke moving upward through stairwells",
+      "C. Smoke absorbed into walls",
+      "D. Smoke radiating across open spaces"
+    ],
+    "correct_answer": "B",
+    "explanation": "Convection carries heated smoke upward, spreading it through vertical openings.",
+    "reference": "IFSTA, Essentials, Chapter 5."
+  },
+  {
+    "question_id": "FF-Q94",
+    "subject_id": 1,
+    "question_text": "What is the standard radio term used to check if crews are safe and accounted for?",
+    "options": [
+      "A. PAR",
+      "B. CAN report",
+      "C. Emergency traffic",
+      "D. Size-up"
+    ],
+    "correct_answer": "A",
+    "explanation": "PAR (Personnel Accountability Report) confirms the safety and presence of crew members.",
+    "reference": "IFSTA, Essentials, Chapter 3."
+  },
+  {
+    "question_id": "FF-Q95",
+    "subject_id": 1,
+    "question_text": "What phenomenon occurs when flammable gases accumulate and ignite suddenly?",
+    "options": [
+      "A. Backdraft",
+      "B. Flashover",
+      "C. Rollover",
+      "D. Autoignition"
+    ],
+    "correct_answer": "A",
+    "explanation": "Backdraft occurs when oxygen is introduced to superheated gases in a confined space.",
+    "reference": "IFSTA, Essentials, Chapter 5."
+  },
+  {
+    "question_id": "FF-Q96",
+    "subject_id": 1,
+    "question_text": "Which communication method improves clarity in noisy fireground environments?",
+    "options": [
+      "A. Speaking quickly",
+      "B. Shielding microphone and speaking clearly",
+      "C. Using slang and abbreviations",
+      "D. Talking over other transmissions"
+    ],
+    "correct_answer": "B",
+    "explanation": "Shielding the mic and speaking clearly improves communication in noisy conditions.",
+    "reference": "IFSTA, Essentials, Chapter 3."
+  },
+  {
+    "question_id": "FF-Q97",
+    "subject_id": 1,
+    "question_text": "What is the minimum oxygen concentration required to support flaming combustion?",
+    "options": [
+      "A. 10%",
+      "B. 14%",
+      "C. 16%",
+      "D. 21%"
+    ],
+    "correct_answer": "C",
+    "explanation": "Flaming combustion requires approximately 16% oxygen in the atmosphere.",
+    "reference": "IFSTA, Essentials, Chapter 5."
+  },
+  {
+    "question_id": "FF-Q98",
+    "subject_id": 1,
+    "question_text": "What does 'N' represent in CAN reporting?",
+    "options": [
+      "A. Notifications",
+      "B. Needs",
+      "C. Name",
+      "D. Neutral zone"
+    ],
+    "correct_answer": "B",
+    "explanation": "'N' represents Needs, or the resources required to complete tasks.",
+    "reference": "IFSTA, Essentials, Chapter 3."
+  },
+  {
+    "question_id": "FF-Q99",
+    "subject_id": 1,
+    "question_text": "Which condition typically signals the onset of the decay stage of a fire?",
+    "options": [
+      "A. Fuel is abundant and oxygen is plentiful",
+      "B. Flame spread is increasing",
+      "C. Oxygen or fuel is being consumed and fire weakens",
+      "D. Rapid rollover is observed"
+    ],
+    "correct_answer": "C",
+    "explanation": "Decay occurs when either fuel or oxygen becomes insufficient to maintain combustion.",
+    "reference": "IFSTA, Essentials, Chapter 5."
+  },
+  {
+    "question_id": "FF-Q100",
+    "subject_id": 1,
+    "question_text": "What is the best practice for confirming a received radio message?",
+    "options": [
+      "A. Repeat key details back to sender",
+      "B. Wait silently",
+      "C. Use personal codes",
+      "D. Ignore unless directed again"
+    ],
+    "correct_answer": "A",
+    "explanation": "Repeating key details back verifies that the message was correctly received and understood.",
+    "reference": "IFSTA, Essentials, Chapter 3."
+  },
 
   {
     "question_id": "FF-Q1",

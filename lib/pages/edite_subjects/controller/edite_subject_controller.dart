@@ -1,5 +1,9 @@
+import 'dart:ui';
+
 import 'package:get/get.dart';
-import '../../../ad_manager/interstitial_ads.dart';
+import 'package:pocket_prep_exam/ad_manager/ad_manager.dart';
+import 'package:pocket_prep_exam/core/common/exite_dialog.dart';
+import 'package:pocket_prep_exam/pages/premium/view/premium_screen.dart';
 import '/core/Utility/utils.dart';
 import '/services/questions_services.dart';
 import '/core/local_storage/storage_helper.dart';
@@ -20,6 +24,7 @@ class EditeSubjectController extends GetxController {
   RxList<Question> questionPool = <Question>[].obs;
   RxList<Exam> allExams = <Exam>[].obs;
   static const int maxAllSubjectsPool = 30;
+  static const int freePlanLimit = 30;
    int maxQuizSize = 10;
   int maxQuizSizeForTime  = 20;
 
@@ -63,46 +68,101 @@ class EditeSubjectController extends GetxController {
     }
   }
 
-
-  void toggleSubject(int subjectId) {
+  void toggleSubject(int subjectId, {required VoidCallback onUpgrade}) {
     final exam = selectedExam.value;
-    if (exam == null) {
-      return;
-    }
+    if (exam == null) return;
+
     final subject = exam.subjects.firstWhereOrNull((s) => s.subjectId == subjectId);
-    if (subject == null) {
-      return;
+    final isSubscribed = Get.find<RemoveAds>().isSubscribedGet.value;
+
+    if (subject == null) return;
+    if (!isSubscribed) {
+      int totalQuestions = 0;
+      for (var id in selectedSubjectIds) {
+        final subjectQs = examQuestions.where((q) => q.subjectId == id).toList();
+        totalQuestions += subjectQs.length > 5 ? 5 : subjectQs.length;
+      }
+      if (!selectedSubjectIds.contains(subjectId) && totalQuestions >= freePlanLimit) {
+        showDialog(onUpgrade: onUpgrade);
+        return;
+      }
     }
     if (selectedSubjectIds.contains(subjectId)) {
       selectedSubjectIds.remove(subjectId);
     } else {
       selectedSubjectIds.add(subjectId);
     }
-    _buildPool();
+    if (isSubscribed) {
+      _buildPool();
+    } else {
+      _buildPoolForFreeUser();
+    }
     _checkSelectionChanged();
   }
 
 
-  void toggleAllSubjects() {
+
+  // void toggleSubject(int subjectId) {
+  //   final exam = selectedExam.value;
+  //   if (exam == null) {
+  //     return;
+  //   }
+  //   final subject = exam.subjects.firstWhereOrNull((s) => s.subjectId == subjectId);
+  //   if (subject == null) {
+  //     return;
+  //   }
+  //   if (selectedSubjectIds.contains(subjectId)) {
+  //     selectedSubjectIds.remove(subjectId);
+  //   } else {
+  //     selectedSubjectIds.add(subjectId);
+  //   }
+  //   if(Get.find<RemoveAds>().isSubscribedGet.value){
+  //     _buildPool();
+  //   }else{
+  //     _buildPoolForFreeUser();
+  //   }
+  //   _checkSelectionChanged();
+  // }
+
+
+  void toggleAllSubjects({required VoidCallback onUpgrade}) {
     final exam = selectedExam.value;
-    if (exam == null) {
-      return;
-    }
+    if (exam == null) return;
+
     final allIds = exam.subjects.map((s) => s.subjectId).toList();
+    final isSubscribed = Get.find<RemoveAds>().isSubscribedGet.value;
+
     if (selectedSubjectIds.length == allIds.length) {
       selectedSubjectIds.clear();
     } else {
+      if (!isSubscribed) {
+        int totalQuestions = 0;
+        for (var id in allIds) {
+          final subjectQs = examQuestions.where((q) => q.subjectId == id).toList();
+          totalQuestions += subjectQs.length > 5 ? 5 : subjectQs.length;
+        }
+        if (totalQuestions > freePlanLimit) {
+        showDialog(onUpgrade: onUpgrade);
+          return;
+        }
+      }
       selectedSubjectIds.assignAll(allIds);
     }
-    _buildPool();
+    if (isSubscribed) {
+      _buildPool();
+    } else {
+      _buildPoolForFreeUser();
+    }
     _checkSelectionChanged();
   }
+
 
   Future<void> saveSelectedSubjectsForExam() async {
     final exam = selectedExam.value;
     if (exam == null) return;
     await _storageService.saveSelectedSubjects(exam.examId, selectedSubjectIds.toList());
   }
+
 
   void _buildPool() {
     questionPool.clear();
@@ -116,9 +176,25 @@ class EditeSubjectController extends GetxController {
         final subjectQs = examQuestions.where((q) => q.subjectId == id).toList();
         subjectQs.shuffle();
         questionPool.addAll(subjectQs.take(5).toList());
+        print("Your BuildPool length is ${questionPool.length}");
       }
     }
   }
+
+  void _buildPoolForFreeUser() {
+    questionPool.clear();
+    if (selectedSubjectIds.isEmpty) return;
+    int totalCount = 0;
+    for (var id in selectedSubjectIds) {
+      final subjectQs = examQuestions.where((q) => q.subjectId == id).toList();
+      final countToAdd = subjectQs.length > 5 ? 5 : subjectQs.length;
+      questionPool.addAll(subjectQs.take(countToAdd));
+      totalCount += countToAdd;
+      print("Your buildPoolForFreeUser length is ${questionPool.length}");
+    }
+    questionPool.shuffle();
+  }
+
 
   void _checkSelectionChanged() async {
     final exam = selectedExam.value;
@@ -146,6 +222,26 @@ class EditeSubjectController extends GetxController {
     // print("Your pool is start Quiz pool is:  ${pool.length}");
     return pool;
   }
+
+  List<Question> startQuizForFreeUser() {
+    final pool = [...questionPool];
+    pool.shuffle();
+    print("Your pool is start Quiz pool is:  ${pool.length}");
+    return pool.take(maxQuizSize).toList();
+  }
+
+  Future<void> showDialog({required VoidCallback onUpgrade}) async {
+    CustomDialogForExitAndWarning.show(
+      title: "Limit Reached ⚠️",
+      message:
+      "You can only use up to 30 questions on the free plan. Upgrade to Premium to unlock unlimited access!",
+      isWarning: false,
+      positiveButtonText: "Upgrade Now",
+      negativeButtonText: "Cancel",
+      onPositiveTap: onUpgrade,
+    );
+  }
+
 
   bool _isAllSubjectsSelected() {
     if (examQuestions.isEmpty) return false;

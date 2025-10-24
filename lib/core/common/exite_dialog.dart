@@ -85,6 +85,7 @@ class CustomDialogForExitAndWarning extends StatelessWidget {
                   message,
                   textAlign: TextAlign.center,
                   style: context.textTheme.titleMedium!.copyWith(
+                    fontSize: 14,
                     color: Colors.grey
                   ),
                 ),
@@ -101,7 +102,7 @@ class CustomDialogForExitAndWarning extends StatelessWidget {
                     _ExitButtons(
                         buttonText:
                     positiveButtonText,
-                      color: kRed,
+                      color: isWarning ? kRed : lightSkyBlue,
                       onTap: onPositiveTap ?? () {},
                     ),
                   ],
@@ -120,12 +121,12 @@ class CustomDialogForExitAndWarning extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.all(5),
                 child: CircleAvatar(
-                  backgroundColor: isWarning ? Colors.red : Colors.green,
+                  backgroundColor: isWarning ? Colors.red : Colors.amber,
                   radius: 45,
                   child: Icon(
-                    isWarning ? Icons.help_outline : Icons.check,
-                    color: kWhite,
-                    size: 80,
+                    isWarning ? Icons.help_outline : Icons.warning,
+                    color: isWarning ?  kWhite :kWhite ,
+                    size: isWarning ?  80 : 60,
                   ),
                 ),
               ),
@@ -165,7 +166,7 @@ class _ExitButtons extends StatelessWidget {
       child: GestureDetector(
         onTap:onTap,
         child: Container(
-          height: 36,
+          height: 38,
           decoration: BoxDecoration(
             color:color,
             borderRadius: BorderRadius.circular(20),
@@ -174,7 +175,7 @@ class _ExitButtons extends StatelessWidget {
           child: Text(
            buttonText,
             style: const TextStyle(
-              fontSize: 16,
+              fontSize: 14,
               color: kWhite,
               fontWeight: FontWeight.bold,
             ),

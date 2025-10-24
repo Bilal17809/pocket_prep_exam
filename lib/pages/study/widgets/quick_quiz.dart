@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:pocket_prep_exam/ad_manager/ad_manager.dart';
 import '/core/theme/app_styles.dart';
 import '/core/common/constant.dart';
 import '../../questions/widgets/quiz_bottomsheet.dart';
@@ -52,13 +53,15 @@ class QuickQuiz extends StatelessWidget {
                           isTimedQuiz: false,
                         ));
                       } else if (idx == 1) {
+                        final QuizQuestionsForFreeUser = Get.find<EditeSubjectController>().startQuizForFreeUser();
                         final quizQuestions = Get.find<EditeSubjectController>().startQuiz();
+                        final isSubscribed = Get.find<RemoveAds>().isSubscribedGet.value;
                        // controller.clearQuestionOfDayAttempt();
-                        if (quizQuestions.isEmpty) {
+                        if (quizQuestions.isEmpty || QuizQuestionsForFreeUser.isEmpty) {
                           Utils.showError("Please select at least one subject!", "Error");
                           return;
                         }
-                        Get.to(() => QuizzesView(allQuestion: quizQuestions, isTimedQuiz: false));
+                        Get.to(() => QuizzesView(allQuestion: isSubscribed ? quizQuestions : QuizQuestionsForFreeUser, isTimedQuiz: false));
                       } else if (item.title == "Timed Quiz") {
                         Get.find<QuestionController>().resetController();
                         TimedQuizBottomSheet.show();
