@@ -5,6 +5,8 @@ import 'package:pocket_prep_exam/core/theme/app_colors.dart';
 import 'package:pocket_prep_exam/core/theme/app_styles.dart';
 import 'package:pocket_prep_exam/pages/edite_subjects/controller/edite_subject_controller.dart';
 
+import '../../premium/view/premium_screen.dart';
+
 
 
 class SubjectsList extends StatelessWidget {
@@ -58,7 +60,10 @@ class SubjectsList extends StatelessWidget {
                     value: noneSelected
                         ? false
                         : (allSelected ? true : null),
-                    onChanged: (_) => controller.toggleAllSubjects(),
+                    onChanged: (_) => controller.toggleAllSubjects(onUpgrade: (){
+                      Get.back(); // close dialog
+                      Get.to(() => PremiumScreen());
+                    }),
                   ),
                 );
               }
@@ -75,7 +80,11 @@ class SubjectsList extends StatelessWidget {
                   trailing: Checkbox(
                     activeColor: Colors.black,
                     value: isSelected,
-                    onChanged: (_) => controller.toggleSubject(subject.subjectId),
+                    onChanged: (_) => controller.toggleSubject(subject.subjectId,onUpgrade: (){
+                      Get.back();
+                      Get.to(() => PremiumScreen());
+                    }
+                    ),
                   ),
                 );
               });
