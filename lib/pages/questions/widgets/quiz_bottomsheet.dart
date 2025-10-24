@@ -123,6 +123,7 @@ class TimedQuizBottomSheet extends StatelessWidget {
               },
             ),
           ),
+          SizedBox(height: 16)
         ],
       ),
     );

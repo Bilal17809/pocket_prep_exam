@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:pocket_prep_exam/core/common/back_button.dart';
 import 'package:pocket_prep_exam/core/common/set_purchase_card.dart';
 import '/ad_manager/remove_ads.dart';
 import '/core/common/common_button.dart';
@@ -19,6 +20,7 @@ class QuizSetupView extends StatelessWidget {
     return Scaffold(
       backgroundColor: kWhiteF7,
       appBar: AppBar(
+        leading: CommonBackButton(),
         backgroundColor: kWhiteF7,
         title: Column(
           crossAxisAlignment: CrossAxisAlignment.start,

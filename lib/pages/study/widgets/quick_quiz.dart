@@ -54,8 +54,6 @@ class QuickQuiz extends StatelessWidget {
                           reviewMode: false,
                           isTimedQuiz: false,
                         ));
-                      }
-                      else if (idx == 1) {
                       } else if (idx == 1) {
                         final QuizQuestionsForFreeUser = Get.find<EditeSubjectController>().startQuizForFreeUser();
                         final quizQuestions = Get.find<EditeSubjectController>().startQuiz();

@@ -142,9 +142,7 @@ class _QuizBuilderScreenState extends State<QuizBuilderScreen> {
                   ),
                 ),
               ),
-
               const SizedBox(height: 26),
-
               Center(
                 child: Obx(() {
                   final hasTime =
@@ -163,7 +161,6 @@ class _QuizBuilderScreenState extends State<QuizBuilderScreen> {
                           showAccessDialog(context, hasFirstAttempt),
                     );
                   }
-
                   return canStartQuiz
                       ? CommonButton(
                     title: "Start Quiz",
@@ -176,7 +173,6 @@ class _QuizBuilderScreenState extends State<QuizBuilderScreen> {
                         await StorageService.saveFirstAttempt(true);
                         hasFirstAttempt.value = true;
                       }
-
                       Get.off(() => QuizzesView(
                         allQuestion: allQuestions,
                         reviewMode: false,
@@ -188,6 +184,7 @@ class _QuizBuilderScreenState extends State<QuizBuilderScreen> {
                       : const HideCommonButton(title: "Start Quiz");
                 }),
               ),
+              SizedBox(height: 16)
             ],
           ),
         );

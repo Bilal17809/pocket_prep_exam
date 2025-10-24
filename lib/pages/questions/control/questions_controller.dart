@@ -98,9 +98,9 @@ class QuestionController extends GetxController {
     }
   }
 
-  Future<void> fetchQuestions()async{
+  Future<void> fetchQuestions() async {
     final q = await _questionService.fetchAllQuestions();
-    if(q.isNotEmpty){
+    if (q.isNotEmpty) {
       questions.value = q;
     }
   }
@@ -109,11 +109,8 @@ class QuestionController extends GetxController {
     selectedMinutes.value = value;
   }
 
-
-  void setReviewQuestions(
-    List<int> questionIdsToReview,
-    Map<int, int> userSelectedOptions,
-  ) {
+  void setReviewQuestions(List<int> questionIdsToReview,
+      Map<int, int> userSelectedOptions,) {
     if (questions.isEmpty) {
       Get.snackbar('Error', 'Questions not loaded. Cannot set up review.');
       return;
@@ -131,7 +128,10 @@ class QuestionController extends GetxController {
   void _startQuizTimer() {
     _startTime = DateTime.now();
     _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
-      elapsedSeconds.value = DateTime.now().difference(_startTime!).inSeconds;
+      elapsedSeconds.value = DateTime
+          .now()
+          .difference(_startTime!)
+          .inSeconds;
     });
   }
 
@@ -143,14 +143,20 @@ class QuestionController extends GetxController {
     }
   }
 
-  Future<void> startQuiz({List<Question>? fixedQuestions}) async {
+  Future<void> startQuizCommon({
+    List<Question>? fixedQuestions,
+    bool isFreeUser = false,
+  }) async {
     try {
       state.value = QuestionState.loading;
       _resetQuizState();
       if (fixedQuestions != null && fixedQuestions.isNotEmpty) {
         questions.assignAll(fixedQuestions);
       } else {
-        final pool = Get.find<EditeSubjectController>().startQuiz();
+        final controller = Get.find<EditeSubjectController>();
+        final pool = isFreeUser
+            ? controller.startQuizForFreeUser()
+            : controller.startQuiz();
         questions.assignAll(pool);
       }
       if (questions.isEmpty) {
@@ -164,26 +170,56 @@ class QuestionController extends GetxController {
     }
   }
 
-  Future<void> startQuizForFreUser({List<Question>? fixedQuestions}) async {
-    try {
-      state.value = QuestionState.loading;
-      _resetQuizState();
-      if (fixedQuestions != null && fixedQuestions.isNotEmpty) {
-        questions.assignAll(fixedQuestions);
-      } else {
-        final pool = Get.find<EditeSubjectController>().startQuizForFreeUser();
-        questions.assignAll(pool);
-      }
-      if (questions.isEmpty) {
-        state.value = QuestionState.error;
-      } else {
-        _startQuizTimer();
-        state.value = QuestionState.success;
-      }
-    } catch (e) {
-      state.value = QuestionState.error;
-    }
+
+  Future<void> startQuiz({List<Question>? fixedQuestions}) async {
+    await startQuizCommon(fixedQuestions: fixedQuestions, isFreeUser: false);
   }
+
+  Future<void> startQuizForFreeUser({List<Question>? fixedQuestions}) async {
+    await startQuizCommon(fixedQuestions: fixedQuestions, isFreeUser: true);
+  }
+
+  // Future<void> startQuiz({List<Question>? fixedQuestions}) async {
+  //   try {
+  //     state.value = QuestionState.loading;
+  //     _resetQuizState();
+  //     if (fixedQuestions != null && fixedQuestions.isNotEmpty) {
+  //       questions.assignAll(fixedQuestions);
+  //     } else {
+  //       final pool = Get.find<EditeSubjectController>().startQuiz();
+  //       questions.assignAll(pool);
+  //     }
+  //     if (questions.isEmpty) {
+  //       state.value = QuestionState.error;
+  //     } else {
+  //       _startQuizTimer();
+  //       state.value = QuestionState.success;
+  //     }
+  //   } catch (e) {
+  //     state.value = QuestionState.error;
+  //   }
+  // }
+  //
+  // Future<void> startQuizForFreUser({List<Question>? fixedQuestions}) async {
+  //   try {
+  //     state.value = QuestionState.loading;
+  //     _resetQuizState();
+  //     if (fixedQuestions != null && fixedQuestions.isNotEmpty) {
+  //       questions.assignAll(fixedQuestions);
+  //     } else {
+  //       final pool = Get.find<EditeSubjectController>().startQuizForFreeUser();
+  //       questions.assignAll(pool);
+  //     }
+  //     if (questions.isEmpty) {
+  //       state.value = QuestionState.error;
+  //     } else {
+  //       _startQuizTimer();
+  //       state.value = QuestionState.success;
+  //     }
+  //   } catch (e) {
+  //     state.value = QuestionState.error;
+  //   }
+  // }
 
   Future<void> initQuiz({
     required bool reviewMode,
@@ -216,7 +252,7 @@ class QuestionController extends GetxController {
         if(Get.find<RemoveAds>().isSubscribedGet.value){
           await startQuiz(fixedQuestions: quizQuestions);
         }else{
-          await startQuizForFreUser(fixedQuestions: quizQuestions);
+          await startQuizForFreeUser(fixedQuestions: quizQuestions);
         }
 
       }
@@ -317,8 +353,6 @@ class QuestionController extends GetxController {
       isSubmitVisible.value = true;
     }
   }
-
-
 
   String _normalizeAnswer(String text) {
     String clean = text.trim();
