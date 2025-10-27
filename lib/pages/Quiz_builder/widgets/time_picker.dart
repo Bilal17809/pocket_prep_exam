@@ -145,7 +145,6 @@ class TimePickerWidget extends StatelessWidget {
                     onChanged: (val) => minutes.value = val.toInt(),
                   )),
                   const SizedBox(height: 10),
-                  // Seconds slider (optional)
                 ],
               ),
             ),

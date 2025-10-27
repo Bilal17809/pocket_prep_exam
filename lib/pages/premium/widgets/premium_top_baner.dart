@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:pocket_prep_exam/core/constant/constant.dart';
 import '/core/theme/app_colors.dart';
 
 class PremiumTopBanner extends StatelessWidget {
@@ -55,7 +56,7 @@ class PremiumTopBanner extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      "Professional PocketPrep",
+                      "${AppFirstName} ${AppLastName}",
                       style: context.textTheme.headlineSmall!.copyWith(
                         color: kBlack,
                         fontSize: 18,

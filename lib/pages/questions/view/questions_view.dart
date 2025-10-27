@@ -132,7 +132,8 @@ class QuizzesView extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        const Icon(Icons.timer_outlined, color: Colors.white, size: 24),
+                        Image.asset("images/stopwatch.png",height: 30,),
+                        // const Icon(Icons.timer_outlined, color: Colors.white, size: 24),
                         const SizedBox(width: 8),
                         Text(
                           controller.getTimerDisplay().toString(),
@@ -156,8 +157,8 @@ class QuizzesView extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(vertical: 12),
                     child: isQuestionOfDayMode
                         ? Column(
-                      children: const [
-                        Icon(Icons.wb_sunny_outlined, color: Colors.yellow, size: 36),
+                      children: [
+                        Image.asset("images/sun.png",height: 46,color: Colors.yellow,),
                         SizedBox(height: 6),
                         Text(
                           "Question of the Day",

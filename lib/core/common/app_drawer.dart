@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:pocket_prep_exam/ad_manager/ad_manager.dart';
 import 'package:pocket_prep_exam/core/common/app_divider.dart';
+import 'package:pocket_prep_exam/core/constant/constant.dart';
 import 'package:pocket_prep_exam/pages/premium/view/premium_screen.dart';
 import 'package:pocket_prep_exam/pages/reports/view/reports_view.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -31,7 +33,7 @@ class DrawerItemWidget extends StatelessWidget {
 }
 
 class AppDrawer extends StatelessWidget {
-  const AppDrawer({super.key});
+   AppDrawer({super.key});
 
   Future<void> _launchURL(String url) async {
     final Uri uri = Uri.parse(url);
@@ -45,6 +47,7 @@ class AppDrawer extends StatelessWidget {
       );
     }
   }
+  final isSubscribed = Get.find<RemoveAds>().isSubscribedGet.value;
 
   @override
   Widget build(BuildContext context) {
@@ -72,7 +75,7 @@ class AppDrawer extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              "Professional",
+                              AppFirstName,
                               style: context.textTheme.bodyLarge!.copyWith(
                                 fontSize: 16,
                                 color: kWhite.withAlpha(200),
@@ -80,7 +83,7 @@ class AppDrawer extends StatelessWidget {
                               ),
                             ),
                             Text(
-                              "PocketPrep",
+                              AppLastName,
                               style: context.textTheme.bodyLarge!.copyWith(
                                 fontSize: 24,
                                 color: kWhite,
@@ -98,7 +101,9 @@ class AppDrawer extends StatelessWidget {
           ),
           DrawerItemWidget(
             item: SettingsItem(icon: Icons.star_outline, title: 'Rate Us'),
-            onTap: () {},
+            onTap: () {
+              _launchURL("https://play.google.com/store/apps/details?id=com.examprep.professionalcertification");
+            },
           ),
           AppDivider(height: 2.0),
           DrawerItemWidget(
@@ -135,7 +140,7 @@ class AppDrawer extends StatelessWidget {
           DrawerItemWidget(
             item: SettingsItem(
               icon: Icons.workspace_premium_outlined,
-              title: 'Premium',
+              title: isSubscribed ? 'Ads Free' : "Premium",
             ),
             onTap: () {
               Get.to(() => PremiumScreen());

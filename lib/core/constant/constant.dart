@@ -1,6 +1,9 @@
 const fontFamily = 'Montserrat';
 const double kBodyHp=16;
 
+const String AppFirstName = "Professional";
+const String AppLastName = "Exam Prep";
+
 final androidBannerId = "ca-app-pub-8331781061822056/7921307950";
 final androidAppOpenId = "ca-app-pub-8331781061822056/1254352470";
 final androidInterstitialId = "ca-app-pub-8331781061822056/7684029455";

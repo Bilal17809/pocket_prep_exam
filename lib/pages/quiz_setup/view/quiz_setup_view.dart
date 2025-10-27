@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pocket_prep_exam/core/common/back_button.dart';
 import 'package:pocket_prep_exam/core/common/set_purchase_card.dart';
+import '../../edite_subjects/controller/edite_subject_controller.dart';
+import '../../premium/view/premium_screen.dart';
 import '/ad_manager/remove_ads.dart';
 import '/core/common/common_button.dart';
 import '/core/constant/constant.dart';
@@ -154,7 +156,10 @@ class _TimeLimitSelector extends StatelessWidget {
                   isLocked: isLocked,
                   isSelected: isSelected,
                   onTap:isLocked
-                      ? () => null: () => controller.setTimeLimit(time),
+                      ? () => Get.find<EditeSubjectController>().showDialog(onUpgrade: (){
+                      Get.back();
+                      Get.to(() => PremiumScreen());
+                    }) : () => controller.setTimeLimit(time),
                 ),
               ),
             );
