@@ -8,6 +8,7 @@ import 'package:pocket_prep_exam/pages/practice/controller/practice_controller.d
 import 'package:pocket_prep_exam/pages/setting/control/setting_controller.dart';
 import 'package:pocket_prep_exam/pages/stats/controller/stats_controller.dart';
 import 'package:pocket_prep_exam/services/exam_and_subjects_services.dart';
+import '../../../ad_manager/interstitial_ads.dart';
 import '../../../core/common/loading_container.dart';
 import '../../study/controller/study_controller.dart';
 
@@ -36,7 +37,7 @@ class SwitchExamController extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    // loadSelectedExamFromStorage();
+    Get.find<InterstitialAdManager>().checkAndDisplayAd();
     loadExams().then((_) {
       loadSelectExam();
     });

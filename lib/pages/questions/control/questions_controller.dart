@@ -47,7 +47,6 @@ class QuestionController extends GetxController {
     super.onInit();
     Get.find<InterstitialAdManager>().checkAndDisplayAd();
     fetchQuestions();
-    // Get.find<EditeSubjectController>();
   }
 
   QuestionController({required QuestionService q}) : _questionService = q;

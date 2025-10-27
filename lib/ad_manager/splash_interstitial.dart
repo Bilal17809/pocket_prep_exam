@@ -13,6 +13,8 @@ class SplashInterstitialManager extends GetxController {
   bool isAdReady = false;
   var isShowing = false.obs;
   bool displaySplashAd = true;
+  final removeAds = Get.find<RemoveAds>();
+
 
   @override
   void onInit() {
@@ -40,7 +42,7 @@ class SplashInterstitialManager extends GetxController {
       if (Platform.isAndroid) {
         interstitialKey = androidSplashVal;
       } else if (Platform.isIOS) {
-        interstitialKey = '';
+        interstitialKey =iosSplashVal;
       } else {
         throw UnsupportedError('Unsupported platform');
       }
@@ -57,8 +59,8 @@ class SplashInterstitialManager extends GetxController {
 
   void loadAd() {
     InterstitialAd.load(
-      adUnitId:Platform.isAndroid? ""
-      // androidSplashInterstitialId
+      adUnitId:Platform.isAndroid
+          ? androidSplashInterstitialId
       : iosSplashInterstitialId,
       request: const AdRequest(),
       adLoadCallback: InterstitialAdLoadCallback(
@@ -74,7 +76,6 @@ class SplashInterstitialManager extends GetxController {
       ),
     );
   }
-  final removeAds = Get.find<RemoveAds>();
 
   void showSplashAd(VoidCallback onAdClosed) {
     if (!isAdReady || removeAds.isSubscribedGet.value) {
@@ -82,7 +83,6 @@ class SplashInterstitialManager extends GetxController {
       return;
     }
     isShowing.value = true;
-
     _splashAd!.fullScreenContentCallback = FullScreenContentCallback(
       onAdDismissedFullScreenContent: (ad) {
         Get.find<AppOpenAdManager>().setInterstitialAdDismissed();

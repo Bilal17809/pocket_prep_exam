@@ -37,9 +37,10 @@ class InterstitialAdManager extends GetxController {
         fetchTimeout: const Duration(seconds: 10),
         minimumFetchInterval: const Duration(seconds: 1),
       );
-      final newThreshold = RemoteConfigService().getInt(
+      final newThreshold = RemoteConfigService().
+      getInt(
         androidIntersVal,
-        '',
+        iosIntersVal,
       );
       if (newThreshold > 0) {
         displayThreshold = newThreshold;
@@ -51,8 +52,8 @@ class InterstitialAdManager extends GetxController {
 
   void _loadAd() {
     InterstitialAd.load(
-      adUnitId:Platform.isAndroid? ""
-      // androidInterstitialId
+      adUnitId:Platform.isAndroid
+          ?androidInterstitialId
       :iosInterstitialId,
       request: const AdRequest(),
       adLoadCallback: InterstitialAdLoadCallback(

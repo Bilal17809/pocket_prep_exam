@@ -15,9 +15,7 @@ class NativeAdController extends GetxController {
   NativeAd? _nativeAd;
   final RxBool isAdReady = false.obs;
   bool showAd = false;
-
   final TemplateType templateType;
-
   NativeAdController({this.templateType = TemplateType.small});
 
   @override
@@ -37,7 +35,9 @@ class NativeAdController extends GetxController {
         ),
       );
       await remoteConfig.fetchAndActivate();
-      final key = Platform.isAndroid ? androidNativeVal : '';
+      final key = Platform.isAndroid
+          ?androidNativeVal
+          :iosNativeVal;
       showAd = remoteConfig.getBool(key);
 
       if (showAd) {
@@ -53,11 +53,10 @@ class NativeAdController extends GetxController {
   void loadNativeAd() {
     isAdReady.value = false;
     _nativeAd = NativeAd(
-      adUnitId:Platform.isAndroid ? ""
-      // androidNativeAdvId
-          :
-      iosNativeAdvId, request:
-    const AdRequest(),
+      adUnitId:Platform.isAndroid
+          ? androidNativeAdvId
+          : iosNativeAdvId,
+      request: const AdRequest(),
       listener: NativeAdListener(
         onAdLoaded: (ad) {
           _nativeAd = ad as NativeAd;

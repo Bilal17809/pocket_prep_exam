@@ -2,17 +2,15 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
-import 'package:pocket_prep_exam/ad_manager/remove_ads.dart' show RemoveAds;
-import 'package:pocket_prep_exam/core/constant/constant.dart';
-import 'package:pocket_prep_exam/pages/premium/controller/premium_controller.dart';
+import '/ad_manager/remove_ads.dart';
+import '/core/constant/constant.dart';
 import '../core/global_keys/global_keys.dart';
 import '../services/remote_config_service.dart';
 
 class AppOpenAdManager extends GetxController with WidgetsBindingObserver {
   final RxBool isAdVisible = false.obs;
+  final removeAdsController = Get.find<RemoveAds>();
 
-
-  final RemoveAds removeAdsController = Get.put(RemoveAds());
   AppOpenAd? _appOpenAd;
   bool _isAdAvailable = false;
   bool shouldShowAppOpenAd = true;
@@ -43,13 +41,18 @@ class AppOpenAdManager extends GetxController with WidgetsBindingObserver {
   void onInit() {
     super.onInit();
     WidgetsBinding.instance.addObserver(this);
-    initializeRemoteConfig();
+    if (removeAdsController.isSubscribedGet.value) {
+      return;
+    }else{
+      initializeRemoteConfig();
+    }
   }
 
   Future<void> initializeRemoteConfig() async {
     try {
       await RemoteConfigService().init();
-      final showAd = RemoteConfigService().getBool(androidOpenAppVal,'');
+      final showAd = RemoteConfigService().
+      getBool(androidOpenAppVal,iosOpenAppVal);
       if (showAd) {
         loadAd();
       }
@@ -97,13 +100,10 @@ class AppOpenAdManager extends GetxController with WidgetsBindingObserver {
   }
 
   void loadAd() {
-    if (removeAdsController.isSubscribedGet.value) {
-      return;
-    }
     if (!shouldShowAppOpenAd) return;
     AppOpenAd.load(
-      adUnitId:Platform.isAndroid? ""
-      // androidAppOpenId
+      adUnitId:Platform.isAndroid
+          ?androidAppOpenId
           :iosAppOpenId,
       request: const AdRequest(),
       adLoadCallback: AppOpenAdLoadCallback(
@@ -117,15 +117,12 @@ class AppOpenAdManager extends GetxController with WidgetsBindingObserver {
       ),
     );
   }
-
   void setInterstitialAdDismissed() {
     _interstitialAdDismissed = true;
   }
-
   void setSplashInterstitialFlag(bool shown) {
     _isSplashInterstitialShown = shown;
   }
-
   void maybeShowAppOpenAd() {
     if (_isSplashInterstitialShown) {
       return;

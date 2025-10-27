@@ -19,9 +19,8 @@ class QuestionService {
   final _cacheService = FirebaseJsonCacheService();
 
   Future<List<Question>> fetchAllQuestions() async {
-    const remoteFileName = "exam_ems_questions.json"; // Your Firebase file name
+    const remoteFileName = "exam_ems_questions.json";
     final dataList = await _cacheService.loadJsonList(remoteFileName);
-
     return dataList.map((q) => Question.fromJson(q)).toList();
   }
 }

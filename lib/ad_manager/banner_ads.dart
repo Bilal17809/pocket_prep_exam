@@ -2,7 +2,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
-import 'package:pocket_prep_exam/ad_manager/remove_ads.dart';
+import '/ad_manager/remove_ads.dart';
 import '../core/common/ads_shimmer.dart';
 import '../core/constant/constant.dart';
 import '../core/global_keys/global_keys.dart';
@@ -32,7 +32,8 @@ class _BannerAdWidgetState extends State<BannerAdWidget> {
   Future<void> _fetchRemoteConfigAndLoadAd() async {
     try {
       await RemoteConfigService().init();
-      final showBanner = RemoteConfigService().getBool(androidBannerVal,'');
+      final showBanner = RemoteConfigService().
+      getBool(androidBannerVal,iosBannerVal);
       if (!mounted) return;
       setState(() => _isAdEnabled = showBanner);
       if (showBanner) {
@@ -50,8 +51,7 @@ class _BannerAdWidgetState extends State<BannerAdWidget> {
     );
     _bannerAd = BannerAd(
       adUnitId: Platform.isAndroid
-          ? ""
-      // androidBannerId
+          ?androidBannerId
           :iosBannerId,
       size:adSize!,
       request: const AdRequest(),

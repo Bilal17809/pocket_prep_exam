@@ -19,6 +19,7 @@ class DashboardView extends StatelessWidget {
     final controller = Get.find<DashboardController>();
     WidgetsBinding.instance.addPostFrameCallback((_) {
       controller.setInitialIndex(initialIndex);
+      controller.requestTrackingPermission();
     });
     final List<Widget> screens = [
       StudyView(),
