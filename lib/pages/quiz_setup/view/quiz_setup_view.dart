@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:pocket_prep_exam/core/common/back_button.dart';
-import 'package:pocket_prep_exam/core/common/set_purchase_card.dart';
+import '/core/common/back_button.dart';
+import '/core/common/set_purchase_card.dart';
+import '/ad_manager/banner_ads.dart';
 import '../../edite_subjects/controller/edite_subject_controller.dart';
 import '../../premium/view/premium_screen.dart';
 import '/ad_manager/remove_ads.dart';
@@ -40,81 +41,83 @@ class QuizSetupView extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: kBodyHp),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SizedBox(height: 20),
-            Center(
-              child: Container(
-                padding: EdgeInsets.all(14),
-                decoration: roundedDecoration,
-                child: Center(
-                  child:Obx(() => Text(
-                    controller.selectedSubject.value?.subjectName ?? "",
-                    style: titleMediumStyle.copyWith(
-                      color: lightSkyBlue,
-                      fontSize: 17
-                    ),
-                  )),
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(height: 20),
+              Center(
+                child: Container(
+                  padding: EdgeInsets.all(14),
+                  decoration: roundedDecoration,
+                  child: Center(
+                    child:Obx(() => Text(
+                      controller.selectedSubject.value?.subjectName ?? "",
+                      style: titleMediumStyle.copyWith(
+                        color: lightSkyBlue,
+                        fontSize: 17
+                      ),
+                    )),
+                  ),
                 ),
               ),
-            ),
-            const SizedBox(height:16),
-            SetPurchaseCard(),
-            const SizedBox(height:16),
-            Container(
-              width: double.infinity,
-              margin: const EdgeInsets.only(bottom: 12),
-              padding: const EdgeInsets.all(12),
-              decoration: BoxDecoration(
-                color: Colors.blue.shade50,
-                borderRadius: BorderRadius.circular(12),
-                border: Border.all(color: Colors.blue.shade100),
-              ),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Icon(Icons.info_outline, color: lightSkyBlue, size: 22),
-                  const SizedBox(width: 8),
-                  Expanded(
-                    child: Text(
-                      "⏳ Each question has its own timer. Be quick and stay focused!",
-                      style: context.textTheme.titleMedium!.copyWith(
-                        color: Colors.blueGrey.shade700,
-                        fontSize: 13.5,
-                        height: 1.4,
+              const SizedBox(height:16),
+              SetPurchaseCard(),
+              const SizedBox(height:16),
+              Container(
+                width: double.infinity,
+                margin: const EdgeInsets.only(bottom: 12),
+                padding: const EdgeInsets.all(12),
+                decoration: BoxDecoration(
+                  color: Colors.blue.shade50,
+                  borderRadius: BorderRadius.circular(12),
+                  border: Border.all(color: Colors.blue.shade100),
+                ),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Icon(Icons.info_outline, color: lightSkyBlue, size: 22),
+                    const SizedBox(width: 8),
+                    Expanded(
+                      child: Text(
+                        "⏳ Each question has its own timer. Be quick and stay focused!",
+                        style: context.textTheme.titleMedium!.copyWith(
+                          color: Colors.blueGrey.shade700,
+                          fontSize: 13.5,
+                          height: 1.4,
+                        ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ),
-            const SizedBox(height: 20),
-            const _SectionTitle(title: "Select Time Limit : sec"),
-            const SizedBox(height: 10),
-            const _TimeLimitSelector(),
-            const SizedBox(height: 20),
-            const _SectionTitle(title: "Select Number of Questions"),
-            const SizedBox(height: 10),
-            const QuestionCountSelector(),
-            const SizedBox(height: 20),
-            const Text(
-              "Note: If the quiz fails to load repeatedly, consider "
-                  "changing the question limit, difficulty, or category.",
-              style: TextStyle(fontSize: 12, color: Colors.grey),
-            ),
-            SizedBox(height: 20),
-            CommonButton(
-              title: "Start Quiz",
-              onTap: () {
-                controller.clearQuiz();
-                Get.toNamed(RoutesName.secondQuizView);
-              },
-            )
-
-          ],
+              const SizedBox(height: 20),
+              const _SectionTitle(title: "Select Time Limit : sec"),
+              const SizedBox(height: 10),
+              const _TimeLimitSelector(),
+              const SizedBox(height: 20),
+              const _SectionTitle(title: "Select Number of Questions"),
+              const SizedBox(height: 10),
+              const QuestionCountSelector(),
+              const SizedBox(height: 20),
+              const Text(
+                "Note: If the quiz fails to load repeatedly, consider "
+                    "changing the question limit, difficulty, or category.",
+                style: TextStyle(fontSize: 12, color: Colors.grey),
+              ),
+              SizedBox(height: 20),
+              CommonButton(
+                title: "Start Quiz",
+                onTap: () {
+                  controller.clearQuiz();
+                  Get.toNamed(RoutesName.secondQuizView);
+                },
+              )
+            ],
+          ),
         ),
       ),
+      bottomNavigationBar: BannerAdWidget(),
     );
   }
 }

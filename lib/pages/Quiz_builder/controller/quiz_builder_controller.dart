@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:pocket_prep_exam/ad_manager/ad_manager.dart';
 import 'package:pocket_prep_exam/pages/edite_subjects/controller/edite_subject_controller.dart';
 import '../../../ad_manager/interstitial_ads.dart';
 import '/services/exam_and_subjects_services.dart';
@@ -29,6 +30,7 @@ class QuizBuilderController extends GetxController {
   void onInit() {
     super.onInit();
     Get.find<InterstitialAdManager>().checkAndDisplayAd();
+    Get.find<SplashInterstitialManager>().loadAd();
     fetchExams();
     fetchAllQuestions();
   }

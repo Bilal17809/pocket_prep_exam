@@ -42,7 +42,7 @@ class NativeAdsShimmer extends StatelessWidget {
 
     final screenWidth = MediaQuery.of(context).size.width;
     final outerPadding = 16.0 * 2;
-    final avatarSize = 70.0; // made bigger
+    final avatarSize = 70.0;
     final spaceBetween = 16.0;
     final availableForText = screenWidth - outerPadding - avatarSize - spaceBetween;
 
@@ -71,7 +71,6 @@ class NativeAdsShimmer extends StatelessWidget {
               ),
               const SizedBox(width: 16),
 
-              // middle shimmer lines (a bit more now)
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,

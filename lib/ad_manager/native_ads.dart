@@ -3,6 +3,7 @@ import 'package:firebase_remote_config/firebase_remote_config.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'package:pocket_prep_exam/ad_manager/ad_manager.dart';
 import 'package:pocket_prep_exam/ad_manager/remove_ads.dart';
 import 'package:shimmer/shimmer.dart';
 
@@ -120,13 +121,15 @@ class _NativeAdWidgetState extends State<NativeAdWidget> {
   @override
   Widget build(BuildContext context) {
     final appOpenAdController = Get.find<AppOpenAdManager>();
+    final interAdController = Get.find<InterstitialAdManager>();
     final screenHeight = MediaQuery.of(context).size.height;
     final adHeight = widget.templateType == TemplateType.medium
         ? screenHeight * 0.48
         : screenHeight * 0.14;
     return Obx((){
       if (removeAds.isSubscribedGet.value
-          || appOpenAdController.isAdVisible.value) {
+          || appOpenAdController.isAdVisible.value
+          || interAdController.isShow.value) {
         return const SizedBox();
       }
       return _adController.isAdReady.value && _adController._nativeAd != null

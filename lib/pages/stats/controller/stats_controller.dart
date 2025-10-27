@@ -9,7 +9,6 @@ import '../../quiz_view_second/controller/quiz_controller.dart';
 
 class StatsController extends GetxController {
 
-  final QuestionService _questionService;
   final StorageService _storageService;
   Rxn<Exam> selectExam = Rxn<Exam>();
   RxList<Question> allQuestions = <Question>[].obs;
@@ -17,7 +16,7 @@ class StatsController extends GetxController {
   var subjectResults = <int, List<QuizResult>>{}.obs;
 
   StatsController({required QuestionService questionService, required storageServices})
-      : _questionService = questionService,_storageService =storageServices;
+      : _storageService =storageServices;
 
   @override
   void onInit() {

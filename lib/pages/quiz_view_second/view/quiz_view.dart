@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:pocket_prep_exam/pages/dashboard/view/dashboard_view.dart';
+import '/pages/dashboard/view/dashboard_view.dart';
+import '/ad_manager/banner_ads.dart';
 import '/core/Utility/utils.dart';
 import '/core/common/common_button.dart';
 import '/core/common/custom_dialog.dart';
@@ -62,17 +63,6 @@ class QuizScaffold extends StatelessWidget {
               },
             ),
             actions: [
-              // Padding(
-              //   padding: const EdgeInsets.symmetric(horizontal: 20),
-              //   child: Obx(() {
-              //     final currentIndex = quizController.currentPage.value;
-              //     final time = quizController.remainingTime[currentIndex] ?? 0;
-              //     return Text(
-              //       "Time Left: ${time}s",
-              //       style: const TextStyle(color: Colors.white, fontSize: 18),
-              //     );
-              //   }),
-              // )
             ],
           ),
           body: Stack(
@@ -84,12 +74,11 @@ class QuizScaffold extends StatelessWidget {
                       controller: pageController,
                       itemCount: questions.length,
                       onPageChanged: (index) {
+                        Utils.stopAll();
                         quizController.currentPage.value = index;
                         quizController.startTimerForQuestion(index);
                         if (index == quizController.questions.length - 1) {
                           quizController.isSubmitVisible.value = true;
-                        } else {
-                          // quizController.isSubmitVisible.value = false;
                         }
                       },
                       itemBuilder: (context, index) {
@@ -148,6 +137,7 @@ class QuizScaffold extends StatelessWidget {
               ),
             ],
           ),
+          bottomNavigationBar: BannerAdWidget(),
         ),
       ),
     );

@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:pocket_prep_exam/data/models/exams_and_subject.dart';
 import 'package:pocket_prep_exam/services/exam_and_subjects_services.dart';
 import 'package:pocket_prep_exam/services/questions_services.dart';
+import '../../../ad_manager/interstitial_ads.dart';
 import '/data/models/question_model.dart';
 
 
@@ -18,6 +19,7 @@ class QuizResultController extends GetxController {
 
   @override
   void onInit() {
+    Get.find<InterstitialAdManager>().checkAndDisplayAd();
     super.onInit();
     fetcExam();
   }

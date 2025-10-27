@@ -1,37 +1,50 @@
 
 import 'package:get/get.dart';
+import '../../../ad_manager/splash_interstitial.dart';
 import '/core/local_storage/storage_helper.dart';
+import 'dart:async';
 
+class SplashController extends GetxController {
+  final StorageService _storageService;
 
-class SplashController extends GetxController{
+  final RxBool isExam = false.obs;
+  final RxDouble progress = 0.0.obs;
+  final RxBool showButton = false.obs;
 
-final StorageService _storageService;
-RxBool isExam = false.obs;
-RxBool isUserLoggedIn = false.obs;
+  Timer? _timer;
 
-SplashController({required StorageService storageService})
-    : _storageService = storageService;
+  SplashController({required StorageService storageService})
+      : _storageService = storageService;
 
   @override
-  void onInit() async{
+  void onInit() {
     super.onInit();
-    Future.delayed(Duration(seconds: 1),(){
-           loadExams();
-      // loadUser();
+    Get.find<SplashInterstitialManager>().loadAd();
+    _loadProgressBar();
+    _loadExam();
+  }
+
+  Future<void> _loadExam() async {
+    final examId = await _storageService.getExam();
+    if (examId != null) {
+      isExam.value = true;
+    }
+  }
+
+  void _loadProgressBar() {
+    _timer = Timer.periodic(const Duration(milliseconds: 50), (timer) {
+      progress.value += 0.01;
+      if (progress.value >= 1.0) {
+        progress.value = 1.0;
+        showButton.value = true;
+        timer.cancel();
+      }
     });
   }
-// Future<void> loadUser() async {
-//   final user =  _storageService.getUser();
-//   if (user != null) {
-//     isUserLoggedIn.value = true;
-//   }
-// }
-//
-Future<void> loadExams()async{
-  final examId = await _storageService.getExam();
-  if(examId != null){
-     isExam.value = true;
-  }
-}
 
+  @override
+  void onClose() {
+    _timer?.cancel();
+    super.onClose();
+  }
 }

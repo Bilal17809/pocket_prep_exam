@@ -37,7 +37,7 @@ class SwitchExamController extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    Get.find<InterstitialAdManager>().checkAndDisplayAd();
+    // Get.find<InterstitialAdManager>().checkAndDisplayAd();
     loadExams().then((_) {
       loadSelectExam();
     });

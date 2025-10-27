@@ -12,7 +12,6 @@ class QuizSetupController extends GetxController {
   var subjectQuestions = <Question>[].obs;
   QuizSetupController({required QuestionService questionService}) : _questionService = questionService;
   Future<void> setSubject(Subject subject) async {
-    // clearQuiz();
     selectedSubject.value = subject;
     final allQuestions = await _questionService.fetchAllQuestions();
     subjectQuestions.assignAll(allQuestions.where((q) => q.subjectId == subject.subjectId).toList(),
@@ -51,9 +50,4 @@ class QuizSetupController extends GetxController {
     final shuffled = List<Question>.from(subjectQuestions)..shuffle();
     return shuffled.take(selectedQuestions.value).toList();
   }
-// List<Question> get finalSelectedQuestions {
-  //   return subjectQuestions.take(selectedQuestions.value).toList();
-  // }
-
-
 }

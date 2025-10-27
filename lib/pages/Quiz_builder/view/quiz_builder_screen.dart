@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:pocket_prep_exam/ad_manager/ad_manager.dart';
 import '/core/common/unlock_question_dialog.dart';
 import '/core/local_storage/storage_helper.dart';
@@ -11,94 +12,15 @@ import '../controller/quiz_builder_controller.dart';
 import '../widgets/subject_selection.dart';
 import '../widgets/time_picker.dart';
 
-// class QuizBuilderScreen extends StatelessWidget {
-//   const QuizBuilderScreen({super.key});
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     final controller = Get.find<QuizBuilderController>();
-//
-//     return Scaffold(
-//       backgroundColor: kWhiteF7,
-//       appBar: AppBar(
-//         leading: CommonBackButton(
-//           size: 36,
-//           iconSize: 22,
-//         ),
-//         title: const Text("Custom Quiz Builder"),
-//         centerTitle: true,
-//       ),
-//       body: Obx(() {
-//         if (controller.isLoading.value) {
-//           return const Center(child: CircularProgressIndicator());
-//         }
-//
-//         return SingleChildScrollView(
-//           child: Padding(
-//             padding: const EdgeInsets.symmetric(horizontal: 16),
-//             child: Column(
-//               crossAxisAlignment: CrossAxisAlignment.start,
-//               children: [
-//                 const SizedBox(height: 8),
-//                 Text(
-//                   "Choose subjects from the selected exam to build your quiz.",
-//                   style: TextStyle(fontSize: 16, color: Colors.grey[600]),
-//                 ),
-//                 const SizedBox(height: 20),
-//                 ImprovedExamSelectionWidget(),
-//                 const SizedBox(height: 20),
-//                 const TimePickerWidget(),
-//                 const SizedBox(height: 26),
-//                 Center(
-//                   child: Obx(() {
-//                     final hasTime =
-//                         controller.selectedTime.value != Duration.zero;
-//                     final hasSubjects = controller.selectedSubjects.isNotEmpty;
-//                     final hasQuestionCount =
-//                         controller.questionCountPerSubject.isNotEmpty;
-//                     final canStartQuiz =
-//                         hasTime && hasSubjects && hasQuestionCount;
-//                     return canStartQuiz
-//                         ? CommonButton(
-//                           title: "Start Quiz",
-//                           onTap: () async {
-//                             final allQuestionsForQuiz =
-//                                 await controller.prepareQuizQuestions();
-//                             final totalSeconds =
-//                                 controller.selectedTime.value.inSeconds;
-//                             Get.off(
-//                               () => QuizzesView(
-//                                 allQuestion: allQuestionsForQuiz,
-//                                 reviewMode: false,
-//                                 isTimedQuiz: true,
-//                                 timedQuizMinutes: totalSeconds,
-//                               ),
-//                             );
-//                           },
-//                         )
-//                         : HideCommonButton(title: "Start Quiz");
-//                   }),
-//                 ),
-//               ],
-//             ),
-//           ),
-//         );
-//       }),
-//     );
-//   }
-// }
+class QuizBuilderScreen extends StatelessWidget {
+   QuizBuilderScreen({super.key});
 
-class QuizBuilderScreen extends StatefulWidget {
-  const QuizBuilderScreen({super.key});
-
-  @override
-  State<QuizBuilderScreen> createState() => _QuizBuilderScreenState();
-}
-
-class _QuizBuilderScreenState extends State<QuizBuilderScreen> {
   final quizBuilderController = Get.find<QuizBuilderController>();
+
   final subscriptionController = Get.find<RemoveAds>();
+
   final RxBool hasFirstAttempt = StorageService.getFirstAttempt().obs;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -184,6 +106,8 @@ class _QuizBuilderScreenState extends State<QuizBuilderScreen> {
                       : const HideCommonButton(title: "Start Quiz");
                 }),
               ),
+              SizedBox(height:40),
+              NativeAdWidget(templateType: TemplateType.medium,),
               SizedBox(height: 16)
             ],
           ),
@@ -192,7 +116,6 @@ class _QuizBuilderScreenState extends State<QuizBuilderScreen> {
     );
   }
 }
-
 void showAccessDialog(BuildContext context, RxBool hasFirstAttempt) {
   showDialog(
     context: context,

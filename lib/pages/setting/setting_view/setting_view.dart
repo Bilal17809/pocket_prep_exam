@@ -8,7 +8,6 @@ import '/core/theme/theme.dart';
 import '/pages/setting/widgets/widgets.dart';
 
 class SettingView extends StatelessWidget {
-
  const SettingView({super.key});
 
   @override
