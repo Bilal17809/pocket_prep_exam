@@ -20,8 +20,11 @@ class StudyView extends StatelessWidget {
           title: Text("Paramedic Prep",style: titleMediumStyle.copyWith(fontSize: 26),),
           centerTitle: true,
         ),
-        drawer: const AppDrawer(),
+        drawer:  AppDrawer(),
         backgroundColor: kWhiteF7,
+        onDrawerChanged: (isOpened) {
+         controller.isDrawerOpen.value = isOpened;
+        },
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -41,7 +44,11 @@ class StudyView extends StatelessWidget {
             QuickQuiz(controller: controller),
           ],
         ),
-        bottomNavigationBar: BannerAdWidget(),
+        bottomNavigationBar: Obx(() {
+          return controller.isDrawerOpen.value
+              ? const SizedBox.shrink()
+              : const BannerAdWidget();
+        }),
       ),
     );
   }

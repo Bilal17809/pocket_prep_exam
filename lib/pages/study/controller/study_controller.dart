@@ -15,6 +15,7 @@ class StudyController extends GetxController {
   final ExamService _examService;
   final StorageService _storageService;
   final QuestionService _questionService;
+  final RxBool isDrawerOpen = false.obs;
 
   final RxInt selectedIndex = (-1).obs;
   final RxString selectedExamName = "".obs;

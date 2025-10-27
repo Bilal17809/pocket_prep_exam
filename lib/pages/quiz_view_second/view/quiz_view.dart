@@ -89,7 +89,7 @@ class QuizScaffold extends StatelessWidget {
                         if (index == quizController.questions.length - 1) {
                           quizController.isSubmitVisible.value = true;
                         } else {
-                          quizController.isSubmitVisible.value = false;
+                          // quizController.isSubmitVisible.value = false;
                         }
                       },
                       itemBuilder: (context, index) {
@@ -109,6 +109,7 @@ class QuizScaffold extends StatelessWidget {
                       child: CommonButton(
                         title: "Submit Quiz",
                         onTap: () {
+                          Utils.stopAll();
                           final answered = quizController.questions.length -
                               quizController.totalSkipped;
                           CustomDialog.show(
@@ -118,6 +119,7 @@ class QuizScaffold extends StatelessWidget {
                                 "If you submit, you'll only be scored on the $answered question you answered.",
                             positiveButtonText: "Submit",
                             onPositiveTap: () async {
+                              Utils.stopAll();
                               final result = quizController.generateResult();
                               final subject = Get.find<QuizSetupController>()
                                   .selectedSubject

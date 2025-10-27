@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pocket_prep_exam/core/theme/app_colors.dart';
 import 'package:pocket_prep_exam/core/theme/app_styles.dart';
+import 'package:pocket_prep_exam/pages/edite_subjects/controller/edite_subject_controller.dart';
+import 'package:pocket_prep_exam/pages/premium/view/premium_screen.dart';
 import 'package:pocket_prep_exam/pages/quiz_setup/controller/quiz_setup_controller.dart';
 
 import '../../../ad_manager/remove_ads.dart';
@@ -31,7 +33,10 @@ class QuestionCountSelector extends StatelessWidget {
                   isSelected: isSelected,
                   isLocked: isLocked,
                   onTap: isLocked
-                      ? () => null
+                      ? () => Get.find<EditeSubjectController>().showDialog(onUpgrade: (){
+                    Get.back();
+                        Get.to(() => PremiumScreen());
+                  })
                       : () => setupController.setQuestions(count),
                 ),
               ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pocket_prep_exam/core/common/custom_textfield.dart';
+import 'package:pocket_prep_exam/core/constant/constant.dart';
 import '/core/common/common_button.dart';
 import '/core/theme/app_colors.dart';
 import '/core/theme/app_styles.dart';
@@ -30,11 +31,11 @@ class LoginView extends StatelessWidget {
                 Image.asset("images/appicon.png", height: 100),
                 // const SizedBox(height: 20),
                 Text(
-                  "Professional",
+                  AppFirstName,
                   style: textTheme.displaySmall!.copyWith(color: Colors.blue.shade700,fontWeight: FontWeight.w600,fontSize: 16),
                 ),
                 Text(
-                  "PocketPrep",
+                  AppLastName,
                   style: textTheme.displaySmall!.copyWith(color: Colors.blue.shade700,fontWeight: FontWeight.w600,fontSize: 24),
                 ),
                 const SizedBox(height: 36),
@@ -49,7 +50,7 @@ class LoginView extends StatelessWidget {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Text(
-                          "Welcome to  Professional PocketPrep!",
+                          "Welcome to ${AppLastName} ${AppLastName}!",
                           style: context.textTheme.titleLarge!.copyWith(
                             fontSize: 16,
                             fontWeight: FontWeight.w600,

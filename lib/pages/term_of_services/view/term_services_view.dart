@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:pocket_prep_exam/core/constant/constant.dart';
 import '/core/common/common_button.dart';
 import '/core/theme/app_colors.dart';
 import '../widgets/custom_header.dart';
 
 class TermServicesView extends StatelessWidget {
   const TermServicesView({super.key});
+
+  final String AppFullName = "${AppFirstName} ${AppLastName}";
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +23,7 @@ class TermServicesView extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               CustomHeader(
-                title: "Professional PocketPrep",
+                title: AppFullName,
                 subtitle: "Terms Of Services",
                 onBack: () => Get.back(),
               ),
@@ -31,7 +34,7 @@ class TermServicesView extends StatelessWidget {
                   children: [
                     const SizedBox(height: 10),
                     Text(
-                      "We offer our users two types of subscriptions that unlock full access to all Professional PocketPrep Exam features, "
+                      "We offer our users two types of subscriptions that unlock full access to all $AppFullName Exam features, "
                           "providing a complete premium experience with pro tools and uninterrupted practice sessions.",
                       style: textTheme.bodyMedium?.copyWith(height: 1.5, color: Colors.black87),
                     ),
@@ -49,7 +52,7 @@ class TermServicesView extends StatelessWidget {
                     _SectionTitle(title: "One Year Subscription:", style: textTheme.titleMedium),
                     const SizedBox(height: 8),
                     Text(
-                      "This plan gives you 1 year of complete premium access to Professional PocketPrep. "
+                      "This plan gives you 1 year of complete premium access to $AppFullName. "
                           "You’ll unlock all quizzes, the quiz builder, timed mode, and ad-free learning across all subjects. "
                           "Cancel anytime — access remains active until the end of your billing period.",
                       style: textTheme.bodyMedium?.copyWith(height: 1.6, color: Colors.black87),
@@ -78,44 +81,7 @@ class TermServicesView extends StatelessWidget {
                       "Lifetime access to quizzes and updates",
                       "Perfect for long-term learners",
                     ]),
-                    // const SizedBox(height: 28),
-                    //
-                    // Container(
-                    //   padding: const EdgeInsets.all(12),
-                    //   decoration: BoxDecoration(
-                    //     color: Colors.blue.withOpacity(0.08),
-                    //     borderRadius: BorderRadius.circular(8),
-                    //   ),
-                    //   child: Row(
-                    //     children: [
-                    //       Container(
-                    //         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
-                    //         decoration: BoxDecoration(
-                    //           color: Colors.blue.withOpacity(0.15),
-                    //           borderRadius: BorderRadius.circular(6),
-                    //         ),
-                    //         child: Text(
-                    //           "Pro Tip",
-                    //           style: textTheme.labelMedium?.copyWith(
-                    //             fontWeight: FontWeight.w600,
-                    //             color: Colors.blue,
-                    //           ),
-                    //         ),
-                    //       ),
-                    //       const SizedBox(width: 10),
-                    //       // Expanded(
-                    //       //   child: Text(
-                    //       //     "Try your first 30 questions for free. If you like the experience, "
-                    //       //         "upgrade to Premium for unlimited access or choose Lifetime for one-time freedom.",
-                    //       //     style: textTheme.bodySmall?.copyWith(
-                    //       //       color: Colors.black87,
-                    //       //       height: 1.5,
-                    //       //     ),
-                    //       //   ),
-                    //       // ),
-                    //     ],
-                    //   ),
-                    // ),
+
                     const SizedBox(height: 16),
                     CommonButton(
                       title: "Back",
