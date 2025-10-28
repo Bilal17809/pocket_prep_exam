@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../../../ad_manager/interstitial_ads.dart';
 import '/pages/edite_subjects/controller/edite_subject_controller.dart';
 import '/pages/edite_subjects/view/subjects_edite_view.dart';
 import '/pages/exam_settings/controller/exam_setting_controller.dart';
@@ -49,7 +50,9 @@ class Details extends StatelessWidget {
                       ),
                     ),
                     InkWell(
-                        onTap: () => Get.to(() => const SubjectsEditeView()),
+                        onTap: (){
+                          Get.find<InterstitialAdManager>().checkAndDisplayAd();
+                          Get.to(() => const SubjectsEditeView());},
                       child: Container(
                         padding: EdgeInsets.symmetric(horizontal: 20,vertical: 06),
                         decoration: BoxDecoration(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import '../../../ad_manager/interstitial_ads.dart';
 import '/core/common/exite_dialog.dart';
 import '/core/theme/app_colors.dart';
 import '/pages/practice/view/practice_view.dart';

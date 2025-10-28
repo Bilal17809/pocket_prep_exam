@@ -20,7 +20,6 @@ class StatsController extends GetxController {
 
   @override
   void onInit() {
-    Get.find<InterstitialAdManager>().checkAndDisplayAd();
     super.onInit();
     loadExam();
   }

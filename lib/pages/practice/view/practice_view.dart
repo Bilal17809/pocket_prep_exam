@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '/ad_manager/interstitial_ads.dart';
 import '/ad_manager/native_ads.dart';
 import '/core/constant/constant.dart';
 import '/core/theme/app_colors.dart';
@@ -14,6 +15,9 @@ class PracticeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      Get.find<InterstitialAdManager>().checkAndDisplayAd();
+    });
     final practiceController = Get.find<PracticeController>();
     return Scaffold(
       backgroundColor: kWhiteF7,

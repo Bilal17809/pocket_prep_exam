@@ -1,8 +1,10 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:pocket_prep_exam/ad_manager/ad_manager.dart';
-import 'package:pocket_prep_exam/core/common/app_divider.dart';
-import 'package:pocket_prep_exam/core/constant/constant.dart';
+import '/ad_manager/ad_manager.dart';
+import '/core/common/app_divider.dart';
+import '/core/constant/constant.dart';
 import 'package:pocket_prep_exam/pages/premium/view/premium_screen.dart';
 import 'package:pocket_prep_exam/pages/reports/view/reports_view.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -102,7 +104,11 @@ class AppDrawer extends StatelessWidget {
           DrawerItemWidget(
             item: SettingsItem(icon: Icons.star_outline, title: 'Rate Us'),
             onTap: () {
-              _launchURL("https://play.google.com/store/apps/details?id=com.examprep.professionalcertification");
+              _launchURL(
+                Platform.isAndroid?
+                  "https://play.google.com/store/apps/details?id=com.examprep.professionalcertification"
+                    :"https://apps.apple.com/us/app/Professional Exam Prep/6754362003"
+              );
             },
           ),
           AppDivider(height: 2.0),
@@ -110,7 +116,9 @@ class AppDrawer extends StatelessWidget {
             item: SettingsItem(icon: Icons.apps_outlined, title: 'More Apps'),
             onTap: () {
               _launchURL(
-                "https://play.google.com/store/apps/developer?id=Modern+School",
+                Platform.isAndroid?
+                "https://play.google.com/store/apps/developer?id=Modern+School"
+                :"https://apps.apple.com/us/developer/muhammad-asad-arman/id1487950157?see-all=i-phonei-pad-apps",
               );
             },
           ),
@@ -122,7 +130,9 @@ class AppDrawer extends StatelessWidget {
             ),
             onTap: () {
               _launchURL(
-                "https://modernmobileschool.blogspot.com/2017/07/modern-school-privacy-policy.ht",
+                Platform.isAndroid?
+                "https://modernmobileschool.blogspot.com/2017/07/modern-school-privacy-policy.ht"
+                :"https://asadarmantech.blogspot.com",
               );
             },
           ),

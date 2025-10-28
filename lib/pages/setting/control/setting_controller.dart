@@ -22,7 +22,6 @@ class SettingController extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    Get.find<InterstitialAdManager>().checkAndDisplayAd();
     loadExamFromStorage();
     loadUser();
     isTtsEnabled.value = _storageService.loadTTsToggle();

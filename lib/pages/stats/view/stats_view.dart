@@ -10,6 +10,9 @@ class StatsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      Get.find<InterstitialAdManager>().checkAndDisplayAd();
+    });
     return Scaffold(
       appBar: AppBar(
         backgroundColor: kWhiteF7,

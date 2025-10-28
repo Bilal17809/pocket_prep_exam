@@ -38,7 +38,7 @@ class EditeSubjectController extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    Get.find<InterstitialAdManager>().checkAndDisplayAd();
+    // Get.find<InterstitialAdManager>().checkAndDisplayAd();
     loadExamFromStorage();
     startQuizForTime();
     startQuiz();
