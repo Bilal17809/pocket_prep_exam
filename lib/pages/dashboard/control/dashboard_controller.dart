@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'package:app_tracking_transparency/app_tracking_transparency.dart';
 import 'package:get/get.dart';
 
@@ -8,6 +7,7 @@ class DashboardController extends GetxController {
 
   @override
   void onInit() {
+    // Get.find<InterstitialAdManager>().checkAndDisplayAd();
     requestTrackingPermission();
     super.onInit();
   }

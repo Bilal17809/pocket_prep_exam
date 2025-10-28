@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:in_app_purchase/in_app_purchase.dart';
 import 'package:in_app_purchase_android/in_app_purchase_android.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../core/local_storage/storage_helper.dart';
 import '/ad_manager/ad_manager.dart';
 
@@ -144,11 +145,6 @@ Yearly:  com.professionalexamprep.yearly
       });
       _queryProductError = null;
     });
-
-    // setState(() {
-    //   _isAvailable = available;
-    //   _products = productDetailResponse.productDetails;
-    // });
   }
 
 
@@ -170,10 +166,8 @@ Yearly:  com.professionalexamprep.yearly
         ),
       ),
     );
-
     try {
       late PurchaseParam purchaseParam;
-
       if (Platform.isAndroid) {
         purchaseParam = GooglePlayPurchaseParam(
           productDetails: product,
@@ -185,9 +179,7 @@ Yearly:  com.professionalexamprep.yearly
       } else if (Platform.isIOS) {
         purchaseParam = PurchaseParam(productDetails: product);
       }
-
       if (Navigator.of(context).canPop()) Navigator.of(context).pop();
-
       if (product.id == 'consumable') {
         _inAppPurchase.buyConsumable(
           purchaseParam: purchaseParam,
@@ -205,11 +197,9 @@ Yearly:  com.professionalexamprep.yearly
     }
   }
   Future<void> _checkInitialPurchases() async {
-    debugPrint('Checking existing purchases via silent restore...');
     try {
       await _inAppPurchase.restorePurchases();
     } catch (e) {
-      debugPrint('Error during silent purchase check: $e');
       await StorageService.clearSubscriptionState();
       removeAdsController.isSubscribedGet(false);
     }
@@ -320,6 +310,26 @@ Yearly:  com.professionalexamprep.yearly
       ScaffoldMessenger.of(Get.context!).showSnackBar(
         SnackBar(content: Text('An error occurred during restore: $e')),
       );
+    }
+  }
+
+  Future<void> openSubscriptionManagement() async {
+    if (Platform.isAndroid) {
+      const url = 'https://play.google.com/store/account/subscriptions';
+      if (await canLaunchUrl(Uri.parse(url))) {
+        await launchUrl(Uri.parse(url), mode: LaunchMode.externalApplication);
+      } else {
+        debugPrint('Could not launch Play Store subscription page.');
+      }
+    } else if (Platform.isIOS) {
+      const url = 'https://apps.apple.com/account/subscriptions';
+      if (await canLaunchUrl(Uri.parse(url))) {
+        await launchUrl(Uri.parse(url), mode: LaunchMode.externalApplication);
+      } else {
+        debugPrint('Could not launch App Store subscription page.');
+      }
+    } else {
+      debugPrint('Unsupported platform for subscription management.');
     }
   }
 }

@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:get/get.dart';
-import '../../../ad_manager/interstitial_ads.dart';
+import '/ad_manager/interstitial_ads.dart';
 import '/core/Utility/utils.dart';
 import '/data/models/question_model.dart';
 import '../../quiz_setup/controller/quiz_setup_controller.dart';

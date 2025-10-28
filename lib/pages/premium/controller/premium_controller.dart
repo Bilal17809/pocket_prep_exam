@@ -95,6 +95,14 @@ class PremiumPlansController extends GetxController {
     });
   }
 
+  void cancelAnyTime(){
+    try{
+      purchaseService. openSubscriptionManagement();
+    }catch(e){
+      print(e);
+    }
+  }
+
   void onPageChanged(int index) => currentPage.value = index;
 
   @override

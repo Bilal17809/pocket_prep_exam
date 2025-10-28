@@ -17,7 +17,14 @@ class StudyView extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(backgroundColor: kWhiteF7,
-          title: Text(controller.selectedExamName.value,style: titleMediumStyle.copyWith(fontSize: 26),),
+          title:Obx(()=>Text(
+            controller.selectedExamName.value,
+            style: titleMediumStyle.copyWith
+              (
+                fontSize: 26
+            ),
+          ),
+          ),
           centerTitle: true,
         ),
         drawer:  AppDrawer(),
@@ -44,11 +51,7 @@ class StudyView extends StatelessWidget {
             QuickQuiz(controller: controller),
           ],
         ),
-        bottomNavigationBar: Obx(() {
-          return controller.isDrawerOpen.value
-              ? const SizedBox.shrink()
-              : const BannerAdWidget();
-        }),
+        bottomNavigationBar:const BannerAdWidget()
       ),
     );
   }

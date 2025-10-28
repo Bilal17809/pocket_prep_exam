@@ -24,7 +24,6 @@ class NativeAdController extends GetxController {
     super.onInit();
     initializeRemoteConfig();
   }
-
   Future<void> initializeRemoteConfig() async {
     try {
       final remoteConfig = FirebaseRemoteConfig.instance;
@@ -40,7 +39,6 @@ class NativeAdController extends GetxController {
           ?androidNativeVal
           :iosNativeVal;
       showAd = remoteConfig.getBool(key);
-
       if (showAd) {
         loadNativeAd();
       } else {
@@ -55,8 +53,7 @@ class NativeAdController extends GetxController {
     isAdReady.value = false;
     _nativeAd = NativeAd(
       adUnitId:Platform.isAndroid
-          ?""
-      // androidNativeAdvId
+          ? androidNativeAdvId
           : iosNativeAdvId,
       request: const AdRequest(),
       listener: NativeAdListener(
@@ -87,12 +84,10 @@ class NativeAdController extends GetxController {
 
 class NativeAdWidget extends StatefulWidget {
   final TemplateType templateType;
-
   const NativeAdWidget({
     Key? key,
     this.templateType = TemplateType.small,
   }) : super(key: key);
-
   @override
   _NativeAdWidgetState createState() => _NativeAdWidgetState();
 }
@@ -101,7 +96,6 @@ class _NativeAdWidgetState extends State<NativeAdWidget> {
   late final NativeAdController _adController;
   late final String _tag;
   final removeAds = Get.find<RemoveAds>();
-
   @override
   void initState() {
     super.initState();

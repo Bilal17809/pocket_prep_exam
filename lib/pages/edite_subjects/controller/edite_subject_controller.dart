@@ -210,14 +210,12 @@ class EditeSubjectController extends GetxController {
   Future<List<Question>> startQuizForTime()async {
     final pool = [...questionPool];
     pool.shuffle();
-    // print("Your pool QuizForTime is ${pool.length}");
     return pool.take(maxQuizSizeForTime).toList();
   }
 
   List<Question> startQuiz() {
     final pool = [...questionPool];
     pool.shuffle();
-    // print("Your pool is start Quiz pool is:  ${pool.length}");
     return pool;
   }
 

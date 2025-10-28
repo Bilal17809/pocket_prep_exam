@@ -21,7 +21,6 @@ class PracticeController extends GetxController {
   PracticeController({required QuestionService questionService, required StorageService storageServices })
       : _questionService = questionService ,_storageService = storageServices;
 
-
   @override
   void onInit() {
     Get.find<InterstitialAdManager>().checkAndDisplayAd();
@@ -52,7 +51,6 @@ class PracticeController extends GetxController {
       isLoading.value = false;
     }
   }
-
 
   int? getQuestionCountBySubject(int subjectId) {
     return allQuestions.where((q) => q.subjectId == subjectId).length;

@@ -1,27 +1,21 @@
 import 'package:get/get.dart';
-import 'package:pocket_prep_exam/core/Utility/utils.dart';
-import 'package:pocket_prep_exam/core/local_storage/storage_helper.dart';
-import 'package:pocket_prep_exam/data/models/exams_and_subject.dart';
-import 'package:pocket_prep_exam/pages/dashboard/control/dashboard_controller.dart';
-import 'package:pocket_prep_exam/pages/edite_subjects/controller/edite_subject_controller.dart';
+import '../../premium/view/premium_screen.dart';
+import '/core/Utility/utils.dart';
+import '/core/local_storage/storage_helper.dart';
+import '/data/models/exams_and_subject.dart';
+import '/pages/edite_subjects/controller/edite_subject_controller.dart';
 import 'package:pocket_prep_exam/pages/practice/controller/practice_controller.dart';
 import 'package:pocket_prep_exam/pages/setting/control/setting_controller.dart';
-import 'package:pocket_prep_exam/pages/stats/controller/stats_controller.dart';
-import 'package:pocket_prep_exam/services/exam_and_subjects_services.dart';
-import '../../../ad_manager/interstitial_ads.dart';
-import '../../../core/common/loading_container.dart';
+import '/pages/stats/controller/stats_controller.dart';
+import '/services/exam_and_subjects_services.dart';
 import '../../study/controller/study_controller.dart';
 
 class SwitchExamController extends GetxController {
-
   final ExamService _examService;
   final StorageService _storageService;
 
   final List<Exam> exam = <Exam>[];
    Rxn<Exam> selectExam = Rxn<Exam>();
-
-
-
 
   final RxBool isLoading = false.obs;
   final RxInt selectExamIndex = (-1).obs;
@@ -37,11 +31,10 @@ class SwitchExamController extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    // Get.find<InterstitialAdManager>().checkAndDisplayAd();
+    _checkFirstLaunch();
     loadExams().then((_) {
       loadSelectExam();
     });
-    // loadSelectExam();
   }
   void selectedExam(int index) {
     selectExamIndex.value = index;
@@ -77,6 +70,7 @@ class SwitchExamController extends GetxController {
     }
   }
 
+
   Future<void> saveSelectedExam() async {
     if (selectExamIndex.value == -1) {
       Utils.showError( "Please select an exam first!","");
@@ -92,14 +86,23 @@ class SwitchExamController extends GetxController {
     await Get.find<PracticeController>().loadExam();
     await Get.find<StatsController>().loadExam();
     _updateButtonVisibility();
-
-
   }
+
   void _updateButtonVisibility() {
     if (savedIndex == null) {
       showButton.value = selectExamIndex.value != -1;
     } else {
       showButton.value = (selectExamIndex.value != savedIndex);
+    }
+  }
+
+  Future<void> _checkFirstLaunch() async {
+    final isFirstLaunch = !StorageService.getFirstLaunch();
+    if (isFirstLaunch) {
+      await StorageService.saveFirstLaunch(true);
+      if (Get.context != null) {
+        Get.to(() => const PremiumScreen());
+      }
     }
   }
 }

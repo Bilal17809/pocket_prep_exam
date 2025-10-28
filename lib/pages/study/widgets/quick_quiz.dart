@@ -59,7 +59,6 @@ class QuickQuiz extends StatelessWidget {
                         final QuizQuestionsForFreeUser = Get.find<EditeSubjectController>().startQuizForFreeUser();
                         final quizQuestions = Get.find<EditeSubjectController>().startQuiz();
                         final isSubscribed = Get.find<RemoveAds>().isSubscribedGet.value;
-                       // controller.clearQuestionOfDayAttempt();
                         if (quizQuestions.isEmpty || QuizQuestionsForFreeUser.isEmpty) {
                           Utils.showError("Please select at least one subject!", "Error");
                           return;
@@ -76,7 +75,6 @@ class QuickQuiz extends StatelessWidget {
                       leading: Image.asset(
                         item.icon ?? "",
                         height: 40,
-                        // color: isHidden ? Colors.grey.shade500 : null,
                       ),
                       title: Text(
                         item.title ?? "",

@@ -4,7 +4,6 @@ import 'package:pocket_prep_exam/pages/stats/controller/stats_controller.dart';
 import '../controller/study_controller.dart';
 import '/core/theme/app_colors.dart';
 import '/core/theme/app_styles.dart';
-import '../../../core/common/set_purchase_card.dart';
 
 class ProgressSection extends StatelessWidget {
   const ProgressSection({super.key});
@@ -16,9 +15,6 @@ class ProgressSection extends StatelessWidget {
     return Obx(() {
       final bool completed = !studyController.isQuestionOfDayVisible.value;
       final bool isCorrect = studyController.isQuestionOfDayCorrect.value;
-      final averageTimeAllSubjects = Get.find<StatsController>().totalAttemptedQuestions;
-      // final averageTimeMinutes = _parseAverageTimeToMinutes(averageTimeAllSubjects);
-      // final normalizedValue = (averageTimeMinutes / 60).clamp(0.0, 1.0);
       final progressValueAllSubjects = Get.find<StatsController>().progressValue;
 
       final Color progressColor = completed ? (isCorrect ? kMintGreen: Colors.red)

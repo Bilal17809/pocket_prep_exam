@@ -16,9 +16,7 @@ class QuizBuilderScreen extends StatelessWidget {
    QuizBuilderScreen({super.key});
 
   final quizBuilderController = Get.find<QuizBuilderController>();
-
   final subscriptionController = Get.find<RemoveAds>();
-
   final RxBool hasFirstAttempt = StorageService.getFirstAttempt().obs;
 
   @override

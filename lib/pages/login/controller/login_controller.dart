@@ -1,6 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../../core/local_storage/storage_helper.dart';
+import '/core/local_storage/storage_helper.dart';
 import '/data/models/user_model.dart';
 
 class LoginController extends GetxController {
@@ -15,7 +14,6 @@ class LoginController extends GetxController {
 
   Future<void> saveUser() async {
     if (firstName.value.trim().isEmpty || lastName.value.trim().isEmpty) {
-      // _showError("Please enter your name properly");
       return;
     }
     final user = UserModel(
@@ -61,18 +59,6 @@ class LoginController extends GetxController {
     lastName.value = name;
     return null;
   }
-
-  // void _showError(String message) {
-  //   if (!Get.isSnackbarOpen) {
-  //     Get.snackbar(
-  //       "Error",
-  //       message,
-  //       snackPosition: SnackPosition.BOTTOM,
-  //       backgroundColor: Colors.red,
-  //       colorText: Colors.white,
-  //     );
-  //   }
-  // }
 
   @override
   void onClose() {

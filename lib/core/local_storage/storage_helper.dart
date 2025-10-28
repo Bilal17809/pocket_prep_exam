@@ -1,7 +1,5 @@
 import 'dart:convert';
-
 import 'package:shared_preferences/shared_preferences.dart';
-
 import '../../data/models/user_model.dart';
 import '../../pages/quiz_view_second/controller/quiz_controller.dart';
 
@@ -26,9 +24,19 @@ class StorageService {
   static const String _subscribeStatusKey = 'Subscribe';
   static const String _subscriptionProductIdKey = 'subscriptionAiId';
   static const String _hasFirstAttemptKey = 'hasFirstAttemptKey';
+  static const String _hasFirstLaunch = 'hasFirstLaunch';
+
+  /// save the  First launch.
+  static Future<void> saveFirstLaunch(bool value) async {
+    await _preferences.setBool(_hasFirstLaunch, value);
+  }
+
+  /// Gets the  First launch.
+  static bool getFirstLaunch() {
+    return _preferences.getBool(_hasFirstLaunch) ?? false;
+  }
 
 
-  /// Saves the  First Attempt ('SubscribeMalta' = true/false).
   static Future<void> saveFirstAttempt(bool value) async {
     await _preferences.setBool(_hasFirstAttemptKey, value);
   }

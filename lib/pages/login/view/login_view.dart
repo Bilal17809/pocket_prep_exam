@@ -29,7 +29,6 @@ class LoginView extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Image.asset("images/appicon.png", height: 100),
-                // const SizedBox(height: 20),
                 Text(
                   AppFirstName,
                   style: textTheme.displaySmall!.copyWith(color: Colors.blue.shade700,fontWeight: FontWeight.w600,fontSize: 16),
@@ -50,7 +49,7 @@ class LoginView extends StatelessWidget {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Text(
-                          "Welcome to ${AppLastName} ${AppLastName}!",
+                          "Welcome to ${AppFirstName} ${AppLastName}!",
                           style: context.textTheme.titleLarge!.copyWith(
                             fontSize: 16,
                             fontWeight: FontWeight.w600,
@@ -87,7 +86,7 @@ class LoginView extends StatelessWidget {
                               controller.firstName.value = firstNameController.text.trim();
                               controller.lastName.value = lastNameController.text.trim();
                               await controller.saveUser();
-                              Get.offAll(() => ExamSwitchView());
+                              Get.to(ExamSwitchView());
                             }
                           },
                         ),

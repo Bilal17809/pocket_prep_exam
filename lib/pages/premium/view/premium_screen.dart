@@ -77,7 +77,9 @@ class PremiumScreen extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children:  [
-                _BottomLink(text: "How to cancel",onTap: (){},),
+                _BottomLink(text: "How to cancel",onTap: (){
+                 controller.cancelAnyTime();
+                },),
                 _BottomLink(text: "Terms & Conditions",onTap: (){Get.to(() => TermServicesView());},),
               ],
             ),

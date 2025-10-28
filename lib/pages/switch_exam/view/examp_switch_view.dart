@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pocket_prep_exam/core/common/back_button.dart';
+import '../../../core/local_storage/storage_helper.dart';
+import '../../premium/view/premium_screen.dart';
 import '/core/common/common.dart';
 import '/core/common/common_button.dart';
 import '/core/theme/app_colors.dart';
@@ -12,7 +14,6 @@ import '/core/common/loading_container.dart';
 
 class ExamSwitchView extends StatelessWidget {
   const ExamSwitchView({super.key});
-
   @override
   Widget build(BuildContext context) {
     final controller = Get.find<SwitchExamController>();
@@ -40,14 +41,27 @@ class ExamSwitchView extends StatelessWidget {
                           ? CommonButton(
                         title: "Switch Exam",
                         onTap: () async {
+                          final isFirstLaunch = !StorageService.getFirstLaunch();
+                          if (isFirstLaunch) {
+                            await StorageService.saveFirstLaunch(true);
+                            Get.to(() => const PremiumScreen());
+                            return;
+                          }
                           LoadingDialog.show(message: "Switching Exam...");
                           await controller.saveSelectedExam();
-                          await Future.delayed(
-                            const Duration(milliseconds: 500),
-                          );
+                          await Future.delayed(const Duration(milliseconds: 500));
                           LoadingDialog.hide();
                           Get.offAll(() => DashboardView(initialIndex: 0));
                         },
+                        // onTap: () async {
+                        //   LoadingDialog.show(message: "Switching Exam...");
+                        //   await controller.saveSelectedExam();
+                        //   await Future.delayed(
+                        //     const Duration(milliseconds: 500),
+                        //   );
+                        //   LoadingDialog.hide();
+                        //   Get.offAll(() => DashboardView(initialIndex: 0));
+                        // },
                       )
                           : const HideCommonButton(title: "Switch Exam"),
                       SizedBox(height: 14)
