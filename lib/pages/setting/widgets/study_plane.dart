@@ -5,6 +5,7 @@ import 'package:pocket_prep_exam/core/common/constant.dart';
 import 'package:pocket_prep_exam/pages/premium/view/premium_screen.dart';
 import 'package:pocket_prep_exam/pages/setting/widgets/show_detail.dart';
 import '../../../core/common/app_divider.dart';
+import '../../../core/constant/constant.dart';
 import '/core/theme/app_theme.dart';
 import '/pages/setting/widgets/text_button.dart';
 import '/core/theme/app_colors.dart';
@@ -34,10 +35,10 @@ class StudyPlane extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        "Free Pocket Prep",
+                        "Free ${AppFirstName} ${AppLastName}",
                         style: context.textTheme.bodySmall!.copyWith(
                           color: kBlack,
-                          fontSize: 18,
+                          fontSize: 16,
                           fontWeight: FontWeight.bold,
                         ),
                       ),

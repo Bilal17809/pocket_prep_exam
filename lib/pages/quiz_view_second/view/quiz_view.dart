@@ -137,7 +137,7 @@ class QuizScaffold extends StatelessWidget {
               ),
             ],
           ),
-          bottomNavigationBar: BannerAdWidget(),
+          // bottomNavigationBar: BannerAdWidget(),
         ),
       ),
     );

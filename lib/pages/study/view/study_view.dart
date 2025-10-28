@@ -17,7 +17,7 @@ class StudyView extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(backgroundColor: kWhiteF7,
-          title: Text("Paramedic Prep",style: titleMediumStyle.copyWith(fontSize: 26),),
+          title: Text(controller.selectedExamName.value,style: titleMediumStyle.copyWith(fontSize: 26),),
           centerTitle: true,
         ),
         drawer:  AppDrawer(),

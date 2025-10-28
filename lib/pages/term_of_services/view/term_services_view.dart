@@ -13,7 +13,6 @@ class TermServicesView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final textTheme = context.textTheme;
-
     return SafeArea(
       child: Scaffold(
         backgroundColor: kWhiteF7,
@@ -39,7 +38,6 @@ class TermServicesView extends StatelessWidget {
                       style: textTheme.bodyMedium?.copyWith(height: 1.5, color: Colors.black87),
                     ),
                     const SizedBox(height: 18),
-
                     _SectionTitle(title: "Features:", style: textTheme.titleMedium),
                     const SizedBox(height: 8),
                     const _FeatureItem(text: "100% Ads-free premium experience"),

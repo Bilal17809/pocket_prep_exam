@@ -51,7 +51,8 @@ class _BannerAdWidgetState extends State<BannerAdWidget> {
     );
     _bannerAd = BannerAd(
       adUnitId: Platform.isAndroid
-          ?androidBannerId
+          ?""
+      // androidBannerId
           :iosBannerId,
       size:adSize!,
       request: const AdRequest(),

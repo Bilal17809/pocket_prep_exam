@@ -53,7 +53,8 @@ class InterstitialAdManager extends GetxController {
   void _loadAd() {
     InterstitialAd.load(
       adUnitId:Platform.isAndroid
-          ?androidInterstitialId
+          ?""
+      // androidInterstitialId
       :iosInterstitialId,
       request: const AdRequest(),
       adLoadCallback: InterstitialAdLoadCallback(
