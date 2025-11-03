@@ -1,12 +1,10 @@
 import 'package:get/get.dart';
-import '../../../ad_manager/interstitial_ads.dart';
 import '/core/local_storage/storage_helper.dart';
 import '/data/models/models.dart';
 import '/pages/edite_subjects/controller/edite_subject_controller.dart';
 import '/pages/quiz_setup/controller/quiz_setup_controller.dart';
 import '/services/services.dart';
 import '../../quiz_view_second/controller/quiz_controller.dart';
-
 
 class PracticeController extends GetxController {
 
@@ -18,12 +16,11 @@ class PracticeController extends GetxController {
   final isLoading = false.obs;
   Rxn<QuizResult> savedResult = Rxn<QuizResult>();
 
-  PracticeController({required QuestionService questionService, required StorageService storageServices })
+  PracticeController({required QuestionService questionService, required StorageService storageServices})
       : _questionService = questionService ,_storageService = storageServices;
 
   @override
   void onInit() {
-    // Get.find<InterstitialAdManager>().checkAndDisplayAd();
     super.onInit();
     loadExam();
   }

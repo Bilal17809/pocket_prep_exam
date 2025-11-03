@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../../../core/local_storage/storage_helper.dart';
 import '/core/common/back_button.dart';
 import '/core/common/set_purchase_card.dart';
 import '/ad_manager/banner_ads.dart';
@@ -109,6 +110,10 @@ class QuizSetupView extends StatelessWidget {
               CommonButton(
                 title: "Start Quiz",
                 onTap: () {
+                  final subjectId = controller.selectedSubject.value!.subjectId;
+                  final currentAttempts = StorageService.loadSubjectAttemptCount(subjectId);
+                  StorageService.saveSubjectAttemptCount(subjectId, currentAttempts +
+                      controller.finalSelectedQuestions.length);
                   controller.clearQuiz();
                   Get.toNamed(RoutesName.secondQuizView);
                 },

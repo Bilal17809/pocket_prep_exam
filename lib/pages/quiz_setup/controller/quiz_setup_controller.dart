@@ -11,6 +11,7 @@ class QuizSetupController extends GetxController {
   var selectedQuestions = 10.obs;
   var subjectQuestions = <Question>[].obs;
   QuizSetupController({required QuestionService questionService}) : _questionService = questionService;
+
   Future<void> setSubject(Subject subject) async {
     selectedSubject.value = subject;
     final allQuestions = await _questionService.fetchAllQuestions();
@@ -18,7 +19,6 @@ class QuizSetupController extends GetxController {
     );
     setDifficulty("Easy");
   }
-
   List<int> get questionOptions {
     switch (selectedDifficulty.value) {
       case "Medium":

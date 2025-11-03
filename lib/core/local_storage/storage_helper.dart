@@ -26,6 +26,19 @@ class StorageService {
   static const String _hasFirstAttemptKey = 'hasFirstAttemptKey';
   static const String _hasFirstLaunch = 'hasFirstLaunch';
 
+
+  static const String _quizSetupVisitedKey = "_quiz_setup_visited";
+
+// Save how many questions user attempted for a specific subject
+  static Future<void> saveSubjectAttemptCount(int subjectId, int count) async {
+    await _preferences.setInt("subject_attempt_$subjectId", count);
+  }
+
+// Load attempted questions count for a subject
+  static int loadSubjectAttemptCount(int subjectId) {
+    return _preferences.getInt("subject_attempt_$subjectId") ?? 0;
+  }
+
   /// save the  First launch.
   static Future<void> saveFirstLaunch(bool value) async {
     await _preferences.setBool(_hasFirstLaunch, value);

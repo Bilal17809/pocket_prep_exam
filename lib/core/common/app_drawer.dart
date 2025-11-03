@@ -150,7 +150,7 @@ class AppDrawer extends StatelessWidget {
           DrawerItemWidget(
             item: SettingsItem(
               icon: Icons.workspace_premium_outlined,
-              title: isSubscribed ? 'Ads Free' : "Premium",
+              title: isSubscribed ? 'Premium Activated 🎉' : "Premium",
             ),
             onTap: () {
               Get.to(() => PremiumScreen());
