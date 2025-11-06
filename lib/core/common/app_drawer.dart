@@ -49,7 +49,6 @@ class AppDrawer extends StatelessWidget {
       );
     }
   }
-  final isSubscribed = Get.find<RemoveAds>().isSubscribedGet.value;
 
   @override
   Widget build(BuildContext context) {
@@ -147,15 +146,18 @@ class AppDrawer extends StatelessWidget {
             },
           ),
           AppDivider(height: 2.0),
-          DrawerItemWidget(
-            item: SettingsItem(
-              icon: Icons.workspace_premium_outlined,
-              title: isSubscribed ? 'Premium Activated 🎉' : "Premium",
-            ),
-            onTap: () {
-              Get.to(() => PremiumScreen());
-            },
-          ),
+          Obx((){
+            final isSubscribed = Get.find<RemoveAds>().isSubscribedGet.value;
+            return  DrawerItemWidget(
+              item: SettingsItem(
+                icon: Icons.workspace_premium_outlined,
+                title: isSubscribed ? 'Premium Activated 🎉' : "Premium",
+              ),
+              onTap: () {
+                Get.to(() => PremiumScreen());
+              },
+            );
+          })
         ],
       ),
     );

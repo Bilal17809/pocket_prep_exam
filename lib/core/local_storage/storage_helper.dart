@@ -20,21 +20,16 @@ class StorageService {
   static const String _ttsEnabled = "tts_Enabled";
   static const String _darkModeKey = "dark_mode_enabled";
   static const String _userDataKey = "user_data";
-  static const String _subscribePocketPrepKey = "SubscribePocketPrep";
   static const String _subscribeStatusKey = 'Subscribe';
   static const String _subscriptionProductIdKey = 'subscriptionAiId';
   static const String _hasFirstAttemptKey = 'hasFirstAttemptKey';
   static const String _hasFirstLaunch = 'hasFirstLaunch';
 
 
-  static const String _quizSetupVisitedKey = "_quiz_setup_visited";
-
-// Save how many questions user attempted for a specific subject
   static Future<void> saveSubjectAttemptCount(int subjectId, int count) async {
     await _preferences.setInt("subject_attempt_$subjectId", count);
   }
 
-// Load attempted questions count for a subject
   static int loadSubjectAttemptCount(int subjectId) {
     return _preferences.getInt("subject_attempt_$subjectId") ?? 0;
   }
@@ -90,19 +85,6 @@ class StorageService {
     await _preferences.remove(_subscriptionProductIdKey);
   }
 
-
-  // --- Original methods related to subscription (Retained for existing usage) ---
-
-  static Future<void> saveSubscriptionStatus(bool value) async {
-    await _preferences.setBool(_subscribePocketPrepKey, value);
-  }
-
-  static Future<bool> getSubscriptionStatus() async {
-    return _preferences.getBool(_subscribePocketPrepKey) ?? false;
-  }
-
-
-
   static Future<void> saveTTsToggle(bool isEnabled) async {
     await _preferences.setBool(_ttsEnabled, isEnabled);
   }
@@ -118,8 +100,6 @@ class StorageService {
     return _preferences.getBool(_darkModeKey) ?? false;
   }
 
-
-  // -------------------- Question of the Day Methods --------------------
 
   Future<void> saveQuestionOfDayAttempt(int examId) async {
     final today = DateTime.now().toIso8601String().split('T').first;

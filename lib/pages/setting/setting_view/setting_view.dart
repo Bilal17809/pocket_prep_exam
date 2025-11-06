@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '/ad_manager/ad_manager.dart';
 import '/pages/setting/widgets/unlock_card.dart';
-import '/ad_manager/banner_ads.dart';
 import '/core/local_storage/storage_helper.dart';
 import '../control/setting_controller.dart';
 import '/core/theme/theme.dart';
@@ -13,17 +13,22 @@ class SettingView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = Get.find<SettingController>();
+    final remove = Get.find<RemoveAds>();
     return Scaffold(
-      backgroundColor: kWhiteF7,
+      backgroundColor: kWhite,
       appBar: AppBar(
         centerTitle: true,
-        title: Text("Settings"),
+        title: Text("Settings",style:context.textTheme.titleLarge!.copyWith(
+          fontWeight: FontWeight.w600
+        ),),
       ),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
             children: [
-              UnlockProCard(),
+              if(!remove.isSubscribedGet.value)...[
+                UnlockProCard(),
+              ],
               ProfileSection(),
               ShowDetail(),
               StudyPlane(),

@@ -40,32 +40,41 @@ class StudyPlane extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        "Free $AppFirstName $AppLastName",
-                        style: context.textTheme.bodySmall!.copyWith(
-                          color: kBlack,
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
+                      Obx((){
+                        final isSubscribed = premium.isSubscribedGet.value;
+                        if (isSubscribed) return const SizedBox.shrink();
+                        return Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                          child: Text(
+                            "Free $AppFirstName $AppLastName",
+                            style: context.textTheme.bodySmall!.copyWith(
+                              color: kBlack,
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        );
+                      }),
+                      Obx(() {
+                        final isSubscribed = premium.isSubscribedGet.value;
+                        return !isSubscribed?
+                        ClickableDividerRow(
+                          title:"Upgrade to Premium",
+                          onTap: () {
+                            Get.to(() => const PremiumScreen());
+                          },
+                        ): Text("Premium Activated 🎉",
+                          style: context.textTheme.bodySmall!.copyWith(
+                            color: Colors.blue,
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                          ),);
+                      }),
+                      const SizedBox(height: 8),
                     ],
-                  ),
-                ),
-                Obx(() {
-                  final isSubscribed = premium.isSubscribedGet.value;
-                  return ClickableDividerRow(
-                    title: isSubscribed
-                        ? "Premium Activated 🎉"
-                        : "Upgrade to Premium",
-                    onTap: () {
-                      if (!isSubscribed) {
-                        Get.to(() => PremiumScreen());
-                      }
-                    },
-                  );
-                }),
+                  )
 
-                const SizedBox(height: 8),
+                ),
               ],
             ),
           ),

@@ -80,7 +80,7 @@ class LoginView extends StatelessWidget {
                         ),
                         const SizedBox(height: 24),
                         CommonButton(
-                          title: "Login",
+                          title: "Lets go",
                           onTap: () async {
                             if (_formKey.currentState!.validate()) {
                               controller.firstName.value = firstNameController.text.trim();

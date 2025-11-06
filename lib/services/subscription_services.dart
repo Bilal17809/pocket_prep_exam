@@ -40,14 +40,6 @@ class PurchaseService {
     'com.professionalexamprep.monthly',
   ];
 
-  /*
-  Monthly:  com.professionalexamprep.monthly
-
-Quarterly: com.professionalexamprep.quarterly
-
-Yearly:  com.professionalexamprep.yearly
-  */
-
   final List<String> _kNonSubscriptionIds = const [
     'consumable',
     'upgrade',
@@ -61,10 +53,6 @@ Yearly:  com.professionalexamprep.yearly
       ..._kSubscriptionIdsForIOS,
   };
 
-  // Set<String> get _allProductIds => {
-  //   ..._kNonSubscriptionIds,
-  //   ..._kSubscriptionIdsForAndroid,
-  // }.toSet();
 
 
   Future<void> init([void Function(void Function())? setState]) async {
@@ -231,30 +219,24 @@ Yearly:  com.professionalexamprep.yearly
         if (_kSubscriptionIdsForAndroid.contains(details.productID) ||
             _kSubscriptionIdsForIOS.contains(details.productID)) {
           foundActiveSubscription = true;
-
           setState(() => _purchasePending = false);
-
           if (Navigator.of(Get.context!).canPop()) {
             Navigator.of(Get.context!).pop();
           }
-
           await StorageService.saveGeneralSubscriptionStatus(true);
           await StorageService.saveSubscriptionProductId(details.productID);
           removeAdsController.isSubscribedGet(true);
-
           if (details.status == PurchaseStatus.purchased) {
             ScaffoldMessenger.of(Get.context!).showSnackBar(
               const SnackBar(content: Text('Subscription purchased successfully!')),
             );
           }
-
           if (details.pendingCompletePurchase) {
             await _inAppPurchase.completePurchase(details);
           }
         }
       }
     }
-
     if (detailsList.isNotEmpty && detailsList.every((d) => d.status == PurchaseStatus.restored) && !foundActiveSubscription) {
       await StorageService.clearSubscriptionState();
       removeAdsController.isSubscribedGet(false);
@@ -289,7 +271,7 @@ Yearly:  com.professionalexamprep.yearly
     );
     try {
       await _inAppPurchase.restorePurchases();
-      Timer(const Duration(seconds: 15), () {
+      Timer(const Duration(seconds: 10), () {
         if (_purchasePending) {
           setState(() => _purchasePending = false);
           if (Navigator.of(context).canPop()) {

@@ -10,25 +10,29 @@ import '/core/routes/routes.dart';
 import '/core/routes/routes_name.dart';
 import '/pages/edite_subjects/controller/edite_subject_controller.dart';
 import 'core/dependency_inject/dependency_inject.dart';
-
-void main() async{
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   MobileAds.instance.initialize();
+  await StorageService.init();
   DependencyInject.init();
   Get.put(AppOpenAdManager());
-  await StorageService.init();
+  Get.put(RemoveAds(), permanent: true);
   OnesignalService.init();
   final purchaseService = PurchaseService();
   Get.put(purchaseService, permanent: true);
-  Get.put<EditeSubjectController>(EditeSubjectController(questionService: Get.find(),
-    storageServices: Get.find(),
+  Get.put<EditeSubjectController>(
+    EditeSubjectController(
+      questionService: Get.find(),
+      storageServices: Get.find(),
       examService: Get.find(),
     ),
     permanent: true,
   );
+
   runApp(const MyApp());
 }
+
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});

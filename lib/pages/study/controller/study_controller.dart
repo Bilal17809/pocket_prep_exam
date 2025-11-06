@@ -168,7 +168,7 @@ class StudyController extends GetxController {
       ));
     }
     modes.addAll([
-      QuizModeModel("images/quiz icon.png", "", "Quick ${isSubscribed ? Get.find<EditeSubjectController>().questionPool.length:"10"} Quiz", null),
+      QuizModeModel("images/quiz icon.png", "", "Quick Quiz", null),
       QuizModeModel("images/stopwatch.png", "", "Timed Quiz", null),
       QuizModeModel("images/set-up.png", "", "Quiz Builder", null),
     ]);
