@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:pocket_prep_exam/ad_manager/ad_manager.dart';
 import 'package:shimmer/shimmer.dart';
-import '../../../core/local_storage/storage_helper.dart';
 import '/pages/term_of_services/view/term_services_view.dart';
 import '../widgets/plane_tile.dart';
 import '../widgets/premium_top_baner.dart';
@@ -144,14 +142,6 @@ class PremiumScreen extends StatelessWidget {
                   text: "Terms & Conditions",
                   onTap: () => Get.to(() => TermServicesView()),
                 ),
-
-                TextButton(
-                  onPressed: () async {
-                    await Get.find<RemoveAds>().setSubscriptionStatus(true);
-                  },
-                  child: const Text("Activate Test Premium"),
-                ),
-
               ],
             ),
           ),
