@@ -72,7 +72,7 @@ class InterstitialAdManager extends GetxController {
 
   void _showAd() {
     if(removeAds.isSubscribedGet.value){
-      SizedBox();
+      return;
     }
     if (_currentAd == null) return;
     isShow.value = true;

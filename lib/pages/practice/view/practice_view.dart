@@ -40,7 +40,6 @@ class PracticeView extends StatelessWidget {
               }),
               const SizedBox(height: 10),
               NativeAdWidget(),
-              // GameButton(),
               const SizedBox(height: 10),
               Text(
                 "Practice By Subject",

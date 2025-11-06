@@ -2,7 +2,7 @@ import 'package:get/get.dart';
 import '../core/local_storage/storage_helper.dart';
 
 class RemoveAds extends GetxController {
-  var isSubscribedGet = false.obs;
+  var isSubscribedGet = true.obs;
   @override
   void onInit() {
     super.onInit();
