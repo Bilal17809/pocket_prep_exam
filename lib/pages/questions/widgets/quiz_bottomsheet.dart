@@ -108,7 +108,8 @@ class TimedQuizBottomSheet extends StatelessWidget {
                   final quizQuestionForTime = await Get.find<EditeSubjectController>().startQuizForTime();
                   if(quizQuestionForTime.isEmpty){
                     Utils.showError("Please select at lest one subject", "Error");
-                  }else{
+                  }
+                  else{
                       Get.to(() =>
                           QuizzesView(
                             allQuestion:quizQuestionForTime,

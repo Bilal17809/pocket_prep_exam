@@ -51,7 +51,6 @@ class QuestionController extends GetxController {
 
   QuestionController({required QuestionService q}) : _questionService = q;
 
-  // Reset Timer State
   void resetTimerState() {
     _startTime = null;
     _endTime = null;
@@ -178,47 +177,6 @@ class QuestionController extends GetxController {
     await startQuizCommon(fixedQuestions: fixedQuestions, isFreeUser: true);
   }
 
-  // Future<void> startQuiz({List<Question>? fixedQuestions}) async {
-  //   try {
-  //     state.value = QuestionState.loading;
-  //     _resetQuizState();
-  //     if (fixedQuestions != null && fixedQuestions.isNotEmpty) {
-  //       questions.assignAll(fixedQuestions);
-  //     } else {
-  //       final pool = Get.find<EditeSubjectController>().startQuiz();
-  //       questions.assignAll(pool);
-  //     }
-  //     if (questions.isEmpty) {
-  //       state.value = QuestionState.error;
-  //     } else {
-  //       _startQuizTimer();
-  //       state.value = QuestionState.success;
-  //     }
-  //   } catch (e) {
-  //     state.value = QuestionState.error;
-  //   }
-  // }
-  //
-  // Future<void> startQuizForFreUser({List<Question>? fixedQuestions}) async {
-  //   try {
-  //     state.value = QuestionState.loading;
-  //     _resetQuizState();
-  //     if (fixedQuestions != null && fixedQuestions.isNotEmpty) {
-  //       questions.assignAll(fixedQuestions);
-  //     } else {
-  //       final pool = Get.find<EditeSubjectController>().startQuizForFreeUser();
-  //       questions.assignAll(pool);
-  //     }
-  //     if (questions.isEmpty) {
-  //       state.value = QuestionState.error;
-  //     } else {
-  //       _startQuizTimer();
-  //       state.value = QuestionState.success;
-  //     }
-  //   } catch (e) {
-  //     state.value = QuestionState.error;
-  //   }
-  // }
 
   Future<void> initQuiz({
     required bool reviewMode,
@@ -297,7 +255,6 @@ class QuestionController extends GetxController {
       state.value = QuestionState.error;
     }
   }
-
 
   void _startTimedQuizCountdown() {
     _timer?.cancel();

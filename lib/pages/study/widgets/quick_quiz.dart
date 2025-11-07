@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:lottie/lottie.dart';
-import '../../../core/common/unlock_question_dialog.dart';
+import '/core/common/unlock_question_dialog.dart';
 import 'package:pocket_prep_exam/ad_manager/ad_manager.dart';
 import '/core/theme/app_styles.dart';
 import '/core/common/constant.dart';
@@ -64,10 +63,12 @@ class QuickQuiz extends StatelessWidget {
                           return;
                         }
                         Get.to(() => QuizzesView(allQuestion: isSubscribed ? quizQuestions : QuizQuestionsForFreeUser, isTimedQuiz: false));
-                      } else if (item.title == "Timed Quiz") {
+                      }
+                      else if (item.title == "Timed Quiz") {
                         Get.find<QuestionController>().resetController();
                         TimedQuizBottomSheet.show();
-                      } else if (item.title == "Quiz Builder") {
+                      }
+                      else if (item.title == "Quiz Builder") {
                         Get.to(() => QuizBuilderScreen());
                       }
                     },

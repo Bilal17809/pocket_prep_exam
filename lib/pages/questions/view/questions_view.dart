@@ -80,7 +80,6 @@ class QuizzesView extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = Get.find<QuestionController>();
     final PageController pageController = PageController(initialPage: initialPage ?? 0);
-
     WidgetsBinding.instance.addPostFrameCallback((_) async{
       controller.initQuiz(
         reviewMode: reviewMode,
@@ -133,7 +132,6 @@ class QuizzesView extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Image.asset("images/stopwatch.png",height: 30,),
-                        // const Icon(Icons.timer_outlined, color: Colors.white, size: 24),
                         const SizedBox(width: 8),
                         Text(
                           controller.getTimerDisplay().toString(),
