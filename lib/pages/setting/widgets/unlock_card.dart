@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:pocket_prep_exam/core/local_storage/storage_helper.dart';
 import '/pages/premium/view/premium_screen.dart';
 import '/core/theme/theme.dart';
 import '/core/common/common_button.dart';
@@ -52,7 +53,8 @@ class UnlockProCard extends StatelessWidget {
           const SizedBox(height: 10),
           CommonButton(
             title: "Upgrade to premium",
-            onTap: () {
+            onTap: ()async {
+              await StorageService.removeTimedQuizAttempt();
               Get.to(() => PremiumScreen());
             },
             colorA: kWhite,

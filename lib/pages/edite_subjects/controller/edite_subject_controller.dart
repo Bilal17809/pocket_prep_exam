@@ -209,7 +209,7 @@ class EditeSubjectController extends GetxController {
   Future<List<Question>> startQuizForTime()async {
     final pool = [...questionPool];
     pool.shuffle();
-    return pool.take(maxQuizSizeForTime).toList();
+    return pool.take(Get.find<RemoveAds>().isSubscribedGet.value ? 50 : 20).toList();
   }
 
   List<Question> startQuiz() {

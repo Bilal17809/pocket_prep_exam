@@ -24,6 +24,8 @@ class StorageService {
   static const String _subscriptionProductIdKey = 'subscriptionAiId';
   static const String _hasFirstAttemptKey = 'hasFirstAttemptKey';
   static const String _hasFirstLaunch = 'hasFirstLaunch';
+  static const String _timedQuizAttemptKey = 'timed_quiz_attempt';
+
 
 
   static Future<void> saveSubjectAttemptCount(int subjectId, int count) async {
@@ -33,6 +35,19 @@ class StorageService {
   static int loadSubjectAttemptCount(int subjectId) {
     return _preferences.getInt("subject_attempt_$subjectId") ?? 0;
   }
+//for quiz time
+   bool getTimedQuizFirstAttempt() {
+    return _preferences.getBool(_timedQuizAttemptKey) ?? false;
+  }
+
+   Future<void> saveTimedQuizAttempt(bool val) async {
+    await _preferences.setBool(_timedQuizAttemptKey, val);
+  }
+  static Future<void> removeTimedQuizAttempt() async {
+    await _preferences.remove(_timedQuizAttemptKey);
+  }
+
+
 
   /// save the  First launch.
   static Future<void> saveFirstLaunch(bool value) async {
@@ -53,6 +68,8 @@ class StorageService {
   static bool getFirstAttempt() {
     return _preferences.getBool(_hasFirstAttemptKey) ?? false;
   }
+
+
 
   /// Gets the  First Attempt.
   static Future<void> watchAdsClearFirstAttempt() async {

@@ -87,8 +87,7 @@ class QuizBuilderScreen extends StatelessWidget {
                     onTap: () async {
                       final allQuestions =
                       await quizBuilderController.prepareQuizQuestions();
-                      final totalSeconds =
-                          quizBuilderController.selectedTime.value.inSeconds;
+                      final totalSeconds = quizBuilderController.selectedTime.value.inSeconds;
                       if (!hasFirstAttempt.value) {
                         await StorageService.saveFirstAttempt(true);
                         hasFirstAttempt.value = true;

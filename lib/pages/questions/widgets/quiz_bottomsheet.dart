@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pocket_prep_exam/core/Utility/utils.dart';
+import 'package:pocket_prep_exam/core/local_storage/storage_helper.dart';
+import 'package:pocket_prep_exam/pages/study/controller/study_controller.dart';
 import '/pages/edite_subjects/controller/edite_subject_controller.dart';
 import '/pages/questions/control/questions_controller.dart';
 import '/pages/questions/view/questions_view.dart';
@@ -103,7 +105,10 @@ class TimedQuizBottomSheet extends StatelessWidget {
             child: CommonButton(
               title: "Start Quiz",
               onTap: () async {
-                  final selectedMinutes = controller.selectedMinutes.value.toInt();
+                if(!Get.find<StudyController>().hasTimedQuizFirstAttempt.value)
+                Get.find<StudyController>().saveTimeQuizAttempt(true);
+                Get.find<StudyController>().refreshTimedQuizAttempt();
+                final selectedMinutes = controller.selectedMinutes.value.toInt();
                   final totalSeconds = selectedMinutes * 60;
                   final quizQuestionForTime = await Get.find<EditeSubjectController>().startQuizForTime();
                   if(quizQuestionForTime.isEmpty){

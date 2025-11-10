@@ -15,6 +15,8 @@ class StudyController extends GetxController {
   final StorageService _storageService;
   final QuestionService _questionService;
   final RxBool isDrawerOpen = false.obs;
+  // final RxBool hasFirstAttempt = StorageService.getFirstAttempt().obs;
+
 
   final RxInt selectedIndex = (-1).obs;
   final RxString selectedExamName = "".obs;
@@ -22,7 +24,7 @@ class StudyController extends GetxController {
   RxString questionOfDayDate = ''.obs;
   RxBool isQuestionOfDayVisible =true.obs;
   RxBool isQuestionOfDayCorrect = false.obs;
-  final isSubscribed = Get.find<RemoveAds>().isSubscribedGet.value;
+  // final isSubscribed = Get.find<RemoveAds>().isSubscribedGet.value;
 
   RxList<CalendarDateModel> calendarDates = <CalendarDateModel>[].obs;
 
@@ -145,7 +147,20 @@ class StudyController extends GetxController {
     print("Question of the Day cleared for Exam ID: ${exam.examId}");
   }
 
+  Future<void> saveTimeQuizAttempt(bool val)async{
+  await _storageService.saveTimedQuizAttempt(val);
+  }
+
+  RxBool get hasTimedQuizFirstAttempt => _storageService.getTimedQuizFirstAttempt().obs;
+
+  void refreshTimedQuizAttempt() {
+    hasTimedQuizFirstAttempt.value = true;
+  }
+
+  final  isSubscribed = Get.find<RemoveAds>().isSubscribedGet.value;
+
   List<QuizModeModel> buildQuizModeList() {
+    final bool isLockedTimedQuiz = hasTimedQuizFirstAttempt.value && !isSubscribed;
     final modes = <QuizModeModel>[];
     if (isQuestionOfDayVisible.value) {
       final today = DateTime.now();
@@ -169,7 +184,13 @@ class StudyController extends GetxController {
     }
     modes.addAll([
       QuizModeModel("images/quiz icon.png", "", "Quick Quiz", null),
-      QuizModeModel("images/stopwatch.png", "", "Timed Quiz", null),
+      QuizModeModel(
+        "images/stopwatch.png",
+        "",
+        isLockedTimedQuiz ? "Timed Quiz (Locked)" : "Timed Quiz",
+        null,
+        isLockedTimedQuiz: isLockedTimedQuiz,
+      ),
       QuizModeModel("images/set-up.png", "", "Quiz Builder", null),
     ]);
     return modes;
@@ -187,6 +208,7 @@ class CalendarDateModel {
     required this.dayName,
     required this.dayNumber,
     this.isToday = false,
+
   });
 }
 
@@ -195,5 +217,6 @@ class QuizModeModel {
   final String? title;
   final String? date;
   final VoidCallback? onTap;
-  QuizModeModel(this.icon, this.date, this.title, this.onTap);
+  final bool isLockedTimedQuiz;
+  QuizModeModel(this.icon, this.date, this.title, this.onTap,{this.isLockedTimedQuiz = false});
 }
