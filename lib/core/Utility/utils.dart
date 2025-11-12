@@ -143,28 +143,39 @@ class Utils {
     required int answered,
     required int totalQuestions,
     required VoidCallback onLeave,
+    required int isTimeQuizMin,
+    required VoidCallback submitted,
   }) async {
     if (isTimedQuiz) {
-      CustomDialog.show(
-        title: "Leave Quiz?",
-        message: "You've answered $answered questions but you still have more time",
-        positiveButtonText: "Leave Quiz",
-        onPositiveTap: onLeave,
-        negativeButtonText: "Cancel",
-        onNegativeTap: () => Get.back(),
+      Get.dialog(
+        CustomDialog(
+          title: isTimeQuizMin == 0 ? "Submitted" : "Leave Quiz?",
+          message: isTimeQuizMin == 0
+              ? "You've answered $answered questions but your quiz time has been completed"
+              : "You've answered $answered questions but you still have more time",
+          positiveButtonText: isTimeQuizMin == 0 ? "Submitted" : "Leave Quiz",
+          onPositiveTap: isTimeQuizMin == 0 ? submitted : onLeave,
+          negativeButtonText: "Cancel",
+          onNegativeTap: () => Get.back(),
+        ),
+        barrierDismissible: false,
       );
-    } else {
-      CustomDialog.show(
-        title: "Leave Quiz?",
-        message:
-        "You've answered $answered of $totalQuestions questions. If you leave now, your progress will be lost.",
-        positiveButtonText: "Leave Quiz",
-        onPositiveTap: onLeave,
-        negativeButtonText: "Cancel",
-        onNegativeTap: () => Get.back(),
+
+    return;
+  }
+      Get.dialog(
+        CustomDialog(
+          title: "Leave Quiz?",
+          message:
+          "You've answered $answered of $totalQuestions questions. If you leave now, your progress will be lost.",
+          positiveButtonText: "Leave Quiz",
+          onPositiveTap: onLeave,
+          negativeButtonText: "Cancel",
+          onNegativeTap: () => Get.back(),
+        ),
+        barrierDismissible: false,
       );
     }
   }
 
 
-}

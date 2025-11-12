@@ -83,7 +83,7 @@ class TimedQuizBottomSheet extends StatelessWidget {
                         ),
                         child: Slider(
                           value: controller.selectedMinutes.value,
-                          min: 5,
+                          min: 1,
                           max: 15,
                           label: '${controller.selectedMinutes.value.toInt()} min',
                           onChanged: (value) => controller.updateMinutes(value),

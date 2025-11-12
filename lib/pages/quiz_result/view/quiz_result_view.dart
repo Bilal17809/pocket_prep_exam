@@ -160,9 +160,11 @@ class QuizResultView extends StatelessWidget {
           child: CommonButton(
             title: "Retake Quiz",
             onTap: () async {
-              final isTime = Get.find<QuestionController>().isTimedQuiz.value;
-              final isTimeQMin =  Get.find<QuestionController>().timedQuizDuration;
-              Get.find<QuestionController>().resetController(isRetake: true);
+              final controller = Get.find<QuestionController>();
+              final isTime = controller.isTimedQuiz.value;
+              final isTimeQMin = controller.timedQuizDuration;
+              controller.remainingSeconds.value == 1;
+              controller.resetController(isRetake: true);
               await Get.off(() => QuizzesView(
                 allQuestion: quizQuestions,
                 fromRetake: true,
@@ -172,6 +174,24 @@ class QuizResultView extends StatelessWidget {
             },
           ),
         ),
+
+        // Padding(
+        //   padding: const EdgeInsets.symmetric(horizontal: 16),
+        //   child: CommonButton(
+        //     title: "Retake Quiz",
+        //     onTap: () async {
+        //       final isTime = Get.find<QuestionController>().isTimedQuiz.value;
+        //       final isTimeQMin =  Get.find<QuestionController>().timedQuizDuration;
+        //       Get.find<QuestionController>().resetController(isRetake: true);
+        //       await Get.off(() => QuizzesView(
+        //         allQuestion: quizQuestions,
+        //         fromRetake: true,
+        //         isTimedQuiz: isTime,
+        //         timedQuizMinutes: isTimeQMin,
+        //       ));
+        //     },
+        //   ),
+        // ),
         const SizedBox(height: 20),
       ],
     );

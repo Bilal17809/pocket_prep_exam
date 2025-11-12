@@ -15,6 +15,9 @@ class QuestionController extends GetxController {
   RxList<Question> questions = <Question>[].obs;
   RxList<Question> reviewQuestions = <Question>[].obs;
   List<Question>? originalAttemptQuestions;
+  StreamSubscription<int>? _streamSub;
+  RxBool dialogShown = false.obs;
+
 
 
   Map<int, String> subjectIdToName = {};
@@ -37,10 +40,11 @@ class QuestionController extends GetxController {
   RxBool isTimedQuiz = false.obs;
   RxInt remainingSeconds = 0.obs;
   int? timedQuizDuration;
+  RxBool quizStarted = false.obs;
 
   RxBool isMoveQuizView = false.obs;
   List<Question> quizQForTime = <Question>[];
-  var selectedMinutes = 5.0.obs;
+  var selectedMinutes = 1.0.obs;
 
   @override
   void onInit() {
@@ -58,11 +62,13 @@ class QuestionController extends GetxController {
     remainingSeconds.value = 0;
     selectedMinutes.value = 0;
     _timer?.cancel();
+    _streamSub?.cancel();
     _timer = null;
   }
 
   void resetController({bool isRetake = false}) {
     _resetQuizState(isRetake: isRetake);
+    dialogShown.value = false;
   }
 
   void _resetQuizState({bool isRetake = false}) {
@@ -79,6 +85,7 @@ class QuestionController extends GetxController {
       remainingSeconds.value = 0;
       _timer?.cancel();
       _timer = null;
+      _streamSub?.cancel();
       Utils.stopAll();
     } else {
       currentPage.value = 0;
@@ -126,10 +133,7 @@ class QuestionController extends GetxController {
   void _startQuizTimer() {
     _startTime = DateTime.now();
     _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
-      elapsedSeconds.value = DateTime
-          .now()
-          .difference(_startTime!)
-          .inSeconds;
+      elapsedSeconds.value = DateTime.now().difference(_startTime!).inSeconds;
     });
   }
 
@@ -187,6 +191,8 @@ class QuestionController extends GetxController {
     int? timedQuizMinutes,
     bool fromRetake = false,
   }) async {
+    resetController(isRetake: fromRetake);
+    // quizStarted.value = false;
     try {
       if (reviewMode && questionIdsToReview != null && selectedOptions != null) {
         setReviewQuestions(questionIdsToReview, selectedOptions);
@@ -213,6 +219,9 @@ class QuestionController extends GetxController {
         }
 
       }
+      // Future.delayed(const Duration(milliseconds: 300), () {
+      //   quizStarted.value = true;
+      // });
     } catch (e) {
       state.value = QuestionState.error;
     }
@@ -256,19 +265,56 @@ class QuestionController extends GetxController {
     }
   }
 
+  // void _startTimedQuizCountdown() {
+  //   _timer?.cancel();
+  //   _streamSub?.cancel();
+  //   _startTime = DateTime.now();
+  //   remainingSeconds.value = timedQuizDuration!;
+  //   _streamSub = Stream.periodic(const Duration(seconds: 1), (_) => 1)
+  //       .take(timedQuizDuration!)
+  //       .listen((_) {
+  //     if (remainingSeconds.value > 0) {
+  //       remainingSeconds.value--;
+  //     } else {
+  //       isSubmitVisible.value = true;
+  //       _streamSub?.cancel();
+  //     }
+  //   });
+  // }
+
   void _startTimedQuizCountdown() {
     _timer?.cancel();
-    _startTime = DateTime.now();
+    _streamSub?.cancel();
     remainingSeconds.value = timedQuizDuration!;
-    _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
+    _streamSub = Stream.periodic(const Duration(seconds: 1), (_) => 1)
+        .listen((_) {
       if (remainingSeconds.value > 0) {
         remainingSeconds.value--;
       } else {
         isSubmitVisible.value = true;
-        _timer?.cancel();
+        quizStarted.value = true;
+        _streamSub?.cancel();
       }
     });
   }
+
+
+
+  //
+  // void _startTimedQuizCountdown() {
+  //   _timer?.cancel();
+  //   _startTime = DateTime.now();
+  //   remainingSeconds.value = timedQuizDuration!;
+  //   _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
+  //     if (remainingSeconds.value > 0) {
+  //       remainingSeconds.value--;
+  //     } else {
+  //       isSubmitVisible.value = true;
+  //       _timer?.cancel();
+  //     }
+  //   });
+  // }
+
   void _stopQuizTimer() {
     _endTime = DateTime.now();
     _timer?.cancel();
@@ -372,8 +418,7 @@ class QuestionController extends GetxController {
       'correct': correctAnswers,
       'incorrect': incorrectAnswers,
       'unanswered': totalQuestions - answeredQuestions,
-      'percentage':
-          totalQuestions > 0 ? (correctAnswers / totalQuestions) * 100 : 0,
+      'percentage': totalQuestions > 0 ? (correctAnswers / totalQuestions) * 100 : 0,
       'flagged': List<int>.from(flaggedQuestions),
       'correctQuestionIds': correctIds,
       'incorrectQuestionIds': incorrectIds,
@@ -385,6 +430,7 @@ class QuestionController extends GetxController {
   @override
   void onClose() {
     _resetQuizState();
+    _streamSub?.cancel();
     _timer?.cancel();
     super.onClose();
   }

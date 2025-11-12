@@ -172,7 +172,7 @@ class EditeSubjectController extends GetxController {
       for (var id in selectedSubjectIds) {
         final subjectQs = examQuestions.where((q) => q.subjectId == id).toList();
         subjectQs.shuffle();
-        questionPool.addAll(subjectQs.take(5).toList());
+        questionPool.addAll(subjectQs.take(Get.find<RemoveAds>().isSubscribedGet.value ? 10 : 5).toList());
         print("Your BuildPool length is ${questionPool.length}");
       }
     }
@@ -209,7 +209,7 @@ class EditeSubjectController extends GetxController {
   Future<List<Question>> startQuizForTime()async {
     final pool = [...questionPool];
     pool.shuffle();
-    return pool.take(Get.find<RemoveAds>().isSubscribedGet.value ? 50 : 20).toList();
+    return pool.take(Get.find<RemoveAds>().isSubscribedGet.value ? 50 : 30).toList();
   }
 
   List<Question> startQuiz() {

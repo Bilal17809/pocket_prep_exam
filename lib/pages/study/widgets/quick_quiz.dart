@@ -67,6 +67,7 @@ class QuickQuiz extends StatelessWidget {
                               Utils.showError("Please select at least one subject!", "Error");
                               return;
                             }
+
                             Get.to(() => QuizzesView(allQuestion: isSubscribed ? quizQuestions : QuizQuestionsForFreeUser, isTimedQuiz: false));
                           }
                           else if (item.title!.startsWith("Timed Quiz")) {
