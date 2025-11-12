@@ -106,7 +106,6 @@ class TimedQuizBottomSheet extends StatelessWidget {
               title: "Start Quiz",
               onTap: () async {
                 if(!Get.find<StudyController>().hasTimedQuizFirstAttempt.value)
-                Get.find<StudyController>().saveTimeQuizAttempt(true);
                 Get.find<StudyController>().refreshTimedQuizAttempt();
                 final selectedMinutes = controller.selectedMinutes.value.toInt();
                   final totalSeconds = selectedMinutes * 60;
@@ -124,8 +123,6 @@ class TimedQuizBottomSheet extends StatelessWidget {
                         Get.back();
                       });
                     }
-
-
               },
             ),
           ),

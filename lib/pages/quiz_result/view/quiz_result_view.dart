@@ -59,6 +59,27 @@ class QuizResultView extends StatelessWidget {
         child: DefaultTabController(
           length: labels.length,
           child: Scaffold(
+            // ✅ AppBar with Back Button Added
+            appBar: AppBar(
+              elevation: 0,
+              backgroundColor: Colors.white,
+              leading: IconButton(
+                icon: const Icon(Icons.arrow_back_ios, color: Colors.black),
+                onPressed: () {
+                  Get.offAll(() => DashboardView());
+                  Get.find<QuestionController>().resetController();
+                },
+              ),
+              centerTitle: true,
+              title: Text(
+                "Quiz Results",
+                style: context.textTheme.bodyLarge!.copyWith(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                  color: Colors.black,
+                ),
+              ),
+            ),
             backgroundColor: kWhiteF7,
             body: NestedScrollView(
               headerSliverBuilder: (context, innerBoxIsScrolled) => [
@@ -163,35 +184,43 @@ class QuizResultView extends StatelessWidget {
               final controller = Get.find<QuestionController>();
               final isTime = controller.isTimedQuiz.value;
               final isTimeQMin = controller.timedQuizDuration;
-              controller.remainingSeconds.value == 1;
+
+              controller.isRetakeInProgress.value = true; // block dialog temporarily
+
+              if (isTime) {
+                controller.remainingSeconds.value = (isTimeQMin! * 60);
+              }
+
               controller.resetController(isRetake: true);
+
               await Get.off(() => QuizzesView(
                 allQuestion: quizQuestions,
                 fromRetake: true,
                 isTimedQuiz: isTime,
                 timedQuizMinutes: isTimeQMin,
               ));
+
+              // delay so QuizzesView finishes building before allowing dialog again
+              Future.delayed(const Duration(seconds: 2), () {
+                controller.isRetakeInProgress.value = false;
+              });
             },
+
+            // onTap: () async {
+            //   final controller = Get.find<QuestionController>();
+            //   final isTime = controller.isTimedQuiz.value;
+            //   final isTimeQMin = controller.timedQuizDuration;
+            //   controller.remainingSeconds.value == 1;
+            //   controller.resetController(isRetake: true);
+            //   await Get.off(() => QuizzesView(
+            //     allQuestion: quizQuestions,
+            //     fromRetake: true,
+            //     isTimedQuiz: isTime,
+            //     timedQuizMinutes: isTimeQMin,
+            //   ));
+            // },
           ),
         ),
-
-        // Padding(
-        //   padding: const EdgeInsets.symmetric(horizontal: 16),
-        //   child: CommonButton(
-        //     title: "Retake Quiz",
-        //     onTap: () async {
-        //       final isTime = Get.find<QuestionController>().isTimedQuiz.value;
-        //       final isTimeQMin =  Get.find<QuestionController>().timedQuizDuration;
-        //       Get.find<QuestionController>().resetController(isRetake: true);
-        //       await Get.off(() => QuizzesView(
-        //         allQuestion: quizQuestions,
-        //         fromRetake: true,
-        //         isTimedQuiz: isTime,
-        //         timedQuizMinutes: isTimeQMin,
-        //       ));
-        //     },
-        //   ),
-        // ),
         const SizedBox(height: 20),
       ],
     );

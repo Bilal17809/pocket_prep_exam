@@ -20,8 +20,8 @@ class QuizAppBar extends StatelessWidget implements PreferredSizeWidget {
       return AppBar(
         actions: [
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: Text(
+            padding:  EdgeInsets.symmetric(horizontal: 20),
+            child:Text(
               "$current/$totalQuestions",
               style:  TextStyle(color: Colors.white,fontWeight: FontWeight.bold, fontSize: 18),
             ),

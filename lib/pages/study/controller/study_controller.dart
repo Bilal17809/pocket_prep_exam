@@ -15,7 +15,6 @@ class StudyController extends GetxController {
   final StorageService _storageService;
   final QuestionService _questionService;
   final RxBool isDrawerOpen = false.obs;
-  // final RxBool hasFirstAttempt = StorageService.getFirstAttempt().obs;
 
 
   final RxInt selectedIndex = (-1).obs;
@@ -24,7 +23,6 @@ class StudyController extends GetxController {
   RxString questionOfDayDate = ''.obs;
   RxBool isQuestionOfDayVisible =true.obs;
   RxBool isQuestionOfDayCorrect = false.obs;
-  // final isSubscribed = Get.find<RemoveAds>().isSubscribedGet.value;
 
   RxList<CalendarDateModel> calendarDates = <CalendarDateModel>[].obs;
 
@@ -186,8 +184,7 @@ class StudyController extends GetxController {
       QuizModeModel("images/quiz icon.png", "", "Quick Quiz", null),
       QuizModeModel(
         "images/stopwatch.png",
-        "",
-        isLockedTimedQuiz ? "Timed Quiz (Locked)" : "Timed Quiz",
+        "",  "Timed Quiz",
         null,
         isLockedTimedQuiz: isLockedTimedQuiz,
       ),
