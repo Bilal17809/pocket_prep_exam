@@ -14,6 +14,7 @@ class QuizCard extends StatelessWidget {
   final bool reviewMode;
   final bool isQuestionOfDay;
   final VoidCallback? onBackTap;
+  final bool isTimeQuizToNotShowQuestion;
   const QuizCard({
     super.key,
     required this.question,
@@ -22,6 +23,7 @@ class QuizCard extends StatelessWidget {
     required String reviewType,
     this.isQuestionOfDay = false,
     this.onBackTap,
+    this.isTimeQuizToNotShowQuestion = false
   });
 
   @override
@@ -45,7 +47,7 @@ class QuizCard extends StatelessWidget {
                       const SizedBox(height: 6),
                       if (!reviewMode)
                         Text(
-                          "Question ${index + 1} / ${controller.questions.length}",
+                          isTimeQuizToNotShowQuestion ? "Time Quiz" : "Question ${index + 1} / ${controller.questions.length}",
                           style: Theme.of(context).textTheme.titleMedium,
                         ),
                     ],

@@ -583,6 +583,7 @@ class QuizzesView extends StatelessWidget {
                           reviewMode: reviewMode,
                           reviewType: reviewType,
                           isQuestionOfDay: isQuestionOfDayMode,
+                          isTimeQuizToNotShowQuestion:  isTimedQuiz,
                           onBackTap: () => _handleBackNavigation(context),
                         );
                       },
@@ -626,7 +627,6 @@ class QuizzesView extends StatelessWidget {
                           );
                           return;
                         }
-
                         Get.offAll(() => QuizResultView(
                           quizQuestions: controller.questions,
                           quizResults: quizResults,
@@ -634,9 +634,27 @@ class QuizzesView extends StatelessWidget {
                       },
                     ),
                   ),
-
-                // Navigation row (prev/next buttons)
-                if (!isQuestionOfDayMode)
+                if (isQuestionOfDayMode)
+                  Padding(
+                    padding: const EdgeInsets.all(16),
+                    child: Obx(() {
+                      final hasAttempted = controller.selectedOptions.isNotEmpty;
+                      return CommonButton(
+                        title: "Submitted",
+                        onTap: () async {
+                          if (hasAttempted) {
+                            await Get.find<StudyController>()
+                                .markQuestionOfDayAttempted();
+                            Get.offAll(() => const DashboardView());
+                          } else {
+                            Utils.showError(
+                                "Please answer before closing.", "Error");
+                          }
+                        },
+                      );
+                    }),
+                  )
+                else
                   _NavigationRow(
                     isTimeQuiz: isTimedQuiz,
                     controller: controller,

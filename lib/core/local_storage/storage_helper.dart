@@ -81,7 +81,7 @@ class StorageService {
 
   /// Gets the general subscription status.
   static bool getGeneralSubscriptionStatus() {
-    return _preferences.getBool(_subscribeStatusKey) ?? false;
+    return _preferences.getBool(_subscribeStatusKey) ?? true;
   }
 
   /// Saves the ID of the active subscription product.
