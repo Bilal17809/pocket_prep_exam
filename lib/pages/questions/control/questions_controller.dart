@@ -17,6 +17,8 @@ class QuestionController extends GetxController {
   List<Question>? originalAttemptQuestions;
   StreamSubscription<int>? _streamSub;
   RxBool dialogShown = false.obs;
+  final isRetakeInProgress = false.obs;
+
 
 
 

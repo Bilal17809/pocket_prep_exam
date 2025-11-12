@@ -47,8 +47,6 @@ class StorageService {
     await _preferences.remove(_timedQuizAttemptKey);
   }
 
-
-
   /// save the  First launch.
   static Future<void> saveFirstLaunch(bool value) async {
     await _preferences.setBool(_hasFirstLaunch, value);
@@ -135,16 +133,16 @@ class StorageService {
 
   Future<void> clearQuestionOfDayAttempt(int examId) async {
     await _preferences.remove("$_questionOfDayKey$examId");
-    await _preferences.remove("${_questionOfDayCorrectnessKey}_$examId"); // ✅ Also clear correctness
+    await _preferences.remove("${_questionOfDayCorrectnessKey}_$examId");
   }
 
-  // ✅ NEW: Save Question of the Day Correctness
+  //  NEW: Save Question of the Day Correctness
   Future<void> saveQuestionOfDayCorrectness(int examId, bool isCorrect) async {
     final key = '${_questionOfDayCorrectnessKey}_$examId';
     await _preferences.setBool(key, isCorrect);
   }
 
-  // ✅ NEW: Get Question of the Day Correctness
+  //  NEW: Get Question of the Day Correctness
   Future<bool?> getQuestionOfDayCorrectness(int examId) async {
     final key = '${_questionOfDayCorrectnessKey}_$examId';
     return _preferences.getBool(key);
@@ -234,12 +232,6 @@ class StorageService {
     final list = _preferences.getStringList("${_selectedSubjectsKey}_$examId");
     return list?.map((e) => int.tryParse(e) ?? 0).where((id) => id != 0).toList() ?? [];
   }
-
-  Future<void> clearSelectedSubjects(int examId) async {
-    await _preferences.remove("${_selectedSubjectsKey}_$examId");
-  }
-
-
 
   Future<void> saveUser(UserModel user) async {
     final jsonString = jsonEncode(user.toJson());
