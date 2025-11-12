@@ -31,7 +31,7 @@ class _SplashViewState extends State<SplashView> {
         body: Stack(
           fit: StackFit.expand,
           children: [
-            Image.asset("images/splash.png", fit: BoxFit.fill),
+            Image.asset("images/appsplash.png", fit: BoxFit.fill),
             Positioned(
               bottom: 100,
               left: 40,
