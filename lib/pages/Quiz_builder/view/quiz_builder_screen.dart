@@ -89,7 +89,7 @@ class QuizBuilderScreen extends StatelessWidget {
                       await quizBuilderController.prepareQuizQuestions();
                       final totalSeconds = quizBuilderController.selectedTime.value.inSeconds;
                       if (!hasFirstAttempt.value) {
-                        await StorageService.saveFirstAttempt(true);
+                        await StorageService.saveFirstBuilderQuizAttempt(true);
                         hasFirstAttempt.value = true;
                       }
                       Get.off(() => QuizzesView(

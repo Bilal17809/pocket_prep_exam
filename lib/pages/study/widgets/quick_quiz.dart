@@ -163,10 +163,12 @@ class QuickQuiz extends StatelessWidget {
                           isSubscribed ? quizQuestions : freeUserQuestions,
                           isTimedQuiz: false,
                         ));
-                      } else if (item.title!.startsWith("Timed Quiz")) {
+                      }
+                      else if (item.title!.startsWith("Timed Quiz")) {
                         Get.find<QuestionController>().resetController();
                         TimedQuizBottomSheet.show();
-                      } else if (item.title == "Quiz Builder") {
+                      }
+                      else if (item.title == "Quiz Builder") {
                         Get.to(() => QuizBuilderScreen());
                       }
                     },

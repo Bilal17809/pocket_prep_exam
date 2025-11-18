@@ -13,326 +13,6 @@ import '../control/questions_controller.dart';
 import '/core/theme/app_colors.dart';
 import '/pages/questions/widgets/widgets.dart';
 
-// class QuizzesView extends StatelessWidget {
-//   final bool reviewMode;
-//   final int? initialPage;
-//   final String? tabTitle;
-//   final List<int>? questionIdsToReview;
-//   final Map<int, int>? selectedOptions;
-//   final String reviewType;
-//   final List<Question>? allQuestion;
-//   final bool isTimedQuiz;
-//   final int? timedQuizMinutes;
-//   final bool fromRetake;
-//
-//
-//
-//   QuizzesView({
-//     super.key,
-//     this.allQuestion,
-//     this.reviewMode = false,
-//     this.initialPage,
-//     this.tabTitle,
-//     this.questionIdsToReview,
-//     this.selectedOptions,
-//     this.reviewType = 'All',
-//     this.isTimedQuiz = false,
-//     this.timedQuizMinutes,
-//     this.fromRetake = false,
-//   });
-//
-//   bool get isQuestionOfDayMode =>
-//       allQuestion != null && allQuestion!.length == 1 && !isTimedQuiz;
-//
-//   Future<void> _handleBackNavigation(BuildContext context) async {
-//     final controller = Get.find<QuestionController>();
-//     if (reviewMode) {
-//       Get.back();
-//       return;
-//     }
-//     final isQuestionOfDay = isQuestionOfDayMode;
-//     if (controller.selectedOptions.isEmpty) {
-//       if (fromRetake) {
-//         Get.offAll(() => DashboardView());
-//       } else {
-//         Get.back();
-//       }
-//       return;
-//     }
-//     if (isQuestionOfDay && controller.selectedOptions.isNotEmpty) {
-//       Get.offAll(() => DashboardView());
-//       return;
-//     }
-//
-//     final results = controller.calculateQuizResults();
-//     await Utils.showLeaveQuizDialog(
-//       isTimedQuiz: controller.isTimedQuiz.value,
-//       isTimeQuizMin: controller.remainingSeconds.value,
-//       submitted: () {
-//         Get.to(() => QuizResultView(
-//           quizQuestions: controller.questions,
-//           quizResults: results,
-//         ));
-//       },
-//       answered: results["answered"],
-//       totalQuestions: results["totalQuestions"],
-//       onLeave: () {
-//         if (fromRetake) {
-//           Get.back();
-//           Get.offAll(() => DashboardView());
-//         } else {
-//           Get.back();
-//           Get.back();
-//         }
-//       },
-//     );
-//   }
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     final controller = Get.find<QuestionController>();
-//
-//     final PageController pageController =
-//     PageController(initialPage: initialPage ?? 0);
-//     WidgetsBinding.instance.addPostFrameCallback((_) async {
-//       controller.initQuiz(
-//         reviewMode: reviewMode,
-//         questionIdsToReview: questionIdsToReview,
-//         selectedOptions: selectedOptions,
-//         allQuestions: allQuestion,
-//         isTimedQuiz: isTimedQuiz,
-//         timedQuizMinutes: timedQuizMinutes,
-//         fromRetake: fromRetake,
-//       );
-//       final hasAttempted = StorageService.getFirstAttempt();
-//       if (!hasAttempted) {
-//         await StorageService.saveFirstAttempt(true);
-//       }
-//     });
-//
-//     return PopScope(
-//       canPop: false,
-//       onPopInvokedWithResult: (didPop, result) async {
-//         if (didPop) return;
-//         await _handleBackNavigation(context);
-//       },
-//       child: SafeArea(
-//         child: Scaffold(
-//           backgroundColor: const Color(0xFF1E90FF),
-//           body: Obx(() {
-//             if (controller.state.value == QuestionState.loading) {
-//               return const Center(
-//                 child: LoadingContainer(
-//                   message: "Loading...",
-//                   backgroundColor: lightSkyBlue,
-//                   messageTextColor: kWhite,
-//                   indicatorColor: kWhite,
-//                 ),
-//               );
-//             }
-//
-//             if (controller.state.value == QuestionState.error) {
-//               return const Center(child: Text("Error loading questions."));
-//             }
-//
-//             final questionsToShow = allQuestion ??
-//                 (reviewMode
-//                     ? controller.reviewQuestions
-//                     : controller.questions);
-//
-//             if (questionsToShow.isEmpty) {
-//               return const Center(child: Text("No questions available."));
-//             }
-//
-//             return Column(
-//               children: [
-//                 // Timer display
-//                 if (controller.isTimedQuiz.value && !reviewMode)
-//                   Row(
-//                     mainAxisAlignment: MainAxisAlignment.center,
-//                     children: [
-//                       Image.asset("images/stopwatch.png", height: 30),
-//                       const SizedBox(width: 8),
-//                       Text(
-//                         controller.getTimerDisplay().toString(),
-//                         style: const TextStyle(
-//                           color: Colors.white,
-//                           fontSize: 20,
-//                           fontWeight: FontWeight.bold,
-//                         ),
-//                       ),
-//                     ],
-//                   ),
-//                 Builder(
-//                   builder: (_) {
-//                     final controller = Get.find<QuestionController>();
-//                     if (controller.isTimedQuiz.value &&  !controller.dialogShown.value && controller.quizStarted.value ) {
-//                       controller.dialogShown.value = true;
-//                       Future.delayed(Duration.zero, () async {
-//                         final results = controller.calculateQuizResults();
-//                         await Utils.showLeaveQuizDialog(
-//                           isTimedQuiz: controller.isTimedQuiz.value,
-//                           isTimeQuizMin: controller.remainingSeconds.value,
-//                           submitted: () {
-//                             Get.to(() => QuizResultView(
-//                               quizQuestions: controller.questions,
-//                               quizResults: results,
-//                             ));
-//                           },
-//                           answered: results["answered"],
-//                           totalQuestions: results["totalQuestions"],
-//                           onLeave: () {
-//                             if (fromRetake) {
-//                               Get.back();
-//                               Get.offAll(() => DashboardView());
-//                             } else {
-//                               Get.back();
-//                               Get.back();
-//                             }
-//                           },
-//                         );
-//                       });
-//                     }
-//                     return const SizedBox.shrink();
-//                   },
-//                 ),
-//
-//
-//                 if (reviewMode)
-//                   QuizAppBar(
-//                     controller: controller,
-//                     totalQuestions: questionsToShow.length,
-//                     tabTitle: tabTitle.toString(),
-//                   )
-//                 else if (!controller.isTimedQuiz.value)
-//                   Padding(
-//                     padding: const EdgeInsets.symmetric(vertical: 12),
-//                     child: isQuestionOfDayMode
-//                         ? Column(
-//                       children: [
-//                         Image.asset(
-//                           "images/sun.png",
-//                           height: 46,
-//                           color: Colors.yellow,
-//                         ),
-//                         const SizedBox(height: 6),
-//                         const Text(
-//                           "Question of the Day",
-//                           style: TextStyle(
-//                             color: Colors.white,
-//                             fontSize: 18,
-//                             fontWeight: FontWeight.bold,
-//                           ),
-//                         ),
-//                       ],
-//                     )
-//                         : PageIndicator(
-//                       pageController: pageController,
-//                       itemCount: questionsToShow.length,
-//                     ),
-//                   ),
-//                 const SizedBox(height: 6),
-//                 Expanded(
-//                   child: Obx(
-//                         () => PageView.builder(
-//                       controller: pageController,
-//                       physics: controller.isTimedQuiz.value
-//                           ? (controller.remainingSeconds.value == 0
-//                           ? const NeverScrollableScrollPhysics()
-//                           : const ClampingScrollPhysics())
-//                           : const ClampingScrollPhysics(),
-//                       itemCount: questionsToShow.length,
-//                       onPageChanged: (index) => controller.onPageChange(index),
-//                       itemBuilder: (context, index) {
-//                         final question = questionsToShow[index];
-//                         return QuizCard(
-//                           question: question,
-//                           index: index,
-//                           reviewMode: reviewMode,
-//                           reviewType: reviewType,
-//                           isQuestionOfDay: isQuestionOfDayMode,
-//                           onBackTap: () => _handleBackNavigation(context),
-//                         );
-//                       },
-//                     ),
-//                   ),
-//                 ),
-//                 if (!reviewMode && controller.isSubmitVisible.value && !isQuestionOfDayMode)
-//                   Padding(
-//                     padding: const EdgeInsets.symmetric(
-//                         vertical: 12, horizontal: 26),
-//                     child: CommonButton(
-//                       title: "Submit Quiz",
-//                       onTap: () {
-//                         final quizResults = controller.calculateQuizResults();
-//                         final answered = quizResults['answered'] ?? 0;
-//                         final totalQuestions = quizResults['totalQuestions'] ?? 0;
-//                         if (answered == 0) {
-//                           Get.offAll(() => DashboardView(initialIndex: 0));
-//                           return;
-//                         }
-//                         if (answered <= 5) {
-//                           CustomDialog.show(
-//                             title: "Submit Quiz?",
-//                             message:
-//                             "You've answered $answered of $totalQuestions questions.\n"
-//                                 "If you submit now, you'll only be scored on those $answered questions.",
-//                             positiveButtonText: "Submit",
-//                             onPositiveTap: () {
-//                               Get.offAll(() => QuizResultView(
-//                                 quizQuestions: controller.questions,
-//                                 quizResults: quizResults,
-//                               ));
-//                             },
-//                             negativeButtonText: "Cancel",
-//                             onNegativeTap: () => Get.back(),
-//                           );
-//                           return;
-//                         }
-//                         Get.offAll(() => QuizResultView(
-//                           quizQuestions: controller.questions,
-//                           quizResults: quizResults,
-//                         ));
-//                       },
-//                     ),
-//                   ),
-//
-//                 if (isQuestionOfDayMode)
-//                   Padding(
-//                     padding: const EdgeInsets.all(16),
-//                     child: Obx(() {
-//                       final hasAttempted = controller.selectedOptions.isNotEmpty;
-//                       return CommonButton(
-//                         title: "Submitted",
-//                         onTap: () async {
-//                           if (hasAttempted) {
-//                             await Get.find<StudyController>()
-//                                 .markQuestionOfDayAttempted();
-//                             Get.offAll(() => const DashboardView());
-//                           } else {
-//                             Utils.showError(
-//                                 "Please answer before closing.", "Error");
-//                           }
-//                         },
-//                       );
-//                     }),
-//                   )
-//                 else
-//                   _NavigationRow(
-//                     isTimeQuiz: isTimedQuiz,
-//                     controller: controller,
-//                     pageController: pageController,
-//                     reviewMode: reviewMode,
-//                     reviewQuestionIds: questionIdsToReview,
-//                   ),
-//               ],
-//             );
-//           }),
-//         ),
-//       ),
-//     );
-//   }
-// }
 class QuizzesView extends StatelessWidget {
   final bool reviewMode;
   final int? initialPage;
@@ -344,6 +24,7 @@ class QuizzesView extends StatelessWidget {
   final bool isTimedQuiz;
   final int? timedQuizMinutes;
   final bool fromRetake;
+  final bool isTimedQuizType;
 
   const QuizzesView({
     super.key,
@@ -357,6 +38,7 @@ class QuizzesView extends StatelessWidget {
     this.isTimedQuiz = false,
     this.timedQuizMinutes,
     this.fromRetake = false,
+    this.isTimedQuizType = false,
   });
 
   bool get isQuestionOfDayMode =>
@@ -422,10 +104,11 @@ class QuizzesView extends StatelessWidget {
         timedQuizMinutes: timedQuizMinutes,
         fromRetake: fromRetake,
       );
-      final hasAttempted = StorageService.getFirstAttempt();
-      if (!hasAttempted) {
-        await StorageService.saveFirstAttempt(true);
-      }
+
+      // final hasAttempted = StorageService.getFirstAttempt();
+      // if (!hasAttempted) {
+      //   await StorageService.saveFirstBuilderQuizAttempt(true);
+      // }
 
       if (fromRetake) {
         controller.isRetakeInProgress.value = true;
@@ -442,6 +125,7 @@ class QuizzesView extends StatelessWidget {
         await _handleBackNavigation(context);
       },
       child: SafeArea(
+          bottom: false,
         child: Scaffold(
           backgroundColor: const Color(0xFF1E90FF),
           body: Obx(() {
@@ -583,9 +267,10 @@ class QuizzesView extends StatelessWidget {
                           reviewMode: reviewMode,
                           reviewType: reviewType,
                           isQuestionOfDay: isQuestionOfDayMode,
-                          isTimeQuizToNotShowQuestion:  isTimedQuiz,
+                          isTimeQuizToNotShowQuestion: isTimedQuizType, // ✅ use the variable here
                           onBackTap: () => _handleBackNavigation(context),
                         );
+
                       },
                     ),
                   ),
@@ -662,6 +347,8 @@ class QuizzesView extends StatelessWidget {
                     reviewMode: reviewMode,
                     reviewQuestionIds: questionIdsToReview,
                   ),
+
+                SizedBox(height: 18,)
               ],
             );
           }),

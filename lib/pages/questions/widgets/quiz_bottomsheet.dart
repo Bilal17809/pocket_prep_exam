@@ -105,24 +105,27 @@ class TimedQuizBottomSheet extends StatelessWidget {
             child: CommonButton(
               title: "Start Quiz",
               onTap: () async {
-                if(!Get.find<StudyController>().hasTimedQuizFirstAttempt.value)
-                Get.find<StudyController>().refreshTimedQuizAttempt();
+                if (!Get.find<StudyController>().hasTimedQuizFirstAttempt.value)
+                  Get.find<StudyController>().refreshTimedQuizAttempt();
+
                 final selectedMinutes = controller.selectedMinutes.value.toInt();
-                  final totalSeconds = selectedMinutes * 60;
-                  final quizQuestionForTime = await Get.find<EditeSubjectController>().startQuizForTime();
-                  if(quizQuestionForTime.isEmpty){
-                    Utils.showError("Please select at lest one subject", "Error");
-                  }
-                  else{
-                      Get.to(() =>
-                          QuizzesView(
-                            allQuestion:quizQuestionForTime,
-                            isTimedQuiz: true,
-                            timedQuizMinutes: totalSeconds,
-                          ))?.then((_) {
-                        Get.back();
-                      });
-                    }
+                final totalSeconds = selectedMinutes * 60;
+                final quizQuestionForTime =
+                await Get.find<EditeSubjectController>().startQuizForTime();
+
+                if (quizQuestionForTime.isEmpty) {
+                  Utils.showError("Please select at least one subject", "Error");
+                } else {
+                  bool isTimedQuizType = true;
+                  Get.to(() => QuizzesView(
+                    allQuestion: quizQuestionForTime,
+                    isTimedQuiz: true,
+                    timedQuizMinutes: totalSeconds,
+                    isTimedQuizType: isTimedQuizType,
+                  ))?.then((_) {
+                    Get.back();
+                  });
+                }
               },
             ),
           ),

@@ -46,9 +46,9 @@ class _SplashViewState extends State<SplashView> {
                     key: const ValueKey("button"),
                     onTap: () {
                       if (controller.isExam.value) {
-                        // if (splashAds.isAdReady) {
-                        //   splashAds.showSplashAd(() {});
-                        // }
+                        if (splashAds.isAdReady) {
+                          splashAds.showSplashAd(() {});
+                        }
                         Get.offNamed(RoutesName.dashBoard);
                       } else {
                         Get.offNamed(RoutesName.login);

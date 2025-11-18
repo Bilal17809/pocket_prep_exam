@@ -22,7 +22,7 @@ class StorageService {
   static const String _userDataKey = "user_data";
   static const String _subscribeStatusKey = 'Subscribe';
   static const String _subscriptionProductIdKey = 'subscriptionAiId';
-  static const String _hasFirstAttemptKey = 'hasFirstAttemptKey';
+  static const String _hasQuizBuilderAttempt = 'hasFirstAttemptKey';
   static const String _hasFirstLaunch = 'hasFirstLaunch';
   static const String _timedQuizAttemptKey = 'timed_quiz_attempt';
 
@@ -58,20 +58,18 @@ class StorageService {
   }
 
 
-  static Future<void> saveFirstAttempt(bool value) async {
-    await _preferences.setBool(_hasFirstAttemptKey, value);
+  static Future<void> saveFirstBuilderQuizAttempt(bool value) async {
+    await _preferences.setBool(_hasQuizBuilderAttempt, value);
   }
 
   /// Gets the  First Attempt.
   static bool getFirstAttempt() {
-    return _preferences.getBool(_hasFirstAttemptKey) ?? false;
+    return _preferences.getBool(_hasQuizBuilderAttempt) ?? false;
   }
-
-
 
   /// Gets the  First Attempt.
   static Future<void> watchAdsClearFirstAttempt() async {
-    await _preferences.remove(_hasFirstAttemptKey);
+    await _preferences.remove(_hasQuizBuilderAttempt);
   }
 
   /// Saves the general subscription status ('SubscribeMalta' = true/false).
@@ -81,7 +79,7 @@ class StorageService {
 
   /// Gets the general subscription status.
   static bool getGeneralSubscriptionStatus() {
-    return _preferences.getBool(_subscribeStatusKey) ?? true;
+    return _preferences.getBool(_subscribeStatusKey) ?? false;
   }
 
   /// Saves the ID of the active subscription product.
@@ -98,6 +96,7 @@ class StorageService {
   static Future<void> clearSubscriptionState() async {
     await _preferences.remove(_subscribeStatusKey);
     await _preferences.remove(_subscriptionProductIdKey);
+    await _preferences.remove(_hasQuizBuilderAttempt);
   }
 
   static Future<void> saveTTsToggle(bool isEnabled) async {
@@ -227,7 +226,6 @@ class StorageService {
     );
   }
 
-  // Load saved subjects for a specific exam
   Future<List<int>> loadSelectedSubjects(int examId) async {
     final list = _preferences.getStringList("${_selectedSubjectsKey}_$examId");
     return list?.map((e) => int.tryParse(e) ?? 0).where((id) => id != 0).toList() ?? [];

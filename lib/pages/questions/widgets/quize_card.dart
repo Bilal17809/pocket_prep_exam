@@ -47,7 +47,9 @@ class QuizCard extends StatelessWidget {
                       const SizedBox(height: 6),
                       if (!reviewMode)
                         Text(
-                          isTimeQuizToNotShowQuestion ? "Time Quiz" : "Question ${index + 1} / ${controller.questions.length}",
+                          isTimeQuizToNotShowQuestion
+                              ? "Question ${index + 1}"
+                              : "Question ${index + 1} / ${controller.questions.length}",
                           style: Theme.of(context).textTheme.titleMedium,
                         ),
                     ],
